@@ -16,13 +16,13 @@ All 102 CC-addressable parameters are exposed as Ableton-automatable controls:
 
 Every control carries an `annotation`/`hint` (Moog descriptions + CC number),
 so hovering shows what it does in Live's Info View, and a small INIT patch is
-applied via parameter defaults so SEND ALL never pushes silence.
+applied via parameter defaults so a freshly loaded device starts on a sound.
 
 The whole UI fits inside Live's fixed 169-pixel device height: each tab shows
 its controls in two compact rows, and only the active tab is visible (live.tab
 + thispatcher script show/hide, with per-tab scripting-name lists generated
 here so they cannot drift out of sync with the objects).  The Bank tab holds
-Program Change; the Misc tab holds SEND ALL (push), Panic, and Pitch Bend.
+Program Change; the Misc tab holds Panic and (bidirectional) Pitch Bend.
 
 Outbound: every control -> [scale] -> prepend <cc> -> midiformat -> midiout.
 Inbound (bidirectional): one [ctlin <cc>] per control writes the value back
@@ -158,8 +158,8 @@ def annotation_for(cc, longname):
     return text
 
 
-# Non-zero defaults so a freshly-loaded device shows (and SEND ALL pushes) a
-# basic playable INIT patch instead of silence: one oscillator at full level,
+# Non-zero defaults so a freshly-loaded device shows a basic playable INIT
+# patch instead of silence: one oscillator at full level,
 # filter open, amp envelope sustaining.  Values are CC values; menus use the
 # option index.  Everything not listed defaults to 0 / first option.
 INIT = {
@@ -503,7 +503,6 @@ def build():
 
     # ---- per-tab controls (two rows; only the active tab is shown) -------
     tab_members = []
-    all_ctrls = []        # every CC control id, for the SEND ALL button
     for _, params in TABS:
         members = []
         cols = math.ceil(len(params) / 2)
@@ -517,12 +516,11 @@ def build():
             place_label(p, caption(longname), x, ry, sn)
             route_out(p, kind, enum, cc, ctrl, midiformat, wx)   # UI  -> Muse
             route_in(p, kind, enum, cc, ctrl, wx)                # Muse -> UI
-            all_ctrls.append(ctrl)
         tab_members.append(members)
 
-    # ---- Bank tab (Program Change) and Misc tab (push / panic / bend) ----
+    # ---- Bank tab (Program Change) and Misc tab (panic / bend) -----------
     tab_members.append(build_bank_tab(p, midiformat, wx))
-    tab_members.append(build_misc_tab(p, midiformat, wx, all_ctrls))
+    tab_members.append(build_misc_tab(p, midiin, midiformat, wx))
 
     # ---- tab switching machinery (thispatcher script show/hide) ----------
     thisp = p.obj("thispatcher", [wx, 380, 90, 22], numinlets=1, numoutlets=2,
@@ -610,8 +608,8 @@ def build_bank_tab(p, midiformat, wx):
     return members
 
 
-def build_misc_tab(p, midiformat, wx, all_ctrls):
-    """SEND ALL (push), Panic, Pitch Bend, and notes - only on the Misc tab."""
+def build_misc_tab(p, midiin, midiformat, wx):
+    """Panic, Pitch Bend, and notes - only on the Misc tab."""
     members = []
 
     def lbl(text, rect, vn, bold=False):
@@ -619,38 +617,40 @@ def build_misc_tab(p, midiformat, wx, all_ctrls):
         p.comment(text, rect, varname=vn, justify=0, fontsize=8.0,
                   fontface=1 if bold else 0)
 
-    # SEND ALL: bang every CC control so it transmits its current value.
-    sa = p.box("button", [MARGIN, 30, 18, 18], present=True, numinlets=1,
-               numoutlets=1, outlettype=["bang"], varname="SendAll")
-    members.append("SendAll")
-    lbl("SEND ALL  ->  MUSE", [MARGIN + 22, 32, 150, 14], "ms_l0", bold=True)
-    for c in all_ctrls:
-        p.connect(sa, 0, c, 0)
-
     # PANIC: All Notes Off (CC123=0) + All Sound Off (CC120=0).
-    pn = p.box("button", [MARGIN, 52, 18, 18], present=True, numinlets=1,
+    pn = p.box("button", [MARGIN, 32, 18, 18], present=True, numinlets=1,
                numoutlets=1, outlettype=["bang"], varname="Panic")
     members.append("Panic")
-    lbl("PANIC (All Notes Off)", [MARGIN + 22, 54, 150, 14], "ms_l1")
+    lbl("PANIC (All Notes Off)", [MARGIN + 22, 34, 150, 14], "ms_l1", bold=True)
     for cc in (123, 120):
         m = p.msg("%d 0" % cc, [wx + 600, 460 + cc, 50, 22])
         p.connect(pn, 0, m, 0)
         p.connect(m, 0, midiformat, 2)
 
-    # PITCH BEND (forward to the Muse; Ableton also sends bend natively).
-    lbl("Pitch Bend", [MARGIN + 250, 32, 70, 14], "ms_l2")
-    pb = p.live("live.dial", [MARGIN + 250, 46, DIAL, DIAL], "Pitch Bend", 1,
+    # PITCH BEND - bidirectional.  Out: dial -> midiformat pitch-bend inlet.
+    # In: midiin -> xbendin (combines the two bytes into one 0-16383 value)
+    # -> prepend set -> dial, so an incoming bend moves the dial without
+    # re-transmitting (prepend set updates value/display only, no output).
+    lbl("Pitch Bend", [MARGIN + 250, 34, 70, 14], "ms_l2")
+    pb = p.live("live.dial", [MARGIN + 250, 50, DIAL, DIAL], "Pitch Bend", 1,
                 0, 16383, varname="PitchBend", initial=8192,
-                annotation="Pitch Bend wheel value (centre 8192). Forward only.")
+                annotation="Pitch Bend wheel value (centre 8192). Sends to and "
+                "follows the Muse's pitch wheel.")
     members.append("PitchBend")
-    p.connect(pb, 0, midiformat, 5)                      # pitch-bend inlet
+    p.connect(pb, 0, midiformat, 5)                      # pitch-bend inlet (out)
+    xb = p.obj("xbendin", [wx + 980, 440, 70, 22], numinlets=1, numoutlets=2,
+               outlettype=["", ""])
+    p.connect(midiin, 0, xb, 0)                          # raw bytes from midiin
+    pbset = p.obj("prepend set", [wx + 980, 470, 80, 22], numinlets=2)
+    p.connect(xb, 0, pbset, 0)                           # 14-bit value 0-16383
+    p.connect(pbset, 0, pb, 0)
 
     lbl("Mod Wheel (CC1), Hold (CC71), Expression & Sustain are on the VOICE "
         "tab.", [MARGIN, 96, 540, 14], "ms_h1")
-    lbl("SEND ALL pushes every control to the Muse - dial in a sound first "
-        "(it overwrites the patch).", [MARGIN, 114, 540, 14], "ms_h2")
-    lbl("No one-click 'pull': the Muse can't transmit its state. Turn its "
-        "knobs and the plugin follows.", [MARGIN, 132, 540, 14], "ms_h3")
+    lbl("Pitch Bend is bidirectional; the Muse's other knobs sync per-CC on "
+        "every tab.", [MARGIN, 114, 540, 14], "ms_h2")
+    lbl("No one-click 'pull': the Muse can't transmit its whole state. Turn a "
+        "knob and the plugin follows.", [MARGIN, 132, 540, 14], "ms_h3")
     return members
 
 

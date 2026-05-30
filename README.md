@@ -80,7 +80,7 @@ works without it.
 | Delay | Times, sync, feedback, character, mix, and timbre sends |
 | Arp/Seq | Arpeggiator + sequencer clock and arp settings |
 | Bank | Program Change (recall the Muse's stored patches) |
-| Misc | SEND ALL (push), Panic, Pitch Bend, and notes |
+| Misc | Panic, Pitch Bend, and notes |
 
 **Control types** — continuous parameters are dials (0–127); on/off parameters
 are toggles (send 0 / 127); multi-option parameters (octave, waveform, KB
@@ -95,19 +95,12 @@ docs, along with its CC number. The same text appears as a hover tooltip.
 click **SEND** to recall that slot on the Muse (sends Bank Select MSB 0 + LSB +
 Program Change). 16 banks × 16 patches = 256 slots.
 
-**Misc tab** — **SEND ALL** pushes every control's current value to the Muse at
-once (see "Pushing a patch" below); **Panic** sends All Notes Off / All Sound
-Off to clear stuck notes; **Pitch Bend** sends pitch-bend to the synth. (Mod
-Wheel, Hold, Expression and Sustain are full controls on the **Voice** tab.)
+**Misc tab** — **Panic** sends All Notes Off / All Sound Off to clear stuck
+notes; **Pitch Bend** is bidirectional — it sends pitch-bend to the synth and
+also follows the Muse's pitch wheel. (Mod Wheel, Hold, Expression and Sustain
+are full controls on the **Voice** tab.)
 
-## Pushing and pulling patches
-
-**Pushing (plugin → Muse).** The **SEND ALL** button on the Misc tab transmits
-every control at once, so you can build a sound in the device (or recall a Live
-preset, below) and push it to the synth. A freshly loaded device starts on a
-small **INIT patch** (one oscillator up, filter open, amp sustaining) rather
-than all-zeros, so SEND ALL always produces an audible starting point instead of
-silence. Note that SEND ALL **overwrites** whatever patch is on the Muse.
+## Pulling patches
 
 **Pulling (Muse → plugin) is per-knob only.** The Muse (firmware 1.4) has no
 MIDI command to transmit its whole panel state, so there's no one-click "grab
@@ -115,12 +108,17 @@ the current sound." What works is the bidirectional sync above: turn a knob on
 the Muse and the matching control follows. (If a future firmware transmits CCs
 on patch load, the device will capture them automatically.)
 
+A one-click **push** (send every control to the Muse at once) is on the TODO
+list below — an earlier SEND ALL button caused the Muse to misbehave and has
+been removed pending a safer implementation.
+
 ## Patch library = Ableton's native presets
 
 Every control is a real Live parameter, so **Ableton already saves and recalls
 all 102 values** with your Set, with each clip, and as device presets you can
 drag into the browser and name. Dial in a sound, save it as a device preset,
-and later load it — the controls update, and **SEND ALL** pushes it to the Muse.
+and later load it — the controls update, and changing a control sends its CC to
+the Muse. (A one-click push of the whole patch is on the TODO list.)
 
 ## Regenerating
 
@@ -187,6 +185,10 @@ The MIDI CC parameter map and descriptions were compiled from:
 
 - Change tabs on plugin to conform to Muse's front panel layout
 - Investigate connectivity for Timbre B
+- Re-implement a safe "push patch" / SEND ALL (send every control to the Muse
+  at once). The previous SEND ALL blasted all 102 CCs simultaneously, which made
+  the Muse misbehave; a future version should throttle/stagger the sends (and
+  possibly skip channel/global CCs) so the synth can keep up.
 
 ## Status / testing note
 
