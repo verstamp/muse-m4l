@@ -1,9 +1,10 @@
 # Moog Muse Editor — Max for Live
 
 A Max for Live **MIDI-effect** device that turns Ableton into a full editor for
-the Moog Muse. All 102 CC-addressable parameters are laid out across seven tabs
-and exposed as Ableton-automatable controls, plus Program Change for recalling
-the synth's own stored presets.
+the Moog Muse. All 102 CC-addressable parameters are laid out across tabbed
+sections and exposed as Ableton-automatable controls, plus Program Change for
+recalling the synth's own stored presets and an A/B Timbre selector for
+bi-timbral (Multi Mode) control.
 
 > **⚠️ Disclaimer:** This is an **unofficial** plugin and is **not supported or endorsed** by Ableton or Moog. Use at your own risk. For official support, contact Moog or Ableton directly.
 
@@ -29,6 +30,15 @@ The Muse ignores incoming CC and Program Change **by default** — turn them on:
 - **MENU → MIDI → RECEIVE PGM CHNG: ON** (required for the Program Change
   feature)
 - **MENU → MIDI → SEND CC: ON** (only needed for hardware → UI sync, below)
+
+For **Timbre B** control (see the Timbre tab), also:
+
+- **MENU → MIDI → MULTI MODE: ON** (on by default) — this is what lets the Muse
+  route incoming CC to Timbre A or Timbre B by MIDI channel.
+- **MENU → MIDI → MIDI IN CHANNEL** — the channel for **Timbre A** (e.g. Ch 1).
+- **MENU → MIDI → MULTI IN B CHANNEL** — the channel for **Timbre B**; set it to
+  a **different** channel (e.g. Ch 2). If A and B share a channel, both timbres
+  respond to the same messages and independent control isn't possible.
 
 ## Installing
 
@@ -81,6 +91,7 @@ works without it.
 | Arp/Seq | Arpeggiator + sequencer clock and arp settings |
 | Bank | Program Change (recall the Muse's stored patches) |
 | Misc | Panic, Pitch Bend, and notes |
+| Timbre | Timbre A/B selector + per-timbre MIDI channels (bi-timbral control) |
 
 **Control types** — continuous parameters are dials (0–127); on/off parameters
 are toggles (send 0 / 127); multi-option parameters (octave, waveform, KB
@@ -99,6 +110,27 @@ Program Change). 16 banks × 16 patches = 256 slots.
 notes; **Pitch Bend** is bidirectional — it sends pitch-bend to the synth and
 also follows the Muse's pitch wheel. (Mod Wheel, Hold, Expression and Sustain
 are full controls on the **Voice** tab.)
+
+**Timbre tab (bi-timbral control)** — the Muse is bi-timbral, and in Multi Mode
+it routes incoming CC to Timbre A or Timbre B purely by **MIDI channel** (the CC
+numbers are identical for both). This tab gives you:
+
+- **Edit Timbre A / B** — picks which timbre the on-screen controls address. With
+  **B** selected, every control transmits on Timbre B's channel, so you're
+  editing Timbre B's sound; switch back to **A** to edit Timbre A.
+- **Timbre A Ch** (default 1) and **Timbre B Ch** (default 2) — set these to
+  match the Muse's **MIDI IN CHANNEL** (A) and **MULTI IN B CHANNEL** (B).
+
+It's a single shared set of controls re-pointed at one timbre at a time (rather
+than two on-screen copies — there isn't room in Live's fixed device height).
+Because the controls are real Live parameters, the A/B selector and both channel
+numbers **save with your Set / device presets**. Delay and Clock are global on
+the Muse, so they affect the whole patch regardless of which timbre is selected.
+
+> **Note on hardware → UI sync with two timbres:** the return sync is
+> channel-agnostic — turning a knob on *either* timbre moves the matching
+> on-screen control, regardless of the A/B selection. So when working with both
+> timbres, edit one at a time. (Channel-isolated return sync is on the TODO.)
 
 ## Regenerating
 
@@ -119,18 +151,25 @@ format Ableton's maxdevtools produces.
 OUT (UI → Muse):
 live.dial   ───────────────▶ prepend <cc> ─┐
 live.toggle ─▶ [* 127] ─────▶ prepend <cc> ─┼─▶ midiformat ─▶ midiout ─▶ Muse
-live.menu   ─▶ [expr …] ────▶ prepend <cc> ─┘      ▲   ▲
-Program Change: Bank MSB/LSB ──────────────────────┘   │ (program-change inlet)
-                Patch ─▶ [- 1] ────────────────────────┘
+live.menu   ─▶ [expr …] ────▶ prepend <cc> ─┘      ▲   ▲   ▲
+Program Change: Bank MSB/LSB ──────────────────────┘   │   │ (program-change inlet)
+                Patch ─▶ [- 1] ────────────────────────┘   │
+Timbre A/B sel + Ch A/Ch B ─▶ [expr ?:] ─▶ [clip 1 16] ────┘ (channel inlet)
 
 IN  (Muse → UI):  one [ctlin <cc>] per control
 ctlin <cc> ─▶ [>=64 / expr] ─▶ prepend set ─▶ live.*
+midiin ─▶ xbendin ─▶ prepend set ─▶ live.dial (Pitch Bend)
 midiin ────────────────────────────────────────────▶ midiout   (note thru)
 ```
 
 Each `ctlin <cc>` catches just its own controller number; `prepend set` updates
 the control without making it re-output, so incoming CCs move the UI but never
 echo back out.
+
+The Timbre A/B selector and the two channel numboxes feed an `expr` that picks
+the active timbre's channel into `midiformat`'s channel inlet, so every control
+transmits on Timbre A's or Timbre B's MIDI channel depending on the selection
+(`clip 1 16` keeps it a valid channel even before the controls have output).
 
 Tab switching uses `live.tab → thispatcher "script show/hide"`; each control
 and label has a unique scripting name and the per-tab name lists are generated
@@ -151,8 +190,11 @@ alongside the objects so they can't drift out of sync.
   settings. Full patch backup is via the Muse's USB Disk Mode.
 - **Mod Map not accessible.** The modulation routing matrix is menu-driven on
   the hardware with no CC representation, so it can't be controlled here.
-- **Timbre A only.** The device targets the primary MIDI channel. Independent
-  control of Timbre B (Multi Mode, second channel) is out of scope.
+- **Timbre B: edit one at a time.** Both timbres are controllable (via the
+  Timbre tab's A/B selector + per-timbre channels), but the controls are a single
+  shared set re-pointed at the active timbre, and the hardware → UI return sync
+  is channel-agnostic. The device doesn't hold two independent on-screen patches
+  at once.
 
 ## Data sources
 
@@ -164,24 +206,17 @@ The MIDI CC parameter map and descriptions were compiled from:
 ## TODO
 
 - Change tabs on plugin to conform to Muse's front panel layout
-- Investigate connectivity for Timbre B. The Muse is bi-timbral, but its CCs act
-  on the *currently active* timbre (A/B) rather than via duplicated CC numbers,
-  so independent control of B means addressing it on a separate MIDI channel.
-  Feasible but a substantial change, gated on confirming one fact:
-    - **First, confirm in the manual** whether the Muse receives on two MIDI
-      channels *simultaneously* (one per timbre) in Multi/Split/Stack mode. If it
-      only ever updates the active timbre, true independent control isn't possible
-      over one port and the feature isn't worth pursuing.
-    - If confirmed, the work is: (1) add a second channel target outbound (today
-      `midiformat` is hardcoded to channel 1); (2) make the return paths
-      channel-specific — `ctlin <cc> <chan>` instead of the current omni
-      `ctlin <cc>` — so A and B don't cross-contaminate; (3) add an A/B selector
-      that re-targets the existing control set (the 169 px height rules out
-      showing two full ~100-control sets), and decide how per-timbre values are
-      stored (hidden duplicate params vs re-sync from hardware on switch, since
-      one Live parameter can't hold both A and B values); (4) classify which CCs
-      are global vs per-timbre (e.g. Delay Timbre A/B are already distinct CCs
-      106/107) so globals aren't mis-routed.
+- **Timbre B — done (channel-switch model).** The Timbre tab adds an A/B selector
+  and per-timbre channel numboxes; the controls transmit on the active timbre's
+  channel (Multi Mode routes by channel). Remaining follow-ups:
+    - **Channel-isolated return sync.** Inbound is still omni (`ctlin <cc>`), so
+      hardware → UI tracking follows whichever timbre's knobs move. Making it
+      respect the active timbre's channel would need per-control gating on the
+      `ctlin` channel outlet against the active channel.
+    - **(Optional) two on-screen patches at once.** The current model shares one
+      control set; holding independent A and B values simultaneously would need
+      hidden duplicate params per timbre (it can't be one Live parameter, which
+      holds a single value) — deferred because it complicates Live automation.
 - Re-implement a safe "push patch" / SEND ALL (send every control to the Muse
   at once). The previous SEND ALL blasted all 102 CCs simultaneously, which made
   the Muse misbehave; a future version should throttle/stagger the sends (and
@@ -194,6 +229,7 @@ parameter-name uniqueness, and the full routing/tab/Program-Change graph), but
 it has **not yet been loaded in Ableton from this build** — that requires Max/
 Live, which the build environment doesn't have. The data-driven parts (controls,
 CC routing, Program Change) are straightforward; if anything needs a touch-up on
-first load it's most likely the `thispatcher` tab show/hide. Everything is
-regenerable from `generate_device.py`, so fixes are quick.
+first load it's most likely the `thispatcher` tab show/hide or the new Timbre
+channel-select routing (`expr`/`clip` → `midiformat` channel inlet). Everything
+is regenerable from `generate_device.py`, so fixes are quick.
 ```

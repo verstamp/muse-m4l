@@ -6,7 +6,7 @@ generate_device.py
 Builds ``MuseEditor.amxd`` - a Max for Live MIDI-effect device that is a full
 graphical editor for the Moog Muse, organised into tabs:
 
-    OSC | Filter | Env | Mod | LFO | Voice | Delay | Arp | Bank | Misc
+    OSC | Filter | Env | Mod | LFO | Voice | Delay | Arp | Bank | Misc | Timbre
 
 All 102 CC-addressable parameters are exposed as Ableton-automatable controls:
 
@@ -22,7 +22,9 @@ The whole UI fits inside Live's fixed 169-pixel device height: each tab shows
 its controls in two compact rows, and only the active tab is visible (live.tab
 + thispatcher script show/hide, with per-tab scripting-name lists generated
 here so they cannot drift out of sync with the objects).  The Bank tab holds
-Program Change; the Misc tab holds Panic and (bidirectional) Pitch Bend.
+Program Change; the Misc tab holds Panic and (bidirectional) Pitch Bend; the
+Timbre tab selects Timbre A/B and their MIDI channels (Multi Mode), re-targeting
+every control's output to the active timbre's channel.
 
 Outbound: every control -> [scale] -> prepend <cc> -> midiformat -> midiout.
 Inbound (bidirectional): one [ctlin <cc>] per control writes the value back
@@ -112,14 +114,14 @@ DESC_EXTRA = {
     77: "Links Filter 1 & 2 so one cutoff control sweeps both.",
     78: "Filter routing: Serial (1>2), Stereo (1 left / 2 right), or Parallel.",
     79: "Attack time of the Filter envelope.",
-    80: "Sustain level of the Filter envelope.",
-    81: "Pre-attack delay before the Filter envelope starts.",
+    80: "Decay time of the Filter envelope (fall to the sustain level).",
+    81: "Sustain level held by the Filter envelope while a key is down.",
     82: "Release time of the Filter envelope after key release.",
     83: "Loops the Filter envelope for cycling, LFO-like modulation.",
     85: "Makes the Filter envelope depth respond to key velocity.",
     86: "Attack time of the Amplifier (VCA) envelope.",
-    87: "Sustain level of the Amplifier (VCA) envelope.",
-    88: "Pre-attack delay before the Amplifier envelope starts.",
+    87: "Decay time of the Amplifier (VCA) envelope (fall to the sustain level).",
+    88: "Sustain level held by the Amplifier (VCA) envelope while a key is down.",
     89: "Release time of the Amplifier envelope after key release.",
     90: "Loops the Amplifier envelope for cycling, tremolo-like modulation.",
     91: "Makes loudness respond to key velocity via the Amplifier envelope.",
@@ -168,8 +170,8 @@ INIT = {
     58: 127,   # OSC 1 Level
     46: 64,    # OSC 1 Tri/Saw Mix -> midway
     67: 127,   # Filter 1 Cutoff -> open
-    80: 127,   # Filter Env Sustain
-    87: 127,   # VCA Env Sustain
+    81: 127,   # Filter Env Sustain
+    88: 127,   # VCA Env Sustain
     86: 0,     # VCA Env Attack -> instant
     89: 20,    # VCA Env Release -> short
 }
@@ -215,14 +217,14 @@ TABS = [
     ]),
     ("Env", [
         (79, "Filter Env Attack", K, None),
-        (80, "Filter Env Sustain", K, None),
-        (81, "Filter Env Delay", K, None),
+        (80, "Filter Env Decay", K, None),
+        (81, "Filter Env Sustain", K, None),
         (82, "Filter Env Release", K, None),
         (83, "Filter Env Loop", T, None),
         (85, "Filter Env Velocity", T, None),
         (86, "VCA Env Attack", K, None),
-        (87, "VCA Env Sustain", K, None),
-        (88, "VCA Env Delay", K, None),
+        (87, "VCA Env Decay", K, None),
+        (88, "VCA Env Sustain", K, None),
         (89, "VCA Env Release", K, None),
         (90, "VCA Env Loop", T, None),
         (91, "VCA Env Velocity", T, None),
@@ -318,7 +320,7 @@ CAPTION_MAP = [
 # Whole-word abbreviations applied to on-screen captions for legibility.
 WORD_ABBR = {
     "Resonance": "Reso", "Frequency": "Freq", "Amount": "Amt",
-    "Attack": "Atk", "Release": "Rel", "Sustain": "Sus",
+    "Attack": "Atk", "Release": "Rel", "Sustain": "Sus", "Decay": "Dec",
     "Velocity": "Vel", "Waveform": "Wave", "Octave": "Oct", "Level": "Lvl",
     "Character": "Char", "Feedback": "Fbk", "Expression": "Expr",
     "Direction": "Dir", "Pedal": "Ped", "Range": "Rng", "Spread": "Spr",
@@ -496,7 +498,7 @@ def build():
     p.connect(midiformat, 0, midiout, 0)
 
     # ---- header: tab strip (16px tall so live.tab stays a single row) ----
-    tab_labels = [t[0] for t in TABS] + ["BANK", "MISC"]
+    tab_labels = [t[0] for t in TABS] + ["BANK", "MISC", "TIMBRE"]
     tab = p.live("live.tab", [MARGIN, 5, DEVICE_WIDTH - 2 * MARGIN, 16],
                  "Tab", 2, 0, len(tab_labels) - 1, enum=tab_labels,
                  varname="TabSel")
@@ -518,9 +520,12 @@ def build():
             route_in(p, kind, enum, cc, ctrl, wx)                # Muse -> UI
         tab_members.append(members)
 
-    # ---- Bank tab (Program Change) and Misc tab (panic / bend) -----------
+    # ---- Bank / Misc / Timbre tabs ---------------------------------------
     tab_members.append(build_bank_tab(p, midiformat, wx))
     tab_members.append(build_misc_tab(p, midiin, midiformat, wx))
+    tmembers, ab, cha, chb = build_timbre_tab(p, wx)
+    tab_members.append(tmembers)
+    wire_timbre_channel(p, midiformat, wx, ab, cha, chb)   # active Ch -> inlet 7
 
     # ---- tab switching machinery (thispatcher script show/hide) ----------
     thisp = p.obj("thispatcher", [wx, 380, 90, 22], numinlets=1, numoutlets=2,
@@ -549,7 +554,8 @@ def build():
                outlettype=["bang"])
     ch1 = p.msg("1", [wx, 120, 40, 22])
     p.connect(lb, 0, ch1, 0)
-    p.connect(ch1, 0, midiformat, 7)                     # MIDI channel = 1
+    p.connect(ch1, 0, midiformat, 7)        # initial channel = 1 (Timbre A);
+                                            # wire_timbre_channel overrides live
     dly = p.obj("delay 300", [wx + 80, 120, 70, 22], numinlets=2)
     zero = p.msg("0", [wx + 80, 150, 40, 22])
     p.connect(lb, 0, dly, 0)
@@ -652,6 +658,78 @@ def build_misc_tab(p, midiin, midiformat, wx):
     lbl("No one-click 'pull': the Muse can't transmit its whole state. Turn a "
         "knob and the plugin follows.", [MARGIN, 132, 540, 14], "ms_h3")
     return members
+
+
+def build_timbre_tab(p, wx):
+    """A/B timbre selector + per-timbre MIDI channels, plus Muse setup notes.
+
+    The Muse is bi-timbral; in Multi Mode it routes incoming CC to Timbre A or
+    Timbre B purely by MIDI channel (the CC numbers are identical).  So this tab
+    just lets you pick which timbre the on-screen controls edit and on which
+    channel each timbre listens; selecting B re-targets every control's output
+    to Timbre B's channel (wired in wire_timbre_channel).  These are real Live
+    params, so the channel config saves with the Set.
+
+    Returns (members, ab_selector, chA_numbox, chB_numbox)."""
+    members = []
+
+    def lbl(text, rect, vn, bold=False):
+        members.append(vn)
+        p.comment(text, rect, varname=vn, justify=0, fontsize=8.0,
+                  fontface=1 if bold else 0)
+
+    lbl("EDIT TIMBRE", [MARGIN, 30, 130, 14], "tb_t0", bold=True)
+    ab = p.live("live.tab", [MARGIN, 46, 70, 18], "Timbre Select", 2, 0, 1,
+                enum=["A", "B"], varname="TimbreSel", initial=0,
+                annotation="Which timbre the on-screen controls edit. Output is "
+                "sent on that timbre's MIDI channel (set to the right).")
+    members.append("TimbreSel")
+
+    lbl("A Ch", [MARGIN + 92, 32, 30, 14], "tb_la")
+    cha = p.live("live.numbox", [MARGIN + 124, 30, 38, 18], "Timbre A Ch", 1,
+                 1, 16, varname="TimbreAChan", initial=1,
+                 annotation="MIDI channel for Timbre A (match the Muse's MENU > "
+                 "MIDI > MIDI IN CHANNEL).")
+    members.append("TimbreAChan")
+    lbl("B Ch", [MARGIN + 92, 52, 30, 14], "tb_lb")
+    chb = p.live("live.numbox", [MARGIN + 124, 50, 38, 18], "Timbre B Ch", 1,
+                 1, 16, varname="TimbreBChan", initial=2,
+                 annotation="MIDI channel for Timbre B (match the Muse's MENU > "
+                 "MIDI > MULTI IN B CHANNEL).")
+    members.append("TimbreBChan")
+
+    lbl("Muse: MENU > MIDI > MULTI MODE: ON (default) and RECEIVE CC: ON.",
+        [MARGIN, 96, 540, 14], "tb_h1")
+    lbl("Set MIDI IN CHANNEL (= Timbre A) and MULTI IN B CHANNEL (= Timbre B) "
+        "to different channels, matched here.", [MARGIN, 114, 540, 14], "tb_h2")
+    lbl("Hardware->UI sync is channel-agnostic: it follows whichever timbre's "
+        "knobs you turn.", [MARGIN, 132, 540, 14], "tb_h3")
+    return members, ab, cha, chb
+
+
+def wire_timbre_channel(p, midiformat, wx, ab, cha, chb):
+    """Feed the active timbre's MIDI channel into midiformat's channel inlet (7).
+
+    expr picks Ch A or Ch B from the A/B selector; routing the selector and
+    both numboxes so any change recomputes.  `clip 1 16` guarantees a valid
+    channel even before the live objects have output, so the channel can never
+    momentarily land on 0."""
+    ex = p.obj("expr (($i3) == 0) ? ($i1) : ($i2)", [wx + 320, 210, 200, 22],
+               numinlets=3, numoutlets=1, outlettype=[""])
+    p.connect(cha, 0, ex, 0)                     # Ch A -> hot inlet (recompute)
+    tb = p.obj("t b i", [wx + 320, 170, 60, 22], numinlets=1, numoutlets=2,
+               outlettype=["bang", "int"])
+    p.connect(chb, 0, tb, 0)
+    p.connect(tb, 1, ex, 1)                      # store Ch B (fires first)...
+    p.connect(tb, 0, ex, 0)                      # ...then recompute
+    ta = p.obj("t b i", [wx + 400, 170, 60, 22], numinlets=1, numoutlets=2,
+               outlettype=["bang", "int"])
+    p.connect(ab, 0, ta, 0)
+    p.connect(ta, 1, ex, 2)                      # store A/B (fires first)...
+    p.connect(ta, 0, ex, 0)                      # ...then recompute
+    clipc = p.obj("clip 1 16", [wx + 320, 250, 70, 22], numinlets=3)
+    p.connect(ex, 0, clipc, 0)
+    p.connect(clipc, 0, midiformat, 7)           # set MIDI channel (1-16)
 
 
 def make_control(p, kind, longname, enum, x, ry, annotation, initial=None):
