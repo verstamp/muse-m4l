@@ -49,8 +49,15 @@ there's no feedback loop). For this to work the Muse's MIDI output has to reach
 the device:
 
 1. On the Muse, set **SEND CC: ON**.
-2. On the same Live track, set **MIDI From** to the Muse's input port and arm /
-   set Monitor to **In** (or **Auto** with the track armed).
+2. On the same Live track, set **MIDI From** to the Muse's input port, and set
+   the track's **Monitor to `In`** (this is the important one — with `Auto`,
+   incoming MIDI only reaches the device when the track is armed).
+
+If the controls don't follow the hardware, it's almost always the monitor
+setting: switch it to **In** and confirm the track's MIDI From shows MIDI
+activity (the small indicator by the track meter flickers when you turn a Muse
+knob). Each control listens on its own CC number on any channel, so the channel
+doesn't need to match.
 
 If you don't need hardware → UI sync, you can ignore this — sending to the Muse
 works without it.
@@ -76,9 +83,6 @@ centred in the matching CC band, so the Muse always lands on the chosen option.
 
 **Bottom strip (always visible):**
 
-- **SYNC** — transmits the current value of *every* control to the Muse at
-  once. Use it to push the device's state onto the hardware (e.g. after loading
-  a Live set or a device preset — see below).
 - **PROGRAM CHANGE** — set **Bank** (1–16) and **Patch** (1–16), then click
   **SEND** to recall that slot on the Muse (sends Bank Select MSB 0 + LSB +
   Program Change). 16 banks × 16 patches = 256 slots.
@@ -92,11 +96,13 @@ into the browser and name. To build a library:
 
 1. Dial in a sound.
 2. Drag the device (or just save a preset) into your User Library to store it.
-3. Later, load the preset — the on-screen controls update — then click
-   **SYNC** to push those values to the Muse.
+3. Later, load the preset — the on-screen controls update.
 
-(Live presets restore the *controls*; they don't transmit MIDI on their own,
-which is exactly what SYNC is for.)
+> **Note:** there is intentionally no "send everything at once" button. Because
+> an unedited control sits at 0, blasting all 102 values would overwrite the
+> Muse's patch with zeros (oscillator levels 0, filter closed) and silence it.
+> Move the controls you want — each sends as you change it — or let the device
+> mirror the hardware via bidirectional sync above.
 
 ## Regenerating
 
@@ -121,13 +127,14 @@ live.menu   ─▶ [expr …] ────▶ prepend <cc> ─┘      ▲   ▲
 Program Change: Bank MSB/LSB ──────────────────────┘   │ (program-change inlet)
                 Patch ─▶ [- 1] ────────────────────────┘
 
-IN  (Muse → UI):
-midiin ─▶ midiparse ─▶ route <cc…> ─▶ [>=64 / expr] ─▶ prepend set ─▶ live.*
+IN  (Muse → UI):  one [ctlin <cc>] per control
+ctlin <cc> ─▶ [>=64 / expr] ─▶ prepend set ─▶ live.*
 midiin ────────────────────────────────────────────▶ midiout   (note thru)
 ```
 
-`prepend set` updates a control without making it re-output, so incoming CCs
-move the UI but never echo back out.
+Each `ctlin <cc>` catches just its own controller number; `prepend set` updates
+the control without making it re-output, so incoming CCs move the UI but never
+echo back out.
 
 Tab switching uses `live.tab → thispatcher "script show/hide"`; each control
 and label has a unique scripting name and the per-tab name lists are generated

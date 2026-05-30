@@ -349,10 +349,6 @@ def build():
                     numoutlets=0, text="midiout")
     p.connect(midiin, 0, midiout, 0)                     # note/MIDI thru
     p.connect(midiformat, 0, midiout, 0)
-    # inbound parser for bidirectional sync
-    midiparse = p.obj("midiparse", [wx, 160, 90, 22], numinlets=1,
-                      numoutlets=7, outlettype=[""] * 7)
-    p.connect(midiin, 0, midiparse, 0)
 
     # ---- header: tab strip (kept 16px tall so live.tab can only fit ONE
     # row of buttons - a taller rect makes it wrap to a 2-row grid) --------
@@ -361,14 +357,8 @@ def build():
                  "Tab", 2, 0, len(tab_labels) - 1, enum=tab_labels,
                  varname="TabSel")
 
-    # ---- SYNC button (bangs every control to re-emit its value) ----------
-    sync = p.box("button", [10, LIB_Y, 20, 20], present=True,
-                 numinlets=1, numoutlets=1, outlettype=["bang"])
-
     # ---- per-tab controls (two rows; only active tab shown) --------------
     tab_members = []
-    ctrls = {}            # cc -> (id, kind, enum)
-    cc_order = []
     for _, params in TABS:
         members = []
         n = len(params)
@@ -383,34 +373,9 @@ def build():
             ctrl = make_control(p, kind, longname, enum, x, ry)
             place_label(p, caption(longname), x, ry, sn)
 
-            ctrls[cc] = (ctrl, kind, enum)
-            cc_order.append(cc)
-            p.connect(sync, 0, ctrl, 0)                  # SYNC -> control
-            route_out(p, kind, enum, cc, ctrl, midiformat, wx)
+            route_out(p, kind, enum, cc, ctrl, midiformat, wx)   # UI  -> Muse
+            route_in(p, kind, enum, cc, ctrl, wx)                # Muse -> UI
         tab_members.append(members)
-
-    # ---- bidirectional: midiparse CC list -> route by number -> set ------
-    rt = p.obj("route " + " ".join(str(c) for c in cc_order),
-               [wx, 200, 600, 22], numinlets=1,
-               numoutlets=len(cc_order) + 1,
-               outlettype=[""] * (len(cc_order) + 1))
-    p.connect(midiparse, 2, rt, 0)
-    for idx, cc in enumerate(cc_order):
-        ctrl, kind, enum = ctrls[cc]
-        wy = 240 + idx * 8
-        src, sout = rt, idx
-        if kind == T:
-            ge = p.obj(">= 64", [wx + 260, wy, 50, 22], numinlets=2)
-            p.connect(src, sout, ge, 0)
-            src, sout = ge, 0
-        elif kind == M:
-            expr = " + ".join("($i1 > %d)" % b for b in BOUNDS[len(enum)])
-            ex = p.obj("expr " + expr, [wx + 260, wy, 140, 22], numinlets=1)
-            p.connect(src, sout, ex, 0)
-            src, sout = ex, 0
-        ps = p.obj("prepend set", [wx + 420, wy, 80, 22], numinlets=2)
-        p.connect(src, sout, ps, 0)
-        p.connect(ps, 0, ctrl, 0)                        # set (no re-send)
 
     # ---- tab switching machinery (thispatcher script show/hide) ----------
     thisp = p.obj("thispatcher", [wx, 380, 90, 22], numinlets=1, numoutlets=2,
@@ -447,20 +412,19 @@ def build():
     p.connect(zero, 0, tab, 0)
     p.connect(zero, 0, tii, 0)
 
-    # ---- always-visible bottom strip: SYNC + Program Change --------------
-    p.comment("SYNC", [32, LIB_Y + 4, 40, 12], fontface=1, justify=0)
-    p.comment("PROG CHANGE", [110, LIB_Y + 4, 78, 12], fontface=1, justify=0)
-    p.comment("Bk", [190, LIB_Y + 4, 16, 12], justify=0)
-    bank = p.live("live.numbox", [208, LIB_Y + 2, 32, 18],
+    # ---- always-visible bottom strip: Program Change ---------------------
+    p.comment("PROG CHANGE", [10, LIB_Y + 4, 78, 12], fontface=1, justify=0)
+    p.comment("Bk", [92, LIB_Y + 4, 16, 12], justify=0)
+    bank = p.live("live.numbox", [110, LIB_Y + 2, 32, 18],
                   "PC Bank", 1, 1, 16, varname="PCBank")
-    p.comment("Pt", [246, LIB_Y + 4, 16, 12], justify=0)
-    patch = p.live("live.numbox", [262, LIB_Y + 2, 32, 18],
+    p.comment("Pt", [148, LIB_Y + 4, 16, 12], justify=0)
+    patch = p.live("live.numbox", [164, LIB_Y + 2, 32, 18],
                    "PC Patch", 1, 1, 16, varname="PCPatch")
-    send = p.box("button", [300, LIB_Y + 2, 18, 18], present=True,
+    send = p.box("button", [202, LIB_Y + 2, 18, 18], present=True,
                  numinlets=1, numoutlets=1, outlettype=["bang"])
-    p.comment("SEND", [322, LIB_Y + 4, 36, 12], justify=0)
-    p.comment("Live presets save controls · turn Muse knobs to update the UI",
-              [380, LIB_Y + 4, 330, 12], justify=0)
+    p.comment("SEND", [224, LIB_Y + 4, 36, 12], justify=0)
+    p.comment("Controls follow the Muse's knobs · drag a control to send it",
+              [280, LIB_Y + 4, 430, 12], justify=0)
 
     # Program Change: Bank MSB(cc0=0) -> Bank LSB(cc32=bank-1) -> PC(patch-1)
     pc_t = p.obj("t b b b", [wx + 300, 460, 80, 22], numinlets=1,
@@ -516,6 +480,32 @@ def route_out(p, kind, enum, cc, ctrl, midiformat, wx):
     pre = p.obj("prepend %d" % cc, [wx + 740, wy, 80, 22], numinlets=2)
     p.connect(src, sout, pre, 0)
     p.connect(pre, 0, midiformat, 2)
+
+
+def route_in(p, kind, enum, cc, ctrl, wx):
+    """[ctlin <cc>] -> [convert] -> prepend set -> control (no re-output).
+
+    One ctlin per CC filters incoming control-change by number on any channel,
+    so turning that knob on the Muse moves the matching on-screen control.  The
+    `set` prefix updates the control's value/display without making it output,
+    so nothing is echoed back to the synth (no feedback loop).
+    """
+    wy = 240 + cc * 8
+    ci = p.obj("ctlin %d" % cc, [wx + 980, wy, 70, 22], numinlets=1,
+               numoutlets=3, outlettype=["", "", ""])
+    src, sout = ci, 0                                    # outlet 0 = value
+    if kind == T:
+        ge = p.obj(">= 64", [wx + 1060, wy, 50, 22], numinlets=2)
+        p.connect(src, sout, ge, 0)
+        src, sout = ge, 0
+    elif kind == M:
+        expr = " + ".join("($i1 > %d)" % b for b in BOUNDS[len(enum)])
+        ex = p.obj("expr " + expr, [wx + 1060, wy, 150, 22], numinlets=1)
+        p.connect(src, sout, ex, 0)
+        src, sout = ex, 0
+    ps = p.obj("prepend set", [wx + 1220, wy, 80, 22], numinlets=2)
+    p.connect(src, sout, ps, 0)
+    p.connect(ps, 0, ctrl, 0)
 
 
 # --------------------------------------------------------------------------
