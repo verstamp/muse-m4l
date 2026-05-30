@@ -100,26 +100,6 @@ notes; **Pitch Bend** is bidirectional — it sends pitch-bend to the synth and
 also follows the Muse's pitch wheel. (Mod Wheel, Hold, Expression and Sustain
 are full controls on the **Voice** tab.)
 
-## Pulling patches
-
-**Pulling (Muse → plugin) is per-knob only.** The Muse (firmware 1.4) has no
-MIDI command to transmit its whole panel state, so there's no one-click "grab
-the current sound." What works is the bidirectional sync above: turn a knob on
-the Muse and the matching control follows. (If a future firmware transmits CCs
-on patch load, the device will capture them automatically.)
-
-A one-click **push** (send every control to the Muse at once) is on the TODO
-list below — an earlier SEND ALL button caused the Muse to misbehave and has
-been removed pending a safer implementation.
-
-## Patch library = Ableton's native presets
-
-Every control is a real Live parameter, so **Ableton already saves and recalls
-all 102 values** with your Set, with each clip, and as device presets you can
-drag into the browser and name. Dial in a sound, save it as a device preset,
-and later load it — the controls update, and changing a control sends its CC to
-the Muse. (A one-click push of the whole patch is on the TODO list.)
-
 ## Regenerating
 
 The device is generated from the parameter map in `generate_device.py`. Edit
