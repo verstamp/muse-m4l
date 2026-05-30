@@ -356,16 +356,9 @@ def build():
                  "Tab", 2, 0, len(tab_labels) - 1, enum=tab_labels,
                  varname="TabSel")
 
-    # content background panel: classic `panel` (live.panel is not a real
-    # class).  Created before the controls so it sits behind them, and
-    # ignoreclick so it can never intercept clicks meant for the dials.
-    p.box("panel", [CONTENT_X0 - 6, CONTENT_TOP - 6,
-                    CONTENT_RIGHT - CONTENT_X0 + 12, 384],
-          present=True, numinlets=1, numoutlets=0,
-          mode=1, rounded=8, ignoreclick=1,
-          bgfillcolor_type="color",
-          bgfillcolor_color=[0.13, 0.13, 0.13, 1.0],
-          bgcolor=[0.13, 0.13, 0.13, 1.0])
+    # (No background panel: in Live's presentation layer a panel draws on top
+    # of the controls and hides them, so we let the controls sit on Ableton's
+    # default device background.)
 
     # ---- per-tab controls (overlapping; shown/hidden by tab) -------------
     sync = p.box("button", [560, 462, 26, 26], present=True,
