@@ -1,100 +1,139 @@
-# Moog Muse — Max for Live Control Surface
+# Moog Muse Editor — Max for Live
 
-A Max for Live **MIDI-effect** device that turns every documented Moog Muse
-MIDI CC into an Ableton-automatable parameter. Drop it on the MIDI track that
-feeds your Muse and drive the synth's panel from Live — by hand, with
-automation envelopes, or by mapping a hardware controller to the on-screen
-dials.
+A Max for Live **MIDI-effect** device that turns Ableton into a full editor for
+the Moog Muse. All 102 CC-addressable parameters are laid out across seven tabs
+and exposed as Ableton-automatable controls, plus Program Change for recalling
+the synth's own stored presets.
 
 | File | What it is |
 |------|------------|
-| **`MoogMuseControl.amxd`** | The finished device. This is the thing you load into Live. |
-| `generate_device.py` | Generator that builds the device from the CSV. Re-run it to regenerate. |
-| `MoogMuseControl.maxpat` | The same patcher as plain JSON, for inspecting/editing in Max. |
-| `Muse_MIDI_CCs.csv` | Source data: the Muse's MIDI CC map (from Moog's docs). |
+| **`MuseEditor.amxd`** | The device. Load this into Live. |
+| `generate_device.py` | Generator that builds the device from the parameter map. Re-run to regenerate. |
+| `MuseEditor.maxpat` | The same patcher as plain JSON, for inspecting/editing in Max. |
+| `Muse_MIDI_CCs.csv` | Reference: the Muse's MIDI CC map. |
 
-## What's in the device
+## Requirements
 
-102 controls covering the full CC map, grouped into labelled sections
-(Performance, LFO 1/2, Pitch LFO, Modulation Oscillator, Oscillators, Mixer,
-Filters, Envelopes, Voice, Delay, Arp/Sequencer):
+- Ableton **Live 11 or 12** with **Max for Live** (Live Suite, or the Max for
+  Live add-on) and Max 8.6+.
+- A MIDI connection from your computer to the Muse (USB or a MIDI interface).
 
-- **65 dials** — continuous parameters, integer `0–127`.
-- **27 toggles** — on/off parameters (send `0` for off, `127` for on).
-- **10 menus** — enumerated parameters (octave, waveform, KB tracking, filter
-  order, arp direction/range, …). Each menu entry sends a CC value centred in
-  the matching band, so the Muse always lands on the intended setting.
+## Critical Muse setup
 
-Plus two global controls at the top:
+The Muse ignores incoming CC and Program Change **by default** — turn them on:
 
-- **MIDI Ch** — the channel CCs are sent on (default 1). Set this to your
-  Muse's MIDI channel.
-- **SYNC** button — transmits the current value of *every* control at once, so
-  you can push the device's state onto the hardware in one click (handy after
-  loading a Live set or recalling automation).
+- **MENU → MIDI → RECEIVE CC: ON** (required for every control in this device)
+- **MENU → MIDI → RECEIVE PGM CHNG: ON** (required for the Program Change
+  feature)
 
-Notes you play are passed straight through (`midiin → midiout`), so the device
-sits transparently in front of the Muse — it adds CC control without blocking
-your performance MIDI.
+## Installing
 
-### How it routes (under the hood)
+1. Copy `MuseEditor.amxd` into your Live **User Library** under
+   `Presets/MIDI Effects/Max MIDI Effect/`, or just drag the `.amxd` from
+   Finder/Explorer onto a MIDI track.
+2. Make a **MIDI track** and set its **MIDI To** output to the port (and
+   channel) your Muse is on.
+3. Drop **MuseEditor** onto that track's device chain.
+4. Move a control — the Muse responds.
 
-```
-live.dial   ───────────────▶ prepend <cc> ─┐
-live.toggle ─▶ [* 127] ─────▶ prepend <cc> ─┼─▶ midiformat ─▶ midiout ─▶ Muse
-live.menu   ─▶ [expr …] ────▶ prepend <cc> ─┘     ▲
-MIDI Ch (live.numbox) ────────────────────────────┘ (channel inlet)
+The device sends CCs on MIDI channel 1; Live's track **MIDI To** routing
+determines the actual destination channel, so set the channel there to match
+the Muse.
 
-midiin ───────────────────────────────────────────▶ midiout   (note thru)
-```
+## Using it
 
-`prepend <cc>` turns an outgoing value `v` into the list `<cc> v`, which is
-exactly what `midiformat`'s control-change inlet expects.
+**Tabs** — click the strip at the top to switch between sections:
 
-## Installing in Ableton Live
+| Tab | Contents |
+|-----|----------|
+| Oscillators | OSC 1 / OSC 2 (octave, freq, waveshape, level), sync, FM, ring mod, noise |
+| Filters | Filter 1 & 2, routing, clipping, and the Filter + VCA envelopes |
+| Mod Osc | The modulation oscillator and all its pitch / PWM / filter / VCA routings |
+| LFOs | LFO 1, LFO 2, and the Pitch LFO with its destinations |
+| Voice | Detune, unison/mono, glide, volume, pan, mod wheel, expression, mute, hold, sustain |
+| Delay | Times, sync, feedback, character, mix, and timbre sends |
+| Arp/Seq | Arpeggiator + sequencer clock and arp settings |
 
-1. Copy `MoogMuseControl.amxd` into your Live **User Library**, under
-   `Presets/MIDI Effects/Max MIDI Effect/` (or just drag it straight from
-   Finder/Explorer onto a MIDI track). Requires Live Suite (or the Max for
-   Live add-on) with Max installed.
-2. Create a **MIDI track** and set its **MIDI To** output to the port your
-   Muse is connected on (e.g. your USB/MIDI interface), channel matching the
-   Muse.
-3. Drop **MoogMuseControl** onto that track's device chain.
-4. Set the device's **MIDI Ch** to the Muse's MIDI channel.
-5. Move a dial — the Muse responds. Click **SYNC** to push the whole panel
-   state to the synth at once.
+**Control types** — continuous parameters are dials (0–127); on/off parameters
+are toggles (send 0 / 127); multi-option parameters (octave, waveform, KB
+tracking, filter order, arp direction/range) are menus that send a value
+centred in the matching CC band, so the Muse always lands on the chosen option.
 
-To automate or MIDI-map a parameter, use it the way you would any Live device
-parameter (right-click → *Edit MIDI Map*, or draw automation in the
-arrangement/clip).
+**Bottom strip (always visible):**
 
-## Regenerating the device
+- **SYNC** — transmits the current value of *every* control to the Muse at
+  once. Use it to push the device's state onto the hardware (e.g. after loading
+  a Live set or a device preset — see below).
+- **PROGRAM CHANGE** — set **Bank** (1–16) and **Patch** (1–16), then click
+  **SEND** to recall that slot on the Muse (sends Bank Select MSB 0 + LSB +
+  Program Change). 16 banks × 16 patches = 256 slots.
 
-The device is generated from `Muse_MIDI_CCs.csv`, so if Moog updates the MIDI
-map (or you want to tweak grouping/labels), edit the CSV or the section table
-in `generate_device.py` and run:
+## Patch library = Ableton's native presets
+
+This device deliberately leans on Live instead of a custom patch manager: every
+control is a real Live parameter, so **Ableton already saves and recalls all
+102 values** with your Set, with each clip, and as device presets you can drag
+into the browser and name. To build a library:
+
+1. Dial in a sound.
+2. Drag the device (or just save a preset) into your User Library to store it.
+3. Later, load the preset — the on-screen controls update — then click
+   **SYNC** to push those values to the Muse.
+
+(Live presets restore the *controls*; they don't transmit MIDI on their own,
+which is exactly what SYNC is for.)
+
+## Regenerating
+
+The device is generated from the parameter map in `generate_device.py`. Edit
+the map (or layout) and run:
 
 ```bash
 python3 generate_device.py
 ```
 
-No third-party Python packages are required (standard library only).
+No third-party packages required (standard library only). The `.amxd` binary
+container (ampf / meta / ptch with the mx@c + dlst trailer) is written to the
+format Ableton's maxdevtools produces.
 
-## Notes & assumptions
+## How it routes (under the hood)
 
-- The CSV is the single source of truth. The PDF manual and SVG layout that
-  were mentioned alongside it weren't included in the upload, but the CSV
-  carries everything needed (CC numbers, ranges, and the enumerated value
-  bands), so nothing was blocked.
-- A handful of "Enables …" routing parameters (e.g. *Mod Osc Pitch OSC 1/2*,
-  *PWM OSC 1/2*, *Filter 1/2*) are listed in the CSV with a full `0–127` range
-  and **no** on/off band mapping, so they're rendered as dials rather than
-  toggles — faithful to the data. On the hardware, values ≥ 64 engage them.
-- NRPN columns in the CSV are empty for every row, so the device uses CC
-  messages exclusively.
-- The `.amxd` container (ampf / meta / ptch with the mx@c + dlst trailer) is
-  written to the format Ableton's maxdevtools produces. If your Max version
-  reports anything on first load, open the device, hit save once in the Max
-  editor, and it'll rewrite a canonical copy.
+```
+live.dial   ───────────────▶ prepend <cc> ─┐
+live.toggle ─▶ [* 127] ─────▶ prepend <cc> ─┼─▶ midiformat ─▶ midiout ─▶ Muse
+live.menu   ─▶ [expr …] ────▶ prepend <cc> ─┘      ▲   ▲
+Program Change: Bank MSB/LSB ──────────────────────┘   │ (program-change inlet)
+                Patch ─▶ [- 1] ────────────────────────┘
+
+midiin ────────────────────────────────────────────▶ midiout   (note thru)
+```
+
+Tab switching uses `live.tab → thispatcher "script show/hide"`; each control
+and label has a unique scripting name and the per-tab name lists are generated
+alongside the objects so they can't drift out of sync.
+
+## Known limitations
+
+- **No bidirectional sync.** Turning a knob *on the Muse* sends a CC out (if the
+  synth's SEND CC is on), but this device does not currently read incoming CCs
+  to update the UI, so the on-screen state can drift from the hardware. (A
+  future `ctlin → route by CC → set each control` path would fix this.)
+- **CC parameters only — no full patch dump.** The Muse has no SysEx patch
+  transfer, so snapshots (Live presets) capture the 102 CC parameters but
+  **not** Mod Map routings, sequencer step data, arp patterns, or global
+  settings. Full patch backup is via the Muse's USB Disk Mode.
+- **Mod Map not accessible.** The modulation routing matrix is menu-driven on
+  the hardware with no CC representation, so it can't be controlled here.
+- **Timbre A only.** The device targets the primary MIDI channel. Independent
+  control of Timbre B (Multi Mode, second channel) is out of scope.
+
+## Status / testing note
+
+This device was generated and validated structurally (binary container, JSON,
+parameter-name uniqueness, and the full routing/tab/Program-Change graph), but
+it has **not yet been loaded in Ableton from this build** — that requires Max/
+Live, which the build environment doesn't have. The data-driven parts (controls,
+CC routing, Program Change) are straightforward; if anything needs a touch-up on
+first load it's most likely the `thispatcher` tab show/hide. Everything is
+regenerable from `generate_device.py`, so fixes are quick.
 ```
