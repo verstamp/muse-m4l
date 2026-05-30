@@ -184,7 +184,24 @@ The MIDI CC parameter map and descriptions were compiled from:
 ## TODO
 
 - Change tabs on plugin to conform to Muse's front panel layout
-- Investigate connectivity for Timbre B
+- Investigate connectivity for Timbre B. The Muse is bi-timbral, but its CCs act
+  on the *currently active* timbre (A/B) rather than via duplicated CC numbers,
+  so independent control of B means addressing it on a separate MIDI channel.
+  Feasible but a substantial change, gated on confirming one fact:
+    - **First, confirm in the manual** whether the Muse receives on two MIDI
+      channels *simultaneously* (one per timbre) in Multi/Split/Stack mode. If it
+      only ever updates the active timbre, true independent control isn't possible
+      over one port and the feature isn't worth pursuing.
+    - If confirmed, the work is: (1) add a second channel target outbound (today
+      `midiformat` is hardcoded to channel 1); (2) make the return paths
+      channel-specific — `ctlin <cc> <chan>` instead of the current omni
+      `ctlin <cc>` — so A and B don't cross-contaminate; (3) add an A/B selector
+      that re-targets the existing control set (the 169 px height rules out
+      showing two full ~100-control sets), and decide how per-timbre values are
+      stored (hidden duplicate params vs re-sync from hardware on switch, since
+      one Live parameter can't hold both A and B values); (4) classify which CCs
+      are global vs per-timbre (e.g. Delay Timbre A/B are already distinct CCs
+      106/107) so globals aren't mis-routed.
 - Re-implement a safe "push patch" / SEND ALL (send every control to the Muse
   at once). The previous SEND ALL blasted all 102 CCs simultaneously, which made
   the Muse misbehave; a future version should throttle/stagger the sends (and
