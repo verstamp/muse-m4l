@@ -186,6 +186,7 @@ The MIDI CC parameter map and descriptions were compiled from:
 ## TODO
 
 - Change tabs on plugin to conform to Muse's front panel layout
+- Investigate connectivity for Timbre B
 
 ## Status / testing note
 
