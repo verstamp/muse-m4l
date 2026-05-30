@@ -481,8 +481,8 @@
 							"parameter_invisible": 0
 						}
 					},
-					"annotation": "OSC 1 Tri/Saw Mix  \u00b7  CC 46",
-					"hint": "OSC 1 Tri/Saw Mix  \u00b7  CC 46"
+					"annotation": "OSC 1 Tri/Saw Mix  \u00b7  CC 46  \u2014  Blends Oscillator 1 between triangle (down) and sawtooth (up).",
+					"hint": "OSC 1 Tri/Saw Mix  \u00b7  CC 46  \u2014  Blends Oscillator 1 between triangle (down) and sawtooth (up)."
 				}
 			},
 			{
@@ -602,8 +602,8 @@
 							"parameter_invisible": 0
 						}
 					},
-					"annotation": "OSC 1 PW  \u00b7  CC 47",
-					"hint": "OSC 1 PW  \u00b7  CC 47"
+					"annotation": "OSC 1 PW  \u00b7  CC 47  \u2014  Pulse width / duty cycle of Oscillator 1's pulse wave.",
+					"hint": "OSC 1 PW  \u00b7  CC 47  \u2014  Pulse width / duty cycle of Oscillator 1's pulse wave."
 				}
 			},
 			{
@@ -723,8 +723,8 @@
 							"parameter_invisible": 0
 						}
 					},
-					"annotation": "OSC 1 Wave Mix  \u00b7  CC 48",
-					"hint": "OSC 1 Wave Mix  \u00b7  CC 48"
+					"annotation": "OSC 1 Wave Mix  \u00b7  CC 48  \u2014  Crossfades Oscillator 1 between its tri/saw mix and its pulse wave.",
+					"hint": "OSC 1 Wave Mix  \u00b7  CC 48  \u2014  Crossfades Oscillator 1 between its tri/saw mix and its pulse wave."
 				}
 			},
 			{
@@ -844,8 +844,8 @@
 							"parameter_invisible": 0
 						}
 					},
-					"annotation": "OSC 1 Level  \u00b7  CC 58",
-					"hint": "OSC 1 Level  \u00b7  CC 58"
+					"annotation": "OSC 1 Level  \u00b7  CC 58  \u2014  Level of Oscillator 1 into the mixer.",
+					"hint": "OSC 1 Level  \u00b7  CC 58  \u2014  Level of Oscillator 1 into the mixer."
 				}
 			},
 			{
@@ -1255,8 +1255,8 @@
 							"parameter_invisible": 0
 						}
 					},
-					"annotation": "OSC 2 Tri/Saw Mix  \u00b7  CC 51",
-					"hint": "OSC 2 Tri/Saw Mix  \u00b7  CC 51"
+					"annotation": "OSC 2 Tri/Saw Mix  \u00b7  CC 51  \u2014  Blends Oscillator 2 between triangle (down) and sawtooth (up).",
+					"hint": "OSC 2 Tri/Saw Mix  \u00b7  CC 51  \u2014  Blends Oscillator 2 between triangle (down) and sawtooth (up)."
 				}
 			},
 			{
@@ -1376,8 +1376,8 @@
 							"parameter_invisible": 0
 						}
 					},
-					"annotation": "OSC 2 PW  \u00b7  CC 52",
-					"hint": "OSC 2 PW  \u00b7  CC 52"
+					"annotation": "OSC 2 PW  \u00b7  CC 52  \u2014  Pulse width / duty cycle of Oscillator 2's pulse wave.",
+					"hint": "OSC 2 PW  \u00b7  CC 52  \u2014  Pulse width / duty cycle of Oscillator 2's pulse wave."
 				}
 			},
 			{
@@ -1497,8 +1497,8 @@
 							"parameter_invisible": 0
 						}
 					},
-					"annotation": "OSC 2 Wave Mix  \u00b7  CC 53",
-					"hint": "OSC 2 Wave Mix  \u00b7  CC 53"
+					"annotation": "OSC 2 Wave Mix  \u00b7  CC 53  \u2014  Crossfades Oscillator 2 between its tri/saw mix and its pulse wave.",
+					"hint": "OSC 2 Wave Mix  \u00b7  CC 53  \u2014  Crossfades Oscillator 2 between its tri/saw mix and its pulse wave."
 				}
 			},
 			{
@@ -1618,8 +1618,8 @@
 							"parameter_invisible": 0
 						}
 					},
-					"annotation": "OSC 2 Level  \u00b7  CC 59",
-					"hint": "OSC 2 Level  \u00b7  CC 59"
+					"annotation": "OSC 2 Level  \u00b7  CC 59  \u2014  Level of Oscillator 2 into the mixer.",
+					"hint": "OSC 2 Level  \u00b7  CC 59  \u2014  Level of Oscillator 2 into the mixer."
 				}
 			},
 			{
@@ -1747,8 +1747,8 @@
 							]
 						}
 					},
-					"annotation": "OSC 2>1 Sync  \u00b7  CC 54  (0-63: Off; 64-127: On)",
-					"hint": "OSC 2>1 Sync  \u00b7  CC 54  (0-63: Off; 64-127: On)"
+					"annotation": "OSC 2>1 Sync  \u00b7  CC 54  \u2014  Hard-syncs OSC 1 to OSC 2 (resets OSC 1's phase) for sync timbres.  (0-63: Off; 64-127: On)",
+					"hint": "OSC 2>1 Sync  \u00b7  CC 54  \u2014  Hard-syncs OSC 1 to OSC 2 (resets OSC 1's phase) for sync timbres.  (0-63: Off; 64-127: On)"
 				}
 			},
 			{
@@ -1912,8 +1912,8 @@
 							]
 						}
 					},
-					"annotation": "OSC 2>1 FM  \u00b7  CC 55  (0-63: Off; 64-127: On)",
-					"hint": "OSC 2>1 FM  \u00b7  CC 55  (0-63: Off; 64-127: On)"
+					"annotation": "OSC 2>1 FM  \u00b7  CC 55  \u2014  Linear FM of OSC 1 by OSC 2 (depth set by FM Amount).  (0-63: Off; 64-127: On)",
+					"hint": "OSC 2>1 FM  \u00b7  CC 55  \u2014  Linear FM of OSC 1 by OSC 2 (depth set by FM Amount).  (0-63: Off; 64-127: On)"
 				}
 			},
 			{
@@ -2077,8 +2077,8 @@
 							]
 						}
 					},
-					"annotation": "OSC 1>2 FM  \u00b7  CC 56  (0-63: Off; 64-127: On)",
-					"hint": "OSC 1>2 FM  \u00b7  CC 56  (0-63: Off; 64-127: On)"
+					"annotation": "OSC 1>2 FM  \u00b7  CC 56  \u2014  Linear FM of OSC 2 by OSC 1 (depth set by FM Amount).  (0-63: Off; 64-127: On)",
+					"hint": "OSC 1>2 FM  \u00b7  CC 56  \u2014  Linear FM of OSC 2 by OSC 1 (depth set by FM Amount).  (0-63: Off; 64-127: On)"
 				}
 			},
 			{
@@ -2234,8 +2234,8 @@
 							"parameter_invisible": 0
 						}
 					},
-					"annotation": "FM Amount  \u00b7  CC 57",
-					"hint": "FM Amount  \u00b7  CC 57"
+					"annotation": "FM Amount  \u00b7  CC 57  \u2014  Depth of oscillator-to-oscillator linear FM (2>1 / 1>2 switches).",
+					"hint": "FM Amount  \u00b7  CC 57  \u2014  Depth of oscillator-to-oscillator linear FM (2>1 / 1>2 switches)."
 				}
 			},
 			{
@@ -2355,8 +2355,8 @@
 							"parameter_invisible": 0
 						}
 					},
-					"annotation": "Ring Mod Level  \u00b7  CC 60",
-					"hint": "Ring Mod Level  \u00b7  CC 60"
+					"annotation": "Ring Mod Level  \u00b7  CC 60  \u2014  Level of the ring modulator (OSC 1 x OSC 2) into the mixer.",
+					"hint": "Ring Mod Level  \u00b7  CC 60  \u2014  Level of the ring modulator (OSC 1 x OSC 2) into the mixer."
 				}
 			},
 			{
@@ -2476,8 +2476,8 @@
 							"parameter_invisible": 0
 						}
 					},
-					"annotation": "Noise Level  \u00b7  CC 62",
-					"hint": "Noise Level  \u00b7  CC 62"
+					"annotation": "Noise Level  \u00b7  CC 62  \u2014  Level of the noise generator into the mixer.",
+					"hint": "Noise Level  \u00b7  CC 62  \u2014  Level of the noise generator into the mixer."
 				}
 			},
 			{
@@ -2597,8 +2597,8 @@
 							"parameter_invisible": 0
 						}
 					},
-					"annotation": "Filter 1 Cutoff  \u00b7  CC 67",
-					"hint": "Filter 1 Cutoff  \u00b7  CC 67"
+					"annotation": "Filter 1 Cutoff  \u00b7  CC 67  \u2014  Cutoff of Filter 1, a discrete Moog transistor-ladder filter (904a-style).",
+					"hint": "Filter 1 Cutoff  \u00b7  CC 67  \u2014  Cutoff of Filter 1, a discrete Moog transistor-ladder filter (904a-style)."
 				}
 			},
 			{
@@ -2718,8 +2718,8 @@
 							"parameter_invisible": 0
 						}
 					},
-					"annotation": "Filter 1 Resonance  \u00b7  CC 68",
-					"hint": "Filter 1 Resonance  \u00b7  CC 68"
+					"annotation": "Filter 1 Resonance  \u00b7  CC 68  \u2014  Resonance/emphasis at Filter 1's cutoff; self-oscillates when high.",
+					"hint": "Filter 1 Resonance  \u00b7  CC 68  \u2014  Resonance/emphasis at Filter 1's cutoff; self-oscillates when high."
 				}
 			},
 			{
@@ -2839,8 +2839,8 @@
 							"parameter_invisible": 0
 						}
 					},
-					"annotation": "Filter 1 Env Amount  \u00b7  CC 69",
-					"hint": "Filter 1 Env Amount  \u00b7  CC 69"
+					"annotation": "Filter 1 Env Amount  \u00b7  CC 69  \u2014  Amount of the Filter envelope applied to Filter 1 cutoff.",
+					"hint": "Filter 1 Env Amount  \u00b7  CC 69  \u2014  Amount of the Filter envelope applied to Filter 1 cutoff."
 				}
 			},
 			{
@@ -2968,8 +2968,8 @@
 							]
 						}
 					},
-					"annotation": "Filter 1 High Pass  \u00b7  CC 66",
-					"hint": "Filter 1 High Pass  \u00b7  CC 66"
+					"annotation": "Filter 1 High Pass  \u00b7  CC 66  \u2014  Switches Filter 1 from low-pass to high-pass operation.",
+					"hint": "Filter 1 High Pass  \u00b7  CC 66  \u2014  Switches Filter 1 from low-pass to high-pass operation."
 				}
 			},
 			{
@@ -3135,8 +3135,8 @@
 							]
 						}
 					},
-					"annotation": "Filter 1 KB Track  \u00b7  CC 70  (0-42: Off; 43-84: Half; 85-127: Full)",
-					"hint": "Filter 1 KB Track  \u00b7  CC 70  (0-42: Off; 43-84: Half; 85-127: Full)"
+					"annotation": "Filter 1 KB Track  \u00b7  CC 70  \u2014  How much Filter 1 cutoff tracks keyboard pitch (Off / Half / Full).  (0-42: Off; 43-84: Half; 85-127: Full)",
+					"hint": "Filter 1 KB Track  \u00b7  CC 70  \u2014  How much Filter 1 cutoff tracks keyboard pitch (Off / Half / Full).  (0-42: Off; 43-84: Half; 85-127: Full)"
 				}
 			},
 			{
@@ -3292,8 +3292,8 @@
 							"parameter_invisible": 0
 						}
 					},
-					"annotation": "Filter 2 Frequency  \u00b7  CC 72",
-					"hint": "Filter 2 Frequency  \u00b7  CC 72"
+					"annotation": "Filter 2 Frequency  \u00b7  CC 72  \u2014  Cutoff of Filter 2, a dedicated low-pass Moog ladder filter.",
+					"hint": "Filter 2 Frequency  \u00b7  CC 72  \u2014  Cutoff of Filter 2, a dedicated low-pass Moog ladder filter."
 				}
 			},
 			{
@@ -3413,8 +3413,8 @@
 							"parameter_invisible": 0
 						}
 					},
-					"annotation": "Filter 2 Resonance  \u00b7  CC 73",
-					"hint": "Filter 2 Resonance  \u00b7  CC 73"
+					"annotation": "Filter 2 Resonance  \u00b7  CC 73  \u2014  Resonance/emphasis at Filter 2's cutoff; self-oscillates when high.",
+					"hint": "Filter 2 Resonance  \u00b7  CC 73  \u2014  Resonance/emphasis at Filter 2's cutoff; self-oscillates when high."
 				}
 			},
 			{
@@ -3534,8 +3534,8 @@
 							"parameter_invisible": 0
 						}
 					},
-					"annotation": "Filter 2 Env Amount  \u00b7  CC 75",
-					"hint": "Filter 2 Env Amount  \u00b7  CC 75"
+					"annotation": "Filter 2 Env Amount  \u00b7  CC 75  \u2014  Amount of the Filter envelope applied to Filter 2 cutoff.",
+					"hint": "Filter 2 Env Amount  \u00b7  CC 75  \u2014  Amount of the Filter envelope applied to Filter 2 cutoff."
 				}
 			},
 			{
@@ -3665,8 +3665,8 @@
 							]
 						}
 					},
-					"annotation": "Filter 2 KB Track  \u00b7  CC 76  (0-42: Off; 43-84: Half; 85-127: Full)",
-					"hint": "Filter 2 KB Track  \u00b7  CC 76  (0-42: Off; 43-84: Half; 85-127: Full)"
+					"annotation": "Filter 2 KB Track  \u00b7  CC 76  \u2014  How much Filter 2 cutoff tracks keyboard pitch (Off / Half / Full).  (0-42: Off; 43-84: Half; 85-127: Full)",
+					"hint": "Filter 2 KB Track  \u00b7  CC 76  \u2014  How much Filter 2 cutoff tracks keyboard pitch (Off / Half / Full).  (0-42: Off; 43-84: Half; 85-127: Full)"
 				}
 			},
 			{
@@ -3830,8 +3830,8 @@
 							]
 						}
 					},
-					"annotation": "Link Filters  \u00b7  CC 77  (0-63: Off; 64-127: On)",
-					"hint": "Link Filters  \u00b7  CC 77  (0-63: Off; 64-127: On)"
+					"annotation": "Link Filters  \u00b7  CC 77  \u2014  Links Filter 1 & 2 so one cutoff control sweeps both.  (0-63: Off; 64-127: On)",
+					"hint": "Link Filters  \u00b7  CC 77  \u2014  Links Filter 1 & 2 so one cutoff control sweeps both.  (0-63: Off; 64-127: On)"
 				}
 			},
 			{
@@ -3997,8 +3997,8 @@
 							]
 						}
 					},
-					"annotation": "Filter Order  \u00b7  CC 78  (0-42: Serial; 43-84: Stereo; 85-127: Parallel)",
-					"hint": "Filter Order  \u00b7  CC 78  (0-42: Serial; 43-84: Stereo; 85-127: Parallel)"
+					"annotation": "Filter Order  \u00b7  CC 78  \u2014  Filter routing: Serial (1>2), Stereo (1 left / 2 right), or Parallel.  (0-42: Serial; 43-84: Stereo; 85-127: Parallel)",
+					"hint": "Filter Order  \u00b7  CC 78  \u2014  Filter routing: Serial (1>2), Stereo (1 left / 2 right), or Parallel.  (0-42: Serial; 43-84: Stereo; 85-127: Parallel)"
 				}
 			},
 			{
@@ -4154,8 +4154,8 @@
 							"parameter_invisible": 0
 						}
 					},
-					"annotation": "Clipping Level  \u00b7  CC 65",
-					"hint": "Clipping Level  \u00b7  CC 65"
+					"annotation": "Clipping Level  \u00b7  CC 65  \u2014  OVERLOAD - overdrives the mixer sum for overtones, CP3-mixer style.",
+					"hint": "Clipping Level  \u00b7  CC 65  \u2014  OVERLOAD - overdrives the mixer sum for overtones, CP3-mixer style."
 				}
 			},
 			{
@@ -4275,8 +4275,8 @@
 							"parameter_invisible": 0
 						}
 					},
-					"annotation": "Filter Env Attack  \u00b7  CC 79",
-					"hint": "Filter Env Attack  \u00b7  CC 79"
+					"annotation": "Filter Env Attack  \u00b7  CC 79  \u2014  Attack time of the Filter envelope.",
+					"hint": "Filter Env Attack  \u00b7  CC 79  \u2014  Attack time of the Filter envelope."
 				}
 			},
 			{
@@ -4396,8 +4396,8 @@
 							"parameter_invisible": 0
 						}
 					},
-					"annotation": "Filter Env Sustain  \u00b7  CC 80",
-					"hint": "Filter Env Sustain  \u00b7  CC 80"
+					"annotation": "Filter Env Sustain  \u00b7  CC 80  \u2014  Sustain level of the Filter envelope.",
+					"hint": "Filter Env Sustain  \u00b7  CC 80  \u2014  Sustain level of the Filter envelope."
 				}
 			},
 			{
@@ -4517,8 +4517,8 @@
 							"parameter_invisible": 0
 						}
 					},
-					"annotation": "Filter Env Delay  \u00b7  CC 81",
-					"hint": "Filter Env Delay  \u00b7  CC 81"
+					"annotation": "Filter Env Delay  \u00b7  CC 81  \u2014  Pre-attack delay before the Filter envelope starts.",
+					"hint": "Filter Env Delay  \u00b7  CC 81  \u2014  Pre-attack delay before the Filter envelope starts."
 				}
 			},
 			{
@@ -4638,8 +4638,8 @@
 							"parameter_invisible": 0
 						}
 					},
-					"annotation": "Filter Env Release  \u00b7  CC 82",
-					"hint": "Filter Env Release  \u00b7  CC 82"
+					"annotation": "Filter Env Release  \u00b7  CC 82  \u2014  Release time of the Filter envelope after key release.",
+					"hint": "Filter Env Release  \u00b7  CC 82  \u2014  Release time of the Filter envelope after key release."
 				}
 			},
 			{
@@ -4767,8 +4767,8 @@
 							]
 						}
 					},
-					"annotation": "Filter Env Loop  \u00b7  CC 83  (0-63: Off; 64-127: On)",
-					"hint": "Filter Env Loop  \u00b7  CC 83  (0-63: Off; 64-127: On)"
+					"annotation": "Filter Env Loop  \u00b7  CC 83  \u2014  Loops the Filter envelope for cycling, LFO-like modulation.  (0-63: Off; 64-127: On)",
+					"hint": "Filter Env Loop  \u00b7  CC 83  \u2014  Loops the Filter envelope for cycling, LFO-like modulation.  (0-63: Off; 64-127: On)"
 				}
 			},
 			{
@@ -4932,8 +4932,8 @@
 							]
 						}
 					},
-					"annotation": "Filter Env Velocity  \u00b7  CC 85  (0-63: Off; 64-127: On)",
-					"hint": "Filter Env Velocity  \u00b7  CC 85  (0-63: Off; 64-127: On)"
+					"annotation": "Filter Env Velocity  \u00b7  CC 85  \u2014  Makes the Filter envelope depth respond to key velocity.  (0-63: Off; 64-127: On)",
+					"hint": "Filter Env Velocity  \u00b7  CC 85  \u2014  Makes the Filter envelope depth respond to key velocity.  (0-63: Off; 64-127: On)"
 				}
 			},
 			{
@@ -5089,8 +5089,8 @@
 							"parameter_invisible": 0
 						}
 					},
-					"annotation": "VCA Env Attack  \u00b7  CC 86",
-					"hint": "VCA Env Attack  \u00b7  CC 86"
+					"annotation": "VCA Env Attack  \u00b7  CC 86  \u2014  Attack time of the Amplifier (VCA) envelope.",
+					"hint": "VCA Env Attack  \u00b7  CC 86  \u2014  Attack time of the Amplifier (VCA) envelope."
 				}
 			},
 			{
@@ -5210,8 +5210,8 @@
 							"parameter_invisible": 0
 						}
 					},
-					"annotation": "VCA Env Sustain  \u00b7  CC 87",
-					"hint": "VCA Env Sustain  \u00b7  CC 87"
+					"annotation": "VCA Env Sustain  \u00b7  CC 87  \u2014  Sustain level of the Amplifier (VCA) envelope.",
+					"hint": "VCA Env Sustain  \u00b7  CC 87  \u2014  Sustain level of the Amplifier (VCA) envelope."
 				}
 			},
 			{
@@ -5331,8 +5331,8 @@
 							"parameter_invisible": 0
 						}
 					},
-					"annotation": "VCA Env Delay  \u00b7  CC 88",
-					"hint": "VCA Env Delay  \u00b7  CC 88"
+					"annotation": "VCA Env Delay  \u00b7  CC 88  \u2014  Pre-attack delay before the Amplifier envelope starts.",
+					"hint": "VCA Env Delay  \u00b7  CC 88  \u2014  Pre-attack delay before the Amplifier envelope starts."
 				}
 			},
 			{
@@ -5452,8 +5452,8 @@
 							"parameter_invisible": 0
 						}
 					},
-					"annotation": "VCA Env Release  \u00b7  CC 89",
-					"hint": "VCA Env Release  \u00b7  CC 89"
+					"annotation": "VCA Env Release  \u00b7  CC 89  \u2014  Release time of the Amplifier envelope after key release.",
+					"hint": "VCA Env Release  \u00b7  CC 89  \u2014  Release time of the Amplifier envelope after key release."
 				}
 			},
 			{
@@ -5581,8 +5581,8 @@
 							]
 						}
 					},
-					"annotation": "VCA Env Loop  \u00b7  CC 90  (0-63: Off; 64-127: On)",
-					"hint": "VCA Env Loop  \u00b7  CC 90  (0-63: Off; 64-127: On)"
+					"annotation": "VCA Env Loop  \u00b7  CC 90  \u2014  Loops the Amplifier envelope for cycling, tremolo-like modulation.  (0-63: Off; 64-127: On)",
+					"hint": "VCA Env Loop  \u00b7  CC 90  \u2014  Loops the Amplifier envelope for cycling, tremolo-like modulation.  (0-63: Off; 64-127: On)"
 				}
 			},
 			{
@@ -5746,8 +5746,8 @@
 							]
 						}
 					},
-					"annotation": "VCA Env Velocity  \u00b7  CC 91  (0-63: Off; 64-127: On)",
-					"hint": "VCA Env Velocity  \u00b7  CC 91  (0-63: Off; 64-127: On)"
+					"annotation": "VCA Env Velocity  \u00b7  CC 91  \u2014  Makes loudness respond to key velocity via the Amplifier envelope.  (0-63: Off; 64-127: On)",
+					"hint": "VCA Env Velocity  \u00b7  CC 91  \u2014  Makes loudness respond to key velocity via the Amplifier envelope.  (0-63: Off; 64-127: On)"
 				}
 			},
 			{
@@ -8494,8 +8494,8 @@
 							"parameter_invisible": 0
 						}
 					},
-					"annotation": "Mod Osc Level  \u00b7  CC 61",
-					"hint": "Mod Osc Level  \u00b7  CC 61"
+					"annotation": "Mod Osc Level  \u00b7  CC 61  \u2014  Level of the Modulation Oscillator into the mixer (audible at audio rate).",
+					"hint": "Mod Osc Level  \u00b7  CC 61  \u2014  Level of the Modulation Oscillator into the mixer (audible at audio rate)."
 				}
 			},
 			{
@@ -8736,8 +8736,8 @@
 							"parameter_invisible": 0
 						}
 					},
-					"annotation": "LFO 1 Amount  \u00b7  CC 13",
-					"hint": "LFO 1 Amount  \u00b7  CC 13"
+					"annotation": "LFO 1 Amount  \u00b7  CC 13  \u2014  Overall output depth of LFO 1 to its mod-map destinations.",
+					"hint": "LFO 1 Amount  \u00b7  CC 13  \u2014  Overall output depth of LFO 1 to its mod-map destinations."
 				}
 			},
 			{
@@ -9149,8 +9149,8 @@
 							"parameter_invisible": 0
 						}
 					},
-					"annotation": "LFO 2 Amount  \u00b7  CC 16",
-					"hint": "LFO 2 Amount  \u00b7  CC 16"
+					"annotation": "LFO 2 Amount  \u00b7  CC 16  \u2014  Overall output depth of LFO 2 to its mod-map destinations.",
+					"hint": "LFO 2 Amount  \u00b7  CC 16  \u2014  Overall output depth of LFO 2 to its mod-map destinations."
 				}
 			},
 			{
@@ -10464,8 +10464,8 @@
 							"parameter_invisible": 0
 						}
 					},
-					"annotation": "Voice Detune  \u00b7  CC 92",
-					"hint": "Voice Detune  \u00b7  CC 92"
+					"annotation": "Voice Detune  \u00b7  CC 92  \u2014  Progressively detunes the analog voices for a fatter, wider sound.",
+					"hint": "Voice Detune  \u00b7  CC 92  \u2014  Progressively detunes the analog voices for a fatter, wider sound."
 				}
 			},
 			{
@@ -10593,8 +10593,8 @@
 							]
 						}
 					},
-					"annotation": "Voice Unison  \u00b7  CC 108  (0-63: Off; 64-127: On)",
-					"hint": "Voice Unison  \u00b7  CC 108  (0-63: Off; 64-127: On)"
+					"annotation": "Voice Unison  \u00b7  CC 108  \u2014  Unison - stacks all voices on each note for a massive sound.  (0-63: Off; 64-127: On)",
+					"hint": "Voice Unison  \u00b7  CC 108  \u2014  Unison - stacks all voices on each note for a massive sound.  (0-63: Off; 64-127: On)"
 				}
 			},
 			{
@@ -10758,8 +10758,8 @@
 							]
 						}
 					},
-					"annotation": "Voice Mono  \u00b7  CC 109  (0-63: Off; 64-127: On)",
-					"hint": "Voice Mono  \u00b7  CC 109  (0-63: Off; 64-127: On)"
+					"annotation": "Voice Mono  \u00b7  CC 109  \u2014  Monophonic mode - one voice at a time.  (0-63: Off; 64-127: On)",
+					"hint": "Voice Mono  \u00b7  CC 109  \u2014  Monophonic mode - one voice at a time.  (0-63: Off; 64-127: On)"
 				}
 			},
 			{
@@ -11399,8 +11399,8 @@
 							"parameter_invisible": 0
 						}
 					},
-					"annotation": "Low Cut  \u00b7  CC 8",
-					"hint": "Low Cut  \u00b7  CC 8"
+					"annotation": "Low Cut  \u00b7  CC 8  \u2014  High-pass 'low cut' on the timbre output; raise to thin out lows.",
+					"hint": "Low Cut  \u00b7  CC 8  \u2014  High-pass 'low cut' on the timbre output; raise to thin out lows."
 				}
 			},
 			{
@@ -11641,8 +11641,8 @@
 							"parameter_invisible": 0
 						}
 					},
-					"annotation": "Expression  \u00b7  CC 11",
-					"hint": "Expression  \u00b7  CC 11"
+					"annotation": "Expression  \u00b7  CC 11  \u2014  Expression (CC 11) - overall performance level for the active timbre.",
+					"hint": "Expression  \u00b7  CC 11  \u2014  Expression (CC 11) - overall performance level for the active timbre."
 				}
 			},
 			{
@@ -11935,8 +11935,8 @@
 							]
 						}
 					},
-					"annotation": "Hold  \u00b7  CC 71  (0-63: Off; 64-127: On)",
-					"hint": "Hold  \u00b7  CC 71  (0-63: Off; 64-127: On)"
+					"annotation": "Hold  \u00b7  CC 71  \u2014  Latches/holds currently held notes so they keep sounding.  (0-63: Off; 64-127: On)",
+					"hint": "Hold  \u00b7  CC 71  \u2014  Latches/holds currently held notes so they keep sounding.  (0-63: Off; 64-127: On)"
 				}
 			},
 			{
@@ -12257,8 +12257,8 @@
 							"parameter_invisible": 0
 						}
 					},
-					"annotation": "Delay Time Left  \u00b7  CC 93",
-					"hint": "Delay Time Left  \u00b7  CC 93"
+					"annotation": "Delay Time Left  \u00b7  CC 93  \u2014  Delay time of the left channel of the stereo Diffusion Delay.",
+					"hint": "Delay Time Left  \u00b7  CC 93  \u2014  Delay time of the left channel of the stereo Diffusion Delay."
 				}
 			},
 			{
@@ -12378,8 +12378,8 @@
 							"parameter_invisible": 0
 						}
 					},
-					"annotation": "Delay Time Right  \u00b7  CC 94",
-					"hint": "Delay Time Right  \u00b7  CC 94"
+					"annotation": "Delay Time Right  \u00b7  CC 94  \u2014  Delay time of the right channel of the stereo Diffusion Delay.",
+					"hint": "Delay Time Right  \u00b7  CC 94  \u2014  Delay time of the right channel of the stereo Diffusion Delay."
 				}
 			},
 			{
@@ -12507,8 +12507,8 @@
 							]
 						}
 					},
-					"annotation": "Link Delays  \u00b7  CC 95  (0-63: Off; 64-127: On)",
-					"hint": "Link Delays  \u00b7  CC 95  (0-63: Off; 64-127: On)"
+					"annotation": "Link Delays  \u00b7  CC 95  \u2014  Links left & right delay times so one control sets both.  (0-63: Off; 64-127: On)",
+					"hint": "Link Delays  \u00b7  CC 95  \u2014  Links left & right delay times so one control sets both.  (0-63: Off; 64-127: On)"
 				}
 			},
 			{
@@ -12672,8 +12672,8 @@
 							]
 						}
 					},
-					"annotation": "Delay Clock Sync  \u00b7  CC 102  (0-63: Off; 64-127: On)",
-					"hint": "Delay Clock Sync  \u00b7  CC 102  (0-63: Off; 64-127: On)"
+					"annotation": "Delay Clock Sync  \u00b7  CC 102  \u2014  Syncs delay times to the clock/tempo instead of free milliseconds.  (0-63: Off; 64-127: On)",
+					"hint": "Delay Clock Sync  \u00b7  CC 102  \u2014  Syncs delay times to the clock/tempo instead of free milliseconds.  (0-63: Off; 64-127: On)"
 				}
 			},
 			{
@@ -12829,8 +12829,8 @@
 							"parameter_invisible": 0
 						}
 					},
-					"annotation": "Delay Feedback  \u00b7  CC 103",
-					"hint": "Delay Feedback  \u00b7  CC 103"
+					"annotation": "Delay Feedback  \u00b7  CC 103  \u2014  Delay feedback - how many times the repeats echo.",
+					"hint": "Delay Feedback  \u00b7  CC 103  \u2014  Delay feedback - how many times the repeats echo."
 				}
 			},
 			{
@@ -12950,8 +12950,8 @@
 							"parameter_invisible": 0
 						}
 					},
-					"annotation": "Delay Character  \u00b7  CC 104",
-					"hint": "Delay Character  \u00b7  CC 104"
+					"annotation": "Delay Character  \u00b7  CC 104  \u2014  Tone/diffusion character of the delay repeats, clean to smeared.",
+					"hint": "Delay Character  \u00b7  CC 104  \u2014  Tone/diffusion character of the delay repeats, clean to smeared."
 				}
 			},
 			{
@@ -13071,8 +13071,8 @@
 							"parameter_invisible": 0
 						}
 					},
-					"annotation": "Delay Mix  \u00b7  CC 105",
-					"hint": "Delay Mix  \u00b7  CC 105"
+					"annotation": "Delay Mix  \u00b7  CC 105  \u2014  Dry/wet balance of the Diffusion Delay.",
+					"hint": "Delay Mix  \u00b7  CC 105  \u2014  Dry/wet balance of the Diffusion Delay."
 				}
 			},
 			{
@@ -13200,8 +13200,8 @@
 							]
 						}
 					},
-					"annotation": "Delay>Timbre A  \u00b7  CC 106  (0-63: Off; 64-127: On)",
-					"hint": "Delay>Timbre A  \u00b7  CC 106  (0-63: Off; 64-127: On)"
+					"annotation": "Delay>Timbre A  \u00b7  CC 106  \u2014  Routes Timbre A through the delay.  (0-63: Off; 64-127: On)",
+					"hint": "Delay>Timbre A  \u00b7  CC 106  \u2014  Routes Timbre A through the delay.  (0-63: Off; 64-127: On)"
 				}
 			},
 			{
@@ -13365,8 +13365,8 @@
 							]
 						}
 					},
-					"annotation": "Delay>Timbre B  \u00b7  CC 107  (0-63: Off; 64-127: On)",
-					"hint": "Delay>Timbre B  \u00b7  CC 107  (0-63: Off; 64-127: On)"
+					"annotation": "Delay>Timbre B  \u00b7  CC 107  \u2014  Routes Timbre B through the delay.  (0-63: Off; 64-127: On)",
+					"hint": "Delay>Timbre B  \u00b7  CC 107  \u2014  Routes Timbre B through the delay.  (0-63: Off; 64-127: On)"
 				}
 			},
 			{
@@ -13530,8 +13530,8 @@
 							]
 						}
 					},
-					"annotation": "Arp On/Off  \u00b7  CC 112  (0-63: Off; 64-127: On)",
-					"hint": "Arp On/Off  \u00b7  CC 112  (0-63: Off; 64-127: On)"
+					"annotation": "Arp On/Off  \u00b7  CC 112  \u2014  Turns the arpeggiator on or off.  (0-63: Off; 64-127: On)",
+					"hint": "Arp On/Off  \u00b7  CC 112  \u2014  Turns the arpeggiator on or off.  (0-63: Off; 64-127: On)"
 				}
 			},
 			{
@@ -13695,8 +13695,8 @@
 							]
 						}
 					},
-					"annotation": "Arp FW/BK  \u00b7  CC 113  (0-63: Off; 64-127: On)",
-					"hint": "Arp FW/BK  \u00b7  CC 113  (0-63: Off; 64-127: On)"
+					"annotation": "Arp FW/BK  \u00b7  CC 113  \u2014  Arpeggiator forward / backward direction.  (0-63: Off; 64-127: On)",
+					"hint": "Arp FW/BK  \u00b7  CC 113  \u2014  Arpeggiator forward / backward direction.  (0-63: Off; 64-127: On)"
 				}
 			},
 			{
@@ -13862,8 +13862,8 @@
 							]
 						}
 					},
-					"annotation": "Arp Direction  \u00b7  CC 114  (0-42: Order; 43-84: Pattern; 85-127: Random)",
-					"hint": "Arp Direction  \u00b7  CC 114  (0-42: Order; 43-84: Pattern; 85-127: Random)"
+					"annotation": "Arp Direction  \u00b7  CC 114  \u2014  Arpeggiator note order: Order (as played), Pattern, or Random.  (0-42: Order; 43-84: Pattern; 85-127: Random)",
+					"hint": "Arp Direction  \u00b7  CC 114  \u2014  Arpeggiator note order: Order (as played), Pattern, or Random.  (0-42: Order; 43-84: Pattern; 85-127: Random)"
 				}
 			},
 			{
@@ -14031,8 +14031,8 @@
 							]
 						}
 					},
-					"annotation": "Arp Octave Range  \u00b7  CC 115  (0-31: 1; 32-63: 2; 64-95: 3; 96-127: 4)",
-					"hint": "Arp Octave Range  \u00b7  CC 115  (0-31: 1; 32-63: 2; 64-95: 3; 96-127: 4)"
+					"annotation": "Arp Octave Range  \u00b7  CC 115  \u2014  Number of octaves the arpeggio spans (1-4).  (0-31: 1; 32-63: 2; 64-95: 3; 96-127: 4)",
+					"hint": "Arp Octave Range  \u00b7  CC 115  \u2014  Number of octaves the arpeggio spans (1-4).  (0-31: 1; 32-63: 2; 64-95: 3; 96-127: 4)"
 				}
 			},
 			{
@@ -14188,8 +14188,8 @@
 							"parameter_invisible": 0
 						}
 					},
-					"annotation": "Arp Clock Div  \u00b7  CC 111",
-					"hint": "Arp Clock Div  \u00b7  CC 111"
+					"annotation": "Arp Clock Div  \u00b7  CC 111  \u2014  Clock division for the arpeggiator (speed vs the master clock).",
+					"hint": "Arp Clock Div  \u00b7  CC 111  \u2014  Clock division for the arpeggiator (speed vs the master clock)."
 				}
 			},
 			{
@@ -14309,8 +14309,8 @@
 							"parameter_invisible": 0
 						}
 					},
-					"annotation": "Seq Clock Div  \u00b7  CC 110",
-					"hint": "Seq Clock Div  \u00b7  CC 110"
+					"annotation": "Seq Clock Div  \u00b7  CC 110  \u2014  Clock division for the sequencer (speed vs the master clock).",
+					"hint": "Seq Clock Div  \u00b7  CC 110  \u2014  Clock division for the sequencer (speed vs the master clock)."
 				}
 			},
 			{
@@ -14430,8 +14430,8 @@
 							"parameter_invisible": 0
 						}
 					},
-					"annotation": "Clock Tempo  \u00b7  CC 116",
-					"hint": "Clock Tempo  \u00b7  CC 116"
+					"annotation": "Clock Tempo  \u00b7  CC 116  \u2014  Master clock tempo (BPM) for arp, sequencer, and synced delay.",
+					"hint": "Clock Tempo  \u00b7  CC 116  \u2014  Master clock tempo (BPM) for arp, sequencer, and synced delay."
 				}
 			},
 			{
@@ -14927,7 +14927,7 @@
 					"outlettype": [
 						""
 					],
-					"text": "script hide OSC_1_Octave, script hide OSC_1_Octave_L, script hide OSC_1_Frequency, script hide OSC_1_Frequency_L, script hide OSC_1_Tri_Saw_Mix, script hide OSC_1_Tri_Saw_Mix_L, script hide OSC_1_PW, script hide OSC_1_PW_L, script hide OSC_1_Wave_Mix, script hide OSC_1_Wave_Mix_L, script hide OSC_1_Level, script hide OSC_1_Level_L, script hide OSC_2_Octave, script hide OSC_2_Octave_L, script hide OSC_2_Frequency, script hide OSC_2_Frequency_L, script hide OSC_2_Tri_Saw_Mix, script hide OSC_2_Tri_Saw_Mix_L, script hide OSC_2_PW, script hide OSC_2_PW_L, script hide OSC_2_Wave_Mix, script hide OSC_2_Wave_Mix_L, script hide OSC_2_Level, script hide OSC_2_Level_L, script hide OSC_2_1_Sync, script hide OSC_2_1_Sync_L, script hide OSC_2_1_FM, script hide OSC_2_1_FM_L, script hide OSC_1_2_FM, script hide OSC_1_2_FM_L, script hide FM_Amount, script hide FM_Amount_L, script hide Ring_Mod_Level, script hide Ring_Mod_Level_L, script hide Noise_Level, script hide Noise_Level_L, script hide Filter_1_Cutoff, script hide Filter_1_Cutoff_L, script hide Filter_1_Resonance, script hide Filter_1_Resonance_L, script hide Filter_1_Env_Amount, script hide Filter_1_Env_Amount_L, script hide Filter_1_High_Pass, script hide Filter_1_High_Pass_L, script hide Filter_1_KB_Track, script hide Filter_1_KB_Track_L, script hide Filter_2_Frequency, script hide Filter_2_Frequency_L, script hide Filter_2_Resonance, script hide Filter_2_Resonance_L, script hide Filter_2_Env_Amount, script hide Filter_2_Env_Amount_L, script hide Filter_2_KB_Track, script hide Filter_2_KB_Track_L, script hide Link_Filters, script hide Link_Filters_L, script hide Filter_Order, script hide Filter_Order_L, script hide Clipping_Level, script hide Clipping_Level_L, script hide Filter_Env_Attack, script hide Filter_Env_Attack_L, script hide Filter_Env_Sustain, script hide Filter_Env_Sustain_L, script hide Filter_Env_Delay, script hide Filter_Env_Delay_L, script hide Filter_Env_Release, script hide Filter_Env_Release_L, script hide Filter_Env_Loop, script hide Filter_Env_Loop_L, script hide Filter_Env_Velocity, script hide Filter_Env_Velocity_L, script hide VCA_Env_Attack, script hide VCA_Env_Attack_L, script hide VCA_Env_Sustain, script hide VCA_Env_Sustain_L, script hide VCA_Env_Delay, script hide VCA_Env_Delay_L, script hide VCA_Env_Release, script hide VCA_Env_Release_L, script hide VCA_Env_Loop, script hide VCA_Env_Loop_L, script hide VCA_Env_Velocity, script hide VCA_Env_Velocity_L, script hide Mod_Osc_Frequency, script hide Mod_Osc_Frequency_L, script hide Mod_Osc_Waveform, script hide Mod_Osc_Waveform_L, script hide Mod_Osc_Audio_Rate, script hide Mod_Osc_Audio_Rate_L, script hide Mod_Osc_KB_Track, script hide Mod_Osc_KB_Track_L, script hide Mod_Osc_KB_Reset, script hide Mod_Osc_KB_Reset_L, script hide Mod_Osc_Unipolar, script hide Mod_Osc_Unipolar_L, script hide Mod_Osc_Pitch_Amount, script hide Mod_Osc_Pitch_Amount_L, script hide Mod_Osc_Pitch_OSC_1, script hide Mod_Osc_Pitch_OSC_1_L, script hide Mod_Osc_Pitch_OSC_2, script hide Mod_Osc_Pitch_OSC_2_L, script hide Mod_Osc_PWM_Amount, script hide Mod_Osc_PWM_Amount_L, script hide Mod_Osc_PWM_OSC_1, script hide Mod_Osc_PWM_OSC_1_L, script hide Mod_Osc_PWM_OSC_2, script hide Mod_Osc_PWM_OSC_2_L, script hide Mod_Osc_Filter_Amount, script hide Mod_Osc_Filter_Amount_L, script hide Mod_Osc_Filter_F1, script hide Mod_Osc_Filter_F1_L, script hide Mod_Osc_Filter_F2, script hide Mod_Osc_Filter_F2_L, script hide Mod_Osc_VCA_Amount, script hide Mod_Osc_VCA_Amount_L, script hide Mod_Osc_VCA_Pan, script hide Mod_Osc_VCA_Pan_L, script hide Mod_Osc_Level, script hide Mod_Osc_Level_L, script hide LFO_1_Rate, script hide LFO_1_Rate_L, script hide LFO_1_Amount, script hide LFO_1_Amount_L, script hide LFO_1_Waveform, script hide LFO_1_Waveform_L, script hide LFO_2_Rate, script hide LFO_2_Rate_L, script hide LFO_2_Amount, script hide LFO_2_Amount_L, script hide LFO_2_Waveform, script hide LFO_2_Waveform_L, script hide Pitch_LFO_Rate, script hide Pitch_LFO_Rate_L, script hide Pitch_LFO_Shape, script hide Pitch_LFO_Shape_L, script hide Pitch_LFO_Amount, script hide Pitch_LFO_Amount_L, script hide Pitch_LFO_OSC_1, script hide Pitch_LFO_OSC_1_L, script hide Pitch_LFO_OSC_2, script hide Pitch_LFO_OSC_2_L, script hide Pitch_LFO_Mod_Osc, script hide Pitch_LFO_Mod_Osc_L, script hide Pitch_LFO_Detune, script hide Pitch_LFO_Detune_L, script hide Voice_Detune, script hide Voice_Detune_L, script hide Voice_Unison, script hide Voice_Unison_L, script hide Voice_Mono, script hide Voice_Mono_L, script hide Glide_Time, script hide Glide_Time_L, script hide Timbre_Volume, script hide Timbre_Volume_L, script hide Pan, script hide Pan_L, script hide Pan_Spread, script hide Pan_Spread_L, script hide Low_Cut, script hide Low_Cut_L, script hide Mod_Wheel, script hide Mod_Wheel_L, script hide Expression, script hide Expression_L, script hide Mute, script hide Mute_L, script hide Hold, script hide Hold_L, script hide Sustain_Pedal, script hide Sustain_Pedal_L, script hide Delay_Time_Left, script hide Delay_Time_Left_L, script hide Delay_Time_Right, script hide Delay_Time_Right_L, script hide Link_Delays, script hide Link_Delays_L, script hide Delay_Clock_Sync, script hide Delay_Clock_Sync_L, script hide Delay_Feedback, script hide Delay_Feedback_L, script hide Delay_Character, script hide Delay_Character_L, script hide Delay_Mix, script hide Delay_Mix_L, script hide Delay_Timbre_A, script hide Delay_Timbre_A_L, script hide Delay_Timbre_B, script hide Delay_Timbre_B_L, script hide Arp_On_Off, script hide Arp_On_Off_L, script hide Arp_FW_BK, script hide Arp_FW_BK_L, script hide Arp_Direction, script hide Arp_Direction_L, script hide Arp_Octave_Range, script hide Arp_Octave_Range_L, script hide Arp_Clock_Div, script hide Arp_Clock_Div_L, script hide Seq_Clock_Div, script hide Seq_Clock_Div_L, script hide Clock_Tempo, script hide Clock_Tempo_L, script hide pc_t0, script hide pc_l1, script hide pc_l2, script hide PCSend, script hide pc_l3, script hide pc_h1, script hide pc_h2, script hide pc_h3"
+					"text": "script hide OSC_1_Octave, script hide OSC_1_Octave_L, script hide OSC_1_Frequency, script hide OSC_1_Frequency_L, script hide OSC_1_Tri_Saw_Mix, script hide OSC_1_Tri_Saw_Mix_L, script hide OSC_1_PW, script hide OSC_1_PW_L, script hide OSC_1_Wave_Mix, script hide OSC_1_Wave_Mix_L, script hide OSC_1_Level, script hide OSC_1_Level_L, script hide OSC_2_Octave, script hide OSC_2_Octave_L, script hide OSC_2_Frequency, script hide OSC_2_Frequency_L, script hide OSC_2_Tri_Saw_Mix, script hide OSC_2_Tri_Saw_Mix_L, script hide OSC_2_PW, script hide OSC_2_PW_L, script hide OSC_2_Wave_Mix, script hide OSC_2_Wave_Mix_L, script hide OSC_2_Level, script hide OSC_2_Level_L, script hide OSC_2_1_Sync, script hide OSC_2_1_Sync_L, script hide OSC_2_1_FM, script hide OSC_2_1_FM_L, script hide OSC_1_2_FM, script hide OSC_1_2_FM_L, script hide FM_Amount, script hide FM_Amount_L, script hide Ring_Mod_Level, script hide Ring_Mod_Level_L, script hide Noise_Level, script hide Noise_Level_L, script hide Filter_1_Cutoff, script hide Filter_1_Cutoff_L, script hide Filter_1_Resonance, script hide Filter_1_Resonance_L, script hide Filter_1_Env_Amount, script hide Filter_1_Env_Amount_L, script hide Filter_1_High_Pass, script hide Filter_1_High_Pass_L, script hide Filter_1_KB_Track, script hide Filter_1_KB_Track_L, script hide Filter_2_Frequency, script hide Filter_2_Frequency_L, script hide Filter_2_Resonance, script hide Filter_2_Resonance_L, script hide Filter_2_Env_Amount, script hide Filter_2_Env_Amount_L, script hide Filter_2_KB_Track, script hide Filter_2_KB_Track_L, script hide Link_Filters, script hide Link_Filters_L, script hide Filter_Order, script hide Filter_Order_L, script hide Clipping_Level, script hide Clipping_Level_L, script hide Filter_Env_Attack, script hide Filter_Env_Attack_L, script hide Filter_Env_Sustain, script hide Filter_Env_Sustain_L, script hide Filter_Env_Delay, script hide Filter_Env_Delay_L, script hide Filter_Env_Release, script hide Filter_Env_Release_L, script hide Filter_Env_Loop, script hide Filter_Env_Loop_L, script hide Filter_Env_Velocity, script hide Filter_Env_Velocity_L, script hide VCA_Env_Attack, script hide VCA_Env_Attack_L, script hide VCA_Env_Sustain, script hide VCA_Env_Sustain_L, script hide VCA_Env_Delay, script hide VCA_Env_Delay_L, script hide VCA_Env_Release, script hide VCA_Env_Release_L, script hide VCA_Env_Loop, script hide VCA_Env_Loop_L, script hide VCA_Env_Velocity, script hide VCA_Env_Velocity_L, script hide Mod_Osc_Frequency, script hide Mod_Osc_Frequency_L, script hide Mod_Osc_Waveform, script hide Mod_Osc_Waveform_L, script hide Mod_Osc_Audio_Rate, script hide Mod_Osc_Audio_Rate_L, script hide Mod_Osc_KB_Track, script hide Mod_Osc_KB_Track_L, script hide Mod_Osc_KB_Reset, script hide Mod_Osc_KB_Reset_L, script hide Mod_Osc_Unipolar, script hide Mod_Osc_Unipolar_L, script hide Mod_Osc_Pitch_Amount, script hide Mod_Osc_Pitch_Amount_L, script hide Mod_Osc_Pitch_OSC_1, script hide Mod_Osc_Pitch_OSC_1_L, script hide Mod_Osc_Pitch_OSC_2, script hide Mod_Osc_Pitch_OSC_2_L, script hide Mod_Osc_PWM_Amount, script hide Mod_Osc_PWM_Amount_L, script hide Mod_Osc_PWM_OSC_1, script hide Mod_Osc_PWM_OSC_1_L, script hide Mod_Osc_PWM_OSC_2, script hide Mod_Osc_PWM_OSC_2_L, script hide Mod_Osc_Filter_Amount, script hide Mod_Osc_Filter_Amount_L, script hide Mod_Osc_Filter_F1, script hide Mod_Osc_Filter_F1_L, script hide Mod_Osc_Filter_F2, script hide Mod_Osc_Filter_F2_L, script hide Mod_Osc_VCA_Amount, script hide Mod_Osc_VCA_Amount_L, script hide Mod_Osc_VCA_Pan, script hide Mod_Osc_VCA_Pan_L, script hide Mod_Osc_Level, script hide Mod_Osc_Level_L, script hide LFO_1_Rate, script hide LFO_1_Rate_L, script hide LFO_1_Amount, script hide LFO_1_Amount_L, script hide LFO_1_Waveform, script hide LFO_1_Waveform_L, script hide LFO_2_Rate, script hide LFO_2_Rate_L, script hide LFO_2_Amount, script hide LFO_2_Amount_L, script hide LFO_2_Waveform, script hide LFO_2_Waveform_L, script hide Pitch_LFO_Rate, script hide Pitch_LFO_Rate_L, script hide Pitch_LFO_Shape, script hide Pitch_LFO_Shape_L, script hide Pitch_LFO_Amount, script hide Pitch_LFO_Amount_L, script hide Pitch_LFO_OSC_1, script hide Pitch_LFO_OSC_1_L, script hide Pitch_LFO_OSC_2, script hide Pitch_LFO_OSC_2_L, script hide Pitch_LFO_Mod_Osc, script hide Pitch_LFO_Mod_Osc_L, script hide Pitch_LFO_Detune, script hide Pitch_LFO_Detune_L, script hide Voice_Detune, script hide Voice_Detune_L, script hide Voice_Unison, script hide Voice_Unison_L, script hide Voice_Mono, script hide Voice_Mono_L, script hide Glide_Time, script hide Glide_Time_L, script hide Timbre_Volume, script hide Timbre_Volume_L, script hide Pan, script hide Pan_L, script hide Pan_Spread, script hide Pan_Spread_L, script hide Low_Cut, script hide Low_Cut_L, script hide Mod_Wheel, script hide Mod_Wheel_L, script hide Expression, script hide Expression_L, script hide Mute, script hide Mute_L, script hide Hold, script hide Hold_L, script hide Sustain_Pedal, script hide Sustain_Pedal_L, script hide Delay_Time_Left, script hide Delay_Time_Left_L, script hide Delay_Time_Right, script hide Delay_Time_Right_L, script hide Link_Delays, script hide Link_Delays_L, script hide Delay_Clock_Sync, script hide Delay_Clock_Sync_L, script hide Delay_Feedback, script hide Delay_Feedback_L, script hide Delay_Character, script hide Delay_Character_L, script hide Delay_Mix, script hide Delay_Mix_L, script hide Delay_Timbre_A, script hide Delay_Timbre_A_L, script hide Delay_Timbre_B, script hide Delay_Timbre_B_L, script hide Arp_On_Off, script hide Arp_On_Off_L, script hide Arp_FW_BK, script hide Arp_FW_BK_L, script hide Arp_Direction, script hide Arp_Direction_L, script hide Arp_Octave_Range, script hide Arp_Octave_Range_L, script hide Arp_Clock_Div, script hide Arp_Clock_Div_L, script hide Seq_Clock_Div, script hide Seq_Clock_Div_L, script hide Clock_Tempo, script hide Clock_Tempo_L, script hide pc_t0, script hide pc_l1, script hide PCBank, script hide pc_l2, script hide PCPatch, script hide PCSend, script hide pc_l3, script hide pc_h1, script hide pc_h2, script hide pc_h3"
 				}
 			},
 			{
@@ -15135,7 +15135,7 @@
 					"outlettype": [
 						""
 					],
-					"text": "script show pc_t0, script show pc_l1, script show pc_l2, script show PCSend, script show pc_l3, script show pc_h1, script show pc_h2, script show pc_h3"
+					"text": "script show pc_t0, script show pc_l1, script show PCBank, script show pc_l2, script show PCPatch, script show PCSend, script show pc_l3, script show pc_h1, script show pc_h2, script show pc_h3"
 				}
 			},
 			{

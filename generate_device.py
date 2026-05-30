@@ -74,10 +74,81 @@ def load_descriptions():
 
 CC_INFO = load_descriptions()
 
+# Supplementary descriptions for parameters the CSV leaves blank, written from
+# the Moog Muse manual / Moog's published material.  The CSV's own text (which
+# is Moog's) takes priority; these fill the gaps.
+DESC_EXTRA = {
+    8: "High-pass 'low cut' on the timbre output; raise to thin out lows.",
+    11: "Expression (CC 11) - overall performance level for the active timbre.",
+    13: "Overall output depth of LFO 1 to its mod-map destinations.",
+    16: "Overall output depth of LFO 2 to its mod-map destinations.",
+    46: "Blends Oscillator 1 between triangle (down) and sawtooth (up).",
+    47: "Pulse width / duty cycle of Oscillator 1's pulse wave.",
+    48: "Crossfades Oscillator 1 between its tri/saw mix and its pulse wave.",
+    51: "Blends Oscillator 2 between triangle (down) and sawtooth (up).",
+    52: "Pulse width / duty cycle of Oscillator 2's pulse wave.",
+    53: "Crossfades Oscillator 2 between its tri/saw mix and its pulse wave.",
+    54: "Hard-syncs OSC 1 to OSC 2 (resets OSC 1's phase) for sync timbres.",
+    55: "Linear FM of OSC 1 by OSC 2 (depth set by FM Amount).",
+    56: "Linear FM of OSC 2 by OSC 1 (depth set by FM Amount).",
+    57: "Depth of oscillator-to-oscillator linear FM (2>1 / 1>2 switches).",
+    58: "Level of Oscillator 1 into the mixer.",
+    59: "Level of Oscillator 2 into the mixer.",
+    60: "Level of the ring modulator (OSC 1 x OSC 2) into the mixer.",
+    61: "Level of the Modulation Oscillator into the mixer (audible at audio rate).",
+    62: "Level of the noise generator into the mixer.",
+    65: "OVERLOAD - overdrives the mixer sum for overtones, CP3-mixer style.",
+    66: "Switches Filter 1 from low-pass to high-pass operation.",
+    67: "Cutoff of Filter 1, a discrete Moog transistor-ladder filter (904a-style).",
+    68: "Resonance/emphasis at Filter 1's cutoff; self-oscillates when high.",
+    69: "Amount of the Filter envelope applied to Filter 1 cutoff.",
+    70: "How much Filter 1 cutoff tracks keyboard pitch (Off / Half / Full).",
+    71: "Latches/holds currently held notes so they keep sounding.",
+    72: "Cutoff of Filter 2, a dedicated low-pass Moog ladder filter.",
+    73: "Resonance/emphasis at Filter 2's cutoff; self-oscillates when high.",
+    75: "Amount of the Filter envelope applied to Filter 2 cutoff.",
+    76: "How much Filter 2 cutoff tracks keyboard pitch (Off / Half / Full).",
+    77: "Links Filter 1 & 2 so one cutoff control sweeps both.",
+    78: "Filter routing: Serial (1>2), Stereo (1 left / 2 right), or Parallel.",
+    79: "Attack time of the Filter envelope.",
+    80: "Sustain level of the Filter envelope.",
+    81: "Pre-attack delay before the Filter envelope starts.",
+    82: "Release time of the Filter envelope after key release.",
+    83: "Loops the Filter envelope for cycling, LFO-like modulation.",
+    85: "Makes the Filter envelope depth respond to key velocity.",
+    86: "Attack time of the Amplifier (VCA) envelope.",
+    87: "Sustain level of the Amplifier (VCA) envelope.",
+    88: "Pre-attack delay before the Amplifier envelope starts.",
+    89: "Release time of the Amplifier envelope after key release.",
+    90: "Loops the Amplifier envelope for cycling, tremolo-like modulation.",
+    91: "Makes loudness respond to key velocity via the Amplifier envelope.",
+    92: "Progressively detunes the analog voices for a fatter, wider sound.",
+    93: "Delay time of the left channel of the stereo Diffusion Delay.",
+    94: "Delay time of the right channel of the stereo Diffusion Delay.",
+    95: "Links left & right delay times so one control sets both.",
+    102: "Syncs delay times to the clock/tempo instead of free milliseconds.",
+    103: "Delay feedback - how many times the repeats echo.",
+    104: "Tone/diffusion character of the delay repeats, clean to smeared.",
+    105: "Dry/wet balance of the Diffusion Delay.",
+    106: "Routes Timbre A through the delay.",
+    107: "Routes Timbre B through the delay.",
+    108: "Unison - stacks all voices on each note for a massive sound.",
+    109: "Monophonic mode - one voice at a time.",
+    110: "Clock division for the sequencer (speed vs the master clock).",
+    111: "Clock division for the arpeggiator (speed vs the master clock).",
+    112: "Turns the arpeggiator on or off.",
+    113: "Arpeggiator forward / backward direction.",
+    114: "Arpeggiator note order: Order (as played), Pattern, or Random.",
+    115: "Number of octaves the arpeggio spans (1-4).",
+    116: "Master clock tempo (BPM) for arp, sequencer, and synced delay.",
+}
+
 
 def annotation_for(cc, longname):
     """Build the Info-View / hint text for a control."""
     desc, note = CC_INFO.get(cc, ("", ""))
+    if not desc:
+        desc = DESC_EXTRA.get(cc, "")
     text = "%s  ·  CC %d" % (longname, cc)
     if desc:
         text += "  —  " + desc
@@ -485,10 +556,12 @@ def build_setup_tab(p, midiformat, wx):
     lbl("Bank", [MARGIN, 52, 30, 14], "pc_l1")
     bank = p.live("live.numbox", [MARGIN + 34, 50, 38, 18], "PC Bank", 1, 1, 16,
                   varname="PCBank", annotation="Muse bank to recall (1-16)")
+    members.append("PCBank")
     lbl("Patch", [MARGIN + 80, 52, 34, 14], "pc_l2")
     patch = p.live("live.numbox", [MARGIN + 116, 50, 38, 18], "PC Patch", 1, 1,
                    16, varname="PCPatch",
                    annotation="Patch within the bank to recall (1-16)")
+    members.append("PCPatch")
     send = p.box("button", [MARGIN + 162, 50, 18, 18], present=True,
                  numinlets=1, numoutlets=1, outlettype=["bang"],
                  varname="PCSend")
