@@ -43,11 +43,6 @@ the Muse.
 
 ### Hardware → UI sync (bidirectional)
 
-> ⚠️ **Untested as of this writing.** The receive path is wired up (one
-> `ctlin` per CC), but it hasn't yet been verified against real hardware
-> because the Muse's MIDI Out wasn't connected during testing. Treat this
-> feature as provisional until confirmed.
-
 The device also listens for CCs coming *back* from the Muse: turn a knob on the
 synth and the matching on-screen control follows (without re-transmitting, so
 there's no feedback loop). For this to work the Muse's MIDI output has to reach
@@ -81,7 +76,8 @@ works without it.
 | Voice | Detune, unison/mono, glide, volume, pan, mod wheel, expression, mute, hold, sustain |
 | Delay | Times, sync, feedback, character, mix, and timbre sends |
 | Arp/Seq | Arpeggiator + sequencer clock and arp settings |
-| Setup | Program Change + help text |
+| Bank | Program Change (recall the Muse's stored patches) |
+| Misc | SEND ALL (push), Panic, Pitch Bend, and notes |
 
 **Control types** — continuous parameters are dials (0–127); on/off parameters
 are toggles (send 0 / 127); multi-option parameters (octave, waveform, KB
@@ -92,26 +88,36 @@ centred in the matching CC band, so the Muse always lands on the chosen option.
 of the window) shows what that control does on the Muse, taken from Moog's MIDI
 docs, along with its CC number. The same text appears as a hover tooltip.
 
-**Program Change (Setup tab)** — set **Bank** (1–16) and **Patch** (1–16), then
+**Program Change (Bank tab)** — set **Bank** (1–16) and **Patch** (1–16), then
 click **SEND** to recall that slot on the Muse (sends Bank Select MSB 0 + LSB +
 Program Change). 16 banks × 16 patches = 256 slots.
 
+**Misc tab** — **SEND ALL** pushes every control's current value to the Muse at
+once (see "Pushing a patch" below); **Panic** sends All Notes Off / All Sound
+Off to clear stuck notes; **Pitch Bend** sends pitch-bend to the synth. (Mod
+Wheel, Hold, Expression and Sustain are full controls on the **Voice** tab.)
+
+## Pushing and pulling patches
+
+**Pushing (plugin → Muse).** The **SEND ALL** button on the Misc tab transmits
+every control at once, so you can build a sound in the device (or recall a Live
+preset, below) and push it to the synth. A freshly loaded device starts on a
+small **INIT patch** (one oscillator up, filter open, amp sustaining) rather
+than all-zeros, so SEND ALL always produces an audible starting point instead of
+silence. Note that SEND ALL **overwrites** whatever patch is on the Muse.
+
+**Pulling (Muse → plugin) is per-knob only.** The Muse (firmware 1.4) has no
+MIDI command to transmit its whole panel state, so there's no one-click "grab
+the current sound." What works is the bidirectional sync above: turn a knob on
+the Muse and the matching control follows. (If a future firmware transmits CCs
+on patch load, the device will capture them automatically.)
+
 ## Patch library = Ableton's native presets
 
-This device deliberately leans on Live instead of a custom patch manager: every
-control is a real Live parameter, so **Ableton already saves and recalls all
-102 values** with your Set, with each clip, and as device presets you can drag
-into the browser and name. To build a library:
-
-1. Dial in a sound.
-2. Drag the device (or just save a preset) into your User Library to store it.
-3. Later, load the preset — the on-screen controls update.
-
-> **Note:** there is intentionally no "send everything at once" button. Because
-> an unedited control sits at 0, blasting all 102 values would overwrite the
-> Muse's patch with zeros (oscillator levels 0, filter closed) and silence it.
-> Move the controls you want — each sends as you change it — or let the device
-> mirror the hardware via bidirectional sync above.
+Every control is a real Live parameter, so **Ableton already saves and recalls
+all 102 values** with your Set, with each clip, and as device presets you can
+drag into the browser and name. Dial in a sound, save it as a device preset,
+and later load it — the controls update, and **SEND ALL** pushes it to the Muse.
 
 ## Regenerating
 

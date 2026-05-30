@@ -6,7 +6,7 @@ generate_device.py
 Builds ``MuseEditor.amxd`` - a Max for Live MIDI-effect device that is a full
 graphical editor for the Moog Muse, organised into tabs:
 
-    OSC | Filter | Env | Mod Osc | LFO | Voice | Delay | Arp/Seq | Setup
+    OSC | Filter | Env | Mod | LFO | Voice | Delay | Arp | Bank | Misc
 
 All 102 CC-addressable parameters are exposed as Ableton-automatable controls:
 
@@ -14,14 +14,15 @@ All 102 CC-addressable parameters are exposed as Ableton-automatable controls:
     toggle          -> live.toggle  (sends 0 / 127)
     multistate      -> live.menu    (sends the centre value of the CC band)
 
-Every control carries an `annotation`/`hint` built from the Muse CSV, so
-hovering shows what it does (plus its CC number) in Live's Info View.
+Every control carries an `annotation`/`hint` (Moog descriptions + CC number),
+so hovering shows what it does in Live's Info View, and a small INIT patch is
+applied via parameter defaults so SEND ALL never pushes silence.
 
 The whole UI fits inside Live's fixed 169-pixel device height: each tab shows
 its controls in two compact rows, and only the active tab is visible (live.tab
 + thispatcher script show/hide, with per-tab scripting-name lists generated
-here so they cannot drift out of sync with the objects).  The Setup tab holds
-the Program Change controls (Bank 1-16 / Patch 1-16) and help text.
+here so they cannot drift out of sync with the objects).  The Bank tab holds
+Program Change; the Misc tab holds SEND ALL (push), Panic, and Pitch Bend.
 
 Outbound: every control -> [scale] -> prepend <cc> -> midiformat -> midiout.
 Inbound (bidirectional): one [ctlin <cc>] per control writes the value back
@@ -156,6 +157,23 @@ def annotation_for(cc, longname):
         text += "  (" + note + ")"
     return text
 
+
+# Non-zero defaults so a freshly-loaded device shows (and SEND ALL pushes) a
+# basic playable INIT patch instead of silence: one oscillator at full level,
+# filter open, amp envelope sustaining.  Values are CC values; menus use the
+# option index.  Everything not listed defaults to 0 / first option.
+INIT = {
+    7: 127,    # Timbre Volume
+    44: 1,     # OSC 1 Octave -> 8'
+    58: 127,   # OSC 1 Level
+    46: 64,    # OSC 1 Tri/Saw Mix -> midway
+    67: 127,   # Filter 1 Cutoff -> open
+    80: 127,   # Filter Env Sustain
+    87: 127,   # VCA Env Sustain
+    86: 0,     # VCA Env Attack -> instant
+    89: 20,    # VCA Env Release -> short
+}
+
 # --------------------------------------------------------------------------
 # Authoritative parameter map (cc, long-name, kind, [enum states]).
 # Names are unique across the whole device (Live requires that).
@@ -209,7 +227,7 @@ TABS = [
         (90, "VCA Env Loop", T, None),
         (91, "VCA Env Velocity", T, None),
     ]),
-    ("MOD OSC", [
+    ("MOD", [
         (25, "Mod Osc Frequency", K, None),
         (28, "Mod Osc Waveform", M,
          ["Sine", "Saw", "Ramp", "Square", "Noise"]),
@@ -273,7 +291,7 @@ TABS = [
         (106, "Delay>Timbre A", T, None),
         (107, "Delay>Timbre B", T, None),
     ]),
-    ("ARP/SEQ", [
+    ("ARP", [
         (112, "Arp On/Off", T, None),
         (113, "Arp FW/BK", T, None),
         (114, "Arp Direction", M, ["Order", "Pattern", "Random"]),
@@ -379,14 +397,15 @@ class Patch:
                                           "destination": [dst, din]}})
 
     def live(self, maxclass, rect, longname, ptype, mmin, mmax,
-             enum=None, varname=None, annotation=None):
+             enum=None, varname=None, annotation=None, initial=None):
         v = {
             "parameter_longname": longname,
             "parameter_shortname": caption(longname)[:14],
             "parameter_type": ptype,
             "parameter_mmin": mmin,
             "parameter_mmax": mmax,
-            "parameter_initial_enable": 0,
+            "parameter_initial_enable": 1 if initial is not None else 0,
+            "parameter_initial": [initial if initial is not None else 0],
             "parameter_invisible": 0,
         }
         if enum is not None:
@@ -477,13 +496,14 @@ def build():
     p.connect(midiformat, 0, midiout, 0)
 
     # ---- header: tab strip (16px tall so live.tab stays a single row) ----
-    tab_labels = [t[0] for t in TABS] + ["SETUP"]
+    tab_labels = [t[0] for t in TABS] + ["BANK", "MISC"]
     tab = p.live("live.tab", [MARGIN, 5, DEVICE_WIDTH - 2 * MARGIN, 16],
                  "Tab", 2, 0, len(tab_labels) - 1, enum=tab_labels,
                  varname="TabSel")
 
     # ---- per-tab controls (two rows; only the active tab is shown) -------
     tab_members = []
+    all_ctrls = []        # every CC control id, for the SEND ALL button
     for _, params in TABS:
         members = []
         cols = math.ceil(len(params) / 2)
@@ -493,14 +513,16 @@ def build():
             sn = slug(longname)
             members += [sn, sn + "_L"]
             ctrl = make_control(p, kind, longname, enum, x, ry,
-                                annotation_for(cc, longname))
+                                annotation_for(cc, longname), INIT.get(cc))
             place_label(p, caption(longname), x, ry, sn)
             route_out(p, kind, enum, cc, ctrl, midiformat, wx)   # UI  -> Muse
             route_in(p, kind, enum, cc, ctrl, wx)                # Muse -> UI
+            all_ctrls.append(ctrl)
         tab_members.append(members)
 
-    # ---- Setup tab: Program Change + help (its own tab now) --------------
-    tab_members.append(build_setup_tab(p, midiformat, wx))
+    # ---- Bank tab (Program Change) and Misc tab (push / panic / bend) ----
+    tab_members.append(build_bank_tab(p, midiformat, wx))
+    tab_members.append(build_misc_tab(p, midiformat, wx, all_ctrls))
 
     # ---- tab switching machinery (thispatcher script show/hide) ----------
     thisp = p.obj("thispatcher", [wx, 380, 90, 22], numinlets=1, numoutlets=2,
@@ -539,12 +561,8 @@ def build():
     return p
 
 
-def build_setup_tab(p, midiformat, wx):
-    """Program Change controls + help text, shown only on the Setup tab.
-
-    Returns the list of scripting-names belonging to this tab so the tab
-    switcher can show/hide them with the rest.
-    """
+def build_bank_tab(p, midiformat, wx):
+    """Program Change (Bank/Patch) controls, shown only on the Bank tab."""
     members = []
 
     def lbl(text, rect, vn, bold=False):
@@ -567,12 +585,10 @@ def build_setup_tab(p, midiformat, wx):
                  varname="PCSend")
     members.append("PCSend")
     lbl("SEND", [MARGIN + 184, 52, 40, 14], "pc_l3")
-    lbl("Recalls a stored Muse patch. Needs MENU>MIDI>RECEIVE PGM CHNG: ON.",
+    lbl("Recalls one of the Muse's stored patches (16 banks x 16 patches).",
         [MARGIN, 96, 520, 14], "pc_h1")
-    lbl("Hover any control to read what it does in Live's Info View "
-        "(bottom-left of the window).", [MARGIN, 114, 540, 14], "pc_h2")
-    lbl("Note: hardware->UI sync is untested so far - connect the Muse's MIDI "
-        "Out and set the track Monitor to In.", [MARGIN, 132, 540, 14], "pc_h3")
+    lbl("Requires MENU > MIDI > RECEIVE PGM CHNG: ON on the Muse.",
+        [MARGIN, 114, 520, 14], "pc_h2")
 
     # Bank MSB(cc0=0) -> Bank LSB(cc32=bank-1) -> Program Change(patch-1)
     pc_t = p.obj("t b b b", [wx + 300, 460, 80, 22], numinlets=1,
@@ -594,17 +610,61 @@ def build_setup_tab(p, midiformat, wx):
     return members
 
 
-def make_control(p, kind, longname, enum, x, ry, annotation):
+def build_misc_tab(p, midiformat, wx, all_ctrls):
+    """SEND ALL (push), Panic, Pitch Bend, and notes - only on the Misc tab."""
+    members = []
+
+    def lbl(text, rect, vn, bold=False):
+        members.append(vn)
+        p.comment(text, rect, varname=vn, justify=0, fontsize=8.0,
+                  fontface=1 if bold else 0)
+
+    # SEND ALL: bang every CC control so it transmits its current value.
+    sa = p.box("button", [MARGIN, 30, 18, 18], present=True, numinlets=1,
+               numoutlets=1, outlettype=["bang"], varname="SendAll")
+    members.append("SendAll")
+    lbl("SEND ALL  ->  MUSE", [MARGIN + 22, 32, 150, 14], "ms_l0", bold=True)
+    for c in all_ctrls:
+        p.connect(sa, 0, c, 0)
+
+    # PANIC: All Notes Off (CC123=0) + All Sound Off (CC120=0).
+    pn = p.box("button", [MARGIN, 52, 18, 18], present=True, numinlets=1,
+               numoutlets=1, outlettype=["bang"], varname="Panic")
+    members.append("Panic")
+    lbl("PANIC (All Notes Off)", [MARGIN + 22, 54, 150, 14], "ms_l1")
+    for cc in (123, 120):
+        m = p.msg("%d 0" % cc, [wx + 600, 460 + cc, 50, 22])
+        p.connect(pn, 0, m, 0)
+        p.connect(m, 0, midiformat, 2)
+
+    # PITCH BEND (forward to the Muse; Ableton also sends bend natively).
+    lbl("Pitch Bend", [MARGIN + 250, 32, 70, 14], "ms_l2")
+    pb = p.live("live.dial", [MARGIN + 250, 46, DIAL, DIAL], "Pitch Bend", 1,
+                0, 16383, varname="PitchBend", initial=8192,
+                annotation="Pitch Bend wheel value (centre 8192). Forward only.")
+    members.append("PitchBend")
+    p.connect(pb, 0, midiformat, 5)                      # pitch-bend inlet
+
+    lbl("Mod Wheel (CC1), Hold (CC71), Expression & Sustain are on the VOICE "
+        "tab.", [MARGIN, 96, 540, 14], "ms_h1")
+    lbl("SEND ALL pushes every control to the Muse - dial in a sound first "
+        "(it overwrites the patch).", [MARGIN, 114, 540, 14], "ms_h2")
+    lbl("No one-click 'pull': the Muse can't transmit its state. Turn its "
+        "knobs and the plugin follows.", [MARGIN, 132, 540, 14], "ms_h3")
+    return members
+
+
+def make_control(p, kind, longname, enum, x, ry, annotation, initial=None):
     if kind == T:
         return p.live("live.toggle", [x + 21, ry + 9, 18, 18],
                       longname, 2, 0, 1, enum=["off", "on"],
-                      annotation=annotation)
+                      annotation=annotation, initial=initial)
     if kind == M:
         return p.live("live.menu", [x + 3, ry + 12, COL_W - 8, 18],
                       longname, 2, 0, len(enum) - 1, enum=enum,
-                      annotation=annotation)
+                      annotation=annotation, initial=initial)
     return p.live("live.dial", [x + 10, ry, DIAL, DIAL], longname, 1, 0, 127,
-                  annotation=annotation)
+                  annotation=annotation, initial=initial)
 
 
 def place_label(p, cap, x, ry, sn):
