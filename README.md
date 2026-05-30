@@ -183,6 +183,10 @@ The MIDI CC parameter map and descriptions were compiled from:
 - [pencilresearch/midi: Moog/Muse.csv](https://github.com/pencilresearch/midi/blob/main/Moog/Muse.csv)
 - Moog Muse 1.4 official documentation
 
+## TODO
+
+- Change tabs on plugin to conform to Muse's front panel layout
+
 ## Status / testing note
 
 This device was generated and validated structurally (binary container, JSON,
