@@ -25,6 +25,7 @@ The Muse ignores incoming CC and Program Change **by default** — turn them on:
 - **MENU → MIDI → RECEIVE CC: ON** (required for every control in this device)
 - **MENU → MIDI → RECEIVE PGM CHNG: ON** (required for the Program Change
   feature)
+- **MENU → MIDI → SEND CC: ON** (only needed for hardware → UI sync, below)
 
 ## Installing
 
@@ -39,6 +40,20 @@ The Muse ignores incoming CC and Program Change **by default** — turn them on:
 The device sends CCs on MIDI channel 1; Live's track **MIDI To** routing
 determines the actual destination channel, so set the channel there to match
 the Muse.
+
+### Hardware → UI sync (bidirectional)
+
+The device also listens for CCs coming *back* from the Muse: turn a knob on the
+synth and the matching on-screen control follows (without re-transmitting, so
+there's no feedback loop). For this to work the Muse's MIDI output has to reach
+the device:
+
+1. On the Muse, set **SEND CC: ON**.
+2. On the same Live track, set **MIDI From** to the Muse's input port and arm /
+   set Monitor to **In** (or **Auto** with the track armed).
+
+If you don't need hardware → UI sync, you can ignore this — sending to the Muse
+works without it.
 
 ## Using it
 
@@ -99,14 +114,20 @@ format Ableton's maxdevtools produces.
 ## How it routes (under the hood)
 
 ```
+OUT (UI → Muse):
 live.dial   ───────────────▶ prepend <cc> ─┐
 live.toggle ─▶ [* 127] ─────▶ prepend <cc> ─┼─▶ midiformat ─▶ midiout ─▶ Muse
 live.menu   ─▶ [expr …] ────▶ prepend <cc> ─┘      ▲   ▲
 Program Change: Bank MSB/LSB ──────────────────────┘   │ (program-change inlet)
                 Patch ─▶ [- 1] ────────────────────────┘
 
+IN  (Muse → UI):
+midiin ─▶ midiparse ─▶ route <cc…> ─▶ [>=64 / expr] ─▶ prepend set ─▶ live.*
 midiin ────────────────────────────────────────────▶ midiout   (note thru)
 ```
+
+`prepend set` updates a control without making it re-output, so incoming CCs
+move the UI but never echo back out.
 
 Tab switching uses `live.tab → thispatcher "script show/hide"`; each control
 and label has a unique scripting name and the per-tab name lists are generated
@@ -114,10 +135,13 @@ alongside the objects so they can't drift out of sync.
 
 ## Known limitations
 
-- **No bidirectional sync.** Turning a knob *on the Muse* sends a CC out (if the
-  synth's SEND CC is on), but this device does not currently read incoming CCs
-  to update the UI, so the on-screen state can drift from the hardware. (A
-  future `ctlin → route by CC → set each control` path would fix this.)
+- **Compact, fixed-height UI.** Live devices are locked to 169 px tall with no
+  vertical scrolling, so each tab packs its controls into two dense rows and the
+  device is wide rather than tall (you may need to scroll the device chain
+  horizontally to see all of a tab).
+- **Bidirectional sync covers CC parameters only.** Hardware → UI tracking works
+  for the 102 CCs; it can't reflect changes the Muse makes that aren't sent as
+  CC (e.g. Mod Map edits, preset loads from the synth's own menus).
 - **CC parameters only — no full patch dump.** The Muse has no SysEx patch
   transfer, so snapshots (Live presets) capture the 102 CC parameters but
   **not** Mod Map routings, sequencer step data, arp patterns, or global

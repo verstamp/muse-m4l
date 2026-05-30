@@ -8,24 +8,25 @@ graphical editor for the Moog Muse, organised into seven tabs:
 
     Oscillators | Filters | Mod Osc | LFOs | Voice | Delay | Arp/Seq
 
-Every one of the Muse's 102 CC-addressable parameters is exposed as an
-Ableton-automatable control:
+All 102 CC-addressable parameters are exposed as Ableton-automatable controls:
 
     knob / bipolar  -> live.dial    (integer 0..127)
     toggle          -> live.toggle  (sends 0 / 127)
     multistate      -> live.menu    (sends the centre value of the CC band)
 
+The whole UI fits inside Live's fixed 169-pixel device height: each tab shows
+its controls in two compact rows, and only the active tab is visible (live.tab
++ thispatcher script show/hide, with per-tab scripting-name lists generated
+here so they cannot drift out of sync with the objects).
+
+Outbound: every control -> prepend <cc> -> midiformat -> midiout.
+Inbound (bidirectional): midiin -> midiparse, the CC outlet is routed by
+number and each value is written back to its control with a `set` message, so
+turning a knob on the Muse updates the on-screen control without retransmitting.
+Notes pass through midiin -> midiout untouched.
+
 A bottom strip is always visible: a SYNC button (transmits every current value
-to the Muse at once) and Program Change controls (Bank 1-16 / Patch 1-16 ->
-Bank Select + Program Change) for recalling the synth's own stored presets.
-
-Tab switching is done with live.tab + thispatcher "script show/hide": each
-control and its label carries a unique scripting name, and the per-tab name
-lists are generated here so they can never drift out of sync with the objects.
-
-All controls feed one shared ``midiformat -> midiout`` pair; incoming MIDI is
-passed straight through ``midiin -> midiout`` so the device is transparent in
-front of the synth.
+to the Muse) and Program Change controls (Bank 1-16 / Patch 1-16).
 
 The ``.amxd`` binary container (ampf/meta/ptch + mx@c/dlst) is written to the
 format Ableton's maxdevtools produces (ported from the js2max writer).
@@ -47,10 +48,13 @@ K, B, T, M = "knob", "bip", "toggle", "multi"   # control kinds
 OCT = ["16'", "8'", "4'", "2'"]
 KBT = ["Off", "Half", "Full"]
 
+# CC value -> menu index: upper bound of every band except the last, so the
+# index is exactly sum(value > bound).  Keyed by number of bands.
+BOUNDS = {3: [42, 84], 4: [31, 63, 95], 5: [24, 49, 74, 99]}
+
 # --------------------------------------------------------------------------
 # Authoritative parameter map (cc, long-name, kind, [enum states]).
-# Names are unique across the whole device (Live requires that).  Grouped by
-# the tab they live on.  Source: the Muse MIDI implementation.
+# Names are unique across the whole device (Live requires that).
 # --------------------------------------------------------------------------
 TABS = [
     ("Oscillators", [
@@ -174,7 +178,7 @@ TABS = [
     ]),
 ]
 
-# Caption = on-screen label (the tab already gives the context).
+# Caption = on-screen label (the tab already provides the context).
 CAPTION_MAP = [
     ("OSC 1 ", "1 "), ("OSC 2 ", "2 "), ("OSC ", ""),
     ("Filter 1 ", "F1 "), ("Filter 2 ", "F2 "),
@@ -211,7 +215,7 @@ class Patch:
         self._n += 1
         return "obj-%d" % self._n
 
-    def box(self, maxclass, rect, present=False, hidden=False, **attrs):
+    def box(self, maxclass, rect, present=False, **attrs):
         oid = self._id()
         b = {
             "id": oid,
@@ -226,8 +230,6 @@ class Patch:
         if present:
             b["presentation"] = 1
             b["presentation_rect"] = [float(v) for v in rect]
-        if hidden:
-            b["hidden"] = 1
         b.update(attrs)
         self.boxes.append({"box": b})
         return oid
@@ -243,22 +245,21 @@ class Patch:
         kw.setdefault("outlettype", [""])
         return self.box("message", rect, text=text, **kw)
 
-    def comment(self, text, rect, present=True, hidden=False, varname=None,
-                fontsize=9.0, fontface=0, justify=0):
+    def comment(self, text, rect, present=True, varname=None,
+                fontsize=8.0, fontface=0, justify=1):
         attrs = dict(text=text, numinlets=1, numoutlets=0,
                      fontsize=fontsize, fontface=fontface,
                      textjustification=justify)
         if varname:
             attrs["varname"] = varname
-        return self.box("comment", rect, present=present, hidden=hidden,
-                        **attrs)
+        return self.box("comment", rect, present=present, **attrs)
 
     def connect(self, src, sout, dst, din):
         self.lines.append({"patchline": {"source": [src, sout],
                                           "destination": [dst, din]}})
 
     def live(self, maxclass, rect, longname, ptype, mmin, mmax,
-             enum=None, hidden=False, varname=None):
+             enum=None, varname=None):
         v = {
             "parameter_longname": longname,
             "parameter_shortname": caption(longname)[:14],
@@ -272,7 +273,7 @@ class Patch:
             v["parameter_enum"] = enum     # live.menu / live.toggle
             v["parameter_range"] = enum    # live.tab
         return self.box(
-            maxclass, rect, present=True, hidden=hidden,
+            maxclass, rect, present=True,
             numinlets=1, numoutlets=1, outlettype=[""],
             parameter_enable=1,
             varname=varname or slug(longname),
@@ -321,19 +322,20 @@ class Patch:
 
 
 # --------------------------------------------------------------------------
-# Layout
+# Layout - everything must fit inside Live's fixed 169px device height.
 # --------------------------------------------------------------------------
-DEVICE_WIDTH = 900
-CONTENT_X0 = 30
-CONTENT_TOP = 70
-CONTENT_RIGHT = 872
-ROW_H = 80
-W_KNOB = 62
-W_TOG = 132
+DEVICE_WIDTH = 720
+MARGIN = 10
+COL_W = 58
+ROW0_Y = 30
+ROW1_Y = 82
+DIAL = 36
+LABEL_DY = 38          # label offset below the control's top
+LIB_Y = 138            # bottom strip
 
 
-def menu_width(states):
-    return max(len(states) * 24, 80) + 8
+def cell_x(col):
+    return MARGIN + col * COL_W
 
 
 def build():
@@ -342,63 +344,81 @@ def build():
     # ---- shared MIDI plumbing (off-canvas, not in presentation) ----------
     wx = DEVICE_WIDTH + 80
     midiin = p.obj("midiin", [wx, 20, 60, 22])
-    midiformat = p.obj("midiformat", [wx + 130, 60, 90, 22], numinlets=8)
-    midiout = p.box("newobj", [wx + 130, 120, 60, 22], numinlets=1,
+    midiformat = p.obj("midiformat", [wx + 150, 60, 90, 22], numinlets=8)
+    midiout = p.box("newobj", [wx + 150, 120, 60, 22], numinlets=1,
                     numoutlets=0, text="midiout")
-    p.connect(midiin, 0, midiout, 0)
+    p.connect(midiin, 0, midiout, 0)                     # note/MIDI thru
     p.connect(midiformat, 0, midiout, 0)
+    # inbound parser for bidirectional sync
+    midiparse = p.obj("midiparse", [wx, 160, 90, 22], numinlets=1,
+                      numoutlets=7, outlettype=[""] * 7)
+    p.connect(midiin, 0, midiparse, 0)
 
-    # ---- header: title + tab strip ---------------------------------------
-    p.comment("MOOG MUSE  ·  EDITOR", [CONTENT_X0, 8, 320, 20],
-              fontsize=15.0, fontface=1)
+    # ---- header: tab strip (kept 16px tall so live.tab can only fit ONE
+    # row of buttons - a taller rect makes it wrap to a 2-row grid) --------
     tab_labels = [t[0] for t in TABS]
-    tab = p.live("live.tab", [CONTENT_X0, 32, CONTENT_RIGHT - CONTENT_X0, 24],
+    tab = p.live("live.tab", [MARGIN, 5, DEVICE_WIDTH - 2 * MARGIN, 16],
                  "Tab", 2, 0, len(tab_labels) - 1, enum=tab_labels,
                  varname="TabSel")
 
-    # (No background panel: in Live's presentation layer a panel draws on top
-    # of the controls and hides them, so we let the controls sit on Ableton's
-    # default device background.)
-
-    # ---- per-tab controls (overlapping; shown/hidden by tab) -------------
-    sync = p.box("button", [560, 462, 26, 26], present=True,
+    # ---- SYNC button (bangs every control to re-emit its value) ----------
+    sync = p.box("button", [10, LIB_Y, 20, 20], present=True,
                  numinlets=1, numoutlets=1, outlettype=["bang"])
 
-    # Every control ships visible; on load we hide all then show tab 0 via
-    # thispatcher.  Relying on that single mechanism means a scripting failure
-    # degrades to harmless overlap rather than permanently-hidden tabs.
-    tab_members = []          # list[list[scriptname]] per tab
-    for ti, (_, params) in enumerate(TABS):
+    # ---- per-tab controls (two rows; only active tab shown) --------------
+    tab_members = []
+    ctrls = {}            # cc -> (id, kind, enum)
+    cc_order = []
+    for _, params in TABS:
         members = []
-        x, y = CONTENT_X0, CONTENT_TOP
-        for cc, longname, kind, enum in params:
-            cap = caption(longname)
-            colw = (menu_width(enum) if kind == M else
-                    W_TOG if kind == T else W_KNOB)
-            if x + colw > CONTENT_RIGHT:
-                x, y = CONTENT_X0, y + ROW_H
+        n = len(params)
+        cols = math.ceil(n / 2)
+        for i, (cc, longname, kind, enum) in enumerate(params):
+            col, row = i % cols, i // cols
+            x = cell_x(col)
+            ry = ROW0_Y if row == 0 else ROW1_Y
 
             sn = slug(longname)
-            members.append(sn)
-            members.append(sn + "_L")
+            members += [sn, sn + "_L"]
+            ctrl = make_control(p, kind, longname, enum, x, ry)
+            place_label(p, caption(longname), x, ry, sn)
 
-            ctrl = make_control(p, kind, longname, enum, x, y, colw)
-            place_label(p, kind, cap, x, y, colw, sn)
-
-            # SYNC bangs every control to re-emit its value
-            p.connect(sync, 0, ctrl, 0)
-            route(p, kind, enum, cc, ctrl, midiformat, wx)
-            x += colw + 6
+            ctrls[cc] = (ctrl, kind, enum)
+            cc_order.append(cc)
+            p.connect(sync, 0, ctrl, 0)                  # SYNC -> control
+            route_out(p, kind, enum, cc, ctrl, midiformat, wx)
         tab_members.append(members)
 
-    # ---- tab switching machinery (script show/hide via thispatcher) ------
+    # ---- bidirectional: midiparse CC list -> route by number -> set ------
+    rt = p.obj("route " + " ".join(str(c) for c in cc_order),
+               [wx, 200, 600, 22], numinlets=1,
+               numoutlets=len(cc_order) + 1,
+               outlettype=[""] * (len(cc_order) + 1))
+    p.connect(midiparse, 2, rt, 0)
+    for idx, cc in enumerate(cc_order):
+        ctrl, kind, enum = ctrls[cc]
+        wy = 240 + idx * 8
+        src, sout = rt, idx
+        if kind == T:
+            ge = p.obj(">= 64", [wx + 260, wy, 50, 22], numinlets=2)
+            p.connect(src, sout, ge, 0)
+            src, sout = ge, 0
+        elif kind == M:
+            expr = " + ".join("($i1 > %d)" % b for b in BOUNDS[len(enum)])
+            ex = p.obj("expr " + expr, [wx + 260, wy, 140, 22], numinlets=1)
+            p.connect(src, sout, ex, 0)
+            src, sout = ex, 0
+        ps = p.obj("prepend set", [wx + 420, wy, 80, 22], numinlets=2)
+        p.connect(src, sout, ps, 0)
+        p.connect(ps, 0, ctrl, 0)                        # set (no re-send)
+
+    # ---- tab switching machinery (thispatcher script show/hide) ----------
     thisp = p.obj("thispatcher", [wx, 380, 90, 22], numinlets=1, numoutlets=2,
                   outlettype=["", ""])
     all_names = [n for m in tab_members for n in m]
     hide_all = p.msg(", ".join("script hide " + n for n in all_names),
                      [wx, 420, 200, 22])
     p.connect(hide_all, 0, thisp, 0)
-
     tii = p.obj("t i i", [wx + 260, 300, 60, 22], numinlets=1, numoutlets=2,
                 outlettype=["int", "int"])
     p.connect(tii, 1, hide_all, 0)                       # right fires first
@@ -412,100 +432,88 @@ def build():
                      [wx + 480, 300 + ti * 30, 200, 22])
         p.connect(sel, ti, show, 0)
         p.connect(show, 0, thisp, 0)
-
     p.connect(tab, 0, tii, 0)
 
-    # ---- load-time init: set channel 1, select tab 0 --------------------
-    lb = p.box("loadbang", [wx, 200, 60, 22], numinlets=1, numoutlets=1,
+    # ---- load-time init: channel 1, select tab 0 -------------------------
+    lb = p.box("loadbang", [wx, 90, 60, 22], numinlets=1, numoutlets=1,
                outlettype=["bang"])
-    ch1 = p.msg("1", [wx, 240, 40, 22])
+    ch1 = p.msg("1", [wx, 120, 40, 22])
     p.connect(lb, 0, ch1, 0)
     p.connect(ch1, 0, midiformat, 7)                     # MIDI channel = 1
-    dly = p.obj("delay 300", [wx + 80, 240, 70, 22], numinlets=2)
-    zero = p.msg("0", [wx + 80, 280, 40, 22])
+    dly = p.obj("delay 300", [wx + 80, 120, 70, 22], numinlets=2)
+    zero = p.msg("0", [wx + 80, 150, 40, 22])
     p.connect(lb, 0, dly, 0)
     p.connect(dly, 0, zero, 0)
-    p.connect(zero, 0, tab, 0)                           # set tab visual to 0
-    p.connect(zero, 0, tii, 0)                           # and run hide/show
+    p.connect(zero, 0, tab, 0)
+    p.connect(zero, 0, tii, 0)
 
-    # ---- always-visible bottom strip: SYNC + Program Change -------------
-    p.comment("Move any control to send its CC. SYNC sends everything. "
-              "Save/recall full states with Ableton device presets.",
-              [CONTENT_X0, 460, 510, 30], fontsize=9.0)
-    p.comment("SYNC →", [556, 490, 60, 16], fontsize=9.0, fontface=1)
-
-    p.comment("PROGRAM CHANGE", [650, 458, 200, 16], fontsize=9.0, fontface=1)
-    p.comment("Bank", [650, 480, 32, 16], fontsize=9.0)
-    bank = p.live("live.numbox", [684, 478, 40, 18],
+    # ---- always-visible bottom strip: SYNC + Program Change --------------
+    p.comment("SYNC", [32, LIB_Y + 4, 40, 12], fontface=1, justify=0)
+    p.comment("PROG CHANGE", [110, LIB_Y + 4, 78, 12], fontface=1, justify=0)
+    p.comment("Bk", [190, LIB_Y + 4, 16, 12], justify=0)
+    bank = p.live("live.numbox", [208, LIB_Y + 2, 32, 18],
                   "PC Bank", 1, 1, 16, varname="PCBank")
-    p.comment("Patch", [730, 480, 36, 16], fontsize=9.0)
-    patch = p.live("live.numbox", [768, 478, 40, 18],
+    p.comment("Pt", [246, LIB_Y + 4, 16, 12], justify=0)
+    patch = p.live("live.numbox", [262, LIB_Y + 2, 32, 18],
                    "PC Patch", 1, 1, 16, varname="PCPatch")
-    send = p.box("button", [818, 476, 22, 22], present=True,
+    send = p.box("button", [300, LIB_Y + 2, 18, 18], present=True,
                  numinlets=1, numoutlets=1, outlettype=["bang"])
-    p.comment("SEND", [812, 500, 40, 14], fontsize=9.0)
+    p.comment("SEND", [322, LIB_Y + 4, 36, 12], justify=0)
+    p.comment("Live presets save controls · turn Muse knobs to update the UI",
+              [380, LIB_Y + 4, 330, 12], justify=0)
 
     # Program Change: Bank MSB(cc0=0) -> Bank LSB(cc32=bank-1) -> PC(patch-1)
     pc_t = p.obj("t b b b", [wx + 300, 460, 80, 22], numinlets=1,
                  numoutlets=3, outlettype=["bang", "bang", "bang"])
     p.connect(send, 0, pc_t, 0)
-    msb = p.msg("0 0", [wx + 300, 500, 50, 22])          # cc0 = 0
+    msb = p.msg("0 0", [wx + 300, 500, 50, 22])
     p.connect(pc_t, 2, msb, 0)                           # fires first
     p.connect(msb, 0, midiformat, 2)
-    p.connect(pc_t, 1, bank, 0)                          # bang bank numbox
+    p.connect(pc_t, 1, bank, 0)
     bsub = p.obj("- 1", [wx + 300, 540, 50, 22], numinlets=2)
     p.connect(bank, 0, bsub, 0)
     blsb = p.obj("prepend 32", [wx + 300, 570, 80, 22], numinlets=2)
     p.connect(bsub, 0, blsb, 0)
-    p.connect(blsb, 0, midiformat, 2)                    # cc32 = bank-1
-    p.connect(pc_t, 0, patch, 0)                         # fires last
+    p.connect(blsb, 0, midiformat, 2)
+    p.connect(pc_t, 0, patch, 0)                          # fires last
     psub = p.obj("- 1", [wx + 420, 540, 50, 22], numinlets=2)
     p.connect(patch, 0, psub, 0)
-    p.connect(psub, 0, midiformat, 3)                    # program change
+    p.connect(psub, 0, midiformat, 3)
 
     return p
 
 
-def make_control(p, kind, longname, enum, x, y, colw):
+def make_control(p, kind, longname, enum, x, ry):
     if kind == T:
-        return p.live("live.toggle", [x, y + 10, 20, 20],
+        return p.live("live.toggle", [x + 20, ry + 9, 18, 18],
                       longname, 2, 0, 1, enum=["off", "on"])
     if kind == M:
-        return p.live("live.menu", [x, y + 18, colw - 8, 18],
+        return p.live("live.menu", [x + 2, ry + 11, COL_W - 6, 18],
                       longname, 2, 0, len(enum) - 1, enum=enum)
-    # knob / bipolar -> integer dial 0..127
-    return p.live("live.dial", [x + 9, y, 44, 44], longname, 1, 0, 127)
+    return p.live("live.dial", [x + 11, ry, DIAL, DIAL], longname, 1, 0, 127)
 
 
-def place_label(p, kind, cap, x, y, colw, sn):
-    ln = sn + "_L"
-    if kind == T:
-        p.comment(cap, [x + 24, y + 12, colw - 26, 18],
-                  varname=ln, fontsize=9.0, justify=0)
-    elif kind == M:
-        p.comment(cap, [x, y + 1, colw - 8, 14],
-                  varname=ln, fontsize=9.0, justify=0)
-    else:
-        p.comment(cap, [x, y + 46, colw, 26],
-                  varname=ln, fontsize=8.0, justify=1)
+def place_label(p, cap, x, ry, sn):
+    p.comment(cap, [x, ry + LABEL_DY, COL_W - 2, 12],
+              varname=sn + "_L", fontsize=8.0, justify=1)
 
 
-def route(p, kind, enum, cc, ctrl, midiformat, wx):
+def route_out(p, kind, enum, cc, ctrl, midiformat, wx):
     """control -> [scale] -> prepend <cc> -> midiformat control inlet."""
     wy = 200 + cc * 8
     src, sout = ctrl, 0
     if kind == T:
-        sc = p.obj("* 127", [wx, wy, 50, 22], numinlets=2)
+        sc = p.obj("* 127", [wx + 600, wy, 50, 22], numinlets=2)
         p.connect(src, sout, sc, 0)
         src, sout = sc, 0
     elif kind == M:
         n = len(enum)
         step, base = round(128 / n), round(128 / n) // 2
         ex = p.obj("expr $i1 * %d + %d" % (step, base),
-                   [wx, wy, 110, 22], numinlets=1)
+                   [wx + 600, wy, 110, 22], numinlets=1)
         p.connect(src, sout, ex, 0)
         src, sout = ex, 0
-    pre = p.obj("prepend %d" % cc, [wx + 130, wy, 80, 22], numinlets=2)
+    pre = p.obj("prepend %d" % cc, [wx + 740, wy, 80, 22], numinlets=2)
     p.connect(src, sout, pre, 0)
     p.connect(pre, 0, midiformat, 2)
 
@@ -563,12 +571,10 @@ def build_amxd(maxpat, device_code, filename):
 
 
 def main():
-    # sanity: unique parameter names + scripting names
     longs = [pr[1] for _, ps in TABS for pr in ps]
     assert len(longs) == len(set(longs)), "duplicate parameter long-name"
     slugs = [slug(n) for n in longs]
     assert len(slugs) == len(set(slugs)), "duplicate scripting name"
-    n_params = len(longs)
 
     patch = build()
     maxpat = patch.to_maxpat()
@@ -578,7 +584,13 @@ def main():
     with open(AMXD_PATH, "wb") as f:
         f.write(amxd)
 
-    print("Parameters: %d across %d tabs" % (n_params, len(TABS)))
+    # report max presentation Y so we know it fits the 169px device height
+    maxy = max((b["box"]["presentation_rect"][1] +
+                b["box"]["presentation_rect"][3])
+               for b in maxpat["patcher"]["boxes"]
+               if b["box"].get("presentation"))
+    print("Parameters: %d across %d tabs" % (len(longs), len(TABS)))
+    print("Max presentation Y: %.0f px (must be <= 169)" % maxy)
     print("Wrote %s (%d bytes) and %s" %
           (AMXD_PATH, len(amxd), MAXPAT_PATH))
 
