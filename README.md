@@ -5,6 +5,8 @@ the Moog Muse. All 102 CC-addressable parameters are laid out across seven tabs
 and exposed as Ableton-automatable controls, plus Program Change for recalling
 the synth's own stored presets.
 
+> **⚠️ Disclaimer:** This is an **unofficial** plugin and is **not supported or endorsed** by Ableton or Moog. Use at your own risk. For official support, contact Moog or Ableton directly.
+
 | File | What it is |
 |------|------------|
 | **`MuseEditor.amxd`** | The device. Load this into Live. |
