@@ -4,9 +4,9 @@ generate_device.py
 ==================
 
 Builds ``MuseEditor.amxd`` - a Max for Live MIDI-effect device that is a full
-graphical editor for the Moog Muse, organised into seven tabs:
+graphical editor for the Moog Muse, organised into tabs:
 
-    Oscillators | Filters | Mod Osc | LFOs | Voice | Delay | Arp/Seq
+    OSC | Filter | Env | Mod Osc | LFO | Voice | Delay | Arp/Seq | Setup
 
 All 102 CC-addressable parameters are exposed as Ableton-automatable controls:
 
@@ -14,19 +14,19 @@ All 102 CC-addressable parameters are exposed as Ableton-automatable controls:
     toggle          -> live.toggle  (sends 0 / 127)
     multistate      -> live.menu    (sends the centre value of the CC band)
 
+Every control carries an `annotation`/`hint` built from the Muse CSV, so
+hovering shows what it does (plus its CC number) in Live's Info View.
+
 The whole UI fits inside Live's fixed 169-pixel device height: each tab shows
 its controls in two compact rows, and only the active tab is visible (live.tab
 + thispatcher script show/hide, with per-tab scripting-name lists generated
-here so they cannot drift out of sync with the objects).
+here so they cannot drift out of sync with the objects).  The Setup tab holds
+the Program Change controls (Bank 1-16 / Patch 1-16) and help text.
 
-Outbound: every control -> prepend <cc> -> midiformat -> midiout.
-Inbound (bidirectional): midiin -> midiparse, the CC outlet is routed by
-number and each value is written back to its control with a `set` message, so
-turning a knob on the Muse updates the on-screen control without retransmitting.
-Notes pass through midiin -> midiout untouched.
-
-A bottom strip is always visible: a SYNC button (transmits every current value
-to the Muse) and Program Change controls (Bank 1-16 / Patch 1-16).
+Outbound: every control -> [scale] -> prepend <cc> -> midiformat -> midiout.
+Inbound (bidirectional): one [ctlin <cc>] per control writes the value back
+with a `set` message, so turning a knob on the Muse updates the on-screen
+control without retransmitting.  Notes pass through midiin -> midiout.
 
 The ``.amxd`` binary container (ampf/meta/ptch + mx@c/dlst) is written to the
 format Ableton's maxdevtools produces (ported from the js2max writer).
@@ -52,12 +52,45 @@ KBT = ["Off", "Half", "Full"]
 # index is exactly sum(value > bound).  Keyed by number of bands.
 BOUNDS = {3: [42, 84], 4: [31, 63, 95], 5: [24, 49, 74, 99]}
 
+CSV_PATH = "Muse_MIDI_CCs.csv"
+
+
+def load_descriptions():
+    """cc -> manufacturer description text, read from the Muse CSV."""
+    import csv
+    info = {}
+    try:
+        with open(CSV_PATH, newline="") as f:
+            for row in csv.DictReader(f):
+                cc = (row.get("cc_msb") or "").strip()
+                if cc.isdigit():
+                    desc = (row.get("parameter_description") or "").strip()
+                    note = (row.get("usage") or "").strip()
+                    info[int(cc)] = (desc, note)
+    except FileNotFoundError:
+        pass
+    return info
+
+
+CC_INFO = load_descriptions()
+
+
+def annotation_for(cc, longname):
+    """Build the Info-View / hint text for a control."""
+    desc, note = CC_INFO.get(cc, ("", ""))
+    text = "%s  ·  CC %d" % (longname, cc)
+    if desc:
+        text += "  —  " + desc
+    if note:
+        text += "  (" + note + ")"
+    return text
+
 # --------------------------------------------------------------------------
 # Authoritative parameter map (cc, long-name, kind, [enum states]).
 # Names are unique across the whole device (Live requires that).
 # --------------------------------------------------------------------------
 TABS = [
-    ("Oscillators", [
+    ("OSC", [
         (44, "OSC 1 Octave", M, OCT),
         (45, "OSC 1 Frequency", B, None),
         (46, "OSC 1 Tri/Saw Mix", K, None),
@@ -77,7 +110,7 @@ TABS = [
         (60, "Ring Mod Level", K, None),
         (62, "Noise Level", K, None),
     ]),
-    ("Filters", [
+    ("Filter", [
         (67, "Filter 1 Cutoff", K, None),
         (68, "Filter 1 Resonance", K, None),
         (69, "Filter 1 Env Amount", K, None),
@@ -90,6 +123,8 @@ TABS = [
         (77, "Link Filters", T, None),
         (78, "Filter Order", M, ["Serial", "Stereo", "Parallel"]),
         (65, "Clipping Level", K, None),
+    ]),
+    ("Env", [
         (79, "Filter Env Attack", K, None),
         (80, "Filter Env Sustain", K, None),
         (81, "Filter Env Delay", K, None),
@@ -103,7 +138,7 @@ TABS = [
         (90, "VCA Env Loop", T, None),
         (91, "VCA Env Velocity", T, None),
     ]),
-    ("Mod Osc", [
+    ("MOD OSC", [
         (25, "Mod Osc Frequency", K, None),
         (28, "Mod Osc Waveform", M,
          ["Sine", "Saw", "Ramp", "Square", "Noise"]),
@@ -124,7 +159,7 @@ TABS = [
         (43, "Mod Osc VCA Pan", T, None),
         (61, "Mod Osc Level", K, None),
     ]),
-    ("LFOs", [
+    ("LFO", [
         (12, "LFO 1 Rate", K, None),
         (13, "LFO 1 Amount", K, None),
         (14, "LFO 1 Waveform", M,
@@ -141,7 +176,7 @@ TABS = [
         (23, "Pitch LFO>Mod Osc", T, None),
         (24, "Pitch LFO>Detune", T, None),
     ]),
-    ("Voice", [
+    ("VOICE", [
         (92, "Voice Detune", K, None),
         (108, "Voice Unison", T, None),
         (109, "Voice Mono", T, None),
@@ -156,7 +191,7 @@ TABS = [
         (71, "Hold", T, None),
         (64, "Sustain Pedal", T, None),
     ]),
-    ("Delay", [
+    ("DELAY", [
         (93, "Delay Time Left", K, None),
         (94, "Delay Time Right", K, None),
         (95, "Link Delays", T, None),
@@ -167,7 +202,7 @@ TABS = [
         (106, "Delay>Timbre A", T, None),
         (107, "Delay>Timbre B", T, None),
     ]),
-    ("Arp/Seq", [
+    ("ARP/SEQ", [
         (112, "Arp On/Off", T, None),
         (113, "Arp FW/BK", T, None),
         (114, "Arp Direction", M, ["Order", "Pattern", "Random"]),
@@ -191,11 +226,25 @@ CAPTION_MAP = [
 ]
 
 
+# Whole-word abbreviations applied to on-screen captions for legibility.
+WORD_ABBR = {
+    "Resonance": "Reso", "Frequency": "Freq", "Amount": "Amt",
+    "Attack": "Atk", "Release": "Rel", "Sustain": "Sus",
+    "Velocity": "Vel", "Waveform": "Wave", "Octave": "Oct", "Level": "Lvl",
+    "Character": "Char", "Feedback": "Fbk", "Expression": "Expr",
+    "Direction": "Dir", "Pedal": "Ped", "Range": "Rng", "Spread": "Spr",
+    "Wheel": "Whl", "Reset": "Rst", "Unison": "Uni", "Unipolar": "Uni",
+    "Clipping": "Clip",
+}
+
+
 def caption(longname):
+    out = longname
     for pre, repl in CAPTION_MAP:
-        if longname.startswith(pre):
-            return repl + longname[len(pre):]
-    return longname
+        if out.startswith(pre):
+            out = repl + out[len(pre):]
+            break
+    return " ".join(WORD_ABBR.get(w, w) for w in out.split(" "))
 
 
 def slug(longname):
@@ -259,7 +308,7 @@ class Patch:
                                           "destination": [dst, din]}})
 
     def live(self, maxclass, rect, longname, ptype, mmin, mmax,
-             enum=None, varname=None):
+             enum=None, varname=None, annotation=None):
         v = {
             "parameter_longname": longname,
             "parameter_shortname": caption(longname)[:14],
@@ -272,12 +321,18 @@ class Patch:
         if enum is not None:
             v["parameter_enum"] = enum     # live.menu / live.toggle
             v["parameter_range"] = enum    # live.tab
+        extra = {}
+        if annotation:
+            # shows in Ableton's Info View (bottom-left) and as a hover hint
+            extra["annotation"] = annotation
+            extra["hint"] = annotation
         return self.box(
             maxclass, rect, present=True,
             numinlets=1, numoutlets=1, outlettype=[""],
             parameter_enable=1,
             varname=varname or slug(longname),
             saved_attribute_attributes={"valueof": v},
+            **extra,
         )
 
     def to_maxpat(self):
@@ -324,14 +379,14 @@ class Patch:
 # --------------------------------------------------------------------------
 # Layout - everything must fit inside Live's fixed 169px device height.
 # --------------------------------------------------------------------------
-DEVICE_WIDTH = 720
 MARGIN = 10
-COL_W = 58
-ROW0_Y = 30
-ROW1_Y = 82
-DIAL = 36
-LABEL_DY = 38          # label offset below the control's top
-LIB_Y = 138            # bottom strip
+COL_W = 60
+DIAL = 40
+ROW0_Y = 28
+ROW1_Y = 98            # two well-separated rows (no label/dial overlap)
+LABEL_DY = 43          # label offset below the control's top
+MAX_COLS = max(math.ceil(len(params) / 2) for _, params in TABS)
+DEVICE_WIDTH = 2 * MARGIN + MAX_COLS * COL_W
 
 
 def cell_x(col):
@@ -350,32 +405,31 @@ def build():
     p.connect(midiin, 0, midiout, 0)                     # note/MIDI thru
     p.connect(midiformat, 0, midiout, 0)
 
-    # ---- header: tab strip (kept 16px tall so live.tab can only fit ONE
-    # row of buttons - a taller rect makes it wrap to a 2-row grid) --------
-    tab_labels = [t[0] for t in TABS]
+    # ---- header: tab strip (16px tall so live.tab stays a single row) ----
+    tab_labels = [t[0] for t in TABS] + ["SETUP"]
     tab = p.live("live.tab", [MARGIN, 5, DEVICE_WIDTH - 2 * MARGIN, 16],
                  "Tab", 2, 0, len(tab_labels) - 1, enum=tab_labels,
                  varname="TabSel")
 
-    # ---- per-tab controls (two rows; only active tab shown) --------------
+    # ---- per-tab controls (two rows; only the active tab is shown) -------
     tab_members = []
     for _, params in TABS:
         members = []
-        n = len(params)
-        cols = math.ceil(n / 2)
+        cols = math.ceil(len(params) / 2)
         for i, (cc, longname, kind, enum) in enumerate(params):
-            col, row = i % cols, i // cols
-            x = cell_x(col)
-            ry = ROW0_Y if row == 0 else ROW1_Y
-
+            x = cell_x(i % cols)
+            ry = ROW0_Y if i // cols == 0 else ROW1_Y
             sn = slug(longname)
             members += [sn, sn + "_L"]
-            ctrl = make_control(p, kind, longname, enum, x, ry)
+            ctrl = make_control(p, kind, longname, enum, x, ry,
+                                annotation_for(cc, longname))
             place_label(p, caption(longname), x, ry, sn)
-
             route_out(p, kind, enum, cc, ctrl, midiformat, wx)   # UI  -> Muse
             route_in(p, kind, enum, cc, ctrl, wx)                # Muse -> UI
         tab_members.append(members)
+
+    # ---- Setup tab: Program Change + help (its own tab now) --------------
+    tab_members.append(build_setup_tab(p, midiformat, wx))
 
     # ---- tab switching machinery (thispatcher script show/hide) ----------
     thisp = p.obj("thispatcher", [wx, 380, 90, 22], numinlets=1, numoutlets=2,
@@ -387,14 +441,14 @@ def build():
     tii = p.obj("t i i", [wx + 260, 300, 60, 22], numinlets=1, numoutlets=2,
                 outlettype=["int", "int"])
     p.connect(tii, 1, hide_all, 0)                       # right fires first
-    sel = p.obj("sel " + " ".join(str(i) for i in range(len(TABS))),
-                [wx + 260, 340, 200, 22], numinlets=1,
-                numoutlets=len(TABS) + 1,
-                outlettype=["bang"] * len(TABS) + [""])
+    sel = p.obj("sel " + " ".join(str(i) for i in range(len(tab_members))),
+                [wx + 260, 340, 220, 22], numinlets=1,
+                numoutlets=len(tab_members) + 1,
+                outlettype=["bang"] * len(tab_members) + [""])
     p.connect(tii, 0, sel, 0)
     for ti, members in enumerate(tab_members):
         show = p.msg(", ".join("script show " + n for n in members),
-                     [wx + 480, 300 + ti * 30, 200, 22])
+                     [wx + 500, 300 + ti * 26, 220, 22])
         p.connect(sel, ti, show, 0)
         p.connect(show, 0, thisp, 0)
     p.connect(tab, 0, tii, 0)
@@ -411,22 +465,43 @@ def build():
     p.connect(dly, 0, zero, 0)
     p.connect(zero, 0, tab, 0)
     p.connect(zero, 0, tii, 0)
+    return p
 
-    # ---- always-visible bottom strip: Program Change ---------------------
-    p.comment("PROG CHANGE", [10, LIB_Y + 4, 78, 12], fontface=1, justify=0)
-    p.comment("Bk", [92, LIB_Y + 4, 16, 12], justify=0)
-    bank = p.live("live.numbox", [110, LIB_Y + 2, 32, 18],
-                  "PC Bank", 1, 1, 16, varname="PCBank")
-    p.comment("Pt", [148, LIB_Y + 4, 16, 12], justify=0)
-    patch = p.live("live.numbox", [164, LIB_Y + 2, 32, 18],
-                   "PC Patch", 1, 1, 16, varname="PCPatch")
-    send = p.box("button", [202, LIB_Y + 2, 18, 18], present=True,
-                 numinlets=1, numoutlets=1, outlettype=["bang"])
-    p.comment("SEND", [224, LIB_Y + 4, 36, 12], justify=0)
-    p.comment("Controls follow the Muse's knobs · drag a control to send it",
-              [280, LIB_Y + 4, 430, 12], justify=0)
 
-    # Program Change: Bank MSB(cc0=0) -> Bank LSB(cc32=bank-1) -> PC(patch-1)
+def build_setup_tab(p, midiformat, wx):
+    """Program Change controls + help text, shown only on the Setup tab.
+
+    Returns the list of scripting-names belonging to this tab so the tab
+    switcher can show/hide them with the rest.
+    """
+    members = []
+
+    def lbl(text, rect, vn, bold=False):
+        members.append(vn)
+        p.comment(text, rect, varname=vn, justify=0, fontsize=8.0,
+                  fontface=1 if bold else 0)
+
+    lbl("PROGRAM CHANGE", [MARGIN, 30, 130, 14], "pc_t0", bold=True)
+    lbl("Bank", [MARGIN, 52, 30, 14], "pc_l1")
+    bank = p.live("live.numbox", [MARGIN + 34, 50, 38, 18], "PC Bank", 1, 1, 16,
+                  varname="PCBank", annotation="Muse bank to recall (1-16)")
+    lbl("Patch", [MARGIN + 80, 52, 34, 14], "pc_l2")
+    patch = p.live("live.numbox", [MARGIN + 116, 50, 38, 18], "PC Patch", 1, 1,
+                   16, varname="PCPatch",
+                   annotation="Patch within the bank to recall (1-16)")
+    send = p.box("button", [MARGIN + 162, 50, 18, 18], present=True,
+                 numinlets=1, numoutlets=1, outlettype=["bang"],
+                 varname="PCSend")
+    members.append("PCSend")
+    lbl("SEND", [MARGIN + 184, 52, 40, 14], "pc_l3")
+    lbl("Recalls a stored Muse patch. Needs MENU>MIDI>RECEIVE PGM CHNG: ON.",
+        [MARGIN, 96, 520, 14], "pc_h1")
+    lbl("Hover any control to read what it does in Live's Info View "
+        "(bottom-left of the window).", [MARGIN, 114, 540, 14], "pc_h2")
+    lbl("Note: hardware->UI sync is untested so far - connect the Muse's MIDI "
+        "Out and set the track Monitor to In.", [MARGIN, 132, 540, 14], "pc_h3")
+
+    # Bank MSB(cc0=0) -> Bank LSB(cc32=bank-1) -> Program Change(patch-1)
     pc_t = p.obj("t b b b", [wx + 300, 460, 80, 22], numinlets=1,
                  numoutlets=3, outlettype=["bang", "bang", "bang"])
     p.connect(send, 0, pc_t, 0)
@@ -443,22 +518,24 @@ def build():
     psub = p.obj("- 1", [wx + 420, 540, 50, 22], numinlets=2)
     p.connect(patch, 0, psub, 0)
     p.connect(psub, 0, midiformat, 3)
+    return members
 
-    return p
 
-
-def make_control(p, kind, longname, enum, x, ry):
+def make_control(p, kind, longname, enum, x, ry, annotation):
     if kind == T:
-        return p.live("live.toggle", [x + 20, ry + 9, 18, 18],
-                      longname, 2, 0, 1, enum=["off", "on"])
+        return p.live("live.toggle", [x + 21, ry + 9, 18, 18],
+                      longname, 2, 0, 1, enum=["off", "on"],
+                      annotation=annotation)
     if kind == M:
-        return p.live("live.menu", [x + 2, ry + 11, COL_W - 6, 18],
-                      longname, 2, 0, len(enum) - 1, enum=enum)
-    return p.live("live.dial", [x + 11, ry, DIAL, DIAL], longname, 1, 0, 127)
+        return p.live("live.menu", [x + 3, ry + 12, COL_W - 8, 18],
+                      longname, 2, 0, len(enum) - 1, enum=enum,
+                      annotation=annotation)
+    return p.live("live.dial", [x + 10, ry, DIAL, DIAL], longname, 1, 0, 127,
+                  annotation=annotation)
 
 
 def place_label(p, cap, x, ry, sn):
-    p.comment(cap, [x, ry + LABEL_DY, COL_W - 2, 12],
+    p.comment(cap, [x, ry + LABEL_DY, COL_W - 2, 13],
               varname=sn + "_L", fontsize=8.0, justify=1)
 
 

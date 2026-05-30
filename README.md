@@ -43,6 +43,11 @@ the Muse.
 
 ### Hardware → UI sync (bidirectional)
 
+> ⚠️ **Untested as of this writing.** The receive path is wired up (one
+> `ctlin` per CC), but it hasn't yet been verified against real hardware
+> because the Muse's MIDI Out wasn't connected during testing. Treat this
+> feature as provisional until confirmed.
+
 The device also listens for CCs coming *back* from the Muse: turn a knob on the
 synth and the matching on-screen control follows (without re-transmitting, so
 there's no feedback loop). For this to work the Muse's MIDI output has to reach
@@ -68,24 +73,28 @@ works without it.
 
 | Tab | Contents |
 |-----|----------|
-| Oscillators | OSC 1 / OSC 2 (octave, freq, waveshape, level), sync, FM, ring mod, noise |
-| Filters | Filter 1 & 2, routing, clipping, and the Filter + VCA envelopes |
+| OSC | OSC 1 / OSC 2 (octave, freq, waveshape, level), sync, FM, ring mod, noise |
+| Filter | Filter 1 & 2 cutoff/res/env, routing, clipping |
+| Env | Filter envelope + VCA (amp) envelope |
 | Mod Osc | The modulation oscillator and all its pitch / PWM / filter / VCA routings |
-| LFOs | LFO 1, LFO 2, and the Pitch LFO with its destinations |
+| LFO | LFO 1, LFO 2, and the Pitch LFO with its destinations |
 | Voice | Detune, unison/mono, glide, volume, pan, mod wheel, expression, mute, hold, sustain |
 | Delay | Times, sync, feedback, character, mix, and timbre sends |
 | Arp/Seq | Arpeggiator + sequencer clock and arp settings |
+| Setup | Program Change + help text |
 
 **Control types** — continuous parameters are dials (0–127); on/off parameters
 are toggles (send 0 / 127); multi-option parameters (octave, waveform, KB
 tracking, filter order, arp direction/range) are menus that send a value
 centred in the matching CC band, so the Muse always lands on the chosen option.
 
-**Bottom strip (always visible):**
+**Info View help** — hover any control and Ableton's **Info View** (bottom-left
+of the window) shows what that control does on the Muse, taken from Moog's MIDI
+docs, along with its CC number. The same text appears as a hover tooltip.
 
-- **PROGRAM CHANGE** — set **Bank** (1–16) and **Patch** (1–16), then click
-  **SEND** to recall that slot on the Muse (sends Bank Select MSB 0 + LSB +
-  Program Change). 16 banks × 16 patches = 256 slots.
+**Program Change (Setup tab)** — set **Bank** (1–16) and **Patch** (1–16), then
+click **SEND** to recall that slot on the Muse (sends Bank Select MSB 0 + LSB +
+Program Change). 16 banks × 16 patches = 256 slots.
 
 ## Patch library = Ableton's native presets
 

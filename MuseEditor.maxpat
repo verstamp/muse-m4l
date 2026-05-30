@@ -38,7 +38,7 @@
 		"boxanimatetime": 200,
 		"enablehscroll": 1,
 		"enablevscroll": 1,
-		"devicewidth": 720.0,
+		"devicewidth": 560.0,
 		"description": "Moog Muse editor",
 		"digest": "",
 		"tags": "",
@@ -53,7 +53,7 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						800.0,
+						640.0,
 						20.0,
 						60.0,
 						22.0
@@ -71,7 +71,7 @@
 					"numinlets": 8,
 					"numoutlets": 1,
 					"patching_rect": [
-						950.0,
+						790.0,
 						60.0,
 						90.0,
 						22.0
@@ -89,7 +89,7 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						950.0,
+						790.0,
 						120.0,
 						60.0,
 						22.0
@@ -106,7 +106,7 @@
 					"patching_rect": [
 						10.0,
 						5.0,
-						700.0,
+						540.0,
 						16.0
 					],
 					"outlettype": [
@@ -116,7 +116,7 @@
 					"presentation_rect": [
 						10.0,
 						5.0,
-						700.0,
+						540.0,
 						16.0
 					],
 					"parameter_enable": 1,
@@ -127,26 +127,30 @@
 							"parameter_shortname": "Tab",
 							"parameter_type": 2,
 							"parameter_mmin": 0,
-							"parameter_mmax": 6,
+							"parameter_mmax": 8,
 							"parameter_initial_enable": 0,
 							"parameter_invisible": 0,
 							"parameter_enum": [
-								"Oscillators",
-								"Filters",
-								"Mod Osc",
-								"LFOs",
-								"Voice",
-								"Delay",
-								"Arp/Seq"
+								"OSC",
+								"Filter",
+								"Env",
+								"MOD OSC",
+								"LFO",
+								"VOICE",
+								"DELAY",
+								"ARP/SEQ",
+								"SETUP"
 							],
 							"parameter_range": [
-								"Oscillators",
-								"Filters",
-								"Mod Osc",
-								"LFOs",
-								"Voice",
-								"Delay",
-								"Arp/Seq"
+								"OSC",
+								"Filter",
+								"Env",
+								"MOD OSC",
+								"LFO",
+								"VOICE",
+								"DELAY",
+								"ARP/SEQ",
+								"SETUP"
 							]
 						}
 					}
@@ -159,8 +163,8 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						12.0,
-						41.0,
+						13.0,
+						40.0,
 						52.0,
 						18.0
 					],
@@ -169,8 +173,8 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						12.0,
-						41.0,
+						13.0,
+						40.0,
 						52.0,
 						18.0
 					],
@@ -179,7 +183,7 @@
 					"saved_attribute_attributes": {
 						"valueof": {
 							"parameter_longname": "OSC 1 Octave",
-							"parameter_shortname": "1 Octave",
+							"parameter_shortname": "1 Oct",
 							"parameter_type": 2,
 							"parameter_mmin": 0,
 							"parameter_mmax": 3,
@@ -198,7 +202,9 @@
 								"2'"
 							]
 						}
-					}
+					},
+					"annotation": "OSC 1 Octave  \u00b7  CC 44  \u2014  Selects the octave for OSC 1  (0-31: 16'; 32-63: 8'; 64-95: 4'; 96-127: 2')",
+					"hint": "OSC 1 Octave  \u00b7  CC 44  \u2014  Selects the octave for OSC 1  (0-31: 16'; 32-63: 8'; 64-95: 4'; 96-127: 2')"
 				}
 			},
 			{
@@ -209,18 +215,18 @@
 					"numoutlets": 0,
 					"patching_rect": [
 						10.0,
-						68.0,
-						56.0,
-						12.0
+						71.0,
+						58.0,
+						13.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
 						10.0,
-						68.0,
-						56.0,
-						12.0
+						71.0,
+						58.0,
+						13.0
 					],
-					"text": "1 Octave",
+					"text": "1 Oct",
 					"fontsize": 8.0,
 					"fontface": 0,
 					"textjustification": 1,
@@ -234,7 +240,7 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						1400.0,
+						1240.0,
 						552.0,
 						110.0,
 						22.0
@@ -252,7 +258,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1540.0,
+						1380.0,
 						552.0,
 						80.0,
 						22.0
@@ -270,7 +276,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"patching_rect": [
-						1780.0,
+						1620.0,
 						592.0,
 						70.0,
 						22.0
@@ -290,7 +296,7 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						1860.0,
+						1700.0,
 						592.0,
 						150.0,
 						22.0
@@ -308,7 +314,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						2020.0,
+						1860.0,
 						592.0,
 						80.0,
 						22.0
@@ -326,34 +332,36 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						79.0,
-						30.0,
-						36.0,
-						36.0
+						80.0,
+						28.0,
+						40.0,
+						40.0
 					],
 					"outlettype": [
 						""
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						79.0,
-						30.0,
-						36.0,
-						36.0
+						80.0,
+						28.0,
+						40.0,
+						40.0
 					],
 					"parameter_enable": 1,
 					"varname": "OSC_1_Frequency",
 					"saved_attribute_attributes": {
 						"valueof": {
 							"parameter_longname": "OSC 1 Frequency",
-							"parameter_shortname": "1 Frequency",
+							"parameter_shortname": "1 Freq",
 							"parameter_type": 1,
 							"parameter_mmin": 0,
 							"parameter_mmax": 127,
 							"parameter_initial_enable": 0,
 							"parameter_invisible": 0
 						}
-					}
+					},
+					"annotation": "OSC 1 Frequency  \u00b7  CC 45  \u2014  Detunes OSC 1 from the pitch associated with a keyboard note",
+					"hint": "OSC 1 Frequency  \u00b7  CC 45  \u2014  Detunes OSC 1 from the pitch associated with a keyboard note"
 				}
 			},
 			{
@@ -363,19 +371,19 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						68.0,
-						68.0,
-						56.0,
-						12.0
+						70.0,
+						71.0,
+						58.0,
+						13.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						68.0,
-						68.0,
-						56.0,
-						12.0
+						70.0,
+						71.0,
+						58.0,
+						13.0
 					],
-					"text": "1 Frequency",
+					"text": "1 Freq",
 					"fontsize": 8.0,
 					"fontface": 0,
 					"textjustification": 1,
@@ -389,7 +397,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1540.0,
+						1380.0,
 						560.0,
 						80.0,
 						22.0
@@ -407,7 +415,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"patching_rect": [
-						1780.0,
+						1620.0,
 						600.0,
 						70.0,
 						22.0
@@ -427,7 +435,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						2020.0,
+						1860.0,
 						600.0,
 						80.0,
 						22.0
@@ -445,20 +453,20 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						137.0,
-						30.0,
-						36.0,
-						36.0
+						140.0,
+						28.0,
+						40.0,
+						40.0
 					],
 					"outlettype": [
 						""
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						137.0,
-						30.0,
-						36.0,
-						36.0
+						140.0,
+						28.0,
+						40.0,
+						40.0
 					],
 					"parameter_enable": 1,
 					"varname": "OSC_1_Tri_Saw_Mix",
@@ -472,7 +480,9 @@
 							"parameter_initial_enable": 0,
 							"parameter_invisible": 0
 						}
-					}
+					},
+					"annotation": "OSC 1 Tri/Saw Mix  \u00b7  CC 46",
+					"hint": "OSC 1 Tri/Saw Mix  \u00b7  CC 46"
 				}
 			},
 			{
@@ -482,17 +492,17 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						126.0,
-						68.0,
-						56.0,
-						12.0
+						130.0,
+						71.0,
+						58.0,
+						13.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						126.0,
-						68.0,
-						56.0,
-						12.0
+						130.0,
+						71.0,
+						58.0,
+						13.0
 					],
 					"text": "1 Tri/Saw Mix",
 					"fontsize": 8.0,
@@ -508,7 +518,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1540.0,
+						1380.0,
 						568.0,
 						80.0,
 						22.0
@@ -526,7 +536,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"patching_rect": [
-						1780.0,
+						1620.0,
 						608.0,
 						70.0,
 						22.0
@@ -546,7 +556,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						2020.0,
+						1860.0,
 						608.0,
 						80.0,
 						22.0
@@ -564,20 +574,20 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						195.0,
-						30.0,
-						36.0,
-						36.0
+						200.0,
+						28.0,
+						40.0,
+						40.0
 					],
 					"outlettype": [
 						""
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						195.0,
-						30.0,
-						36.0,
-						36.0
+						200.0,
+						28.0,
+						40.0,
+						40.0
 					],
 					"parameter_enable": 1,
 					"varname": "OSC_1_PW",
@@ -591,7 +601,9 @@
 							"parameter_initial_enable": 0,
 							"parameter_invisible": 0
 						}
-					}
+					},
+					"annotation": "OSC 1 PW  \u00b7  CC 47",
+					"hint": "OSC 1 PW  \u00b7  CC 47"
 				}
 			},
 			{
@@ -601,17 +613,17 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						184.0,
-						68.0,
-						56.0,
-						12.0
+						190.0,
+						71.0,
+						58.0,
+						13.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						184.0,
-						68.0,
-						56.0,
-						12.0
+						190.0,
+						71.0,
+						58.0,
+						13.0
 					],
 					"text": "1 PW",
 					"fontsize": 8.0,
@@ -627,7 +639,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1540.0,
+						1380.0,
 						576.0,
 						80.0,
 						22.0
@@ -645,7 +657,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"patching_rect": [
-						1780.0,
+						1620.0,
 						616.0,
 						70.0,
 						22.0
@@ -665,7 +677,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						2020.0,
+						1860.0,
 						616.0,
 						80.0,
 						22.0
@@ -683,20 +695,20 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						253.0,
-						30.0,
-						36.0,
-						36.0
+						260.0,
+						28.0,
+						40.0,
+						40.0
 					],
 					"outlettype": [
 						""
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						253.0,
-						30.0,
-						36.0,
-						36.0
+						260.0,
+						28.0,
+						40.0,
+						40.0
 					],
 					"parameter_enable": 1,
 					"varname": "OSC_1_Wave_Mix",
@@ -710,7 +722,9 @@
 							"parameter_initial_enable": 0,
 							"parameter_invisible": 0
 						}
-					}
+					},
+					"annotation": "OSC 1 Wave Mix  \u00b7  CC 48",
+					"hint": "OSC 1 Wave Mix  \u00b7  CC 48"
 				}
 			},
 			{
@@ -720,17 +734,17 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						242.0,
-						68.0,
-						56.0,
-						12.0
+						250.0,
+						71.0,
+						58.0,
+						13.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						242.0,
-						68.0,
-						56.0,
-						12.0
+						250.0,
+						71.0,
+						58.0,
+						13.0
 					],
 					"text": "1 Wave Mix",
 					"fontsize": 8.0,
@@ -746,7 +760,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1540.0,
+						1380.0,
 						584.0,
 						80.0,
 						22.0
@@ -764,7 +778,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"patching_rect": [
-						1780.0,
+						1620.0,
 						624.0,
 						70.0,
 						22.0
@@ -784,7 +798,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						2020.0,
+						1860.0,
 						624.0,
 						80.0,
 						22.0
@@ -802,34 +816,36 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						311.0,
-						30.0,
-						36.0,
-						36.0
+						320.0,
+						28.0,
+						40.0,
+						40.0
 					],
 					"outlettype": [
 						""
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						311.0,
-						30.0,
-						36.0,
-						36.0
+						320.0,
+						28.0,
+						40.0,
+						40.0
 					],
 					"parameter_enable": 1,
 					"varname": "OSC_1_Level",
 					"saved_attribute_attributes": {
 						"valueof": {
 							"parameter_longname": "OSC 1 Level",
-							"parameter_shortname": "1 Level",
+							"parameter_shortname": "1 Lvl",
 							"parameter_type": 1,
 							"parameter_mmin": 0,
 							"parameter_mmax": 127,
 							"parameter_initial_enable": 0,
 							"parameter_invisible": 0
 						}
-					}
+					},
+					"annotation": "OSC 1 Level  \u00b7  CC 58",
+					"hint": "OSC 1 Level  \u00b7  CC 58"
 				}
 			},
 			{
@@ -839,19 +855,19 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						300.0,
-						68.0,
-						56.0,
-						12.0
+						310.0,
+						71.0,
+						58.0,
+						13.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						300.0,
-						68.0,
-						56.0,
-						12.0
+						310.0,
+						71.0,
+						58.0,
+						13.0
 					],
-					"text": "1 Level",
+					"text": "1 Lvl",
 					"fontsize": 8.0,
 					"fontface": 0,
 					"textjustification": 1,
@@ -865,7 +881,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1540.0,
+						1380.0,
 						664.0,
 						80.0,
 						22.0
@@ -883,7 +899,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"patching_rect": [
-						1780.0,
+						1620.0,
 						704.0,
 						70.0,
 						22.0
@@ -903,7 +919,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						2020.0,
+						1860.0,
 						704.0,
 						80.0,
 						22.0
@@ -921,8 +937,8 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						360.0,
-						41.0,
+						373.0,
+						40.0,
 						52.0,
 						18.0
 					],
@@ -931,8 +947,8 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						360.0,
-						41.0,
+						373.0,
+						40.0,
 						52.0,
 						18.0
 					],
@@ -941,7 +957,7 @@
 					"saved_attribute_attributes": {
 						"valueof": {
 							"parameter_longname": "OSC 2 Octave",
-							"parameter_shortname": "2 Octave",
+							"parameter_shortname": "2 Oct",
 							"parameter_type": 2,
 							"parameter_mmin": 0,
 							"parameter_mmax": 3,
@@ -960,7 +976,9 @@
 								"2'"
 							]
 						}
-					}
+					},
+					"annotation": "OSC 2 Octave  \u00b7  CC 49  \u2014  Selects the octave for OSC 2  (0-31: 16'; 32-63: 8'; 64-95: 4'; 96-127: 2')",
+					"hint": "OSC 2 Octave  \u00b7  CC 49  \u2014  Selects the octave for OSC 2  (0-31: 16'; 32-63: 8'; 64-95: 4'; 96-127: 2')"
 				}
 			},
 			{
@@ -970,19 +988,19 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						358.0,
-						68.0,
-						56.0,
-						12.0
+						370.0,
+						71.0,
+						58.0,
+						13.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						358.0,
-						68.0,
-						56.0,
-						12.0
+						370.0,
+						71.0,
+						58.0,
+						13.0
 					],
-					"text": "2 Octave",
+					"text": "2 Oct",
 					"fontsize": 8.0,
 					"fontface": 0,
 					"textjustification": 1,
@@ -996,7 +1014,7 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						1400.0,
+						1240.0,
 						592.0,
 						110.0,
 						22.0
@@ -1014,7 +1032,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1540.0,
+						1380.0,
 						592.0,
 						80.0,
 						22.0
@@ -1032,7 +1050,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"patching_rect": [
-						1780.0,
+						1620.0,
 						632.0,
 						70.0,
 						22.0
@@ -1052,7 +1070,7 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						1860.0,
+						1700.0,
 						632.0,
 						150.0,
 						22.0
@@ -1070,7 +1088,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						2020.0,
+						1860.0,
 						632.0,
 						80.0,
 						22.0
@@ -1088,34 +1106,36 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						427.0,
-						30.0,
-						36.0,
-						36.0
+						440.0,
+						28.0,
+						40.0,
+						40.0
 					],
 					"outlettype": [
 						""
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						427.0,
-						30.0,
-						36.0,
-						36.0
+						440.0,
+						28.0,
+						40.0,
+						40.0
 					],
 					"parameter_enable": 1,
 					"varname": "OSC_2_Frequency",
 					"saved_attribute_attributes": {
 						"valueof": {
 							"parameter_longname": "OSC 2 Frequency",
-							"parameter_shortname": "2 Frequency",
+							"parameter_shortname": "2 Freq",
 							"parameter_type": 1,
 							"parameter_mmin": 0,
 							"parameter_mmax": 127,
 							"parameter_initial_enable": 0,
 							"parameter_invisible": 0
 						}
-					}
+					},
+					"annotation": "OSC 2 Frequency  \u00b7  CC 50  \u2014  Detunes OSC 2 from the pitch associated with a keyboard note",
+					"hint": "OSC 2 Frequency  \u00b7  CC 50  \u2014  Detunes OSC 2 from the pitch associated with a keyboard note"
 				}
 			},
 			{
@@ -1125,19 +1145,19 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						416.0,
-						68.0,
-						56.0,
-						12.0
+						430.0,
+						71.0,
+						58.0,
+						13.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						416.0,
-						68.0,
-						56.0,
-						12.0
+						430.0,
+						71.0,
+						58.0,
+						13.0
 					],
-					"text": "2 Frequency",
+					"text": "2 Freq",
 					"fontsize": 8.0,
 					"fontface": 0,
 					"textjustification": 1,
@@ -1151,7 +1171,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1540.0,
+						1380.0,
 						600.0,
 						80.0,
 						22.0
@@ -1169,7 +1189,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"patching_rect": [
-						1780.0,
+						1620.0,
 						640.0,
 						70.0,
 						22.0
@@ -1189,7 +1209,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						2020.0,
+						1860.0,
 						640.0,
 						80.0,
 						22.0
@@ -1207,20 +1227,20 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						485.0,
-						30.0,
-						36.0,
-						36.0
+						500.0,
+						28.0,
+						40.0,
+						40.0
 					],
 					"outlettype": [
 						""
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						485.0,
-						30.0,
-						36.0,
-						36.0
+						500.0,
+						28.0,
+						40.0,
+						40.0
 					],
 					"parameter_enable": 1,
 					"varname": "OSC_2_Tri_Saw_Mix",
@@ -1234,7 +1254,9 @@
 							"parameter_initial_enable": 0,
 							"parameter_invisible": 0
 						}
-					}
+					},
+					"annotation": "OSC 2 Tri/Saw Mix  \u00b7  CC 51",
+					"hint": "OSC 2 Tri/Saw Mix  \u00b7  CC 51"
 				}
 			},
 			{
@@ -1244,17 +1266,17 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						474.0,
-						68.0,
-						56.0,
-						12.0
+						490.0,
+						71.0,
+						58.0,
+						13.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						474.0,
-						68.0,
-						56.0,
-						12.0
+						490.0,
+						71.0,
+						58.0,
+						13.0
 					],
 					"text": "2 Tri/Saw Mix",
 					"fontsize": 8.0,
@@ -1270,7 +1292,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1540.0,
+						1380.0,
 						608.0,
 						80.0,
 						22.0
@@ -1288,7 +1310,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"patching_rect": [
-						1780.0,
+						1620.0,
 						648.0,
 						70.0,
 						22.0
@@ -1308,7 +1330,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						2020.0,
+						1860.0,
 						648.0,
 						80.0,
 						22.0
@@ -1326,20 +1348,20 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						21.0,
-						82.0,
-						36.0,
-						36.0
+						20.0,
+						98.0,
+						40.0,
+						40.0
 					],
 					"outlettype": [
 						""
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						21.0,
-						82.0,
-						36.0,
-						36.0
+						20.0,
+						98.0,
+						40.0,
+						40.0
 					],
 					"parameter_enable": 1,
 					"varname": "OSC_2_PW",
@@ -1353,7 +1375,9 @@
 							"parameter_initial_enable": 0,
 							"parameter_invisible": 0
 						}
-					}
+					},
+					"annotation": "OSC 2 PW  \u00b7  CC 52",
+					"hint": "OSC 2 PW  \u00b7  CC 52"
 				}
 			},
 			{
@@ -1364,16 +1388,16 @@
 					"numoutlets": 0,
 					"patching_rect": [
 						10.0,
-						120.0,
-						56.0,
-						12.0
+						141.0,
+						58.0,
+						13.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
 						10.0,
-						120.0,
-						56.0,
-						12.0
+						141.0,
+						58.0,
+						13.0
 					],
 					"text": "2 PW",
 					"fontsize": 8.0,
@@ -1389,7 +1413,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1540.0,
+						1380.0,
 						616.0,
 						80.0,
 						22.0
@@ -1407,7 +1431,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"patching_rect": [
-						1780.0,
+						1620.0,
 						656.0,
 						70.0,
 						22.0
@@ -1427,7 +1451,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						2020.0,
+						1860.0,
 						656.0,
 						80.0,
 						22.0
@@ -1445,20 +1469,20 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						79.0,
-						82.0,
-						36.0,
-						36.0
+						80.0,
+						98.0,
+						40.0,
+						40.0
 					],
 					"outlettype": [
 						""
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						79.0,
-						82.0,
-						36.0,
-						36.0
+						80.0,
+						98.0,
+						40.0,
+						40.0
 					],
 					"parameter_enable": 1,
 					"varname": "OSC_2_Wave_Mix",
@@ -1472,7 +1496,9 @@
 							"parameter_initial_enable": 0,
 							"parameter_invisible": 0
 						}
-					}
+					},
+					"annotation": "OSC 2 Wave Mix  \u00b7  CC 53",
+					"hint": "OSC 2 Wave Mix  \u00b7  CC 53"
 				}
 			},
 			{
@@ -1482,17 +1508,17 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						68.0,
-						120.0,
-						56.0,
-						12.0
+						70.0,
+						141.0,
+						58.0,
+						13.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						68.0,
-						120.0,
-						56.0,
-						12.0
+						70.0,
+						141.0,
+						58.0,
+						13.0
 					],
 					"text": "2 Wave Mix",
 					"fontsize": 8.0,
@@ -1508,7 +1534,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1540.0,
+						1380.0,
 						624.0,
 						80.0,
 						22.0
@@ -1526,7 +1552,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"patching_rect": [
-						1780.0,
+						1620.0,
 						664.0,
 						70.0,
 						22.0
@@ -1546,7 +1572,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						2020.0,
+						1860.0,
 						664.0,
 						80.0,
 						22.0
@@ -1564,34 +1590,36 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						137.0,
-						82.0,
-						36.0,
-						36.0
+						140.0,
+						98.0,
+						40.0,
+						40.0
 					],
 					"outlettype": [
 						""
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						137.0,
-						82.0,
-						36.0,
-						36.0
+						140.0,
+						98.0,
+						40.0,
+						40.0
 					],
 					"parameter_enable": 1,
 					"varname": "OSC_2_Level",
 					"saved_attribute_attributes": {
 						"valueof": {
 							"parameter_longname": "OSC 2 Level",
-							"parameter_shortname": "2 Level",
+							"parameter_shortname": "2 Lvl",
 							"parameter_type": 1,
 							"parameter_mmin": 0,
 							"parameter_mmax": 127,
 							"parameter_initial_enable": 0,
 							"parameter_invisible": 0
 						}
-					}
+					},
+					"annotation": "OSC 2 Level  \u00b7  CC 59",
+					"hint": "OSC 2 Level  \u00b7  CC 59"
 				}
 			},
 			{
@@ -1601,19 +1629,19 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						126.0,
-						120.0,
-						56.0,
-						12.0
+						130.0,
+						141.0,
+						58.0,
+						13.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						126.0,
-						120.0,
-						56.0,
-						12.0
+						130.0,
+						141.0,
+						58.0,
+						13.0
 					],
-					"text": "2 Level",
+					"text": "2 Lvl",
 					"fontsize": 8.0,
 					"fontface": 0,
 					"textjustification": 1,
@@ -1627,7 +1655,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1540.0,
+						1380.0,
 						672.0,
 						80.0,
 						22.0
@@ -1645,7 +1673,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"patching_rect": [
-						1780.0,
+						1620.0,
 						712.0,
 						70.0,
 						22.0
@@ -1665,7 +1693,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						2020.0,
+						1860.0,
 						712.0,
 						80.0,
 						22.0
@@ -1683,8 +1711,8 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						204.0,
-						91.0,
+						211.0,
+						107.0,
 						18.0,
 						18.0
 					],
@@ -1693,8 +1721,8 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						204.0,
-						91.0,
+						211.0,
+						107.0,
 						18.0,
 						18.0
 					],
@@ -1718,7 +1746,9 @@
 								"on"
 							]
 						}
-					}
+					},
+					"annotation": "OSC 2>1 Sync  \u00b7  CC 54  (0-63: Off; 64-127: On)",
+					"hint": "OSC 2>1 Sync  \u00b7  CC 54  (0-63: Off; 64-127: On)"
 				}
 			},
 			{
@@ -1728,17 +1758,17 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						184.0,
-						120.0,
-						56.0,
-						12.0
+						190.0,
+						141.0,
+						58.0,
+						13.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						184.0,
-						120.0,
-						56.0,
-						12.0
+						190.0,
+						141.0,
+						58.0,
+						13.0
 					],
 					"text": "2>1 Sync",
 					"fontsize": 8.0,
@@ -1754,7 +1784,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1400.0,
+						1240.0,
 						632.0,
 						50.0,
 						22.0
@@ -1772,7 +1802,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1540.0,
+						1380.0,
 						632.0,
 						80.0,
 						22.0
@@ -1790,7 +1820,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"patching_rect": [
-						1780.0,
+						1620.0,
 						672.0,
 						70.0,
 						22.0
@@ -1810,7 +1840,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1860.0,
+						1700.0,
 						672.0,
 						50.0,
 						22.0
@@ -1828,7 +1858,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						2020.0,
+						1860.0,
 						672.0,
 						80.0,
 						22.0
@@ -1846,8 +1876,8 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						262.0,
-						91.0,
+						271.0,
+						107.0,
 						18.0,
 						18.0
 					],
@@ -1856,8 +1886,8 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						262.0,
-						91.0,
+						271.0,
+						107.0,
 						18.0,
 						18.0
 					],
@@ -1881,7 +1911,9 @@
 								"on"
 							]
 						}
-					}
+					},
+					"annotation": "OSC 2>1 FM  \u00b7  CC 55  (0-63: Off; 64-127: On)",
+					"hint": "OSC 2>1 FM  \u00b7  CC 55  (0-63: Off; 64-127: On)"
 				}
 			},
 			{
@@ -1891,17 +1923,17 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						242.0,
-						120.0,
-						56.0,
-						12.0
+						250.0,
+						141.0,
+						58.0,
+						13.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						242.0,
-						120.0,
-						56.0,
-						12.0
+						250.0,
+						141.0,
+						58.0,
+						13.0
 					],
 					"text": "2>1 FM",
 					"fontsize": 8.0,
@@ -1917,7 +1949,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1400.0,
+						1240.0,
 						640.0,
 						50.0,
 						22.0
@@ -1935,7 +1967,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1540.0,
+						1380.0,
 						640.0,
 						80.0,
 						22.0
@@ -1953,7 +1985,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"patching_rect": [
-						1780.0,
+						1620.0,
 						680.0,
 						70.0,
 						22.0
@@ -1973,7 +2005,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1860.0,
+						1700.0,
 						680.0,
 						50.0,
 						22.0
@@ -1991,7 +2023,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						2020.0,
+						1860.0,
 						680.0,
 						80.0,
 						22.0
@@ -2009,8 +2041,8 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						320.0,
-						91.0,
+						331.0,
+						107.0,
 						18.0,
 						18.0
 					],
@@ -2019,8 +2051,8 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						320.0,
-						91.0,
+						331.0,
+						107.0,
 						18.0,
 						18.0
 					],
@@ -2044,7 +2076,9 @@
 								"on"
 							]
 						}
-					}
+					},
+					"annotation": "OSC 1>2 FM  \u00b7  CC 56  (0-63: Off; 64-127: On)",
+					"hint": "OSC 1>2 FM  \u00b7  CC 56  (0-63: Off; 64-127: On)"
 				}
 			},
 			{
@@ -2054,17 +2088,17 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						300.0,
-						120.0,
-						56.0,
-						12.0
+						310.0,
+						141.0,
+						58.0,
+						13.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						300.0,
-						120.0,
-						56.0,
-						12.0
+						310.0,
+						141.0,
+						58.0,
+						13.0
 					],
 					"text": "1>2 FM",
 					"fontsize": 8.0,
@@ -2080,7 +2114,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1400.0,
+						1240.0,
 						648.0,
 						50.0,
 						22.0
@@ -2098,7 +2132,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1540.0,
+						1380.0,
 						648.0,
 						80.0,
 						22.0
@@ -2116,7 +2150,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"patching_rect": [
-						1780.0,
+						1620.0,
 						688.0,
 						70.0,
 						22.0
@@ -2136,7 +2170,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1860.0,
+						1700.0,
 						688.0,
 						50.0,
 						22.0
@@ -2154,7 +2188,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						2020.0,
+						1860.0,
 						688.0,
 						80.0,
 						22.0
@@ -2172,34 +2206,36 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						369.0,
-						82.0,
-						36.0,
-						36.0
+						380.0,
+						98.0,
+						40.0,
+						40.0
 					],
 					"outlettype": [
 						""
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						369.0,
-						82.0,
-						36.0,
-						36.0
+						380.0,
+						98.0,
+						40.0,
+						40.0
 					],
 					"parameter_enable": 1,
 					"varname": "FM_Amount",
 					"saved_attribute_attributes": {
 						"valueof": {
 							"parameter_longname": "FM Amount",
-							"parameter_shortname": "FM Amount",
+							"parameter_shortname": "FM Amt",
 							"parameter_type": 1,
 							"parameter_mmin": 0,
 							"parameter_mmax": 127,
 							"parameter_initial_enable": 0,
 							"parameter_invisible": 0
 						}
-					}
+					},
+					"annotation": "FM Amount  \u00b7  CC 57",
+					"hint": "FM Amount  \u00b7  CC 57"
 				}
 			},
 			{
@@ -2209,19 +2245,19 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						358.0,
-						120.0,
-						56.0,
-						12.0
+						370.0,
+						141.0,
+						58.0,
+						13.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						358.0,
-						120.0,
-						56.0,
-						12.0
+						370.0,
+						141.0,
+						58.0,
+						13.0
 					],
-					"text": "FM Amount",
+					"text": "FM Amt",
 					"fontsize": 8.0,
 					"fontface": 0,
 					"textjustification": 1,
@@ -2235,7 +2271,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1540.0,
+						1380.0,
 						656.0,
 						80.0,
 						22.0
@@ -2253,7 +2289,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"patching_rect": [
-						1780.0,
+						1620.0,
 						696.0,
 						70.0,
 						22.0
@@ -2273,7 +2309,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						2020.0,
+						1860.0,
 						696.0,
 						80.0,
 						22.0
@@ -2291,34 +2327,36 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						427.0,
-						82.0,
-						36.0,
-						36.0
+						440.0,
+						98.0,
+						40.0,
+						40.0
 					],
 					"outlettype": [
 						""
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						427.0,
-						82.0,
-						36.0,
-						36.0
+						440.0,
+						98.0,
+						40.0,
+						40.0
 					],
 					"parameter_enable": 1,
 					"varname": "Ring_Mod_Level",
 					"saved_attribute_attributes": {
 						"valueof": {
 							"parameter_longname": "Ring Mod Level",
-							"parameter_shortname": "Ring Mod Level",
+							"parameter_shortname": "Ring Mod Lvl",
 							"parameter_type": 1,
 							"parameter_mmin": 0,
 							"parameter_mmax": 127,
 							"parameter_initial_enable": 0,
 							"parameter_invisible": 0
 						}
-					}
+					},
+					"annotation": "Ring Mod Level  \u00b7  CC 60",
+					"hint": "Ring Mod Level  \u00b7  CC 60"
 				}
 			},
 			{
@@ -2328,19 +2366,19 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						416.0,
-						120.0,
-						56.0,
-						12.0
+						430.0,
+						141.0,
+						58.0,
+						13.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						416.0,
-						120.0,
-						56.0,
-						12.0
+						430.0,
+						141.0,
+						58.0,
+						13.0
 					],
-					"text": "Ring Mod Level",
+					"text": "Ring Mod Lvl",
 					"fontsize": 8.0,
 					"fontface": 0,
 					"textjustification": 1,
@@ -2354,7 +2392,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1540.0,
+						1380.0,
 						680.0,
 						80.0,
 						22.0
@@ -2372,7 +2410,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"patching_rect": [
-						1780.0,
+						1620.0,
 						720.0,
 						70.0,
 						22.0
@@ -2392,7 +2430,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						2020.0,
+						1860.0,
 						720.0,
 						80.0,
 						22.0
@@ -2410,34 +2448,36 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						485.0,
-						82.0,
-						36.0,
-						36.0
+						500.0,
+						98.0,
+						40.0,
+						40.0
 					],
 					"outlettype": [
 						""
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						485.0,
-						82.0,
-						36.0,
-						36.0
+						500.0,
+						98.0,
+						40.0,
+						40.0
 					],
 					"parameter_enable": 1,
 					"varname": "Noise_Level",
 					"saved_attribute_attributes": {
 						"valueof": {
 							"parameter_longname": "Noise Level",
-							"parameter_shortname": "Noise Level",
+							"parameter_shortname": "Noise Lvl",
 							"parameter_type": 1,
 							"parameter_mmin": 0,
 							"parameter_mmax": 127,
 							"parameter_initial_enable": 0,
 							"parameter_invisible": 0
 						}
-					}
+					},
+					"annotation": "Noise Level  \u00b7  CC 62",
+					"hint": "Noise Level  \u00b7  CC 62"
 				}
 			},
 			{
@@ -2447,19 +2487,19 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						474.0,
-						120.0,
-						56.0,
-						12.0
+						490.0,
+						141.0,
+						58.0,
+						13.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						474.0,
-						120.0,
-						56.0,
-						12.0
+						490.0,
+						141.0,
+						58.0,
+						13.0
 					],
-					"text": "Noise Level",
+					"text": "Noise Lvl",
 					"fontsize": 8.0,
 					"fontface": 0,
 					"textjustification": 1,
@@ -2473,7 +2513,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1540.0,
+						1380.0,
 						696.0,
 						80.0,
 						22.0
@@ -2491,7 +2531,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"patching_rect": [
-						1780.0,
+						1620.0,
 						736.0,
 						70.0,
 						22.0
@@ -2511,7 +2551,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						2020.0,
+						1860.0,
 						736.0,
 						80.0,
 						22.0
@@ -2529,20 +2569,20 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						21.0,
-						30.0,
-						36.0,
-						36.0
+						20.0,
+						28.0,
+						40.0,
+						40.0
 					],
 					"outlettype": [
 						""
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						21.0,
-						30.0,
-						36.0,
-						36.0
+						20.0,
+						28.0,
+						40.0,
+						40.0
 					],
 					"parameter_enable": 1,
 					"varname": "Filter_1_Cutoff",
@@ -2556,7 +2596,9 @@
 							"parameter_initial_enable": 0,
 							"parameter_invisible": 0
 						}
-					}
+					},
+					"annotation": "Filter 1 Cutoff  \u00b7  CC 67",
+					"hint": "Filter 1 Cutoff  \u00b7  CC 67"
 				}
 			},
 			{
@@ -2567,16 +2609,16 @@
 					"numoutlets": 0,
 					"patching_rect": [
 						10.0,
-						68.0,
-						56.0,
-						12.0
+						71.0,
+						58.0,
+						13.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
 						10.0,
-						68.0,
-						56.0,
-						12.0
+						71.0,
+						58.0,
+						13.0
 					],
 					"text": "F1 Cutoff",
 					"fontsize": 8.0,
@@ -2592,7 +2634,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1540.0,
+						1380.0,
 						736.0,
 						80.0,
 						22.0
@@ -2610,7 +2652,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"patching_rect": [
-						1780.0,
+						1620.0,
 						776.0,
 						70.0,
 						22.0
@@ -2630,7 +2672,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						2020.0,
+						1860.0,
 						776.0,
 						80.0,
 						22.0
@@ -2648,34 +2690,36 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						79.0,
-						30.0,
-						36.0,
-						36.0
+						80.0,
+						28.0,
+						40.0,
+						40.0
 					],
 					"outlettype": [
 						""
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						79.0,
-						30.0,
-						36.0,
-						36.0
+						80.0,
+						28.0,
+						40.0,
+						40.0
 					],
 					"parameter_enable": 1,
 					"varname": "Filter_1_Resonance",
 					"saved_attribute_attributes": {
 						"valueof": {
 							"parameter_longname": "Filter 1 Resonance",
-							"parameter_shortname": "F1 Resonance",
+							"parameter_shortname": "F1 Reso",
 							"parameter_type": 1,
 							"parameter_mmin": 0,
 							"parameter_mmax": 127,
 							"parameter_initial_enable": 0,
 							"parameter_invisible": 0
 						}
-					}
+					},
+					"annotation": "Filter 1 Resonance  \u00b7  CC 68",
+					"hint": "Filter 1 Resonance  \u00b7  CC 68"
 				}
 			},
 			{
@@ -2685,19 +2729,19 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						68.0,
-						68.0,
-						56.0,
-						12.0
+						70.0,
+						71.0,
+						58.0,
+						13.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						68.0,
-						68.0,
-						56.0,
-						12.0
+						70.0,
+						71.0,
+						58.0,
+						13.0
 					],
-					"text": "F1 Resonance",
+					"text": "F1 Reso",
 					"fontsize": 8.0,
 					"fontface": 0,
 					"textjustification": 1,
@@ -2711,7 +2755,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1540.0,
+						1380.0,
 						744.0,
 						80.0,
 						22.0
@@ -2729,7 +2773,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"patching_rect": [
-						1780.0,
+						1620.0,
 						784.0,
 						70.0,
 						22.0
@@ -2749,7 +2793,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						2020.0,
+						1860.0,
 						784.0,
 						80.0,
 						22.0
@@ -2767,34 +2811,36 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						137.0,
-						30.0,
-						36.0,
-						36.0
+						140.0,
+						28.0,
+						40.0,
+						40.0
 					],
 					"outlettype": [
 						""
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						137.0,
-						30.0,
-						36.0,
-						36.0
+						140.0,
+						28.0,
+						40.0,
+						40.0
 					],
 					"parameter_enable": 1,
 					"varname": "Filter_1_Env_Amount",
 					"saved_attribute_attributes": {
 						"valueof": {
 							"parameter_longname": "Filter 1 Env Amount",
-							"parameter_shortname": "F1 Env Amount",
+							"parameter_shortname": "F1 Env Amt",
 							"parameter_type": 1,
 							"parameter_mmin": 0,
 							"parameter_mmax": 127,
 							"parameter_initial_enable": 0,
 							"parameter_invisible": 0
 						}
-					}
+					},
+					"annotation": "Filter 1 Env Amount  \u00b7  CC 69",
+					"hint": "Filter 1 Env Amount  \u00b7  CC 69"
 				}
 			},
 			{
@@ -2804,19 +2850,19 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						126.0,
-						68.0,
-						56.0,
-						12.0
+						130.0,
+						71.0,
+						58.0,
+						13.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						126.0,
-						68.0,
-						56.0,
-						12.0
+						130.0,
+						71.0,
+						58.0,
+						13.0
 					],
-					"text": "F1 Env Amount",
+					"text": "F1 Env Amt",
 					"fontsize": 8.0,
 					"fontface": 0,
 					"textjustification": 1,
@@ -2830,7 +2876,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1540.0,
+						1380.0,
 						752.0,
 						80.0,
 						22.0
@@ -2848,7 +2894,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"patching_rect": [
-						1780.0,
+						1620.0,
 						792.0,
 						70.0,
 						22.0
@@ -2868,7 +2914,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						2020.0,
+						1860.0,
 						792.0,
 						80.0,
 						22.0
@@ -2886,8 +2932,8 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						204.0,
-						39.0,
+						211.0,
+						37.0,
 						18.0,
 						18.0
 					],
@@ -2896,8 +2942,8 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						204.0,
-						39.0,
+						211.0,
+						37.0,
 						18.0,
 						18.0
 					],
@@ -2921,7 +2967,9 @@
 								"on"
 							]
 						}
-					}
+					},
+					"annotation": "Filter 1 High Pass  \u00b7  CC 66",
+					"hint": "Filter 1 High Pass  \u00b7  CC 66"
 				}
 			},
 			{
@@ -2931,17 +2979,17 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						184.0,
-						68.0,
-						56.0,
-						12.0
+						190.0,
+						71.0,
+						58.0,
+						13.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						184.0,
-						68.0,
-						56.0,
-						12.0
+						190.0,
+						71.0,
+						58.0,
+						13.0
 					],
 					"text": "F1 High Pass",
 					"fontsize": 8.0,
@@ -2957,7 +3005,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1400.0,
+						1240.0,
 						728.0,
 						50.0,
 						22.0
@@ -2975,7 +3023,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1540.0,
+						1380.0,
 						728.0,
 						80.0,
 						22.0
@@ -2993,7 +3041,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"patching_rect": [
-						1780.0,
+						1620.0,
 						768.0,
 						70.0,
 						22.0
@@ -3013,7 +3061,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1860.0,
+						1700.0,
 						768.0,
 						50.0,
 						22.0
@@ -3031,7 +3079,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						2020.0,
+						1860.0,
 						768.0,
 						80.0,
 						22.0
@@ -3049,8 +3097,8 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						244.0,
-						41.0,
+						253.0,
+						40.0,
 						52.0,
 						18.0
 					],
@@ -3059,8 +3107,8 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						244.0,
-						41.0,
+						253.0,
+						40.0,
 						52.0,
 						18.0
 					],
@@ -3086,7 +3134,9 @@
 								"Full"
 							]
 						}
-					}
+					},
+					"annotation": "Filter 1 KB Track  \u00b7  CC 70  (0-42: Off; 43-84: Half; 85-127: Full)",
+					"hint": "Filter 1 KB Track  \u00b7  CC 70  (0-42: Off; 43-84: Half; 85-127: Full)"
 				}
 			},
 			{
@@ -3096,17 +3146,17 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						242.0,
-						68.0,
-						56.0,
-						12.0
+						250.0,
+						71.0,
+						58.0,
+						13.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						242.0,
-						68.0,
-						56.0,
-						12.0
+						250.0,
+						71.0,
+						58.0,
+						13.0
 					],
 					"text": "F1 KB Track",
 					"fontsize": 8.0,
@@ -3122,7 +3172,7 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						1400.0,
+						1240.0,
 						760.0,
 						110.0,
 						22.0
@@ -3140,7 +3190,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1540.0,
+						1380.0,
 						760.0,
 						80.0,
 						22.0
@@ -3158,7 +3208,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"patching_rect": [
-						1780.0,
+						1620.0,
 						800.0,
 						70.0,
 						22.0
@@ -3178,7 +3228,7 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						1860.0,
+						1700.0,
 						800.0,
 						150.0,
 						22.0
@@ -3196,7 +3246,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						2020.0,
+						1860.0,
 						800.0,
 						80.0,
 						22.0
@@ -3214,34 +3264,36 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						311.0,
-						30.0,
-						36.0,
-						36.0
+						320.0,
+						28.0,
+						40.0,
+						40.0
 					],
 					"outlettype": [
 						""
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						311.0,
-						30.0,
-						36.0,
-						36.0
+						320.0,
+						28.0,
+						40.0,
+						40.0
 					],
 					"parameter_enable": 1,
 					"varname": "Filter_2_Frequency",
 					"saved_attribute_attributes": {
 						"valueof": {
 							"parameter_longname": "Filter 2 Frequency",
-							"parameter_shortname": "F2 Frequency",
+							"parameter_shortname": "F2 Freq",
 							"parameter_type": 1,
 							"parameter_mmin": 0,
 							"parameter_mmax": 127,
 							"parameter_initial_enable": 0,
 							"parameter_invisible": 0
 						}
-					}
+					},
+					"annotation": "Filter 2 Frequency  \u00b7  CC 72",
+					"hint": "Filter 2 Frequency  \u00b7  CC 72"
 				}
 			},
 			{
@@ -3251,19 +3303,19 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						300.0,
-						68.0,
-						56.0,
-						12.0
+						310.0,
+						71.0,
+						58.0,
+						13.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						300.0,
-						68.0,
-						56.0,
-						12.0
+						310.0,
+						71.0,
+						58.0,
+						13.0
 					],
-					"text": "F2 Frequency",
+					"text": "F2 Freq",
 					"fontsize": 8.0,
 					"fontface": 0,
 					"textjustification": 1,
@@ -3277,7 +3329,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1540.0,
+						1380.0,
 						776.0,
 						80.0,
 						22.0
@@ -3295,7 +3347,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"patching_rect": [
-						1780.0,
+						1620.0,
 						816.0,
 						70.0,
 						22.0
@@ -3315,7 +3367,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						2020.0,
+						1860.0,
 						816.0,
 						80.0,
 						22.0
@@ -3333,34 +3385,36 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						369.0,
-						30.0,
-						36.0,
-						36.0
+						20.0,
+						98.0,
+						40.0,
+						40.0
 					],
 					"outlettype": [
 						""
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						369.0,
-						30.0,
-						36.0,
-						36.0
+						20.0,
+						98.0,
+						40.0,
+						40.0
 					],
 					"parameter_enable": 1,
 					"varname": "Filter_2_Resonance",
 					"saved_attribute_attributes": {
 						"valueof": {
 							"parameter_longname": "Filter 2 Resonance",
-							"parameter_shortname": "F2 Resonance",
+							"parameter_shortname": "F2 Reso",
 							"parameter_type": 1,
 							"parameter_mmin": 0,
 							"parameter_mmax": 127,
 							"parameter_initial_enable": 0,
 							"parameter_invisible": 0
 						}
-					}
+					},
+					"annotation": "Filter 2 Resonance  \u00b7  CC 73",
+					"hint": "Filter 2 Resonance  \u00b7  CC 73"
 				}
 			},
 			{
@@ -3370,19 +3424,19 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						358.0,
-						68.0,
-						56.0,
-						12.0
+						10.0,
+						141.0,
+						58.0,
+						13.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						358.0,
-						68.0,
-						56.0,
-						12.0
+						10.0,
+						141.0,
+						58.0,
+						13.0
 					],
-					"text": "F2 Resonance",
+					"text": "F2 Reso",
 					"fontsize": 8.0,
 					"fontface": 0,
 					"textjustification": 1,
@@ -3396,7 +3450,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1540.0,
+						1380.0,
 						784.0,
 						80.0,
 						22.0
@@ -3414,7 +3468,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"patching_rect": [
-						1780.0,
+						1620.0,
 						824.0,
 						70.0,
 						22.0
@@ -3434,7 +3488,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						2020.0,
+						1860.0,
 						824.0,
 						80.0,
 						22.0
@@ -3452,34 +3506,36 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						427.0,
-						30.0,
-						36.0,
-						36.0
+						80.0,
+						98.0,
+						40.0,
+						40.0
 					],
 					"outlettype": [
 						""
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						427.0,
-						30.0,
-						36.0,
-						36.0
+						80.0,
+						98.0,
+						40.0,
+						40.0
 					],
 					"parameter_enable": 1,
 					"varname": "Filter_2_Env_Amount",
 					"saved_attribute_attributes": {
 						"valueof": {
 							"parameter_longname": "Filter 2 Env Amount",
-							"parameter_shortname": "F2 Env Amount",
+							"parameter_shortname": "F2 Env Amt",
 							"parameter_type": 1,
 							"parameter_mmin": 0,
 							"parameter_mmax": 127,
 							"parameter_initial_enable": 0,
 							"parameter_invisible": 0
 						}
-					}
+					},
+					"annotation": "Filter 2 Env Amount  \u00b7  CC 75",
+					"hint": "Filter 2 Env Amount  \u00b7  CC 75"
 				}
 			},
 			{
@@ -3489,19 +3545,19 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						416.0,
-						68.0,
-						56.0,
-						12.0
+						70.0,
+						141.0,
+						58.0,
+						13.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						416.0,
-						68.0,
-						56.0,
-						12.0
+						70.0,
+						141.0,
+						58.0,
+						13.0
 					],
-					"text": "F2 Env Amount",
+					"text": "F2 Env Amt",
 					"fontsize": 8.0,
 					"fontface": 0,
 					"textjustification": 1,
@@ -3515,7 +3571,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1540.0,
+						1380.0,
 						800.0,
 						80.0,
 						22.0
@@ -3533,7 +3589,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"patching_rect": [
-						1780.0,
+						1620.0,
 						840.0,
 						70.0,
 						22.0
@@ -3553,7 +3609,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						2020.0,
+						1860.0,
 						840.0,
 						80.0,
 						22.0
@@ -3571,8 +3627,8 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						476.0,
-						41.0,
+						133.0,
+						110.0,
 						52.0,
 						18.0
 					],
@@ -3581,8 +3637,8 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						476.0,
-						41.0,
+						133.0,
+						110.0,
 						52.0,
 						18.0
 					],
@@ -3608,7 +3664,9 @@
 								"Full"
 							]
 						}
-					}
+					},
+					"annotation": "Filter 2 KB Track  \u00b7  CC 76  (0-42: Off; 43-84: Half; 85-127: Full)",
+					"hint": "Filter 2 KB Track  \u00b7  CC 76  (0-42: Off; 43-84: Half; 85-127: Full)"
 				}
 			},
 			{
@@ -3618,17 +3676,17 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						474.0,
-						68.0,
-						56.0,
-						12.0
+						130.0,
+						141.0,
+						58.0,
+						13.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						474.0,
-						68.0,
-						56.0,
-						12.0
+						130.0,
+						141.0,
+						58.0,
+						13.0
 					],
 					"text": "F2 KB Track",
 					"fontsize": 8.0,
@@ -3644,7 +3702,7 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						1400.0,
+						1240.0,
 						808.0,
 						110.0,
 						22.0
@@ -3662,7 +3720,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1540.0,
+						1380.0,
 						808.0,
 						80.0,
 						22.0
@@ -3680,7 +3738,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"patching_rect": [
-						1780.0,
+						1620.0,
 						848.0,
 						70.0,
 						22.0
@@ -3700,7 +3758,7 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						1860.0,
+						1700.0,
 						848.0,
 						150.0,
 						22.0
@@ -3718,7 +3776,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						2020.0,
+						1860.0,
 						848.0,
 						80.0,
 						22.0
@@ -3736,8 +3794,8 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						552.0,
-						39.0,
+						211.0,
+						107.0,
 						18.0,
 						18.0
 					],
@@ -3746,8 +3804,8 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						552.0,
-						39.0,
+						211.0,
+						107.0,
 						18.0,
 						18.0
 					],
@@ -3771,7 +3829,9 @@
 								"on"
 							]
 						}
-					}
+					},
+					"annotation": "Link Filters  \u00b7  CC 77  (0-63: Off; 64-127: On)",
+					"hint": "Link Filters  \u00b7  CC 77  (0-63: Off; 64-127: On)"
 				}
 			},
 			{
@@ -3781,17 +3841,17 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						532.0,
-						68.0,
-						56.0,
-						12.0
+						190.0,
+						141.0,
+						58.0,
+						13.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						532.0,
-						68.0,
-						56.0,
-						12.0
+						190.0,
+						141.0,
+						58.0,
+						13.0
 					],
 					"text": "Link Filters",
 					"fontsize": 8.0,
@@ -3807,7 +3867,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1400.0,
+						1240.0,
 						816.0,
 						50.0,
 						22.0
@@ -3825,7 +3885,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1540.0,
+						1380.0,
 						816.0,
 						80.0,
 						22.0
@@ -3843,7 +3903,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"patching_rect": [
-						1780.0,
+						1620.0,
 						856.0,
 						70.0,
 						22.0
@@ -3863,7 +3923,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1860.0,
+						1700.0,
 						856.0,
 						50.0,
 						22.0
@@ -3881,7 +3941,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						2020.0,
+						1860.0,
 						856.0,
 						80.0,
 						22.0
@@ -3899,8 +3959,8 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						592.0,
-						41.0,
+						253.0,
+						110.0,
 						52.0,
 						18.0
 					],
@@ -3909,8 +3969,8 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						592.0,
-						41.0,
+						253.0,
+						110.0,
 						52.0,
 						18.0
 					],
@@ -3936,7 +3996,9 @@
 								"Parallel"
 							]
 						}
-					}
+					},
+					"annotation": "Filter Order  \u00b7  CC 78  (0-42: Serial; 43-84: Stereo; 85-127: Parallel)",
+					"hint": "Filter Order  \u00b7  CC 78  (0-42: Serial; 43-84: Stereo; 85-127: Parallel)"
 				}
 			},
 			{
@@ -3946,17 +4008,17 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						590.0,
-						68.0,
-						56.0,
-						12.0
+						250.0,
+						141.0,
+						58.0,
+						13.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						590.0,
-						68.0,
-						56.0,
-						12.0
+						250.0,
+						141.0,
+						58.0,
+						13.0
 					],
 					"text": "Order",
 					"fontsize": 8.0,
@@ -3972,7 +4034,7 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						1400.0,
+						1240.0,
 						824.0,
 						110.0,
 						22.0
@@ -3990,7 +4052,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1540.0,
+						1380.0,
 						824.0,
 						80.0,
 						22.0
@@ -4008,7 +4070,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"patching_rect": [
-						1780.0,
+						1620.0,
 						864.0,
 						70.0,
 						22.0
@@ -4028,7 +4090,7 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						1860.0,
+						1700.0,
 						864.0,
 						150.0,
 						22.0
@@ -4046,7 +4108,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						2020.0,
+						1860.0,
 						864.0,
 						80.0,
 						22.0
@@ -4064,34 +4126,36 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						659.0,
-						30.0,
-						36.0,
-						36.0
+						320.0,
+						98.0,
+						40.0,
+						40.0
 					],
 					"outlettype": [
 						""
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						659.0,
-						30.0,
-						36.0,
-						36.0
+						320.0,
+						98.0,
+						40.0,
+						40.0
 					],
 					"parameter_enable": 1,
 					"varname": "Clipping_Level",
 					"saved_attribute_attributes": {
 						"valueof": {
 							"parameter_longname": "Clipping Level",
-							"parameter_shortname": "Clipping Level",
+							"parameter_shortname": "Clip Lvl",
 							"parameter_type": 1,
 							"parameter_mmin": 0,
 							"parameter_mmax": 127,
 							"parameter_initial_enable": 0,
 							"parameter_invisible": 0
 						}
-					}
+					},
+					"annotation": "Clipping Level  \u00b7  CC 65",
+					"hint": "Clipping Level  \u00b7  CC 65"
 				}
 			},
 			{
@@ -4101,19 +4165,19 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						648.0,
-						68.0,
-						56.0,
-						12.0
+						310.0,
+						141.0,
+						58.0,
+						13.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						648.0,
-						68.0,
-						56.0,
-						12.0
+						310.0,
+						141.0,
+						58.0,
+						13.0
 					],
-					"text": "Clipping Level",
+					"text": "Clip Lvl",
 					"fontsize": 8.0,
 					"fontface": 0,
 					"textjustification": 1,
@@ -4127,7 +4191,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1540.0,
+						1380.0,
 						720.0,
 						80.0,
 						22.0
@@ -4145,7 +4209,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"patching_rect": [
-						1780.0,
+						1620.0,
 						760.0,
 						70.0,
 						22.0
@@ -4165,7 +4229,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						2020.0,
+						1860.0,
 						760.0,
 						80.0,
 						22.0
@@ -4183,34 +4247,36 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						21.0,
-						82.0,
-						36.0,
-						36.0
+						20.0,
+						28.0,
+						40.0,
+						40.0
 					],
 					"outlettype": [
 						""
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						21.0,
-						82.0,
-						36.0,
-						36.0
+						20.0,
+						28.0,
+						40.0,
+						40.0
 					],
 					"parameter_enable": 1,
 					"varname": "Filter_Env_Attack",
 					"saved_attribute_attributes": {
 						"valueof": {
 							"parameter_longname": "Filter Env Attack",
-							"parameter_shortname": "F.Env Attack",
+							"parameter_shortname": "F.Env Atk",
 							"parameter_type": 1,
 							"parameter_mmin": 0,
 							"parameter_mmax": 127,
 							"parameter_initial_enable": 0,
 							"parameter_invisible": 0
 						}
-					}
+					},
+					"annotation": "Filter Env Attack  \u00b7  CC 79",
+					"hint": "Filter Env Attack  \u00b7  CC 79"
 				}
 			},
 			{
@@ -4221,18 +4287,18 @@
 					"numoutlets": 0,
 					"patching_rect": [
 						10.0,
-						120.0,
-						56.0,
-						12.0
+						71.0,
+						58.0,
+						13.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
 						10.0,
-						120.0,
-						56.0,
-						12.0
+						71.0,
+						58.0,
+						13.0
 					],
-					"text": "F.Env Attack",
+					"text": "F.Env Atk",
 					"fontsize": 8.0,
 					"fontface": 0,
 					"textjustification": 1,
@@ -4246,7 +4312,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1540.0,
+						1380.0,
 						832.0,
 						80.0,
 						22.0
@@ -4264,7 +4330,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"patching_rect": [
-						1780.0,
+						1620.0,
 						872.0,
 						70.0,
 						22.0
@@ -4284,7 +4350,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						2020.0,
+						1860.0,
 						872.0,
 						80.0,
 						22.0
@@ -4302,34 +4368,36 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						79.0,
-						82.0,
-						36.0,
-						36.0
+						80.0,
+						28.0,
+						40.0,
+						40.0
 					],
 					"outlettype": [
 						""
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						79.0,
-						82.0,
-						36.0,
-						36.0
+						80.0,
+						28.0,
+						40.0,
+						40.0
 					],
 					"parameter_enable": 1,
 					"varname": "Filter_Env_Sustain",
 					"saved_attribute_attributes": {
 						"valueof": {
 							"parameter_longname": "Filter Env Sustain",
-							"parameter_shortname": "F.Env Sustain",
+							"parameter_shortname": "F.Env Sus",
 							"parameter_type": 1,
 							"parameter_mmin": 0,
 							"parameter_mmax": 127,
 							"parameter_initial_enable": 0,
 							"parameter_invisible": 0
 						}
-					}
+					},
+					"annotation": "Filter Env Sustain  \u00b7  CC 80",
+					"hint": "Filter Env Sustain  \u00b7  CC 80"
 				}
 			},
 			{
@@ -4339,19 +4407,19 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						68.0,
-						120.0,
-						56.0,
-						12.0
+						70.0,
+						71.0,
+						58.0,
+						13.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						68.0,
-						120.0,
-						56.0,
-						12.0
+						70.0,
+						71.0,
+						58.0,
+						13.0
 					],
-					"text": "F.Env Sustain",
+					"text": "F.Env Sus",
 					"fontsize": 8.0,
 					"fontface": 0,
 					"textjustification": 1,
@@ -4365,7 +4433,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1540.0,
+						1380.0,
 						840.0,
 						80.0,
 						22.0
@@ -4383,7 +4451,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"patching_rect": [
-						1780.0,
+						1620.0,
 						880.0,
 						70.0,
 						22.0
@@ -4403,7 +4471,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						2020.0,
+						1860.0,
 						880.0,
 						80.0,
 						22.0
@@ -4421,20 +4489,20 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						137.0,
-						82.0,
-						36.0,
-						36.0
+						140.0,
+						28.0,
+						40.0,
+						40.0
 					],
 					"outlettype": [
 						""
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						137.0,
-						82.0,
-						36.0,
-						36.0
+						140.0,
+						28.0,
+						40.0,
+						40.0
 					],
 					"parameter_enable": 1,
 					"varname": "Filter_Env_Delay",
@@ -4448,7 +4516,9 @@
 							"parameter_initial_enable": 0,
 							"parameter_invisible": 0
 						}
-					}
+					},
+					"annotation": "Filter Env Delay  \u00b7  CC 81",
+					"hint": "Filter Env Delay  \u00b7  CC 81"
 				}
 			},
 			{
@@ -4458,17 +4528,17 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						126.0,
-						120.0,
-						56.0,
-						12.0
+						130.0,
+						71.0,
+						58.0,
+						13.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						126.0,
-						120.0,
-						56.0,
-						12.0
+						130.0,
+						71.0,
+						58.0,
+						13.0
 					],
 					"text": "F.Env Delay",
 					"fontsize": 8.0,
@@ -4484,7 +4554,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1540.0,
+						1380.0,
 						848.0,
 						80.0,
 						22.0
@@ -4502,7 +4572,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"patching_rect": [
-						1780.0,
+						1620.0,
 						888.0,
 						70.0,
 						22.0
@@ -4522,7 +4592,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						2020.0,
+						1860.0,
 						888.0,
 						80.0,
 						22.0
@@ -4540,34 +4610,36 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						195.0,
-						82.0,
-						36.0,
-						36.0
+						200.0,
+						28.0,
+						40.0,
+						40.0
 					],
 					"outlettype": [
 						""
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						195.0,
-						82.0,
-						36.0,
-						36.0
+						200.0,
+						28.0,
+						40.0,
+						40.0
 					],
 					"parameter_enable": 1,
 					"varname": "Filter_Env_Release",
 					"saved_attribute_attributes": {
 						"valueof": {
 							"parameter_longname": "Filter Env Release",
-							"parameter_shortname": "F.Env Release",
+							"parameter_shortname": "F.Env Rel",
 							"parameter_type": 1,
 							"parameter_mmin": 0,
 							"parameter_mmax": 127,
 							"parameter_initial_enable": 0,
 							"parameter_invisible": 0
 						}
-					}
+					},
+					"annotation": "Filter Env Release  \u00b7  CC 82",
+					"hint": "Filter Env Release  \u00b7  CC 82"
 				}
 			},
 			{
@@ -4577,19 +4649,19 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						184.0,
-						120.0,
-						56.0,
-						12.0
+						190.0,
+						71.0,
+						58.0,
+						13.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						184.0,
-						120.0,
-						56.0,
-						12.0
+						190.0,
+						71.0,
+						58.0,
+						13.0
 					],
-					"text": "F.Env Release",
+					"text": "F.Env Rel",
 					"fontsize": 8.0,
 					"fontface": 0,
 					"textjustification": 1,
@@ -4603,7 +4675,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1540.0,
+						1380.0,
 						856.0,
 						80.0,
 						22.0
@@ -4621,7 +4693,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"patching_rect": [
-						1780.0,
+						1620.0,
 						896.0,
 						70.0,
 						22.0
@@ -4641,7 +4713,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						2020.0,
+						1860.0,
 						896.0,
 						80.0,
 						22.0
@@ -4659,8 +4731,8 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						262.0,
-						91.0,
+						271.0,
+						37.0,
 						18.0,
 						18.0
 					],
@@ -4669,8 +4741,8 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						262.0,
-						91.0,
+						271.0,
+						37.0,
 						18.0,
 						18.0
 					],
@@ -4694,7 +4766,9 @@
 								"on"
 							]
 						}
-					}
+					},
+					"annotation": "Filter Env Loop  \u00b7  CC 83  (0-63: Off; 64-127: On)",
+					"hint": "Filter Env Loop  \u00b7  CC 83  (0-63: Off; 64-127: On)"
 				}
 			},
 			{
@@ -4704,17 +4778,17 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						242.0,
-						120.0,
-						56.0,
-						12.0
+						250.0,
+						71.0,
+						58.0,
+						13.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						242.0,
-						120.0,
-						56.0,
-						12.0
+						250.0,
+						71.0,
+						58.0,
+						13.0
 					],
 					"text": "F.Env Loop",
 					"fontsize": 8.0,
@@ -4730,7 +4804,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1400.0,
+						1240.0,
 						864.0,
 						50.0,
 						22.0
@@ -4748,7 +4822,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1540.0,
+						1380.0,
 						864.0,
 						80.0,
 						22.0
@@ -4766,7 +4840,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"patching_rect": [
-						1780.0,
+						1620.0,
 						904.0,
 						70.0,
 						22.0
@@ -4786,7 +4860,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1860.0,
+						1700.0,
 						904.0,
 						50.0,
 						22.0
@@ -4804,7 +4878,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						2020.0,
+						1860.0,
 						904.0,
 						80.0,
 						22.0
@@ -4822,8 +4896,8 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						320.0,
-						91.0,
+						331.0,
+						37.0,
 						18.0,
 						18.0
 					],
@@ -4832,8 +4906,8 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						320.0,
-						91.0,
+						331.0,
+						37.0,
 						18.0,
 						18.0
 					],
@@ -4842,7 +4916,7 @@
 					"saved_attribute_attributes": {
 						"valueof": {
 							"parameter_longname": "Filter Env Velocity",
-							"parameter_shortname": "F.Env Velocity",
+							"parameter_shortname": "F.Env Vel",
 							"parameter_type": 2,
 							"parameter_mmin": 0,
 							"parameter_mmax": 1,
@@ -4857,7 +4931,9 @@
 								"on"
 							]
 						}
-					}
+					},
+					"annotation": "Filter Env Velocity  \u00b7  CC 85  (0-63: Off; 64-127: On)",
+					"hint": "Filter Env Velocity  \u00b7  CC 85  (0-63: Off; 64-127: On)"
 				}
 			},
 			{
@@ -4867,19 +4943,19 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						300.0,
-						120.0,
-						56.0,
-						12.0
+						310.0,
+						71.0,
+						58.0,
+						13.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						300.0,
-						120.0,
-						56.0,
-						12.0
+						310.0,
+						71.0,
+						58.0,
+						13.0
 					],
-					"text": "F.Env Velocity",
+					"text": "F.Env Vel",
 					"fontsize": 8.0,
 					"fontface": 0,
 					"textjustification": 1,
@@ -4893,7 +4969,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1400.0,
+						1240.0,
 						880.0,
 						50.0,
 						22.0
@@ -4911,7 +4987,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1540.0,
+						1380.0,
 						880.0,
 						80.0,
 						22.0
@@ -4929,7 +5005,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"patching_rect": [
-						1780.0,
+						1620.0,
 						920.0,
 						70.0,
 						22.0
@@ -4949,7 +5025,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1860.0,
+						1700.0,
 						920.0,
 						50.0,
 						22.0
@@ -4967,7 +5043,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						2020.0,
+						1860.0,
 						920.0,
 						80.0,
 						22.0
@@ -4985,34 +5061,36 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						369.0,
-						82.0,
-						36.0,
-						36.0
+						20.0,
+						98.0,
+						40.0,
+						40.0
 					],
 					"outlettype": [
 						""
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						369.0,
-						82.0,
-						36.0,
-						36.0
+						20.0,
+						98.0,
+						40.0,
+						40.0
 					],
 					"parameter_enable": 1,
 					"varname": "VCA_Env_Attack",
 					"saved_attribute_attributes": {
 						"valueof": {
 							"parameter_longname": "VCA Env Attack",
-							"parameter_shortname": "VCA Attack",
+							"parameter_shortname": "VCA Atk",
 							"parameter_type": 1,
 							"parameter_mmin": 0,
 							"parameter_mmax": 127,
 							"parameter_initial_enable": 0,
 							"parameter_invisible": 0
 						}
-					}
+					},
+					"annotation": "VCA Env Attack  \u00b7  CC 86",
+					"hint": "VCA Env Attack  \u00b7  CC 86"
 				}
 			},
 			{
@@ -5022,19 +5100,19 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						358.0,
-						120.0,
-						56.0,
-						12.0
+						10.0,
+						141.0,
+						58.0,
+						13.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						358.0,
-						120.0,
-						56.0,
-						12.0
+						10.0,
+						141.0,
+						58.0,
+						13.0
 					],
-					"text": "VCA Attack",
+					"text": "VCA Atk",
 					"fontsize": 8.0,
 					"fontface": 0,
 					"textjustification": 1,
@@ -5048,7 +5126,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1540.0,
+						1380.0,
 						888.0,
 						80.0,
 						22.0
@@ -5066,7 +5144,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"patching_rect": [
-						1780.0,
+						1620.0,
 						928.0,
 						70.0,
 						22.0
@@ -5086,7 +5164,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						2020.0,
+						1860.0,
 						928.0,
 						80.0,
 						22.0
@@ -5104,34 +5182,36 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						427.0,
-						82.0,
-						36.0,
-						36.0
+						80.0,
+						98.0,
+						40.0,
+						40.0
 					],
 					"outlettype": [
 						""
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						427.0,
-						82.0,
-						36.0,
-						36.0
+						80.0,
+						98.0,
+						40.0,
+						40.0
 					],
 					"parameter_enable": 1,
 					"varname": "VCA_Env_Sustain",
 					"saved_attribute_attributes": {
 						"valueof": {
 							"parameter_longname": "VCA Env Sustain",
-							"parameter_shortname": "VCA Sustain",
+							"parameter_shortname": "VCA Sus",
 							"parameter_type": 1,
 							"parameter_mmin": 0,
 							"parameter_mmax": 127,
 							"parameter_initial_enable": 0,
 							"parameter_invisible": 0
 						}
-					}
+					},
+					"annotation": "VCA Env Sustain  \u00b7  CC 87",
+					"hint": "VCA Env Sustain  \u00b7  CC 87"
 				}
 			},
 			{
@@ -5141,19 +5221,19 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						416.0,
-						120.0,
-						56.0,
-						12.0
+						70.0,
+						141.0,
+						58.0,
+						13.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						416.0,
-						120.0,
-						56.0,
-						12.0
+						70.0,
+						141.0,
+						58.0,
+						13.0
 					],
-					"text": "VCA Sustain",
+					"text": "VCA Sus",
 					"fontsize": 8.0,
 					"fontface": 0,
 					"textjustification": 1,
@@ -5167,7 +5247,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1540.0,
+						1380.0,
 						896.0,
 						80.0,
 						22.0
@@ -5185,7 +5265,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"patching_rect": [
-						1780.0,
+						1620.0,
 						936.0,
 						70.0,
 						22.0
@@ -5205,7 +5285,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						2020.0,
+						1860.0,
 						936.0,
 						80.0,
 						22.0
@@ -5223,20 +5303,20 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						485.0,
-						82.0,
-						36.0,
-						36.0
+						140.0,
+						98.0,
+						40.0,
+						40.0
 					],
 					"outlettype": [
 						""
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						485.0,
-						82.0,
-						36.0,
-						36.0
+						140.0,
+						98.0,
+						40.0,
+						40.0
 					],
 					"parameter_enable": 1,
 					"varname": "VCA_Env_Delay",
@@ -5250,7 +5330,9 @@
 							"parameter_initial_enable": 0,
 							"parameter_invisible": 0
 						}
-					}
+					},
+					"annotation": "VCA Env Delay  \u00b7  CC 88",
+					"hint": "VCA Env Delay  \u00b7  CC 88"
 				}
 			},
 			{
@@ -5260,17 +5342,17 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						474.0,
-						120.0,
-						56.0,
-						12.0
+						130.0,
+						141.0,
+						58.0,
+						13.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						474.0,
-						120.0,
-						56.0,
-						12.0
+						130.0,
+						141.0,
+						58.0,
+						13.0
 					],
 					"text": "VCA Delay",
 					"fontsize": 8.0,
@@ -5286,7 +5368,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1540.0,
+						1380.0,
 						904.0,
 						80.0,
 						22.0
@@ -5304,7 +5386,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"patching_rect": [
-						1780.0,
+						1620.0,
 						944.0,
 						70.0,
 						22.0
@@ -5324,7 +5406,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						2020.0,
+						1860.0,
 						944.0,
 						80.0,
 						22.0
@@ -5342,34 +5424,36 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						543.0,
-						82.0,
-						36.0,
-						36.0
+						200.0,
+						98.0,
+						40.0,
+						40.0
 					],
 					"outlettype": [
 						""
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						543.0,
-						82.0,
-						36.0,
-						36.0
+						200.0,
+						98.0,
+						40.0,
+						40.0
 					],
 					"parameter_enable": 1,
 					"varname": "VCA_Env_Release",
 					"saved_attribute_attributes": {
 						"valueof": {
 							"parameter_longname": "VCA Env Release",
-							"parameter_shortname": "VCA Release",
+							"parameter_shortname": "VCA Rel",
 							"parameter_type": 1,
 							"parameter_mmin": 0,
 							"parameter_mmax": 127,
 							"parameter_initial_enable": 0,
 							"parameter_invisible": 0
 						}
-					}
+					},
+					"annotation": "VCA Env Release  \u00b7  CC 89",
+					"hint": "VCA Env Release  \u00b7  CC 89"
 				}
 			},
 			{
@@ -5379,19 +5463,19 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						532.0,
-						120.0,
-						56.0,
-						12.0
+						190.0,
+						141.0,
+						58.0,
+						13.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						532.0,
-						120.0,
-						56.0,
-						12.0
+						190.0,
+						141.0,
+						58.0,
+						13.0
 					],
-					"text": "VCA Release",
+					"text": "VCA Rel",
 					"fontsize": 8.0,
 					"fontface": 0,
 					"textjustification": 1,
@@ -5405,7 +5489,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1540.0,
+						1380.0,
 						912.0,
 						80.0,
 						22.0
@@ -5423,7 +5507,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"patching_rect": [
-						1780.0,
+						1620.0,
 						952.0,
 						70.0,
 						22.0
@@ -5443,7 +5527,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						2020.0,
+						1860.0,
 						952.0,
 						80.0,
 						22.0
@@ -5461,8 +5545,8 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						610.0,
-						91.0,
+						271.0,
+						107.0,
 						18.0,
 						18.0
 					],
@@ -5471,8 +5555,8 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						610.0,
-						91.0,
+						271.0,
+						107.0,
 						18.0,
 						18.0
 					],
@@ -5496,7 +5580,9 @@
 								"on"
 							]
 						}
-					}
+					},
+					"annotation": "VCA Env Loop  \u00b7  CC 90  (0-63: Off; 64-127: On)",
+					"hint": "VCA Env Loop  \u00b7  CC 90  (0-63: Off; 64-127: On)"
 				}
 			},
 			{
@@ -5506,17 +5592,17 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						590.0,
-						120.0,
-						56.0,
-						12.0
+						250.0,
+						141.0,
+						58.0,
+						13.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						590.0,
-						120.0,
-						56.0,
-						12.0
+						250.0,
+						141.0,
+						58.0,
+						13.0
 					],
 					"text": "VCA Loop",
 					"fontsize": 8.0,
@@ -5532,7 +5618,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1400.0,
+						1240.0,
 						920.0,
 						50.0,
 						22.0
@@ -5550,7 +5636,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1540.0,
+						1380.0,
 						920.0,
 						80.0,
 						22.0
@@ -5568,7 +5654,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"patching_rect": [
-						1780.0,
+						1620.0,
 						960.0,
 						70.0,
 						22.0
@@ -5588,7 +5674,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1860.0,
+						1700.0,
 						960.0,
 						50.0,
 						22.0
@@ -5606,7 +5692,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						2020.0,
+						1860.0,
 						960.0,
 						80.0,
 						22.0
@@ -5624,8 +5710,8 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						668.0,
-						91.0,
+						331.0,
+						107.0,
 						18.0,
 						18.0
 					],
@@ -5634,8 +5720,8 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						668.0,
-						91.0,
+						331.0,
+						107.0,
 						18.0,
 						18.0
 					],
@@ -5644,7 +5730,7 @@
 					"saved_attribute_attributes": {
 						"valueof": {
 							"parameter_longname": "VCA Env Velocity",
-							"parameter_shortname": "VCA Velocity",
+							"parameter_shortname": "VCA Vel",
 							"parameter_type": 2,
 							"parameter_mmin": 0,
 							"parameter_mmax": 1,
@@ -5659,7 +5745,9 @@
 								"on"
 							]
 						}
-					}
+					},
+					"annotation": "VCA Env Velocity  \u00b7  CC 91  (0-63: Off; 64-127: On)",
+					"hint": "VCA Env Velocity  \u00b7  CC 91  (0-63: Off; 64-127: On)"
 				}
 			},
 			{
@@ -5669,19 +5757,19 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						648.0,
-						120.0,
-						56.0,
-						12.0
+						310.0,
+						141.0,
+						58.0,
+						13.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						648.0,
-						120.0,
-						56.0,
-						12.0
+						310.0,
+						141.0,
+						58.0,
+						13.0
 					],
-					"text": "VCA Velocity",
+					"text": "VCA Vel",
 					"fontsize": 8.0,
 					"fontface": 0,
 					"textjustification": 1,
@@ -5695,7 +5783,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1400.0,
+						1240.0,
 						928.0,
 						50.0,
 						22.0
@@ -5713,7 +5801,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1540.0,
+						1380.0,
 						928.0,
 						80.0,
 						22.0
@@ -5731,7 +5819,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"patching_rect": [
-						1780.0,
+						1620.0,
 						968.0,
 						70.0,
 						22.0
@@ -5751,7 +5839,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1860.0,
+						1700.0,
 						968.0,
 						50.0,
 						22.0
@@ -5769,7 +5857,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						2020.0,
+						1860.0,
 						968.0,
 						80.0,
 						22.0
@@ -5787,34 +5875,36 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						21.0,
-						30.0,
-						36.0,
-						36.0
+						20.0,
+						28.0,
+						40.0,
+						40.0
 					],
 					"outlettype": [
 						""
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						21.0,
-						30.0,
-						36.0,
-						36.0
+						20.0,
+						28.0,
+						40.0,
+						40.0
 					],
 					"parameter_enable": 1,
 					"varname": "Mod_Osc_Frequency",
 					"saved_attribute_attributes": {
 						"valueof": {
 							"parameter_longname": "Mod Osc Frequency",
-							"parameter_shortname": "Frequency",
+							"parameter_shortname": "Freq",
 							"parameter_type": 1,
 							"parameter_mmin": 0,
 							"parameter_mmax": 127,
 							"parameter_initial_enable": 0,
 							"parameter_invisible": 0
 						}
-					}
+					},
+					"annotation": "Mod Osc Frequency  \u00b7  CC 25  \u2014  Controls the frequency of the modulation oscillator",
+					"hint": "Mod Osc Frequency  \u00b7  CC 25  \u2014  Controls the frequency of the modulation oscillator"
 				}
 			},
 			{
@@ -5825,18 +5915,18 @@
 					"numoutlets": 0,
 					"patching_rect": [
 						10.0,
-						68.0,
-						56.0,
-						12.0
+						71.0,
+						58.0,
+						13.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
 						10.0,
-						68.0,
-						56.0,
-						12.0
+						71.0,
+						58.0,
+						13.0
 					],
-					"text": "Frequency",
+					"text": "Freq",
 					"fontsize": 8.0,
 					"fontface": 0,
 					"textjustification": 1,
@@ -5850,7 +5940,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1540.0,
+						1380.0,
 						400.0,
 						80.0,
 						22.0
@@ -5868,7 +5958,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"patching_rect": [
-						1780.0,
+						1620.0,
 						440.0,
 						70.0,
 						22.0
@@ -5888,7 +5978,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						2020.0,
+						1860.0,
 						440.0,
 						80.0,
 						22.0
@@ -5906,8 +5996,8 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						70.0,
-						41.0,
+						73.0,
+						40.0,
 						52.0,
 						18.0
 					],
@@ -5916,8 +6006,8 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						70.0,
-						41.0,
+						73.0,
+						40.0,
 						52.0,
 						18.0
 					],
@@ -5926,7 +6016,7 @@
 					"saved_attribute_attributes": {
 						"valueof": {
 							"parameter_longname": "Mod Osc Waveform",
-							"parameter_shortname": "Waveform",
+							"parameter_shortname": "Wave",
 							"parameter_type": 2,
 							"parameter_mmin": 0,
 							"parameter_mmax": 4,
@@ -5947,7 +6037,9 @@
 								"Noise"
 							]
 						}
-					}
+					},
+					"annotation": "Mod Osc Waveform  \u00b7  CC 28  \u2014  Selects the waveform of the modulation oscillator  (0-24: Sine; 25-49: Sawtooth; 50-74: Ramp; 75-99: Square; 100-127: Noise)",
+					"hint": "Mod Osc Waveform  \u00b7  CC 28  \u2014  Selects the waveform of the modulation oscillator  (0-24: Sine; 25-49: Sawtooth; 50-74: Ramp; 75-99: Square; 100-127: Noise)"
 				}
 			},
 			{
@@ -5957,19 +6049,19 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						68.0,
-						68.0,
-						56.0,
-						12.0
+						70.0,
+						71.0,
+						58.0,
+						13.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						68.0,
-						68.0,
-						56.0,
-						12.0
+						70.0,
+						71.0,
+						58.0,
+						13.0
 					],
-					"text": "Waveform",
+					"text": "Wave",
 					"fontsize": 8.0,
 					"fontface": 0,
 					"textjustification": 1,
@@ -5983,7 +6075,7 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						1400.0,
+						1240.0,
 						424.0,
 						110.0,
 						22.0
@@ -6001,7 +6093,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1540.0,
+						1380.0,
 						424.0,
 						80.0,
 						22.0
@@ -6019,7 +6111,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"patching_rect": [
-						1780.0,
+						1620.0,
 						464.0,
 						70.0,
 						22.0
@@ -6039,7 +6131,7 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						1860.0,
+						1700.0,
 						464.0,
 						150.0,
 						22.0
@@ -6057,7 +6149,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						2020.0,
+						1860.0,
 						464.0,
 						80.0,
 						22.0
@@ -6075,8 +6167,8 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						146.0,
-						39.0,
+						151.0,
+						37.0,
 						18.0,
 						18.0
 					],
@@ -6085,8 +6177,8 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						146.0,
-						39.0,
+						151.0,
+						37.0,
 						18.0,
 						18.0
 					],
@@ -6110,7 +6202,9 @@
 								"on"
 							]
 						}
-					}
+					},
+					"annotation": "Mod Osc Audio Rate  \u00b7  CC 26  \u2014  Sets the modulation oscillator to operate at audio-rate frequencies  (0-63: Off; 64-127: On)",
+					"hint": "Mod Osc Audio Rate  \u00b7  CC 26  \u2014  Sets the modulation oscillator to operate at audio-rate frequencies  (0-63: Off; 64-127: On)"
 				}
 			},
 			{
@@ -6120,17 +6214,17 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						126.0,
-						68.0,
-						56.0,
-						12.0
+						130.0,
+						71.0,
+						58.0,
+						13.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						126.0,
-						68.0,
-						56.0,
-						12.0
+						130.0,
+						71.0,
+						58.0,
+						13.0
 					],
 					"text": "Audio Rate",
 					"fontsize": 8.0,
@@ -6146,7 +6240,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1400.0,
+						1240.0,
 						408.0,
 						50.0,
 						22.0
@@ -6164,7 +6258,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1540.0,
+						1380.0,
 						408.0,
 						80.0,
 						22.0
@@ -6182,7 +6276,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"patching_rect": [
-						1780.0,
+						1620.0,
 						448.0,
 						70.0,
 						22.0
@@ -6202,7 +6296,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1860.0,
+						1700.0,
 						448.0,
 						50.0,
 						22.0
@@ -6220,7 +6314,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						2020.0,
+						1860.0,
 						448.0,
 						80.0,
 						22.0
@@ -6238,8 +6332,8 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						204.0,
-						39.0,
+						211.0,
+						37.0,
 						18.0,
 						18.0
 					],
@@ -6248,8 +6342,8 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						204.0,
-						39.0,
+						211.0,
+						37.0,
 						18.0,
 						18.0
 					],
@@ -6273,7 +6367,9 @@
 								"on"
 							]
 						}
-					}
+					},
+					"annotation": "Mod Osc KB Track  \u00b7  CC 27  \u2014  Enables keyboard control of the frequency of the modulation oscillator  (0-63: Off; 64-127: On)",
+					"hint": "Mod Osc KB Track  \u00b7  CC 27  \u2014  Enables keyboard control of the frequency of the modulation oscillator  (0-63: Off; 64-127: On)"
 				}
 			},
 			{
@@ -6283,17 +6379,17 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						184.0,
-						68.0,
-						56.0,
-						12.0
+						190.0,
+						71.0,
+						58.0,
+						13.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						184.0,
-						68.0,
-						56.0,
-						12.0
+						190.0,
+						71.0,
+						58.0,
+						13.0
 					],
 					"text": "KB Track",
 					"fontsize": 8.0,
@@ -6309,7 +6405,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1400.0,
+						1240.0,
 						416.0,
 						50.0,
 						22.0
@@ -6327,7 +6423,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1540.0,
+						1380.0,
 						416.0,
 						80.0,
 						22.0
@@ -6345,7 +6441,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"patching_rect": [
-						1780.0,
+						1620.0,
 						456.0,
 						70.0,
 						22.0
@@ -6365,7 +6461,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1860.0,
+						1700.0,
 						456.0,
 						50.0,
 						22.0
@@ -6383,7 +6479,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						2020.0,
+						1860.0,
 						456.0,
 						80.0,
 						22.0
@@ -6401,8 +6497,8 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						262.0,
-						39.0,
+						271.0,
+						37.0,
 						18.0,
 						18.0
 					],
@@ -6411,8 +6507,8 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						262.0,
-						39.0,
+						271.0,
+						37.0,
 						18.0,
 						18.0
 					],
@@ -6421,7 +6517,7 @@
 					"saved_attribute_attributes": {
 						"valueof": {
 							"parameter_longname": "Mod Osc KB Reset",
-							"parameter_shortname": "KB Reset",
+							"parameter_shortname": "KB Rst",
 							"parameter_type": 2,
 							"parameter_mmin": 0,
 							"parameter_mmax": 1,
@@ -6436,7 +6532,9 @@
 								"on"
 							]
 						}
-					}
+					},
+					"annotation": "Mod Osc KB Reset  \u00b7  CC 29  \u2014  Resets the LFO to its starting point in its wave cycle every time a key is pressed  (0-63: Off; 64-127: On)",
+					"hint": "Mod Osc KB Reset  \u00b7  CC 29  \u2014  Resets the LFO to its starting point in its wave cycle every time a key is pressed  (0-63: Off; 64-127: On)"
 				}
 			},
 			{
@@ -6446,19 +6544,19 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						242.0,
-						68.0,
-						56.0,
-						12.0
+						250.0,
+						71.0,
+						58.0,
+						13.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						242.0,
-						68.0,
-						56.0,
-						12.0
+						250.0,
+						71.0,
+						58.0,
+						13.0
 					],
-					"text": "KB Reset",
+					"text": "KB Rst",
 					"fontsize": 8.0,
 					"fontface": 0,
 					"textjustification": 1,
@@ -6472,7 +6570,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1400.0,
+						1240.0,
 						432.0,
 						50.0,
 						22.0
@@ -6490,7 +6588,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1540.0,
+						1380.0,
 						432.0,
 						80.0,
 						22.0
@@ -6508,7 +6606,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"patching_rect": [
-						1780.0,
+						1620.0,
 						472.0,
 						70.0,
 						22.0
@@ -6528,7 +6626,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1860.0,
+						1700.0,
 						472.0,
 						50.0,
 						22.0
@@ -6546,7 +6644,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						2020.0,
+						1860.0,
 						472.0,
 						80.0,
 						22.0
@@ -6564,8 +6662,8 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						320.0,
-						39.0,
+						331.0,
+						37.0,
 						18.0,
 						18.0
 					],
@@ -6574,8 +6672,8 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						320.0,
-						39.0,
+						331.0,
+						37.0,
 						18.0,
 						18.0
 					],
@@ -6584,7 +6682,7 @@
 					"saved_attribute_attributes": {
 						"valueof": {
 							"parameter_longname": "Mod Osc Unipolar",
-							"parameter_shortname": "Unipolar",
+							"parameter_shortname": "Uni",
 							"parameter_type": 2,
 							"parameter_mmin": 0,
 							"parameter_mmax": 1,
@@ -6599,7 +6697,9 @@
 								"on"
 							]
 						}
-					}
+					},
+					"annotation": "Mod Osc Unipolar  \u00b7  CC 30  \u2014  Enabled unipolar mode for the modulation oscillator  (0-63: Off; 64-127: On)",
+					"hint": "Mod Osc Unipolar  \u00b7  CC 30  \u2014  Enabled unipolar mode for the modulation oscillator  (0-63: Off; 64-127: On)"
 				}
 			},
 			{
@@ -6609,19 +6709,19 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						300.0,
-						68.0,
-						56.0,
-						12.0
+						310.0,
+						71.0,
+						58.0,
+						13.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						300.0,
-						68.0,
-						56.0,
-						12.0
+						310.0,
+						71.0,
+						58.0,
+						13.0
 					],
-					"text": "Unipolar",
+					"text": "Uni",
 					"fontsize": 8.0,
 					"fontface": 0,
 					"textjustification": 1,
@@ -6635,7 +6735,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1400.0,
+						1240.0,
 						440.0,
 						50.0,
 						22.0
@@ -6653,7 +6753,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1540.0,
+						1380.0,
 						440.0,
 						80.0,
 						22.0
@@ -6671,7 +6771,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"patching_rect": [
-						1780.0,
+						1620.0,
 						480.0,
 						70.0,
 						22.0
@@ -6691,7 +6791,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1860.0,
+						1700.0,
 						480.0,
 						50.0,
 						22.0
@@ -6709,7 +6809,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						2020.0,
+						1860.0,
 						480.0,
 						80.0,
 						22.0
@@ -6727,34 +6827,36 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						369.0,
-						30.0,
-						36.0,
-						36.0
+						380.0,
+						28.0,
+						40.0,
+						40.0
 					],
 					"outlettype": [
 						""
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						369.0,
-						30.0,
-						36.0,
-						36.0
+						380.0,
+						28.0,
+						40.0,
+						40.0
 					],
 					"parameter_enable": 1,
 					"varname": "Mod_Osc_Pitch_Amount",
 					"saved_attribute_attributes": {
 						"valueof": {
 							"parameter_longname": "Mod Osc Pitch Amount",
-							"parameter_shortname": "Pitch Amount",
+							"parameter_shortname": "Pitch Amt",
 							"parameter_type": 1,
 							"parameter_mmin": 0,
 							"parameter_mmax": 127,
 							"parameter_initial_enable": 0,
 							"parameter_invisible": 0
 						}
-					}
+					},
+					"annotation": "Mod Osc Pitch Amount  \u00b7  CC 31  \u2014  Determines the depth at which frequency modulation of the oscillator section occurs based on the OSC 1 and OSC 2 routing buttons",
+					"hint": "Mod Osc Pitch Amount  \u00b7  CC 31  \u2014  Determines the depth at which frequency modulation of the oscillator section occurs based on the OSC 1 and OSC 2 routing buttons"
 				}
 			},
 			{
@@ -6764,19 +6866,19 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						358.0,
-						68.0,
-						56.0,
-						12.0
+						370.0,
+						71.0,
+						58.0,
+						13.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						358.0,
-						68.0,
-						56.0,
-						12.0
+						370.0,
+						71.0,
+						58.0,
+						13.0
 					],
-					"text": "Pitch Amount",
+					"text": "Pitch Amt",
 					"fontsize": 8.0,
 					"fontface": 0,
 					"textjustification": 1,
@@ -6790,7 +6892,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1540.0,
+						1380.0,
 						448.0,
 						80.0,
 						22.0
@@ -6808,7 +6910,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"patching_rect": [
-						1780.0,
+						1620.0,
 						488.0,
 						70.0,
 						22.0
@@ -6828,7 +6930,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						2020.0,
+						1860.0,
 						488.0,
 						80.0,
 						22.0
@@ -6846,8 +6948,8 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						436.0,
-						39.0,
+						451.0,
+						37.0,
 						18.0,
 						18.0
 					],
@@ -6856,8 +6958,8 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						436.0,
-						39.0,
+						451.0,
+						37.0,
 						18.0,
 						18.0
 					],
@@ -6881,7 +6983,9 @@
 								"on"
 							]
 						}
-					}
+					},
+					"annotation": "Mod Osc Pitch>OSC 1  \u00b7  CC 33  \u2014  Enables frequency modulation of OSC 1 via the modulation oscillator",
+					"hint": "Mod Osc Pitch>OSC 1  \u00b7  CC 33  \u2014  Enables frequency modulation of OSC 1 via the modulation oscillator"
 				}
 			},
 			{
@@ -6891,17 +6995,17 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						416.0,
-						68.0,
-						56.0,
-						12.0
+						430.0,
+						71.0,
+						58.0,
+						13.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						416.0,
-						68.0,
-						56.0,
-						12.0
+						430.0,
+						71.0,
+						58.0,
+						13.0
 					],
 					"text": "Pitch>OSC 1",
 					"fontsize": 8.0,
@@ -6917,7 +7021,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1400.0,
+						1240.0,
 						464.0,
 						50.0,
 						22.0
@@ -6935,7 +7039,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1540.0,
+						1380.0,
 						464.0,
 						80.0,
 						22.0
@@ -6953,7 +7057,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"patching_rect": [
-						1780.0,
+						1620.0,
 						504.0,
 						70.0,
 						22.0
@@ -6973,7 +7077,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1860.0,
+						1700.0,
 						504.0,
 						50.0,
 						22.0
@@ -6991,7 +7095,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						2020.0,
+						1860.0,
 						504.0,
 						80.0,
 						22.0
@@ -7009,8 +7113,8 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						494.0,
-						39.0,
+						511.0,
+						37.0,
 						18.0,
 						18.0
 					],
@@ -7019,8 +7123,8 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						494.0,
-						39.0,
+						511.0,
+						37.0,
 						18.0,
 						18.0
 					],
@@ -7044,7 +7148,9 @@
 								"on"
 							]
 						}
-					}
+					},
+					"annotation": "Mod Osc Pitch>OSC 2  \u00b7  CC 34  \u2014  Enables frequency modulation of OSC 2 via the modulation oscillator",
+					"hint": "Mod Osc Pitch>OSC 2  \u00b7  CC 34  \u2014  Enables frequency modulation of OSC 2 via the modulation oscillator"
 				}
 			},
 			{
@@ -7054,17 +7160,17 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						474.0,
-						68.0,
-						56.0,
-						12.0
+						490.0,
+						71.0,
+						58.0,
+						13.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						474.0,
-						68.0,
-						56.0,
-						12.0
+						490.0,
+						71.0,
+						58.0,
+						13.0
 					],
 					"text": "Pitch>OSC 2",
 					"fontsize": 8.0,
@@ -7080,7 +7186,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1400.0,
+						1240.0,
 						472.0,
 						50.0,
 						22.0
@@ -7098,7 +7204,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1540.0,
+						1380.0,
 						472.0,
 						80.0,
 						22.0
@@ -7116,7 +7222,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"patching_rect": [
-						1780.0,
+						1620.0,
 						512.0,
 						70.0,
 						22.0
@@ -7136,7 +7242,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1860.0,
+						1700.0,
 						512.0,
 						50.0,
 						22.0
@@ -7154,7 +7260,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						2020.0,
+						1860.0,
 						512.0,
 						80.0,
 						22.0
@@ -7172,34 +7278,36 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						21.0,
-						82.0,
-						36.0,
-						36.0
+						20.0,
+						98.0,
+						40.0,
+						40.0
 					],
 					"outlettype": [
 						""
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						21.0,
-						82.0,
-						36.0,
-						36.0
+						20.0,
+						98.0,
+						40.0,
+						40.0
 					],
 					"parameter_enable": 1,
 					"varname": "Mod_Osc_PWM_Amount",
 					"saved_attribute_attributes": {
 						"valueof": {
 							"parameter_longname": "Mod Osc PWM Amount",
-							"parameter_shortname": "PWM Amount",
+							"parameter_shortname": "PWM Amt",
 							"parameter_type": 1,
 							"parameter_mmin": 0,
 							"parameter_mmax": 127,
 							"parameter_initial_enable": 0,
 							"parameter_invisible": 0
 						}
-					}
+					},
+					"annotation": "Mod Osc PWM Amount  \u00b7  CC 35  \u2014  Determines the depth at which pulse width modulation of the oscillator section occurs based on the OSC 1 and OSC 2 routing buttons",
+					"hint": "Mod Osc PWM Amount  \u00b7  CC 35  \u2014  Determines the depth at which pulse width modulation of the oscillator section occurs based on the OSC 1 and OSC 2 routing buttons"
 				}
 			},
 			{
@@ -7210,18 +7318,18 @@
 					"numoutlets": 0,
 					"patching_rect": [
 						10.0,
-						120.0,
-						56.0,
-						12.0
+						141.0,
+						58.0,
+						13.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
 						10.0,
-						120.0,
-						56.0,
-						12.0
+						141.0,
+						58.0,
+						13.0
 					],
-					"text": "PWM Amount",
+					"text": "PWM Amt",
 					"fontsize": 8.0,
 					"fontface": 0,
 					"textjustification": 1,
@@ -7235,7 +7343,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1540.0,
+						1380.0,
 						480.0,
 						80.0,
 						22.0
@@ -7253,7 +7361,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"patching_rect": [
-						1780.0,
+						1620.0,
 						520.0,
 						70.0,
 						22.0
@@ -7273,7 +7381,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						2020.0,
+						1860.0,
 						520.0,
 						80.0,
 						22.0
@@ -7291,8 +7399,8 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						88.0,
 						91.0,
+						107.0,
 						18.0,
 						18.0
 					],
@@ -7301,8 +7409,8 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						88.0,
 						91.0,
+						107.0,
 						18.0,
 						18.0
 					],
@@ -7326,7 +7434,9 @@
 								"on"
 							]
 						}
-					}
+					},
+					"annotation": "Mod Osc PWM>OSC 1  \u00b7  CC 36  \u2014  Enables modulation of the duty cycle of the OSC 1 pulse/square waveshape via the modulation oscillator",
+					"hint": "Mod Osc PWM>OSC 1  \u00b7  CC 36  \u2014  Enables modulation of the duty cycle of the OSC 1 pulse/square waveshape via the modulation oscillator"
 				}
 			},
 			{
@@ -7336,17 +7446,17 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						68.0,
-						120.0,
-						56.0,
-						12.0
+						70.0,
+						141.0,
+						58.0,
+						13.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						68.0,
-						120.0,
-						56.0,
-						12.0
+						70.0,
+						141.0,
+						58.0,
+						13.0
 					],
 					"text": "PWM>OSC 1",
 					"fontsize": 8.0,
@@ -7362,7 +7472,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1400.0,
+						1240.0,
 						488.0,
 						50.0,
 						22.0
@@ -7380,7 +7490,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1540.0,
+						1380.0,
 						488.0,
 						80.0,
 						22.0
@@ -7398,7 +7508,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"patching_rect": [
-						1780.0,
+						1620.0,
 						528.0,
 						70.0,
 						22.0
@@ -7418,7 +7528,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1860.0,
+						1700.0,
 						528.0,
 						50.0,
 						22.0
@@ -7436,7 +7546,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						2020.0,
+						1860.0,
 						528.0,
 						80.0,
 						22.0
@@ -7454,8 +7564,8 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						146.0,
-						91.0,
+						151.0,
+						107.0,
 						18.0,
 						18.0
 					],
@@ -7464,8 +7574,8 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						146.0,
-						91.0,
+						151.0,
+						107.0,
 						18.0,
 						18.0
 					],
@@ -7489,7 +7599,9 @@
 								"on"
 							]
 						}
-					}
+					},
+					"annotation": "Mod Osc PWM>OSC 2  \u00b7  CC 37  \u2014  Enables modulation of the duty cycle of the OSC 2 pulse/square waveshape via the modulation oscillator",
+					"hint": "Mod Osc PWM>OSC 2  \u00b7  CC 37  \u2014  Enables modulation of the duty cycle of the OSC 2 pulse/square waveshape via the modulation oscillator"
 				}
 			},
 			{
@@ -7499,17 +7611,17 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						126.0,
-						120.0,
-						56.0,
-						12.0
+						130.0,
+						141.0,
+						58.0,
+						13.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						126.0,
-						120.0,
-						56.0,
-						12.0
+						130.0,
+						141.0,
+						58.0,
+						13.0
 					],
 					"text": "PWM>OSC 2",
 					"fontsize": 8.0,
@@ -7525,7 +7637,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1400.0,
+						1240.0,
 						496.0,
 						50.0,
 						22.0
@@ -7543,7 +7655,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1540.0,
+						1380.0,
 						496.0,
 						80.0,
 						22.0
@@ -7561,7 +7673,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"patching_rect": [
-						1780.0,
+						1620.0,
 						536.0,
 						70.0,
 						22.0
@@ -7581,7 +7693,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1860.0,
+						1700.0,
 						536.0,
 						50.0,
 						22.0
@@ -7599,7 +7711,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						2020.0,
+						1860.0,
 						536.0,
 						80.0,
 						22.0
@@ -7617,34 +7729,36 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						195.0,
-						82.0,
-						36.0,
-						36.0
+						200.0,
+						98.0,
+						40.0,
+						40.0
 					],
 					"outlettype": [
 						""
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						195.0,
-						82.0,
-						36.0,
-						36.0
+						200.0,
+						98.0,
+						40.0,
+						40.0
 					],
 					"parameter_enable": 1,
 					"varname": "Mod_Osc_Filter_Amount",
 					"saved_attribute_attributes": {
 						"valueof": {
 							"parameter_longname": "Mod Osc Filter Amount",
-							"parameter_shortname": "Filter Amount",
+							"parameter_shortname": "Filter Amt",
 							"parameter_type": 1,
 							"parameter_mmin": 0,
 							"parameter_mmax": 127,
 							"parameter_initial_enable": 0,
 							"parameter_invisible": 0
 						}
-					}
+					},
+					"annotation": "Mod Osc Filter Amount  \u00b7  CC 39  \u2014  Determines the depth at which cutoff frequency modulation of the filter section occurs based on the FILTER 1 and FILTER 2 routing buttons",
+					"hint": "Mod Osc Filter Amount  \u00b7  CC 39  \u2014  Determines the depth at which cutoff frequency modulation of the filter section occurs based on the FILTER 1 and FILTER 2 routing buttons"
 				}
 			},
 			{
@@ -7654,19 +7768,19 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						184.0,
-						120.0,
-						56.0,
-						12.0
+						190.0,
+						141.0,
+						58.0,
+						13.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						184.0,
-						120.0,
-						56.0,
-						12.0
+						190.0,
+						141.0,
+						58.0,
+						13.0
 					],
-					"text": "Filter Amount",
+					"text": "Filter Amt",
 					"fontsize": 8.0,
 					"fontface": 0,
 					"textjustification": 1,
@@ -7680,7 +7794,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1540.0,
+						1380.0,
 						512.0,
 						80.0,
 						22.0
@@ -7698,7 +7812,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"patching_rect": [
-						1780.0,
+						1620.0,
 						552.0,
 						70.0,
 						22.0
@@ -7718,7 +7832,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						2020.0,
+						1860.0,
 						552.0,
 						80.0,
 						22.0
@@ -7736,8 +7850,8 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						262.0,
-						91.0,
+						271.0,
+						107.0,
 						18.0,
 						18.0
 					],
@@ -7746,8 +7860,8 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						262.0,
-						91.0,
+						271.0,
+						107.0,
 						18.0,
 						18.0
 					],
@@ -7771,7 +7885,9 @@
 								"on"
 							]
 						}
-					}
+					},
+					"annotation": "Mod Osc Filter>F1  \u00b7  CC 40  \u2014  Enables cutoff frequency modulation of FILTER 1 via the modulation oscillator",
+					"hint": "Mod Osc Filter>F1  \u00b7  CC 40  \u2014  Enables cutoff frequency modulation of FILTER 1 via the modulation oscillator"
 				}
 			},
 			{
@@ -7781,17 +7897,17 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						242.0,
-						120.0,
-						56.0,
-						12.0
+						250.0,
+						141.0,
+						58.0,
+						13.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						242.0,
-						120.0,
-						56.0,
-						12.0
+						250.0,
+						141.0,
+						58.0,
+						13.0
 					],
 					"text": "Filter>F1",
 					"fontsize": 8.0,
@@ -7807,7 +7923,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1400.0,
+						1240.0,
 						520.0,
 						50.0,
 						22.0
@@ -7825,7 +7941,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1540.0,
+						1380.0,
 						520.0,
 						80.0,
 						22.0
@@ -7843,7 +7959,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"patching_rect": [
-						1780.0,
+						1620.0,
 						560.0,
 						70.0,
 						22.0
@@ -7863,7 +7979,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1860.0,
+						1700.0,
 						560.0,
 						50.0,
 						22.0
@@ -7881,7 +7997,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						2020.0,
+						1860.0,
 						560.0,
 						80.0,
 						22.0
@@ -7899,8 +8015,8 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						320.0,
-						91.0,
+						331.0,
+						107.0,
 						18.0,
 						18.0
 					],
@@ -7909,8 +8025,8 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						320.0,
-						91.0,
+						331.0,
+						107.0,
 						18.0,
 						18.0
 					],
@@ -7934,7 +8050,9 @@
 								"on"
 							]
 						}
-					}
+					},
+					"annotation": "Mod Osc Filter>F2  \u00b7  CC 41  \u2014  Enables cutoff frequency modulation of FILTER 2 via the modulation oscillator",
+					"hint": "Mod Osc Filter>F2  \u00b7  CC 41  \u2014  Enables cutoff frequency modulation of FILTER 2 via the modulation oscillator"
 				}
 			},
 			{
@@ -7944,17 +8062,17 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						300.0,
-						120.0,
-						56.0,
-						12.0
+						310.0,
+						141.0,
+						58.0,
+						13.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						300.0,
-						120.0,
-						56.0,
-						12.0
+						310.0,
+						141.0,
+						58.0,
+						13.0
 					],
 					"text": "Filter>F2",
 					"fontsize": 8.0,
@@ -7970,7 +8088,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1400.0,
+						1240.0,
 						528.0,
 						50.0,
 						22.0
@@ -7988,7 +8106,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1540.0,
+						1380.0,
 						528.0,
 						80.0,
 						22.0
@@ -8006,7 +8124,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"patching_rect": [
-						1780.0,
+						1620.0,
 						568.0,
 						70.0,
 						22.0
@@ -8026,7 +8144,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1860.0,
+						1700.0,
 						568.0,
 						50.0,
 						22.0
@@ -8044,7 +8162,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						2020.0,
+						1860.0,
 						568.0,
 						80.0,
 						22.0
@@ -8062,34 +8180,36 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						369.0,
-						82.0,
-						36.0,
-						36.0
+						380.0,
+						98.0,
+						40.0,
+						40.0
 					],
 					"outlettype": [
 						""
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						369.0,
-						82.0,
-						36.0,
-						36.0
+						380.0,
+						98.0,
+						40.0,
+						40.0
 					],
 					"parameter_enable": 1,
 					"varname": "Mod_Osc_VCA_Amount",
 					"saved_attribute_attributes": {
 						"valueof": {
 							"parameter_longname": "Mod Osc VCA Amount",
-							"parameter_shortname": "VCA Amount",
+							"parameter_shortname": "VCA Amt",
 							"parameter_type": 1,
 							"parameter_mmin": 0,
 							"parameter_mmax": 127,
 							"parameter_initial_enable": 0,
 							"parameter_invisible": 0
 						}
-					}
+					},
+					"annotation": "Mod Osc VCA Amount  \u00b7  CC 42  \u2014  Determines the depth at which the MODULATION OSCILLATOR will modulate the amplitude of the VCA, providing a tremolo effect",
+					"hint": "Mod Osc VCA Amount  \u00b7  CC 42  \u2014  Determines the depth at which the MODULATION OSCILLATOR will modulate the amplitude of the VCA, providing a tremolo effect"
 				}
 			},
 			{
@@ -8099,19 +8219,19 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						358.0,
-						120.0,
-						56.0,
-						12.0
+						370.0,
+						141.0,
+						58.0,
+						13.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						358.0,
-						120.0,
-						56.0,
-						12.0
+						370.0,
+						141.0,
+						58.0,
+						13.0
 					],
-					"text": "VCA Amount",
+					"text": "VCA Amt",
 					"fontsize": 8.0,
 					"fontface": 0,
 					"textjustification": 1,
@@ -8125,7 +8245,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1540.0,
+						1380.0,
 						536.0,
 						80.0,
 						22.0
@@ -8143,7 +8263,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"patching_rect": [
-						1780.0,
+						1620.0,
 						576.0,
 						70.0,
 						22.0
@@ -8163,7 +8283,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						2020.0,
+						1860.0,
 						576.0,
 						80.0,
 						22.0
@@ -8181,8 +8301,8 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						436.0,
-						91.0,
+						451.0,
+						107.0,
 						18.0,
 						18.0
 					],
@@ -8191,8 +8311,8 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						436.0,
-						91.0,
+						451.0,
+						107.0,
 						18.0,
 						18.0
 					],
@@ -8216,7 +8336,9 @@
 								"on"
 							]
 						}
-					}
+					},
+					"annotation": "Mod Osc VCA Pan  \u00b7  CC 43  \u2014  Enables pan-position modulation of a voice in the stereo field by inverting the phase of the modulation oscillator sent to the right VCA",
+					"hint": "Mod Osc VCA Pan  \u00b7  CC 43  \u2014  Enables pan-position modulation of a voice in the stereo field by inverting the phase of the modulation oscillator sent to the right VCA"
 				}
 			},
 			{
@@ -8226,17 +8348,17 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						416.0,
-						120.0,
-						56.0,
-						12.0
+						430.0,
+						141.0,
+						58.0,
+						13.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						416.0,
-						120.0,
-						56.0,
-						12.0
+						430.0,
+						141.0,
+						58.0,
+						13.0
 					],
 					"text": "VCA Pan",
 					"fontsize": 8.0,
@@ -8252,7 +8374,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1400.0,
+						1240.0,
 						544.0,
 						50.0,
 						22.0
@@ -8270,7 +8392,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1540.0,
+						1380.0,
 						544.0,
 						80.0,
 						22.0
@@ -8288,7 +8410,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"patching_rect": [
-						1780.0,
+						1620.0,
 						584.0,
 						70.0,
 						22.0
@@ -8308,7 +8430,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1860.0,
+						1700.0,
 						584.0,
 						50.0,
 						22.0
@@ -8326,7 +8448,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						2020.0,
+						1860.0,
 						584.0,
 						80.0,
 						22.0
@@ -8344,34 +8466,36 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						485.0,
-						82.0,
-						36.0,
-						36.0
+						500.0,
+						98.0,
+						40.0,
+						40.0
 					],
 					"outlettype": [
 						""
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						485.0,
-						82.0,
-						36.0,
-						36.0
+						500.0,
+						98.0,
+						40.0,
+						40.0
 					],
 					"parameter_enable": 1,
 					"varname": "Mod_Osc_Level",
 					"saved_attribute_attributes": {
 						"valueof": {
 							"parameter_longname": "Mod Osc Level",
-							"parameter_shortname": "Level",
+							"parameter_shortname": "Lvl",
 							"parameter_type": 1,
 							"parameter_mmin": 0,
 							"parameter_mmax": 127,
 							"parameter_initial_enable": 0,
 							"parameter_invisible": 0
 						}
-					}
+					},
+					"annotation": "Mod Osc Level  \u00b7  CC 61",
+					"hint": "Mod Osc Level  \u00b7  CC 61"
 				}
 			},
 			{
@@ -8381,19 +8505,19 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						474.0,
-						120.0,
-						56.0,
-						12.0
+						490.0,
+						141.0,
+						58.0,
+						13.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						474.0,
-						120.0,
-						56.0,
-						12.0
+						490.0,
+						141.0,
+						58.0,
+						13.0
 					],
-					"text": "Level",
+					"text": "Lvl",
 					"fontsize": 8.0,
 					"fontface": 0,
 					"textjustification": 1,
@@ -8407,7 +8531,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1540.0,
+						1380.0,
 						688.0,
 						80.0,
 						22.0
@@ -8425,7 +8549,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"patching_rect": [
-						1780.0,
+						1620.0,
 						728.0,
 						70.0,
 						22.0
@@ -8445,7 +8569,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						2020.0,
+						1860.0,
 						728.0,
 						80.0,
 						22.0
@@ -8463,20 +8587,20 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						21.0,
-						30.0,
-						36.0,
-						36.0
+						20.0,
+						28.0,
+						40.0,
+						40.0
 					],
 					"outlettype": [
 						""
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						21.0,
-						30.0,
-						36.0,
-						36.0
+						20.0,
+						28.0,
+						40.0,
+						40.0
 					],
 					"parameter_enable": 1,
 					"varname": "LFO_1_Rate",
@@ -8490,7 +8614,9 @@
 							"parameter_initial_enable": 0,
 							"parameter_invisible": 0
 						}
-					}
+					},
+					"annotation": "LFO 1 Rate  \u00b7  CC 12  \u2014  Controls the frequency of LFO 1",
+					"hint": "LFO 1 Rate  \u00b7  CC 12  \u2014  Controls the frequency of LFO 1"
 				}
 			},
 			{
@@ -8501,16 +8627,16 @@
 					"numoutlets": 0,
 					"patching_rect": [
 						10.0,
-						68.0,
-						56.0,
-						12.0
+						71.0,
+						58.0,
+						13.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
 						10.0,
-						68.0,
-						56.0,
-						12.0
+						71.0,
+						58.0,
+						13.0
 					],
 					"text": "L1 Rate",
 					"fontsize": 8.0,
@@ -8526,7 +8652,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1540.0,
+						1380.0,
 						296.0,
 						80.0,
 						22.0
@@ -8544,7 +8670,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"patching_rect": [
-						1780.0,
+						1620.0,
 						336.0,
 						70.0,
 						22.0
@@ -8564,7 +8690,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						2020.0,
+						1860.0,
 						336.0,
 						80.0,
 						22.0
@@ -8582,34 +8708,36 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						79.0,
-						30.0,
-						36.0,
-						36.0
+						80.0,
+						28.0,
+						40.0,
+						40.0
 					],
 					"outlettype": [
 						""
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						79.0,
-						30.0,
-						36.0,
-						36.0
+						80.0,
+						28.0,
+						40.0,
+						40.0
 					],
 					"parameter_enable": 1,
 					"varname": "LFO_1_Amount",
 					"saved_attribute_attributes": {
 						"valueof": {
 							"parameter_longname": "LFO 1 Amount",
-							"parameter_shortname": "L1 Amount",
+							"parameter_shortname": "L1 Amt",
 							"parameter_type": 1,
 							"parameter_mmin": 0,
 							"parameter_mmax": 127,
 							"parameter_initial_enable": 0,
 							"parameter_invisible": 0
 						}
-					}
+					},
+					"annotation": "LFO 1 Amount  \u00b7  CC 13",
+					"hint": "LFO 1 Amount  \u00b7  CC 13"
 				}
 			},
 			{
@@ -8619,19 +8747,19 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						68.0,
-						68.0,
-						56.0,
-						12.0
+						70.0,
+						71.0,
+						58.0,
+						13.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						68.0,
-						68.0,
-						56.0,
-						12.0
+						70.0,
+						71.0,
+						58.0,
+						13.0
 					],
-					"text": "L1 Amount",
+					"text": "L1 Amt",
 					"fontsize": 8.0,
 					"fontface": 0,
 					"textjustification": 1,
@@ -8645,7 +8773,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1540.0,
+						1380.0,
 						304.0,
 						80.0,
 						22.0
@@ -8663,7 +8791,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"patching_rect": [
-						1780.0,
+						1620.0,
 						344.0,
 						70.0,
 						22.0
@@ -8683,7 +8811,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						2020.0,
+						1860.0,
 						344.0,
 						80.0,
 						22.0
@@ -8701,8 +8829,8 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						128.0,
-						41.0,
+						133.0,
+						40.0,
 						52.0,
 						18.0
 					],
@@ -8711,8 +8839,8 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						128.0,
-						41.0,
+						133.0,
+						40.0,
 						52.0,
 						18.0
 					],
@@ -8721,7 +8849,7 @@
 					"saved_attribute_attributes": {
 						"valueof": {
 							"parameter_longname": "LFO 1 Waveform",
-							"parameter_shortname": "L1 Waveform",
+							"parameter_shortname": "L1 Wave",
 							"parameter_type": 2,
 							"parameter_mmin": 0,
 							"parameter_mmax": 4,
@@ -8742,7 +8870,9 @@
 								"User"
 							]
 						}
-					}
+					},
+					"annotation": "LFO 1 Waveform  \u00b7  CC 14  \u2014  Selects the wave shape of LFO 1  (0-24: Triangle; 25-49: Saw; 50-74: Square; 75-99: Random; 100-127: User Wave)",
+					"hint": "LFO 1 Waveform  \u00b7  CC 14  \u2014  Selects the wave shape of LFO 1  (0-24: Triangle; 25-49: Saw; 50-74: Square; 75-99: Random; 100-127: User Wave)"
 				}
 			},
 			{
@@ -8752,19 +8882,19 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						126.0,
-						68.0,
-						56.0,
-						12.0
+						130.0,
+						71.0,
+						58.0,
+						13.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						126.0,
-						68.0,
-						56.0,
-						12.0
+						130.0,
+						71.0,
+						58.0,
+						13.0
 					],
-					"text": "L1 Waveform",
+					"text": "L1 Wave",
 					"fontsize": 8.0,
 					"fontface": 0,
 					"textjustification": 1,
@@ -8778,7 +8908,7 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						1400.0,
+						1240.0,
 						312.0,
 						110.0,
 						22.0
@@ -8796,7 +8926,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1540.0,
+						1380.0,
 						312.0,
 						80.0,
 						22.0
@@ -8814,7 +8944,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"patching_rect": [
-						1780.0,
+						1620.0,
 						352.0,
 						70.0,
 						22.0
@@ -8834,7 +8964,7 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						1860.0,
+						1700.0,
 						352.0,
 						150.0,
 						22.0
@@ -8852,7 +8982,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						2020.0,
+						1860.0,
 						352.0,
 						80.0,
 						22.0
@@ -8870,20 +9000,20 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						195.0,
-						30.0,
-						36.0,
-						36.0
+						200.0,
+						28.0,
+						40.0,
+						40.0
 					],
 					"outlettype": [
 						""
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						195.0,
-						30.0,
-						36.0,
-						36.0
+						200.0,
+						28.0,
+						40.0,
+						40.0
 					],
 					"parameter_enable": 1,
 					"varname": "LFO_2_Rate",
@@ -8897,7 +9027,9 @@
 							"parameter_initial_enable": 0,
 							"parameter_invisible": 0
 						}
-					}
+					},
+					"annotation": "LFO 2 Rate  \u00b7  CC 15  \u2014  Controls the frequency of LFO 2",
+					"hint": "LFO 2 Rate  \u00b7  CC 15  \u2014  Controls the frequency of LFO 2"
 				}
 			},
 			{
@@ -8907,17 +9039,17 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						184.0,
-						68.0,
-						56.0,
-						12.0
+						190.0,
+						71.0,
+						58.0,
+						13.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						184.0,
-						68.0,
-						56.0,
-						12.0
+						190.0,
+						71.0,
+						58.0,
+						13.0
 					],
 					"text": "L2 Rate",
 					"fontsize": 8.0,
@@ -8933,7 +9065,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1540.0,
+						1380.0,
 						320.0,
 						80.0,
 						22.0
@@ -8951,7 +9083,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"patching_rect": [
-						1780.0,
+						1620.0,
 						360.0,
 						70.0,
 						22.0
@@ -8971,7 +9103,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						2020.0,
+						1860.0,
 						360.0,
 						80.0,
 						22.0
@@ -8989,34 +9121,36 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						253.0,
-						30.0,
-						36.0,
-						36.0
+						260.0,
+						28.0,
+						40.0,
+						40.0
 					],
 					"outlettype": [
 						""
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						253.0,
-						30.0,
-						36.0,
-						36.0
+						260.0,
+						28.0,
+						40.0,
+						40.0
 					],
 					"parameter_enable": 1,
 					"varname": "LFO_2_Amount",
 					"saved_attribute_attributes": {
 						"valueof": {
 							"parameter_longname": "LFO 2 Amount",
-							"parameter_shortname": "L2 Amount",
+							"parameter_shortname": "L2 Amt",
 							"parameter_type": 1,
 							"parameter_mmin": 0,
 							"parameter_mmax": 127,
 							"parameter_initial_enable": 0,
 							"parameter_invisible": 0
 						}
-					}
+					},
+					"annotation": "LFO 2 Amount  \u00b7  CC 16",
+					"hint": "LFO 2 Amount  \u00b7  CC 16"
 				}
 			},
 			{
@@ -9026,19 +9160,19 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						242.0,
-						68.0,
-						56.0,
-						12.0
+						250.0,
+						71.0,
+						58.0,
+						13.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						242.0,
-						68.0,
-						56.0,
-						12.0
+						250.0,
+						71.0,
+						58.0,
+						13.0
 					],
-					"text": "L2 Amount",
+					"text": "L2 Amt",
 					"fontsize": 8.0,
 					"fontface": 0,
 					"textjustification": 1,
@@ -9052,7 +9186,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1540.0,
+						1380.0,
 						328.0,
 						80.0,
 						22.0
@@ -9070,7 +9204,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"patching_rect": [
-						1780.0,
+						1620.0,
 						368.0,
 						70.0,
 						22.0
@@ -9090,7 +9224,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						2020.0,
+						1860.0,
 						368.0,
 						80.0,
 						22.0
@@ -9108,8 +9242,8 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						302.0,
-						41.0,
+						313.0,
+						40.0,
 						52.0,
 						18.0
 					],
@@ -9118,8 +9252,8 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						302.0,
-						41.0,
+						313.0,
+						40.0,
 						52.0,
 						18.0
 					],
@@ -9128,7 +9262,7 @@
 					"saved_attribute_attributes": {
 						"valueof": {
 							"parameter_longname": "LFO 2 Waveform",
-							"parameter_shortname": "L2 Waveform",
+							"parameter_shortname": "L2 Wave",
 							"parameter_type": 2,
 							"parameter_mmin": 0,
 							"parameter_mmax": 4,
@@ -9149,7 +9283,9 @@
 								"User"
 							]
 						}
-					}
+					},
+					"annotation": "LFO 2 Waveform  \u00b7  CC 17  \u2014  Selects the wave shape of LFO 2  (0-24: Triangle; 25-49: Saw; 50-74: Square; 75-99: Random; 100-127: User Wave)",
+					"hint": "LFO 2 Waveform  \u00b7  CC 17  \u2014  Selects the wave shape of LFO 2  (0-24: Triangle; 25-49: Saw; 50-74: Square; 75-99: Random; 100-127: User Wave)"
 				}
 			},
 			{
@@ -9159,19 +9295,19 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						300.0,
-						68.0,
-						56.0,
-						12.0
+						310.0,
+						71.0,
+						58.0,
+						13.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						300.0,
-						68.0,
-						56.0,
-						12.0
+						310.0,
+						71.0,
+						58.0,
+						13.0
 					],
-					"text": "L2 Waveform",
+					"text": "L2 Wave",
 					"fontsize": 8.0,
 					"fontface": 0,
 					"textjustification": 1,
@@ -9185,7 +9321,7 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						1400.0,
+						1240.0,
 						336.0,
 						110.0,
 						22.0
@@ -9203,7 +9339,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1540.0,
+						1380.0,
 						336.0,
 						80.0,
 						22.0
@@ -9221,7 +9357,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"patching_rect": [
-						1780.0,
+						1620.0,
 						376.0,
 						70.0,
 						22.0
@@ -9241,7 +9377,7 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						1860.0,
+						1700.0,
 						376.0,
 						150.0,
 						22.0
@@ -9259,7 +9395,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						2020.0,
+						1860.0,
 						376.0,
 						80.0,
 						22.0
@@ -9277,20 +9413,20 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						369.0,
-						30.0,
-						36.0,
-						36.0
+						380.0,
+						28.0,
+						40.0,
+						40.0
 					],
 					"outlettype": [
 						""
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						369.0,
-						30.0,
-						36.0,
-						36.0
+						380.0,
+						28.0,
+						40.0,
+						40.0
 					],
 					"parameter_enable": 1,
 					"varname": "Pitch_LFO_Rate",
@@ -9304,7 +9440,9 @@
 							"parameter_initial_enable": 0,
 							"parameter_invisible": 0
 						}
-					}
+					},
+					"annotation": "Pitch LFO Rate  \u00b7  CC 18  \u2014  Control the frequency of the PITCH LFO",
+					"hint": "Pitch LFO Rate  \u00b7  CC 18  \u2014  Control the frequency of the PITCH LFO"
 				}
 			},
 			{
@@ -9314,17 +9452,17 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						358.0,
-						68.0,
-						56.0,
-						12.0
+						370.0,
+						71.0,
+						58.0,
+						13.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						358.0,
-						68.0,
-						56.0,
-						12.0
+						370.0,
+						71.0,
+						58.0,
+						13.0
 					],
 					"text": "P.LFO Rate",
 					"fontsize": 8.0,
@@ -9340,7 +9478,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1540.0,
+						1380.0,
 						344.0,
 						80.0,
 						22.0
@@ -9358,7 +9496,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"patching_rect": [
-						1780.0,
+						1620.0,
 						384.0,
 						70.0,
 						22.0
@@ -9378,7 +9516,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						2020.0,
+						1860.0,
 						384.0,
 						80.0,
 						22.0
@@ -9396,20 +9534,20 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						21.0,
-						82.0,
-						36.0,
-						36.0
+						20.0,
+						98.0,
+						40.0,
+						40.0
 					],
 					"outlettype": [
 						""
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						21.0,
-						82.0,
-						36.0,
-						36.0
+						20.0,
+						98.0,
+						40.0,
+						40.0
 					],
 					"parameter_enable": 1,
 					"varname": "Pitch_LFO_Shape",
@@ -9423,7 +9561,9 @@
 							"parameter_initial_enable": 0,
 							"parameter_invisible": 0
 						}
-					}
+					},
+					"annotation": "Pitch LFO Shape  \u00b7  CC 19  \u2014  Bipolar control adjusting the angle of the PITCH LFO's waveform",
+					"hint": "Pitch LFO Shape  \u00b7  CC 19  \u2014  Bipolar control adjusting the angle of the PITCH LFO's waveform"
 				}
 			},
 			{
@@ -9434,16 +9574,16 @@
 					"numoutlets": 0,
 					"patching_rect": [
 						10.0,
-						120.0,
-						56.0,
-						12.0
+						141.0,
+						58.0,
+						13.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
 						10.0,
-						120.0,
-						56.0,
-						12.0
+						141.0,
+						58.0,
+						13.0
 					],
 					"text": "P.LFO Shape",
 					"fontsize": 8.0,
@@ -9459,7 +9599,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1540.0,
+						1380.0,
 						352.0,
 						80.0,
 						22.0
@@ -9477,7 +9617,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"patching_rect": [
-						1780.0,
+						1620.0,
 						392.0,
 						70.0,
 						22.0
@@ -9497,7 +9637,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						2020.0,
+						1860.0,
 						392.0,
 						80.0,
 						22.0
@@ -9515,34 +9655,36 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						79.0,
-						82.0,
-						36.0,
-						36.0
+						80.0,
+						98.0,
+						40.0,
+						40.0
 					],
 					"outlettype": [
 						""
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						79.0,
-						82.0,
-						36.0,
-						36.0
+						80.0,
+						98.0,
+						40.0,
+						40.0
 					],
 					"parameter_enable": 1,
 					"varname": "Pitch_LFO_Amount",
 					"saved_attribute_attributes": {
 						"valueof": {
 							"parameter_longname": "Pitch LFO Amount",
-							"parameter_shortname": "P.LFO Amount",
+							"parameter_shortname": "P.LFO Amt",
 							"parameter_type": 1,
 							"parameter_mmin": 0,
 							"parameter_mmax": 127,
 							"parameter_initial_enable": 0,
 							"parameter_invisible": 0
 						}
-					}
+					},
+					"annotation": "Pitch LFO Amount  \u00b7  CC 20  \u2014  Bipolar control over the depth of the PITCH LFO's modulation of its hardwired destinations",
+					"hint": "Pitch LFO Amount  \u00b7  CC 20  \u2014  Bipolar control over the depth of the PITCH LFO's modulation of its hardwired destinations"
 				}
 			},
 			{
@@ -9552,19 +9694,19 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						68.0,
-						120.0,
-						56.0,
-						12.0
+						70.0,
+						141.0,
+						58.0,
+						13.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						68.0,
-						120.0,
-						56.0,
-						12.0
+						70.0,
+						141.0,
+						58.0,
+						13.0
 					],
-					"text": "P.LFO Amount",
+					"text": "P.LFO Amt",
 					"fontsize": 8.0,
 					"fontface": 0,
 					"textjustification": 1,
@@ -9578,7 +9720,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1540.0,
+						1380.0,
 						360.0,
 						80.0,
 						22.0
@@ -9596,7 +9738,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"patching_rect": [
-						1780.0,
+						1620.0,
 						400.0,
 						70.0,
 						22.0
@@ -9616,7 +9758,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						2020.0,
+						1860.0,
 						400.0,
 						80.0,
 						22.0
@@ -9634,8 +9776,8 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						146.0,
-						91.0,
+						151.0,
+						107.0,
 						18.0,
 						18.0
 					],
@@ -9644,8 +9786,8 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						146.0,
-						91.0,
+						151.0,
+						107.0,
 						18.0,
 						18.0
 					],
@@ -9669,7 +9811,9 @@
 								"on"
 							]
 						}
-					}
+					},
+					"annotation": "Pitch LFO>OSC 1  \u00b7  CC 21  \u2014  Routes the PITCH LFO to modulate OSCILLATOR 1 when engaged  (0-63: Off; 64-127: On)",
+					"hint": "Pitch LFO>OSC 1  \u00b7  CC 21  \u2014  Routes the PITCH LFO to modulate OSCILLATOR 1 when engaged  (0-63: Off; 64-127: On)"
 				}
 			},
 			{
@@ -9679,17 +9823,17 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						126.0,
-						120.0,
-						56.0,
-						12.0
+						130.0,
+						141.0,
+						58.0,
+						13.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						126.0,
-						120.0,
-						56.0,
-						12.0
+						130.0,
+						141.0,
+						58.0,
+						13.0
 					],
 					"text": "P.LFO>OSC 1",
 					"fontsize": 8.0,
@@ -9705,7 +9849,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1400.0,
+						1240.0,
 						368.0,
 						50.0,
 						22.0
@@ -9723,7 +9867,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1540.0,
+						1380.0,
 						368.0,
 						80.0,
 						22.0
@@ -9741,7 +9885,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"patching_rect": [
-						1780.0,
+						1620.0,
 						408.0,
 						70.0,
 						22.0
@@ -9761,7 +9905,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1860.0,
+						1700.0,
 						408.0,
 						50.0,
 						22.0
@@ -9779,7 +9923,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						2020.0,
+						1860.0,
 						408.0,
 						80.0,
 						22.0
@@ -9797,8 +9941,8 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						204.0,
-						91.0,
+						211.0,
+						107.0,
 						18.0,
 						18.0
 					],
@@ -9807,8 +9951,8 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						204.0,
-						91.0,
+						211.0,
+						107.0,
 						18.0,
 						18.0
 					],
@@ -9832,7 +9976,9 @@
 								"on"
 							]
 						}
-					}
+					},
+					"annotation": "Pitch LFO>OSC 2  \u00b7  CC 22  \u2014  Routes the PITCH LFO to modulate OSCILLATOR 2 when engaged  (0-63: Off; 64-127: On)",
+					"hint": "Pitch LFO>OSC 2  \u00b7  CC 22  \u2014  Routes the PITCH LFO to modulate OSCILLATOR 2 when engaged  (0-63: Off; 64-127: On)"
 				}
 			},
 			{
@@ -9842,17 +9988,17 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						184.0,
-						120.0,
-						56.0,
-						12.0
+						190.0,
+						141.0,
+						58.0,
+						13.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						184.0,
-						120.0,
-						56.0,
-						12.0
+						190.0,
+						141.0,
+						58.0,
+						13.0
 					],
 					"text": "P.LFO>OSC 2",
 					"fontsize": 8.0,
@@ -9868,7 +10014,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1400.0,
+						1240.0,
 						376.0,
 						50.0,
 						22.0
@@ -9886,7 +10032,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1540.0,
+						1380.0,
 						376.0,
 						80.0,
 						22.0
@@ -9904,7 +10050,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"patching_rect": [
-						1780.0,
+						1620.0,
 						416.0,
 						70.0,
 						22.0
@@ -9924,7 +10070,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1860.0,
+						1700.0,
 						416.0,
 						50.0,
 						22.0
@@ -9942,7 +10088,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						2020.0,
+						1860.0,
 						416.0,
 						80.0,
 						22.0
@@ -9960,8 +10106,8 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						262.0,
-						91.0,
+						271.0,
+						107.0,
 						18.0,
 						18.0
 					],
@@ -9970,8 +10116,8 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						262.0,
-						91.0,
+						271.0,
+						107.0,
 						18.0,
 						18.0
 					],
@@ -9995,7 +10141,9 @@
 								"on"
 							]
 						}
-					}
+					},
+					"annotation": "Pitch LFO>Mod Osc  \u00b7  CC 23  \u2014  Routes the PITCH LFO to modulate the MODULATION OSCILLATOR when engaged  (0-63: Off; 64-127: On)",
+					"hint": "Pitch LFO>Mod Osc  \u00b7  CC 23  \u2014  Routes the PITCH LFO to modulate the MODULATION OSCILLATOR when engaged  (0-63: Off; 64-127: On)"
 				}
 			},
 			{
@@ -10005,17 +10153,17 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						242.0,
-						120.0,
-						56.0,
-						12.0
+						250.0,
+						141.0,
+						58.0,
+						13.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						242.0,
-						120.0,
-						56.0,
-						12.0
+						250.0,
+						141.0,
+						58.0,
+						13.0
 					],
 					"text": "P.LFO>Mod Osc",
 					"fontsize": 8.0,
@@ -10031,7 +10179,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1400.0,
+						1240.0,
 						384.0,
 						50.0,
 						22.0
@@ -10049,7 +10197,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1540.0,
+						1380.0,
 						384.0,
 						80.0,
 						22.0
@@ -10067,7 +10215,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"patching_rect": [
-						1780.0,
+						1620.0,
 						424.0,
 						70.0,
 						22.0
@@ -10087,7 +10235,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1860.0,
+						1700.0,
 						424.0,
 						50.0,
 						22.0
@@ -10105,7 +10253,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						2020.0,
+						1860.0,
 						424.0,
 						80.0,
 						22.0
@@ -10123,8 +10271,8 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						320.0,
-						91.0,
+						331.0,
+						107.0,
 						18.0,
 						18.0
 					],
@@ -10133,8 +10281,8 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						320.0,
-						91.0,
+						331.0,
+						107.0,
 						18.0,
 						18.0
 					],
@@ -10158,7 +10306,9 @@
 								"on"
 							]
 						}
-					}
+					},
+					"annotation": "Pitch LFO>Detune  \u00b7  CC 24  \u2014  Routes the PITCH LFO to modulate the DETUNE knob in the VOICE CONTROL section when engaged  (0-63: Off; 64-127: On)",
+					"hint": "Pitch LFO>Detune  \u00b7  CC 24  \u2014  Routes the PITCH LFO to modulate the DETUNE knob in the VOICE CONTROL section when engaged  (0-63: Off; 64-127: On)"
 				}
 			},
 			{
@@ -10168,17 +10318,17 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						300.0,
-						120.0,
-						56.0,
-						12.0
+						310.0,
+						141.0,
+						58.0,
+						13.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						300.0,
-						120.0,
-						56.0,
-						12.0
+						310.0,
+						141.0,
+						58.0,
+						13.0
 					],
 					"text": "P.LFO>Detune",
 					"fontsize": 8.0,
@@ -10194,7 +10344,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1400.0,
+						1240.0,
 						392.0,
 						50.0,
 						22.0
@@ -10212,7 +10362,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1540.0,
+						1380.0,
 						392.0,
 						80.0,
 						22.0
@@ -10230,7 +10380,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"patching_rect": [
-						1780.0,
+						1620.0,
 						432.0,
 						70.0,
 						22.0
@@ -10250,7 +10400,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1860.0,
+						1700.0,
 						432.0,
 						50.0,
 						22.0
@@ -10268,7 +10418,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						2020.0,
+						1860.0,
 						432.0,
 						80.0,
 						22.0
@@ -10286,20 +10436,20 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						21.0,
-						30.0,
-						36.0,
-						36.0
+						20.0,
+						28.0,
+						40.0,
+						40.0
 					],
 					"outlettype": [
 						""
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						21.0,
-						30.0,
-						36.0,
-						36.0
+						20.0,
+						28.0,
+						40.0,
+						40.0
 					],
 					"parameter_enable": 1,
 					"varname": "Voice_Detune",
@@ -10313,7 +10463,9 @@
 							"parameter_initial_enable": 0,
 							"parameter_invisible": 0
 						}
-					}
+					},
+					"annotation": "Voice Detune  \u00b7  CC 92",
+					"hint": "Voice Detune  \u00b7  CC 92"
 				}
 			},
 			{
@@ -10324,16 +10476,16 @@
 					"numoutlets": 0,
 					"patching_rect": [
 						10.0,
-						68.0,
-						56.0,
-						12.0
+						71.0,
+						58.0,
+						13.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
 						10.0,
-						68.0,
-						56.0,
-						12.0
+						71.0,
+						58.0,
+						13.0
 					],
 					"text": "Detune",
 					"fontsize": 8.0,
@@ -10349,7 +10501,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1540.0,
+						1380.0,
 						936.0,
 						80.0,
 						22.0
@@ -10367,7 +10519,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"patching_rect": [
-						1780.0,
+						1620.0,
 						976.0,
 						70.0,
 						22.0
@@ -10387,7 +10539,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						2020.0,
+						1860.0,
 						976.0,
 						80.0,
 						22.0
@@ -10405,8 +10557,8 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						88.0,
-						39.0,
+						91.0,
+						37.0,
 						18.0,
 						18.0
 					],
@@ -10415,8 +10567,8 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						88.0,
-						39.0,
+						91.0,
+						37.0,
 						18.0,
 						18.0
 					],
@@ -10425,7 +10577,7 @@
 					"saved_attribute_attributes": {
 						"valueof": {
 							"parameter_longname": "Voice Unison",
-							"parameter_shortname": "Unison",
+							"parameter_shortname": "Uni",
 							"parameter_type": 2,
 							"parameter_mmin": 0,
 							"parameter_mmax": 1,
@@ -10440,7 +10592,9 @@
 								"on"
 							]
 						}
-					}
+					},
+					"annotation": "Voice Unison  \u00b7  CC 108  (0-63: Off; 64-127: On)",
+					"hint": "Voice Unison  \u00b7  CC 108  (0-63: Off; 64-127: On)"
 				}
 			},
 			{
@@ -10450,19 +10604,19 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						68.0,
-						68.0,
-						56.0,
-						12.0
+						70.0,
+						71.0,
+						58.0,
+						13.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						68.0,
-						68.0,
-						56.0,
-						12.0
+						70.0,
+						71.0,
+						58.0,
+						13.0
 					],
-					"text": "Unison",
+					"text": "Uni",
 					"fontsize": 8.0,
 					"fontface": 0,
 					"textjustification": 1,
@@ -10476,7 +10630,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1400.0,
+						1240.0,
 						1064.0,
 						50.0,
 						22.0
@@ -10494,7 +10648,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1540.0,
+						1380.0,
 						1064.0,
 						80.0,
 						22.0
@@ -10512,7 +10666,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"patching_rect": [
-						1780.0,
+						1620.0,
 						1104.0,
 						70.0,
 						22.0
@@ -10532,7 +10686,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1860.0,
+						1700.0,
 						1104.0,
 						50.0,
 						22.0
@@ -10550,7 +10704,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						2020.0,
+						1860.0,
 						1104.0,
 						80.0,
 						22.0
@@ -10568,8 +10722,8 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						146.0,
-						39.0,
+						151.0,
+						37.0,
 						18.0,
 						18.0
 					],
@@ -10578,8 +10732,8 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						146.0,
-						39.0,
+						151.0,
+						37.0,
 						18.0,
 						18.0
 					],
@@ -10603,7 +10757,9 @@
 								"on"
 							]
 						}
-					}
+					},
+					"annotation": "Voice Mono  \u00b7  CC 109  (0-63: Off; 64-127: On)",
+					"hint": "Voice Mono  \u00b7  CC 109  (0-63: Off; 64-127: On)"
 				}
 			},
 			{
@@ -10613,17 +10769,17 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						126.0,
-						68.0,
-						56.0,
-						12.0
+						130.0,
+						71.0,
+						58.0,
+						13.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						126.0,
-						68.0,
-						56.0,
-						12.0
+						130.0,
+						71.0,
+						58.0,
+						13.0
 					],
 					"text": "Mono",
 					"fontsize": 8.0,
@@ -10639,7 +10795,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1400.0,
+						1240.0,
 						1072.0,
 						50.0,
 						22.0
@@ -10657,7 +10813,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1540.0,
+						1380.0,
 						1072.0,
 						80.0,
 						22.0
@@ -10675,7 +10831,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"patching_rect": [
-						1780.0,
+						1620.0,
 						1112.0,
 						70.0,
 						22.0
@@ -10695,7 +10851,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1860.0,
+						1700.0,
 						1112.0,
 						50.0,
 						22.0
@@ -10713,7 +10869,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						2020.0,
+						1860.0,
 						1112.0,
 						80.0,
 						22.0
@@ -10731,20 +10887,20 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						195.0,
-						30.0,
-						36.0,
-						36.0
+						200.0,
+						28.0,
+						40.0,
+						40.0
 					],
 					"outlettype": [
 						""
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						195.0,
-						30.0,
-						36.0,
-						36.0
+						200.0,
+						28.0,
+						40.0,
+						40.0
 					],
 					"parameter_enable": 1,
 					"varname": "Glide_Time",
@@ -10758,7 +10914,9 @@
 							"parameter_initial_enable": 0,
 							"parameter_invisible": 0
 						}
-					}
+					},
+					"annotation": "Glide Time  \u00b7  CC 5  \u2014  Increasing the glide control will increase the amount of time it takes to move from one note to the next, creating a portamento effect",
+					"hint": "Glide Time  \u00b7  CC 5  \u2014  Increasing the glide control will increase the amount of time it takes to move from one note to the next, creating a portamento effect"
 				}
 			},
 			{
@@ -10768,17 +10926,17 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						184.0,
-						68.0,
-						56.0,
-						12.0
+						190.0,
+						71.0,
+						58.0,
+						13.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						184.0,
-						68.0,
-						56.0,
-						12.0
+						190.0,
+						71.0,
+						58.0,
+						13.0
 					],
 					"text": "Glide Time",
 					"fontsize": 8.0,
@@ -10794,7 +10952,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1540.0,
+						1380.0,
 						240.0,
 						80.0,
 						22.0
@@ -10812,7 +10970,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"patching_rect": [
-						1780.0,
+						1620.0,
 						280.0,
 						70.0,
 						22.0
@@ -10832,7 +10990,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						2020.0,
+						1860.0,
 						280.0,
 						80.0,
 						22.0
@@ -10850,20 +11008,20 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						253.0,
-						30.0,
-						36.0,
-						36.0
+						260.0,
+						28.0,
+						40.0,
+						40.0
 					],
 					"outlettype": [
 						""
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						253.0,
-						30.0,
-						36.0,
-						36.0
+						260.0,
+						28.0,
+						40.0,
+						40.0
 					],
 					"parameter_enable": 1,
 					"varname": "Timbre_Volume",
@@ -10877,7 +11035,9 @@
 							"parameter_initial_enable": 0,
 							"parameter_invisible": 0
 						}
-					}
+					},
+					"annotation": "Timbre Volume  \u00b7  CC 7  \u2014  Volume control for the currently active timbre (A/B) before it reaches the voice summing busses",
+					"hint": "Timbre Volume  \u00b7  CC 7  \u2014  Volume control for the currently active timbre (A/B) before it reaches the voice summing busses"
 				}
 			},
 			{
@@ -10887,17 +11047,17 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						242.0,
-						68.0,
-						56.0,
-						12.0
+						250.0,
+						71.0,
+						58.0,
+						13.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						242.0,
-						68.0,
-						56.0,
-						12.0
+						250.0,
+						71.0,
+						58.0,
+						13.0
 					],
 					"text": "Timbre Volume",
 					"fontsize": 8.0,
@@ -10913,7 +11073,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1540.0,
+						1380.0,
 						256.0,
 						80.0,
 						22.0
@@ -10931,7 +11091,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"patching_rect": [
-						1780.0,
+						1620.0,
 						296.0,
 						70.0,
 						22.0
@@ -10951,7 +11111,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						2020.0,
+						1860.0,
 						296.0,
 						80.0,
 						22.0
@@ -10969,20 +11129,20 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						311.0,
-						30.0,
-						36.0,
-						36.0
+						320.0,
+						28.0,
+						40.0,
+						40.0
 					],
 					"outlettype": [
 						""
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						311.0,
-						30.0,
-						36.0,
-						36.0
+						320.0,
+						28.0,
+						40.0,
+						40.0
 					],
 					"parameter_enable": 1,
 					"varname": "Pan",
@@ -10996,7 +11156,9 @@
 							"parameter_initial_enable": 0,
 							"parameter_invisible": 0
 						}
-					}
+					},
+					"annotation": "Pan  \u00b7  CC 10  \u2014  Bipolar control for manual adjustment of the pan-position of the currently active timbre (A/B) in the stereo field",
+					"hint": "Pan  \u00b7  CC 10  \u2014  Bipolar control for manual adjustment of the pan-position of the currently active timbre (A/B) in the stereo field"
 				}
 			},
 			{
@@ -11006,17 +11168,17 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						300.0,
-						68.0,
-						56.0,
-						12.0
+						310.0,
+						71.0,
+						58.0,
+						13.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						300.0,
-						68.0,
-						56.0,
-						12.0
+						310.0,
+						71.0,
+						58.0,
+						13.0
 					],
 					"text": "Pan",
 					"fontsize": 8.0,
@@ -11032,7 +11194,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1540.0,
+						1380.0,
 						280.0,
 						80.0,
 						22.0
@@ -11050,7 +11212,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"patching_rect": [
-						1780.0,
+						1620.0,
 						320.0,
 						70.0,
 						22.0
@@ -11070,7 +11232,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						2020.0,
+						1860.0,
 						320.0,
 						80.0,
 						22.0
@@ -11088,34 +11250,36 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						369.0,
-						30.0,
-						36.0,
-						36.0
+						380.0,
+						28.0,
+						40.0,
+						40.0
 					],
 					"outlettype": [
 						""
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						369.0,
-						30.0,
-						36.0,
-						36.0
+						380.0,
+						28.0,
+						40.0,
+						40.0
 					],
 					"parameter_enable": 1,
 					"varname": "Pan_Spread",
 					"saved_attribute_attributes": {
 						"valueof": {
 							"parameter_longname": "Pan Spread",
-							"parameter_shortname": "Pan Spread",
+							"parameter_shortname": "Pan Spr",
 							"parameter_type": 1,
 							"parameter_mmin": 0,
 							"parameter_mmax": 127,
 							"parameter_initial_enable": 0,
 							"parameter_invisible": 0
 						}
-					}
+					},
+					"annotation": "Pan Spread  \u00b7  CC 9  \u2014  Spreads allocated voices apart giving a wider feel to the stereo image",
+					"hint": "Pan Spread  \u00b7  CC 9  \u2014  Spreads allocated voices apart giving a wider feel to the stereo image"
 				}
 			},
 			{
@@ -11125,19 +11289,19 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						358.0,
-						68.0,
-						56.0,
-						12.0
+						370.0,
+						71.0,
+						58.0,
+						13.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						358.0,
-						68.0,
-						56.0,
-						12.0
+						370.0,
+						71.0,
+						58.0,
+						13.0
 					],
-					"text": "Pan Spread",
+					"text": "Pan Spr",
 					"fontsize": 8.0,
 					"fontface": 0,
 					"textjustification": 1,
@@ -11151,7 +11315,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1540.0,
+						1380.0,
 						272.0,
 						80.0,
 						22.0
@@ -11169,7 +11333,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"patching_rect": [
-						1780.0,
+						1620.0,
 						312.0,
 						70.0,
 						22.0
@@ -11189,7 +11353,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						2020.0,
+						1860.0,
 						312.0,
 						80.0,
 						22.0
@@ -11207,20 +11371,20 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						21.0,
-						82.0,
-						36.0,
-						36.0
+						20.0,
+						98.0,
+						40.0,
+						40.0
 					],
 					"outlettype": [
 						""
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						21.0,
-						82.0,
-						36.0,
-						36.0
+						20.0,
+						98.0,
+						40.0,
+						40.0
 					],
 					"parameter_enable": 1,
 					"varname": "Low_Cut",
@@ -11234,7 +11398,9 @@
 							"parameter_initial_enable": 0,
 							"parameter_invisible": 0
 						}
-					}
+					},
+					"annotation": "Low Cut  \u00b7  CC 8",
+					"hint": "Low Cut  \u00b7  CC 8"
 				}
 			},
 			{
@@ -11245,16 +11411,16 @@
 					"numoutlets": 0,
 					"patching_rect": [
 						10.0,
-						120.0,
-						56.0,
-						12.0
+						141.0,
+						58.0,
+						13.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
 						10.0,
-						120.0,
-						56.0,
-						12.0
+						141.0,
+						58.0,
+						13.0
 					],
 					"text": "Low Cut",
 					"fontsize": 8.0,
@@ -11270,7 +11436,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1540.0,
+						1380.0,
 						264.0,
 						80.0,
 						22.0
@@ -11288,7 +11454,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"patching_rect": [
-						1780.0,
+						1620.0,
 						304.0,
 						70.0,
 						22.0
@@ -11308,7 +11474,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						2020.0,
+						1860.0,
 						304.0,
 						80.0,
 						22.0
@@ -11326,34 +11492,36 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						79.0,
-						82.0,
-						36.0,
-						36.0
+						80.0,
+						98.0,
+						40.0,
+						40.0
 					],
 					"outlettype": [
 						""
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						79.0,
-						82.0,
-						36.0,
-						36.0
+						80.0,
+						98.0,
+						40.0,
+						40.0
 					],
 					"parameter_enable": 1,
 					"varname": "Mod_Wheel",
 					"saved_attribute_attributes": {
 						"valueof": {
 							"parameter_longname": "Mod Wheel",
-							"parameter_shortname": "Mod Wheel",
+							"parameter_shortname": "Mod Whl",
 							"parameter_type": 1,
 							"parameter_mmin": 0,
 							"parameter_mmax": 127,
 							"parameter_initial_enable": 0,
 							"parameter_invisible": 0
 						}
-					}
+					},
+					"annotation": "Mod Wheel  \u00b7  CC 1  \u2014  The modulation wheel is typically used to control the amount of modulation in a patch",
+					"hint": "Mod Wheel  \u00b7  CC 1  \u2014  The modulation wheel is typically used to control the amount of modulation in a patch"
 				}
 			},
 			{
@@ -11363,19 +11531,19 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						68.0,
-						120.0,
-						56.0,
-						12.0
+						70.0,
+						141.0,
+						58.0,
+						13.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						68.0,
-						120.0,
-						56.0,
-						12.0
+						70.0,
+						141.0,
+						58.0,
+						13.0
 					],
-					"text": "Mod Wheel",
+					"text": "Mod Whl",
 					"fontsize": 8.0,
 					"fontface": 0,
 					"textjustification": 1,
@@ -11389,7 +11557,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1540.0,
+						1380.0,
 						208.0,
 						80.0,
 						22.0
@@ -11407,7 +11575,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"patching_rect": [
-						1780.0,
+						1620.0,
 						248.0,
 						70.0,
 						22.0
@@ -11427,7 +11595,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						2020.0,
+						1860.0,
 						248.0,
 						80.0,
 						22.0
@@ -11445,34 +11613,36 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						137.0,
-						82.0,
-						36.0,
-						36.0
+						140.0,
+						98.0,
+						40.0,
+						40.0
 					],
 					"outlettype": [
 						""
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						137.0,
-						82.0,
-						36.0,
-						36.0
+						140.0,
+						98.0,
+						40.0,
+						40.0
 					],
 					"parameter_enable": 1,
 					"varname": "Expression",
 					"saved_attribute_attributes": {
 						"valueof": {
 							"parameter_longname": "Expression",
-							"parameter_shortname": "Expression",
+							"parameter_shortname": "Expr",
 							"parameter_type": 1,
 							"parameter_mmin": 0,
 							"parameter_mmax": 127,
 							"parameter_initial_enable": 0,
 							"parameter_invisible": 0
 						}
-					}
+					},
+					"annotation": "Expression  \u00b7  CC 11",
+					"hint": "Expression  \u00b7  CC 11"
 				}
 			},
 			{
@@ -11482,19 +11652,19 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						126.0,
-						120.0,
-						56.0,
-						12.0
+						130.0,
+						141.0,
+						58.0,
+						13.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						126.0,
-						120.0,
-						56.0,
-						12.0
+						130.0,
+						141.0,
+						58.0,
+						13.0
 					],
-					"text": "Expression",
+					"text": "Expr",
 					"fontsize": 8.0,
 					"fontface": 0,
 					"textjustification": 1,
@@ -11508,7 +11678,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1540.0,
+						1380.0,
 						288.0,
 						80.0,
 						22.0
@@ -11526,7 +11696,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"patching_rect": [
-						1780.0,
+						1620.0,
 						328.0,
 						70.0,
 						22.0
@@ -11546,7 +11716,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						2020.0,
+						1860.0,
 						328.0,
 						80.0,
 						22.0
@@ -11564,8 +11734,8 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						204.0,
-						91.0,
+						211.0,
+						107.0,
 						18.0,
 						18.0
 					],
@@ -11574,8 +11744,8 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						204.0,
-						91.0,
+						211.0,
+						107.0,
 						18.0,
 						18.0
 					],
@@ -11599,7 +11769,9 @@
 								"on"
 							]
 						}
-					}
+					},
+					"annotation": "Mute  \u00b7  CC 3  \u2014  Clickless muting of Muse's MAIN OUT signal  (0-63: Off; 64-127: On)",
+					"hint": "Mute  \u00b7  CC 3  \u2014  Clickless muting of Muse's MAIN OUT signal  (0-63: Off; 64-127: On)"
 				}
 			},
 			{
@@ -11609,17 +11781,17 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						184.0,
-						120.0,
-						56.0,
-						12.0
+						190.0,
+						141.0,
+						58.0,
+						13.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						184.0,
-						120.0,
-						56.0,
-						12.0
+						190.0,
+						141.0,
+						58.0,
+						13.0
 					],
 					"text": "Mute",
 					"fontsize": 8.0,
@@ -11635,7 +11807,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1400.0,
+						1240.0,
 						224.0,
 						50.0,
 						22.0
@@ -11653,7 +11825,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1540.0,
+						1380.0,
 						224.0,
 						80.0,
 						22.0
@@ -11671,7 +11843,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"patching_rect": [
-						1780.0,
+						1620.0,
 						264.0,
 						70.0,
 						22.0
@@ -11691,7 +11863,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1860.0,
+						1700.0,
 						264.0,
 						50.0,
 						22.0
@@ -11709,7 +11881,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						2020.0,
+						1860.0,
 						264.0,
 						80.0,
 						22.0
@@ -11727,8 +11899,8 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						262.0,
-						91.0,
+						271.0,
+						107.0,
 						18.0,
 						18.0
 					],
@@ -11737,8 +11909,8 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						262.0,
-						91.0,
+						271.0,
+						107.0,
 						18.0,
 						18.0
 					],
@@ -11762,7 +11934,9 @@
 								"on"
 							]
 						}
-					}
+					},
+					"annotation": "Hold  \u00b7  CC 71  (0-63: Off; 64-127: On)",
+					"hint": "Hold  \u00b7  CC 71  (0-63: Off; 64-127: On)"
 				}
 			},
 			{
@@ -11772,17 +11946,17 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						242.0,
-						120.0,
-						56.0,
-						12.0
+						250.0,
+						141.0,
+						58.0,
+						13.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						242.0,
-						120.0,
-						56.0,
-						12.0
+						250.0,
+						141.0,
+						58.0,
+						13.0
 					],
 					"text": "Hold",
 					"fontsize": 8.0,
@@ -11798,7 +11972,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1400.0,
+						1240.0,
 						768.0,
 						50.0,
 						22.0
@@ -11816,7 +11990,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1540.0,
+						1380.0,
 						768.0,
 						80.0,
 						22.0
@@ -11834,7 +12008,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"patching_rect": [
-						1780.0,
+						1620.0,
 						808.0,
 						70.0,
 						22.0
@@ -11854,7 +12028,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1860.0,
+						1700.0,
 						808.0,
 						50.0,
 						22.0
@@ -11872,7 +12046,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						2020.0,
+						1860.0,
 						808.0,
 						80.0,
 						22.0
@@ -11890,8 +12064,8 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						320.0,
-						91.0,
+						331.0,
+						107.0,
 						18.0,
 						18.0
 					],
@@ -11900,8 +12074,8 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						320.0,
-						91.0,
+						331.0,
+						107.0,
 						18.0,
 						18.0
 					],
@@ -11910,7 +12084,7 @@
 					"saved_attribute_attributes": {
 						"valueof": {
 							"parameter_longname": "Sustain Pedal",
-							"parameter_shortname": "Sustain Pedal",
+							"parameter_shortname": "Sus Ped",
 							"parameter_type": 2,
 							"parameter_mmin": 0,
 							"parameter_mmax": 1,
@@ -11925,7 +12099,9 @@
 								"on"
 							]
 						}
-					}
+					},
+					"annotation": "Sustain Pedal  \u00b7  CC 64  (0-63: Off; 64-127: On)",
+					"hint": "Sustain Pedal  \u00b7  CC 64  (0-63: Off; 64-127: On)"
 				}
 			},
 			{
@@ -11935,19 +12111,19 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						300.0,
-						120.0,
-						56.0,
-						12.0
+						310.0,
+						141.0,
+						58.0,
+						13.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						300.0,
-						120.0,
-						56.0,
-						12.0
+						310.0,
+						141.0,
+						58.0,
+						13.0
 					],
-					"text": "Sustain Pedal",
+					"text": "Sus Ped",
 					"fontsize": 8.0,
 					"fontface": 0,
 					"textjustification": 1,
@@ -11961,7 +12137,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1400.0,
+						1240.0,
 						712.0,
 						50.0,
 						22.0
@@ -11979,7 +12155,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1540.0,
+						1380.0,
 						712.0,
 						80.0,
 						22.0
@@ -11997,7 +12173,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"patching_rect": [
-						1780.0,
+						1620.0,
 						752.0,
 						70.0,
 						22.0
@@ -12017,7 +12193,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1860.0,
+						1700.0,
 						752.0,
 						50.0,
 						22.0
@@ -12035,7 +12211,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						2020.0,
+						1860.0,
 						752.0,
 						80.0,
 						22.0
@@ -12053,20 +12229,20 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						21.0,
-						30.0,
-						36.0,
-						36.0
+						20.0,
+						28.0,
+						40.0,
+						40.0
 					],
 					"outlettype": [
 						""
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						21.0,
-						30.0,
-						36.0,
-						36.0
+						20.0,
+						28.0,
+						40.0,
+						40.0
 					],
 					"parameter_enable": 1,
 					"varname": "Delay_Time_Left",
@@ -12080,7 +12256,9 @@
 							"parameter_initial_enable": 0,
 							"parameter_invisible": 0
 						}
-					}
+					},
+					"annotation": "Delay Time Left  \u00b7  CC 93",
+					"hint": "Delay Time Left  \u00b7  CC 93"
 				}
 			},
 			{
@@ -12091,16 +12269,16 @@
 					"numoutlets": 0,
 					"patching_rect": [
 						10.0,
-						68.0,
-						56.0,
-						12.0
+						71.0,
+						58.0,
+						13.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
 						10.0,
-						68.0,
-						56.0,
-						12.0
+						71.0,
+						58.0,
+						13.0
 					],
 					"text": "Time Left",
 					"fontsize": 8.0,
@@ -12116,7 +12294,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1540.0,
+						1380.0,
 						944.0,
 						80.0,
 						22.0
@@ -12134,7 +12312,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"patching_rect": [
-						1780.0,
+						1620.0,
 						984.0,
 						70.0,
 						22.0
@@ -12154,7 +12332,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						2020.0,
+						1860.0,
 						984.0,
 						80.0,
 						22.0
@@ -12172,20 +12350,20 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						79.0,
-						30.0,
-						36.0,
-						36.0
+						80.0,
+						28.0,
+						40.0,
+						40.0
 					],
 					"outlettype": [
 						""
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						79.0,
-						30.0,
-						36.0,
-						36.0
+						80.0,
+						28.0,
+						40.0,
+						40.0
 					],
 					"parameter_enable": 1,
 					"varname": "Delay_Time_Right",
@@ -12199,7 +12377,9 @@
 							"parameter_initial_enable": 0,
 							"parameter_invisible": 0
 						}
-					}
+					},
+					"annotation": "Delay Time Right  \u00b7  CC 94",
+					"hint": "Delay Time Right  \u00b7  CC 94"
 				}
 			},
 			{
@@ -12209,17 +12389,17 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						68.0,
-						68.0,
-						56.0,
-						12.0
+						70.0,
+						71.0,
+						58.0,
+						13.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						68.0,
-						68.0,
-						56.0,
-						12.0
+						70.0,
+						71.0,
+						58.0,
+						13.0
 					],
 					"text": "Time Right",
 					"fontsize": 8.0,
@@ -12235,7 +12415,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1540.0,
+						1380.0,
 						952.0,
 						80.0,
 						22.0
@@ -12253,7 +12433,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"patching_rect": [
-						1780.0,
+						1620.0,
 						992.0,
 						70.0,
 						22.0
@@ -12273,7 +12453,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						2020.0,
+						1860.0,
 						992.0,
 						80.0,
 						22.0
@@ -12291,8 +12471,8 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						146.0,
-						39.0,
+						151.0,
+						37.0,
 						18.0,
 						18.0
 					],
@@ -12301,8 +12481,8 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						146.0,
-						39.0,
+						151.0,
+						37.0,
 						18.0,
 						18.0
 					],
@@ -12326,7 +12506,9 @@
 								"on"
 							]
 						}
-					}
+					},
+					"annotation": "Link Delays  \u00b7  CC 95  (0-63: Off; 64-127: On)",
+					"hint": "Link Delays  \u00b7  CC 95  (0-63: Off; 64-127: On)"
 				}
 			},
 			{
@@ -12336,17 +12518,17 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						126.0,
-						68.0,
-						56.0,
-						12.0
+						130.0,
+						71.0,
+						58.0,
+						13.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						126.0,
-						68.0,
-						56.0,
-						12.0
+						130.0,
+						71.0,
+						58.0,
+						13.0
 					],
 					"text": "Link Delays",
 					"fontsize": 8.0,
@@ -12362,7 +12544,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1400.0,
+						1240.0,
 						960.0,
 						50.0,
 						22.0
@@ -12380,7 +12562,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1540.0,
+						1380.0,
 						960.0,
 						80.0,
 						22.0
@@ -12398,7 +12580,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"patching_rect": [
-						1780.0,
+						1620.0,
 						1000.0,
 						70.0,
 						22.0
@@ -12418,7 +12600,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1860.0,
+						1700.0,
 						1000.0,
 						50.0,
 						22.0
@@ -12436,7 +12618,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						2020.0,
+						1860.0,
 						1000.0,
 						80.0,
 						22.0
@@ -12454,8 +12636,8 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						204.0,
-						39.0,
+						211.0,
+						37.0,
 						18.0,
 						18.0
 					],
@@ -12464,8 +12646,8 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						204.0,
-						39.0,
+						211.0,
+						37.0,
 						18.0,
 						18.0
 					],
@@ -12489,7 +12671,9 @@
 								"on"
 							]
 						}
-					}
+					},
+					"annotation": "Delay Clock Sync  \u00b7  CC 102  (0-63: Off; 64-127: On)",
+					"hint": "Delay Clock Sync  \u00b7  CC 102  (0-63: Off; 64-127: On)"
 				}
 			},
 			{
@@ -12499,17 +12683,17 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						184.0,
-						68.0,
-						56.0,
-						12.0
+						190.0,
+						71.0,
+						58.0,
+						13.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						184.0,
-						68.0,
-						56.0,
-						12.0
+						190.0,
+						71.0,
+						58.0,
+						13.0
 					],
 					"text": "Clock Sync",
 					"fontsize": 8.0,
@@ -12525,7 +12709,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1400.0,
+						1240.0,
 						1016.0,
 						50.0,
 						22.0
@@ -12543,7 +12727,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1540.0,
+						1380.0,
 						1016.0,
 						80.0,
 						22.0
@@ -12561,7 +12745,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"patching_rect": [
-						1780.0,
+						1620.0,
 						1056.0,
 						70.0,
 						22.0
@@ -12581,7 +12765,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1860.0,
+						1700.0,
 						1056.0,
 						50.0,
 						22.0
@@ -12599,7 +12783,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						2020.0,
+						1860.0,
 						1056.0,
 						80.0,
 						22.0
@@ -12617,34 +12801,36 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						253.0,
-						30.0,
-						36.0,
-						36.0
+						260.0,
+						28.0,
+						40.0,
+						40.0
 					],
 					"outlettype": [
 						""
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						253.0,
-						30.0,
-						36.0,
-						36.0
+						260.0,
+						28.0,
+						40.0,
+						40.0
 					],
 					"parameter_enable": 1,
 					"varname": "Delay_Feedback",
 					"saved_attribute_attributes": {
 						"valueof": {
 							"parameter_longname": "Delay Feedback",
-							"parameter_shortname": "Feedback",
+							"parameter_shortname": "Fbk",
 							"parameter_type": 1,
 							"parameter_mmin": 0,
 							"parameter_mmax": 127,
 							"parameter_initial_enable": 0,
 							"parameter_invisible": 0
 						}
-					}
+					},
+					"annotation": "Delay Feedback  \u00b7  CC 103",
+					"hint": "Delay Feedback  \u00b7  CC 103"
 				}
 			},
 			{
@@ -12654,19 +12840,19 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						242.0,
-						68.0,
-						56.0,
-						12.0
+						250.0,
+						71.0,
+						58.0,
+						13.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						242.0,
-						68.0,
-						56.0,
-						12.0
+						250.0,
+						71.0,
+						58.0,
+						13.0
 					],
-					"text": "Feedback",
+					"text": "Fbk",
 					"fontsize": 8.0,
 					"fontface": 0,
 					"textjustification": 1,
@@ -12680,7 +12866,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1540.0,
+						1380.0,
 						1024.0,
 						80.0,
 						22.0
@@ -12698,7 +12884,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"patching_rect": [
-						1780.0,
+						1620.0,
 						1064.0,
 						70.0,
 						22.0
@@ -12718,7 +12904,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						2020.0,
+						1860.0,
 						1064.0,
 						80.0,
 						22.0
@@ -12736,34 +12922,36 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						21.0,
-						82.0,
-						36.0,
-						36.0
+						20.0,
+						98.0,
+						40.0,
+						40.0
 					],
 					"outlettype": [
 						""
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						21.0,
-						82.0,
-						36.0,
-						36.0
+						20.0,
+						98.0,
+						40.0,
+						40.0
 					],
 					"parameter_enable": 1,
 					"varname": "Delay_Character",
 					"saved_attribute_attributes": {
 						"valueof": {
 							"parameter_longname": "Delay Character",
-							"parameter_shortname": "Character",
+							"parameter_shortname": "Char",
 							"parameter_type": 1,
 							"parameter_mmin": 0,
 							"parameter_mmax": 127,
 							"parameter_initial_enable": 0,
 							"parameter_invisible": 0
 						}
-					}
+					},
+					"annotation": "Delay Character  \u00b7  CC 104",
+					"hint": "Delay Character  \u00b7  CC 104"
 				}
 			},
 			{
@@ -12774,18 +12962,18 @@
 					"numoutlets": 0,
 					"patching_rect": [
 						10.0,
-						120.0,
-						56.0,
-						12.0
+						141.0,
+						58.0,
+						13.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
 						10.0,
-						120.0,
-						56.0,
-						12.0
+						141.0,
+						58.0,
+						13.0
 					],
-					"text": "Character",
+					"text": "Char",
 					"fontsize": 8.0,
 					"fontface": 0,
 					"textjustification": 1,
@@ -12799,7 +12987,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1540.0,
+						1380.0,
 						1032.0,
 						80.0,
 						22.0
@@ -12817,7 +13005,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"patching_rect": [
-						1780.0,
+						1620.0,
 						1072.0,
 						70.0,
 						22.0
@@ -12837,7 +13025,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						2020.0,
+						1860.0,
 						1072.0,
 						80.0,
 						22.0
@@ -12855,20 +13043,20 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						79.0,
-						82.0,
-						36.0,
-						36.0
+						80.0,
+						98.0,
+						40.0,
+						40.0
 					],
 					"outlettype": [
 						""
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						79.0,
-						82.0,
-						36.0,
-						36.0
+						80.0,
+						98.0,
+						40.0,
+						40.0
 					],
 					"parameter_enable": 1,
 					"varname": "Delay_Mix",
@@ -12882,7 +13070,9 @@
 							"parameter_initial_enable": 0,
 							"parameter_invisible": 0
 						}
-					}
+					},
+					"annotation": "Delay Mix  \u00b7  CC 105",
+					"hint": "Delay Mix  \u00b7  CC 105"
 				}
 			},
 			{
@@ -12892,17 +13082,17 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						68.0,
-						120.0,
-						56.0,
-						12.0
+						70.0,
+						141.0,
+						58.0,
+						13.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						68.0,
-						120.0,
-						56.0,
-						12.0
+						70.0,
+						141.0,
+						58.0,
+						13.0
 					],
 					"text": "Mix",
 					"fontsize": 8.0,
@@ -12918,7 +13108,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1540.0,
+						1380.0,
 						1040.0,
 						80.0,
 						22.0
@@ -12936,7 +13126,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"patching_rect": [
-						1780.0,
+						1620.0,
 						1080.0,
 						70.0,
 						22.0
@@ -12956,7 +13146,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						2020.0,
+						1860.0,
 						1080.0,
 						80.0,
 						22.0
@@ -12974,8 +13164,8 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						146.0,
-						91.0,
+						151.0,
+						107.0,
 						18.0,
 						18.0
 					],
@@ -12984,8 +13174,8 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						146.0,
-						91.0,
+						151.0,
+						107.0,
 						18.0,
 						18.0
 					],
@@ -13009,7 +13199,9 @@
 								"on"
 							]
 						}
-					}
+					},
+					"annotation": "Delay>Timbre A  \u00b7  CC 106  (0-63: Off; 64-127: On)",
+					"hint": "Delay>Timbre A  \u00b7  CC 106  (0-63: Off; 64-127: On)"
 				}
 			},
 			{
@@ -13019,17 +13211,17 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						126.0,
-						120.0,
-						56.0,
-						12.0
+						130.0,
+						141.0,
+						58.0,
+						13.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						126.0,
-						120.0,
-						56.0,
-						12.0
+						130.0,
+						141.0,
+						58.0,
+						13.0
 					],
 					"text": "\u2192Timbre A",
 					"fontsize": 8.0,
@@ -13045,7 +13237,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1400.0,
+						1240.0,
 						1048.0,
 						50.0,
 						22.0
@@ -13063,7 +13255,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1540.0,
+						1380.0,
 						1048.0,
 						80.0,
 						22.0
@@ -13081,7 +13273,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"patching_rect": [
-						1780.0,
+						1620.0,
 						1088.0,
 						70.0,
 						22.0
@@ -13101,7 +13293,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1860.0,
+						1700.0,
 						1088.0,
 						50.0,
 						22.0
@@ -13119,7 +13311,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						2020.0,
+						1860.0,
 						1088.0,
 						80.0,
 						22.0
@@ -13137,8 +13329,8 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						204.0,
-						91.0,
+						211.0,
+						107.0,
 						18.0,
 						18.0
 					],
@@ -13147,8 +13339,8 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						204.0,
-						91.0,
+						211.0,
+						107.0,
 						18.0,
 						18.0
 					],
@@ -13172,7 +13364,9 @@
 								"on"
 							]
 						}
-					}
+					},
+					"annotation": "Delay>Timbre B  \u00b7  CC 107  (0-63: Off; 64-127: On)",
+					"hint": "Delay>Timbre B  \u00b7  CC 107  (0-63: Off; 64-127: On)"
 				}
 			},
 			{
@@ -13182,17 +13376,17 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						184.0,
-						120.0,
-						56.0,
-						12.0
+						190.0,
+						141.0,
+						58.0,
+						13.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						184.0,
-						120.0,
-						56.0,
-						12.0
+						190.0,
+						141.0,
+						58.0,
+						13.0
 					],
 					"text": "\u2192Timbre B",
 					"fontsize": 8.0,
@@ -13208,7 +13402,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1400.0,
+						1240.0,
 						1056.0,
 						50.0,
 						22.0
@@ -13226,7 +13420,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1540.0,
+						1380.0,
 						1056.0,
 						80.0,
 						22.0
@@ -13244,7 +13438,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"patching_rect": [
-						1780.0,
+						1620.0,
 						1096.0,
 						70.0,
 						22.0
@@ -13264,7 +13458,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1860.0,
+						1700.0,
 						1096.0,
 						50.0,
 						22.0
@@ -13282,7 +13476,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						2020.0,
+						1860.0,
 						1096.0,
 						80.0,
 						22.0
@@ -13300,8 +13494,8 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						30.0,
-						39.0,
+						31.0,
+						37.0,
 						18.0,
 						18.0
 					],
@@ -13310,8 +13504,8 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						30.0,
-						39.0,
+						31.0,
+						37.0,
 						18.0,
 						18.0
 					],
@@ -13335,7 +13529,9 @@
 								"on"
 							]
 						}
-					}
+					},
+					"annotation": "Arp On/Off  \u00b7  CC 112  (0-63: Off; 64-127: On)",
+					"hint": "Arp On/Off  \u00b7  CC 112  (0-63: Off; 64-127: On)"
 				}
 			},
 			{
@@ -13346,16 +13542,16 @@
 					"numoutlets": 0,
 					"patching_rect": [
 						10.0,
-						68.0,
-						56.0,
-						12.0
+						71.0,
+						58.0,
+						13.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
 						10.0,
-						68.0,
-						56.0,
-						12.0
+						71.0,
+						58.0,
+						13.0
 					],
 					"text": "On/Off",
 					"fontsize": 8.0,
@@ -13371,7 +13567,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1400.0,
+						1240.0,
 						1096.0,
 						50.0,
 						22.0
@@ -13389,7 +13585,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1540.0,
+						1380.0,
 						1096.0,
 						80.0,
 						22.0
@@ -13407,7 +13603,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"patching_rect": [
-						1780.0,
+						1620.0,
 						1136.0,
 						70.0,
 						22.0
@@ -13427,7 +13623,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1860.0,
+						1700.0,
 						1136.0,
 						50.0,
 						22.0
@@ -13445,7 +13641,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						2020.0,
+						1860.0,
 						1136.0,
 						80.0,
 						22.0
@@ -13463,8 +13659,8 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						88.0,
-						39.0,
+						91.0,
+						37.0,
 						18.0,
 						18.0
 					],
@@ -13473,8 +13669,8 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						88.0,
-						39.0,
+						91.0,
+						37.0,
 						18.0,
 						18.0
 					],
@@ -13498,7 +13694,9 @@
 								"on"
 							]
 						}
-					}
+					},
+					"annotation": "Arp FW/BK  \u00b7  CC 113  (0-63: Off; 64-127: On)",
+					"hint": "Arp FW/BK  \u00b7  CC 113  (0-63: Off; 64-127: On)"
 				}
 			},
 			{
@@ -13508,17 +13706,17 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						68.0,
-						68.0,
-						56.0,
-						12.0
+						70.0,
+						71.0,
+						58.0,
+						13.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						68.0,
-						68.0,
-						56.0,
-						12.0
+						70.0,
+						71.0,
+						58.0,
+						13.0
 					],
 					"text": "FW/BK",
 					"fontsize": 8.0,
@@ -13534,7 +13732,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1400.0,
+						1240.0,
 						1104.0,
 						50.0,
 						22.0
@@ -13552,7 +13750,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1540.0,
+						1380.0,
 						1104.0,
 						80.0,
 						22.0
@@ -13570,7 +13768,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"patching_rect": [
-						1780.0,
+						1620.0,
 						1144.0,
 						70.0,
 						22.0
@@ -13590,7 +13788,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1860.0,
+						1700.0,
 						1144.0,
 						50.0,
 						22.0
@@ -13608,7 +13806,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						2020.0,
+						1860.0,
 						1144.0,
 						80.0,
 						22.0
@@ -13626,8 +13824,8 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						128.0,
-						41.0,
+						133.0,
+						40.0,
 						52.0,
 						18.0
 					],
@@ -13636,8 +13834,8 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						128.0,
-						41.0,
+						133.0,
+						40.0,
 						52.0,
 						18.0
 					],
@@ -13646,7 +13844,7 @@
 					"saved_attribute_attributes": {
 						"valueof": {
 							"parameter_longname": "Arp Direction",
-							"parameter_shortname": "Direction",
+							"parameter_shortname": "Dir",
 							"parameter_type": 2,
 							"parameter_mmin": 0,
 							"parameter_mmax": 2,
@@ -13663,7 +13861,9 @@
 								"Random"
 							]
 						}
-					}
+					},
+					"annotation": "Arp Direction  \u00b7  CC 114  (0-42: Order; 43-84: Pattern; 85-127: Random)",
+					"hint": "Arp Direction  \u00b7  CC 114  (0-42: Order; 43-84: Pattern; 85-127: Random)"
 				}
 			},
 			{
@@ -13673,19 +13873,19 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						126.0,
-						68.0,
-						56.0,
-						12.0
+						130.0,
+						71.0,
+						58.0,
+						13.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						126.0,
-						68.0,
-						56.0,
-						12.0
+						130.0,
+						71.0,
+						58.0,
+						13.0
 					],
-					"text": "Direction",
+					"text": "Dir",
 					"fontsize": 8.0,
 					"fontface": 0,
 					"textjustification": 1,
@@ -13699,7 +13899,7 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						1400.0,
+						1240.0,
 						1112.0,
 						110.0,
 						22.0
@@ -13717,7 +13917,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1540.0,
+						1380.0,
 						1112.0,
 						80.0,
 						22.0
@@ -13735,7 +13935,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"patching_rect": [
-						1780.0,
+						1620.0,
 						1152.0,
 						70.0,
 						22.0
@@ -13755,7 +13955,7 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						1860.0,
+						1700.0,
 						1152.0,
 						150.0,
 						22.0
@@ -13773,7 +13973,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						2020.0,
+						1860.0,
 						1152.0,
 						80.0,
 						22.0
@@ -13791,8 +13991,8 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						186.0,
-						41.0,
+						193.0,
+						40.0,
 						52.0,
 						18.0
 					],
@@ -13801,8 +14001,8 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						186.0,
-						41.0,
+						193.0,
+						40.0,
 						52.0,
 						18.0
 					],
@@ -13811,7 +14011,7 @@
 					"saved_attribute_attributes": {
 						"valueof": {
 							"parameter_longname": "Arp Octave Range",
-							"parameter_shortname": "Octave Range",
+							"parameter_shortname": "Oct Rng",
 							"parameter_type": 2,
 							"parameter_mmin": 0,
 							"parameter_mmax": 3,
@@ -13830,7 +14030,9 @@
 								"4"
 							]
 						}
-					}
+					},
+					"annotation": "Arp Octave Range  \u00b7  CC 115  (0-31: 1; 32-63: 2; 64-95: 3; 96-127: 4)",
+					"hint": "Arp Octave Range  \u00b7  CC 115  (0-31: 1; 32-63: 2; 64-95: 3; 96-127: 4)"
 				}
 			},
 			{
@@ -13840,19 +14042,19 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						184.0,
-						68.0,
-						56.0,
-						12.0
+						190.0,
+						71.0,
+						58.0,
+						13.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						184.0,
-						68.0,
-						56.0,
-						12.0
+						190.0,
+						71.0,
+						58.0,
+						13.0
 					],
-					"text": "Octave Range",
+					"text": "Oct Rng",
 					"fontsize": 8.0,
 					"fontface": 0,
 					"textjustification": 1,
@@ -13866,7 +14068,7 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						1400.0,
+						1240.0,
 						1120.0,
 						110.0,
 						22.0
@@ -13884,7 +14086,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1540.0,
+						1380.0,
 						1120.0,
 						80.0,
 						22.0
@@ -13902,7 +14104,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"patching_rect": [
-						1780.0,
+						1620.0,
 						1160.0,
 						70.0,
 						22.0
@@ -13922,7 +14124,7 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						1860.0,
+						1700.0,
 						1160.0,
 						150.0,
 						22.0
@@ -13940,7 +14142,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						2020.0,
+						1860.0,
 						1160.0,
 						80.0,
 						22.0
@@ -13958,20 +14160,20 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						21.0,
-						82.0,
-						36.0,
-						36.0
+						20.0,
+						98.0,
+						40.0,
+						40.0
 					],
 					"outlettype": [
 						""
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						21.0,
-						82.0,
-						36.0,
-						36.0
+						20.0,
+						98.0,
+						40.0,
+						40.0
 					],
 					"parameter_enable": 1,
 					"varname": "Arp_Clock_Div",
@@ -13985,7 +14187,9 @@
 							"parameter_initial_enable": 0,
 							"parameter_invisible": 0
 						}
-					}
+					},
+					"annotation": "Arp Clock Div  \u00b7  CC 111",
+					"hint": "Arp Clock Div  \u00b7  CC 111"
 				}
 			},
 			{
@@ -13996,16 +14200,16 @@
 					"numoutlets": 0,
 					"patching_rect": [
 						10.0,
-						120.0,
-						56.0,
-						12.0
+						141.0,
+						58.0,
+						13.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
 						10.0,
-						120.0,
-						56.0,
-						12.0
+						141.0,
+						58.0,
+						13.0
 					],
 					"text": "Clock Div",
 					"fontsize": 8.0,
@@ -14021,7 +14225,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1540.0,
+						1380.0,
 						1088.0,
 						80.0,
 						22.0
@@ -14039,7 +14243,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"patching_rect": [
-						1780.0,
+						1620.0,
 						1128.0,
 						70.0,
 						22.0
@@ -14059,7 +14263,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						2020.0,
+						1860.0,
 						1128.0,
 						80.0,
 						22.0
@@ -14077,20 +14281,20 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						79.0,
-						82.0,
-						36.0,
-						36.0
+						80.0,
+						98.0,
+						40.0,
+						40.0
 					],
 					"outlettype": [
 						""
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						79.0,
-						82.0,
-						36.0,
-						36.0
+						80.0,
+						98.0,
+						40.0,
+						40.0
 					],
 					"parameter_enable": 1,
 					"varname": "Seq_Clock_Div",
@@ -14104,7 +14308,9 @@
 							"parameter_initial_enable": 0,
 							"parameter_invisible": 0
 						}
-					}
+					},
+					"annotation": "Seq Clock Div  \u00b7  CC 110",
+					"hint": "Seq Clock Div  \u00b7  CC 110"
 				}
 			},
 			{
@@ -14114,17 +14320,17 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						68.0,
-						120.0,
-						56.0,
-						12.0
+						70.0,
+						141.0,
+						58.0,
+						13.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						68.0,
-						120.0,
-						56.0,
-						12.0
+						70.0,
+						141.0,
+						58.0,
+						13.0
 					],
 					"text": "Seq Clock Div",
 					"fontsize": 8.0,
@@ -14140,7 +14346,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1540.0,
+						1380.0,
 						1080.0,
 						80.0,
 						22.0
@@ -14158,7 +14364,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"patching_rect": [
-						1780.0,
+						1620.0,
 						1120.0,
 						70.0,
 						22.0
@@ -14178,7 +14384,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						2020.0,
+						1860.0,
 						1120.0,
 						80.0,
 						22.0
@@ -14196,20 +14402,20 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						137.0,
-						82.0,
-						36.0,
-						36.0
+						140.0,
+						98.0,
+						40.0,
+						40.0
 					],
 					"outlettype": [
 						""
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						137.0,
-						82.0,
-						36.0,
-						36.0
+						140.0,
+						98.0,
+						40.0,
+						40.0
 					],
 					"parameter_enable": 1,
 					"varname": "Clock_Tempo",
@@ -14223,7 +14429,9 @@
 							"parameter_initial_enable": 0,
 							"parameter_invisible": 0
 						}
-					}
+					},
+					"annotation": "Clock Tempo  \u00b7  CC 116",
+					"hint": "Clock Tempo  \u00b7  CC 116"
 				}
 			},
 			{
@@ -14233,17 +14441,17 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						126.0,
-						120.0,
-						56.0,
-						12.0
+						130.0,
+						141.0,
+						58.0,
+						13.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						126.0,
-						120.0,
-						56.0,
-						12.0
+						130.0,
+						141.0,
+						58.0,
+						13.0
 					],
 					"text": "Clock Tempo",
 					"fontsize": 8.0,
@@ -14259,7 +14467,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1540.0,
+						1380.0,
 						1128.0,
 						80.0,
 						22.0
@@ -14277,7 +14485,7 @@
 					"numinlets": 1,
 					"numoutlets": 3,
 					"patching_rect": [
-						1780.0,
+						1620.0,
 						1168.0,
 						70.0,
 						22.0
@@ -14297,7 +14505,7 @@
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						2020.0,
+						1860.0,
 						1168.0,
 						80.0,
 						22.0
@@ -14311,341 +14519,65 @@
 			{
 				"box": {
 					"id": "obj-605",
-					"maxclass": "newobj",
+					"maxclass": "comment",
 					"numinlets": 1,
-					"numoutlets": 2,
+					"numoutlets": 0,
 					"patching_rect": [
-						800.0,
-						380.0,
-						90.0,
-						22.0
+						10.0,
+						30.0,
+						130.0,
+						14.0
 					],
-					"outlettype": [
-						"",
-						""
+					"presentation": 1,
+					"presentation_rect": [
+						10.0,
+						30.0,
+						130.0,
+						14.0
 					],
-					"text": "thispatcher"
+					"text": "PROGRAM CHANGE",
+					"fontsize": 8.0,
+					"fontface": 1,
+					"textjustification": 0,
+					"varname": "pc_t0"
 				}
 			},
 			{
 				"box": {
 					"id": "obj-606",
-					"maxclass": "message",
-					"numinlets": 2,
-					"numoutlets": 1,
+					"maxclass": "comment",
+					"numinlets": 1,
+					"numoutlets": 0,
 					"patching_rect": [
-						800.0,
-						420.0,
-						200.0,
-						22.0
+						10.0,
+						52.0,
+						30.0,
+						14.0
 					],
-					"outlettype": [
-						""
+					"presentation": 1,
+					"presentation_rect": [
+						10.0,
+						52.0,
+						30.0,
+						14.0
 					],
-					"text": "script hide OSC_1_Octave, script hide OSC_1_Octave_L, script hide OSC_1_Frequency, script hide OSC_1_Frequency_L, script hide OSC_1_Tri_Saw_Mix, script hide OSC_1_Tri_Saw_Mix_L, script hide OSC_1_PW, script hide OSC_1_PW_L, script hide OSC_1_Wave_Mix, script hide OSC_1_Wave_Mix_L, script hide OSC_1_Level, script hide OSC_1_Level_L, script hide OSC_2_Octave, script hide OSC_2_Octave_L, script hide OSC_2_Frequency, script hide OSC_2_Frequency_L, script hide OSC_2_Tri_Saw_Mix, script hide OSC_2_Tri_Saw_Mix_L, script hide OSC_2_PW, script hide OSC_2_PW_L, script hide OSC_2_Wave_Mix, script hide OSC_2_Wave_Mix_L, script hide OSC_2_Level, script hide OSC_2_Level_L, script hide OSC_2_1_Sync, script hide OSC_2_1_Sync_L, script hide OSC_2_1_FM, script hide OSC_2_1_FM_L, script hide OSC_1_2_FM, script hide OSC_1_2_FM_L, script hide FM_Amount, script hide FM_Amount_L, script hide Ring_Mod_Level, script hide Ring_Mod_Level_L, script hide Noise_Level, script hide Noise_Level_L, script hide Filter_1_Cutoff, script hide Filter_1_Cutoff_L, script hide Filter_1_Resonance, script hide Filter_1_Resonance_L, script hide Filter_1_Env_Amount, script hide Filter_1_Env_Amount_L, script hide Filter_1_High_Pass, script hide Filter_1_High_Pass_L, script hide Filter_1_KB_Track, script hide Filter_1_KB_Track_L, script hide Filter_2_Frequency, script hide Filter_2_Frequency_L, script hide Filter_2_Resonance, script hide Filter_2_Resonance_L, script hide Filter_2_Env_Amount, script hide Filter_2_Env_Amount_L, script hide Filter_2_KB_Track, script hide Filter_2_KB_Track_L, script hide Link_Filters, script hide Link_Filters_L, script hide Filter_Order, script hide Filter_Order_L, script hide Clipping_Level, script hide Clipping_Level_L, script hide Filter_Env_Attack, script hide Filter_Env_Attack_L, script hide Filter_Env_Sustain, script hide Filter_Env_Sustain_L, script hide Filter_Env_Delay, script hide Filter_Env_Delay_L, script hide Filter_Env_Release, script hide Filter_Env_Release_L, script hide Filter_Env_Loop, script hide Filter_Env_Loop_L, script hide Filter_Env_Velocity, script hide Filter_Env_Velocity_L, script hide VCA_Env_Attack, script hide VCA_Env_Attack_L, script hide VCA_Env_Sustain, script hide VCA_Env_Sustain_L, script hide VCA_Env_Delay, script hide VCA_Env_Delay_L, script hide VCA_Env_Release, script hide VCA_Env_Release_L, script hide VCA_Env_Loop, script hide VCA_Env_Loop_L, script hide VCA_Env_Velocity, script hide VCA_Env_Velocity_L, script hide Mod_Osc_Frequency, script hide Mod_Osc_Frequency_L, script hide Mod_Osc_Waveform, script hide Mod_Osc_Waveform_L, script hide Mod_Osc_Audio_Rate, script hide Mod_Osc_Audio_Rate_L, script hide Mod_Osc_KB_Track, script hide Mod_Osc_KB_Track_L, script hide Mod_Osc_KB_Reset, script hide Mod_Osc_KB_Reset_L, script hide Mod_Osc_Unipolar, script hide Mod_Osc_Unipolar_L, script hide Mod_Osc_Pitch_Amount, script hide Mod_Osc_Pitch_Amount_L, script hide Mod_Osc_Pitch_OSC_1, script hide Mod_Osc_Pitch_OSC_1_L, script hide Mod_Osc_Pitch_OSC_2, script hide Mod_Osc_Pitch_OSC_2_L, script hide Mod_Osc_PWM_Amount, script hide Mod_Osc_PWM_Amount_L, script hide Mod_Osc_PWM_OSC_1, script hide Mod_Osc_PWM_OSC_1_L, script hide Mod_Osc_PWM_OSC_2, script hide Mod_Osc_PWM_OSC_2_L, script hide Mod_Osc_Filter_Amount, script hide Mod_Osc_Filter_Amount_L, script hide Mod_Osc_Filter_F1, script hide Mod_Osc_Filter_F1_L, script hide Mod_Osc_Filter_F2, script hide Mod_Osc_Filter_F2_L, script hide Mod_Osc_VCA_Amount, script hide Mod_Osc_VCA_Amount_L, script hide Mod_Osc_VCA_Pan, script hide Mod_Osc_VCA_Pan_L, script hide Mod_Osc_Level, script hide Mod_Osc_Level_L, script hide LFO_1_Rate, script hide LFO_1_Rate_L, script hide LFO_1_Amount, script hide LFO_1_Amount_L, script hide LFO_1_Waveform, script hide LFO_1_Waveform_L, script hide LFO_2_Rate, script hide LFO_2_Rate_L, script hide LFO_2_Amount, script hide LFO_2_Amount_L, script hide LFO_2_Waveform, script hide LFO_2_Waveform_L, script hide Pitch_LFO_Rate, script hide Pitch_LFO_Rate_L, script hide Pitch_LFO_Shape, script hide Pitch_LFO_Shape_L, script hide Pitch_LFO_Amount, script hide Pitch_LFO_Amount_L, script hide Pitch_LFO_OSC_1, script hide Pitch_LFO_OSC_1_L, script hide Pitch_LFO_OSC_2, script hide Pitch_LFO_OSC_2_L, script hide Pitch_LFO_Mod_Osc, script hide Pitch_LFO_Mod_Osc_L, script hide Pitch_LFO_Detune, script hide Pitch_LFO_Detune_L, script hide Voice_Detune, script hide Voice_Detune_L, script hide Voice_Unison, script hide Voice_Unison_L, script hide Voice_Mono, script hide Voice_Mono_L, script hide Glide_Time, script hide Glide_Time_L, script hide Timbre_Volume, script hide Timbre_Volume_L, script hide Pan, script hide Pan_L, script hide Pan_Spread, script hide Pan_Spread_L, script hide Low_Cut, script hide Low_Cut_L, script hide Mod_Wheel, script hide Mod_Wheel_L, script hide Expression, script hide Expression_L, script hide Mute, script hide Mute_L, script hide Hold, script hide Hold_L, script hide Sustain_Pedal, script hide Sustain_Pedal_L, script hide Delay_Time_Left, script hide Delay_Time_Left_L, script hide Delay_Time_Right, script hide Delay_Time_Right_L, script hide Link_Delays, script hide Link_Delays_L, script hide Delay_Clock_Sync, script hide Delay_Clock_Sync_L, script hide Delay_Feedback, script hide Delay_Feedback_L, script hide Delay_Character, script hide Delay_Character_L, script hide Delay_Mix, script hide Delay_Mix_L, script hide Delay_Timbre_A, script hide Delay_Timbre_A_L, script hide Delay_Timbre_B, script hide Delay_Timbre_B_L, script hide Arp_On_Off, script hide Arp_On_Off_L, script hide Arp_FW_BK, script hide Arp_FW_BK_L, script hide Arp_Direction, script hide Arp_Direction_L, script hide Arp_Octave_Range, script hide Arp_Octave_Range_L, script hide Arp_Clock_Div, script hide Arp_Clock_Div_L, script hide Seq_Clock_Div, script hide Seq_Clock_Div_L, script hide Clock_Tempo, script hide Clock_Tempo_L"
+					"text": "Bank",
+					"fontsize": 8.0,
+					"fontface": 0,
+					"textjustification": 0,
+					"varname": "pc_l1"
 				}
 			},
 			{
 				"box": {
 					"id": "obj-607",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 2,
-					"patching_rect": [
-						1060.0,
-						300.0,
-						60.0,
-						22.0
-					],
-					"outlettype": [
-						"int",
-						"int"
-					],
-					"text": "t i i"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-608",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 8,
-					"patching_rect": [
-						1060.0,
-						340.0,
-						200.0,
-						22.0
-					],
-					"outlettype": [
-						"bang",
-						"bang",
-						"bang",
-						"bang",
-						"bang",
-						"bang",
-						"bang",
-						""
-					],
-					"text": "sel 0 1 2 3 4 5 6"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-609",
-					"maxclass": "message",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1280.0,
-						300.0,
-						200.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "script show OSC_1_Octave, script show OSC_1_Octave_L, script show OSC_1_Frequency, script show OSC_1_Frequency_L, script show OSC_1_Tri_Saw_Mix, script show OSC_1_Tri_Saw_Mix_L, script show OSC_1_PW, script show OSC_1_PW_L, script show OSC_1_Wave_Mix, script show OSC_1_Wave_Mix_L, script show OSC_1_Level, script show OSC_1_Level_L, script show OSC_2_Octave, script show OSC_2_Octave_L, script show OSC_2_Frequency, script show OSC_2_Frequency_L, script show OSC_2_Tri_Saw_Mix, script show OSC_2_Tri_Saw_Mix_L, script show OSC_2_PW, script show OSC_2_PW_L, script show OSC_2_Wave_Mix, script show OSC_2_Wave_Mix_L, script show OSC_2_Level, script show OSC_2_Level_L, script show OSC_2_1_Sync, script show OSC_2_1_Sync_L, script show OSC_2_1_FM, script show OSC_2_1_FM_L, script show OSC_1_2_FM, script show OSC_1_2_FM_L, script show FM_Amount, script show FM_Amount_L, script show Ring_Mod_Level, script show Ring_Mod_Level_L, script show Noise_Level, script show Noise_Level_L"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-610",
-					"maxclass": "message",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1280.0,
-						330.0,
-						200.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "script show Filter_1_Cutoff, script show Filter_1_Cutoff_L, script show Filter_1_Resonance, script show Filter_1_Resonance_L, script show Filter_1_Env_Amount, script show Filter_1_Env_Amount_L, script show Filter_1_High_Pass, script show Filter_1_High_Pass_L, script show Filter_1_KB_Track, script show Filter_1_KB_Track_L, script show Filter_2_Frequency, script show Filter_2_Frequency_L, script show Filter_2_Resonance, script show Filter_2_Resonance_L, script show Filter_2_Env_Amount, script show Filter_2_Env_Amount_L, script show Filter_2_KB_Track, script show Filter_2_KB_Track_L, script show Link_Filters, script show Link_Filters_L, script show Filter_Order, script show Filter_Order_L, script show Clipping_Level, script show Clipping_Level_L, script show Filter_Env_Attack, script show Filter_Env_Attack_L, script show Filter_Env_Sustain, script show Filter_Env_Sustain_L, script show Filter_Env_Delay, script show Filter_Env_Delay_L, script show Filter_Env_Release, script show Filter_Env_Release_L, script show Filter_Env_Loop, script show Filter_Env_Loop_L, script show Filter_Env_Velocity, script show Filter_Env_Velocity_L, script show VCA_Env_Attack, script show VCA_Env_Attack_L, script show VCA_Env_Sustain, script show VCA_Env_Sustain_L, script show VCA_Env_Delay, script show VCA_Env_Delay_L, script show VCA_Env_Release, script show VCA_Env_Release_L, script show VCA_Env_Loop, script show VCA_Env_Loop_L, script show VCA_Env_Velocity, script show VCA_Env_Velocity_L"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-611",
-					"maxclass": "message",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1280.0,
-						360.0,
-						200.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "script show Mod_Osc_Frequency, script show Mod_Osc_Frequency_L, script show Mod_Osc_Waveform, script show Mod_Osc_Waveform_L, script show Mod_Osc_Audio_Rate, script show Mod_Osc_Audio_Rate_L, script show Mod_Osc_KB_Track, script show Mod_Osc_KB_Track_L, script show Mod_Osc_KB_Reset, script show Mod_Osc_KB_Reset_L, script show Mod_Osc_Unipolar, script show Mod_Osc_Unipolar_L, script show Mod_Osc_Pitch_Amount, script show Mod_Osc_Pitch_Amount_L, script show Mod_Osc_Pitch_OSC_1, script show Mod_Osc_Pitch_OSC_1_L, script show Mod_Osc_Pitch_OSC_2, script show Mod_Osc_Pitch_OSC_2_L, script show Mod_Osc_PWM_Amount, script show Mod_Osc_PWM_Amount_L, script show Mod_Osc_PWM_OSC_1, script show Mod_Osc_PWM_OSC_1_L, script show Mod_Osc_PWM_OSC_2, script show Mod_Osc_PWM_OSC_2_L, script show Mod_Osc_Filter_Amount, script show Mod_Osc_Filter_Amount_L, script show Mod_Osc_Filter_F1, script show Mod_Osc_Filter_F1_L, script show Mod_Osc_Filter_F2, script show Mod_Osc_Filter_F2_L, script show Mod_Osc_VCA_Amount, script show Mod_Osc_VCA_Amount_L, script show Mod_Osc_VCA_Pan, script show Mod_Osc_VCA_Pan_L, script show Mod_Osc_Level, script show Mod_Osc_Level_L"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-612",
-					"maxclass": "message",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1280.0,
-						390.0,
-						200.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "script show LFO_1_Rate, script show LFO_1_Rate_L, script show LFO_1_Amount, script show LFO_1_Amount_L, script show LFO_1_Waveform, script show LFO_1_Waveform_L, script show LFO_2_Rate, script show LFO_2_Rate_L, script show LFO_2_Amount, script show LFO_2_Amount_L, script show LFO_2_Waveform, script show LFO_2_Waveform_L, script show Pitch_LFO_Rate, script show Pitch_LFO_Rate_L, script show Pitch_LFO_Shape, script show Pitch_LFO_Shape_L, script show Pitch_LFO_Amount, script show Pitch_LFO_Amount_L, script show Pitch_LFO_OSC_1, script show Pitch_LFO_OSC_1_L, script show Pitch_LFO_OSC_2, script show Pitch_LFO_OSC_2_L, script show Pitch_LFO_Mod_Osc, script show Pitch_LFO_Mod_Osc_L, script show Pitch_LFO_Detune, script show Pitch_LFO_Detune_L"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-613",
-					"maxclass": "message",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1280.0,
-						420.0,
-						200.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "script show Voice_Detune, script show Voice_Detune_L, script show Voice_Unison, script show Voice_Unison_L, script show Voice_Mono, script show Voice_Mono_L, script show Glide_Time, script show Glide_Time_L, script show Timbre_Volume, script show Timbre_Volume_L, script show Pan, script show Pan_L, script show Pan_Spread, script show Pan_Spread_L, script show Low_Cut, script show Low_Cut_L, script show Mod_Wheel, script show Mod_Wheel_L, script show Expression, script show Expression_L, script show Mute, script show Mute_L, script show Hold, script show Hold_L, script show Sustain_Pedal, script show Sustain_Pedal_L"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-614",
-					"maxclass": "message",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1280.0,
-						450.0,
-						200.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "script show Delay_Time_Left, script show Delay_Time_Left_L, script show Delay_Time_Right, script show Delay_Time_Right_L, script show Link_Delays, script show Link_Delays_L, script show Delay_Clock_Sync, script show Delay_Clock_Sync_L, script show Delay_Feedback, script show Delay_Feedback_L, script show Delay_Character, script show Delay_Character_L, script show Delay_Mix, script show Delay_Mix_L, script show Delay_Timbre_A, script show Delay_Timbre_A_L, script show Delay_Timbre_B, script show Delay_Timbre_B_L"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-615",
-					"maxclass": "message",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1280.0,
-						480.0,
-						200.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "script show Arp_On_Off, script show Arp_On_Off_L, script show Arp_FW_BK, script show Arp_FW_BK_L, script show Arp_Direction, script show Arp_Direction_L, script show Arp_Octave_Range, script show Arp_Octave_Range_L, script show Arp_Clock_Div, script show Arp_Clock_Div_L, script show Seq_Clock_Div, script show Seq_Clock_Div_L, script show Clock_Tempo, script show Clock_Tempo_L"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-616",
-					"maxclass": "loadbang",
-					"numinlets": 1,
-					"numoutlets": 1,
-					"patching_rect": [
-						800.0,
-						90.0,
-						60.0,
-						22.0
-					],
-					"outlettype": [
-						"bang"
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-617",
-					"maxclass": "message",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						800.0,
-						120.0,
-						40.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "1"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-618",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						880.0,
-						120.0,
-						70.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "delay 300"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-619",
-					"maxclass": "message",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						880.0,
-						150.0,
-						40.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "0"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-620",
-					"maxclass": "comment",
-					"numinlets": 1,
-					"numoutlets": 0,
-					"patching_rect": [
-						10.0,
-						142.0,
-						78.0,
-						12.0
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						10.0,
-						142.0,
-						78.0,
-						12.0
-					],
-					"text": "PROG CHANGE",
-					"fontsize": 8.0,
-					"fontface": 1,
-					"textjustification": 0
-				}
-			},
-			{
-				"box": {
-					"id": "obj-621",
-					"maxclass": "comment",
-					"numinlets": 1,
-					"numoutlets": 0,
-					"patching_rect": [
-						92.0,
-						142.0,
-						16.0,
-						12.0
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						92.0,
-						142.0,
-						16.0,
-						12.0
-					],
-					"text": "Bk",
-					"fontsize": 8.0,
-					"fontface": 0,
-					"textjustification": 0
-				}
-			},
-			{
-				"box": {
-					"id": "obj-622",
 					"maxclass": "live.numbox",
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						110.0,
-						140.0,
-						32.0,
+						44.0,
+						50.0,
+						38.0,
 						18.0
 					],
 					"outlettype": [
@@ -14653,9 +14585,9 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						110.0,
-						140.0,
-						32.0,
+						44.0,
+						50.0,
+						38.0,
 						18.0
 					],
 					"parameter_enable": 1,
@@ -14670,44 +14602,47 @@
 							"parameter_initial_enable": 0,
 							"parameter_invisible": 0
 						}
-					}
+					},
+					"annotation": "Muse bank to recall (1-16)",
+					"hint": "Muse bank to recall (1-16)"
 				}
 			},
 			{
 				"box": {
-					"id": "obj-623",
+					"id": "obj-608",
 					"maxclass": "comment",
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						148.0,
-						142.0,
-						16.0,
-						12.0
+						90.0,
+						52.0,
+						34.0,
+						14.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						148.0,
-						142.0,
-						16.0,
-						12.0
+						90.0,
+						52.0,
+						34.0,
+						14.0
 					],
-					"text": "Pt",
+					"text": "Patch",
 					"fontsize": 8.0,
 					"fontface": 0,
-					"textjustification": 0
+					"textjustification": 0,
+					"varname": "pc_l2"
 				}
 			},
 			{
 				"box": {
-					"id": "obj-624",
+					"id": "obj-609",
 					"maxclass": "live.numbox",
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						164.0,
-						140.0,
-						32.0,
+						126.0,
+						50.0,
+						38.0,
 						18.0
 					],
 					"outlettype": [
@@ -14715,9 +14650,9 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						164.0,
-						140.0,
-						32.0,
+						126.0,
+						50.0,
+						38.0,
 						18.0
 					],
 					"parameter_enable": 1,
@@ -14732,18 +14667,20 @@
 							"parameter_initial_enable": 0,
 							"parameter_invisible": 0
 						}
-					}
+					},
+					"annotation": "Patch within the bank to recall (1-16)",
+					"hint": "Patch within the bank to recall (1-16)"
 				}
 			},
 			{
 				"box": {
-					"id": "obj-625",
+					"id": "obj-610",
 					"maxclass": "button",
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						202.0,
-						140.0,
+						172.0,
+						50.0,
 						18.0,
 						18.0
 					],
@@ -14752,71 +14689,126 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						202.0,
-						140.0,
+						172.0,
+						50.0,
 						18.0,
 						18.0
-					]
+					],
+					"varname": "PCSend"
 				}
 			},
 			{
 				"box": {
-					"id": "obj-626",
+					"id": "obj-611",
 					"maxclass": "comment",
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						224.0,
-						142.0,
-						36.0,
-						12.0
+						194.0,
+						52.0,
+						40.0,
+						14.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						224.0,
-						142.0,
-						36.0,
-						12.0
+						194.0,
+						52.0,
+						40.0,
+						14.0
 					],
 					"text": "SEND",
 					"fontsize": 8.0,
 					"fontface": 0,
-					"textjustification": 0
+					"textjustification": 0,
+					"varname": "pc_l3"
 				}
 			},
 			{
 				"box": {
-					"id": "obj-627",
+					"id": "obj-612",
 					"maxclass": "comment",
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						280.0,
-						142.0,
-						430.0,
-						12.0
+						10.0,
+						96.0,
+						520.0,
+						14.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						280.0,
-						142.0,
-						430.0,
-						12.0
+						10.0,
+						96.0,
+						520.0,
+						14.0
 					],
-					"text": "Controls follow the Muse's knobs \u00b7 drag a control to send it",
+					"text": "Recalls a stored Muse patch. Needs MENU>MIDI>RECEIVE PGM CHNG: ON.",
 					"fontsize": 8.0,
 					"fontface": 0,
-					"textjustification": 0
+					"textjustification": 0,
+					"varname": "pc_h1"
 				}
 			},
 			{
 				"box": {
-					"id": "obj-628",
+					"id": "obj-613",
+					"maxclass": "comment",
+					"numinlets": 1,
+					"numoutlets": 0,
+					"patching_rect": [
+						10.0,
+						114.0,
+						540.0,
+						14.0
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						10.0,
+						114.0,
+						540.0,
+						14.0
+					],
+					"text": "Hover any control to read what it does in Live's Info View (bottom-left of the window).",
+					"fontsize": 8.0,
+					"fontface": 0,
+					"textjustification": 0,
+					"varname": "pc_h2"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-614",
+					"maxclass": "comment",
+					"numinlets": 1,
+					"numoutlets": 0,
+					"patching_rect": [
+						10.0,
+						132.0,
+						540.0,
+						14.0
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						10.0,
+						132.0,
+						540.0,
+						14.0
+					],
+					"text": "Note: hardware->UI sync is untested so far - connect the Muse's MIDI Out and set the track Monitor to In.",
+					"fontsize": 8.0,
+					"fontface": 0,
+					"textjustification": 0,
+					"varname": "pc_h3"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-615",
 					"maxclass": "newobj",
 					"numinlets": 1,
 					"numoutlets": 3,
 					"patching_rect": [
-						1100.0,
+						940.0,
 						460.0,
 						80.0,
 						22.0
@@ -14831,12 +14823,12 @@
 			},
 			{
 				"box": {
-					"id": "obj-629",
+					"id": "obj-616",
 					"maxclass": "message",
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1100.0,
+						940.0,
 						500.0,
 						50.0,
 						22.0
@@ -14849,12 +14841,12 @@
 			},
 			{
 				"box": {
-					"id": "obj-630",
+					"id": "obj-617",
 					"maxclass": "newobj",
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1100.0,
+						940.0,
 						540.0,
 						50.0,
 						22.0
@@ -14867,12 +14859,12 @@
 			},
 			{
 				"box": {
-					"id": "obj-631",
+					"id": "obj-618",
 					"maxclass": "newobj",
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1100.0,
+						940.0,
 						570.0,
 						80.0,
 						22.0
@@ -14885,12 +14877,12 @@
 			},
 			{
 				"box": {
-					"id": "obj-632",
+					"id": "obj-619",
 					"maxclass": "newobj",
 					"numinlets": 2,
 					"numoutlets": 1,
 					"patching_rect": [
-						1220.0,
+						1060.0,
 						540.0,
 						50.0,
 						22.0
@@ -14899,6 +14891,322 @@
 						""
 					],
 					"text": "- 1"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-620",
+					"maxclass": "newobj",
+					"numinlets": 1,
+					"numoutlets": 2,
+					"patching_rect": [
+						640.0,
+						380.0,
+						90.0,
+						22.0
+					],
+					"outlettype": [
+						"",
+						""
+					],
+					"text": "thispatcher"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-621",
+					"maxclass": "message",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						640.0,
+						420.0,
+						200.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "script hide OSC_1_Octave, script hide OSC_1_Octave_L, script hide OSC_1_Frequency, script hide OSC_1_Frequency_L, script hide OSC_1_Tri_Saw_Mix, script hide OSC_1_Tri_Saw_Mix_L, script hide OSC_1_PW, script hide OSC_1_PW_L, script hide OSC_1_Wave_Mix, script hide OSC_1_Wave_Mix_L, script hide OSC_1_Level, script hide OSC_1_Level_L, script hide OSC_2_Octave, script hide OSC_2_Octave_L, script hide OSC_2_Frequency, script hide OSC_2_Frequency_L, script hide OSC_2_Tri_Saw_Mix, script hide OSC_2_Tri_Saw_Mix_L, script hide OSC_2_PW, script hide OSC_2_PW_L, script hide OSC_2_Wave_Mix, script hide OSC_2_Wave_Mix_L, script hide OSC_2_Level, script hide OSC_2_Level_L, script hide OSC_2_1_Sync, script hide OSC_2_1_Sync_L, script hide OSC_2_1_FM, script hide OSC_2_1_FM_L, script hide OSC_1_2_FM, script hide OSC_1_2_FM_L, script hide FM_Amount, script hide FM_Amount_L, script hide Ring_Mod_Level, script hide Ring_Mod_Level_L, script hide Noise_Level, script hide Noise_Level_L, script hide Filter_1_Cutoff, script hide Filter_1_Cutoff_L, script hide Filter_1_Resonance, script hide Filter_1_Resonance_L, script hide Filter_1_Env_Amount, script hide Filter_1_Env_Amount_L, script hide Filter_1_High_Pass, script hide Filter_1_High_Pass_L, script hide Filter_1_KB_Track, script hide Filter_1_KB_Track_L, script hide Filter_2_Frequency, script hide Filter_2_Frequency_L, script hide Filter_2_Resonance, script hide Filter_2_Resonance_L, script hide Filter_2_Env_Amount, script hide Filter_2_Env_Amount_L, script hide Filter_2_KB_Track, script hide Filter_2_KB_Track_L, script hide Link_Filters, script hide Link_Filters_L, script hide Filter_Order, script hide Filter_Order_L, script hide Clipping_Level, script hide Clipping_Level_L, script hide Filter_Env_Attack, script hide Filter_Env_Attack_L, script hide Filter_Env_Sustain, script hide Filter_Env_Sustain_L, script hide Filter_Env_Delay, script hide Filter_Env_Delay_L, script hide Filter_Env_Release, script hide Filter_Env_Release_L, script hide Filter_Env_Loop, script hide Filter_Env_Loop_L, script hide Filter_Env_Velocity, script hide Filter_Env_Velocity_L, script hide VCA_Env_Attack, script hide VCA_Env_Attack_L, script hide VCA_Env_Sustain, script hide VCA_Env_Sustain_L, script hide VCA_Env_Delay, script hide VCA_Env_Delay_L, script hide VCA_Env_Release, script hide VCA_Env_Release_L, script hide VCA_Env_Loop, script hide VCA_Env_Loop_L, script hide VCA_Env_Velocity, script hide VCA_Env_Velocity_L, script hide Mod_Osc_Frequency, script hide Mod_Osc_Frequency_L, script hide Mod_Osc_Waveform, script hide Mod_Osc_Waveform_L, script hide Mod_Osc_Audio_Rate, script hide Mod_Osc_Audio_Rate_L, script hide Mod_Osc_KB_Track, script hide Mod_Osc_KB_Track_L, script hide Mod_Osc_KB_Reset, script hide Mod_Osc_KB_Reset_L, script hide Mod_Osc_Unipolar, script hide Mod_Osc_Unipolar_L, script hide Mod_Osc_Pitch_Amount, script hide Mod_Osc_Pitch_Amount_L, script hide Mod_Osc_Pitch_OSC_1, script hide Mod_Osc_Pitch_OSC_1_L, script hide Mod_Osc_Pitch_OSC_2, script hide Mod_Osc_Pitch_OSC_2_L, script hide Mod_Osc_PWM_Amount, script hide Mod_Osc_PWM_Amount_L, script hide Mod_Osc_PWM_OSC_1, script hide Mod_Osc_PWM_OSC_1_L, script hide Mod_Osc_PWM_OSC_2, script hide Mod_Osc_PWM_OSC_2_L, script hide Mod_Osc_Filter_Amount, script hide Mod_Osc_Filter_Amount_L, script hide Mod_Osc_Filter_F1, script hide Mod_Osc_Filter_F1_L, script hide Mod_Osc_Filter_F2, script hide Mod_Osc_Filter_F2_L, script hide Mod_Osc_VCA_Amount, script hide Mod_Osc_VCA_Amount_L, script hide Mod_Osc_VCA_Pan, script hide Mod_Osc_VCA_Pan_L, script hide Mod_Osc_Level, script hide Mod_Osc_Level_L, script hide LFO_1_Rate, script hide LFO_1_Rate_L, script hide LFO_1_Amount, script hide LFO_1_Amount_L, script hide LFO_1_Waveform, script hide LFO_1_Waveform_L, script hide LFO_2_Rate, script hide LFO_2_Rate_L, script hide LFO_2_Amount, script hide LFO_2_Amount_L, script hide LFO_2_Waveform, script hide LFO_2_Waveform_L, script hide Pitch_LFO_Rate, script hide Pitch_LFO_Rate_L, script hide Pitch_LFO_Shape, script hide Pitch_LFO_Shape_L, script hide Pitch_LFO_Amount, script hide Pitch_LFO_Amount_L, script hide Pitch_LFO_OSC_1, script hide Pitch_LFO_OSC_1_L, script hide Pitch_LFO_OSC_2, script hide Pitch_LFO_OSC_2_L, script hide Pitch_LFO_Mod_Osc, script hide Pitch_LFO_Mod_Osc_L, script hide Pitch_LFO_Detune, script hide Pitch_LFO_Detune_L, script hide Voice_Detune, script hide Voice_Detune_L, script hide Voice_Unison, script hide Voice_Unison_L, script hide Voice_Mono, script hide Voice_Mono_L, script hide Glide_Time, script hide Glide_Time_L, script hide Timbre_Volume, script hide Timbre_Volume_L, script hide Pan, script hide Pan_L, script hide Pan_Spread, script hide Pan_Spread_L, script hide Low_Cut, script hide Low_Cut_L, script hide Mod_Wheel, script hide Mod_Wheel_L, script hide Expression, script hide Expression_L, script hide Mute, script hide Mute_L, script hide Hold, script hide Hold_L, script hide Sustain_Pedal, script hide Sustain_Pedal_L, script hide Delay_Time_Left, script hide Delay_Time_Left_L, script hide Delay_Time_Right, script hide Delay_Time_Right_L, script hide Link_Delays, script hide Link_Delays_L, script hide Delay_Clock_Sync, script hide Delay_Clock_Sync_L, script hide Delay_Feedback, script hide Delay_Feedback_L, script hide Delay_Character, script hide Delay_Character_L, script hide Delay_Mix, script hide Delay_Mix_L, script hide Delay_Timbre_A, script hide Delay_Timbre_A_L, script hide Delay_Timbre_B, script hide Delay_Timbre_B_L, script hide Arp_On_Off, script hide Arp_On_Off_L, script hide Arp_FW_BK, script hide Arp_FW_BK_L, script hide Arp_Direction, script hide Arp_Direction_L, script hide Arp_Octave_Range, script hide Arp_Octave_Range_L, script hide Arp_Clock_Div, script hide Arp_Clock_Div_L, script hide Seq_Clock_Div, script hide Seq_Clock_Div_L, script hide Clock_Tempo, script hide Clock_Tempo_L, script hide pc_t0, script hide pc_l1, script hide pc_l2, script hide PCSend, script hide pc_l3, script hide pc_h1, script hide pc_h2, script hide pc_h3"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-622",
+					"maxclass": "newobj",
+					"numinlets": 1,
+					"numoutlets": 2,
+					"patching_rect": [
+						900.0,
+						300.0,
+						60.0,
+						22.0
+					],
+					"outlettype": [
+						"int",
+						"int"
+					],
+					"text": "t i i"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-623",
+					"maxclass": "newobj",
+					"numinlets": 1,
+					"numoutlets": 10,
+					"patching_rect": [
+						900.0,
+						340.0,
+						220.0,
+						22.0
+					],
+					"outlettype": [
+						"bang",
+						"bang",
+						"bang",
+						"bang",
+						"bang",
+						"bang",
+						"bang",
+						"bang",
+						"bang",
+						""
+					],
+					"text": "sel 0 1 2 3 4 5 6 7 8"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-624",
+					"maxclass": "message",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1140.0,
+						300.0,
+						220.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "script show OSC_1_Octave, script show OSC_1_Octave_L, script show OSC_1_Frequency, script show OSC_1_Frequency_L, script show OSC_1_Tri_Saw_Mix, script show OSC_1_Tri_Saw_Mix_L, script show OSC_1_PW, script show OSC_1_PW_L, script show OSC_1_Wave_Mix, script show OSC_1_Wave_Mix_L, script show OSC_1_Level, script show OSC_1_Level_L, script show OSC_2_Octave, script show OSC_2_Octave_L, script show OSC_2_Frequency, script show OSC_2_Frequency_L, script show OSC_2_Tri_Saw_Mix, script show OSC_2_Tri_Saw_Mix_L, script show OSC_2_PW, script show OSC_2_PW_L, script show OSC_2_Wave_Mix, script show OSC_2_Wave_Mix_L, script show OSC_2_Level, script show OSC_2_Level_L, script show OSC_2_1_Sync, script show OSC_2_1_Sync_L, script show OSC_2_1_FM, script show OSC_2_1_FM_L, script show OSC_1_2_FM, script show OSC_1_2_FM_L, script show FM_Amount, script show FM_Amount_L, script show Ring_Mod_Level, script show Ring_Mod_Level_L, script show Noise_Level, script show Noise_Level_L"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-625",
+					"maxclass": "message",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1140.0,
+						326.0,
+						220.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "script show Filter_1_Cutoff, script show Filter_1_Cutoff_L, script show Filter_1_Resonance, script show Filter_1_Resonance_L, script show Filter_1_Env_Amount, script show Filter_1_Env_Amount_L, script show Filter_1_High_Pass, script show Filter_1_High_Pass_L, script show Filter_1_KB_Track, script show Filter_1_KB_Track_L, script show Filter_2_Frequency, script show Filter_2_Frequency_L, script show Filter_2_Resonance, script show Filter_2_Resonance_L, script show Filter_2_Env_Amount, script show Filter_2_Env_Amount_L, script show Filter_2_KB_Track, script show Filter_2_KB_Track_L, script show Link_Filters, script show Link_Filters_L, script show Filter_Order, script show Filter_Order_L, script show Clipping_Level, script show Clipping_Level_L"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-626",
+					"maxclass": "message",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1140.0,
+						352.0,
+						220.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "script show Filter_Env_Attack, script show Filter_Env_Attack_L, script show Filter_Env_Sustain, script show Filter_Env_Sustain_L, script show Filter_Env_Delay, script show Filter_Env_Delay_L, script show Filter_Env_Release, script show Filter_Env_Release_L, script show Filter_Env_Loop, script show Filter_Env_Loop_L, script show Filter_Env_Velocity, script show Filter_Env_Velocity_L, script show VCA_Env_Attack, script show VCA_Env_Attack_L, script show VCA_Env_Sustain, script show VCA_Env_Sustain_L, script show VCA_Env_Delay, script show VCA_Env_Delay_L, script show VCA_Env_Release, script show VCA_Env_Release_L, script show VCA_Env_Loop, script show VCA_Env_Loop_L, script show VCA_Env_Velocity, script show VCA_Env_Velocity_L"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-627",
+					"maxclass": "message",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1140.0,
+						378.0,
+						220.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "script show Mod_Osc_Frequency, script show Mod_Osc_Frequency_L, script show Mod_Osc_Waveform, script show Mod_Osc_Waveform_L, script show Mod_Osc_Audio_Rate, script show Mod_Osc_Audio_Rate_L, script show Mod_Osc_KB_Track, script show Mod_Osc_KB_Track_L, script show Mod_Osc_KB_Reset, script show Mod_Osc_KB_Reset_L, script show Mod_Osc_Unipolar, script show Mod_Osc_Unipolar_L, script show Mod_Osc_Pitch_Amount, script show Mod_Osc_Pitch_Amount_L, script show Mod_Osc_Pitch_OSC_1, script show Mod_Osc_Pitch_OSC_1_L, script show Mod_Osc_Pitch_OSC_2, script show Mod_Osc_Pitch_OSC_2_L, script show Mod_Osc_PWM_Amount, script show Mod_Osc_PWM_Amount_L, script show Mod_Osc_PWM_OSC_1, script show Mod_Osc_PWM_OSC_1_L, script show Mod_Osc_PWM_OSC_2, script show Mod_Osc_PWM_OSC_2_L, script show Mod_Osc_Filter_Amount, script show Mod_Osc_Filter_Amount_L, script show Mod_Osc_Filter_F1, script show Mod_Osc_Filter_F1_L, script show Mod_Osc_Filter_F2, script show Mod_Osc_Filter_F2_L, script show Mod_Osc_VCA_Amount, script show Mod_Osc_VCA_Amount_L, script show Mod_Osc_VCA_Pan, script show Mod_Osc_VCA_Pan_L, script show Mod_Osc_Level, script show Mod_Osc_Level_L"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-628",
+					"maxclass": "message",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1140.0,
+						404.0,
+						220.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "script show LFO_1_Rate, script show LFO_1_Rate_L, script show LFO_1_Amount, script show LFO_1_Amount_L, script show LFO_1_Waveform, script show LFO_1_Waveform_L, script show LFO_2_Rate, script show LFO_2_Rate_L, script show LFO_2_Amount, script show LFO_2_Amount_L, script show LFO_2_Waveform, script show LFO_2_Waveform_L, script show Pitch_LFO_Rate, script show Pitch_LFO_Rate_L, script show Pitch_LFO_Shape, script show Pitch_LFO_Shape_L, script show Pitch_LFO_Amount, script show Pitch_LFO_Amount_L, script show Pitch_LFO_OSC_1, script show Pitch_LFO_OSC_1_L, script show Pitch_LFO_OSC_2, script show Pitch_LFO_OSC_2_L, script show Pitch_LFO_Mod_Osc, script show Pitch_LFO_Mod_Osc_L, script show Pitch_LFO_Detune, script show Pitch_LFO_Detune_L"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-629",
+					"maxclass": "message",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1140.0,
+						430.0,
+						220.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "script show Voice_Detune, script show Voice_Detune_L, script show Voice_Unison, script show Voice_Unison_L, script show Voice_Mono, script show Voice_Mono_L, script show Glide_Time, script show Glide_Time_L, script show Timbre_Volume, script show Timbre_Volume_L, script show Pan, script show Pan_L, script show Pan_Spread, script show Pan_Spread_L, script show Low_Cut, script show Low_Cut_L, script show Mod_Wheel, script show Mod_Wheel_L, script show Expression, script show Expression_L, script show Mute, script show Mute_L, script show Hold, script show Hold_L, script show Sustain_Pedal, script show Sustain_Pedal_L"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-630",
+					"maxclass": "message",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1140.0,
+						456.0,
+						220.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "script show Delay_Time_Left, script show Delay_Time_Left_L, script show Delay_Time_Right, script show Delay_Time_Right_L, script show Link_Delays, script show Link_Delays_L, script show Delay_Clock_Sync, script show Delay_Clock_Sync_L, script show Delay_Feedback, script show Delay_Feedback_L, script show Delay_Character, script show Delay_Character_L, script show Delay_Mix, script show Delay_Mix_L, script show Delay_Timbre_A, script show Delay_Timbre_A_L, script show Delay_Timbre_B, script show Delay_Timbre_B_L"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-631",
+					"maxclass": "message",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1140.0,
+						482.0,
+						220.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "script show Arp_On_Off, script show Arp_On_Off_L, script show Arp_FW_BK, script show Arp_FW_BK_L, script show Arp_Direction, script show Arp_Direction_L, script show Arp_Octave_Range, script show Arp_Octave_Range_L, script show Arp_Clock_Div, script show Arp_Clock_Div_L, script show Seq_Clock_Div, script show Seq_Clock_Div_L, script show Clock_Tempo, script show Clock_Tempo_L"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-632",
+					"maxclass": "message",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1140.0,
+						508.0,
+						220.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "script show pc_t0, script show pc_l1, script show pc_l2, script show PCSend, script show pc_l3, script show pc_h1, script show pc_h2, script show pc_h3"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-633",
+					"maxclass": "loadbang",
+					"numinlets": 1,
+					"numoutlets": 1,
+					"patching_rect": [
+						640.0,
+						90.0,
+						60.0,
+						22.0
+					],
+					"outlettype": [
+						"bang"
+					]
+				}
+			},
+			{
+				"box": {
+					"id": "obj-634",
+					"maxclass": "message",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						640.0,
+						120.0,
+						40.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "1"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-635",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						720.0,
+						120.0,
+						70.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "delay 300"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-636",
+					"maxclass": "message",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						720.0,
+						150.0,
+						40.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "0"
 				}
 			}
 		],
@@ -20906,83 +21214,11 @@
 			{
 				"patchline": {
 					"source": [
-						"obj-606",
-						0
-					],
-					"destination": [
-						"obj-605",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-607",
-						1
-					],
-					"destination": [
-						"obj-606",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-607",
-						0
-					],
-					"destination": [
-						"obj-608",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-608",
-						0
-					],
-					"destination": [
-						"obj-609",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-609",
-						0
-					],
-					"destination": [
-						"obj-605",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-608",
-						1
-					],
-					"destination": [
-						"obj-610",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
 						"obj-610",
 						0
 					],
 					"destination": [
-						"obj-605",
+						"obj-615",
 						0
 					]
 				}
@@ -20990,131 +21226,11 @@
 			{
 				"patchline": {
 					"source": [
-						"obj-608",
+						"obj-615",
 						2
 					],
 					"destination": [
-						"obj-611",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-611",
-						0
-					],
-					"destination": [
-						"obj-605",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-608",
-						3
-					],
-					"destination": [
-						"obj-612",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-612",
-						0
-					],
-					"destination": [
-						"obj-605",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-608",
-						4
-					],
-					"destination": [
-						"obj-613",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-613",
-						0
-					],
-					"destination": [
-						"obj-605",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-608",
-						5
-					],
-					"destination": [
-						"obj-614",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-614",
-						0
-					],
-					"destination": [
-						"obj-605",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-608",
-						6
-					],
-					"destination": [
-						"obj-615",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-615",
-						0
-					],
-					"destination": [
-						"obj-605",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-4",
-						0
-					],
-					"destination": [
-						"obj-607",
+						"obj-616",
 						0
 					]
 				}
@@ -21123,70 +21239,166 @@
 				"patchline": {
 					"source": [
 						"obj-616",
-						0
-					],
-					"destination": [
-						"obj-617",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-617",
 						0
 					],
 					"destination": [
 						"obj-2",
-						7
+						2
 					]
 				}
 			},
 			{
 				"patchline": {
 					"source": [
-						"obj-616",
-						0
-					],
-					"destination": [
-						"obj-618",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-618",
-						0
-					],
-					"destination": [
-						"obj-619",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-619",
-						0
-					],
-					"destination": [
-						"obj-4",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-619",
-						0
+						"obj-615",
+						1
 					],
 					"destination": [
 						"obj-607",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-607",
+						0
+					],
+					"destination": [
+						"obj-617",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-617",
+						0
+					],
+					"destination": [
+						"obj-618",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-618",
+						0
+					],
+					"destination": [
+						"obj-2",
+						2
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-615",
+						0
+					],
+					"destination": [
+						"obj-609",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-609",
+						0
+					],
+					"destination": [
+						"obj-619",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-619",
+						0
+					],
+					"destination": [
+						"obj-2",
+						3
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-621",
+						0
+					],
+					"destination": [
+						"obj-620",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-622",
+						1
+					],
+					"destination": [
+						"obj-621",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-622",
+						0
+					],
+					"destination": [
+						"obj-623",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-623",
+						0
+					],
+					"destination": [
+						"obj-624",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-624",
+						0
+					],
+					"destination": [
+						"obj-620",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-623",
+						1
+					],
+					"destination": [
+						"obj-625",
 						0
 					]
 				}
@@ -21198,7 +21410,7 @@
 						0
 					],
 					"destination": [
-						"obj-628",
+						"obj-620",
 						0
 					]
 				}
@@ -21206,11 +21418,11 @@
 			{
 				"patchline": {
 					"source": [
-						"obj-628",
+						"obj-623",
 						2
 					],
 					"destination": [
-						"obj-629",
+						"obj-626",
 						0
 					]
 				}
@@ -21218,23 +21430,11 @@
 			{
 				"patchline": {
 					"source": [
-						"obj-629",
+						"obj-626",
 						0
 					],
 					"destination": [
-						"obj-2",
-						2
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-628",
-						1
-					],
-					"destination": [
-						"obj-622",
+						"obj-620",
 						0
 					]
 				}
@@ -21242,72 +21442,228 @@
 			{
 				"patchline": {
 					"source": [
-						"obj-622",
-						0
-					],
-					"destination": [
-						"obj-630",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-630",
-						0
-					],
-					"destination": [
-						"obj-631",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-631",
-						0
-					],
-					"destination": [
-						"obj-2",
-						2
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-628",
-						0
-					],
-					"destination": [
-						"obj-624",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-624",
-						0
-					],
-					"destination": [
-						"obj-632",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-632",
-						0
-					],
-					"destination": [
-						"obj-2",
+						"obj-623",
 						3
+					],
+					"destination": [
+						"obj-627",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-627",
+						0
+					],
+					"destination": [
+						"obj-620",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-623",
+						4
+					],
+					"destination": [
+						"obj-628",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-628",
+						0
+					],
+					"destination": [
+						"obj-620",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-623",
+						5
+					],
+					"destination": [
+						"obj-629",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-629",
+						0
+					],
+					"destination": [
+						"obj-620",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-623",
+						6
+					],
+					"destination": [
+						"obj-630",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-630",
+						0
+					],
+					"destination": [
+						"obj-620",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-623",
+						7
+					],
+					"destination": [
+						"obj-631",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-631",
+						0
+					],
+					"destination": [
+						"obj-620",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-623",
+						8
+					],
+					"destination": [
+						"obj-632",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-632",
+						0
+					],
+					"destination": [
+						"obj-620",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-4",
+						0
+					],
+					"destination": [
+						"obj-622",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-633",
+						0
+					],
+					"destination": [
+						"obj-634",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-634",
+						0
+					],
+					"destination": [
+						"obj-2",
+						7
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-633",
+						0
+					],
+					"destination": [
+						"obj-635",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-635",
+						0
+					],
+					"destination": [
+						"obj-636",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-636",
+						0
+					],
+					"destination": [
+						"obj-4",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-636",
+						0
+					],
+					"destination": [
+						"obj-622",
+						0
 					]
 				}
 			}
