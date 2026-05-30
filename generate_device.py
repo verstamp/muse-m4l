@@ -101,7 +101,7 @@ DESC_EXTRA = {
     61: "Level of the Modulation Oscillator into the mixer (audible at audio rate).",
     62: "Level of the noise generator into the mixer.",
     65: "OVERLOAD - overdrives the mixer sum for overtones, CP3-mixer style.",
-    66: "Switches Filter 1 from low-pass to high-pass operation.",
+    66: "Filter 1 high-pass amount (0-127), continuously blending in high-pass.",
     67: "Cutoff of Filter 1, a discrete Moog transistor-ladder filter (904a-style).",
     68: "Resonance/emphasis at Filter 1's cutoff; self-oscillates when high.",
     69: "Amount of the Filter envelope applied to Filter 1 cutoff.",
@@ -205,7 +205,7 @@ TABS = [
         (67, "Filter 1 Cutoff", K, None),
         (68, "Filter 1 Resonance", K, None),
         (69, "Filter 1 Env Amount", K, None),
-        (66, "Filter 1 High Pass", T, None),
+        (66, "Filter 1 High Pass", K, None),
         (70, "Filter 1 KB Track", M, KBT),
         (72, "Filter 2 Frequency", K, None),
         (73, "Filter 2 Resonance", K, None),
@@ -238,16 +238,16 @@ TABS = [
         (29, "Mod Osc KB Reset", T, None),
         (30, "Mod Osc Unipolar", T, None),
         (31, "Mod Osc Pitch Amount", K, None),
-        (33, "Mod Osc Pitch>OSC 1", T, None),
-        (34, "Mod Osc Pitch>OSC 2", T, None),
+        (33, "Mod Osc Pitch>OSC 1", K, None),
+        (34, "Mod Osc Pitch>OSC 2", K, None),
         (35, "Mod Osc PWM Amount", K, None),
-        (36, "Mod Osc PWM>OSC 1", T, None),
-        (37, "Mod Osc PWM>OSC 2", T, None),
+        (36, "Mod Osc PWM>OSC 1", K, None),
+        (37, "Mod Osc PWM>OSC 2", K, None),
         (39, "Mod Osc Filter Amount", K, None),
-        (40, "Mod Osc Filter>F1", T, None),
-        (41, "Mod Osc Filter>F2", T, None),
+        (40, "Mod Osc Filter>F1", K, None),
+        (41, "Mod Osc Filter>F2", K, None),
         (42, "Mod Osc VCA Amount", K, None),
-        (43, "Mod Osc VCA Pan", T, None),
+        (43, "Mod Osc VCA Pan", K, None),
         (61, "Mod Osc Level", K, None),
     ]),
     ("LFO", [
@@ -491,7 +491,8 @@ def build():
     # ---- shared MIDI plumbing (off-canvas, not in presentation) ----------
     wx = DEVICE_WIDTH + 80
     midiin = p.obj("midiin", [wx, 20, 60, 22])
-    midiformat = p.obj("midiformat", [wx + 150, 60, 90, 22], numinlets=8)
+    midiformat = p.obj("midiformat @hires 1", [wx + 150, 60, 120, 22],
+                       numinlets=8)   # @hires 1: pitch-bend inlet takes -1..1
     midiout = p.box("newobj", [wx + 150, 120, 60, 22], numinlets=1,
                     numoutlets=0, text="midiout")
     p.connect(midiin, 0, midiout, 0)                     # note/MIDI thru
@@ -633,22 +634,28 @@ def build_misc_tab(p, midiin, midiformat, wx):
         p.connect(pn, 0, m, 0)
         p.connect(m, 0, midiformat, 2)
 
-    # PITCH BEND - bidirectional.  Out: dial -> midiformat pitch-bend inlet.
-    # In: midiin -> xbendin (combines the two bytes into one 0-16383 value)
-    # -> prepend set -> dial, so an incoming bend moves the dial without
-    # re-transmitting (prepend set updates value/display only, no output).
+    # PITCH BEND - bidirectional, full 14-bit and symmetric up/down.
+    # The dial is a FLOAT -1..+1 (centre 0): a 0-16383 integer live.dial caps
+    # its display around 255, so up-bend never showed.  midiformat is @hires 1
+    # so its pitch-bend inlet also takes -1..+1, matching the dial directly.
+    # Out: dial (-1..1) -> midiformat pitch-bend inlet.
+    # In:  midiin -> xbendin (0..16383) -> scale to -1..1 -> prepend set -> dial
+    # (set updates the dial without re-transmitting, so no feedback loop).
     lbl("Pitch Bend", [MARGIN + 250, 34, 70, 14], "ms_l2")
-    pb = p.live("live.dial", [MARGIN + 250, 50, DIAL, DIAL], "Pitch Bend", 1,
-                0, 16383, varname="PitchBend", initial=8192,
-                annotation="Pitch Bend wheel value (centre 8192). Sends to and "
-                "follows the Muse's pitch wheel.")
+    pb = p.live("live.dial", [MARGIN + 250, 50, DIAL, DIAL], "Pitch Bend", 0,
+                -1.0, 1.0, varname="PitchBend", initial=0.0,
+                annotation="Pitch Bend wheel (-1..+1, centre 0). Sends to and "
+                "follows the Muse's pitch wheel, full 14-bit and both directions.")
     members.append("PitchBend")
     p.connect(pb, 0, midiformat, 5)                      # pitch-bend inlet (out)
     xb = p.obj("xbendin", [wx + 980, 440, 70, 22], numinlets=1, numoutlets=2,
                outlettype=["", ""])
     p.connect(midiin, 0, xb, 0)                          # raw bytes from midiin
-    pbset = p.obj("prepend set", [wx + 980, 470, 80, 22], numinlets=2)
-    p.connect(xb, 0, pbset, 0)                           # 14-bit value 0-16383
+    pbsc = p.obj("expr ($i1 - 8192) / 8192.", [wx + 980, 470, 170, 22],
+                 numinlets=1, numoutlets=1, outlettype=[""])
+    p.connect(xb, 0, pbsc, 0)                            # 0..16383 -> -1..+1
+    pbset = p.obj("prepend set", [wx + 980, 500, 80, 22], numinlets=2)
+    p.connect(pbsc, 0, pbset, 0)
     p.connect(pbset, 0, pb, 0)
 
     lbl("Mod Wheel (CC1), Hold (CC71), Expression & Sustain are on the VOICE "

@@ -158,7 +158,7 @@ Timbre A/B sel + Ch A/Ch B ─▶ [expr ?:] ─▶ [clip 1 16] ────┘ (
 
 IN  (Muse → UI):  one [ctlin <cc>] per control
 ctlin <cc> ─▶ [>=64 / expr] ─▶ prepend set ─▶ live.*
-midiin ─▶ xbendin ─▶ prepend set ─▶ live.dial (Pitch Bend)
+midiin ─▶ xbendin ─▶ [(x−8192)/8192] ─▶ prepend set ─▶ live.dial (Pitch Bend, −1..1)
 midiin ────────────────────────────────────────────▶ midiout   (note thru)
 ```
 
@@ -201,7 +201,11 @@ alongside the objects so they can't drift out of sync.
 The MIDI CC parameter map and descriptions were compiled from:
 
 - [pencilresearch/midi: Moog/Muse.csv](https://github.com/pencilresearch/midi/blob/main/Moog/Muse.csv)
-- Moog Muse 1.4 official documentation
+- Moog Muse 1.4 official documentation (Appendix A) — used as ground truth to
+  correct several values: the Filter/VCA envelope stage labels (CC 80/81 and
+  87/88 are Decay/Sustain, not Sustain/Delay), and the Mod Osc destination
+  controls (CC 33, 34, 36, 37, 40, 41, 43) plus Filter 1 High Pass (CC 66),
+  which are continuous **0–127** controls, not on/off toggles.
 
 ## TODO
 
