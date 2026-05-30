@@ -180,7 +180,7 @@
 			{
 				"box": {
 					"id": "obj-6",
-					"maxclass": "live.panel",
+					"maxclass": "panel",
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
@@ -196,13 +196,22 @@
 						854.0,
 						384.0
 					],
-					"bgcolor": [
+					"mode": 1,
+					"rounded": 8,
+					"ignoreclick": 1,
+					"bgfillcolor_type": "color",
+					"bgfillcolor_color": [
 						0.13,
 						0.13,
 						0.13,
 						1.0
 					],
-					"rounded": 4
+					"bgcolor": [
+						0.13,
+						0.13,
+						0.13,
+						1.0
+					]
 				}
 			},
 			{
