@@ -19,6 +19,7 @@ the synth's own stored presets.
 - Ableton **Live 11 or 12** with **Max for Live** (Live Suite, or the Max for
   Live add-on) and Max 8.6+.
 - A MIDI connection from your computer to the Muse (USB or a MIDI interface).
+- **Moog Muse Firmware 1.4** (this plugin has only been tested with this version).
 
 ## Critical Muse setup
 
@@ -174,6 +175,13 @@ alongside the objects so they can't drift out of sync.
   the hardware with no CC representation, so it can't be controlled here.
 - **Timbre A only.** The device targets the primary MIDI channel. Independent
   control of Timbre B (Multi Mode, second channel) is out of scope.
+
+## Data sources
+
+The MIDI CC parameter map and descriptions were compiled from:
+
+- [pencilresearch/midi: Moog/Muse.csv](https://github.com/pencilresearch/midi/blob/main/Moog/Muse.csv)
+- Moog Muse 1.4 official documentation
 
 ## Status / testing note
 
