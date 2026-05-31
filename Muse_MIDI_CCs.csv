@@ -71,14 +71,14 @@ Moog,Muse,,Filter 2 KB Tracking,,76,,0,127,,,,,,,0-based,,0-42: Off; 43-84: Half
 Moog,Muse,,Link Filters,,77,,0,127,,,,,,,0-based,,0-63: Off; 64-127: On
 Moog,Muse,,Filters Order,,78,,0,127,,,,,,,0-based,,0-42: Serial; 43-84: Stereo; 85-127: Parallel
 Moog,Muse,,Filter Env Attack,,79,,0,127,,,,,,,0-based,,
-Moog,Muse,,Filter Env Sustain,,80,,0,127,,,,,,,0-based,,
-Moog,Muse,,Filter Env Delay,,81,,0,127,,,,,,,0-based,,
+Moog,Muse,,Filter Env Decay,,80,,0,127,,,,,,,0-based,,
+Moog,Muse,,Filter Env Sustain,,81,,0,127,,,,,,,0-based,,
 Moog,Muse,,Filter Env Release,,82,,0,127,,,,,,,0-based,,
 Moog,Muse,,Filter Env Loop,,83,,0,127,,,,,,,0-based,,0-63: Off; 64-127: On
 Moog,Muse,,Filter Env Velocity,,85,,0,127,,,,,,,0-based,,0-63: Off; 64-127: On
 Moog,Muse,,VCA Env Attack,,86,,0,127,,,,,,,0-based,,
-Moog,Muse,,VCA Env Sustain,,87,,0,127,,,,,,,0-based,,
-Moog,Muse,,VCA Env Delay,,88,,0,127,,,,,,,0-based,,
+Moog,Muse,,VCA Env Decay,,87,,0,127,,,,,,,0-based,,
+Moog,Muse,,VCA Env Sustain,,88,,0,127,,,,,,,0-based,,
 Moog,Muse,,VCA Env Release,,89,,0,127,,,,,,,0-based,,
 Moog,Muse,,VCA Env Loop,,90,,0,127,,,,,,,0-based,,0-63: Off; 64-127: On
 Moog,Muse,,VCA Env Velocity,,91,,0,127,,,,,,,0-based,,0-63: Off; 64-127: On

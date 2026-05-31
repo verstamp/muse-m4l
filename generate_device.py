@@ -22,7 +22,9 @@ The whole UI fits inside Live's fixed 169-pixel device height: each tab shows
 its controls in two compact rows, and only the active tab is visible (live.tab
 + thispatcher script show/hide, with per-tab scripting-name lists generated
 here so they cannot drift out of sync with the objects).  The Bank tab holds
-Program Change; the Misc tab holds Panic and (bidirectional) Pitch Bend.
+Program Change; the Misc tab holds Panic and (bidirectional) Pitch Bend.  Both
+Muse timbres are controlled by running one device instance per Ableton track on
+different MIDI channels (Multi Mode); Live's per-track MIDI To remaps the output.
 
 Outbound: every control -> [scale] -> prepend <cc> -> midiformat -> midiout.
 Inbound (bidirectional): one [ctlin <cc>] per control writes the value back
@@ -99,7 +101,7 @@ DESC_EXTRA = {
     61: "Level of the Modulation Oscillator into the mixer (audible at audio rate).",
     62: "Level of the noise generator into the mixer.",
     65: "OVERLOAD - overdrives the mixer sum for overtones, CP3-mixer style.",
-    66: "Switches Filter 1 from low-pass to high-pass operation.",
+    66: "Filter 1 high-pass amount (0-127), continuously blending in high-pass.",
     67: "Cutoff of Filter 1, a discrete Moog transistor-ladder filter (904a-style).",
     68: "Resonance/emphasis at Filter 1's cutoff; self-oscillates when high.",
     69: "Amount of the Filter envelope applied to Filter 1 cutoff.",
@@ -112,14 +114,14 @@ DESC_EXTRA = {
     77: "Links Filter 1 & 2 so one cutoff control sweeps both.",
     78: "Filter routing: Serial (1>2), Stereo (1 left / 2 right), or Parallel.",
     79: "Attack time of the Filter envelope.",
-    80: "Sustain level of the Filter envelope.",
-    81: "Pre-attack delay before the Filter envelope starts.",
+    80: "Decay time of the Filter envelope (fall to the sustain level).",
+    81: "Sustain level held by the Filter envelope while a key is down.",
     82: "Release time of the Filter envelope after key release.",
     83: "Loops the Filter envelope for cycling, LFO-like modulation.",
     85: "Makes the Filter envelope depth respond to key velocity.",
     86: "Attack time of the Amplifier (VCA) envelope.",
-    87: "Sustain level of the Amplifier (VCA) envelope.",
-    88: "Pre-attack delay before the Amplifier envelope starts.",
+    87: "Decay time of the Amplifier (VCA) envelope (fall to the sustain level).",
+    88: "Sustain level held by the Amplifier (VCA) envelope while a key is down.",
     89: "Release time of the Amplifier envelope after key release.",
     90: "Loops the Amplifier envelope for cycling, tremolo-like modulation.",
     91: "Makes loudness respond to key velocity via the Amplifier envelope.",
@@ -168,8 +170,8 @@ INIT = {
     58: 127,   # OSC 1 Level
     46: 64,    # OSC 1 Tri/Saw Mix -> midway
     67: 127,   # Filter 1 Cutoff -> open
-    80: 127,   # Filter Env Sustain
-    87: 127,   # VCA Env Sustain
+    81: 127,   # Filter Env Sustain
+    88: 127,   # VCA Env Sustain
     86: 0,     # VCA Env Attack -> instant
     89: 20,    # VCA Env Release -> short
 }
@@ -203,7 +205,7 @@ TABS = [
         (67, "Filter 1 Cutoff", K, None),
         (68, "Filter 1 Resonance", K, None),
         (69, "Filter 1 Env Amount", K, None),
-        (66, "Filter 1 High Pass", T, None),
+        (66, "Filter 1 High Pass", K, None),
         (70, "Filter 1 KB Track", M, KBT),
         (72, "Filter 2 Frequency", K, None),
         (73, "Filter 2 Resonance", K, None),
@@ -215,14 +217,14 @@ TABS = [
     ]),
     ("Env", [
         (79, "Filter Env Attack", K, None),
-        (80, "Filter Env Sustain", K, None),
-        (81, "Filter Env Delay", K, None),
+        (80, "Filter Env Decay", K, None),
+        (81, "Filter Env Sustain", K, None),
         (82, "Filter Env Release", K, None),
         (83, "Filter Env Loop", T, None),
         (85, "Filter Env Velocity", T, None),
         (86, "VCA Env Attack", K, None),
-        (87, "VCA Env Sustain", K, None),
-        (88, "VCA Env Delay", K, None),
+        (87, "VCA Env Decay", K, None),
+        (88, "VCA Env Sustain", K, None),
         (89, "VCA Env Release", K, None),
         (90, "VCA Env Loop", T, None),
         (91, "VCA Env Velocity", T, None),
@@ -236,16 +238,16 @@ TABS = [
         (29, "Mod Osc KB Reset", T, None),
         (30, "Mod Osc Unipolar", T, None),
         (31, "Mod Osc Pitch Amount", K, None),
-        (33, "Mod Osc Pitch>OSC 1", T, None),
-        (34, "Mod Osc Pitch>OSC 2", T, None),
+        (33, "Mod Osc Pitch>OSC 1", K, None),
+        (34, "Mod Osc Pitch>OSC 2", K, None),
         (35, "Mod Osc PWM Amount", K, None),
-        (36, "Mod Osc PWM>OSC 1", T, None),
-        (37, "Mod Osc PWM>OSC 2", T, None),
+        (36, "Mod Osc PWM>OSC 1", K, None),
+        (37, "Mod Osc PWM>OSC 2", K, None),
         (39, "Mod Osc Filter Amount", K, None),
-        (40, "Mod Osc Filter>F1", T, None),
-        (41, "Mod Osc Filter>F2", T, None),
+        (40, "Mod Osc Filter>F1", K, None),
+        (41, "Mod Osc Filter>F2", K, None),
         (42, "Mod Osc VCA Amount", K, None),
-        (43, "Mod Osc VCA Pan", T, None),
+        (43, "Mod Osc VCA Pan", K, None),
         (61, "Mod Osc Level", K, None),
     ]),
     ("LFO", [
@@ -318,7 +320,7 @@ CAPTION_MAP = [
 # Whole-word abbreviations applied to on-screen captions for legibility.
 WORD_ABBR = {
     "Resonance": "Reso", "Frequency": "Freq", "Amount": "Amt",
-    "Attack": "Atk", "Release": "Rel", "Sustain": "Sus",
+    "Attack": "Atk", "Release": "Rel", "Sustain": "Sus", "Decay": "Dec",
     "Velocity": "Vel", "Waveform": "Wave", "Octave": "Oct", "Level": "Lvl",
     "Character": "Char", "Feedback": "Fbk", "Expression": "Expr",
     "Direction": "Dir", "Pedal": "Ped", "Range": "Rng", "Spread": "Spr",
@@ -549,7 +551,8 @@ def build():
                outlettype=["bang"])
     ch1 = p.msg("1", [wx, 120, 40, 22])
     p.connect(lb, 0, ch1, 0)
-    p.connect(ch1, 0, midiformat, 7)                     # MIDI channel = 1
+    p.connect(ch1, 0, midiformat, 7)        # device sends on ch 1; Live's track
+                                            # MIDI To remaps to the Muse's channel
     dly = p.obj("delay 300", [wx + 80, 120, 70, 22], numinlets=2)
     zero = p.msg("0", [wx + 80, 150, 40, 22])
     p.connect(lb, 0, dly, 0)
@@ -627,22 +630,27 @@ def build_misc_tab(p, midiin, midiformat, wx):
         p.connect(pn, 0, m, 0)
         p.connect(m, 0, midiformat, 2)
 
-    # PITCH BEND - bidirectional.  Out: dial -> midiformat pitch-bend inlet.
-    # In: midiin -> xbendin (combines the two bytes into one 0-16383 value)
-    # -> prepend set -> dial, so an incoming bend moves the dial without
-    # re-transmitting (prepend set updates value/display only, no output).
+    # PITCH BEND - bidirectional, 7-bit.  A large-range integer live.dial caps
+    # its display (~255), so this is a plain 0-127 int dial (64 = centre); the
+    # default midiformat pitch-bend inlet takes 0-127, matching it directly.
+    # Out: dial (0-127) -> midiformat pitch-bend inlet.
+    # In:  midiin -> xbendin (0..16383) -> /128 (-> 0-127) -> prepend set -> dial
+    # (set updates the dial without re-transmitting, so no feedback loop).
     lbl("Pitch Bend", [MARGIN + 250, 34, 70, 14], "ms_l2")
     pb = p.live("live.dial", [MARGIN + 250, 50, DIAL, DIAL], "Pitch Bend", 1,
-                0, 16383, varname="PitchBend", initial=8192,
-                annotation="Pitch Bend wheel value (centre 8192). Sends to and "
+                0, 127, varname="PitchBend", initial=64,
+                annotation="Pitch Bend wheel (0-127, 64 = centre). Sends to and "
                 "follows the Muse's pitch wheel.")
     members.append("PitchBend")
     p.connect(pb, 0, midiformat, 5)                      # pitch-bend inlet (out)
     xb = p.obj("xbendin", [wx + 980, 440, 70, 22], numinlets=1, numoutlets=2,
                outlettype=["", ""])
     p.connect(midiin, 0, xb, 0)                          # raw bytes from midiin
-    pbset = p.obj("prepend set", [wx + 980, 470, 80, 22], numinlets=2)
-    p.connect(xb, 0, pbset, 0)                           # 14-bit value 0-16383
+    pbsc = p.obj("expr $i1 / 128", [wx + 980, 470, 170, 22],
+                 numinlets=1, numoutlets=1, outlettype=[""])
+    p.connect(xb, 0, pbsc, 0)                            # 0..16383 -> 0-127
+    pbset = p.obj("prepend set", [wx + 980, 500, 80, 22], numinlets=2)
+    p.connect(pbsc, 0, pbset, 0)
     p.connect(pbset, 0, pb, 0)
 
     lbl("Mod Wheel (CC1), Hold (CC71), Expression & Sustain are on the VOICE "
@@ -652,6 +660,8 @@ def build_misc_tab(p, midiin, midiformat, wx):
     lbl("No one-click 'pull': the Muse can't transmit its whole state. Turn a "
         "knob and the plugin follows.", [MARGIN, 132, 540, 14], "ms_h3")
     return members
+
+
 
 
 def make_control(p, kind, longname, enum, x, ry, annotation, initial=None):
