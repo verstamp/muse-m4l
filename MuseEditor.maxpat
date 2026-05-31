@@ -73,13 +73,13 @@
 					"patching_rect": [
 						790.0,
 						60.0,
-						120.0,
+						90.0,
 						22.0
 					],
 					"outlettype": [
 						""
 					],
-					"text": "midiformat @hires 1"
+					"text": "midiformat"
 				}
 			},
 			{
@@ -127,7 +127,7 @@
 							"parameter_shortname": "Tab",
 							"parameter_type": 2,
 							"parameter_mmin": 0,
-							"parameter_mmax": 10,
+							"parameter_mmax": 9,
 							"parameter_initial_enable": 0,
 							"parameter_initial": [
 								0
@@ -143,8 +143,7 @@
 								"DELAY",
 								"ARP",
 								"BANK",
-								"MISC",
-								"TIMBRE"
+								"MISC"
 							],
 							"parameter_range": [
 								"OSC",
@@ -156,8 +155,7 @@
 								"DELAY",
 								"ARP",
 								"BANK",
-								"MISC",
-								"TIMBRE"
+								"MISC"
 							]
 						}
 					}
@@ -14975,18 +14973,18 @@
 						"valueof": {
 							"parameter_longname": "Pitch Bend",
 							"parameter_shortname": "Pitch Bend",
-							"parameter_type": 0,
-							"parameter_mmin": -1.0,
-							"parameter_mmax": 1.0,
+							"parameter_type": 1,
+							"parameter_mmin": 0,
+							"parameter_mmax": 127,
 							"parameter_initial_enable": 1,
 							"parameter_initial": [
-								0.0
+								64
 							],
 							"parameter_invisible": 0
 						}
 					},
-					"annotation": "Pitch Bend wheel (-1..+1, centre 0). Sends to and follows the Muse's pitch wheel, full 14-bit and both directions.",
-					"hint": "Pitch Bend wheel (-1..+1, centre 0). Sends to and follows the Muse's pitch wheel, full 14-bit and both directions."
+					"annotation": "Pitch Bend wheel (0-127, 64 = centre). Sends to and follows the Muse's pitch wheel.",
+					"hint": "Pitch Bend wheel (0-127, 64 = centre). Sends to and follows the Muse's pitch wheel."
 				}
 			},
 			{
@@ -15023,7 +15021,7 @@
 					"outlettype": [
 						""
 					],
-					"text": "expr ($i1 - 8192) / 8192."
+					"text": "expr $i1 / 128"
 				}
 			},
 			{
@@ -15125,370 +15123,6 @@
 			{
 				"box": {
 					"id": "obj-615",
-					"maxclass": "comment",
-					"numinlets": 1,
-					"numoutlets": 0,
-					"patching_rect": [
-						10.0,
-						30.0,
-						130.0,
-						14.0
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						10.0,
-						30.0,
-						130.0,
-						14.0
-					],
-					"text": "EDIT TIMBRE",
-					"fontsize": 8.0,
-					"fontface": 1,
-					"textjustification": 0,
-					"varname": "tb_t0"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-616",
-					"maxclass": "live.tab",
-					"numinlets": 1,
-					"numoutlets": 1,
-					"patching_rect": [
-						10.0,
-						46.0,
-						70.0,
-						18.0
-					],
-					"outlettype": [
-						""
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						10.0,
-						46.0,
-						70.0,
-						18.0
-					],
-					"parameter_enable": 1,
-					"varname": "TimbreSel",
-					"saved_attribute_attributes": {
-						"valueof": {
-							"parameter_longname": "Timbre Select",
-							"parameter_shortname": "Timbre Select",
-							"parameter_type": 2,
-							"parameter_mmin": 0,
-							"parameter_mmax": 1,
-							"parameter_initial_enable": 1,
-							"parameter_initial": [
-								0
-							],
-							"parameter_invisible": 0,
-							"parameter_enum": [
-								"A",
-								"B"
-							],
-							"parameter_range": [
-								"A",
-								"B"
-							]
-						}
-					},
-					"annotation": "Which timbre the on-screen controls edit. Output is sent on that timbre's MIDI channel (set to the right).",
-					"hint": "Which timbre the on-screen controls edit. Output is sent on that timbre's MIDI channel (set to the right)."
-				}
-			},
-			{
-				"box": {
-					"id": "obj-617",
-					"maxclass": "comment",
-					"numinlets": 1,
-					"numoutlets": 0,
-					"patching_rect": [
-						102.0,
-						32.0,
-						30.0,
-						14.0
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						102.0,
-						32.0,
-						30.0,
-						14.0
-					],
-					"text": "A Ch",
-					"fontsize": 8.0,
-					"fontface": 0,
-					"textjustification": 0,
-					"varname": "tb_la"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-618",
-					"maxclass": "live.numbox",
-					"numinlets": 1,
-					"numoutlets": 1,
-					"patching_rect": [
-						134.0,
-						30.0,
-						38.0,
-						18.0
-					],
-					"outlettype": [
-						""
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						134.0,
-						30.0,
-						38.0,
-						18.0
-					],
-					"parameter_enable": 1,
-					"varname": "TimbreAChan",
-					"saved_attribute_attributes": {
-						"valueof": {
-							"parameter_longname": "Timbre A Ch",
-							"parameter_shortname": "Timbre A Ch",
-							"parameter_type": 1,
-							"parameter_mmin": 1,
-							"parameter_mmax": 16,
-							"parameter_initial_enable": 1,
-							"parameter_initial": [
-								1
-							],
-							"parameter_invisible": 0
-						}
-					},
-					"annotation": "MIDI channel for Timbre A (match the Muse's MENU > MIDI > MIDI IN CHANNEL).",
-					"hint": "MIDI channel for Timbre A (match the Muse's MENU > MIDI > MIDI IN CHANNEL)."
-				}
-			},
-			{
-				"box": {
-					"id": "obj-619",
-					"maxclass": "comment",
-					"numinlets": 1,
-					"numoutlets": 0,
-					"patching_rect": [
-						102.0,
-						52.0,
-						30.0,
-						14.0
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						102.0,
-						52.0,
-						30.0,
-						14.0
-					],
-					"text": "B Ch",
-					"fontsize": 8.0,
-					"fontface": 0,
-					"textjustification": 0,
-					"varname": "tb_lb"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-620",
-					"maxclass": "live.numbox",
-					"numinlets": 1,
-					"numoutlets": 1,
-					"patching_rect": [
-						134.0,
-						50.0,
-						38.0,
-						18.0
-					],
-					"outlettype": [
-						""
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						134.0,
-						50.0,
-						38.0,
-						18.0
-					],
-					"parameter_enable": 1,
-					"varname": "TimbreBChan",
-					"saved_attribute_attributes": {
-						"valueof": {
-							"parameter_longname": "Timbre B Ch",
-							"parameter_shortname": "Timbre B Ch",
-							"parameter_type": 1,
-							"parameter_mmin": 1,
-							"parameter_mmax": 16,
-							"parameter_initial_enable": 1,
-							"parameter_initial": [
-								2
-							],
-							"parameter_invisible": 0
-						}
-					},
-					"annotation": "MIDI channel for Timbre B (match the Muse's MENU > MIDI > MULTI IN B CHANNEL).",
-					"hint": "MIDI channel for Timbre B (match the Muse's MENU > MIDI > MULTI IN B CHANNEL)."
-				}
-			},
-			{
-				"box": {
-					"id": "obj-621",
-					"maxclass": "comment",
-					"numinlets": 1,
-					"numoutlets": 0,
-					"patching_rect": [
-						10.0,
-						96.0,
-						540.0,
-						14.0
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						10.0,
-						96.0,
-						540.0,
-						14.0
-					],
-					"text": "Muse: MENU > MIDI > MULTI MODE: ON (default) and RECEIVE CC: ON.",
-					"fontsize": 8.0,
-					"fontface": 0,
-					"textjustification": 0,
-					"varname": "tb_h1"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-622",
-					"maxclass": "comment",
-					"numinlets": 1,
-					"numoutlets": 0,
-					"patching_rect": [
-						10.0,
-						114.0,
-						540.0,
-						14.0
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						10.0,
-						114.0,
-						540.0,
-						14.0
-					],
-					"text": "Set MIDI IN CHANNEL (= Timbre A) and MULTI IN B CHANNEL (= Timbre B) to different channels, matched here.",
-					"fontsize": 8.0,
-					"fontface": 0,
-					"textjustification": 0,
-					"varname": "tb_h2"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-623",
-					"maxclass": "comment",
-					"numinlets": 1,
-					"numoutlets": 0,
-					"patching_rect": [
-						10.0,
-						132.0,
-						540.0,
-						14.0
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						10.0,
-						132.0,
-						540.0,
-						14.0
-					],
-					"text": "Hardware->UI sync is channel-agnostic: it follows whichever timbre's knobs you turn.",
-					"fontsize": 8.0,
-					"fontface": 0,
-					"textjustification": 0,
-					"varname": "tb_h3"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-624",
-					"maxclass": "newobj",
-					"numinlets": 3,
-					"numoutlets": 1,
-					"patching_rect": [
-						960.0,
-						210.0,
-						200.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "expr (($i3) == 0) ? ($i1) : ($i2)"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-625",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 2,
-					"patching_rect": [
-						960.0,
-						170.0,
-						60.0,
-						22.0
-					],
-					"outlettype": [
-						"bang",
-						"int"
-					],
-					"text": "t b i"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-626",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 2,
-					"patching_rect": [
-						1040.0,
-						170.0,
-						60.0,
-						22.0
-					],
-					"outlettype": [
-						"bang",
-						"int"
-					],
-					"text": "t b i"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-627",
-					"maxclass": "newobj",
-					"numinlets": 3,
-					"numoutlets": 1,
-					"patching_rect": [
-						960.0,
-						250.0,
-						70.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "clip 1 16"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-628",
 					"maxclass": "newobj",
 					"numinlets": 1,
 					"numoutlets": 2,
@@ -15507,7 +15141,7 @@
 			},
 			{
 				"box": {
-					"id": "obj-629",
+					"id": "obj-616",
 					"maxclass": "message",
 					"numinlets": 2,
 					"numoutlets": 1,
@@ -15520,12 +15154,12 @@
 					"outlettype": [
 						""
 					],
-					"text": "script hide OSC_1_Octave, script hide OSC_1_Octave_L, script hide OSC_1_Frequency, script hide OSC_1_Frequency_L, script hide OSC_1_Tri_Saw_Mix, script hide OSC_1_Tri_Saw_Mix_L, script hide OSC_1_PW, script hide OSC_1_PW_L, script hide OSC_1_Wave_Mix, script hide OSC_1_Wave_Mix_L, script hide OSC_1_Level, script hide OSC_1_Level_L, script hide OSC_2_Octave, script hide OSC_2_Octave_L, script hide OSC_2_Frequency, script hide OSC_2_Frequency_L, script hide OSC_2_Tri_Saw_Mix, script hide OSC_2_Tri_Saw_Mix_L, script hide OSC_2_PW, script hide OSC_2_PW_L, script hide OSC_2_Wave_Mix, script hide OSC_2_Wave_Mix_L, script hide OSC_2_Level, script hide OSC_2_Level_L, script hide OSC_2_1_Sync, script hide OSC_2_1_Sync_L, script hide OSC_2_1_FM, script hide OSC_2_1_FM_L, script hide OSC_1_2_FM, script hide OSC_1_2_FM_L, script hide FM_Amount, script hide FM_Amount_L, script hide Ring_Mod_Level, script hide Ring_Mod_Level_L, script hide Noise_Level, script hide Noise_Level_L, script hide Filter_1_Cutoff, script hide Filter_1_Cutoff_L, script hide Filter_1_Resonance, script hide Filter_1_Resonance_L, script hide Filter_1_Env_Amount, script hide Filter_1_Env_Amount_L, script hide Filter_1_High_Pass, script hide Filter_1_High_Pass_L, script hide Filter_1_KB_Track, script hide Filter_1_KB_Track_L, script hide Filter_2_Frequency, script hide Filter_2_Frequency_L, script hide Filter_2_Resonance, script hide Filter_2_Resonance_L, script hide Filter_2_Env_Amount, script hide Filter_2_Env_Amount_L, script hide Filter_2_KB_Track, script hide Filter_2_KB_Track_L, script hide Link_Filters, script hide Link_Filters_L, script hide Filter_Order, script hide Filter_Order_L, script hide Clipping_Level, script hide Clipping_Level_L, script hide Filter_Env_Attack, script hide Filter_Env_Attack_L, script hide Filter_Env_Decay, script hide Filter_Env_Decay_L, script hide Filter_Env_Sustain, script hide Filter_Env_Sustain_L, script hide Filter_Env_Release, script hide Filter_Env_Release_L, script hide Filter_Env_Loop, script hide Filter_Env_Loop_L, script hide Filter_Env_Velocity, script hide Filter_Env_Velocity_L, script hide VCA_Env_Attack, script hide VCA_Env_Attack_L, script hide VCA_Env_Decay, script hide VCA_Env_Decay_L, script hide VCA_Env_Sustain, script hide VCA_Env_Sustain_L, script hide VCA_Env_Release, script hide VCA_Env_Release_L, script hide VCA_Env_Loop, script hide VCA_Env_Loop_L, script hide VCA_Env_Velocity, script hide VCA_Env_Velocity_L, script hide Mod_Osc_Frequency, script hide Mod_Osc_Frequency_L, script hide Mod_Osc_Waveform, script hide Mod_Osc_Waveform_L, script hide Mod_Osc_Audio_Rate, script hide Mod_Osc_Audio_Rate_L, script hide Mod_Osc_KB_Track, script hide Mod_Osc_KB_Track_L, script hide Mod_Osc_KB_Reset, script hide Mod_Osc_KB_Reset_L, script hide Mod_Osc_Unipolar, script hide Mod_Osc_Unipolar_L, script hide Mod_Osc_Pitch_Amount, script hide Mod_Osc_Pitch_Amount_L, script hide Mod_Osc_Pitch_OSC_1, script hide Mod_Osc_Pitch_OSC_1_L, script hide Mod_Osc_Pitch_OSC_2, script hide Mod_Osc_Pitch_OSC_2_L, script hide Mod_Osc_PWM_Amount, script hide Mod_Osc_PWM_Amount_L, script hide Mod_Osc_PWM_OSC_1, script hide Mod_Osc_PWM_OSC_1_L, script hide Mod_Osc_PWM_OSC_2, script hide Mod_Osc_PWM_OSC_2_L, script hide Mod_Osc_Filter_Amount, script hide Mod_Osc_Filter_Amount_L, script hide Mod_Osc_Filter_F1, script hide Mod_Osc_Filter_F1_L, script hide Mod_Osc_Filter_F2, script hide Mod_Osc_Filter_F2_L, script hide Mod_Osc_VCA_Amount, script hide Mod_Osc_VCA_Amount_L, script hide Mod_Osc_VCA_Pan, script hide Mod_Osc_VCA_Pan_L, script hide Mod_Osc_Level, script hide Mod_Osc_Level_L, script hide LFO_1_Rate, script hide LFO_1_Rate_L, script hide LFO_1_Amount, script hide LFO_1_Amount_L, script hide LFO_1_Waveform, script hide LFO_1_Waveform_L, script hide LFO_2_Rate, script hide LFO_2_Rate_L, script hide LFO_2_Amount, script hide LFO_2_Amount_L, script hide LFO_2_Waveform, script hide LFO_2_Waveform_L, script hide Pitch_LFO_Rate, script hide Pitch_LFO_Rate_L, script hide Pitch_LFO_Shape, script hide Pitch_LFO_Shape_L, script hide Pitch_LFO_Amount, script hide Pitch_LFO_Amount_L, script hide Pitch_LFO_OSC_1, script hide Pitch_LFO_OSC_1_L, script hide Pitch_LFO_OSC_2, script hide Pitch_LFO_OSC_2_L, script hide Pitch_LFO_Mod_Osc, script hide Pitch_LFO_Mod_Osc_L, script hide Pitch_LFO_Detune, script hide Pitch_LFO_Detune_L, script hide Voice_Detune, script hide Voice_Detune_L, script hide Voice_Unison, script hide Voice_Unison_L, script hide Voice_Mono, script hide Voice_Mono_L, script hide Glide_Time, script hide Glide_Time_L, script hide Timbre_Volume, script hide Timbre_Volume_L, script hide Pan, script hide Pan_L, script hide Pan_Spread, script hide Pan_Spread_L, script hide Low_Cut, script hide Low_Cut_L, script hide Mod_Wheel, script hide Mod_Wheel_L, script hide Expression, script hide Expression_L, script hide Mute, script hide Mute_L, script hide Hold, script hide Hold_L, script hide Sustain_Pedal, script hide Sustain_Pedal_L, script hide Delay_Time_Left, script hide Delay_Time_Left_L, script hide Delay_Time_Right, script hide Delay_Time_Right_L, script hide Link_Delays, script hide Link_Delays_L, script hide Delay_Clock_Sync, script hide Delay_Clock_Sync_L, script hide Delay_Feedback, script hide Delay_Feedback_L, script hide Delay_Character, script hide Delay_Character_L, script hide Delay_Mix, script hide Delay_Mix_L, script hide Delay_Timbre_A, script hide Delay_Timbre_A_L, script hide Delay_Timbre_B, script hide Delay_Timbre_B_L, script hide Arp_On_Off, script hide Arp_On_Off_L, script hide Arp_FW_BK, script hide Arp_FW_BK_L, script hide Arp_Direction, script hide Arp_Direction_L, script hide Arp_Octave_Range, script hide Arp_Octave_Range_L, script hide Arp_Clock_Div, script hide Arp_Clock_Div_L, script hide Seq_Clock_Div, script hide Seq_Clock_Div_L, script hide Clock_Tempo, script hide Clock_Tempo_L, script hide pc_t0, script hide pc_l1, script hide PCBank, script hide pc_l2, script hide PCPatch, script hide PCSend, script hide pc_l3, script hide pc_h1, script hide pc_h2, script hide Panic, script hide ms_l1, script hide ms_l2, script hide PitchBend, script hide ms_h1, script hide ms_h2, script hide ms_h3, script hide tb_t0, script hide TimbreSel, script hide tb_la, script hide TimbreAChan, script hide tb_lb, script hide TimbreBChan, script hide tb_h1, script hide tb_h2, script hide tb_h3"
+					"text": "script hide OSC_1_Octave, script hide OSC_1_Octave_L, script hide OSC_1_Frequency, script hide OSC_1_Frequency_L, script hide OSC_1_Tri_Saw_Mix, script hide OSC_1_Tri_Saw_Mix_L, script hide OSC_1_PW, script hide OSC_1_PW_L, script hide OSC_1_Wave_Mix, script hide OSC_1_Wave_Mix_L, script hide OSC_1_Level, script hide OSC_1_Level_L, script hide OSC_2_Octave, script hide OSC_2_Octave_L, script hide OSC_2_Frequency, script hide OSC_2_Frequency_L, script hide OSC_2_Tri_Saw_Mix, script hide OSC_2_Tri_Saw_Mix_L, script hide OSC_2_PW, script hide OSC_2_PW_L, script hide OSC_2_Wave_Mix, script hide OSC_2_Wave_Mix_L, script hide OSC_2_Level, script hide OSC_2_Level_L, script hide OSC_2_1_Sync, script hide OSC_2_1_Sync_L, script hide OSC_2_1_FM, script hide OSC_2_1_FM_L, script hide OSC_1_2_FM, script hide OSC_1_2_FM_L, script hide FM_Amount, script hide FM_Amount_L, script hide Ring_Mod_Level, script hide Ring_Mod_Level_L, script hide Noise_Level, script hide Noise_Level_L, script hide Filter_1_Cutoff, script hide Filter_1_Cutoff_L, script hide Filter_1_Resonance, script hide Filter_1_Resonance_L, script hide Filter_1_Env_Amount, script hide Filter_1_Env_Amount_L, script hide Filter_1_High_Pass, script hide Filter_1_High_Pass_L, script hide Filter_1_KB_Track, script hide Filter_1_KB_Track_L, script hide Filter_2_Frequency, script hide Filter_2_Frequency_L, script hide Filter_2_Resonance, script hide Filter_2_Resonance_L, script hide Filter_2_Env_Amount, script hide Filter_2_Env_Amount_L, script hide Filter_2_KB_Track, script hide Filter_2_KB_Track_L, script hide Link_Filters, script hide Link_Filters_L, script hide Filter_Order, script hide Filter_Order_L, script hide Clipping_Level, script hide Clipping_Level_L, script hide Filter_Env_Attack, script hide Filter_Env_Attack_L, script hide Filter_Env_Decay, script hide Filter_Env_Decay_L, script hide Filter_Env_Sustain, script hide Filter_Env_Sustain_L, script hide Filter_Env_Release, script hide Filter_Env_Release_L, script hide Filter_Env_Loop, script hide Filter_Env_Loop_L, script hide Filter_Env_Velocity, script hide Filter_Env_Velocity_L, script hide VCA_Env_Attack, script hide VCA_Env_Attack_L, script hide VCA_Env_Decay, script hide VCA_Env_Decay_L, script hide VCA_Env_Sustain, script hide VCA_Env_Sustain_L, script hide VCA_Env_Release, script hide VCA_Env_Release_L, script hide VCA_Env_Loop, script hide VCA_Env_Loop_L, script hide VCA_Env_Velocity, script hide VCA_Env_Velocity_L, script hide Mod_Osc_Frequency, script hide Mod_Osc_Frequency_L, script hide Mod_Osc_Waveform, script hide Mod_Osc_Waveform_L, script hide Mod_Osc_Audio_Rate, script hide Mod_Osc_Audio_Rate_L, script hide Mod_Osc_KB_Track, script hide Mod_Osc_KB_Track_L, script hide Mod_Osc_KB_Reset, script hide Mod_Osc_KB_Reset_L, script hide Mod_Osc_Unipolar, script hide Mod_Osc_Unipolar_L, script hide Mod_Osc_Pitch_Amount, script hide Mod_Osc_Pitch_Amount_L, script hide Mod_Osc_Pitch_OSC_1, script hide Mod_Osc_Pitch_OSC_1_L, script hide Mod_Osc_Pitch_OSC_2, script hide Mod_Osc_Pitch_OSC_2_L, script hide Mod_Osc_PWM_Amount, script hide Mod_Osc_PWM_Amount_L, script hide Mod_Osc_PWM_OSC_1, script hide Mod_Osc_PWM_OSC_1_L, script hide Mod_Osc_PWM_OSC_2, script hide Mod_Osc_PWM_OSC_2_L, script hide Mod_Osc_Filter_Amount, script hide Mod_Osc_Filter_Amount_L, script hide Mod_Osc_Filter_F1, script hide Mod_Osc_Filter_F1_L, script hide Mod_Osc_Filter_F2, script hide Mod_Osc_Filter_F2_L, script hide Mod_Osc_VCA_Amount, script hide Mod_Osc_VCA_Amount_L, script hide Mod_Osc_VCA_Pan, script hide Mod_Osc_VCA_Pan_L, script hide Mod_Osc_Level, script hide Mod_Osc_Level_L, script hide LFO_1_Rate, script hide LFO_1_Rate_L, script hide LFO_1_Amount, script hide LFO_1_Amount_L, script hide LFO_1_Waveform, script hide LFO_1_Waveform_L, script hide LFO_2_Rate, script hide LFO_2_Rate_L, script hide LFO_2_Amount, script hide LFO_2_Amount_L, script hide LFO_2_Waveform, script hide LFO_2_Waveform_L, script hide Pitch_LFO_Rate, script hide Pitch_LFO_Rate_L, script hide Pitch_LFO_Shape, script hide Pitch_LFO_Shape_L, script hide Pitch_LFO_Amount, script hide Pitch_LFO_Amount_L, script hide Pitch_LFO_OSC_1, script hide Pitch_LFO_OSC_1_L, script hide Pitch_LFO_OSC_2, script hide Pitch_LFO_OSC_2_L, script hide Pitch_LFO_Mod_Osc, script hide Pitch_LFO_Mod_Osc_L, script hide Pitch_LFO_Detune, script hide Pitch_LFO_Detune_L, script hide Voice_Detune, script hide Voice_Detune_L, script hide Voice_Unison, script hide Voice_Unison_L, script hide Voice_Mono, script hide Voice_Mono_L, script hide Glide_Time, script hide Glide_Time_L, script hide Timbre_Volume, script hide Timbre_Volume_L, script hide Pan, script hide Pan_L, script hide Pan_Spread, script hide Pan_Spread_L, script hide Low_Cut, script hide Low_Cut_L, script hide Mod_Wheel, script hide Mod_Wheel_L, script hide Expression, script hide Expression_L, script hide Mute, script hide Mute_L, script hide Hold, script hide Hold_L, script hide Sustain_Pedal, script hide Sustain_Pedal_L, script hide Delay_Time_Left, script hide Delay_Time_Left_L, script hide Delay_Time_Right, script hide Delay_Time_Right_L, script hide Link_Delays, script hide Link_Delays_L, script hide Delay_Clock_Sync, script hide Delay_Clock_Sync_L, script hide Delay_Feedback, script hide Delay_Feedback_L, script hide Delay_Character, script hide Delay_Character_L, script hide Delay_Mix, script hide Delay_Mix_L, script hide Delay_Timbre_A, script hide Delay_Timbre_A_L, script hide Delay_Timbre_B, script hide Delay_Timbre_B_L, script hide Arp_On_Off, script hide Arp_On_Off_L, script hide Arp_FW_BK, script hide Arp_FW_BK_L, script hide Arp_Direction, script hide Arp_Direction_L, script hide Arp_Octave_Range, script hide Arp_Octave_Range_L, script hide Arp_Clock_Div, script hide Arp_Clock_Div_L, script hide Seq_Clock_Div, script hide Seq_Clock_Div_L, script hide Clock_Tempo, script hide Clock_Tempo_L, script hide pc_t0, script hide pc_l1, script hide PCBank, script hide pc_l2, script hide PCPatch, script hide PCSend, script hide pc_l3, script hide pc_h1, script hide pc_h2, script hide Panic, script hide ms_l1, script hide ms_l2, script hide PitchBend, script hide ms_h1, script hide ms_h2, script hide ms_h3"
 				}
 			},
 			{
 				"box": {
-					"id": "obj-630",
+					"id": "obj-617",
 					"maxclass": "newobj",
 					"numinlets": 1,
 					"numoutlets": 2,
@@ -15544,10 +15178,10 @@
 			},
 			{
 				"box": {
-					"id": "obj-631",
+					"id": "obj-618",
 					"maxclass": "newobj",
 					"numinlets": 1,
-					"numoutlets": 12,
+					"numoutlets": 11,
 					"patching_rect": [
 						900.0,
 						340.0,
@@ -15565,15 +15199,14 @@
 						"bang",
 						"bang",
 						"bang",
-						"bang",
 						""
 					],
-					"text": "sel 0 1 2 3 4 5 6 7 8 9 10"
+					"text": "sel 0 1 2 3 4 5 6 7 8 9"
 				}
 			},
 			{
 				"box": {
-					"id": "obj-632",
+					"id": "obj-619",
 					"maxclass": "message",
 					"numinlets": 2,
 					"numoutlets": 1,
@@ -15591,7 +15224,7 @@
 			},
 			{
 				"box": {
-					"id": "obj-633",
+					"id": "obj-620",
 					"maxclass": "message",
 					"numinlets": 2,
 					"numoutlets": 1,
@@ -15609,7 +15242,7 @@
 			},
 			{
 				"box": {
-					"id": "obj-634",
+					"id": "obj-621",
 					"maxclass": "message",
 					"numinlets": 2,
 					"numoutlets": 1,
@@ -15627,7 +15260,7 @@
 			},
 			{
 				"box": {
-					"id": "obj-635",
+					"id": "obj-622",
 					"maxclass": "message",
 					"numinlets": 2,
 					"numoutlets": 1,
@@ -15645,7 +15278,7 @@
 			},
 			{
 				"box": {
-					"id": "obj-636",
+					"id": "obj-623",
 					"maxclass": "message",
 					"numinlets": 2,
 					"numoutlets": 1,
@@ -15663,7 +15296,7 @@
 			},
 			{
 				"box": {
-					"id": "obj-637",
+					"id": "obj-624",
 					"maxclass": "message",
 					"numinlets": 2,
 					"numoutlets": 1,
@@ -15681,7 +15314,7 @@
 			},
 			{
 				"box": {
-					"id": "obj-638",
+					"id": "obj-625",
 					"maxclass": "message",
 					"numinlets": 2,
 					"numoutlets": 1,
@@ -15699,7 +15332,7 @@
 			},
 			{
 				"box": {
-					"id": "obj-639",
+					"id": "obj-626",
 					"maxclass": "message",
 					"numinlets": 2,
 					"numoutlets": 1,
@@ -15717,7 +15350,7 @@
 			},
 			{
 				"box": {
-					"id": "obj-640",
+					"id": "obj-627",
 					"maxclass": "message",
 					"numinlets": 2,
 					"numoutlets": 1,
@@ -15735,7 +15368,7 @@
 			},
 			{
 				"box": {
-					"id": "obj-641",
+					"id": "obj-628",
 					"maxclass": "message",
 					"numinlets": 2,
 					"numoutlets": 1,
@@ -15753,25 +15386,7 @@
 			},
 			{
 				"box": {
-					"id": "obj-642",
-					"maxclass": "message",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1140.0,
-						560.0,
-						220.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "script show tb_t0, script show TimbreSel, script show tb_la, script show TimbreAChan, script show tb_lb, script show TimbreBChan, script show tb_h1, script show tb_h2, script show tb_h3"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-643",
+					"id": "obj-629",
 					"maxclass": "loadbang",
 					"numinlets": 1,
 					"numoutlets": 1,
@@ -15788,7 +15403,7 @@
 			},
 			{
 				"box": {
-					"id": "obj-644",
+					"id": "obj-630",
 					"maxclass": "message",
 					"numinlets": 2,
 					"numoutlets": 1,
@@ -15806,7 +15421,7 @@
 			},
 			{
 				"box": {
-					"id": "obj-645",
+					"id": "obj-631",
 					"maxclass": "newobj",
 					"numinlets": 2,
 					"numoutlets": 1,
@@ -15824,7 +15439,7 @@
 			},
 			{
 				"box": {
-					"id": "obj-646",
+					"id": "obj-632",
 					"maxclass": "message",
 					"numinlets": 2,
 					"numoutlets": 1,
@@ -21881,11 +21496,71 @@
 			{
 				"patchline": {
 					"source": [
+						"obj-616",
+						0
+					],
+					"destination": [
+						"obj-615",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-617",
+						1
+					],
+					"destination": [
+						"obj-616",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-617",
+						0
+					],
+					"destination": [
+						"obj-618",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
 						"obj-618",
 						0
 					],
 					"destination": [
-						"obj-624",
+						"obj-619",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-619",
+						0
+					],
+					"destination": [
+						"obj-615",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-618",
+						1
+					],
+					"destination": [
+						"obj-620",
 						0
 					]
 				}
@@ -21897,7 +21572,7 @@
 						0
 					],
 					"destination": [
-						"obj-625",
+						"obj-615",
 						0
 					]
 				}
@@ -21905,179 +21580,11 @@
 			{
 				"patchline": {
 					"source": [
-						"obj-625",
-						1
-					],
-					"destination": [
-						"obj-624",
-						1
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-625",
-						0
-					],
-					"destination": [
-						"obj-624",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-616",
-						0
-					],
-					"destination": [
-						"obj-626",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-626",
-						1
-					],
-					"destination": [
-						"obj-624",
-						2
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-626",
-						0
-					],
-					"destination": [
-						"obj-624",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-624",
-						0
-					],
-					"destination": [
-						"obj-627",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-627",
-						0
-					],
-					"destination": [
-						"obj-2",
-						7
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-629",
-						0
-					],
-					"destination": [
-						"obj-628",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-630",
-						1
-					],
-					"destination": [
-						"obj-629",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-630",
-						0
-					],
-					"destination": [
-						"obj-631",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-631",
-						0
-					],
-					"destination": [
-						"obj-632",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-632",
-						0
-					],
-					"destination": [
-						"obj-628",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-631",
-						1
-					],
-					"destination": [
-						"obj-633",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-633",
-						0
-					],
-					"destination": [
-						"obj-628",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-631",
+						"obj-618",
 						2
 					],
 					"destination": [
-						"obj-634",
+						"obj-621",
 						0
 					]
 				}
@@ -22085,11 +21592,11 @@
 			{
 				"patchline": {
 					"source": [
-						"obj-634",
+						"obj-621",
 						0
 					],
 					"destination": [
-						"obj-628",
+						"obj-615",
 						0
 					]
 				}
@@ -22097,11 +21604,11 @@
 			{
 				"patchline": {
 					"source": [
-						"obj-631",
+						"obj-618",
 						3
 					],
 					"destination": [
-						"obj-635",
+						"obj-622",
 						0
 					]
 				}
@@ -22109,11 +21616,11 @@
 			{
 				"patchline": {
 					"source": [
-						"obj-635",
+						"obj-622",
 						0
 					],
 					"destination": [
-						"obj-628",
+						"obj-615",
 						0
 					]
 				}
@@ -22121,11 +21628,11 @@
 			{
 				"patchline": {
 					"source": [
-						"obj-631",
+						"obj-618",
 						4
 					],
 					"destination": [
-						"obj-636",
+						"obj-623",
 						0
 					]
 				}
@@ -22133,11 +21640,11 @@
 			{
 				"patchline": {
 					"source": [
-						"obj-636",
+						"obj-623",
 						0
 					],
 					"destination": [
-						"obj-628",
+						"obj-615",
 						0
 					]
 				}
@@ -22145,11 +21652,11 @@
 			{
 				"patchline": {
 					"source": [
-						"obj-631",
+						"obj-618",
 						5
 					],
 					"destination": [
-						"obj-637",
+						"obj-624",
 						0
 					]
 				}
@@ -22157,11 +21664,11 @@
 			{
 				"patchline": {
 					"source": [
-						"obj-637",
+						"obj-624",
 						0
 					],
 					"destination": [
-						"obj-628",
+						"obj-615",
 						0
 					]
 				}
@@ -22169,11 +21676,11 @@
 			{
 				"patchline": {
 					"source": [
-						"obj-631",
+						"obj-618",
 						6
 					],
 					"destination": [
-						"obj-638",
+						"obj-625",
 						0
 					]
 				}
@@ -22181,11 +21688,11 @@
 			{
 				"patchline": {
 					"source": [
-						"obj-638",
+						"obj-625",
 						0
 					],
 					"destination": [
-						"obj-628",
+						"obj-615",
 						0
 					]
 				}
@@ -22193,11 +21700,11 @@
 			{
 				"patchline": {
 					"source": [
-						"obj-631",
+						"obj-618",
 						7
 					],
 					"destination": [
-						"obj-639",
+						"obj-626",
 						0
 					]
 				}
@@ -22205,11 +21712,11 @@
 			{
 				"patchline": {
 					"source": [
-						"obj-639",
+						"obj-626",
 						0
 					],
 					"destination": [
-						"obj-628",
+						"obj-615",
 						0
 					]
 				}
@@ -22217,11 +21724,11 @@
 			{
 				"patchline": {
 					"source": [
-						"obj-631",
+						"obj-618",
 						8
 					],
 					"destination": [
-						"obj-640",
+						"obj-627",
 						0
 					]
 				}
@@ -22229,11 +21736,11 @@
 			{
 				"patchline": {
 					"source": [
-						"obj-640",
+						"obj-627",
 						0
 					],
 					"destination": [
-						"obj-628",
+						"obj-615",
 						0
 					]
 				}
@@ -22241,22 +21748,10 @@
 			{
 				"patchline": {
 					"source": [
-						"obj-631",
+						"obj-618",
 						9
 					],
 					"destination": [
-						"obj-641",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-641",
-						0
-					],
-					"destination": [
 						"obj-628",
 						0
 					]
@@ -22265,23 +21760,11 @@
 			{
 				"patchline": {
 					"source": [
-						"obj-631",
-						10
-					],
-					"destination": [
-						"obj-642",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-642",
-						0
-					],
-					"destination": [
 						"obj-628",
+						0
+					],
+					"destination": [
+						"obj-615",
 						0
 					]
 				}
@@ -22293,6 +21776,18 @@
 						0
 					],
 					"destination": [
+						"obj-617",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-629",
+						0
+					],
+					"destination": [
 						"obj-630",
 						0
 					]
@@ -22301,19 +21796,7 @@
 			{
 				"patchline": {
 					"source": [
-						"obj-643",
-						0
-					],
-					"destination": [
-						"obj-644",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-644",
+						"obj-630",
 						0
 					],
 					"destination": [
@@ -22325,11 +21808,11 @@
 			{
 				"patchline": {
 					"source": [
-						"obj-643",
+						"obj-629",
 						0
 					],
 					"destination": [
-						"obj-645",
+						"obj-631",
 						0
 					]
 				}
@@ -22337,11 +21820,11 @@
 			{
 				"patchline": {
 					"source": [
-						"obj-645",
+						"obj-631",
 						0
 					],
 					"destination": [
-						"obj-646",
+						"obj-632",
 						0
 					]
 				}
@@ -22349,7 +21832,7 @@
 			{
 				"patchline": {
 					"source": [
-						"obj-646",
+						"obj-632",
 						0
 					],
 					"destination": [
@@ -22361,11 +21844,11 @@
 			{
 				"patchline": {
 					"source": [
-						"obj-646",
+						"obj-632",
 						0
 					],
 					"destination": [
-						"obj-630",
+						"obj-617",
 						0
 					]
 				}

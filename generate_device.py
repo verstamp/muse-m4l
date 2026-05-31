@@ -491,15 +491,14 @@ def build():
     # ---- shared MIDI plumbing (off-canvas, not in presentation) ----------
     wx = DEVICE_WIDTH + 80
     midiin = p.obj("midiin", [wx, 20, 60, 22])
-    midiformat = p.obj("midiformat @hires 1", [wx + 150, 60, 120, 22],
-                       numinlets=8)   # @hires 1: pitch-bend inlet takes -1..1
+    midiformat = p.obj("midiformat", [wx + 150, 60, 90, 22], numinlets=8)
     midiout = p.box("newobj", [wx + 150, 120, 60, 22], numinlets=1,
                     numoutlets=0, text="midiout")
     p.connect(midiin, 0, midiout, 0)                     # note/MIDI thru
     p.connect(midiformat, 0, midiout, 0)
 
     # ---- header: tab strip (16px tall so live.tab stays a single row) ----
-    tab_labels = [t[0] for t in TABS] + ["BANK", "MISC", "TIMBRE"]
+    tab_labels = [t[0] for t in TABS] + ["BANK", "MISC"]
     tab = p.live("live.tab", [MARGIN, 5, DEVICE_WIDTH - 2 * MARGIN, 16],
                  "Tab", 2, 0, len(tab_labels) - 1, enum=tab_labels,
                  varname="TabSel")
@@ -521,12 +520,9 @@ def build():
             route_in(p, kind, enum, cc, ctrl, wx)                # Muse -> UI
         tab_members.append(members)
 
-    # ---- Bank / Misc / Timbre tabs ---------------------------------------
+    # ---- Bank tab (Program Change) and Misc tab (panic / bend) -----------
     tab_members.append(build_bank_tab(p, midiformat, wx))
     tab_members.append(build_misc_tab(p, midiin, midiformat, wx))
-    tmembers, ab, cha, chb = build_timbre_tab(p, wx)
-    tab_members.append(tmembers)
-    wire_timbre_channel(p, midiformat, wx, ab, cha, chb)   # active Ch -> inlet 7
 
     # ---- tab switching machinery (thispatcher script show/hide) ----------
     thisp = p.obj("thispatcher", [wx, 380, 90, 22], numinlets=1, numoutlets=2,
@@ -555,8 +551,8 @@ def build():
                outlettype=["bang"])
     ch1 = p.msg("1", [wx, 120, 40, 22])
     p.connect(lb, 0, ch1, 0)
-    p.connect(ch1, 0, midiformat, 7)        # initial channel = 1 (Timbre A);
-                                            # wire_timbre_channel overrides live
+    p.connect(ch1, 0, midiformat, 7)        # device sends on ch 1; Live's track
+                                            # MIDI To remaps to the Muse's channel
     dly = p.obj("delay 300", [wx + 80, 120, 70, 22], numinlets=2)
     zero = p.msg("0", [wx + 80, 150, 40, 22])
     p.connect(lb, 0, dly, 0)
@@ -634,26 +630,25 @@ def build_misc_tab(p, midiin, midiformat, wx):
         p.connect(pn, 0, m, 0)
         p.connect(m, 0, midiformat, 2)
 
-    # PITCH BEND - bidirectional, full 14-bit and symmetric up/down.
-    # The dial is a FLOAT -1..+1 (centre 0): a 0-16383 integer live.dial caps
-    # its display around 255, so up-bend never showed.  midiformat is @hires 1
-    # so its pitch-bend inlet also takes -1..+1, matching the dial directly.
-    # Out: dial (-1..1) -> midiformat pitch-bend inlet.
-    # In:  midiin -> xbendin (0..16383) -> scale to -1..1 -> prepend set -> dial
+    # PITCH BEND - bidirectional, 7-bit.  A large-range integer live.dial caps
+    # its display (~255), so this is a plain 0-127 int dial (64 = centre); the
+    # default midiformat pitch-bend inlet takes 0-127, matching it directly.
+    # Out: dial (0-127) -> midiformat pitch-bend inlet.
+    # In:  midiin -> xbendin (0..16383) -> /128 (-> 0-127) -> prepend set -> dial
     # (set updates the dial without re-transmitting, so no feedback loop).
     lbl("Pitch Bend", [MARGIN + 250, 34, 70, 14], "ms_l2")
-    pb = p.live("live.dial", [MARGIN + 250, 50, DIAL, DIAL], "Pitch Bend", 0,
-                -1.0, 1.0, varname="PitchBend", initial=0.0,
-                annotation="Pitch Bend wheel (-1..+1, centre 0). Sends to and "
-                "follows the Muse's pitch wheel, full 14-bit and both directions.")
+    pb = p.live("live.dial", [MARGIN + 250, 50, DIAL, DIAL], "Pitch Bend", 1,
+                0, 127, varname="PitchBend", initial=64,
+                annotation="Pitch Bend wheel (0-127, 64 = centre). Sends to and "
+                "follows the Muse's pitch wheel.")
     members.append("PitchBend")
     p.connect(pb, 0, midiformat, 5)                      # pitch-bend inlet (out)
     xb = p.obj("xbendin", [wx + 980, 440, 70, 22], numinlets=1, numoutlets=2,
                outlettype=["", ""])
     p.connect(midiin, 0, xb, 0)                          # raw bytes from midiin
-    pbsc = p.obj("expr ($i1 - 8192) / 8192.", [wx + 980, 470, 170, 22],
+    pbsc = p.obj("expr $i1 / 128", [wx + 980, 470, 170, 22],
                  numinlets=1, numoutlets=1, outlettype=[""])
-    p.connect(xb, 0, pbsc, 0)                            # 0..16383 -> -1..+1
+    p.connect(xb, 0, pbsc, 0)                            # 0..16383 -> 0-127
     pbset = p.obj("prepend set", [wx + 980, 500, 80, 22], numinlets=2)
     p.connect(pbsc, 0, pbset, 0)
     p.connect(pbset, 0, pb, 0)
@@ -667,76 +662,6 @@ def build_misc_tab(p, midiin, midiformat, wx):
     return members
 
 
-def build_timbre_tab(p, wx):
-    """A/B timbre selector + per-timbre MIDI channels, plus Muse setup notes.
-
-    The Muse is bi-timbral; in Multi Mode it routes incoming CC to Timbre A or
-    Timbre B purely by MIDI channel (the CC numbers are identical).  So this tab
-    just lets you pick which timbre the on-screen controls edit and on which
-    channel each timbre listens; selecting B re-targets every control's output
-    to Timbre B's channel (wired in wire_timbre_channel).  These are real Live
-    params, so the channel config saves with the Set.
-
-    Returns (members, ab_selector, chA_numbox, chB_numbox)."""
-    members = []
-
-    def lbl(text, rect, vn, bold=False):
-        members.append(vn)
-        p.comment(text, rect, varname=vn, justify=0, fontsize=8.0,
-                  fontface=1 if bold else 0)
-
-    lbl("EDIT TIMBRE", [MARGIN, 30, 130, 14], "tb_t0", bold=True)
-    ab = p.live("live.tab", [MARGIN, 46, 70, 18], "Timbre Select", 2, 0, 1,
-                enum=["A", "B"], varname="TimbreSel", initial=0,
-                annotation="Which timbre the on-screen controls edit. Output is "
-                "sent on that timbre's MIDI channel (set to the right).")
-    members.append("TimbreSel")
-
-    lbl("A Ch", [MARGIN + 92, 32, 30, 14], "tb_la")
-    cha = p.live("live.numbox", [MARGIN + 124, 30, 38, 18], "Timbre A Ch", 1,
-                 1, 16, varname="TimbreAChan", initial=1,
-                 annotation="MIDI channel for Timbre A (match the Muse's MENU > "
-                 "MIDI > MIDI IN CHANNEL).")
-    members.append("TimbreAChan")
-    lbl("B Ch", [MARGIN + 92, 52, 30, 14], "tb_lb")
-    chb = p.live("live.numbox", [MARGIN + 124, 50, 38, 18], "Timbre B Ch", 1,
-                 1, 16, varname="TimbreBChan", initial=2,
-                 annotation="MIDI channel for Timbre B (match the Muse's MENU > "
-                 "MIDI > MULTI IN B CHANNEL).")
-    members.append("TimbreBChan")
-
-    lbl("Muse: MENU > MIDI > MULTI MODE: ON (default) and RECEIVE CC: ON.",
-        [MARGIN, 96, 540, 14], "tb_h1")
-    lbl("Set MIDI IN CHANNEL (= Timbre A) and MULTI IN B CHANNEL (= Timbre B) "
-        "to different channels, matched here.", [MARGIN, 114, 540, 14], "tb_h2")
-    lbl("Hardware->UI sync is channel-agnostic: it follows whichever timbre's "
-        "knobs you turn.", [MARGIN, 132, 540, 14], "tb_h3")
-    return members, ab, cha, chb
-
-
-def wire_timbre_channel(p, midiformat, wx, ab, cha, chb):
-    """Feed the active timbre's MIDI channel into midiformat's channel inlet (7).
-
-    expr picks Ch A or Ch B from the A/B selector; routing the selector and
-    both numboxes so any change recomputes.  `clip 1 16` guarantees a valid
-    channel even before the live objects have output, so the channel can never
-    momentarily land on 0."""
-    ex = p.obj("expr (($i3) == 0) ? ($i1) : ($i2)", [wx + 320, 210, 200, 22],
-               numinlets=3, numoutlets=1, outlettype=[""])
-    p.connect(cha, 0, ex, 0)                     # Ch A -> hot inlet (recompute)
-    tb = p.obj("t b i", [wx + 320, 170, 60, 22], numinlets=1, numoutlets=2,
-               outlettype=["bang", "int"])
-    p.connect(chb, 0, tb, 0)
-    p.connect(tb, 1, ex, 1)                      # store Ch B (fires first)...
-    p.connect(tb, 0, ex, 0)                      # ...then recompute
-    ta = p.obj("t b i", [wx + 400, 170, 60, 22], numinlets=1, numoutlets=2,
-               outlettype=["bang", "int"])
-    p.connect(ab, 0, ta, 0)
-    p.connect(ta, 1, ex, 2)                      # store A/B (fires first)...
-    p.connect(ta, 0, ex, 0)                      # ...then recompute
-    clipc = p.obj("clip 1 16", [wx + 320, 250, 70, 22], numinlets=3)
-    p.connect(ex, 0, clipc, 0)
-    p.connect(clipc, 0, midiformat, 7)           # set MIDI channel (1-16)
 
 
 def make_control(p, kind, longname, enum, x, ry, annotation, initial=None):
