@@ -6,7 +6,7 @@ generate_device.py
 Builds ``MuseEditor.amxd`` - a Max for Live MIDI-effect device that is a full
 graphical editor for the Moog Muse, organised into tabs:
 
-    OSC | Filter | Env | Mod | LFO | Voice | Delay | Arp | Bank | Misc | Timbre
+    OSC | Filter | Env | Mod | LFO | Voice | Delay | Arp | Bank | Misc
 
 All 102 CC-addressable parameters are exposed as Ableton-automatable controls:
 
@@ -22,9 +22,9 @@ The whole UI fits inside Live's fixed 169-pixel device height: each tab shows
 its controls in two compact rows, and only the active tab is visible (live.tab
 + thispatcher script show/hide, with per-tab scripting-name lists generated
 here so they cannot drift out of sync with the objects).  The Bank tab holds
-Program Change; the Misc tab holds Panic and (bidirectional) Pitch Bend; the
-Timbre tab selects Timbre A/B and their MIDI channels (Multi Mode), re-targeting
-every control's output to the active timbre's channel.
+Program Change; the Misc tab holds Panic and (bidirectional) Pitch Bend.  Both
+Muse timbres are controlled by running one device instance per Ableton track on
+different MIDI channels (Multi Mode); Live's per-track MIDI To remaps the output.
 
 Outbound: every control -> [scale] -> prepend <cc> -> midiformat -> midiout.
 Inbound (bidirectional): one [ctlin <cc>] per control writes the value back
