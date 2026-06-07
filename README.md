@@ -210,11 +210,15 @@ alongside the objects so they can't drift out of sync.
 The MIDI CC parameter map and descriptions were compiled from:
 
 - [pencilresearch/midi: Moog/Muse.csv](https://github.com/pencilresearch/midi/blob/main/Moog/Muse.csv)
-- Moog Muse 1.4 official documentation (Appendix A) — used as ground truth to
-  correct several values: the Filter/VCA envelope stage labels (CC 80/81 and
-  87/88 are Decay/Sustain, not Sustain/Delay), and the Mod Osc destination
-  controls (CC 33, 34, 36, 37, 40, 41, 43) plus Filter 1 High Pass (CC 66),
-  which are continuous **0–127** controls, not on/off toggles.
+- Moog Muse 1.4 official documentation (Appendix A) — used to correct the
+  Filter/VCA envelope stage labels (CC 80/81 and 87/88 are Decay/Sustain, not
+  Sustain/Delay).
+- Hardware-verified control types where the manual/CC list disagreed with the
+  front panel: the Mod Osc per-destination enables (CC 33, 34, 36, 37, 40, 41)
+  and Filter 1 High Pass (CC 66) are **on/off** switches (off 0–63, on 64–127),
+  not continuous knobs; the Mod Osc VCA Pan (CC 43) is a continuous knob; the
+  oscillator Tri/Saw Mix (CC 46, 51) are knobs while the Wave Mix (CC 48, 53)
+  are faders.
 
 ## TODO
 

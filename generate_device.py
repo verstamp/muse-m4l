@@ -114,7 +114,7 @@ DESC_EXTRA = {
     61: "Level of the Modulation Oscillator into the mixer (audible at audio rate).",
     62: "Level of the noise generator into the mixer.",
     65: "OVERLOAD - overdrives the mixer sum for overtones, CP3-mixer style.",
-    66: "Filter 1 high-pass amount (0-127), continuously blending in high-pass.",
+    66: "Switches Filter 1 to high-pass (on/off; off 0-63, on 64-127).",
     67: "Cutoff of Filter 1, a discrete Moog transistor-ladder filter (904a-style).",
     68: "Resonance/emphasis at Filter 1's cutoff; self-oscillates when high.",
     69: "Amount of the Filter envelope applied to Filter 1 cutoff.",
@@ -239,18 +239,18 @@ TABS = [
         ]),
         ("Pitch", [
             [(31, "Mod Osc Pitch Amount", K, None, "Amount")],
-            [(33, "Mod Osc Pitch>OSC 1", K, None, "OSC 1"),
-             (34, "Mod Osc Pitch>OSC 2", K, None, "OSC 2")],
+            [(33, "Mod Osc Pitch>OSC 1", T, None, "OSC 1"),
+             (34, "Mod Osc Pitch>OSC 2", T, None, "OSC 2")],
         ]),
         ("PWM", [
             [(35, "Mod Osc PWM Amount", K, None, "Amount")],
-            [(36, "Mod Osc PWM>OSC 1", K, None, "OSC 1"),
-             (37, "Mod Osc PWM>OSC 2", K, None, "OSC 2")],
+            [(36, "Mod Osc PWM>OSC 1", T, None, "OSC 1"),
+             (37, "Mod Osc PWM>OSC 2", T, None, "OSC 2")],
         ]),
         ("Filter", [
             [(39, "Mod Osc Filter Amount", K, None, "Amount")],
-            [(40, "Mod Osc Filter>F1", K, None, "Filter 1"),
-             (41, "Mod Osc Filter>F2", K, None, "Filter 2")],
+            [(40, "Mod Osc Filter>F1", T, None, "Filter 1"),
+             (41, "Mod Osc Filter>F2", T, None, "Filter 2")],
         ]),
         ("VCA", [
             [(42, "Mod Osc VCA Amount", K, None, "Amount")],
@@ -262,14 +262,14 @@ TABS = [
             [(44, "OSC 1 Octave", M, OCT, "Octave"),
              (45, "OSC 1 Frequency", B, None, "Freq"),
              (47, "OSC 1 PW", K, None, "Pulse W")],
-            [(46, "OSC 1 Tri/Saw Mix", H, None, "Tri/Saw"),
+            [(46, "OSC 1 Tri/Saw Mix", K, None, "Tri/Saw"),
              (48, "OSC 1 Wave Mix", H, None, "Wave Mix")],
         ]),
         ("Oscillator 2", [
             [(49, "OSC 2 Octave", M, OCT, "Octave"),
              (50, "OSC 2 Frequency", B, None, "Freq"),
              (52, "OSC 2 PW", K, None, "Pulse W")],
-            [(51, "OSC 2 Tri/Saw Mix", H, None, "Tri/Saw"),
+            [(51, "OSC 2 Tri/Saw Mix", K, None, "Tri/Saw"),
              (53, "OSC 2 Wave Mix", H, None, "Wave Mix")],
         ]),
         ("Sync / FM", [
@@ -293,7 +293,7 @@ TABS = [
     ("FILTER", [
         ("Filter 1", [
             [(67, "Filter 1 Cutoff", K, None, "Cutoff"),
-             (66, "Filter 1 High Pass", K, None, "High Pass"),
+             (66, "Filter 1 High Pass", T, None, "High Pass"),
              (68, "Filter 1 Resonance", K, None, "Resonance")],
             [(69, "Filter 1 Env Amount", K, None, "Env Amt"),
              (70, "Filter 1 KB Track", M, KBT, "KB Track"),
