@@ -499,17 +499,30 @@ class Patch:
             attrs["varname"] = varname
         return self.box("comment", rect, present=present, **attrs)
 
-    def section_box(self, rect, varname):
-        """A rounded background panel that groups a section (drawn behind the
-        controls; ignoreclick so it never blocks them)."""
-        return self.box(
-            "panel", rect, present=True, varname=varname,
-            mode=0, rounded=8, border=1,
-            bgfillcolor_type="color",
-            bgcolor=[0.27, 0.29, 0.33, 1.0],
-            bordercolor=[0.50, 0.54, 0.60, 1.0],
-            ignoreclick=1,
-        )
+    def section_frame(self, x, y, w, h, varname):
+        """Outline a section as a filled title bar plus thin edge strips.
+
+        Nothing is drawn over the controls' area (only the title strip at the
+        top and 1.5px borders at the edges), so the controls are always visible
+        and clickable no matter how Live layers panels.  Returns the strips'
+        scripting names so they can be shown/hidden with the tab.
+        """
+        names = []
+        hdr = [0.33, 0.36, 0.42, 1.0]
+        edge = [0.46, 0.50, 0.57, 1.0]
+
+        def strip(rect, name, color):
+            self.box("panel", rect, present=True, varname=name,
+                     mode=0, rounded=0, bgfillcolor_type="color",
+                     bgcolor=color, ignoreclick=1)
+            names.append(name)
+
+        strip([x, y, w, SEC_TITLE_H], varname + "_hd", hdr)            # title
+        strip([x, y + SEC_TITLE_H, w, 1.5], varname + "_t", edge)      # under
+        strip([x, y, 1.5, h], varname + "_l", edge)                   # left
+        strip([x + w - 1.5, y, 1.5, h], varname + "_r", edge)         # right
+        strip([x, y + h - 1.5, w, 1.5], varname + "_b", edge)         # bottom
+        return names
 
     def connect(self, src, sout, dst, din):
         self.lines.append({"patchline": {"source": [src, sout],
@@ -653,17 +666,15 @@ def build():
         x = MARGIN
         for si, (title, rows) in enumerate(sections):
             sec_w = section_width(rows)
-            # background box first (so it sits behind the controls), then title
             box_vn = "sec_%d_%d" % (len(tab_members), si)
-            p.section_box([x, SEC_TOP, sec_w, SEC_H], box_vn)
-            members.append(box_vn)
-            p.comment(title, [x + SEC_PAD_X, SEC_TOP + 2, sec_w - 2 * SEC_PAD_X,
-                              11], varname=box_vn + "_t", fontsize=8.0,
-                      fontface=1, justify=1)
-            members.append(box_vn + "_t")
+            members += p.section_frame(x, SEC_TOP, sec_w, SEC_H, box_vn)
+            p.comment(title, [x + 2, SEC_TOP + 2, sec_w - 4, 11],
+                      varname=box_vn + "_ti", fontsize=8.0, fontface=1,
+                      justify=1)
+            members.append(box_vn + "_ti")
 
-            body_top = SEC_TOP + SEC_TITLE_H
-            band = (SEC_H - SEC_TITLE_H - 4) / len(rows)
+            body_top = SEC_TOP + SEC_TITLE_H + 3
+            band = (SEC_H - SEC_TITLE_H - 6) / len(rows)
             for ri, row in enumerate(rows):
                 row_top = body_top + ri * band
                 for ci, (cc, longname, kind, enum, short) in enumerate(row):
