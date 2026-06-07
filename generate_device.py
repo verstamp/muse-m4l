@@ -511,20 +511,25 @@ class Patch:
         """Draw a section as a subtly-lighter rounded panel with a hairline
         border and a thin blue accent rule under its title.
 
-        The panel is added to the patch *before* the section's controls, so it
-        sits behind them; ``ignoreclick`` keeps it from stealing mouse events.
-        The title text is placed in the clear strip at the top by the caller.
+        The panels are placed in the patcher's *background layer*
+        (``background 1``).  Max draws the background layer behind the entire
+        foreground layer regardless of object order, so the filled panel sits
+        behind the controls (which are foreground) instead of covering them -
+        this is the documented way to do backgrounds and what z-order alone
+        can't achieve.  ``ignoreclick`` also keeps it from stealing the mouse.
+        The title text stays in the foreground so it reads on top of the panel.
         Returns the panel scripting names so they show/hide with the tab.
         """
         names = []
         # filled, rounded, bordered background panel
         self.box("panel", [x, y, w, h], present=True, varname=varname + "_bg",
-                 mode=0, rounded=6, bgfillcolor_type="color", bgcolor=COL_PANEL,
-                 bordercolor=COL_BORDER, border=1, ignoreclick=1)
+                 background=1, mode=0, rounded=6, bgfillcolor_type="color",
+                 bgcolor=COL_PANEL, bordercolor=COL_BORDER, border=1,
+                 ignoreclick=1)
         names.append(varname + "_bg")
-        # thin accent rule just under the title strip
+        # thin accent rule just under the title strip (also background)
         self.box("panel", [x + 6, y + SEC_TITLE_H - 1, w - 12, 1], present=True,
-                 varname=varname + "_uln", mode=0, rounded=0,
+                 varname=varname + "_uln", background=1, mode=0, rounded=0,
                  bgfillcolor_type="color", bgcolor=COL_ACCENT, ignoreclick=1)
         names.append(varname + "_uln")
         return names
@@ -543,9 +548,10 @@ class Patch:
 
     def tab_panel(self, varname):
         """Full-width background panel for the Bank / Misc tabs, matching the
-        section panels on the other tabs.  Returns its scripting name."""
+        section panels on the other tabs.  In the background layer so it sits
+        behind the controls.  Returns its scripting name."""
         self.box("panel", [MARGIN, SEC_TOP, DEVICE_WIDTH - 2 * MARGIN, SEC_H],
-                 present=True, varname=varname, mode=0, rounded=6,
+                 present=True, varname=varname, background=1, mode=0, rounded=6,
                  bgfillcolor_type="color", bgcolor=COL_PANEL,
                  bordercolor=COL_BORDER, border=1, ignoreclick=1)
         return varname
