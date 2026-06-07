@@ -254,7 +254,7 @@ TABS = [
         ]),
         ("VCA", [
             [(42, "Mod Osc VCA Amount", K, None, "Amount")],
-            [(43, "Mod Osc VCA Pan", K, None, "Pan")],
+            [(43, "Mod Osc VCA Pan", T, None, "Pan")],
         ]),
     ]),
     ("OSC", [
