@@ -1,10 +1,14 @@
 # Moog Muse Editor — Max for Live
 
 A Max for Live **MIDI-effect** device that turns Ableton into a full editor for
-the Moog Muse. All 102 CC-addressable parameters are laid out across tabbed
-sections and exposed as Ableton-automatable controls, plus Program Change for
-recalling the synth's own stored presets. Both of the Muse's timbres can be
-controlled by running an instance per Ableton track (see
+the Moog Muse. All 102 CC-addressable parameters are exposed as
+Ableton-automatable controls, plus Program Change for recalling the synth's own
+stored presets. The tabs and controls follow the Muse's own **front-panel
+layout** — tabs run in signal-flow order, sections are grouped the way they sit
+on the hardware (OSC 1 over OSC 2, Filter 1 over Filter 2, ...), and the mixer
+and envelopes are drawn as **faders** like the panel rather than knobs — so it
+reads like the instrument. Both of the Muse's timbres can be controlled by
+running an instance per Ableton track (see
 [Controlling both timbres](#controlling-both-timbres-multi-mode)).
 
 > **⚠️ Disclaimer:** This is an **unofficial** plugin and is **not supported or endorsed** by Ableton or Moog. Use at your own risk. For official support, contact Moog or Ableton directly.
@@ -74,23 +78,32 @@ works without it.
 
 **Tabs** — click the strip at the top to switch between sections:
 
+The tabs run in the Muse's signal-flow order and each tab is grouped like the
+matching panel section (e.g. OSC 1 on the top row, OSC 2 below):
+
 | Tab | Contents |
 |-----|----------|
-| OSC | OSC 1 / OSC 2 (octave, freq, waveshape, level), sync, FM, ring mod, noise |
-| Filter | Filter 1 & 2 cutoff/res/env, routing, clipping |
-| Env | Filter envelope + VCA (amp) envelope |
-| Mod Osc | The modulation oscillator and all its pitch / PWM / filter / VCA routings |
-| LFO | LFO 1, LFO 2, and the Pitch LFO with its destinations |
-| Voice | Detune, unison/mono, glide, volume, pan, mod wheel, expression, mute, hold, sustain |
-| Delay | Times, sync, feedback, character, mix, and timbre sends |
-| Arp/Seq | Arpeggiator + sequencer clock and arp settings |
-| Bank | Program Change (recall the Muse's stored patches) |
-| Misc | Panic, Pitch Bend, and notes |
+| OSC | OSC 1 (top) / OSC 2 (bottom): octave, freq, tri-saw & wave-mix faders, PW, sync, FM |
+| MIX | Mixer faders — OSC 1, Ring Mod, OSC 2, Mod Osc, Noise — plus the Overload drive |
+| FILTER | Filter 1 (top, with high-pass) / Filter 2 (bottom): cutoff/res/env, link, routing |
+| ENV | Filter envelope + VCA (amp) envelope, as ADSR faders with loop/velocity |
+| VCA | Timbre volume, pan, pan spread, low cut, mute |
+| MOD | The modulation oscillator and all its pitch / PWM / filter / VCA routings |
+| LFO | LFO 1 & 2 (top), the Pitch LFO and its destinations (bottom) |
+| DELAY | Diffusion Delay: times, sync, feedback, character, mix, and timbre sends |
+| ARP | Arpeggiator settings + arp/sequencer clock divisions and tempo |
+| VOICE | Detune, unison/mono, glide, mod wheel, expression, hold, sustain |
+| BANK | Program Change (recall the Muse's stored patches) |
+| MISC | Panic, Pitch Bend, and notes |
 
-**Control types** — continuous parameters are dials (0–127); on/off parameters
-are toggles (send 0 / 127); multi-option parameters (octave, waveform, KB
-tracking, filter order, arp direction/range) are menus that send a value
-centred in the matching CC band, so the Muse always lands on the chosen option.
+**Control types** — each control is drawn to echo the matching panel control:
+rotary parameters are dials; the **mixer levels and the ADSR envelopes are
+vertical faders**, and the oscillator **tri-saw / wave-mix blends are horizontal
+faders**, just like the hardware (all of these are continuous 0–127). On/off
+parameters are toggles (send 0 / 127); multi-option parameters (octave,
+waveform, KB tracking, filter order, arp direction/range) are menus that send a
+value centred in the matching CC band, so the Muse always lands on the chosen
+option.
 
 **Info View help** — hover any control and Ableton's **Info View** (bottom-left
 of the window) shows what that control does on the Muse, taken from Moog's MIDI
@@ -146,7 +159,7 @@ format Ableton's maxdevtools produces.
 
 ```
 OUT (UI → Muse):
-live.dial   ───────────────▶ prepend <cc> ─┐
+live.dial / live.slider ───▶ prepend <cc> ─┐
 live.toggle ─▶ [* 127] ─────▶ prepend <cc> ─┼─▶ midiformat ─▶ midiout ─▶ Muse
 live.menu   ─▶ [expr …] ────▶ prepend <cc> ─┘      ▲   ▲
 Program Change: Bank MSB/LSB ──────────────────────┘   │ (program-change inlet)
@@ -170,9 +183,9 @@ alongside the objects so they can't drift out of sync.
 ## Known limitations
 
 - **Compact, fixed-height UI.** Live devices are locked to 169 px tall with no
-  vertical scrolling, so each tab packs its controls into two dense rows and the
-  device is wide rather than tall (you may need to scroll the device chain
-  horizontally to see all of a tab).
+  vertical scrolling, so knob tabs pack their controls into two dense rows (the
+  fader tabs use one tall row) and the device is wide rather than tall (you may
+  need to scroll the device chain horizontally to see all of a tab).
 - **Bidirectional sync covers CC parameters only.** Hardware → UI tracking works
   for the 102 CCs; it can't reflect changes the Muse makes that aren't sent as
   CC (e.g. Mod Map edits, preset loads from the synth's own menus).
@@ -199,7 +212,6 @@ The MIDI CC parameter map and descriptions were compiled from:
 
 ## TODO
 
-- Change tabs on plugin to conform to Muse's front panel layout
 - Re-implement a safe "push patch" / SEND ALL (send every control to the Muse
   at once). The previous SEND ALL blasted all 102 CCs simultaneously, which made
   the Muse misbehave; a future version should throttle/stagger the sends (and
