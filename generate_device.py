@@ -60,6 +60,7 @@ MAXPAT_PATH = DEVICE_NAME + ".maxpat"
 #   T toggle       -> live.toggle    (sends 0 / 127)
 #   M multistate   -> live.menu      (sends the centre value of the CC band)
 K, B, T, M, S, H = "knob", "bip", "toggle", "multi", "vslider", "hslider"
+PB = "pitchbend"   # special 14-bit pitch-bend dial (not a CC; wired to xbendin)
 
 OCT = ["16'", "8'", "4'", "2'"]
 KBT = ["Off", "Half", "Full"]
@@ -179,6 +180,7 @@ def annotation_for(cc, longname):
 # option index.  Everything not listed defaults to 0 / first option.
 INIT = {
     7: 127,    # Timbre Volume
+    10: 64,    # Pan -> centre (0 = left, 64 = centre, 127 = right)
     44: 1,     # OSC 1 Octave -> 8'
     58: 127,   # OSC 1 Level
     46: 64,    # OSC 1 Tri/Saw Mix -> midway
@@ -371,6 +373,9 @@ TABS = [
              (11, "Expression", K, None, "Express"),
              (71, "Hold", T, None, "Hold"),
              (64, "Sustain Pedal", T, None, "Sustain")],
+        ]),
+        ("Pitch Bend", [
+            [(None, "Pitch Bend", PB, None, "Bend")],
         ]),
     ]),
 ]
@@ -686,6 +691,14 @@ def build():
                     cx = x + SEC_PAD_X + ci * COL_W
                     sn = slug(longname)
                     members += [sn, sn + "_L"]
+                    if kind == PB:                  # bidirectional pitch bend
+                        ann = ("Pitch Bend wheel (0-127, 64 = centre). Sends "
+                               "to and follows the Muse's pitch wheel.")
+                        ctrl = make_control(p, kind, longname, enum, short, cx,
+                                            row_top, band, ann, 64)
+                        place_label(p, short, cx, row_top, sn)
+                        wire_pitchbend(p, ctrl, midiin, midiformat, wx)
+                        continue
                     ctrl = make_control(p, kind, longname, enum, short, cx,
                                         row_top, band,
                                         annotation_for(cc, longname),
@@ -787,8 +800,27 @@ def build_bank_tab(p, midiformat, wx):
     return members
 
 
+def wire_pitchbend(p, pb, midiin, midiformat, wx):
+    """Bidirectional 14-bit pitch bend for the dial ``pb`` (0-127, 64 = centre).
+
+    Out: dial -> midiformat pitch-bend inlet.
+    In:  midiin -> xbendin (0..16383) -> / 128 -> prepend set -> dial
+    (``set`` updates the dial without re-transmitting, so there's no feedback).
+    """
+    p.connect(pb, 0, midiformat, 5)                      # pitch-bend inlet (out)
+    xb = p.obj("xbendin", [wx + 980, 440, 70, 22], numinlets=1, numoutlets=2,
+               outlettype=["", ""])
+    p.connect(midiin, 0, xb, 0)                          # raw bytes from midiin
+    pbsc = p.obj("expr $i1 / 128", [wx + 980, 470, 170, 22],
+                 numinlets=1, numoutlets=1, outlettype=[""])
+    p.connect(xb, 0, pbsc, 0)                            # 0..16383 -> 0-127
+    pbset = p.obj("prepend set", [wx + 980, 500, 80, 22], numinlets=2)
+    p.connect(pbsc, 0, pbset, 0)
+    p.connect(pbset, 0, pb, 0)
+
+
 def build_misc_tab(p, midiin, midiformat, wx):
-    """Panic, Pitch Bend, and notes - only on the Misc tab."""
+    """Panic and notes - only on the Misc tab."""
     members = []
 
     def lbl(text, rect, vn, bold=False):
@@ -806,33 +838,11 @@ def build_misc_tab(p, midiin, midiformat, wx):
         p.connect(pn, 0, m, 0)
         p.connect(m, 0, midiformat, 2)
 
-    # PITCH BEND - bidirectional, 7-bit.  A large-range integer live.dial caps
-    # its display (~255), so this is a plain 0-127 int dial (64 = centre); the
-    # default midiformat pitch-bend inlet takes 0-127, matching it directly.
-    # Out: dial (0-127) -> midiformat pitch-bend inlet.
-    # In:  midiin -> xbendin (0..16383) -> /128 (-> 0-127) -> prepend set -> dial
-    # (set updates the dial without re-transmitting, so no feedback loop).
-    lbl("Pitch Bend", [MARGIN + 250, 34, 70, 14], "ms_l2")
-    pb = p.live("live.dial", [MARGIN + 250, 50, DIAL, DIAL], "Pitch Bend", 1,
-                0, 127, varname="PitchBend", initial=64, showname=0,
-                annotation="Pitch Bend wheel (0-127, 64 = centre). Sends to and "
-                "follows the Muse's pitch wheel.")
-    members.append("PitchBend")
-    p.connect(pb, 0, midiformat, 5)                      # pitch-bend inlet (out)
-    xb = p.obj("xbendin", [wx + 980, 440, 70, 22], numinlets=1, numoutlets=2,
-               outlettype=["", ""])
-    p.connect(midiin, 0, xb, 0)                          # raw bytes from midiin
-    pbsc = p.obj("expr $i1 / 128", [wx + 980, 470, 170, 22],
-                 numinlets=1, numoutlets=1, outlettype=[""])
-    p.connect(xb, 0, pbsc, 0)                            # 0..16383 -> 0-127
-    pbset = p.obj("prepend set", [wx + 980, 500, 80, 22], numinlets=2)
-    p.connect(pbsc, 0, pbset, 0)
-    p.connect(pbset, 0, pb, 0)
-
-    lbl("Mod Wheel (CC1), Hold (CC71), Expression & Sustain are on the VOICE "
-        "tab.", [MARGIN, 96, 540, 14], "ms_h1")
-    lbl("Pitch Bend is bidirectional; the Muse's other knobs sync per-CC on "
-        "every tab.", [MARGIN, 114, 540, 14], "ms_h2")
+    lbl("Pitch Bend is on the VOICE tab (bidirectional). Mod Wheel, Hold, "
+        "Expression & Sustain are on VOICE too.", [MARGIN, 96, 600, 14],
+        "ms_h1")
+    lbl("The Muse's knobs sync per-CC on every tab.", [MARGIN, 114, 540, 14],
+        "ms_h2")
     lbl("No one-click 'pull': the Muse can't transmit its whole state. Turn a "
         "knob and the plugin follows.", [MARGIN, 132, 540, 14], "ms_h3")
     return members
