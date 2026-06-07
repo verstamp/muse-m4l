@@ -27,16 +27,16 @@ Moog,Muse,,Modulation Oscillator Waveform,Selects the waveform of the modulation
 Moog,Muse,,Modulation Oscillator KB Reset,Resets the LFO to its starting point in its wave cycle every time a key is pressed,29,,0,127,,,,,,,0-based,,0-63: Off; 64-127: On
 Moog,Muse,,Modulation Oscillator Unipolar,Enabled unipolar mode for the modulation oscillator,30,,0,127,,,,,,,0-based,,0-63: Off; 64-127: On
 Moog,Muse,,Modulation Oscillator Pitch Amount,Determines the depth at which frequency modulation of the oscillator section occurs based on the OSC 1 and OSC 2 routing buttons,31,,0,127,,,,,,,0-based,,
-Moog,Muse,,Modulation Oscillator Pitch OSC 1,Enables frequency modulation of OSC 1 via the modulation oscillator,33,,0,127,,,,,,,0-based,,
-Moog,Muse,,Modulation Oscillator Pitch OSC 2,Enables frequency modulation of OSC 2 via the modulation oscillator,34,,0,127,,,,,,,0-based,,
+Moog,Muse,,Modulation Oscillator Pitch OSC 1,Enables frequency modulation of OSC 1 via the modulation oscillator,33,,0,127,,,,,,,0-based,On/off switch on the front panel (Moog CC list omits the band),0-63: Off; 64-127: On
+Moog,Muse,,Modulation Oscillator Pitch OSC 2,Enables frequency modulation of OSC 2 via the modulation oscillator,34,,0,127,,,,,,,0-based,On/off switch on the front panel (Moog CC list omits the band),0-63: Off; 64-127: On
 Moog,Muse,,Modulation Oscillator PWM Amount,Determines the depth at which pulse width modulation of the oscillator section occurs based on the OSC 1 and OSC 2 routing buttons,35,,0,127,,,,,,,0-based,,
-Moog,Muse,,Modulation Oscillator PWM OSC 1,Enables modulation of the duty cycle of the OSC 1 pulse/square waveshape via the modulation oscillator,36,,0,127,,,,,,,0-based,,
-Moog,Muse,,Modulation Oscillator PWM OSC 2,Enables modulation of the duty cycle of the OSC 2 pulse/square waveshape via the modulation oscillator,37,,0,127,,,,,,,0-based,,
+Moog,Muse,,Modulation Oscillator PWM OSC 1,Enables modulation of the duty cycle of the OSC 1 pulse/square waveshape via the modulation oscillator,36,,0,127,,,,,,,0-based,On/off switch on the front panel (Moog CC list omits the band),0-63: Off; 64-127: On
+Moog,Muse,,Modulation Oscillator PWM OSC 2,Enables modulation of the duty cycle of the OSC 2 pulse/square waveshape via the modulation oscillator,37,,0,127,,,,,,,0-based,On/off switch on the front panel (Moog CC list omits the band),0-63: Off; 64-127: On
 Moog,Muse,,Modulation Oscillator Filter Amount,Determines the depth at which cutoff frequency modulation of the filter section occurs based on the FILTER 1 and FILTER 2 routing buttons,39,,0,127,,,,,,,0-based,,
-Moog,Muse,,Modulation Oscillator Filter 1,Enables cutoff frequency modulation of FILTER 1 via the modulation oscillator,40,,0,127,,,,,,,0-based,,
-Moog,Muse,,Modulation Oscillator Filter 2,Enables cutoff frequency modulation of FILTER 2 via the modulation oscillator,41,,0,127,,,,,,,0-based,,
+Moog,Muse,,Modulation Oscillator Filter 1,Enables cutoff frequency modulation of FILTER 1 via the modulation oscillator,40,,0,127,,,,,,,0-based,On/off switch on the front panel (Moog CC list omits the band),0-63: Off; 64-127: On
+Moog,Muse,,Modulation Oscillator Filter 2,Enables cutoff frequency modulation of FILTER 2 via the modulation oscillator,41,,0,127,,,,,,,0-based,On/off switch on the front panel (Moog CC list omits the band),0-63: Off; 64-127: On
 Moog,Muse,,Modulation Oscillator VCA Amount,"Determines the depth at which the MODULATION OSCILLATOR will modulate the amplitude of the VCA, providing a tremolo effect",42,,0,127,,,,,,,0-based,,
-Moog,Muse,,Modulation Oscillator VCA PAN,Enables pan-position modulation of a voice in the stereo field by inverting the phase of the modulation oscillator sent to the right VCA,43,,0,127,,,,,,,0-based,,
+Moog,Muse,,Modulation Oscillator VCA PAN,Enables pan-position modulation of a voice in the stereo field by inverting the phase of the modulation oscillator sent to the right VCA,43,,0,127,,,,,,,0-based,On/off switch on the front panel (Moog CC list omits the band),0-63: Off; 64-127: On
 Moog,Muse,,Oscillator 1 Octave,Selects the octave for OSC 1,44,,0,127,,,,,,,0-based,"The OCTAVE options are 16', 8', 4' and 2' - a standard based around classic pipe organ stop footage settings.",0-31: 16'; 32-63: 8'; 64-95: 4'; 96-127: 2'
 Moog,Muse,,Oscillator 1 Frequency,Detunes OSC 1 from the pitch associated with a keyboard note,45,,0,127,,,,,,,0-based," The FREQUENCY knob is a bipolar control, and when set to noon will be in tune with the keyboard note (if a C is pressed, a C will sound based on the OCTAVE setting). Turning the knob clockwise will increase the pitch of the oscillator up to a perfect fifth (+7 semitones) and turning the knob counter-clockwise will decrease the pitch of the oscillator down to a perfect fifth below the note (-7 semitones)",
 Moog,Muse,,Oscillator 1 Tri/Saw Mix,,46,,0,127,,,,,,,0-based,,
@@ -58,7 +58,7 @@ Moog,Muse,,Modulation Oscillator Level,,61,,0,127,,,,,,,0-based,,
 Moog,Muse,,Noise Level,,62,,0,127,,,,,,,0-based,,
 Moog,Muse,,Sustain Pedal,,64,,0,127,,,,,,,0-based,,0-63: Off; 64-127: On
 Moog,Muse,,Clipping Level,,65,,0,127,,,,,,,0-based,,
-Moog,Muse,,Filter 1 High Pass,,66,,0,127,,,,,,,0-based,,
+Moog,Muse,,Filter 1 High Pass,Switches FILTER 1 into high-pass mode when engaged,66,,0,127,,,,,,,0-based,On/off switch on the front panel (Moog CC list omits the band),0-63: Off; 64-127: On
 Moog,Muse,,Filter 1 Cutoff,,67,,0,127,,,,,,,0-based,,
 Moog,Muse,,Filter 1 Resonance,,68,,0,127,,,,,,,0-based,,
 Moog,Muse,,Filter 1 Envelope Amount,,69,,0,127,,,,,,,0-based,,

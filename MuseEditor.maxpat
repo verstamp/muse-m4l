@@ -4034,8 +4034,8 @@
 							]
 						}
 					},
-					"annotation": "Mod Osc Pitch>OSC 1  \u00b7  CC 33  \u2014  Enables frequency modulation of OSC 1 via the modulation oscillator",
-					"hint": "Mod Osc Pitch>OSC 1  \u00b7  CC 33  \u2014  Enables frequency modulation of OSC 1 via the modulation oscillator",
+					"annotation": "Mod Osc Pitch>OSC 1  \u00b7  CC 33  \u2014  Enables frequency modulation of OSC 1 via the modulation oscillator  (0-63: Off; 64-127: On)",
+					"hint": "Mod Osc Pitch>OSC 1  \u00b7  CC 33  \u2014  Enables frequency modulation of OSC 1 via the modulation oscillator  (0-63: Off; 64-127: On)",
 					"mode": 1,
 					"text": "OSC 1",
 					"texton": "OSC 1",
@@ -4222,8 +4222,8 @@
 							]
 						}
 					},
-					"annotation": "Mod Osc Pitch>OSC 2  \u00b7  CC 34  \u2014  Enables frequency modulation of OSC 2 via the modulation oscillator",
-					"hint": "Mod Osc Pitch>OSC 2  \u00b7  CC 34  \u2014  Enables frequency modulation of OSC 2 via the modulation oscillator",
+					"annotation": "Mod Osc Pitch>OSC 2  \u00b7  CC 34  \u2014  Enables frequency modulation of OSC 2 via the modulation oscillator  (0-63: Off; 64-127: On)",
+					"hint": "Mod Osc Pitch>OSC 2  \u00b7  CC 34  \u2014  Enables frequency modulation of OSC 2 via the modulation oscillator  (0-63: Off; 64-127: On)",
 					"mode": 1,
 					"text": "OSC 2",
 					"texton": "OSC 2",
@@ -4652,8 +4652,8 @@
 							]
 						}
 					},
-					"annotation": "Mod Osc PWM>OSC 1  \u00b7  CC 36  \u2014  Enables modulation of the duty cycle of the OSC 1 pulse/square waveshape via the modulation oscillator",
-					"hint": "Mod Osc PWM>OSC 1  \u00b7  CC 36  \u2014  Enables modulation of the duty cycle of the OSC 1 pulse/square waveshape via the modulation oscillator",
+					"annotation": "Mod Osc PWM>OSC 1  \u00b7  CC 36  \u2014  Enables modulation of the duty cycle of the OSC 1 pulse/square waveshape via the modulation oscillator  (0-63: Off; 64-127: On)",
+					"hint": "Mod Osc PWM>OSC 1  \u00b7  CC 36  \u2014  Enables modulation of the duty cycle of the OSC 1 pulse/square waveshape via the modulation oscillator  (0-63: Off; 64-127: On)",
 					"mode": 1,
 					"text": "OSC 1",
 					"texton": "OSC 1",
@@ -4840,8 +4840,8 @@
 							]
 						}
 					},
-					"annotation": "Mod Osc PWM>OSC 2  \u00b7  CC 37  \u2014  Enables modulation of the duty cycle of the OSC 2 pulse/square waveshape via the modulation oscillator",
-					"hint": "Mod Osc PWM>OSC 2  \u00b7  CC 37  \u2014  Enables modulation of the duty cycle of the OSC 2 pulse/square waveshape via the modulation oscillator",
+					"annotation": "Mod Osc PWM>OSC 2  \u00b7  CC 37  \u2014  Enables modulation of the duty cycle of the OSC 2 pulse/square waveshape via the modulation oscillator  (0-63: Off; 64-127: On)",
+					"hint": "Mod Osc PWM>OSC 2  \u00b7  CC 37  \u2014  Enables modulation of the duty cycle of the OSC 2 pulse/square waveshape via the modulation oscillator  (0-63: Off; 64-127: On)",
 					"mode": 1,
 					"text": "OSC 2",
 					"texton": "OSC 2",
@@ -5270,8 +5270,8 @@
 							]
 						}
 					},
-					"annotation": "Mod Osc Filter>F1  \u00b7  CC 40  \u2014  Enables cutoff frequency modulation of FILTER 1 via the modulation oscillator",
-					"hint": "Mod Osc Filter>F1  \u00b7  CC 40  \u2014  Enables cutoff frequency modulation of FILTER 1 via the modulation oscillator",
+					"annotation": "Mod Osc Filter>F1  \u00b7  CC 40  \u2014  Enables cutoff frequency modulation of FILTER 1 via the modulation oscillator  (0-63: Off; 64-127: On)",
+					"hint": "Mod Osc Filter>F1  \u00b7  CC 40  \u2014  Enables cutoff frequency modulation of FILTER 1 via the modulation oscillator  (0-63: Off; 64-127: On)",
 					"mode": 1,
 					"text": "Filter 1",
 					"texton": "Filter 1",
@@ -5458,8 +5458,8 @@
 							]
 						}
 					},
-					"annotation": "Mod Osc Filter>F2  \u00b7  CC 41  \u2014  Enables cutoff frequency modulation of FILTER 2 via the modulation oscillator",
-					"hint": "Mod Osc Filter>F2  \u00b7  CC 41  \u2014  Enables cutoff frequency modulation of FILTER 2 via the modulation oscillator",
+					"annotation": "Mod Osc Filter>F2  \u00b7  CC 41  \u2014  Enables cutoff frequency modulation of FILTER 2 via the modulation oscillator  (0-63: Off; 64-127: On)",
+					"hint": "Mod Osc Filter>F2  \u00b7  CC 41  \u2014  Enables cutoff frequency modulation of FILTER 2 via the modulation oscillator  (0-63: Off; 64-127: On)",
 					"mode": 1,
 					"text": "Filter 2",
 					"texton": "Filter 2",
@@ -5888,8 +5888,8 @@
 							]
 						}
 					},
-					"annotation": "Mod Osc VCA Pan  \u00b7  CC 43  \u2014  Enables pan-position modulation of a voice in the stereo field by inverting the phase of the modulation oscillator sent to the right VCA",
-					"hint": "Mod Osc VCA Pan  \u00b7  CC 43  \u2014  Enables pan-position modulation of a voice in the stereo field by inverting the phase of the modulation oscillator sent to the right VCA",
+					"annotation": "Mod Osc VCA Pan  \u00b7  CC 43  \u2014  Enables pan-position modulation of a voice in the stereo field by inverting the phase of the modulation oscillator sent to the right VCA  (0-63: Off; 64-127: On)",
+					"hint": "Mod Osc VCA Pan  \u00b7  CC 43  \u2014  Enables pan-position modulation of a voice in the stereo field by inverting the phase of the modulation oscillator sent to the right VCA  (0-63: Off; 64-127: On)",
 					"mode": 1,
 					"text": "Pan",
 					"texton": "Pan",
@@ -9729,8 +9729,8 @@
 							]
 						}
 					},
-					"annotation": "Filter 1 High Pass  \u00b7  CC 66  \u2014  Switches Filter 1 to high-pass (on/off; off 0-63, on 64-127).",
-					"hint": "Filter 1 High Pass  \u00b7  CC 66  \u2014  Switches Filter 1 to high-pass (on/off; off 0-63, on 64-127).",
+					"annotation": "Filter 1 High Pass  \u00b7  CC 66  \u2014  Switches FILTER 1 into high-pass mode when engaged  (0-63: Off; 64-127: On)",
+					"hint": "Filter 1 High Pass  \u00b7  CC 66  \u2014  Switches FILTER 1 into high-pass mode when engaged  (0-63: Off; 64-127: On)",
 					"mode": 1,
 					"text": "High Pass",
 					"texton": "High Pass",

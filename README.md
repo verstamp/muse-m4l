@@ -222,7 +222,10 @@ The MIDI CC parameter map and descriptions were compiled from:
   front panel: the Mod Osc per-destination enables (CC 33, 34, 36, 37, 40, 41,
   43) and Filter 1 High Pass (CC 66) are **on/off** switches (off 0–63, on
   64–127), not continuous knobs; the oscillator Tri/Saw Mix (CC 46, 51) are
-  knobs while the Wave Mix (CC 48, 53) are faders.
+  knobs while the Wave Mix (CC 48, 53) are faders. These eight on/off
+  corrections are now recorded back in `Muse_MIDI_CCs.csv` (the `usage` column
+  carries the `0-63: Off; 64-127: On` band that Moog's own CC list left blank),
+  so the CSV reflects the hardware rather than the documentation.
 
 ## TODO
 
