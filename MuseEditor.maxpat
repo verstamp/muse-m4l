@@ -175,23 +175,23 @@
 						10.0,
 						23.0,
 						182.0,
-						14.0
+						1.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
 						10.0,
 						23.0,
 						182.0,
-						14.0
+						1.0
 					],
-					"varname": "sec_0_0_hd",
+					"varname": "sec_0_0_top",
 					"mode": 0,
 					"rounded": 0,
 					"bgfillcolor_type": "color",
 					"bgcolor": [
-						0.33,
-						0.36,
-						0.42,
+						0.4,
+						0.43,
+						0.49,
 						1.0
 					],
 					"ignoreclick": 1
@@ -205,25 +205,25 @@
 					"numoutlets": 0,
 					"patching_rect": [
 						10.0,
-						37.0,
+						163.0,
 						182.0,
-						1.5
+						1.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
 						10.0,
-						37.0,
+						163.0,
 						182.0,
-						1.5
+						1.0
 					],
-					"varname": "sec_0_0_t",
+					"varname": "sec_0_0_bot",
 					"mode": 0,
 					"rounded": 0,
 					"bgfillcolor_type": "color",
 					"bgcolor": [
-						0.46,
-						0.5,
-						0.57,
+						0.4,
+						0.43,
+						0.49,
 						1.0
 					],
 					"ignoreclick": 1
@@ -238,24 +238,24 @@
 					"patching_rect": [
 						10.0,
 						23.0,
-						1.5,
+						1.0,
 						141.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
 						10.0,
 						23.0,
-						1.5,
+						1.0,
 						141.0
 					],
-					"varname": "sec_0_0_l",
+					"varname": "sec_0_0_lft",
 					"mode": 0,
 					"rounded": 0,
 					"bgfillcolor_type": "color",
 					"bgcolor": [
-						0.46,
-						0.5,
-						0.57,
+						0.4,
+						0.43,
+						0.49,
 						1.0
 					],
 					"ignoreclick": 1
@@ -268,26 +268,26 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						190.5,
+						191.0,
 						23.0,
-						1.5,
+						1.0,
 						141.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						190.5,
+						191.0,
 						23.0,
-						1.5,
+						1.0,
 						141.0
 					],
-					"varname": "sec_0_0_r",
+					"varname": "sec_0_0_rgt",
 					"mode": 0,
 					"rounded": 0,
 					"bgfillcolor_type": "color",
 					"bgcolor": [
-						0.46,
-						0.5,
-						0.57,
+						0.4,
+						0.43,
+						0.49,
 						1.0
 					],
 					"ignoreclick": 1
@@ -301,25 +301,25 @@
 					"numoutlets": 0,
 					"patching_rect": [
 						10.0,
-						162.5,
+						36.0,
 						182.0,
-						1.5
+						1.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
 						10.0,
-						162.5,
+						36.0,
 						182.0,
-						1.5
+						1.0
 					],
-					"varname": "sec_0_0_b",
+					"varname": "sec_0_0_uln",
 					"mode": 0,
 					"rounded": 0,
 					"bgfillcolor_type": "color",
 					"bgcolor": [
-						0.46,
-						0.5,
-						0.57,
+						0.42,
+						0.56,
+						0.78,
 						1.0
 					],
 					"ignoreclick": 1
@@ -786,23 +786,23 @@
 						200.0,
 						23.0,
 						182.0,
-						14.0
+						1.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
 						200.0,
 						23.0,
 						182.0,
-						14.0
+						1.0
 					],
-					"varname": "sec_0_1_hd",
+					"varname": "sec_0_1_top",
 					"mode": 0,
 					"rounded": 0,
 					"bgfillcolor_type": "color",
 					"bgcolor": [
-						0.33,
-						0.36,
-						0.42,
+						0.4,
+						0.43,
+						0.49,
 						1.0
 					],
 					"ignoreclick": 1
@@ -816,25 +816,25 @@
 					"numoutlets": 0,
 					"patching_rect": [
 						200.0,
-						37.0,
+						163.0,
 						182.0,
-						1.5
+						1.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
 						200.0,
-						37.0,
+						163.0,
 						182.0,
-						1.5
+						1.0
 					],
-					"varname": "sec_0_1_t",
+					"varname": "sec_0_1_bot",
 					"mode": 0,
 					"rounded": 0,
 					"bgfillcolor_type": "color",
 					"bgcolor": [
-						0.46,
-						0.5,
-						0.57,
+						0.4,
+						0.43,
+						0.49,
 						1.0
 					],
 					"ignoreclick": 1
@@ -849,24 +849,24 @@
 					"patching_rect": [
 						200.0,
 						23.0,
-						1.5,
+						1.0,
 						141.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
 						200.0,
 						23.0,
-						1.5,
+						1.0,
 						141.0
 					],
-					"varname": "sec_0_1_l",
+					"varname": "sec_0_1_lft",
 					"mode": 0,
 					"rounded": 0,
 					"bgfillcolor_type": "color",
 					"bgcolor": [
-						0.46,
-						0.5,
-						0.57,
+						0.4,
+						0.43,
+						0.49,
 						1.0
 					],
 					"ignoreclick": 1
@@ -879,26 +879,26 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						380.5,
+						381.0,
 						23.0,
-						1.5,
+						1.0,
 						141.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						380.5,
+						381.0,
 						23.0,
-						1.5,
+						1.0,
 						141.0
 					],
-					"varname": "sec_0_1_r",
+					"varname": "sec_0_1_rgt",
 					"mode": 0,
 					"rounded": 0,
 					"bgfillcolor_type": "color",
 					"bgcolor": [
-						0.46,
-						0.5,
-						0.57,
+						0.4,
+						0.43,
+						0.49,
 						1.0
 					],
 					"ignoreclick": 1
@@ -912,25 +912,25 @@
 					"numoutlets": 0,
 					"patching_rect": [
 						200.0,
-						162.5,
+						36.0,
 						182.0,
-						1.5
+						1.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
 						200.0,
-						162.5,
+						36.0,
 						182.0,
-						1.5
+						1.0
 					],
-					"varname": "sec_0_1_b",
+					"varname": "sec_0_1_uln",
 					"mode": 0,
 					"rounded": 0,
 					"bgfillcolor_type": "color",
 					"bgcolor": [
-						0.46,
-						0.5,
-						0.57,
+						0.42,
+						0.56,
+						0.78,
 						1.0
 					],
 					"ignoreclick": 1
@@ -1397,23 +1397,23 @@
 						390.0,
 						23.0,
 						238.0,
-						14.0
+						1.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
 						390.0,
 						23.0,
 						238.0,
-						14.0
+						1.0
 					],
-					"varname": "sec_0_2_hd",
+					"varname": "sec_0_2_top",
 					"mode": 0,
 					"rounded": 0,
 					"bgfillcolor_type": "color",
 					"bgcolor": [
-						0.33,
-						0.36,
-						0.42,
+						0.4,
+						0.43,
+						0.49,
 						1.0
 					],
 					"ignoreclick": 1
@@ -1427,25 +1427,25 @@
 					"numoutlets": 0,
 					"patching_rect": [
 						390.0,
-						37.0,
+						163.0,
 						238.0,
-						1.5
+						1.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
 						390.0,
-						37.0,
+						163.0,
 						238.0,
-						1.5
+						1.0
 					],
-					"varname": "sec_0_2_t",
+					"varname": "sec_0_2_bot",
 					"mode": 0,
 					"rounded": 0,
 					"bgfillcolor_type": "color",
 					"bgcolor": [
-						0.46,
-						0.5,
-						0.57,
+						0.4,
+						0.43,
+						0.49,
 						1.0
 					],
 					"ignoreclick": 1
@@ -1460,24 +1460,24 @@
 					"patching_rect": [
 						390.0,
 						23.0,
-						1.5,
+						1.0,
 						141.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
 						390.0,
 						23.0,
-						1.5,
+						1.0,
 						141.0
 					],
-					"varname": "sec_0_2_l",
+					"varname": "sec_0_2_lft",
 					"mode": 0,
 					"rounded": 0,
 					"bgfillcolor_type": "color",
 					"bgcolor": [
-						0.46,
-						0.5,
-						0.57,
+						0.4,
+						0.43,
+						0.49,
 						1.0
 					],
 					"ignoreclick": 1
@@ -1490,26 +1490,26 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						626.5,
+						627.0,
 						23.0,
-						1.5,
+						1.0,
 						141.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						626.5,
+						627.0,
 						23.0,
-						1.5,
+						1.0,
 						141.0
 					],
-					"varname": "sec_0_2_r",
+					"varname": "sec_0_2_rgt",
 					"mode": 0,
 					"rounded": 0,
 					"bgfillcolor_type": "color",
 					"bgcolor": [
-						0.46,
-						0.5,
-						0.57,
+						0.4,
+						0.43,
+						0.49,
 						1.0
 					],
 					"ignoreclick": 1
@@ -1523,25 +1523,25 @@
 					"numoutlets": 0,
 					"patching_rect": [
 						390.0,
-						162.5,
+						36.0,
 						238.0,
-						1.5
+						1.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
 						390.0,
-						162.5,
+						36.0,
 						238.0,
-						1.5
+						1.0
 					],
-					"varname": "sec_0_2_b",
+					"varname": "sec_0_2_uln",
 					"mode": 0,
 					"rounded": 0,
 					"bgfillcolor_type": "color",
 					"bgcolor": [
-						0.46,
-						0.5,
-						0.57,
+						0.42,
+						0.56,
+						0.78,
 						1.0
 					],
 					"ignoreclick": 1
@@ -2630,23 +2630,23 @@
 						10.0,
 						23.0,
 						182.0,
-						14.0
+						1.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
 						10.0,
 						23.0,
 						182.0,
-						14.0
+						1.0
 					],
-					"varname": "sec_1_0_hd",
+					"varname": "sec_1_0_top",
 					"mode": 0,
 					"rounded": 0,
 					"bgfillcolor_type": "color",
 					"bgcolor": [
-						0.33,
-						0.36,
-						0.42,
+						0.4,
+						0.43,
+						0.49,
 						1.0
 					],
 					"ignoreclick": 1
@@ -2660,25 +2660,25 @@
 					"numoutlets": 0,
 					"patching_rect": [
 						10.0,
-						37.0,
+						163.0,
 						182.0,
-						1.5
+						1.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
 						10.0,
-						37.0,
+						163.0,
 						182.0,
-						1.5
+						1.0
 					],
-					"varname": "sec_1_0_t",
+					"varname": "sec_1_0_bot",
 					"mode": 0,
 					"rounded": 0,
 					"bgfillcolor_type": "color",
 					"bgcolor": [
-						0.46,
-						0.5,
-						0.57,
+						0.4,
+						0.43,
+						0.49,
 						1.0
 					],
 					"ignoreclick": 1
@@ -2693,24 +2693,24 @@
 					"patching_rect": [
 						10.0,
 						23.0,
-						1.5,
+						1.0,
 						141.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
 						10.0,
 						23.0,
-						1.5,
+						1.0,
 						141.0
 					],
-					"varname": "sec_1_0_l",
+					"varname": "sec_1_0_lft",
 					"mode": 0,
 					"rounded": 0,
 					"bgfillcolor_type": "color",
 					"bgcolor": [
-						0.46,
-						0.5,
-						0.57,
+						0.4,
+						0.43,
+						0.49,
 						1.0
 					],
 					"ignoreclick": 1
@@ -2723,26 +2723,26 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						190.5,
+						191.0,
 						23.0,
-						1.5,
+						1.0,
 						141.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						190.5,
+						191.0,
 						23.0,
-						1.5,
+						1.0,
 						141.0
 					],
-					"varname": "sec_1_0_r",
+					"varname": "sec_1_0_rgt",
 					"mode": 0,
 					"rounded": 0,
 					"bgfillcolor_type": "color",
 					"bgcolor": [
-						0.46,
-						0.5,
-						0.57,
+						0.4,
+						0.43,
+						0.49,
 						1.0
 					],
 					"ignoreclick": 1
@@ -2756,25 +2756,25 @@
 					"numoutlets": 0,
 					"patching_rect": [
 						10.0,
-						162.5,
+						36.0,
 						182.0,
-						1.5
+						1.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
 						10.0,
-						162.5,
+						36.0,
 						182.0,
-						1.5
+						1.0
 					],
-					"varname": "sec_1_0_b",
+					"varname": "sec_1_0_uln",
 					"mode": 0,
 					"rounded": 0,
 					"bgfillcolor_type": "color",
 					"bgcolor": [
-						0.46,
-						0.5,
-						0.57,
+						0.42,
+						0.56,
+						0.78,
 						1.0
 					],
 					"ignoreclick": 1
@@ -3788,23 +3788,23 @@
 						200.0,
 						23.0,
 						126.0,
-						14.0
+						1.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
 						200.0,
 						23.0,
 						126.0,
-						14.0
+						1.0
 					],
-					"varname": "sec_1_1_hd",
+					"varname": "sec_1_1_top",
 					"mode": 0,
 					"rounded": 0,
 					"bgfillcolor_type": "color",
 					"bgcolor": [
-						0.33,
-						0.36,
-						0.42,
+						0.4,
+						0.43,
+						0.49,
 						1.0
 					],
 					"ignoreclick": 1
@@ -3818,25 +3818,25 @@
 					"numoutlets": 0,
 					"patching_rect": [
 						200.0,
-						37.0,
+						163.0,
 						126.0,
-						1.5
+						1.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
 						200.0,
-						37.0,
+						163.0,
 						126.0,
-						1.5
+						1.0
 					],
-					"varname": "sec_1_1_t",
+					"varname": "sec_1_1_bot",
 					"mode": 0,
 					"rounded": 0,
 					"bgfillcolor_type": "color",
 					"bgcolor": [
-						0.46,
-						0.5,
-						0.57,
+						0.4,
+						0.43,
+						0.49,
 						1.0
 					],
 					"ignoreclick": 1
@@ -3851,24 +3851,24 @@
 					"patching_rect": [
 						200.0,
 						23.0,
-						1.5,
+						1.0,
 						141.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
 						200.0,
 						23.0,
-						1.5,
+						1.0,
 						141.0
 					],
-					"varname": "sec_1_1_l",
+					"varname": "sec_1_1_lft",
 					"mode": 0,
 					"rounded": 0,
 					"bgfillcolor_type": "color",
 					"bgcolor": [
-						0.46,
-						0.5,
-						0.57,
+						0.4,
+						0.43,
+						0.49,
 						1.0
 					],
 					"ignoreclick": 1
@@ -3881,26 +3881,26 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						324.5,
+						325.0,
 						23.0,
-						1.5,
+						1.0,
 						141.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						324.5,
+						325.0,
 						23.0,
-						1.5,
+						1.0,
 						141.0
 					],
-					"varname": "sec_1_1_r",
+					"varname": "sec_1_1_rgt",
 					"mode": 0,
 					"rounded": 0,
 					"bgfillcolor_type": "color",
 					"bgcolor": [
-						0.46,
-						0.5,
-						0.57,
+						0.4,
+						0.43,
+						0.49,
 						1.0
 					],
 					"ignoreclick": 1
@@ -3914,25 +3914,25 @@
 					"numoutlets": 0,
 					"patching_rect": [
 						200.0,
-						162.5,
+						36.0,
 						126.0,
-						1.5
+						1.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
 						200.0,
-						162.5,
+						36.0,
 						126.0,
-						1.5
+						1.0
 					],
-					"varname": "sec_1_1_b",
+					"varname": "sec_1_1_uln",
 					"mode": 0,
 					"rounded": 0,
 					"bgfillcolor_type": "color",
 					"bgcolor": [
-						0.46,
-						0.5,
-						0.57,
+						0.42,
+						0.56,
+						0.78,
 						1.0
 					],
 					"ignoreclick": 1
@@ -4349,23 +4349,23 @@
 						334.0,
 						23.0,
 						126.0,
-						14.0
+						1.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
 						334.0,
 						23.0,
 						126.0,
-						14.0
+						1.0
 					],
-					"varname": "sec_1_2_hd",
+					"varname": "sec_1_2_top",
 					"mode": 0,
 					"rounded": 0,
 					"bgfillcolor_type": "color",
 					"bgcolor": [
-						0.33,
-						0.36,
-						0.42,
+						0.4,
+						0.43,
+						0.49,
 						1.0
 					],
 					"ignoreclick": 1
@@ -4379,25 +4379,25 @@
 					"numoutlets": 0,
 					"patching_rect": [
 						334.0,
-						37.0,
+						163.0,
 						126.0,
-						1.5
+						1.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
 						334.0,
-						37.0,
+						163.0,
 						126.0,
-						1.5
+						1.0
 					],
-					"varname": "sec_1_2_t",
+					"varname": "sec_1_2_bot",
 					"mode": 0,
 					"rounded": 0,
 					"bgfillcolor_type": "color",
 					"bgcolor": [
-						0.46,
-						0.5,
-						0.57,
+						0.4,
+						0.43,
+						0.49,
 						1.0
 					],
 					"ignoreclick": 1
@@ -4412,24 +4412,24 @@
 					"patching_rect": [
 						334.0,
 						23.0,
-						1.5,
+						1.0,
 						141.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
 						334.0,
 						23.0,
-						1.5,
+						1.0,
 						141.0
 					],
-					"varname": "sec_1_2_l",
+					"varname": "sec_1_2_lft",
 					"mode": 0,
 					"rounded": 0,
 					"bgfillcolor_type": "color",
 					"bgcolor": [
-						0.46,
-						0.5,
-						0.57,
+						0.4,
+						0.43,
+						0.49,
 						1.0
 					],
 					"ignoreclick": 1
@@ -4442,26 +4442,26 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						458.5,
+						459.0,
 						23.0,
-						1.5,
+						1.0,
 						141.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						458.5,
+						459.0,
 						23.0,
-						1.5,
+						1.0,
 						141.0
 					],
-					"varname": "sec_1_2_r",
+					"varname": "sec_1_2_rgt",
 					"mode": 0,
 					"rounded": 0,
 					"bgfillcolor_type": "color",
 					"bgcolor": [
-						0.46,
-						0.5,
-						0.57,
+						0.4,
+						0.43,
+						0.49,
 						1.0
 					],
 					"ignoreclick": 1
@@ -4475,25 +4475,25 @@
 					"numoutlets": 0,
 					"patching_rect": [
 						334.0,
-						162.5,
+						36.0,
 						126.0,
-						1.5
+						1.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
 						334.0,
-						162.5,
+						36.0,
 						126.0,
-						1.5
+						1.0
 					],
-					"varname": "sec_1_2_b",
+					"varname": "sec_1_2_uln",
 					"mode": 0,
 					"rounded": 0,
 					"bgfillcolor_type": "color",
 					"bgcolor": [
-						0.46,
-						0.5,
-						0.57,
+						0.42,
+						0.56,
+						0.78,
 						1.0
 					],
 					"ignoreclick": 1
@@ -4910,23 +4910,23 @@
 						468.0,
 						23.0,
 						126.0,
-						14.0
+						1.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
 						468.0,
 						23.0,
 						126.0,
-						14.0
+						1.0
 					],
-					"varname": "sec_1_3_hd",
+					"varname": "sec_1_3_top",
 					"mode": 0,
 					"rounded": 0,
 					"bgfillcolor_type": "color",
 					"bgcolor": [
-						0.33,
-						0.36,
-						0.42,
+						0.4,
+						0.43,
+						0.49,
 						1.0
 					],
 					"ignoreclick": 1
@@ -4940,25 +4940,25 @@
 					"numoutlets": 0,
 					"patching_rect": [
 						468.0,
-						37.0,
+						163.0,
 						126.0,
-						1.5
+						1.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
 						468.0,
-						37.0,
+						163.0,
 						126.0,
-						1.5
+						1.0
 					],
-					"varname": "sec_1_3_t",
+					"varname": "sec_1_3_bot",
 					"mode": 0,
 					"rounded": 0,
 					"bgfillcolor_type": "color",
 					"bgcolor": [
-						0.46,
-						0.5,
-						0.57,
+						0.4,
+						0.43,
+						0.49,
 						1.0
 					],
 					"ignoreclick": 1
@@ -4973,24 +4973,24 @@
 					"patching_rect": [
 						468.0,
 						23.0,
-						1.5,
+						1.0,
 						141.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
 						468.0,
 						23.0,
-						1.5,
+						1.0,
 						141.0
 					],
-					"varname": "sec_1_3_l",
+					"varname": "sec_1_3_lft",
 					"mode": 0,
 					"rounded": 0,
 					"bgfillcolor_type": "color",
 					"bgcolor": [
-						0.46,
-						0.5,
-						0.57,
+						0.4,
+						0.43,
+						0.49,
 						1.0
 					],
 					"ignoreclick": 1
@@ -5003,26 +5003,26 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						592.5,
+						593.0,
 						23.0,
-						1.5,
+						1.0,
 						141.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						592.5,
+						593.0,
 						23.0,
-						1.5,
+						1.0,
 						141.0
 					],
-					"varname": "sec_1_3_r",
+					"varname": "sec_1_3_rgt",
 					"mode": 0,
 					"rounded": 0,
 					"bgfillcolor_type": "color",
 					"bgcolor": [
-						0.46,
-						0.5,
-						0.57,
+						0.4,
+						0.43,
+						0.49,
 						1.0
 					],
 					"ignoreclick": 1
@@ -5036,25 +5036,25 @@
 					"numoutlets": 0,
 					"patching_rect": [
 						468.0,
-						162.5,
+						36.0,
 						126.0,
-						1.5
+						1.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
 						468.0,
-						162.5,
+						36.0,
 						126.0,
-						1.5
+						1.0
 					],
-					"varname": "sec_1_3_b",
+					"varname": "sec_1_3_uln",
 					"mode": 0,
 					"rounded": 0,
 					"bgfillcolor_type": "color",
 					"bgcolor": [
-						0.46,
-						0.5,
-						0.57,
+						0.42,
+						0.56,
+						0.78,
 						1.0
 					],
 					"ignoreclick": 1
@@ -5471,23 +5471,23 @@
 						602.0,
 						23.0,
 						70.0,
-						14.0
+						1.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
 						602.0,
 						23.0,
 						70.0,
-						14.0
+						1.0
 					],
-					"varname": "sec_1_4_hd",
+					"varname": "sec_1_4_top",
 					"mode": 0,
 					"rounded": 0,
 					"bgfillcolor_type": "color",
 					"bgcolor": [
-						0.33,
-						0.36,
-						0.42,
+						0.4,
+						0.43,
+						0.49,
 						1.0
 					],
 					"ignoreclick": 1
@@ -5501,25 +5501,25 @@
 					"numoutlets": 0,
 					"patching_rect": [
 						602.0,
-						37.0,
+						163.0,
 						70.0,
-						1.5
+						1.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
 						602.0,
-						37.0,
+						163.0,
 						70.0,
-						1.5
+						1.0
 					],
-					"varname": "sec_1_4_t",
+					"varname": "sec_1_4_bot",
 					"mode": 0,
 					"rounded": 0,
 					"bgfillcolor_type": "color",
 					"bgcolor": [
-						0.46,
-						0.5,
-						0.57,
+						0.4,
+						0.43,
+						0.49,
 						1.0
 					],
 					"ignoreclick": 1
@@ -5534,24 +5534,24 @@
 					"patching_rect": [
 						602.0,
 						23.0,
-						1.5,
+						1.0,
 						141.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
 						602.0,
 						23.0,
-						1.5,
+						1.0,
 						141.0
 					],
-					"varname": "sec_1_4_l",
+					"varname": "sec_1_4_lft",
 					"mode": 0,
 					"rounded": 0,
 					"bgfillcolor_type": "color",
 					"bgcolor": [
-						0.46,
-						0.5,
-						0.57,
+						0.4,
+						0.43,
+						0.49,
 						1.0
 					],
 					"ignoreclick": 1
@@ -5564,26 +5564,26 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						670.5,
+						671.0,
 						23.0,
-						1.5,
+						1.0,
 						141.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						670.5,
+						671.0,
 						23.0,
-						1.5,
+						1.0,
 						141.0
 					],
-					"varname": "sec_1_4_r",
+					"varname": "sec_1_4_rgt",
 					"mode": 0,
 					"rounded": 0,
 					"bgfillcolor_type": "color",
 					"bgcolor": [
-						0.46,
-						0.5,
-						0.57,
+						0.4,
+						0.43,
+						0.49,
 						1.0
 					],
 					"ignoreclick": 1
@@ -5597,25 +5597,25 @@
 					"numoutlets": 0,
 					"patching_rect": [
 						602.0,
-						162.5,
+						36.0,
 						70.0,
-						1.5
+						1.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
 						602.0,
-						162.5,
+						36.0,
 						70.0,
-						1.5
+						1.0
 					],
-					"varname": "sec_1_4_b",
+					"varname": "sec_1_4_uln",
 					"mode": 0,
 					"rounded": 0,
 					"bgfillcolor_type": "color",
 					"bgcolor": [
-						0.46,
-						0.5,
-						0.57,
+						0.42,
+						0.56,
+						0.78,
 						1.0
 					],
 					"ignoreclick": 1
@@ -5907,23 +5907,23 @@
 						10.0,
 						23.0,
 						182.0,
-						14.0
+						1.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
 						10.0,
 						23.0,
 						182.0,
-						14.0
+						1.0
 					],
-					"varname": "sec_2_0_hd",
+					"varname": "sec_2_0_top",
 					"mode": 0,
 					"rounded": 0,
 					"bgfillcolor_type": "color",
 					"bgcolor": [
-						0.33,
-						0.36,
-						0.42,
+						0.4,
+						0.43,
+						0.49,
 						1.0
 					],
 					"ignoreclick": 1
@@ -5937,25 +5937,25 @@
 					"numoutlets": 0,
 					"patching_rect": [
 						10.0,
-						37.0,
+						163.0,
 						182.0,
-						1.5
+						1.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
 						10.0,
-						37.0,
+						163.0,
 						182.0,
-						1.5
+						1.0
 					],
-					"varname": "sec_2_0_t",
+					"varname": "sec_2_0_bot",
 					"mode": 0,
 					"rounded": 0,
 					"bgfillcolor_type": "color",
 					"bgcolor": [
-						0.46,
-						0.5,
-						0.57,
+						0.4,
+						0.43,
+						0.49,
 						1.0
 					],
 					"ignoreclick": 1
@@ -5970,24 +5970,24 @@
 					"patching_rect": [
 						10.0,
 						23.0,
-						1.5,
+						1.0,
 						141.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
 						10.0,
 						23.0,
-						1.5,
+						1.0,
 						141.0
 					],
-					"varname": "sec_2_0_l",
+					"varname": "sec_2_0_lft",
 					"mode": 0,
 					"rounded": 0,
 					"bgfillcolor_type": "color",
 					"bgcolor": [
-						0.46,
-						0.5,
-						0.57,
+						0.4,
+						0.43,
+						0.49,
 						1.0
 					],
 					"ignoreclick": 1
@@ -6000,26 +6000,26 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						190.5,
+						191.0,
 						23.0,
-						1.5,
+						1.0,
 						141.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						190.5,
+						191.0,
 						23.0,
-						1.5,
+						1.0,
 						141.0
 					],
-					"varname": "sec_2_0_r",
+					"varname": "sec_2_0_rgt",
 					"mode": 0,
 					"rounded": 0,
 					"bgfillcolor_type": "color",
 					"bgcolor": [
-						0.46,
-						0.5,
-						0.57,
+						0.4,
+						0.43,
+						0.49,
 						1.0
 					],
 					"ignoreclick": 1
@@ -6033,25 +6033,25 @@
 					"numoutlets": 0,
 					"patching_rect": [
 						10.0,
-						162.5,
+						36.0,
 						182.0,
-						1.5
+						1.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
 						10.0,
-						162.5,
+						36.0,
 						182.0,
-						1.5
+						1.0
 					],
-					"varname": "sec_2_0_b",
+					"varname": "sec_2_0_uln",
 					"mode": 0,
 					"rounded": 0,
 					"bgfillcolor_type": "color",
 					"bgcolor": [
-						0.46,
-						0.5,
-						0.57,
+						0.42,
+						0.56,
+						0.78,
 						1.0
 					],
 					"ignoreclick": 1
@@ -6513,20 +6513,20 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						23.0,
-						119.5,
-						44.0,
-						13.0
+						22.0,
+						128.75,
+						46.0,
+						15.0
 					],
 					"outlettype": [
 						""
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						23.0,
-						119.5,
-						44.0,
-						13.0
+						22.0,
+						128.75,
+						46.0,
+						15.0
 					],
 					"parameter_enable": 1,
 					"varname": "OSC_1_Tri_Saw_Mix",
@@ -6638,20 +6638,20 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						79.0,
-						119.5,
-						44.0,
-						13.0
+						78.0,
+						128.75,
+						46.0,
+						15.0
 					],
 					"outlettype": [
 						""
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						79.0,
-						119.5,
-						44.0,
-						13.0
+						78.0,
+						128.75,
+						46.0,
+						15.0
 					],
 					"parameter_enable": 1,
 					"varname": "OSC_1_Wave_Mix",
@@ -6766,23 +6766,23 @@
 						200.0,
 						23.0,
 						182.0,
-						14.0
+						1.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
 						200.0,
 						23.0,
 						182.0,
-						14.0
+						1.0
 					],
-					"varname": "sec_2_1_hd",
+					"varname": "sec_2_1_top",
 					"mode": 0,
 					"rounded": 0,
 					"bgfillcolor_type": "color",
 					"bgcolor": [
-						0.33,
-						0.36,
-						0.42,
+						0.4,
+						0.43,
+						0.49,
 						1.0
 					],
 					"ignoreclick": 1
@@ -6796,25 +6796,25 @@
 					"numoutlets": 0,
 					"patching_rect": [
 						200.0,
-						37.0,
+						163.0,
 						182.0,
-						1.5
+						1.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
 						200.0,
-						37.0,
+						163.0,
 						182.0,
-						1.5
+						1.0
 					],
-					"varname": "sec_2_1_t",
+					"varname": "sec_2_1_bot",
 					"mode": 0,
 					"rounded": 0,
 					"bgfillcolor_type": "color",
 					"bgcolor": [
-						0.46,
-						0.5,
-						0.57,
+						0.4,
+						0.43,
+						0.49,
 						1.0
 					],
 					"ignoreclick": 1
@@ -6829,24 +6829,24 @@
 					"patching_rect": [
 						200.0,
 						23.0,
-						1.5,
+						1.0,
 						141.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
 						200.0,
 						23.0,
-						1.5,
+						1.0,
 						141.0
 					],
-					"varname": "sec_2_1_l",
+					"varname": "sec_2_1_lft",
 					"mode": 0,
 					"rounded": 0,
 					"bgfillcolor_type": "color",
 					"bgcolor": [
-						0.46,
-						0.5,
-						0.57,
+						0.4,
+						0.43,
+						0.49,
 						1.0
 					],
 					"ignoreclick": 1
@@ -6859,26 +6859,26 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						380.5,
+						381.0,
 						23.0,
-						1.5,
+						1.0,
 						141.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						380.5,
+						381.0,
 						23.0,
-						1.5,
+						1.0,
 						141.0
 					],
-					"varname": "sec_2_1_r",
+					"varname": "sec_2_1_rgt",
 					"mode": 0,
 					"rounded": 0,
 					"bgfillcolor_type": "color",
 					"bgcolor": [
-						0.46,
-						0.5,
-						0.57,
+						0.4,
+						0.43,
+						0.49,
 						1.0
 					],
 					"ignoreclick": 1
@@ -6892,25 +6892,25 @@
 					"numoutlets": 0,
 					"patching_rect": [
 						200.0,
-						162.5,
+						36.0,
 						182.0,
-						1.5
+						1.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
 						200.0,
-						162.5,
+						36.0,
 						182.0,
-						1.5
+						1.0
 					],
-					"varname": "sec_2_1_b",
+					"varname": "sec_2_1_uln",
 					"mode": 0,
 					"rounded": 0,
 					"bgfillcolor_type": "color",
 					"bgcolor": [
-						0.46,
-						0.5,
-						0.57,
+						0.42,
+						0.56,
+						0.78,
 						1.0
 					],
 					"ignoreclick": 1
@@ -7372,20 +7372,20 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						213.0,
-						119.5,
-						44.0,
-						13.0
+						212.0,
+						128.75,
+						46.0,
+						15.0
 					],
 					"outlettype": [
 						""
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						213.0,
-						119.5,
-						44.0,
-						13.0
+						212.0,
+						128.75,
+						46.0,
+						15.0
 					],
 					"parameter_enable": 1,
 					"varname": "OSC_2_Tri_Saw_Mix",
@@ -7497,20 +7497,20 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						269.0,
-						119.5,
-						44.0,
-						13.0
+						268.0,
+						128.75,
+						46.0,
+						15.0
 					],
 					"outlettype": [
 						""
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						269.0,
-						119.5,
-						44.0,
-						13.0
+						268.0,
+						128.75,
+						46.0,
+						15.0
 					],
 					"parameter_enable": 1,
 					"varname": "OSC_2_Wave_Mix",
@@ -7625,23 +7625,23 @@
 						390.0,
 						23.0,
 						126.0,
-						14.0
+						1.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
 						390.0,
 						23.0,
 						126.0,
-						14.0
+						1.0
 					],
-					"varname": "sec_2_2_hd",
+					"varname": "sec_2_2_top",
 					"mode": 0,
 					"rounded": 0,
 					"bgfillcolor_type": "color",
 					"bgcolor": [
-						0.33,
-						0.36,
-						0.42,
+						0.4,
+						0.43,
+						0.49,
 						1.0
 					],
 					"ignoreclick": 1
@@ -7655,25 +7655,25 @@
 					"numoutlets": 0,
 					"patching_rect": [
 						390.0,
-						37.0,
+						163.0,
 						126.0,
-						1.5
+						1.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
 						390.0,
-						37.0,
+						163.0,
 						126.0,
-						1.5
+						1.0
 					],
-					"varname": "sec_2_2_t",
+					"varname": "sec_2_2_bot",
 					"mode": 0,
 					"rounded": 0,
 					"bgfillcolor_type": "color",
 					"bgcolor": [
-						0.46,
-						0.5,
-						0.57,
+						0.4,
+						0.43,
+						0.49,
 						1.0
 					],
 					"ignoreclick": 1
@@ -7688,24 +7688,24 @@
 					"patching_rect": [
 						390.0,
 						23.0,
-						1.5,
+						1.0,
 						141.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
 						390.0,
 						23.0,
-						1.5,
+						1.0,
 						141.0
 					],
-					"varname": "sec_2_2_l",
+					"varname": "sec_2_2_lft",
 					"mode": 0,
 					"rounded": 0,
 					"bgfillcolor_type": "color",
 					"bgcolor": [
-						0.46,
-						0.5,
-						0.57,
+						0.4,
+						0.43,
+						0.49,
 						1.0
 					],
 					"ignoreclick": 1
@@ -7718,26 +7718,26 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						514.5,
+						515.0,
 						23.0,
-						1.5,
+						1.0,
 						141.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						514.5,
+						515.0,
 						23.0,
-						1.5,
+						1.0,
 						141.0
 					],
-					"varname": "sec_2_2_r",
+					"varname": "sec_2_2_rgt",
 					"mode": 0,
 					"rounded": 0,
 					"bgfillcolor_type": "color",
 					"bgcolor": [
-						0.46,
-						0.5,
-						0.57,
+						0.4,
+						0.43,
+						0.49,
 						1.0
 					],
 					"ignoreclick": 1
@@ -7751,25 +7751,25 @@
 					"numoutlets": 0,
 					"patching_rect": [
 						390.0,
-						162.5,
+						36.0,
 						126.0,
-						1.5
+						1.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
 						390.0,
-						162.5,
+						36.0,
 						126.0,
-						1.5
+						1.0
 					],
-					"varname": "sec_2_2_b",
+					"varname": "sec_2_2_uln",
 					"mode": 0,
 					"rounded": 0,
 					"bgfillcolor_type": "color",
 					"bgcolor": [
-						0.46,
-						0.5,
-						0.57,
+						0.42,
+						0.56,
+						0.78,
 						1.0
 					],
 					"ignoreclick": 1
@@ -8440,23 +8440,23 @@
 						10.0,
 						23.0,
 						350.0,
-						14.0
+						1.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
 						10.0,
 						23.0,
 						350.0,
-						14.0
+						1.0
 					],
-					"varname": "sec_3_0_hd",
+					"varname": "sec_3_0_top",
 					"mode": 0,
 					"rounded": 0,
 					"bgfillcolor_type": "color",
 					"bgcolor": [
-						0.33,
-						0.36,
-						0.42,
+						0.4,
+						0.43,
+						0.49,
 						1.0
 					],
 					"ignoreclick": 1
@@ -8470,25 +8470,25 @@
 					"numoutlets": 0,
 					"patching_rect": [
 						10.0,
-						37.0,
+						163.0,
 						350.0,
-						1.5
+						1.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
 						10.0,
-						37.0,
+						163.0,
 						350.0,
-						1.5
+						1.0
 					],
-					"varname": "sec_3_0_t",
+					"varname": "sec_3_0_bot",
 					"mode": 0,
 					"rounded": 0,
 					"bgfillcolor_type": "color",
 					"bgcolor": [
-						0.46,
-						0.5,
-						0.57,
+						0.4,
+						0.43,
+						0.49,
 						1.0
 					],
 					"ignoreclick": 1
@@ -8503,24 +8503,24 @@
 					"patching_rect": [
 						10.0,
 						23.0,
-						1.5,
+						1.0,
 						141.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
 						10.0,
 						23.0,
-						1.5,
+						1.0,
 						141.0
 					],
-					"varname": "sec_3_0_l",
+					"varname": "sec_3_0_lft",
 					"mode": 0,
 					"rounded": 0,
 					"bgfillcolor_type": "color",
 					"bgcolor": [
-						0.46,
-						0.5,
-						0.57,
+						0.4,
+						0.43,
+						0.49,
 						1.0
 					],
 					"ignoreclick": 1
@@ -8533,26 +8533,26 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						358.5,
+						359.0,
 						23.0,
-						1.5,
+						1.0,
 						141.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						358.5,
+						359.0,
 						23.0,
-						1.5,
+						1.0,
 						141.0
 					],
-					"varname": "sec_3_0_r",
+					"varname": "sec_3_0_rgt",
 					"mode": 0,
 					"rounded": 0,
 					"bgfillcolor_type": "color",
 					"bgcolor": [
-						0.46,
-						0.5,
-						0.57,
+						0.4,
+						0.43,
+						0.49,
 						1.0
 					],
 					"ignoreclick": 1
@@ -8566,25 +8566,25 @@
 					"numoutlets": 0,
 					"patching_rect": [
 						10.0,
-						162.5,
+						36.0,
 						350.0,
-						1.5
+						1.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
 						10.0,
-						162.5,
+						36.0,
 						350.0,
-						1.5
+						1.0
 					],
-					"varname": "sec_3_0_b",
+					"varname": "sec_3_0_uln",
 					"mode": 0,
 					"rounded": 0,
 					"bgfillcolor_type": "color",
 					"bgcolor": [
-						0.46,
-						0.5,
-						0.57,
+						0.42,
+						0.56,
+						0.78,
 						1.0
 					],
 					"ignoreclick": 1
@@ -9244,31 +9244,31 @@
 			{
 				"box": {
 					"id": "obj-354",
-					"maxclass": "live.dial",
+					"maxclass": "live.slider",
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						308.0,
+						316.0,
 						53.0,
-						34.0,
-						34.0
+						18.0,
+						106.0
 					],
 					"outlettype": [
 						""
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						308.0,
+						316.0,
 						53.0,
-						34.0,
-						34.0
+						18.0,
+						106.0
 					],
 					"parameter_enable": 1,
 					"varname": "Clipping_Level",
 					"saved_attribute_attributes": {
 						"valueof": {
 							"parameter_longname": "Clipping Level",
-							"parameter_shortname": "Drive",
+							"parameter_shortname": "Overload",
 							"parameter_type": 1,
 							"parameter_mmin": 0,
 							"parameter_mmax": 127,
@@ -9303,7 +9303,7 @@
 						56.0,
 						11.0
 					],
-					"text": "Drive",
+					"text": "Overload",
 					"fontsize": 8.0,
 					"fontface": 0,
 					"textjustification": 1,
@@ -9376,23 +9376,23 @@
 						10.0,
 						23.0,
 						182.0,
-						14.0
+						1.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
 						10.0,
 						23.0,
 						182.0,
-						14.0
+						1.0
 					],
-					"varname": "sec_4_0_hd",
+					"varname": "sec_4_0_top",
 					"mode": 0,
 					"rounded": 0,
 					"bgfillcolor_type": "color",
 					"bgcolor": [
-						0.33,
-						0.36,
-						0.42,
+						0.4,
+						0.43,
+						0.49,
 						1.0
 					],
 					"ignoreclick": 1
@@ -9406,25 +9406,25 @@
 					"numoutlets": 0,
 					"patching_rect": [
 						10.0,
-						37.0,
+						163.0,
 						182.0,
-						1.5
+						1.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
 						10.0,
-						37.0,
+						163.0,
 						182.0,
-						1.5
+						1.0
 					],
-					"varname": "sec_4_0_t",
+					"varname": "sec_4_0_bot",
 					"mode": 0,
 					"rounded": 0,
 					"bgfillcolor_type": "color",
 					"bgcolor": [
-						0.46,
-						0.5,
-						0.57,
+						0.4,
+						0.43,
+						0.49,
 						1.0
 					],
 					"ignoreclick": 1
@@ -9439,24 +9439,24 @@
 					"patching_rect": [
 						10.0,
 						23.0,
-						1.5,
+						1.0,
 						141.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
 						10.0,
 						23.0,
-						1.5,
+						1.0,
 						141.0
 					],
-					"varname": "sec_4_0_l",
+					"varname": "sec_4_0_lft",
 					"mode": 0,
 					"rounded": 0,
 					"bgfillcolor_type": "color",
 					"bgcolor": [
-						0.46,
-						0.5,
-						0.57,
+						0.4,
+						0.43,
+						0.49,
 						1.0
 					],
 					"ignoreclick": 1
@@ -9469,26 +9469,26 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						190.5,
+						191.0,
 						23.0,
-						1.5,
+						1.0,
 						141.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						190.5,
+						191.0,
 						23.0,
-						1.5,
+						1.0,
 						141.0
 					],
-					"varname": "sec_4_0_r",
+					"varname": "sec_4_0_rgt",
 					"mode": 0,
 					"rounded": 0,
 					"bgfillcolor_type": "color",
 					"bgcolor": [
-						0.46,
-						0.5,
-						0.57,
+						0.4,
+						0.43,
+						0.49,
 						1.0
 					],
 					"ignoreclick": 1
@@ -9502,25 +9502,25 @@
 					"numoutlets": 0,
 					"patching_rect": [
 						10.0,
-						162.5,
+						36.0,
 						182.0,
-						1.5
+						1.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
 						10.0,
-						162.5,
+						36.0,
 						182.0,
-						1.5
+						1.0
 					],
-					"varname": "sec_4_0_b",
+					"varname": "sec_4_0_uln",
 					"mode": 0,
 					"rounded": 0,
 					"bgfillcolor_type": "color",
 					"bgcolor": [
-						0.46,
-						0.5,
-						0.57,
+						0.42,
+						0.56,
+						0.78,
 						1.0
 					],
 					"ignoreclick": 1
@@ -10401,23 +10401,23 @@
 						200.0,
 						23.0,
 						182.0,
-						14.0
+						1.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
 						200.0,
 						23.0,
 						182.0,
-						14.0
+						1.0
 					],
-					"varname": "sec_4_1_hd",
+					"varname": "sec_4_1_top",
 					"mode": 0,
 					"rounded": 0,
 					"bgfillcolor_type": "color",
 					"bgcolor": [
-						0.33,
-						0.36,
-						0.42,
+						0.4,
+						0.43,
+						0.49,
 						1.0
 					],
 					"ignoreclick": 1
@@ -10431,25 +10431,25 @@
 					"numoutlets": 0,
 					"patching_rect": [
 						200.0,
-						37.0,
+						163.0,
 						182.0,
-						1.5
+						1.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
 						200.0,
-						37.0,
+						163.0,
 						182.0,
-						1.5
+						1.0
 					],
-					"varname": "sec_4_1_t",
+					"varname": "sec_4_1_bot",
 					"mode": 0,
 					"rounded": 0,
 					"bgfillcolor_type": "color",
 					"bgcolor": [
-						0.46,
-						0.5,
-						0.57,
+						0.4,
+						0.43,
+						0.49,
 						1.0
 					],
 					"ignoreclick": 1
@@ -10464,24 +10464,24 @@
 					"patching_rect": [
 						200.0,
 						23.0,
-						1.5,
+						1.0,
 						141.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
 						200.0,
 						23.0,
-						1.5,
+						1.0,
 						141.0
 					],
-					"varname": "sec_4_1_l",
+					"varname": "sec_4_1_lft",
 					"mode": 0,
 					"rounded": 0,
 					"bgfillcolor_type": "color",
 					"bgcolor": [
-						0.46,
-						0.5,
-						0.57,
+						0.4,
+						0.43,
+						0.49,
 						1.0
 					],
 					"ignoreclick": 1
@@ -10494,26 +10494,26 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						380.5,
+						381.0,
 						23.0,
-						1.5,
+						1.0,
 						141.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						380.5,
+						381.0,
 						23.0,
-						1.5,
+						1.0,
 						141.0
 					],
-					"varname": "sec_4_1_r",
+					"varname": "sec_4_1_rgt",
 					"mode": 0,
 					"rounded": 0,
 					"bgfillcolor_type": "color",
 					"bgcolor": [
-						0.46,
-						0.5,
-						0.57,
+						0.4,
+						0.43,
+						0.49,
 						1.0
 					],
 					"ignoreclick": 1
@@ -10527,25 +10527,25 @@
 					"numoutlets": 0,
 					"patching_rect": [
 						200.0,
-						162.5,
+						36.0,
 						182.0,
-						1.5
+						1.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
 						200.0,
-						162.5,
+						36.0,
 						182.0,
-						1.5
+						1.0
 					],
-					"varname": "sec_4_1_b",
+					"varname": "sec_4_1_uln",
 					"mode": 0,
 					"rounded": 0,
 					"bgfillcolor_type": "color",
 					"bgcolor": [
-						0.46,
-						0.5,
-						0.57,
+						0.42,
+						0.56,
+						0.78,
 						1.0
 					],
 					"ignoreclick": 1
@@ -11304,23 +11304,23 @@
 						10.0,
 						23.0,
 						350.0,
-						14.0
+						1.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
 						10.0,
 						23.0,
 						350.0,
-						14.0
+						1.0
 					],
-					"varname": "sec_5_0_hd",
+					"varname": "sec_5_0_top",
 					"mode": 0,
 					"rounded": 0,
 					"bgfillcolor_type": "color",
 					"bgcolor": [
-						0.33,
-						0.36,
-						0.42,
+						0.4,
+						0.43,
+						0.49,
 						1.0
 					],
 					"ignoreclick": 1
@@ -11334,25 +11334,25 @@
 					"numoutlets": 0,
 					"patching_rect": [
 						10.0,
-						37.0,
+						163.0,
 						350.0,
-						1.5
+						1.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
 						10.0,
-						37.0,
+						163.0,
 						350.0,
-						1.5
+						1.0
 					],
-					"varname": "sec_5_0_t",
+					"varname": "sec_5_0_bot",
 					"mode": 0,
 					"rounded": 0,
 					"bgfillcolor_type": "color",
 					"bgcolor": [
-						0.46,
-						0.5,
-						0.57,
+						0.4,
+						0.43,
+						0.49,
 						1.0
 					],
 					"ignoreclick": 1
@@ -11367,24 +11367,24 @@
 					"patching_rect": [
 						10.0,
 						23.0,
-						1.5,
+						1.0,
 						141.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
 						10.0,
 						23.0,
-						1.5,
+						1.0,
 						141.0
 					],
-					"varname": "sec_5_0_l",
+					"varname": "sec_5_0_lft",
 					"mode": 0,
 					"rounded": 0,
 					"bgfillcolor_type": "color",
 					"bgcolor": [
-						0.46,
-						0.5,
-						0.57,
+						0.4,
+						0.43,
+						0.49,
 						1.0
 					],
 					"ignoreclick": 1
@@ -11397,26 +11397,26 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						358.5,
+						359.0,
 						23.0,
-						1.5,
+						1.0,
 						141.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						358.5,
+						359.0,
 						23.0,
-						1.5,
+						1.0,
 						141.0
 					],
-					"varname": "sec_5_0_r",
+					"varname": "sec_5_0_rgt",
 					"mode": 0,
 					"rounded": 0,
 					"bgfillcolor_type": "color",
 					"bgcolor": [
-						0.46,
-						0.5,
-						0.57,
+						0.4,
+						0.43,
+						0.49,
 						1.0
 					],
 					"ignoreclick": 1
@@ -11430,25 +11430,25 @@
 					"numoutlets": 0,
 					"patching_rect": [
 						10.0,
-						162.5,
+						36.0,
 						350.0,
-						1.5
+						1.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
 						10.0,
-						162.5,
+						36.0,
 						350.0,
-						1.5
+						1.0
 					],
-					"varname": "sec_5_0_b",
+					"varname": "sec_5_0_uln",
 					"mode": 0,
 					"rounded": 0,
 					"bgfillcolor_type": "color",
 					"bgcolor": [
-						0.46,
-						0.5,
-						0.57,
+						0.42,
+						0.56,
+						0.78,
 						1.0
 					],
 					"ignoreclick": 1
@@ -13162,23 +13162,23 @@
 						10.0,
 						23.0,
 						182.0,
-						14.0
+						1.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
 						10.0,
 						23.0,
 						182.0,
-						14.0
+						1.0
 					],
-					"varname": "sec_6_0_hd",
+					"varname": "sec_6_0_top",
 					"mode": 0,
 					"rounded": 0,
 					"bgfillcolor_type": "color",
 					"bgcolor": [
-						0.33,
-						0.36,
-						0.42,
+						0.4,
+						0.43,
+						0.49,
 						1.0
 					],
 					"ignoreclick": 1
@@ -13192,25 +13192,25 @@
 					"numoutlets": 0,
 					"patching_rect": [
 						10.0,
-						37.0,
+						163.0,
 						182.0,
-						1.5
+						1.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
 						10.0,
-						37.0,
+						163.0,
 						182.0,
-						1.5
+						1.0
 					],
-					"varname": "sec_6_0_t",
+					"varname": "sec_6_0_bot",
 					"mode": 0,
 					"rounded": 0,
 					"bgfillcolor_type": "color",
 					"bgcolor": [
-						0.46,
-						0.5,
-						0.57,
+						0.4,
+						0.43,
+						0.49,
 						1.0
 					],
 					"ignoreclick": 1
@@ -13225,24 +13225,24 @@
 					"patching_rect": [
 						10.0,
 						23.0,
-						1.5,
+						1.0,
 						141.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
 						10.0,
 						23.0,
-						1.5,
+						1.0,
 						141.0
 					],
-					"varname": "sec_6_0_l",
+					"varname": "sec_6_0_lft",
 					"mode": 0,
 					"rounded": 0,
 					"bgfillcolor_type": "color",
 					"bgcolor": [
-						0.46,
-						0.5,
-						0.57,
+						0.4,
+						0.43,
+						0.49,
 						1.0
 					],
 					"ignoreclick": 1
@@ -13255,26 +13255,26 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						190.5,
+						191.0,
 						23.0,
-						1.5,
+						1.0,
 						141.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						190.5,
+						191.0,
 						23.0,
-						1.5,
+						1.0,
 						141.0
 					],
-					"varname": "sec_6_0_r",
+					"varname": "sec_6_0_rgt",
 					"mode": 0,
 					"rounded": 0,
 					"bgfillcolor_type": "color",
 					"bgcolor": [
-						0.46,
-						0.5,
-						0.57,
+						0.4,
+						0.43,
+						0.49,
 						1.0
 					],
 					"ignoreclick": 1
@@ -13288,25 +13288,25 @@
 					"numoutlets": 0,
 					"patching_rect": [
 						10.0,
-						162.5,
+						36.0,
 						182.0,
-						1.5
+						1.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
 						10.0,
-						162.5,
+						36.0,
 						182.0,
-						1.5
+						1.0
 					],
-					"varname": "sec_6_0_b",
+					"varname": "sec_6_0_uln",
 					"mode": 0,
 					"rounded": 0,
 					"bgfillcolor_type": "color",
 					"bgcolor": [
-						0.46,
-						0.5,
-						0.57,
+						0.42,
+						0.56,
+						0.78,
 						1.0
 					],
 					"ignoreclick": 1
@@ -14016,23 +14016,23 @@
 						10.0,
 						23.0,
 						238.0,
-						14.0
+						1.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
 						10.0,
 						23.0,
 						238.0,
-						14.0
+						1.0
 					],
-					"varname": "sec_7_0_hd",
+					"varname": "sec_7_0_top",
 					"mode": 0,
 					"rounded": 0,
 					"bgfillcolor_type": "color",
 					"bgcolor": [
-						0.33,
-						0.36,
-						0.42,
+						0.4,
+						0.43,
+						0.49,
 						1.0
 					],
 					"ignoreclick": 1
@@ -14046,25 +14046,25 @@
 					"numoutlets": 0,
 					"patching_rect": [
 						10.0,
-						37.0,
+						163.0,
 						238.0,
-						1.5
+						1.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
 						10.0,
-						37.0,
+						163.0,
 						238.0,
-						1.5
+						1.0
 					],
-					"varname": "sec_7_0_t",
+					"varname": "sec_7_0_bot",
 					"mode": 0,
 					"rounded": 0,
 					"bgfillcolor_type": "color",
 					"bgcolor": [
-						0.46,
-						0.5,
-						0.57,
+						0.4,
+						0.43,
+						0.49,
 						1.0
 					],
 					"ignoreclick": 1
@@ -14079,24 +14079,24 @@
 					"patching_rect": [
 						10.0,
 						23.0,
-						1.5,
+						1.0,
 						141.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
 						10.0,
 						23.0,
-						1.5,
+						1.0,
 						141.0
 					],
-					"varname": "sec_7_0_l",
+					"varname": "sec_7_0_lft",
 					"mode": 0,
 					"rounded": 0,
 					"bgfillcolor_type": "color",
 					"bgcolor": [
-						0.46,
-						0.5,
-						0.57,
+						0.4,
+						0.43,
+						0.49,
 						1.0
 					],
 					"ignoreclick": 1
@@ -14109,26 +14109,26 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						246.5,
+						247.0,
 						23.0,
-						1.5,
+						1.0,
 						141.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						246.5,
+						247.0,
 						23.0,
-						1.5,
+						1.0,
 						141.0
 					],
-					"varname": "sec_7_0_r",
+					"varname": "sec_7_0_rgt",
 					"mode": 0,
 					"rounded": 0,
 					"bgfillcolor_type": "color",
 					"bgcolor": [
-						0.46,
-						0.5,
-						0.57,
+						0.4,
+						0.43,
+						0.49,
 						1.0
 					],
 					"ignoreclick": 1
@@ -14142,25 +14142,25 @@
 					"numoutlets": 0,
 					"patching_rect": [
 						10.0,
-						162.5,
+						36.0,
 						238.0,
-						1.5
+						1.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
 						10.0,
-						162.5,
+						36.0,
 						238.0,
-						1.5
+						1.0
 					],
-					"varname": "sec_7_0_b",
+					"varname": "sec_7_0_uln",
 					"mode": 0,
 					"rounded": 0,
 					"bgfillcolor_type": "color",
 					"bgcolor": [
-						0.46,
-						0.5,
-						0.57,
+						0.42,
+						0.56,
+						0.78,
 						1.0
 					],
 					"ignoreclick": 1
@@ -15163,23 +15163,23 @@
 						256.0,
 						23.0,
 						70.0,
-						14.0
+						1.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
 						256.0,
 						23.0,
 						70.0,
-						14.0
+						1.0
 					],
-					"varname": "sec_7_1_hd",
+					"varname": "sec_7_1_top",
 					"mode": 0,
 					"rounded": 0,
 					"bgfillcolor_type": "color",
 					"bgcolor": [
-						0.33,
-						0.36,
-						0.42,
+						0.4,
+						0.43,
+						0.49,
 						1.0
 					],
 					"ignoreclick": 1
@@ -15193,25 +15193,25 @@
 					"numoutlets": 0,
 					"patching_rect": [
 						256.0,
-						37.0,
+						163.0,
 						70.0,
-						1.5
+						1.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
 						256.0,
-						37.0,
+						163.0,
 						70.0,
-						1.5
+						1.0
 					],
-					"varname": "sec_7_1_t",
+					"varname": "sec_7_1_bot",
 					"mode": 0,
 					"rounded": 0,
 					"bgfillcolor_type": "color",
 					"bgcolor": [
-						0.46,
-						0.5,
-						0.57,
+						0.4,
+						0.43,
+						0.49,
 						1.0
 					],
 					"ignoreclick": 1
@@ -15226,24 +15226,24 @@
 					"patching_rect": [
 						256.0,
 						23.0,
-						1.5,
+						1.0,
 						141.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
 						256.0,
 						23.0,
-						1.5,
+						1.0,
 						141.0
 					],
-					"varname": "sec_7_1_l",
+					"varname": "sec_7_1_lft",
 					"mode": 0,
 					"rounded": 0,
 					"bgfillcolor_type": "color",
 					"bgcolor": [
-						0.46,
-						0.5,
-						0.57,
+						0.4,
+						0.43,
+						0.49,
 						1.0
 					],
 					"ignoreclick": 1
@@ -15256,26 +15256,26 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						324.5,
+						325.0,
 						23.0,
-						1.5,
+						1.0,
 						141.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						324.5,
+						325.0,
 						23.0,
-						1.5,
+						1.0,
 						141.0
 					],
-					"varname": "sec_7_1_r",
+					"varname": "sec_7_1_rgt",
 					"mode": 0,
 					"rounded": 0,
 					"bgfillcolor_type": "color",
 					"bgcolor": [
-						0.46,
-						0.5,
-						0.57,
+						0.4,
+						0.43,
+						0.49,
 						1.0
 					],
 					"ignoreclick": 1
@@ -15289,25 +15289,25 @@
 					"numoutlets": 0,
 					"patching_rect": [
 						256.0,
-						162.5,
+						36.0,
 						70.0,
-						1.5
+						1.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
 						256.0,
-						162.5,
+						36.0,
 						70.0,
-						1.5
+						1.0
 					],
-					"varname": "sec_7_1_b",
+					"varname": "sec_7_1_uln",
 					"mode": 0,
 					"rounded": 0,
 					"bgfillcolor_type": "color",
 					"bgcolor": [
-						0.46,
-						0.5,
-						0.57,
+						0.42,
+						0.56,
+						0.78,
 						1.0
 					],
 					"ignoreclick": 1
@@ -15685,23 +15685,23 @@
 						10.0,
 						23.0,
 						238.0,
-						14.0
+						1.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
 						10.0,
 						23.0,
 						238.0,
-						14.0
+						1.0
 					],
-					"varname": "sec_8_0_hd",
+					"varname": "sec_8_0_top",
 					"mode": 0,
 					"rounded": 0,
 					"bgfillcolor_type": "color",
 					"bgcolor": [
-						0.33,
-						0.36,
-						0.42,
+						0.4,
+						0.43,
+						0.49,
 						1.0
 					],
 					"ignoreclick": 1
@@ -15715,25 +15715,25 @@
 					"numoutlets": 0,
 					"patching_rect": [
 						10.0,
-						37.0,
+						163.0,
 						238.0,
-						1.5
+						1.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
 						10.0,
-						37.0,
+						163.0,
 						238.0,
-						1.5
+						1.0
 					],
-					"varname": "sec_8_0_t",
+					"varname": "sec_8_0_bot",
 					"mode": 0,
 					"rounded": 0,
 					"bgfillcolor_type": "color",
 					"bgcolor": [
-						0.46,
-						0.5,
-						0.57,
+						0.4,
+						0.43,
+						0.49,
 						1.0
 					],
 					"ignoreclick": 1
@@ -15748,24 +15748,24 @@
 					"patching_rect": [
 						10.0,
 						23.0,
-						1.5,
+						1.0,
 						141.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
 						10.0,
 						23.0,
-						1.5,
+						1.0,
 						141.0
 					],
-					"varname": "sec_8_0_l",
+					"varname": "sec_8_0_lft",
 					"mode": 0,
 					"rounded": 0,
 					"bgfillcolor_type": "color",
 					"bgcolor": [
-						0.46,
-						0.5,
-						0.57,
+						0.4,
+						0.43,
+						0.49,
 						1.0
 					],
 					"ignoreclick": 1
@@ -15778,26 +15778,26 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						246.5,
+						247.0,
 						23.0,
-						1.5,
+						1.0,
 						141.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						246.5,
+						247.0,
 						23.0,
-						1.5,
+						1.0,
 						141.0
 					],
-					"varname": "sec_8_0_r",
+					"varname": "sec_8_0_rgt",
 					"mode": 0,
 					"rounded": 0,
 					"bgfillcolor_type": "color",
 					"bgcolor": [
-						0.46,
-						0.5,
-						0.57,
+						0.4,
+						0.43,
+						0.49,
 						1.0
 					],
 					"ignoreclick": 1
@@ -15811,25 +15811,25 @@
 					"numoutlets": 0,
 					"patching_rect": [
 						10.0,
-						162.5,
+						36.0,
 						238.0,
-						1.5
+						1.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
 						10.0,
-						162.5,
+						36.0,
 						238.0,
-						1.5
+						1.0
 					],
-					"varname": "sec_8_0_b",
+					"varname": "sec_8_0_uln",
 					"mode": 0,
 					"rounded": 0,
 					"bgfillcolor_type": "color",
 					"bgcolor": [
-						0.46,
-						0.5,
-						0.57,
+						0.42,
+						0.56,
+						0.78,
 						1.0
 					],
 					"ignoreclick": 1
@@ -16926,23 +16926,23 @@
 						10.0,
 						23.0,
 						238.0,
-						14.0
+						1.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
 						10.0,
 						23.0,
 						238.0,
-						14.0
+						1.0
 					],
-					"varname": "sec_9_0_hd",
+					"varname": "sec_9_0_top",
 					"mode": 0,
 					"rounded": 0,
 					"bgfillcolor_type": "color",
 					"bgcolor": [
-						0.33,
-						0.36,
-						0.42,
+						0.4,
+						0.43,
+						0.49,
 						1.0
 					],
 					"ignoreclick": 1
@@ -16956,25 +16956,25 @@
 					"numoutlets": 0,
 					"patching_rect": [
 						10.0,
-						37.0,
+						163.0,
 						238.0,
-						1.5
+						1.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
 						10.0,
-						37.0,
+						163.0,
 						238.0,
-						1.5
+						1.0
 					],
-					"varname": "sec_9_0_t",
+					"varname": "sec_9_0_bot",
 					"mode": 0,
 					"rounded": 0,
 					"bgfillcolor_type": "color",
 					"bgcolor": [
-						0.46,
-						0.5,
-						0.57,
+						0.4,
+						0.43,
+						0.49,
 						1.0
 					],
 					"ignoreclick": 1
@@ -16989,24 +16989,24 @@
 					"patching_rect": [
 						10.0,
 						23.0,
-						1.5,
+						1.0,
 						141.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
 						10.0,
 						23.0,
-						1.5,
+						1.0,
 						141.0
 					],
-					"varname": "sec_9_0_l",
+					"varname": "sec_9_0_lft",
 					"mode": 0,
 					"rounded": 0,
 					"bgfillcolor_type": "color",
 					"bgcolor": [
-						0.46,
-						0.5,
-						0.57,
+						0.4,
+						0.43,
+						0.49,
 						1.0
 					],
 					"ignoreclick": 1
@@ -17019,26 +17019,26 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						246.5,
+						247.0,
 						23.0,
-						1.5,
+						1.0,
 						141.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						246.5,
+						247.0,
 						23.0,
-						1.5,
+						1.0,
 						141.0
 					],
-					"varname": "sec_9_0_r",
+					"varname": "sec_9_0_rgt",
 					"mode": 0,
 					"rounded": 0,
 					"bgfillcolor_type": "color",
 					"bgcolor": [
-						0.46,
-						0.5,
-						0.57,
+						0.4,
+						0.43,
+						0.49,
 						1.0
 					],
 					"ignoreclick": 1
@@ -17052,25 +17052,25 @@
 					"numoutlets": 0,
 					"patching_rect": [
 						10.0,
-						162.5,
+						36.0,
 						238.0,
-						1.5
+						1.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
 						10.0,
-						162.5,
+						36.0,
 						238.0,
-						1.5
+						1.0
 					],
-					"varname": "sec_9_0_b",
+					"varname": "sec_9_0_uln",
 					"mode": 0,
 					"rounded": 0,
 					"bgfillcolor_type": "color",
 					"bgcolor": [
-						0.46,
-						0.5,
-						0.57,
+						0.42,
+						0.56,
+						0.78,
 						1.0
 					],
 					"ignoreclick": 1
@@ -18954,7 +18954,7 @@
 					"outlettype": [
 						""
 					],
-					"text": "script hide sec_0_0_hd, script hide sec_0_0_t, script hide sec_0_0_l, script hide sec_0_0_r, script hide sec_0_0_b, script hide sec_0_0_ti, script hide LFO_1_Rate, script hide LFO_1_Rate_L, script hide LFO_1_Amount, script hide LFO_1_Amount_L, script hide LFO_1_Waveform, script hide LFO_1_Waveform_L, script hide sec_0_1_hd, script hide sec_0_1_t, script hide sec_0_1_l, script hide sec_0_1_r, script hide sec_0_1_b, script hide sec_0_1_ti, script hide LFO_2_Rate, script hide LFO_2_Rate_L, script hide LFO_2_Amount, script hide LFO_2_Amount_L, script hide LFO_2_Waveform, script hide LFO_2_Waveform_L, script hide sec_0_2_hd, script hide sec_0_2_t, script hide sec_0_2_l, script hide sec_0_2_r, script hide sec_0_2_b, script hide sec_0_2_ti, script hide Pitch_LFO_Rate, script hide Pitch_LFO_Rate_L, script hide Pitch_LFO_Shape, script hide Pitch_LFO_Shape_L, script hide Pitch_LFO_Amount, script hide Pitch_LFO_Amount_L, script hide Pitch_LFO_OSC_1, script hide Pitch_LFO_OSC_1_L, script hide Pitch_LFO_OSC_2, script hide Pitch_LFO_OSC_2_L, script hide Pitch_LFO_Mod_Osc, script hide Pitch_LFO_Mod_Osc_L, script hide Pitch_LFO_Detune, script hide Pitch_LFO_Detune_L, script hide sec_1_0_hd, script hide sec_1_0_t, script hide sec_1_0_l, script hide sec_1_0_r, script hide sec_1_0_b, script hide sec_1_0_ti, script hide Mod_Osc_Frequency, script hide Mod_Osc_Frequency_L, script hide Mod_Osc_Waveform, script hide Mod_Osc_Waveform_L, script hide Mod_Osc_Audio_Rate, script hide Mod_Osc_Audio_Rate_L, script hide Mod_Osc_KB_Track, script hide Mod_Osc_KB_Track_L, script hide Mod_Osc_KB_Reset, script hide Mod_Osc_KB_Reset_L, script hide Mod_Osc_Unipolar, script hide Mod_Osc_Unipolar_L, script hide sec_1_1_hd, script hide sec_1_1_t, script hide sec_1_1_l, script hide sec_1_1_r, script hide sec_1_1_b, script hide sec_1_1_ti, script hide Mod_Osc_Pitch_Amount, script hide Mod_Osc_Pitch_Amount_L, script hide Mod_Osc_Pitch_OSC_1, script hide Mod_Osc_Pitch_OSC_1_L, script hide Mod_Osc_Pitch_OSC_2, script hide Mod_Osc_Pitch_OSC_2_L, script hide sec_1_2_hd, script hide sec_1_2_t, script hide sec_1_2_l, script hide sec_1_2_r, script hide sec_1_2_b, script hide sec_1_2_ti, script hide Mod_Osc_PWM_Amount, script hide Mod_Osc_PWM_Amount_L, script hide Mod_Osc_PWM_OSC_1, script hide Mod_Osc_PWM_OSC_1_L, script hide Mod_Osc_PWM_OSC_2, script hide Mod_Osc_PWM_OSC_2_L, script hide sec_1_3_hd, script hide sec_1_3_t, script hide sec_1_3_l, script hide sec_1_3_r, script hide sec_1_3_b, script hide sec_1_3_ti, script hide Mod_Osc_Filter_Amount, script hide Mod_Osc_Filter_Amount_L, script hide Mod_Osc_Filter_F1, script hide Mod_Osc_Filter_F1_L, script hide Mod_Osc_Filter_F2, script hide Mod_Osc_Filter_F2_L, script hide sec_1_4_hd, script hide sec_1_4_t, script hide sec_1_4_l, script hide sec_1_4_r, script hide sec_1_4_b, script hide sec_1_4_ti, script hide Mod_Osc_VCA_Amount, script hide Mod_Osc_VCA_Amount_L, script hide Mod_Osc_VCA_Pan, script hide Mod_Osc_VCA_Pan_L, script hide sec_2_0_hd, script hide sec_2_0_t, script hide sec_2_0_l, script hide sec_2_0_r, script hide sec_2_0_b, script hide sec_2_0_ti, script hide OSC_1_Octave, script hide OSC_1_Octave_L, script hide OSC_1_Frequency, script hide OSC_1_Frequency_L, script hide OSC_1_PW, script hide OSC_1_PW_L, script hide OSC_1_Tri_Saw_Mix, script hide OSC_1_Tri_Saw_Mix_L, script hide OSC_1_Wave_Mix, script hide OSC_1_Wave_Mix_L, script hide sec_2_1_hd, script hide sec_2_1_t, script hide sec_2_1_l, script hide sec_2_1_r, script hide sec_2_1_b, script hide sec_2_1_ti, script hide OSC_2_Octave, script hide OSC_2_Octave_L, script hide OSC_2_Frequency, script hide OSC_2_Frequency_L, script hide OSC_2_PW, script hide OSC_2_PW_L, script hide OSC_2_Tri_Saw_Mix, script hide OSC_2_Tri_Saw_Mix_L, script hide OSC_2_Wave_Mix, script hide OSC_2_Wave_Mix_L, script hide sec_2_2_hd, script hide sec_2_2_t, script hide sec_2_2_l, script hide sec_2_2_r, script hide sec_2_2_b, script hide sec_2_2_ti, script hide OSC_2_1_Sync, script hide OSC_2_1_Sync_L, script hide FM_Amount, script hide FM_Amount_L, script hide OSC_2_1_FM, script hide OSC_2_1_FM_L, script hide OSC_1_2_FM, script hide OSC_1_2_FM_L, script hide sec_3_0_hd, script hide sec_3_0_t, script hide sec_3_0_l, script hide sec_3_0_r, script hide sec_3_0_b, script hide sec_3_0_ti, script hide OSC_1_Level, script hide OSC_1_Level_L, script hide Ring_Mod_Level, script hide Ring_Mod_Level_L, script hide OSC_2_Level, script hide OSC_2_Level_L, script hide Mod_Osc_Level, script hide Mod_Osc_Level_L, script hide Noise_Level, script hide Noise_Level_L, script hide Clipping_Level, script hide Clipping_Level_L, script hide sec_4_0_hd, script hide sec_4_0_t, script hide sec_4_0_l, script hide sec_4_0_r, script hide sec_4_0_b, script hide sec_4_0_ti, script hide Filter_1_Cutoff, script hide Filter_1_Cutoff_L, script hide Filter_1_High_Pass, script hide Filter_1_High_Pass_L, script hide Filter_1_Resonance, script hide Filter_1_Resonance_L, script hide Filter_1_Env_Amount, script hide Filter_1_Env_Amount_L, script hide Filter_1_KB_Track, script hide Filter_1_KB_Track_L, script hide Link_Filters, script hide Link_Filters_L, script hide sec_4_1_hd, script hide sec_4_1_t, script hide sec_4_1_l, script hide sec_4_1_r, script hide sec_4_1_b, script hide sec_4_1_ti, script hide Filter_2_Frequency, script hide Filter_2_Frequency_L, script hide Filter_2_Resonance, script hide Filter_2_Resonance_L, script hide Filter_Order, script hide Filter_Order_L, script hide Filter_2_Env_Amount, script hide Filter_2_Env_Amount_L, script hide Filter_2_KB_Track, script hide Filter_2_KB_Track_L, script hide sec_5_0_hd, script hide sec_5_0_t, script hide sec_5_0_l, script hide sec_5_0_r, script hide sec_5_0_b, script hide sec_5_0_ti, script hide Filter_Env_Attack, script hide Filter_Env_Attack_L, script hide Filter_Env_Decay, script hide Filter_Env_Decay_L, script hide Filter_Env_Sustain, script hide Filter_Env_Sustain_L, script hide Filter_Env_Release, script hide Filter_Env_Release_L, script hide Filter_Env_Loop, script hide Filter_Env_Loop_L, script hide Filter_Env_Velocity, script hide Filter_Env_Velocity_L, script hide VCA_Env_Attack, script hide VCA_Env_Attack_L, script hide VCA_Env_Decay, script hide VCA_Env_Decay_L, script hide VCA_Env_Sustain, script hide VCA_Env_Sustain_L, script hide VCA_Env_Release, script hide VCA_Env_Release_L, script hide VCA_Env_Loop, script hide VCA_Env_Loop_L, script hide VCA_Env_Velocity, script hide VCA_Env_Velocity_L, script hide sec_6_0_hd, script hide sec_6_0_t, script hide sec_6_0_l, script hide sec_6_0_r, script hide sec_6_0_b, script hide sec_6_0_ti, script hide Timbre_Volume, script hide Timbre_Volume_L, script hide Pan, script hide Pan_L, script hide Pan_Spread, script hide Pan_Spread_L, script hide Low_Cut, script hide Low_Cut_L, script hide Mute, script hide Mute_L, script hide sec_7_0_hd, script hide sec_7_0_t, script hide sec_7_0_l, script hide sec_7_0_r, script hide sec_7_0_b, script hide sec_7_0_ti, script hide Delay_Time_Left, script hide Delay_Time_Left_L, script hide Delay_Time_Right, script hide Delay_Time_Right_L, script hide Link_Delays, script hide Link_Delays_L, script hide Delay_Clock_Sync, script hide Delay_Clock_Sync_L, script hide Delay_Feedback, script hide Delay_Feedback_L, script hide Delay_Character, script hide Delay_Character_L, script hide Delay_Mix, script hide Delay_Mix_L, script hide sec_7_1_hd, script hide sec_7_1_t, script hide sec_7_1_l, script hide sec_7_1_r, script hide sec_7_1_b, script hide sec_7_1_ti, script hide Delay_Timbre_A, script hide Delay_Timbre_A_L, script hide Delay_Timbre_B, script hide Delay_Timbre_B_L, script hide sec_8_0_hd, script hide sec_8_0_t, script hide sec_8_0_l, script hide sec_8_0_r, script hide sec_8_0_b, script hide sec_8_0_ti, script hide Arp_On_Off, script hide Arp_On_Off_L, script hide Arp_FW_BK, script hide Arp_FW_BK_L, script hide Arp_Direction, script hide Arp_Direction_L, script hide Arp_Octave_Range, script hide Arp_Octave_Range_L, script hide Arp_Clock_Div, script hide Arp_Clock_Div_L, script hide Seq_Clock_Div, script hide Seq_Clock_Div_L, script hide Clock_Tempo, script hide Clock_Tempo_L, script hide sec_9_0_hd, script hide sec_9_0_t, script hide sec_9_0_l, script hide sec_9_0_r, script hide sec_9_0_b, script hide sec_9_0_ti, script hide Voice_Detune, script hide Voice_Detune_L, script hide Voice_Unison, script hide Voice_Unison_L, script hide Voice_Mono, script hide Voice_Mono_L, script hide Glide_Time, script hide Glide_Time_L, script hide Mod_Wheel, script hide Mod_Wheel_L, script hide Expression, script hide Expression_L, script hide Hold, script hide Hold_L, script hide Sustain_Pedal, script hide Sustain_Pedal_L, script hide pc_t0, script hide pc_l1, script hide PCBank, script hide pc_l2, script hide PCPatch, script hide PCSend, script hide pc_l3, script hide pc_h1, script hide pc_h2, script hide Panic, script hide ms_l1, script hide ms_l2, script hide PitchBend, script hide ms_h1, script hide ms_h2, script hide ms_h3"
+					"text": "script hide sec_0_0_top, script hide sec_0_0_bot, script hide sec_0_0_lft, script hide sec_0_0_rgt, script hide sec_0_0_uln, script hide sec_0_0_ti, script hide LFO_1_Rate, script hide LFO_1_Rate_L, script hide LFO_1_Amount, script hide LFO_1_Amount_L, script hide LFO_1_Waveform, script hide LFO_1_Waveform_L, script hide sec_0_1_top, script hide sec_0_1_bot, script hide sec_0_1_lft, script hide sec_0_1_rgt, script hide sec_0_1_uln, script hide sec_0_1_ti, script hide LFO_2_Rate, script hide LFO_2_Rate_L, script hide LFO_2_Amount, script hide LFO_2_Amount_L, script hide LFO_2_Waveform, script hide LFO_2_Waveform_L, script hide sec_0_2_top, script hide sec_0_2_bot, script hide sec_0_2_lft, script hide sec_0_2_rgt, script hide sec_0_2_uln, script hide sec_0_2_ti, script hide Pitch_LFO_Rate, script hide Pitch_LFO_Rate_L, script hide Pitch_LFO_Shape, script hide Pitch_LFO_Shape_L, script hide Pitch_LFO_Amount, script hide Pitch_LFO_Amount_L, script hide Pitch_LFO_OSC_1, script hide Pitch_LFO_OSC_1_L, script hide Pitch_LFO_OSC_2, script hide Pitch_LFO_OSC_2_L, script hide Pitch_LFO_Mod_Osc, script hide Pitch_LFO_Mod_Osc_L, script hide Pitch_LFO_Detune, script hide Pitch_LFO_Detune_L, script hide sec_1_0_top, script hide sec_1_0_bot, script hide sec_1_0_lft, script hide sec_1_0_rgt, script hide sec_1_0_uln, script hide sec_1_0_ti, script hide Mod_Osc_Frequency, script hide Mod_Osc_Frequency_L, script hide Mod_Osc_Waveform, script hide Mod_Osc_Waveform_L, script hide Mod_Osc_Audio_Rate, script hide Mod_Osc_Audio_Rate_L, script hide Mod_Osc_KB_Track, script hide Mod_Osc_KB_Track_L, script hide Mod_Osc_KB_Reset, script hide Mod_Osc_KB_Reset_L, script hide Mod_Osc_Unipolar, script hide Mod_Osc_Unipolar_L, script hide sec_1_1_top, script hide sec_1_1_bot, script hide sec_1_1_lft, script hide sec_1_1_rgt, script hide sec_1_1_uln, script hide sec_1_1_ti, script hide Mod_Osc_Pitch_Amount, script hide Mod_Osc_Pitch_Amount_L, script hide Mod_Osc_Pitch_OSC_1, script hide Mod_Osc_Pitch_OSC_1_L, script hide Mod_Osc_Pitch_OSC_2, script hide Mod_Osc_Pitch_OSC_2_L, script hide sec_1_2_top, script hide sec_1_2_bot, script hide sec_1_2_lft, script hide sec_1_2_rgt, script hide sec_1_2_uln, script hide sec_1_2_ti, script hide Mod_Osc_PWM_Amount, script hide Mod_Osc_PWM_Amount_L, script hide Mod_Osc_PWM_OSC_1, script hide Mod_Osc_PWM_OSC_1_L, script hide Mod_Osc_PWM_OSC_2, script hide Mod_Osc_PWM_OSC_2_L, script hide sec_1_3_top, script hide sec_1_3_bot, script hide sec_1_3_lft, script hide sec_1_3_rgt, script hide sec_1_3_uln, script hide sec_1_3_ti, script hide Mod_Osc_Filter_Amount, script hide Mod_Osc_Filter_Amount_L, script hide Mod_Osc_Filter_F1, script hide Mod_Osc_Filter_F1_L, script hide Mod_Osc_Filter_F2, script hide Mod_Osc_Filter_F2_L, script hide sec_1_4_top, script hide sec_1_4_bot, script hide sec_1_4_lft, script hide sec_1_4_rgt, script hide sec_1_4_uln, script hide sec_1_4_ti, script hide Mod_Osc_VCA_Amount, script hide Mod_Osc_VCA_Amount_L, script hide Mod_Osc_VCA_Pan, script hide Mod_Osc_VCA_Pan_L, script hide sec_2_0_top, script hide sec_2_0_bot, script hide sec_2_0_lft, script hide sec_2_0_rgt, script hide sec_2_0_uln, script hide sec_2_0_ti, script hide OSC_1_Octave, script hide OSC_1_Octave_L, script hide OSC_1_Frequency, script hide OSC_1_Frequency_L, script hide OSC_1_PW, script hide OSC_1_PW_L, script hide OSC_1_Tri_Saw_Mix, script hide OSC_1_Tri_Saw_Mix_L, script hide OSC_1_Wave_Mix, script hide OSC_1_Wave_Mix_L, script hide sec_2_1_top, script hide sec_2_1_bot, script hide sec_2_1_lft, script hide sec_2_1_rgt, script hide sec_2_1_uln, script hide sec_2_1_ti, script hide OSC_2_Octave, script hide OSC_2_Octave_L, script hide OSC_2_Frequency, script hide OSC_2_Frequency_L, script hide OSC_2_PW, script hide OSC_2_PW_L, script hide OSC_2_Tri_Saw_Mix, script hide OSC_2_Tri_Saw_Mix_L, script hide OSC_2_Wave_Mix, script hide OSC_2_Wave_Mix_L, script hide sec_2_2_top, script hide sec_2_2_bot, script hide sec_2_2_lft, script hide sec_2_2_rgt, script hide sec_2_2_uln, script hide sec_2_2_ti, script hide OSC_2_1_Sync, script hide OSC_2_1_Sync_L, script hide FM_Amount, script hide FM_Amount_L, script hide OSC_2_1_FM, script hide OSC_2_1_FM_L, script hide OSC_1_2_FM, script hide OSC_1_2_FM_L, script hide sec_3_0_top, script hide sec_3_0_bot, script hide sec_3_0_lft, script hide sec_3_0_rgt, script hide sec_3_0_uln, script hide sec_3_0_ti, script hide OSC_1_Level, script hide OSC_1_Level_L, script hide Ring_Mod_Level, script hide Ring_Mod_Level_L, script hide OSC_2_Level, script hide OSC_2_Level_L, script hide Mod_Osc_Level, script hide Mod_Osc_Level_L, script hide Noise_Level, script hide Noise_Level_L, script hide Clipping_Level, script hide Clipping_Level_L, script hide sec_4_0_top, script hide sec_4_0_bot, script hide sec_4_0_lft, script hide sec_4_0_rgt, script hide sec_4_0_uln, script hide sec_4_0_ti, script hide Filter_1_Cutoff, script hide Filter_1_Cutoff_L, script hide Filter_1_High_Pass, script hide Filter_1_High_Pass_L, script hide Filter_1_Resonance, script hide Filter_1_Resonance_L, script hide Filter_1_Env_Amount, script hide Filter_1_Env_Amount_L, script hide Filter_1_KB_Track, script hide Filter_1_KB_Track_L, script hide Link_Filters, script hide Link_Filters_L, script hide sec_4_1_top, script hide sec_4_1_bot, script hide sec_4_1_lft, script hide sec_4_1_rgt, script hide sec_4_1_uln, script hide sec_4_1_ti, script hide Filter_2_Frequency, script hide Filter_2_Frequency_L, script hide Filter_2_Resonance, script hide Filter_2_Resonance_L, script hide Filter_Order, script hide Filter_Order_L, script hide Filter_2_Env_Amount, script hide Filter_2_Env_Amount_L, script hide Filter_2_KB_Track, script hide Filter_2_KB_Track_L, script hide sec_5_0_top, script hide sec_5_0_bot, script hide sec_5_0_lft, script hide sec_5_0_rgt, script hide sec_5_0_uln, script hide sec_5_0_ti, script hide Filter_Env_Attack, script hide Filter_Env_Attack_L, script hide Filter_Env_Decay, script hide Filter_Env_Decay_L, script hide Filter_Env_Sustain, script hide Filter_Env_Sustain_L, script hide Filter_Env_Release, script hide Filter_Env_Release_L, script hide Filter_Env_Loop, script hide Filter_Env_Loop_L, script hide Filter_Env_Velocity, script hide Filter_Env_Velocity_L, script hide VCA_Env_Attack, script hide VCA_Env_Attack_L, script hide VCA_Env_Decay, script hide VCA_Env_Decay_L, script hide VCA_Env_Sustain, script hide VCA_Env_Sustain_L, script hide VCA_Env_Release, script hide VCA_Env_Release_L, script hide VCA_Env_Loop, script hide VCA_Env_Loop_L, script hide VCA_Env_Velocity, script hide VCA_Env_Velocity_L, script hide sec_6_0_top, script hide sec_6_0_bot, script hide sec_6_0_lft, script hide sec_6_0_rgt, script hide sec_6_0_uln, script hide sec_6_0_ti, script hide Timbre_Volume, script hide Timbre_Volume_L, script hide Pan, script hide Pan_L, script hide Pan_Spread, script hide Pan_Spread_L, script hide Low_Cut, script hide Low_Cut_L, script hide Mute, script hide Mute_L, script hide sec_7_0_top, script hide sec_7_0_bot, script hide sec_7_0_lft, script hide sec_7_0_rgt, script hide sec_7_0_uln, script hide sec_7_0_ti, script hide Delay_Time_Left, script hide Delay_Time_Left_L, script hide Delay_Time_Right, script hide Delay_Time_Right_L, script hide Link_Delays, script hide Link_Delays_L, script hide Delay_Clock_Sync, script hide Delay_Clock_Sync_L, script hide Delay_Feedback, script hide Delay_Feedback_L, script hide Delay_Character, script hide Delay_Character_L, script hide Delay_Mix, script hide Delay_Mix_L, script hide sec_7_1_top, script hide sec_7_1_bot, script hide sec_7_1_lft, script hide sec_7_1_rgt, script hide sec_7_1_uln, script hide sec_7_1_ti, script hide Delay_Timbre_A, script hide Delay_Timbre_A_L, script hide Delay_Timbre_B, script hide Delay_Timbre_B_L, script hide sec_8_0_top, script hide sec_8_0_bot, script hide sec_8_0_lft, script hide sec_8_0_rgt, script hide sec_8_0_uln, script hide sec_8_0_ti, script hide Arp_On_Off, script hide Arp_On_Off_L, script hide Arp_FW_BK, script hide Arp_FW_BK_L, script hide Arp_Direction, script hide Arp_Direction_L, script hide Arp_Octave_Range, script hide Arp_Octave_Range_L, script hide Arp_Clock_Div, script hide Arp_Clock_Div_L, script hide Seq_Clock_Div, script hide Seq_Clock_Div_L, script hide Clock_Tempo, script hide Clock_Tempo_L, script hide sec_9_0_top, script hide sec_9_0_bot, script hide sec_9_0_lft, script hide sec_9_0_rgt, script hide sec_9_0_uln, script hide sec_9_0_ti, script hide Voice_Detune, script hide Voice_Detune_L, script hide Voice_Unison, script hide Voice_Unison_L, script hide Voice_Mono, script hide Voice_Mono_L, script hide Glide_Time, script hide Glide_Time_L, script hide Mod_Wheel, script hide Mod_Wheel_L, script hide Expression, script hide Expression_L, script hide Hold, script hide Hold_L, script hide Sustain_Pedal, script hide Sustain_Pedal_L, script hide pc_t0, script hide pc_l1, script hide PCBank, script hide pc_l2, script hide PCPatch, script hide PCSend, script hide pc_l3, script hide pc_h1, script hide pc_h2, script hide Panic, script hide ms_l1, script hide ms_l2, script hide PitchBend, script hide ms_h1, script hide ms_h2, script hide ms_h3"
 				}
 			},
 			{
@@ -19021,7 +19021,7 @@
 					"outlettype": [
 						""
 					],
-					"text": "script show sec_0_0_hd, script show sec_0_0_t, script show sec_0_0_l, script show sec_0_0_r, script show sec_0_0_b, script show sec_0_0_ti, script show LFO_1_Rate, script show LFO_1_Rate_L, script show LFO_1_Amount, script show LFO_1_Amount_L, script show LFO_1_Waveform, script show LFO_1_Waveform_L, script show sec_0_1_hd, script show sec_0_1_t, script show sec_0_1_l, script show sec_0_1_r, script show sec_0_1_b, script show sec_0_1_ti, script show LFO_2_Rate, script show LFO_2_Rate_L, script show LFO_2_Amount, script show LFO_2_Amount_L, script show LFO_2_Waveform, script show LFO_2_Waveform_L, script show sec_0_2_hd, script show sec_0_2_t, script show sec_0_2_l, script show sec_0_2_r, script show sec_0_2_b, script show sec_0_2_ti, script show Pitch_LFO_Rate, script show Pitch_LFO_Rate_L, script show Pitch_LFO_Shape, script show Pitch_LFO_Shape_L, script show Pitch_LFO_Amount, script show Pitch_LFO_Amount_L, script show Pitch_LFO_OSC_1, script show Pitch_LFO_OSC_1_L, script show Pitch_LFO_OSC_2, script show Pitch_LFO_OSC_2_L, script show Pitch_LFO_Mod_Osc, script show Pitch_LFO_Mod_Osc_L, script show Pitch_LFO_Detune, script show Pitch_LFO_Detune_L"
+					"text": "script show sec_0_0_top, script show sec_0_0_bot, script show sec_0_0_lft, script show sec_0_0_rgt, script show sec_0_0_uln, script show sec_0_0_ti, script show LFO_1_Rate, script show LFO_1_Rate_L, script show LFO_1_Amount, script show LFO_1_Amount_L, script show LFO_1_Waveform, script show LFO_1_Waveform_L, script show sec_0_1_top, script show sec_0_1_bot, script show sec_0_1_lft, script show sec_0_1_rgt, script show sec_0_1_uln, script show sec_0_1_ti, script show LFO_2_Rate, script show LFO_2_Rate_L, script show LFO_2_Amount, script show LFO_2_Amount_L, script show LFO_2_Waveform, script show LFO_2_Waveform_L, script show sec_0_2_top, script show sec_0_2_bot, script show sec_0_2_lft, script show sec_0_2_rgt, script show sec_0_2_uln, script show sec_0_2_ti, script show Pitch_LFO_Rate, script show Pitch_LFO_Rate_L, script show Pitch_LFO_Shape, script show Pitch_LFO_Shape_L, script show Pitch_LFO_Amount, script show Pitch_LFO_Amount_L, script show Pitch_LFO_OSC_1, script show Pitch_LFO_OSC_1_L, script show Pitch_LFO_OSC_2, script show Pitch_LFO_OSC_2_L, script show Pitch_LFO_Mod_Osc, script show Pitch_LFO_Mod_Osc_L, script show Pitch_LFO_Detune, script show Pitch_LFO_Detune_L"
 				}
 			},
 			{
@@ -19039,7 +19039,7 @@
 					"outlettype": [
 						""
 					],
-					"text": "script show sec_1_0_hd, script show sec_1_0_t, script show sec_1_0_l, script show sec_1_0_r, script show sec_1_0_b, script show sec_1_0_ti, script show Mod_Osc_Frequency, script show Mod_Osc_Frequency_L, script show Mod_Osc_Waveform, script show Mod_Osc_Waveform_L, script show Mod_Osc_Audio_Rate, script show Mod_Osc_Audio_Rate_L, script show Mod_Osc_KB_Track, script show Mod_Osc_KB_Track_L, script show Mod_Osc_KB_Reset, script show Mod_Osc_KB_Reset_L, script show Mod_Osc_Unipolar, script show Mod_Osc_Unipolar_L, script show sec_1_1_hd, script show sec_1_1_t, script show sec_1_1_l, script show sec_1_1_r, script show sec_1_1_b, script show sec_1_1_ti, script show Mod_Osc_Pitch_Amount, script show Mod_Osc_Pitch_Amount_L, script show Mod_Osc_Pitch_OSC_1, script show Mod_Osc_Pitch_OSC_1_L, script show Mod_Osc_Pitch_OSC_2, script show Mod_Osc_Pitch_OSC_2_L, script show sec_1_2_hd, script show sec_1_2_t, script show sec_1_2_l, script show sec_1_2_r, script show sec_1_2_b, script show sec_1_2_ti, script show Mod_Osc_PWM_Amount, script show Mod_Osc_PWM_Amount_L, script show Mod_Osc_PWM_OSC_1, script show Mod_Osc_PWM_OSC_1_L, script show Mod_Osc_PWM_OSC_2, script show Mod_Osc_PWM_OSC_2_L, script show sec_1_3_hd, script show sec_1_3_t, script show sec_1_3_l, script show sec_1_3_r, script show sec_1_3_b, script show sec_1_3_ti, script show Mod_Osc_Filter_Amount, script show Mod_Osc_Filter_Amount_L, script show Mod_Osc_Filter_F1, script show Mod_Osc_Filter_F1_L, script show Mod_Osc_Filter_F2, script show Mod_Osc_Filter_F2_L, script show sec_1_4_hd, script show sec_1_4_t, script show sec_1_4_l, script show sec_1_4_r, script show sec_1_4_b, script show sec_1_4_ti, script show Mod_Osc_VCA_Amount, script show Mod_Osc_VCA_Amount_L, script show Mod_Osc_VCA_Pan, script show Mod_Osc_VCA_Pan_L"
+					"text": "script show sec_1_0_top, script show sec_1_0_bot, script show sec_1_0_lft, script show sec_1_0_rgt, script show sec_1_0_uln, script show sec_1_0_ti, script show Mod_Osc_Frequency, script show Mod_Osc_Frequency_L, script show Mod_Osc_Waveform, script show Mod_Osc_Waveform_L, script show Mod_Osc_Audio_Rate, script show Mod_Osc_Audio_Rate_L, script show Mod_Osc_KB_Track, script show Mod_Osc_KB_Track_L, script show Mod_Osc_KB_Reset, script show Mod_Osc_KB_Reset_L, script show Mod_Osc_Unipolar, script show Mod_Osc_Unipolar_L, script show sec_1_1_top, script show sec_1_1_bot, script show sec_1_1_lft, script show sec_1_1_rgt, script show sec_1_1_uln, script show sec_1_1_ti, script show Mod_Osc_Pitch_Amount, script show Mod_Osc_Pitch_Amount_L, script show Mod_Osc_Pitch_OSC_1, script show Mod_Osc_Pitch_OSC_1_L, script show Mod_Osc_Pitch_OSC_2, script show Mod_Osc_Pitch_OSC_2_L, script show sec_1_2_top, script show sec_1_2_bot, script show sec_1_2_lft, script show sec_1_2_rgt, script show sec_1_2_uln, script show sec_1_2_ti, script show Mod_Osc_PWM_Amount, script show Mod_Osc_PWM_Amount_L, script show Mod_Osc_PWM_OSC_1, script show Mod_Osc_PWM_OSC_1_L, script show Mod_Osc_PWM_OSC_2, script show Mod_Osc_PWM_OSC_2_L, script show sec_1_3_top, script show sec_1_3_bot, script show sec_1_3_lft, script show sec_1_3_rgt, script show sec_1_3_uln, script show sec_1_3_ti, script show Mod_Osc_Filter_Amount, script show Mod_Osc_Filter_Amount_L, script show Mod_Osc_Filter_F1, script show Mod_Osc_Filter_F1_L, script show Mod_Osc_Filter_F2, script show Mod_Osc_Filter_F2_L, script show sec_1_4_top, script show sec_1_4_bot, script show sec_1_4_lft, script show sec_1_4_rgt, script show sec_1_4_uln, script show sec_1_4_ti, script show Mod_Osc_VCA_Amount, script show Mod_Osc_VCA_Amount_L, script show Mod_Osc_VCA_Pan, script show Mod_Osc_VCA_Pan_L"
 				}
 			},
 			{
@@ -19057,7 +19057,7 @@
 					"outlettype": [
 						""
 					],
-					"text": "script show sec_2_0_hd, script show sec_2_0_t, script show sec_2_0_l, script show sec_2_0_r, script show sec_2_0_b, script show sec_2_0_ti, script show OSC_1_Octave, script show OSC_1_Octave_L, script show OSC_1_Frequency, script show OSC_1_Frequency_L, script show OSC_1_PW, script show OSC_1_PW_L, script show OSC_1_Tri_Saw_Mix, script show OSC_1_Tri_Saw_Mix_L, script show OSC_1_Wave_Mix, script show OSC_1_Wave_Mix_L, script show sec_2_1_hd, script show sec_2_1_t, script show sec_2_1_l, script show sec_2_1_r, script show sec_2_1_b, script show sec_2_1_ti, script show OSC_2_Octave, script show OSC_2_Octave_L, script show OSC_2_Frequency, script show OSC_2_Frequency_L, script show OSC_2_PW, script show OSC_2_PW_L, script show OSC_2_Tri_Saw_Mix, script show OSC_2_Tri_Saw_Mix_L, script show OSC_2_Wave_Mix, script show OSC_2_Wave_Mix_L, script show sec_2_2_hd, script show sec_2_2_t, script show sec_2_2_l, script show sec_2_2_r, script show sec_2_2_b, script show sec_2_2_ti, script show OSC_2_1_Sync, script show OSC_2_1_Sync_L, script show FM_Amount, script show FM_Amount_L, script show OSC_2_1_FM, script show OSC_2_1_FM_L, script show OSC_1_2_FM, script show OSC_1_2_FM_L"
+					"text": "script show sec_2_0_top, script show sec_2_0_bot, script show sec_2_0_lft, script show sec_2_0_rgt, script show sec_2_0_uln, script show sec_2_0_ti, script show OSC_1_Octave, script show OSC_1_Octave_L, script show OSC_1_Frequency, script show OSC_1_Frequency_L, script show OSC_1_PW, script show OSC_1_PW_L, script show OSC_1_Tri_Saw_Mix, script show OSC_1_Tri_Saw_Mix_L, script show OSC_1_Wave_Mix, script show OSC_1_Wave_Mix_L, script show sec_2_1_top, script show sec_2_1_bot, script show sec_2_1_lft, script show sec_2_1_rgt, script show sec_2_1_uln, script show sec_2_1_ti, script show OSC_2_Octave, script show OSC_2_Octave_L, script show OSC_2_Frequency, script show OSC_2_Frequency_L, script show OSC_2_PW, script show OSC_2_PW_L, script show OSC_2_Tri_Saw_Mix, script show OSC_2_Tri_Saw_Mix_L, script show OSC_2_Wave_Mix, script show OSC_2_Wave_Mix_L, script show sec_2_2_top, script show sec_2_2_bot, script show sec_2_2_lft, script show sec_2_2_rgt, script show sec_2_2_uln, script show sec_2_2_ti, script show OSC_2_1_Sync, script show OSC_2_1_Sync_L, script show FM_Amount, script show FM_Amount_L, script show OSC_2_1_FM, script show OSC_2_1_FM_L, script show OSC_1_2_FM, script show OSC_1_2_FM_L"
 				}
 			},
 			{
@@ -19075,7 +19075,7 @@
 					"outlettype": [
 						""
 					],
-					"text": "script show sec_3_0_hd, script show sec_3_0_t, script show sec_3_0_l, script show sec_3_0_r, script show sec_3_0_b, script show sec_3_0_ti, script show OSC_1_Level, script show OSC_1_Level_L, script show Ring_Mod_Level, script show Ring_Mod_Level_L, script show OSC_2_Level, script show OSC_2_Level_L, script show Mod_Osc_Level, script show Mod_Osc_Level_L, script show Noise_Level, script show Noise_Level_L, script show Clipping_Level, script show Clipping_Level_L"
+					"text": "script show sec_3_0_top, script show sec_3_0_bot, script show sec_3_0_lft, script show sec_3_0_rgt, script show sec_3_0_uln, script show sec_3_0_ti, script show OSC_1_Level, script show OSC_1_Level_L, script show Ring_Mod_Level, script show Ring_Mod_Level_L, script show OSC_2_Level, script show OSC_2_Level_L, script show Mod_Osc_Level, script show Mod_Osc_Level_L, script show Noise_Level, script show Noise_Level_L, script show Clipping_Level, script show Clipping_Level_L"
 				}
 			},
 			{
@@ -19093,7 +19093,7 @@
 					"outlettype": [
 						""
 					],
-					"text": "script show sec_4_0_hd, script show sec_4_0_t, script show sec_4_0_l, script show sec_4_0_r, script show sec_4_0_b, script show sec_4_0_ti, script show Filter_1_Cutoff, script show Filter_1_Cutoff_L, script show Filter_1_High_Pass, script show Filter_1_High_Pass_L, script show Filter_1_Resonance, script show Filter_1_Resonance_L, script show Filter_1_Env_Amount, script show Filter_1_Env_Amount_L, script show Filter_1_KB_Track, script show Filter_1_KB_Track_L, script show Link_Filters, script show Link_Filters_L, script show sec_4_1_hd, script show sec_4_1_t, script show sec_4_1_l, script show sec_4_1_r, script show sec_4_1_b, script show sec_4_1_ti, script show Filter_2_Frequency, script show Filter_2_Frequency_L, script show Filter_2_Resonance, script show Filter_2_Resonance_L, script show Filter_Order, script show Filter_Order_L, script show Filter_2_Env_Amount, script show Filter_2_Env_Amount_L, script show Filter_2_KB_Track, script show Filter_2_KB_Track_L"
+					"text": "script show sec_4_0_top, script show sec_4_0_bot, script show sec_4_0_lft, script show sec_4_0_rgt, script show sec_4_0_uln, script show sec_4_0_ti, script show Filter_1_Cutoff, script show Filter_1_Cutoff_L, script show Filter_1_High_Pass, script show Filter_1_High_Pass_L, script show Filter_1_Resonance, script show Filter_1_Resonance_L, script show Filter_1_Env_Amount, script show Filter_1_Env_Amount_L, script show Filter_1_KB_Track, script show Filter_1_KB_Track_L, script show Link_Filters, script show Link_Filters_L, script show sec_4_1_top, script show sec_4_1_bot, script show sec_4_1_lft, script show sec_4_1_rgt, script show sec_4_1_uln, script show sec_4_1_ti, script show Filter_2_Frequency, script show Filter_2_Frequency_L, script show Filter_2_Resonance, script show Filter_2_Resonance_L, script show Filter_Order, script show Filter_Order_L, script show Filter_2_Env_Amount, script show Filter_2_Env_Amount_L, script show Filter_2_KB_Track, script show Filter_2_KB_Track_L"
 				}
 			},
 			{
@@ -19111,7 +19111,7 @@
 					"outlettype": [
 						""
 					],
-					"text": "script show sec_5_0_hd, script show sec_5_0_t, script show sec_5_0_l, script show sec_5_0_r, script show sec_5_0_b, script show sec_5_0_ti, script show Filter_Env_Attack, script show Filter_Env_Attack_L, script show Filter_Env_Decay, script show Filter_Env_Decay_L, script show Filter_Env_Sustain, script show Filter_Env_Sustain_L, script show Filter_Env_Release, script show Filter_Env_Release_L, script show Filter_Env_Loop, script show Filter_Env_Loop_L, script show Filter_Env_Velocity, script show Filter_Env_Velocity_L, script show VCA_Env_Attack, script show VCA_Env_Attack_L, script show VCA_Env_Decay, script show VCA_Env_Decay_L, script show VCA_Env_Sustain, script show VCA_Env_Sustain_L, script show VCA_Env_Release, script show VCA_Env_Release_L, script show VCA_Env_Loop, script show VCA_Env_Loop_L, script show VCA_Env_Velocity, script show VCA_Env_Velocity_L"
+					"text": "script show sec_5_0_top, script show sec_5_0_bot, script show sec_5_0_lft, script show sec_5_0_rgt, script show sec_5_0_uln, script show sec_5_0_ti, script show Filter_Env_Attack, script show Filter_Env_Attack_L, script show Filter_Env_Decay, script show Filter_Env_Decay_L, script show Filter_Env_Sustain, script show Filter_Env_Sustain_L, script show Filter_Env_Release, script show Filter_Env_Release_L, script show Filter_Env_Loop, script show Filter_Env_Loop_L, script show Filter_Env_Velocity, script show Filter_Env_Velocity_L, script show VCA_Env_Attack, script show VCA_Env_Attack_L, script show VCA_Env_Decay, script show VCA_Env_Decay_L, script show VCA_Env_Sustain, script show VCA_Env_Sustain_L, script show VCA_Env_Release, script show VCA_Env_Release_L, script show VCA_Env_Loop, script show VCA_Env_Loop_L, script show VCA_Env_Velocity, script show VCA_Env_Velocity_L"
 				}
 			},
 			{
@@ -19129,7 +19129,7 @@
 					"outlettype": [
 						""
 					],
-					"text": "script show sec_6_0_hd, script show sec_6_0_t, script show sec_6_0_l, script show sec_6_0_r, script show sec_6_0_b, script show sec_6_0_ti, script show Timbre_Volume, script show Timbre_Volume_L, script show Pan, script show Pan_L, script show Pan_Spread, script show Pan_Spread_L, script show Low_Cut, script show Low_Cut_L, script show Mute, script show Mute_L"
+					"text": "script show sec_6_0_top, script show sec_6_0_bot, script show sec_6_0_lft, script show sec_6_0_rgt, script show sec_6_0_uln, script show sec_6_0_ti, script show Timbre_Volume, script show Timbre_Volume_L, script show Pan, script show Pan_L, script show Pan_Spread, script show Pan_Spread_L, script show Low_Cut, script show Low_Cut_L, script show Mute, script show Mute_L"
 				}
 			},
 			{
@@ -19147,7 +19147,7 @@
 					"outlettype": [
 						""
 					],
-					"text": "script show sec_7_0_hd, script show sec_7_0_t, script show sec_7_0_l, script show sec_7_0_r, script show sec_7_0_b, script show sec_7_0_ti, script show Delay_Time_Left, script show Delay_Time_Left_L, script show Delay_Time_Right, script show Delay_Time_Right_L, script show Link_Delays, script show Link_Delays_L, script show Delay_Clock_Sync, script show Delay_Clock_Sync_L, script show Delay_Feedback, script show Delay_Feedback_L, script show Delay_Character, script show Delay_Character_L, script show Delay_Mix, script show Delay_Mix_L, script show sec_7_1_hd, script show sec_7_1_t, script show sec_7_1_l, script show sec_7_1_r, script show sec_7_1_b, script show sec_7_1_ti, script show Delay_Timbre_A, script show Delay_Timbre_A_L, script show Delay_Timbre_B, script show Delay_Timbre_B_L"
+					"text": "script show sec_7_0_top, script show sec_7_0_bot, script show sec_7_0_lft, script show sec_7_0_rgt, script show sec_7_0_uln, script show sec_7_0_ti, script show Delay_Time_Left, script show Delay_Time_Left_L, script show Delay_Time_Right, script show Delay_Time_Right_L, script show Link_Delays, script show Link_Delays_L, script show Delay_Clock_Sync, script show Delay_Clock_Sync_L, script show Delay_Feedback, script show Delay_Feedback_L, script show Delay_Character, script show Delay_Character_L, script show Delay_Mix, script show Delay_Mix_L, script show sec_7_1_top, script show sec_7_1_bot, script show sec_7_1_lft, script show sec_7_1_rgt, script show sec_7_1_uln, script show sec_7_1_ti, script show Delay_Timbre_A, script show Delay_Timbre_A_L, script show Delay_Timbre_B, script show Delay_Timbre_B_L"
 				}
 			},
 			{
@@ -19165,7 +19165,7 @@
 					"outlettype": [
 						""
 					],
-					"text": "script show sec_8_0_hd, script show sec_8_0_t, script show sec_8_0_l, script show sec_8_0_r, script show sec_8_0_b, script show sec_8_0_ti, script show Arp_On_Off, script show Arp_On_Off_L, script show Arp_FW_BK, script show Arp_FW_BK_L, script show Arp_Direction, script show Arp_Direction_L, script show Arp_Octave_Range, script show Arp_Octave_Range_L, script show Arp_Clock_Div, script show Arp_Clock_Div_L, script show Seq_Clock_Div, script show Seq_Clock_Div_L, script show Clock_Tempo, script show Clock_Tempo_L"
+					"text": "script show sec_8_0_top, script show sec_8_0_bot, script show sec_8_0_lft, script show sec_8_0_rgt, script show sec_8_0_uln, script show sec_8_0_ti, script show Arp_On_Off, script show Arp_On_Off_L, script show Arp_FW_BK, script show Arp_FW_BK_L, script show Arp_Direction, script show Arp_Direction_L, script show Arp_Octave_Range, script show Arp_Octave_Range_L, script show Arp_Clock_Div, script show Arp_Clock_Div_L, script show Seq_Clock_Div, script show Seq_Clock_Div_L, script show Clock_Tempo, script show Clock_Tempo_L"
 				}
 			},
 			{
@@ -19183,7 +19183,7 @@
 					"outlettype": [
 						""
 					],
-					"text": "script show sec_9_0_hd, script show sec_9_0_t, script show sec_9_0_l, script show sec_9_0_r, script show sec_9_0_b, script show sec_9_0_ti, script show Voice_Detune, script show Voice_Detune_L, script show Voice_Unison, script show Voice_Unison_L, script show Voice_Mono, script show Voice_Mono_L, script show Glide_Time, script show Glide_Time_L, script show Mod_Wheel, script show Mod_Wheel_L, script show Expression, script show Expression_L, script show Hold, script show Hold_L, script show Sustain_Pedal, script show Sustain_Pedal_L"
+					"text": "script show sec_9_0_top, script show sec_9_0_bot, script show sec_9_0_lft, script show sec_9_0_rgt, script show sec_9_0_uln, script show sec_9_0_ti, script show Voice_Detune, script show Voice_Detune_L, script show Voice_Unison, script show Voice_Unison_L, script show Voice_Mono, script show Voice_Mono_L, script show Glide_Time, script show Glide_Time_L, script show Mod_Wheel, script show Mod_Wheel_L, script show Expression, script show Expression_L, script show Hold, script show Hold_L, script show Sustain_Pedal, script show Sustain_Pedal_L"
 				}
 			},
 			{

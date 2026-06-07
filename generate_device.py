@@ -287,7 +287,7 @@ TABS = [
              (59, "OSC 2 Level", S, None, "OSC 2"),
              (61, "Mod Osc Level", S, None, "Mod Osc"),
              (62, "Noise Level", S, None, "Noise"),
-             (65, "Clipping Level", K, None, "Drive")],
+             (65, "Clipping Level", S, None, "Overload")],
         ]),
     ]),
     ("FILTER", [
@@ -500,28 +500,29 @@ class Patch:
         return self.box("comment", rect, present=present, **attrs)
 
     def section_frame(self, x, y, w, h, varname):
-        """Outline a section as a filled title bar plus thin edge strips.
+        """Outline a section with thin 1px border lines plus an accent rule
+        under the title.
 
-        Nothing is drawn over the controls' area (only the title strip at the
-        top and 1.5px borders at the edges), so the controls are always visible
-        and clickable no matter how Live layers panels.  Returns the strips'
-        scripting names so they can be shown/hidden with the tab.
+        Only edge lines are drawn (never a filled area over the controls or the
+        title), so nothing is obscured no matter how Live layers panels.  The
+        title text is placed in the clear strip at the top by the caller.
+        Returns the strips' scripting names so they show/hide with the tab.
         """
         names = []
-        hdr = [0.33, 0.36, 0.42, 1.0]
-        edge = [0.46, 0.50, 0.57, 1.0]
+        border = [0.40, 0.43, 0.49, 1.0]
+        accent = [0.42, 0.56, 0.78, 1.0]
 
-        def strip(rect, name, color):
+        def line(rect, name, color):
             self.box("panel", rect, present=True, varname=name,
                      mode=0, rounded=0, bgfillcolor_type="color",
                      bgcolor=color, ignoreclick=1)
             names.append(name)
 
-        strip([x, y, w, SEC_TITLE_H], varname + "_hd", hdr)            # title
-        strip([x, y + SEC_TITLE_H, w, 1.5], varname + "_t", edge)      # under
-        strip([x, y, 1.5, h], varname + "_l", edge)                   # left
-        strip([x + w - 1.5, y, 1.5, h], varname + "_r", edge)         # right
-        strip([x, y + h - 1.5, w, 1.5], varname + "_b", edge)         # bottom
+        line([x, y, w, 1], varname + "_top", border)
+        line([x, y + h - 1, w, 1], varname + "_bot", border)
+        line([x, y, 1, h], varname + "_lft", border)
+        line([x + w - 1, y, 1, h], varname + "_rgt", border)
+        line([x, y + SEC_TITLE_H - 1, w, 1], varname + "_uln", accent)  # title rule
         return names
 
     def connect(self, src, sout, dst, din):
@@ -863,7 +864,9 @@ def make_control(p, kind, longname, enum, short, x, row_top, band, annotation,
                       longname, 1, 0, 127, shortname=short, showname=0,
                       annotation=annotation, initial=initial)
     if kind == H:                               # horizontal wave-mix fader
-        return p.live("live.slider", [cx(COL_W - 12), top + 6, COL_W - 12, 13],
+        hh = 15
+        hy = top + max(0.0, (avail - hh) / 2.0)  # centre it in the cell
+        return p.live("live.slider", [cx(COL_W - 10), hy, COL_W - 10, hh],
                       longname, 1, 0, 127, shortname=short, showname=0,
                       annotation=annotation, initial=initial)
     # K / B: rotary dial.
