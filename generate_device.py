@@ -210,65 +210,65 @@ TABS = [
     ("LFO", [
         ("LFO 1", [
             [(12, "LFO 1 Rate", K, None, "Rate"),
-             (13, "LFO 1 Amount", K, None, "Amt"),
-             (14, "LFO 1 Waveform", M, LFO_WAVES, "Wave")],
+             (13, "LFO 1 Amount", K, None, "Amount"),
+             (14, "LFO 1 Waveform", M, LFO_WAVES, "Waveform")],
         ]),
         ("LFO 2", [
             [(15, "LFO 2 Rate", K, None, "Rate"),
-             (16, "LFO 2 Amount", K, None, "Amt"),
-             (17, "LFO 2 Waveform", M, LFO_WAVES, "Wave")],
+             (16, "LFO 2 Amount", K, None, "Amount"),
+             (17, "LFO 2 Waveform", M, LFO_WAVES, "Waveform")],
         ]),
         ("Pitch LFO", [
             [(18, "Pitch LFO Rate", K, None, "Rate"),
              (19, "Pitch LFO Shape", B, None, "Shape"),
-             (20, "Pitch LFO Amount", B, None, "Amt")],
+             (20, "Pitch LFO Amount", B, None, "Amount")],
             [(21, "Pitch LFO>OSC 1", T, None, "OSC 1"),
              (22, "Pitch LFO>OSC 2", T, None, "OSC 2"),
-             (23, "Pitch LFO>Mod Osc", T, None, "Mod"),
+             (23, "Pitch LFO>Mod Osc", T, None, "Mod Osc"),
              (24, "Pitch LFO>Detune", T, None, "Detune")],
         ]),
     ]),
     ("MOD", [
         ("Mod Oscillator", [
             [(25, "Mod Osc Frequency", K, None, "Freq"),
-             (28, "Mod Osc Waveform", M, MOD_WAVES, "Wave"),
+             (28, "Mod Osc Waveform", M, MOD_WAVES, "Waveform"),
              (26, "Mod Osc Audio Rate", T, None, "Audio")],
-            [(27, "Mod Osc KB Track", T, None, "KB Trk"),
-             (29, "Mod Osc KB Reset", T, None, "KB Rst"),
-             (30, "Mod Osc Unipolar", T, None, "Uni")],
+            [(27, "Mod Osc KB Track", T, None, "KB Track"),
+             (29, "Mod Osc KB Reset", T, None, "KB Reset"),
+             (30, "Mod Osc Unipolar", T, None, "Unipolar")],
         ]),
         ("Pitch", [
-            [(31, "Mod Osc Pitch Amount", K, None, "Amt")],
+            [(31, "Mod Osc Pitch Amount", K, None, "Amount")],
             [(33, "Mod Osc Pitch>OSC 1", K, None, "OSC 1"),
              (34, "Mod Osc Pitch>OSC 2", K, None, "OSC 2")],
         ]),
         ("PWM", [
-            [(35, "Mod Osc PWM Amount", K, None, "Amt")],
+            [(35, "Mod Osc PWM Amount", K, None, "Amount")],
             [(36, "Mod Osc PWM>OSC 1", K, None, "OSC 1"),
              (37, "Mod Osc PWM>OSC 2", K, None, "OSC 2")],
         ]),
         ("Filter", [
-            [(39, "Mod Osc Filter Amount", K, None, "Amt")],
-            [(40, "Mod Osc Filter>F1", K, None, "F1"),
-             (41, "Mod Osc Filter>F2", K, None, "F2")],
+            [(39, "Mod Osc Filter Amount", K, None, "Amount")],
+            [(40, "Mod Osc Filter>F1", K, None, "Filter 1"),
+             (41, "Mod Osc Filter>F2", K, None, "Filter 2")],
         ]),
         ("VCA", [
-            [(42, "Mod Osc VCA Amount", K, None, "Amt")],
+            [(42, "Mod Osc VCA Amount", K, None, "Amount")],
             [(43, "Mod Osc VCA Pan", K, None, "Pan")],
         ]),
     ]),
     ("OSC", [
         ("Oscillator 1", [
-            [(44, "OSC 1 Octave", M, OCT, "Oct"),
+            [(44, "OSC 1 Octave", M, OCT, "Octave"),
              (45, "OSC 1 Frequency", B, None, "Freq"),
-             (47, "OSC 1 PW", K, None, "PW")],
+             (47, "OSC 1 PW", K, None, "Pulse W")],
             [(46, "OSC 1 Tri/Saw Mix", H, None, "Tri/Saw"),
              (48, "OSC 1 Wave Mix", H, None, "Wave Mix")],
         ]),
         ("Oscillator 2", [
-            [(49, "OSC 2 Octave", M, OCT, "Oct"),
+            [(49, "OSC 2 Octave", M, OCT, "Octave"),
              (50, "OSC 2 Frequency", B, None, "Freq"),
-             (52, "OSC 2 PW", K, None, "PW")],
+             (52, "OSC 2 PW", K, None, "Pulse W")],
             [(51, "OSC 2 Tri/Saw Mix", H, None, "Tri/Saw"),
              (53, "OSC 2 Wave Mix", H, None, "Wave Mix")],
         ]),
@@ -283,7 +283,7 @@ TABS = [
         # The mixer faders, in panel order, then the Overload/clipping drive.
         ("Mixer", [
             [(58, "OSC 1 Level", S, None, "OSC 1"),
-             (60, "Ring Mod Level", S, None, "Ring"),
+             (60, "Ring Mod Level", S, None, "Ring Mod"),
              (59, "OSC 2 Level", S, None, "OSC 2"),
              (61, "Mod Osc Level", S, None, "Mod Osc"),
              (62, "Noise Level", S, None, "Noise"),
@@ -293,36 +293,37 @@ TABS = [
     ("FILTER", [
         ("Filter 1", [
             [(67, "Filter 1 Cutoff", K, None, "Cutoff"),
-             (66, "Filter 1 High Pass", K, None, "Hi Pass"),
-             (68, "Filter 1 Resonance", K, None, "Reso")],
-            [(69, "Filter 1 Env Amount", K, None, "Env"),
-             (70, "Filter 1 KB Track", M, KBT, "KB Trk"),
+             (66, "Filter 1 High Pass", K, None, "High Pass"),
+             (68, "Filter 1 Resonance", K, None, "Resonance")],
+            [(69, "Filter 1 Env Amount", K, None, "Env Amt"),
+             (70, "Filter 1 KB Track", M, KBT, "KB Track"),
              (77, "Link Filters", T, None, "Link")],
         ]),
         ("Filter 2", [
             [(72, "Filter 2 Frequency", K, None, "Cutoff"),
-             (73, "Filter 2 Resonance", K, None, "Reso"),
+             (73, "Filter 2 Resonance", K, None, "Resonance"),
              (78, "Filter Order", M, ["Serial", "Stereo", "Parallel"], "Order")],
-            [(75, "Filter 2 Env Amount", K, None, "Env"),
-             (76, "Filter 2 KB Track", M, KBT, "KB Trk")],
+            [(75, "Filter 2 Env Amount", K, None, "Env Amt"),
+             (76, "Filter 2 KB Track", M, KBT, "KB Track")],
         ]),
     ]),
     ("ENV", [
-        # Filter Envelope (top row) directly over the VCA Envelope (bottom),
-        # as on the panel: four ADSR faders then loop / velocity.
-        ("Filter Envelope / VCA Envelope", [
-            [(79, "Filter Env Attack", S, None, "F Atk"),
-             (80, "Filter Env Decay", S, None, "F Dec"),
-             (81, "Filter Env Sustain", S, None, "F Sus"),
-             (82, "Filter Env Release", S, None, "F Rel"),
-             (83, "Filter Env Loop", T, None, "F Loop"),
-             (85, "Filter Env Velocity", T, None, "F Vel")],
-            [(86, "VCA Env Attack", S, None, "A Atk"),
-             (87, "VCA Env Decay", S, None, "A Dec"),
-             (88, "VCA Env Sustain", S, None, "A Sus"),
-             (89, "VCA Env Release", S, None, "A Rel"),
-             (90, "VCA Env Loop", T, None, "A Loop"),
-             (91, "VCA Env Velocity", T, None, "A Vel")],
+        # Filter Envelope and VCA Envelope as two separate boxes, like the panel.
+        ("Filter Envelope", [
+            [(79, "Filter Env Attack", S, None, "Attack"),
+             (80, "Filter Env Decay", S, None, "Decay"),
+             (81, "Filter Env Sustain", S, None, "Sustain"),
+             (82, "Filter Env Release", S, None, "Release"),
+             (83, "Filter Env Loop", T, None, "Loop"),
+             (85, "Filter Env Velocity", T, None, "Vel")],
+        ]),
+        ("VCA Envelope", [
+            [(86, "VCA Env Attack", S, None, "Attack"),
+             (87, "VCA Env Decay", S, None, "Decay"),
+             (88, "VCA Env Sustain", S, None, "Sustain"),
+             (89, "VCA Env Release", S, None, "Release"),
+             (90, "VCA Env Loop", T, None, "Loop"),
+             (91, "VCA Env Velocity", T, None, "Vel")],
         ]),
     ]),
     ("VCA", [
@@ -340,8 +341,8 @@ TABS = [
              (94, "Delay Time Right", K, None, "Time R"),
              (95, "Link Delays", T, None, "Link"),
              (102, "Delay Clock Sync", T, None, "Sync")],
-            [(103, "Delay Feedback", K, None, "Fbk"),
-             (104, "Delay Character", K, None, "Char"),
+            [(103, "Delay Feedback", K, None, "Feedback"),
+             (104, "Delay Character", K, None, "Character"),
              (105, "Delay Mix", K, None, "Mix")],
         ]),
         ("Sends", [
@@ -354,7 +355,7 @@ TABS = [
             [(112, "Arp On/Off", T, None, "On"),
              (113, "Arp FW/BK", T, None, "Fw/Bk"),
              (114, "Arp Direction", M, ["Order", "Pattern", "Random"], "Mode"),
-             (115, "Arp Octave Range", M, ["1", "2", "3", "4"], "Oct")],
+             (115, "Arp Octave Range", M, ["1", "2", "3", "4"], "Octaves")],
             [(111, "Arp Clock Div", K, None, "Arp Div"),
              (110, "Seq Clock Div", K, None, "Seq Div"),
              (116, "Clock Tempo", K, None, "Tempo")],
@@ -363,13 +364,13 @@ TABS = [
     ("VOICE", [
         ("Voice Control", [
             [(92, "Voice Detune", K, None, "Detune"),
-             (108, "Voice Unison", T, None, "Uni"),
+             (108, "Voice Unison", T, None, "Unison"),
              (109, "Voice Mono", T, None, "Mono"),
              (5, "Glide Time", K, None, "Glide")],
-            [(1, "Mod Wheel", K, None, "Mod Whl"),
-             (11, "Expression", K, None, "Expr"),
+            [(1, "Mod Wheel", K, None, "Mod Wheel"),
+             (11, "Expression", K, None, "Express"),
              (71, "Hold", T, None, "Hold"),
-             (64, "Sustain Pedal", T, None, "Sus Ped")],
+             (64, "Sustain Pedal", T, None, "Sustain")],
         ]),
     ]),
 ]
@@ -531,7 +532,7 @@ class Patch:
 
     def live(self, maxclass, rect, longname, ptype, mmin, mmax,
              enum=None, varname=None, annotation=None, initial=None,
-             shortname=None, showname=None):
+             shortname=None, showname=None, orientation=None):
         v = {
             "parameter_longname": longname,
             "parameter_shortname": (shortname or caption(longname))[:14],
@@ -554,6 +555,9 @@ class Patch:
             # hide the object's own name text so it doesn't duplicate the
             # printed label beneath the control (live.dial / live.slider)
             extra["showname"] = showname
+        if orientation is not None:
+            # live.slider defaults to vertical; 1 = horizontal (wave-mix faders)
+            extra["orientation"] = orientation
         return self.box(
             maxclass, rect, present=True,
             numinlets=1, numoutlets=1, outlettype=[""],
@@ -868,7 +872,7 @@ def make_control(p, kind, longname, enum, short, x, row_top, band, annotation,
         hy = top + max(0.0, (avail - hh) / 2.0)  # centre it in the cell
         return p.live("live.slider", [cx(COL_W - 10), hy, COL_W - 10, hh],
                       longname, 1, 0, 127, shortname=short, showname=0,
-                      annotation=annotation, initial=initial)
+                      orientation=1, annotation=annotation, initial=initial)
     # K / B: rotary dial.
     return p.live("live.dial", [cx(DIAL), top, DIAL, DIAL],
                   longname, 1, 0, 127, shortname=short, showname=0,
