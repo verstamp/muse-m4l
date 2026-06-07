@@ -497,39 +497,64 @@ class Patch:
         return self.box("message", rect, text=text, **kw)
 
     def comment(self, text, rect, present=True, varname=None,
-                fontsize=8.0, fontface=0, justify=1):
+                fontsize=8.0, fontface=0, justify=1, textcolor=None):
         attrs = dict(text=text, numinlets=1, numoutlets=0,
                      fontsize=fontsize, fontface=fontface,
                      textjustification=justify)
+        if textcolor is not None:
+            attrs["textcolor"] = textcolor
         if varname:
             attrs["varname"] = varname
         return self.box("comment", rect, present=present, **attrs)
 
     def section_frame(self, x, y, w, h, varname):
-        """Outline a section with thin 1px border lines plus an accent rule
-        under the title.
+        """Draw a section as a subtly-lighter rounded panel with a hairline
+        border and a thin blue accent rule under its title.
 
-        Only edge lines are drawn (never a filled area over the controls or the
-        title), so nothing is obscured no matter how Live layers panels.  The
-        title text is placed in the clear strip at the top by the caller.
-        Returns the strips' scripting names so they show/hide with the tab.
+        The panels are placed in the patcher's *background layer*
+        (``background 1``).  Max draws the background layer behind the entire
+        foreground layer regardless of object order, so the filled panel sits
+        behind the controls (which are foreground) instead of covering them -
+        this is the documented way to do backgrounds and what z-order alone
+        can't achieve.  ``ignoreclick`` also keeps it from stealing the mouse.
+        The title text stays in the foreground so it reads on top of the panel.
+        Returns the panel scripting names so they show/hide with the tab.
         """
         names = []
-        border = [0.40, 0.43, 0.49, 1.0]
-        accent = [0.42, 0.56, 0.78, 1.0]
-
-        def line(rect, name, color):
-            self.box("panel", rect, present=True, varname=name,
-                     mode=0, rounded=0, bgfillcolor_type="color",
-                     bgcolor=color, ignoreclick=1)
-            names.append(name)
-
-        line([x, y, w, 1], varname + "_top", border)
-        line([x, y + h - 1, w, 1], varname + "_bot", border)
-        line([x, y, 1, h], varname + "_lft", border)
-        line([x + w - 1, y, 1, h], varname + "_rgt", border)
-        line([x, y + SEC_TITLE_H - 1, w, 1], varname + "_uln", accent)  # title rule
+        # filled, rounded, bordered background panel
+        self.box("panel", [x, y, w, h], present=True, varname=varname + "_bg",
+                 background=1, mode=0, rounded=6, bgfillcolor_type="color",
+                 bgcolor=COL_PANEL, bordercolor=COL_BORDER, border=1,
+                 ignoreclick=1)
+        names.append(varname + "_bg")
+        # thin accent rule just under the title strip (also background)
+        self.box("panel", [x + 6, y + SEC_TITLE_H - 1, w - 12, 1], present=True,
+                 varname=varname + "_uln", background=1, mode=0, rounded=0,
+                 bgfillcolor_type="color", bgcolor=COL_ACCENT, ignoreclick=1)
+        names.append(varname + "_uln")
         return names
+
+    def text_button(self, rect, varname, label):
+        """A momentary (mode 0) live.text button with its caption inside it,
+        styled to match the on/off buttons.  Emits on click; wire its outlet
+        like a Max ``button``."""
+        return self.box("live.text", rect, present=True, varname=varname,
+                        numinlets=1, numoutlets=1, outlettype=["bang"],
+                        mode=0, text=label, texton=label, fontsize=9.0,
+                        bgcolor=COL_BTN_OFF, bgoncolor=COL_ACCENT,
+                        activebgcolor=COL_ACCENT, activebgoncolor=COL_ACCENT,
+                        textcolor=COL_BTN_TXT, textoncolor=COL_WHITE,
+                        bordercolor=COL_BORDER)
+
+    def tab_panel(self, varname):
+        """Full-width background panel for the Bank / Misc tabs, matching the
+        section panels on the other tabs.  In the background layer so it sits
+        behind the controls.  Returns its scripting name."""
+        self.box("panel", [MARGIN, SEC_TOP, DEVICE_WIDTH - 2 * MARGIN, SEC_H],
+                 present=True, varname=varname, background=1, mode=0, rounded=6,
+                 bgfillcolor_type="color", bgcolor=COL_PANEL,
+                 bordercolor=COL_BORDER, border=1, ignoreclick=1)
+        return varname
 
     def connect(self, src, sout, dst, din):
         self.lines.append({"patchline": {"source": [src, sout],
@@ -537,7 +562,8 @@ class Patch:
 
     def live(self, maxclass, rect, longname, ptype, mmin, mmax,
              enum=None, varname=None, annotation=None, initial=None,
-             shortname=None, showname=None, orientation=None):
+             shortname=None, showname=None, orientation=None,
+             extra_attrs=None):
         v = {
             "parameter_longname": longname,
             "parameter_shortname": (shortname or caption(longname))[:14],
@@ -563,6 +589,9 @@ class Patch:
         if orientation is not None:
             # live.slider defaults to vertical; 1 = horizontal (wave-mix faders)
             extra["orientation"] = orientation
+        if extra_attrs:
+            # styling pass-through (colours, live.text button mode/labels, ...)
+            extra.update(extra_attrs)
         return self.box(
             maxclass, rect, present=True,
             numinlets=1, numoutlets=1, outlettype=[""],
@@ -621,6 +650,22 @@ class Patch:
 # a small grid; each control has a short label printed directly above it (the
 # box title carries the context, so labels stay short and never overlap).
 # --------------------------------------------------------------------------
+# --------------------------------------------------------------------------
+# Colour palette.  Kept deliberately restrained: sections are a subtly lighter
+# rounded panel on the (darker) Live device background, hairline borders, and a
+# single blue accent used for the title rules, the dial/slider fill, and the
+# "lit" state of the on/off buttons - so the device reads cleanly like a piece
+# of hardware rather than a wall of identical knobs.
+# --------------------------------------------------------------------------
+COL_PANEL   = [0.255, 0.265, 0.285, 1.0]   # section fill (lighter than the bg)
+COL_BORDER  = [0.355, 0.375, 0.405, 1.0]   # hairline section border
+COL_ACCENT  = [0.42, 0.56, 0.78, 1.0]      # blue accent (rules, dial fill, lit)
+COL_TITLE   = [0.80, 0.84, 0.90, 1.0]      # section title text
+COL_LABEL   = [0.62, 0.65, 0.70, 1.0]      # control caption text
+COL_BTN_OFF = [0.205, 0.215, 0.235, 1.0]   # on/off button, unlit fill
+COL_BTN_TXT = [0.66, 0.69, 0.74, 1.0]      # on/off button, unlit text
+COL_WHITE   = [0.96, 0.97, 0.99, 1.0]      # lit button text
+
 MARGIN = 10
 COL_W = 56                     # width of one control cell inside a section
 DIAL = 34
@@ -678,9 +723,9 @@ def build():
             sec_w = section_width(rows)
             box_vn = "sec_%d_%d" % (len(tab_members), si)
             members += p.section_frame(x, SEC_TOP, sec_w, SEC_H, box_vn)
-            p.comment(title, [x + 2, SEC_TOP + 2, sec_w - 4, 11],
+            p.comment(title, [x + 6, SEC_TOP + 3, sec_w - 12, 11],
                       varname=box_vn + "_ti", fontsize=8.0, fontface=1,
-                      justify=1)
+                      justify=0, textcolor=COL_TITLE)
             members.append(box_vn + "_ti")
 
             body_top = SEC_TOP + SEC_TITLE_H + 3
@@ -690,7 +735,11 @@ def build():
                 for ci, (cc, longname, kind, enum, short) in enumerate(row):
                     cx = x + SEC_PAD_X + ci * COL_W
                     sn = slug(longname)
-                    members += [sn, sn + "_L"]
+                    members.append(sn)
+                    # on/off buttons carry their caption inside the button, so
+                    # they don't get a separate floating label above them.
+                    if kind != T:
+                        members.append(sn + "_L")
                     if kind == PB:                  # bidirectional pitch bend
                         ann = ("Pitch Bend wheel (0-127, 64 = centre). Sends "
                                "to and follows the Muse's pitch wheel.")
@@ -703,7 +752,8 @@ def build():
                                         row_top, band,
                                         annotation_for(cc, longname),
                                         INIT.get(cc))
-                    place_label(p, short, cx, row_top, sn)
+                    if kind != T:
+                        place_label(p, short, cx, row_top, sn)
                     route_out(p, kind, enum, cc, ctrl, midiformat, wx)  # ->Muse
                     route_in(p, kind, enum, cc, ctrl, wx)               # Muse->
             x += sec_w + SEC_GAP
@@ -753,32 +803,33 @@ def build():
 
 def build_bank_tab(p, midiformat, wx):
     """Program Change (Bank/Patch) controls, shown only on the Bank tab."""
-    members = []
+    members = [p.tab_panel("bank_bg")]
+    bx = MARGIN + 8
 
-    def lbl(text, rect, vn, bold=False):
+    def lbl(text, rect, vn, bold=False, color=None):
         members.append(vn)
         p.comment(text, rect, varname=vn, justify=0, fontsize=8.0,
-                  fontface=1 if bold else 0)
+                  fontface=1 if bold else 0,
+                  textcolor=color or (COL_TITLE if bold else COL_LABEL))
 
-    lbl("PROGRAM CHANGE", [MARGIN, 30, 130, 14], "pc_t0", bold=True)
-    lbl("Bank", [MARGIN, 52, 30, 14], "pc_l1")
-    bank = p.live("live.numbox", [MARGIN + 34, 50, 38, 18], "PC Bank", 1, 1, 16,
-                  varname="PCBank", annotation="Muse bank to recall (1-16)")
+    lbl("PROGRAM CHANGE", [bx, SEC_TOP + 3, 160, 12], "pc_t0", bold=True)
+    lbl("Bank", [bx, 58, 30, 14], "pc_l1")
+    bank = p.live("live.numbox", [bx + 34, 56, 40, 18], "PC Bank", 1, 1, 16,
+                  varname="PCBank", annotation="Muse bank to recall (1-16)",
+                  extra_attrs={"bordercolor": COL_BORDER})
     members.append("PCBank")
-    lbl("Patch", [MARGIN + 80, 52, 34, 14], "pc_l2")
-    patch = p.live("live.numbox", [MARGIN + 116, 50, 38, 18], "PC Patch", 1, 1,
+    lbl("Patch", [bx + 86, 58, 34, 14], "pc_l2")
+    patch = p.live("live.numbox", [bx + 122, 56, 40, 18], "PC Patch", 1, 1,
                    16, varname="PCPatch",
-                   annotation="Patch within the bank to recall (1-16)")
+                   annotation="Patch within the bank to recall (1-16)",
+                   extra_attrs={"bordercolor": COL_BORDER})
     members.append("PCPatch")
-    send = p.box("button", [MARGIN + 162, 50, 18, 18], present=True,
-                 numinlets=1, numoutlets=1, outlettype=["bang"],
-                 varname="PCSend")
+    send = p.text_button([bx + 176, 56, 56, 18], "PCSend", "SEND")
     members.append("PCSend")
-    lbl("SEND", [MARGIN + 184, 52, 40, 14], "pc_l3")
     lbl("Recalls one of the Muse's stored patches (16 banks x 16 patches).",
-        [MARGIN, 96, 520, 14], "pc_h1")
+        [bx, 92, 520, 14], "pc_h1")
     lbl("Requires MENU > MIDI > RECEIVE PGM CHNG: ON on the Muse.",
-        [MARGIN, 114, 520, 14], "pc_h2")
+        [bx, 110, 520, 14], "pc_h2")
 
     # Bank MSB(cc0=0) -> Bank LSB(cc32=bank-1) -> Program Change(patch-1)
     pc_t = p.obj("t b b b", [wx + 300, 460, 80, 22], numinlets=1,
@@ -821,30 +872,32 @@ def wire_pitchbend(p, pb, midiin, midiformat, wx):
 
 def build_misc_tab(p, midiin, midiformat, wx):
     """Panic and notes - only on the Misc tab."""
-    members = []
+    members = [p.tab_panel("misc_bg")]
+    bx = MARGIN + 8
 
     def lbl(text, rect, vn, bold=False):
         members.append(vn)
         p.comment(text, rect, varname=vn, justify=0, fontsize=8.0,
-                  fontface=1 if bold else 0)
+                  fontface=1 if bold else 0,
+                  textcolor=COL_TITLE if bold else COL_LABEL)
 
+    lbl("PANIC", [bx, SEC_TOP + 3, 160, 12], "ms_t0", bold=True)
     # PANIC: All Notes Off (CC123=0) + All Sound Off (CC120=0).
-    pn = p.box("button", [MARGIN, 32, 18, 18], present=True, numinlets=1,
-               numoutlets=1, outlettype=["bang"], varname="Panic")
+    pn = p.text_button([bx, 56, 150, 18], "Panic", "ALL NOTES OFF")
     members.append("Panic")
-    lbl("PANIC (All Notes Off)", [MARGIN + 22, 34, 150, 14], "ms_l1", bold=True)
     for cc in (123, 120):
         m = p.msg("%d 0" % cc, [wx + 600, 460 + cc, 50, 22])
         p.connect(pn, 0, m, 0)
         p.connect(m, 0, midiformat, 2)
 
+    lbl("Clears stuck notes (sends All Notes Off / All Sound Off).",
+        [bx, 92, 600, 14], "ms_h0")
     lbl("Pitch Bend is on the VOICE tab (bidirectional). Mod Wheel, Hold, "
-        "Expression & Sustain are on VOICE too.", [MARGIN, 96, 600, 14],
+        "Expression & Sustain are on VOICE too.", [bx, 110, 600, 14],
         "ms_h1")
-    lbl("The Muse's knobs sync per-CC on every tab.", [MARGIN, 114, 540, 14],
-        "ms_h2")
-    lbl("No one-click 'pull': the Muse can't transmit its whole state. Turn a "
-        "knob and the plugin follows.", [MARGIN, 132, 540, 14], "ms_h3")
+    lbl("The Muse's knobs sync per-CC on every tab; there's no one-click "
+        "'pull' (the Muse can't transmit its whole state).",
+        [bx, 128, 600, 14], "ms_h2")
     return members
 
 
@@ -855,7 +908,11 @@ def make_control(p, kind, longname, enum, short, x, row_top, band, annotation,
     """Draw one control just below its label, in the cell at (x, row_top).
 
     The label is printed by ``place_label``; ``showname=0`` keeps live.dial /
-    live.slider from drawing their own (duplicate) name text.
+    live.slider from drawing their own (duplicate) name text.  On/off (``T``)
+    parameters are drawn as a labelled ``live.text`` button - the caption sits
+    inside the button and it lights up in the accent colour when on - so they
+    read like the hardware's switches instead of a bare checkbox + floating
+    label.
     """
     top = row_top + LABEL_H + LABEL_GAP         # control top (right under label)
     avail = band - LABEL_H - LABEL_GAP - 2      # vertical room for the control
@@ -863,35 +920,53 @@ def make_control(p, kind, longname, enum, short, x, row_top, band, annotation,
     def cx(w):                                  # horizontally centre width w
         return x + (COL_W - w) / 2.0
 
-    if kind == T:
-        return p.live("live.toggle", [cx(18), top, 18, 18],
+    if kind == T:                               # on/off -> labelled button
+        bw, bh = COL_W - 6, 17
+        by = row_top + max(0.0, (band - bh) / 2.0)   # centre in the whole cell
+        return p.live("live.text", [cx(bw), by, bw, bh],
                       longname, 2, 0, 1, enum=["off", "on"],
-                      shortname=short, annotation=annotation, initial=initial)
+                      shortname=short, annotation=annotation, initial=initial,
+                      extra_attrs={
+                          "mode": 1,                 # 1 = toggle (latching)
+                          "text": short, "texton": short,
+                          "fontsize": 8.0,
+                          "bgcolor": COL_BTN_OFF,
+                          "bgoncolor": COL_ACCENT,
+                          "activebgcolor": COL_BTN_OFF,
+                          "activebgoncolor": COL_ACCENT,
+                          "textcolor": COL_BTN_TXT,
+                          "textoncolor": COL_WHITE,
+                          "bordercolor": COL_BORDER,
+                      })
     if kind == M:
         return p.live("live.menu", [cx(COL_W - 8), top, COL_W - 8, 18],
                       longname, 2, 0, len(enum) - 1, enum=enum,
                       shortname=short, showname=0,
-                      annotation=annotation, initial=initial)
+                      annotation=annotation, initial=initial,
+                      extra_attrs={"bordercolor": COL_BORDER})
     if kind == S:                               # vertical fader (mixer / ADSR)
         h = max(24.0, avail)
         return p.live("live.slider", [cx(SLIDER_W), top, SLIDER_W, h],
                       longname, 1, 0, 127, shortname=short, showname=0,
-                      annotation=annotation, initial=initial)
+                      annotation=annotation, initial=initial,
+                      extra_attrs={"slidercolor": COL_ACCENT})
     if kind == H:                               # horizontal wave-mix fader
         hh = 15
         hy = top + max(0.0, (avail - hh) / 2.0)  # centre it in the cell
         return p.live("live.slider", [cx(COL_W - 10), hy, COL_W - 10, hh],
                       longname, 1, 0, 127, shortname=short, showname=0,
-                      orientation=1, annotation=annotation, initial=initial)
+                      orientation=1, annotation=annotation, initial=initial,
+                      extra_attrs={"slidercolor": COL_ACCENT})
     # K / B: rotary dial.
     return p.live("live.dial", [cx(DIAL), top, DIAL, DIAL],
                   longname, 1, 0, 127, shortname=short, showname=0,
-                  annotation=annotation, initial=initial)
+                  annotation=annotation, initial=initial,
+                  extra_attrs={"slidercolor": COL_ACCENT})
 
 
 def place_label(p, cap, x, row_top, sn):
     p.comment(cap, [x, row_top, COL_W, LABEL_H],
-              varname=sn + "_L", fontsize=8.0, justify=1)
+              varname=sn + "_L", fontsize=8.0, justify=1, textcolor=COL_LABEL)
 
 
 def route_out(p, kind, enum, cc, ctrl, midiformat, wx):

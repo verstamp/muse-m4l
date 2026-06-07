@@ -19,6 +19,7 @@ running an instance per Ableton track (see
 | `generate_device.py` | Generator that builds the device from the parameter map. Re-run to regenerate. |
 | `MuseEditor.maxpat` | The same patcher as plain JSON, for inspecting/editing in Max. |
 | `Muse_MIDI_CCs.csv` | Reference: the Muse's MIDI CC map. |
+| `render_preview.py` / `layout_preview.svg` | Generates / holds a static mock-up of every tab's layout. |
 
 ## Requirements
 
@@ -95,21 +96,25 @@ hardware:
 | LFO | LFO 1 & 2 (top), the Pitch LFO and its destinations (bottom) |
 | DELAY | Diffusion Delay: times, sync, feedback, character, mix, and timbre sends |
 | ARP | Arpeggiator settings + arp/sequencer clock divisions and tempo |
-| VOICE | Detune, unison/mono, glide, mod wheel, expression, hold, sustain |
+| VOICE | Detune, unison/mono, glide, mod wheel, expression, hold, sustain, pitch bend |
 | BANK | Program Change (recall the Muse's stored patches) |
-| MISC | Panic, Pitch Bend, and notes |
+| MISC | Panic and notes |
 
 **Control types** — each control is drawn to echo the matching panel control:
 rotary parameters are dials; the **mixer levels and the ADSR envelopes are
 vertical faders**, and the oscillator **tri-saw / wave-mix blends are horizontal
-faders**, just like the hardware (all of these are continuous 0–127). Each
-control has a short label printed directly above it (the box title supplies the
-context); the objects' own built-in name text is turned off so nothing is
-duplicated. On/off
-parameters are toggles (send 0 / 127); multi-option parameters (octave,
-waveform, KB tracking, filter order, arp direction/range) are menus that send a
-value centred in the matching CC band, so the Muse always lands on the chosen
-option.
+faders**, just like the hardware (all of these are continuous 0–127). Dials and
+faders have a short label printed directly above them (the box title supplies
+the context); the objects' own built-in name text is turned off so nothing is
+duplicated. **On/off parameters are labelled buttons** — the name sits inside
+the button and it lights up in the accent colour when engaged (sends 0 / 127),
+the way the panel's switches read — so there's no floating label above a bare
+checkbox. Multi-option parameters (octave, waveform, KB tracking, filter order,
+arp direction/range) are menus that send a value centred in the matching CC
+band, so the Muse always lands on the chosen option. Sections are drawn as
+subtly-lighter rounded panels with a hairline border and a thin accent rule
+under each title, so the device reads like a piece of hardware rather than a
+grid of identical knobs.
 
 **Info View help** — hover any control and Ableton's **Info View** (bottom-left
 of the window) shows what that control does on the Muse, taken from Moog's MIDI
@@ -120,9 +125,9 @@ click **SEND** to recall that slot on the Muse (sends Bank Select MSB 0 + LSB +
 Program Change). 16 banks × 16 patches = 256 slots.
 
 **Misc tab** — **Panic** sends All Notes Off / All Sound Off to clear stuck
-notes; **Pitch Bend** is bidirectional — it sends pitch-bend to the synth and
-also follows the Muse's pitch wheel. (Mod Wheel, Hold, Expression and Sustain
-are full controls on the **Voice** tab.)
+notes. (Pitch Bend is on the **Voice** tab — bidirectional, sending pitch-bend
+to the synth and following the Muse's pitch wheel — along with Mod Wheel, Hold,
+Expression and Sustain.)
 
 ## Controlling both timbres (Multi Mode)
 
