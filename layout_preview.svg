@@ -1,0 +1,535 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="624" height="2690" font-family="Arial">
+<rect width="100%" height="100%" fill="#2b2b2b"/>
+<text x="14" y="12" fill="#fff" font-size="13" font-weight="bold">0. LFO</text>
+<rect x="14" y="14" width="596" height="169" fill="#3c3c3c" stroke="#666"/>
+<rect x="24.0" y="19" width="47.0" height="16" fill="#5b9bd5" stroke="#222"/>
+<text x="48.0" y="30" fill="#ddd" font-size="7" text-anchor="middle">LFO</text>
+<rect x="72.0" y="19" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="96.0" y="30" fill="#ddd" font-size="7" text-anchor="middle">MOD</text>
+<rect x="120.0" y="19" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="144.0" y="30" fill="#ddd" font-size="7" text-anchor="middle">OSC</text>
+<rect x="168.0" y="19" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="192.0" y="30" fill="#ddd" font-size="7" text-anchor="middle">MIX</text>
+<rect x="216.0" y="19" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="240.0" y="30" fill="#ddd" font-size="7" text-anchor="middle">FILTER</text>
+<rect x="264.0" y="19" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="288.0" y="30" fill="#ddd" font-size="7" text-anchor="middle">ENV</text>
+<rect x="312.0" y="19" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="336.0" y="30" fill="#ddd" font-size="7" text-anchor="middle">VCA</text>
+<rect x="360.0" y="19" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="384.0" y="30" fill="#ddd" font-size="7" text-anchor="middle">DELAY</text>
+<rect x="408.0" y="19" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="432.0" y="30" fill="#ddd" font-size="7" text-anchor="middle">ARP</text>
+<rect x="456.0" y="19" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="480.0" y="30" fill="#ddd" font-size="7" text-anchor="middle">VOICE</text>
+<rect x="504.0" y="19" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="528.0" y="30" fill="#ddd" font-size="7" text-anchor="middle">BANK</text>
+<rect x="552.0" y="19" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="576.0" y="30" fill="#ddd" font-size="7" text-anchor="middle">MISC</text>
+<rect x="37.0" y="59.0" width="38.0" height="38.0" rx="3" fill="#6fa8dc" stroke="#111" opacity="0.92"/>
+<text x="55.0" y="45.0" fill="#cfe" font-size="7.5" text-anchor="middle">L1 Rate</text>
+<rect x="101.0" y="59.0" width="38.0" height="38.0" rx="3" fill="#6fa8dc" stroke="#111" opacity="0.92"/>
+<text x="119.0" y="45.0" fill="#cfe" font-size="7.5" text-anchor="middle">L1 Amt</text>
+<rect x="155.0" y="69.0" width="58.0" height="18.0" rx="3" fill="#8e7cc3" stroke="#111" opacity="0.92"/>
+<text x="183.0" y="45.0" fill="#cfe" font-size="7.5" text-anchor="middle">L1 Wave</text>
+<rect x="229.0" y="59.0" width="38.0" height="38.0" rx="3" fill="#6fa8dc" stroke="#111" opacity="0.92"/>
+<text x="247.0" y="45.0" fill="#cfe" font-size="7.5" text-anchor="middle">L2 Rate</text>
+<rect x="293.0" y="59.0" width="38.0" height="38.0" rx="3" fill="#6fa8dc" stroke="#111" opacity="0.92"/>
+<text x="311.0" y="45.0" fill="#cfe" font-size="7.5" text-anchor="middle">L2 Amt</text>
+<rect x="347.0" y="69.0" width="58.0" height="18.0" rx="3" fill="#8e7cc3" stroke="#111" opacity="0.92"/>
+<text x="375.0" y="45.0" fill="#cfe" font-size="7.5" text-anchor="middle">L2 Wave</text>
+<rect x="37.0" y="131.0" width="38.0" height="38.0" rx="3" fill="#6fa8dc" stroke="#111" opacity="0.92"/>
+<text x="55.0" y="117.0" fill="#cfe" font-size="7.5" text-anchor="middle">P.LFO Rate</text>
+<rect x="101.0" y="131.0" width="38.0" height="38.0" rx="3" fill="#6fa8dc" stroke="#111" opacity="0.92"/>
+<text x="119.0" y="117.0" fill="#cfe" font-size="7.5" text-anchor="middle">P.LFO Shape</text>
+<rect x="165.0" y="131.0" width="38.0" height="38.0" rx="3" fill="#6fa8dc" stroke="#111" opacity="0.92"/>
+<text x="183.0" y="117.0" fill="#cfe" font-size="7.5" text-anchor="middle">P.LFO Amt</text>
+<rect x="239.0" y="141.0" width="18.0" height="18.0" rx="3" fill="#e69138" stroke="#111" opacity="0.92"/>
+<text x="247.0" y="117.0" fill="#cfe" font-size="7.5" text-anchor="middle">P.LFO&gt;OSC 1</text>
+<rect x="303.0" y="141.0" width="18.0" height="18.0" rx="3" fill="#e69138" stroke="#111" opacity="0.92"/>
+<text x="311.0" y="117.0" fill="#cfe" font-size="7.5" text-anchor="middle">P.LFO&gt;OSC 2</text>
+<rect x="367.0" y="141.0" width="18.0" height="18.0" rx="3" fill="#e69138" stroke="#111" opacity="0.92"/>
+<text x="375.0" y="117.0" fill="#cfe" font-size="7.5" text-anchor="middle">P.LFO&gt;Mod</text>
+<rect x="431.0" y="141.0" width="18.0" height="18.0" rx="3" fill="#e69138" stroke="#111" opacity="0.92"/>
+<text x="439.0" y="117.0" fill="#cfe" font-size="7.5" text-anchor="middle">P.LFO&gt;Detune</text>
+<text x="14" y="235" fill="#fff" font-size="13" font-weight="bold">1. MOD</text>
+<rect x="14" y="237" width="596" height="169" fill="#3c3c3c" stroke="#666"/>
+<rect x="24.0" y="242" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="48.0" y="253" fill="#ddd" font-size="7" text-anchor="middle">LFO</text>
+<rect x="72.0" y="242" width="47.0" height="16" fill="#5b9bd5" stroke="#222"/>
+<text x="96.0" y="253" fill="#ddd" font-size="7" text-anchor="middle">MOD</text>
+<rect x="120.0" y="242" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="144.0" y="253" fill="#ddd" font-size="7" text-anchor="middle">OSC</text>
+<rect x="168.0" y="242" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="192.0" y="253" fill="#ddd" font-size="7" text-anchor="middle">MIX</text>
+<rect x="216.0" y="242" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="240.0" y="253" fill="#ddd" font-size="7" text-anchor="middle">FILTER</text>
+<rect x="264.0" y="242" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="288.0" y="253" fill="#ddd" font-size="7" text-anchor="middle">ENV</text>
+<rect x="312.0" y="242" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="336.0" y="253" fill="#ddd" font-size="7" text-anchor="middle">VCA</text>
+<rect x="360.0" y="242" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="384.0" y="253" fill="#ddd" font-size="7" text-anchor="middle">DELAY</text>
+<rect x="408.0" y="242" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="432.0" y="253" fill="#ddd" font-size="7" text-anchor="middle">ARP</text>
+<rect x="456.0" y="242" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="480.0" y="253" fill="#ddd" font-size="7" text-anchor="middle">VOICE</text>
+<rect x="504.0" y="242" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="528.0" y="253" fill="#ddd" font-size="7" text-anchor="middle">BANK</text>
+<rect x="552.0" y="242" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="576.0" y="253" fill="#ddd" font-size="7" text-anchor="middle">MISC</text>
+<rect x="37.0" y="282.0" width="38.0" height="38.0" rx="3" fill="#6fa8dc" stroke="#111" opacity="0.92"/>
+<text x="55.0" y="268.0" fill="#cfe" font-size="7.5" text-anchor="middle">Freq</text>
+<rect x="91.0" y="292.0" width="58.0" height="18.0" rx="3" fill="#8e7cc3" stroke="#111" opacity="0.92"/>
+<text x="119.0" y="268.0" fill="#cfe" font-size="7.5" text-anchor="middle">Wave</text>
+<rect x="175.0" y="292.0" width="18.0" height="18.0" rx="3" fill="#e69138" stroke="#111" opacity="0.92"/>
+<text x="183.0" y="268.0" fill="#cfe" font-size="7.5" text-anchor="middle">Audio Rate</text>
+<rect x="239.0" y="292.0" width="18.0" height="18.0" rx="3" fill="#e69138" stroke="#111" opacity="0.92"/>
+<text x="247.0" y="268.0" fill="#cfe" font-size="7.5" text-anchor="middle">KB Track</text>
+<rect x="303.0" y="292.0" width="18.0" height="18.0" rx="3" fill="#e69138" stroke="#111" opacity="0.92"/>
+<text x="311.0" y="268.0" fill="#cfe" font-size="7.5" text-anchor="middle">KB Rst</text>
+<rect x="367.0" y="292.0" width="18.0" height="18.0" rx="3" fill="#e69138" stroke="#111" opacity="0.92"/>
+<text x="375.0" y="268.0" fill="#cfe" font-size="7.5" text-anchor="middle">Uni</text>
+<rect x="421.0" y="282.0" width="38.0" height="38.0" rx="3" fill="#6fa8dc" stroke="#111" opacity="0.92"/>
+<text x="439.0" y="268.0" fill="#cfe" font-size="7.5" text-anchor="middle">Pitch Amt</text>
+<rect x="485.0" y="282.0" width="38.0" height="38.0" rx="3" fill="#6fa8dc" stroke="#111" opacity="0.92"/>
+<text x="503.0" y="268.0" fill="#cfe" font-size="7.5" text-anchor="middle">Pitch&gt;OSC 1</text>
+<rect x="549.0" y="282.0" width="38.0" height="38.0" rx="3" fill="#6fa8dc" stroke="#111" opacity="0.92"/>
+<text x="567.0" y="268.0" fill="#cfe" font-size="7.5" text-anchor="middle">Pitch&gt;OSC 2</text>
+<rect x="37.0" y="354.0" width="38.0" height="38.0" rx="3" fill="#6fa8dc" stroke="#111" opacity="0.92"/>
+<text x="55.0" y="340.0" fill="#cfe" font-size="7.5" text-anchor="middle">PWM Amt</text>
+<rect x="101.0" y="354.0" width="38.0" height="38.0" rx="3" fill="#6fa8dc" stroke="#111" opacity="0.92"/>
+<text x="119.0" y="340.0" fill="#cfe" font-size="7.5" text-anchor="middle">PWM&gt;OSC 1</text>
+<rect x="165.0" y="354.0" width="38.0" height="38.0" rx="3" fill="#6fa8dc" stroke="#111" opacity="0.92"/>
+<text x="183.0" y="340.0" fill="#cfe" font-size="7.5" text-anchor="middle">PWM&gt;OSC 2</text>
+<rect x="229.0" y="354.0" width="38.0" height="38.0" rx="3" fill="#6fa8dc" stroke="#111" opacity="0.92"/>
+<text x="247.0" y="340.0" fill="#cfe" font-size="7.5" text-anchor="middle">Filter Amt</text>
+<rect x="293.0" y="354.0" width="38.0" height="38.0" rx="3" fill="#6fa8dc" stroke="#111" opacity="0.92"/>
+<text x="311.0" y="340.0" fill="#cfe" font-size="7.5" text-anchor="middle">Filter&gt;F1</text>
+<rect x="357.0" y="354.0" width="38.0" height="38.0" rx="3" fill="#6fa8dc" stroke="#111" opacity="0.92"/>
+<text x="375.0" y="340.0" fill="#cfe" font-size="7.5" text-anchor="middle">Filter&gt;F2</text>
+<rect x="421.0" y="354.0" width="38.0" height="38.0" rx="3" fill="#6fa8dc" stroke="#111" opacity="0.92"/>
+<text x="439.0" y="340.0" fill="#cfe" font-size="7.5" text-anchor="middle">VCA Amt</text>
+<rect x="485.0" y="354.0" width="38.0" height="38.0" rx="3" fill="#6fa8dc" stroke="#111" opacity="0.92"/>
+<text x="503.0" y="340.0" fill="#cfe" font-size="7.5" text-anchor="middle">VCA Pan</text>
+<text x="14" y="458" fill="#fff" font-size="13" font-weight="bold">2. OSC</text>
+<rect x="14" y="460" width="596" height="169" fill="#3c3c3c" stroke="#666"/>
+<rect x="24.0" y="465" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="48.0" y="476" fill="#ddd" font-size="7" text-anchor="middle">LFO</text>
+<rect x="72.0" y="465" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="96.0" y="476" fill="#ddd" font-size="7" text-anchor="middle">MOD</text>
+<rect x="120.0" y="465" width="47.0" height="16" fill="#5b9bd5" stroke="#222"/>
+<text x="144.0" y="476" fill="#ddd" font-size="7" text-anchor="middle">OSC</text>
+<rect x="168.0" y="465" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="192.0" y="476" fill="#ddd" font-size="7" text-anchor="middle">MIX</text>
+<rect x="216.0" y="465" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="240.0" y="476" fill="#ddd" font-size="7" text-anchor="middle">FILTER</text>
+<rect x="264.0" y="465" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="288.0" y="476" fill="#ddd" font-size="7" text-anchor="middle">ENV</text>
+<rect x="312.0" y="465" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="336.0" y="476" fill="#ddd" font-size="7" text-anchor="middle">VCA</text>
+<rect x="360.0" y="465" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="384.0" y="476" fill="#ddd" font-size="7" text-anchor="middle">DELAY</text>
+<rect x="408.0" y="465" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="432.0" y="476" fill="#ddd" font-size="7" text-anchor="middle">ARP</text>
+<rect x="456.0" y="465" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="480.0" y="476" fill="#ddd" font-size="7" text-anchor="middle">VOICE</text>
+<rect x="504.0" y="465" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="528.0" y="476" fill="#ddd" font-size="7" text-anchor="middle">BANK</text>
+<rect x="552.0" y="465" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="576.0" y="476" fill="#ddd" font-size="7" text-anchor="middle">MISC</text>
+<rect x="27.0" y="515.0" width="58.0" height="18.0" rx="3" fill="#8e7cc3" stroke="#111" opacity="0.92"/>
+<text x="55.0" y="491.0" fill="#cfe" font-size="7.5" text-anchor="middle">1 Oct</text>
+<rect x="101.0" y="505.0" width="38.0" height="38.0" rx="3" fill="#6fa8dc" stroke="#111" opacity="0.92"/>
+<text x="119.0" y="491.0" fill="#cfe" font-size="7.5" text-anchor="middle">1 Freq</text>
+<rect x="157.0" y="517.0" width="54.0" height="14.0" rx="3" fill="#93c47d" stroke="#111" opacity="0.92"/>
+<text x="183.0" y="491.0" fill="#cfe" font-size="7.5" text-anchor="middle">Tri/Saw 1</text>
+<rect x="221.0" y="517.0" width="54.0" height="14.0" rx="3" fill="#93c47d" stroke="#111" opacity="0.92"/>
+<text x="247.0" y="491.0" fill="#cfe" font-size="7.5" text-anchor="middle">1 Wave Mix</text>
+<rect x="293.0" y="505.0" width="38.0" height="38.0" rx="3" fill="#6fa8dc" stroke="#111" opacity="0.92"/>
+<text x="311.0" y="491.0" fill="#cfe" font-size="7.5" text-anchor="middle">1 PW</text>
+<rect x="367.0" y="515.0" width="18.0" height="18.0" rx="3" fill="#e69138" stroke="#111" opacity="0.92"/>
+<text x="375.0" y="491.0" fill="#cfe" font-size="7.5" text-anchor="middle">2&gt;1 Sync</text>
+<rect x="421.0" y="505.0" width="38.0" height="38.0" rx="3" fill="#6fa8dc" stroke="#111" opacity="0.92"/>
+<text x="439.0" y="491.0" fill="#cfe" font-size="7.5" text-anchor="middle">FM Amt</text>
+<rect x="27.0" y="587.0" width="58.0" height="18.0" rx="3" fill="#8e7cc3" stroke="#111" opacity="0.92"/>
+<text x="55.0" y="563.0" fill="#cfe" font-size="7.5" text-anchor="middle">2 Oct</text>
+<rect x="101.0" y="577.0" width="38.0" height="38.0" rx="3" fill="#6fa8dc" stroke="#111" opacity="0.92"/>
+<text x="119.0" y="563.0" fill="#cfe" font-size="7.5" text-anchor="middle">2 Freq</text>
+<rect x="157.0" y="589.0" width="54.0" height="14.0" rx="3" fill="#93c47d" stroke="#111" opacity="0.92"/>
+<text x="183.0" y="563.0" fill="#cfe" font-size="7.5" text-anchor="middle">Tri/Saw 2</text>
+<rect x="221.0" y="589.0" width="54.0" height="14.0" rx="3" fill="#93c47d" stroke="#111" opacity="0.92"/>
+<text x="247.0" y="563.0" fill="#cfe" font-size="7.5" text-anchor="middle">2 Wave Mix</text>
+<rect x="293.0" y="577.0" width="38.0" height="38.0" rx="3" fill="#6fa8dc" stroke="#111" opacity="0.92"/>
+<text x="311.0" y="563.0" fill="#cfe" font-size="7.5" text-anchor="middle">2 PW</text>
+<rect x="367.0" y="587.0" width="18.0" height="18.0" rx="3" fill="#e69138" stroke="#111" opacity="0.92"/>
+<text x="375.0" y="563.0" fill="#cfe" font-size="7.5" text-anchor="middle">2&gt;1 FM</text>
+<rect x="431.0" y="587.0" width="18.0" height="18.0" rx="3" fill="#e69138" stroke="#111" opacity="0.92"/>
+<text x="439.0" y="563.0" fill="#cfe" font-size="7.5" text-anchor="middle">1&gt;2 FM</text>
+<text x="14" y="681" fill="#fff" font-size="13" font-weight="bold">3. MIX</text>
+<rect x="14" y="683" width="596" height="169" fill="#3c3c3c" stroke="#666"/>
+<rect x="24.0" y="688" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="48.0" y="699" fill="#ddd" font-size="7" text-anchor="middle">LFO</text>
+<rect x="72.0" y="688" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="96.0" y="699" fill="#ddd" font-size="7" text-anchor="middle">MOD</text>
+<rect x="120.0" y="688" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="144.0" y="699" fill="#ddd" font-size="7" text-anchor="middle">OSC</text>
+<rect x="168.0" y="688" width="47.0" height="16" fill="#5b9bd5" stroke="#222"/>
+<text x="192.0" y="699" fill="#ddd" font-size="7" text-anchor="middle">MIX</text>
+<rect x="216.0" y="688" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="240.0" y="699" fill="#ddd" font-size="7" text-anchor="middle">FILTER</text>
+<rect x="264.0" y="688" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="288.0" y="699" fill="#ddd" font-size="7" text-anchor="middle">ENV</text>
+<rect x="312.0" y="688" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="336.0" y="699" fill="#ddd" font-size="7" text-anchor="middle">VCA</text>
+<rect x="360.0" y="688" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="384.0" y="699" fill="#ddd" font-size="7" text-anchor="middle">DELAY</text>
+<rect x="408.0" y="688" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="432.0" y="699" fill="#ddd" font-size="7" text-anchor="middle">ARP</text>
+<rect x="456.0" y="688" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="480.0" y="699" fill="#ddd" font-size="7" text-anchor="middle">VOICE</text>
+<rect x="504.0" y="688" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="528.0" y="699" fill="#ddd" font-size="7" text-anchor="middle">BANK</text>
+<rect x="552.0" y="688" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="576.0" y="699" fill="#ddd" font-size="7" text-anchor="middle">MISC</text>
+<rect x="46.0" y="731.0" width="20.0" height="104.0" rx="3" fill="#93c47d" stroke="#111" opacity="0.92"/>
+<text x="55.0" y="714.0" fill="#cfe" font-size="7.5" text-anchor="middle">OSC 1</text>
+<rect x="110.0" y="731.0" width="20.0" height="104.0" rx="3" fill="#93c47d" stroke="#111" opacity="0.92"/>
+<text x="119.0" y="714.0" fill="#cfe" font-size="7.5" text-anchor="middle">Ring</text>
+<rect x="174.0" y="731.0" width="20.0" height="104.0" rx="3" fill="#93c47d" stroke="#111" opacity="0.92"/>
+<text x="183.0" y="714.0" fill="#cfe" font-size="7.5" text-anchor="middle">OSC 2</text>
+<rect x="238.0" y="731.0" width="20.0" height="104.0" rx="3" fill="#93c47d" stroke="#111" opacity="0.92"/>
+<text x="247.0" y="714.0" fill="#cfe" font-size="7.5" text-anchor="middle">Mod Osc</text>
+<rect x="302.0" y="731.0" width="20.0" height="104.0" rx="3" fill="#93c47d" stroke="#111" opacity="0.92"/>
+<text x="311.0" y="714.0" fill="#cfe" font-size="7.5" text-anchor="middle">Noise</text>
+<rect x="357.0" y="764.0" width="38.0" height="38.0" rx="3" fill="#6fa8dc" stroke="#111" opacity="0.92"/>
+<text x="375.0" y="714.0" fill="#cfe" font-size="7.5" text-anchor="middle">Drive</text>
+<text x="14" y="904" fill="#fff" font-size="13" font-weight="bold">4. FILTER</text>
+<rect x="14" y="906" width="596" height="169" fill="#3c3c3c" stroke="#666"/>
+<rect x="24.0" y="911" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="48.0" y="922" fill="#ddd" font-size="7" text-anchor="middle">LFO</text>
+<rect x="72.0" y="911" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="96.0" y="922" fill="#ddd" font-size="7" text-anchor="middle">MOD</text>
+<rect x="120.0" y="911" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="144.0" y="922" fill="#ddd" font-size="7" text-anchor="middle">OSC</text>
+<rect x="168.0" y="911" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="192.0" y="922" fill="#ddd" font-size="7" text-anchor="middle">MIX</text>
+<rect x="216.0" y="911" width="47.0" height="16" fill="#5b9bd5" stroke="#222"/>
+<text x="240.0" y="922" fill="#ddd" font-size="7" text-anchor="middle">FILTER</text>
+<rect x="264.0" y="911" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="288.0" y="922" fill="#ddd" font-size="7" text-anchor="middle">ENV</text>
+<rect x="312.0" y="911" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="336.0" y="922" fill="#ddd" font-size="7" text-anchor="middle">VCA</text>
+<rect x="360.0" y="911" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="384.0" y="922" fill="#ddd" font-size="7" text-anchor="middle">DELAY</text>
+<rect x="408.0" y="911" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="432.0" y="922" fill="#ddd" font-size="7" text-anchor="middle">ARP</text>
+<rect x="456.0" y="911" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="480.0" y="922" fill="#ddd" font-size="7" text-anchor="middle">VOICE</text>
+<rect x="504.0" y="911" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="528.0" y="922" fill="#ddd" font-size="7" text-anchor="middle">BANK</text>
+<rect x="552.0" y="911" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="576.0" y="922" fill="#ddd" font-size="7" text-anchor="middle">MISC</text>
+<rect x="37.0" y="951.0" width="38.0" height="38.0" rx="3" fill="#6fa8dc" stroke="#111" opacity="0.92"/>
+<text x="55.0" y="937.0" fill="#cfe" font-size="7.5" text-anchor="middle">F1 Cutoff</text>
+<rect x="101.0" y="951.0" width="38.0" height="38.0" rx="3" fill="#6fa8dc" stroke="#111" opacity="0.92"/>
+<text x="119.0" y="937.0" fill="#cfe" font-size="7.5" text-anchor="middle">F1 High Pass</text>
+<rect x="165.0" y="951.0" width="38.0" height="38.0" rx="3" fill="#6fa8dc" stroke="#111" opacity="0.92"/>
+<text x="183.0" y="937.0" fill="#cfe" font-size="7.5" text-anchor="middle">F1 Reso</text>
+<rect x="229.0" y="951.0" width="38.0" height="38.0" rx="3" fill="#6fa8dc" stroke="#111" opacity="0.92"/>
+<text x="247.0" y="937.0" fill="#cfe" font-size="7.5" text-anchor="middle">F1 Env Amt</text>
+<rect x="283.0" y="961.0" width="58.0" height="18.0" rx="3" fill="#8e7cc3" stroke="#111" opacity="0.92"/>
+<text x="311.0" y="937.0" fill="#cfe" font-size="7.5" text-anchor="middle">F1 KB Track</text>
+<rect x="367.0" y="961.0" width="18.0" height="18.0" rx="3" fill="#e69138" stroke="#111" opacity="0.92"/>
+<text x="375.0" y="937.0" fill="#cfe" font-size="7.5" text-anchor="middle">Link Filters</text>
+<rect x="37.0" y="1023.0" width="38.0" height="38.0" rx="3" fill="#6fa8dc" stroke="#111" opacity="0.92"/>
+<text x="55.0" y="1009.0" fill="#cfe" font-size="7.5" text-anchor="middle">F2 Freq</text>
+<rect x="101.0" y="1023.0" width="38.0" height="38.0" rx="3" fill="#6fa8dc" stroke="#111" opacity="0.92"/>
+<text x="119.0" y="1009.0" fill="#cfe" font-size="7.5" text-anchor="middle">F2 Reso</text>
+<rect x="165.0" y="1023.0" width="38.0" height="38.0" rx="3" fill="#6fa8dc" stroke="#111" opacity="0.92"/>
+<text x="183.0" y="1009.0" fill="#cfe" font-size="7.5" text-anchor="middle">F2 Env Amt</text>
+<rect x="219.0" y="1033.0" width="58.0" height="18.0" rx="3" fill="#8e7cc3" stroke="#111" opacity="0.92"/>
+<text x="247.0" y="1009.0" fill="#cfe" font-size="7.5" text-anchor="middle">F2 KB Track</text>
+<rect x="283.0" y="1033.0" width="58.0" height="18.0" rx="3" fill="#8e7cc3" stroke="#111" opacity="0.92"/>
+<text x="311.0" y="1009.0" fill="#cfe" font-size="7.5" text-anchor="middle">Order</text>
+<text x="14" y="1127" fill="#fff" font-size="13" font-weight="bold">5. ENV</text>
+<rect x="14" y="1129" width="596" height="169" fill="#3c3c3c" stroke="#666"/>
+<rect x="24.0" y="1134" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="48.0" y="1145" fill="#ddd" font-size="7" text-anchor="middle">LFO</text>
+<rect x="72.0" y="1134" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="96.0" y="1145" fill="#ddd" font-size="7" text-anchor="middle">MOD</text>
+<rect x="120.0" y="1134" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="144.0" y="1145" fill="#ddd" font-size="7" text-anchor="middle">OSC</text>
+<rect x="168.0" y="1134" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="192.0" y="1145" fill="#ddd" font-size="7" text-anchor="middle">MIX</text>
+<rect x="216.0" y="1134" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="240.0" y="1145" fill="#ddd" font-size="7" text-anchor="middle">FILTER</text>
+<rect x="264.0" y="1134" width="47.0" height="16" fill="#5b9bd5" stroke="#222"/>
+<text x="288.0" y="1145" fill="#ddd" font-size="7" text-anchor="middle">ENV</text>
+<rect x="312.0" y="1134" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="336.0" y="1145" fill="#ddd" font-size="7" text-anchor="middle">VCA</text>
+<rect x="360.0" y="1134" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="384.0" y="1145" fill="#ddd" font-size="7" text-anchor="middle">DELAY</text>
+<rect x="408.0" y="1134" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="432.0" y="1145" fill="#ddd" font-size="7" text-anchor="middle">ARP</text>
+<rect x="456.0" y="1134" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="480.0" y="1145" fill="#ddd" font-size="7" text-anchor="middle">VOICE</text>
+<rect x="504.0" y="1134" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="528.0" y="1145" fill="#ddd" font-size="7" text-anchor="middle">BANK</text>
+<rect x="552.0" y="1134" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="576.0" y="1145" fill="#ddd" font-size="7" text-anchor="middle">MISC</text>
+<rect x="46.0" y="1165.0" width="20.0" height="56.0" rx="3" fill="#93c47d" stroke="#111" opacity="0.92"/>
+<text x="55.0" y="1160.0" fill="#cfe" font-size="7.5" text-anchor="middle">F Atk</text>
+<rect x="110.0" y="1165.0" width="20.0" height="56.0" rx="3" fill="#93c47d" stroke="#111" opacity="0.92"/>
+<text x="119.0" y="1160.0" fill="#cfe" font-size="7.5" text-anchor="middle">F Dec</text>
+<rect x="174.0" y="1165.0" width="20.0" height="56.0" rx="3" fill="#93c47d" stroke="#111" opacity="0.92"/>
+<text x="183.0" y="1160.0" fill="#cfe" font-size="7.5" text-anchor="middle">F Sus</text>
+<rect x="238.0" y="1165.0" width="20.0" height="56.0" rx="3" fill="#93c47d" stroke="#111" opacity="0.92"/>
+<text x="247.0" y="1160.0" fill="#cfe" font-size="7.5" text-anchor="middle">F Rel</text>
+<rect x="303.0" y="1184.0" width="18.0" height="18.0" rx="3" fill="#e69138" stroke="#111" opacity="0.92"/>
+<text x="311.0" y="1160.0" fill="#cfe" font-size="7.5" text-anchor="middle">F Loop</text>
+<rect x="367.0" y="1184.0" width="18.0" height="18.0" rx="3" fill="#e69138" stroke="#111" opacity="0.92"/>
+<text x="375.0" y="1160.0" fill="#cfe" font-size="7.5" text-anchor="middle">F Vel</text>
+<rect x="46.0" y="1237.0" width="20.0" height="56.0" rx="3" fill="#93c47d" stroke="#111" opacity="0.92"/>
+<text x="55.0" y="1232.0" fill="#cfe" font-size="7.5" text-anchor="middle">A Atk</text>
+<rect x="110.0" y="1237.0" width="20.0" height="56.0" rx="3" fill="#93c47d" stroke="#111" opacity="0.92"/>
+<text x="119.0" y="1232.0" fill="#cfe" font-size="7.5" text-anchor="middle">A Dec</text>
+<rect x="174.0" y="1237.0" width="20.0" height="56.0" rx="3" fill="#93c47d" stroke="#111" opacity="0.92"/>
+<text x="183.0" y="1232.0" fill="#cfe" font-size="7.5" text-anchor="middle">A Sus</text>
+<rect x="238.0" y="1237.0" width="20.0" height="56.0" rx="3" fill="#93c47d" stroke="#111" opacity="0.92"/>
+<text x="247.0" y="1232.0" fill="#cfe" font-size="7.5" text-anchor="middle">A Rel</text>
+<rect x="303.0" y="1256.0" width="18.0" height="18.0" rx="3" fill="#e69138" stroke="#111" opacity="0.92"/>
+<text x="311.0" y="1232.0" fill="#cfe" font-size="7.5" text-anchor="middle">A Loop</text>
+<rect x="367.0" y="1256.0" width="18.0" height="18.0" rx="3" fill="#e69138" stroke="#111" opacity="0.92"/>
+<text x="375.0" y="1232.0" fill="#cfe" font-size="7.5" text-anchor="middle">A Vel</text>
+<text x="14" y="1350" fill="#fff" font-size="13" font-weight="bold">6. VCA</text>
+<rect x="14" y="1352" width="596" height="169" fill="#3c3c3c" stroke="#666"/>
+<rect x="24.0" y="1357" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="48.0" y="1368" fill="#ddd" font-size="7" text-anchor="middle">LFO</text>
+<rect x="72.0" y="1357" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="96.0" y="1368" fill="#ddd" font-size="7" text-anchor="middle">MOD</text>
+<rect x="120.0" y="1357" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="144.0" y="1368" fill="#ddd" font-size="7" text-anchor="middle">OSC</text>
+<rect x="168.0" y="1357" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="192.0" y="1368" fill="#ddd" font-size="7" text-anchor="middle">MIX</text>
+<rect x="216.0" y="1357" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="240.0" y="1368" fill="#ddd" font-size="7" text-anchor="middle">FILTER</text>
+<rect x="264.0" y="1357" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="288.0" y="1368" fill="#ddd" font-size="7" text-anchor="middle">ENV</text>
+<rect x="312.0" y="1357" width="47.0" height="16" fill="#5b9bd5" stroke="#222"/>
+<text x="336.0" y="1368" fill="#ddd" font-size="7" text-anchor="middle">VCA</text>
+<rect x="360.0" y="1357" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="384.0" y="1368" fill="#ddd" font-size="7" text-anchor="middle">DELAY</text>
+<rect x="408.0" y="1357" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="432.0" y="1368" fill="#ddd" font-size="7" text-anchor="middle">ARP</text>
+<rect x="456.0" y="1357" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="480.0" y="1368" fill="#ddd" font-size="7" text-anchor="middle">VOICE</text>
+<rect x="504.0" y="1357" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="528.0" y="1368" fill="#ddd" font-size="7" text-anchor="middle">BANK</text>
+<rect x="552.0" y="1357" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="576.0" y="1368" fill="#ddd" font-size="7" text-anchor="middle">MISC</text>
+<rect x="37.0" y="1433.0" width="38.0" height="38.0" rx="3" fill="#6fa8dc" stroke="#111" opacity="0.92"/>
+<text x="55.0" y="1383.0" fill="#cfe" font-size="7.5" text-anchor="middle">Volume</text>
+<rect x="101.0" y="1433.0" width="38.0" height="38.0" rx="3" fill="#6fa8dc" stroke="#111" opacity="0.92"/>
+<text x="119.0" y="1383.0" fill="#cfe" font-size="7.5" text-anchor="middle">Pan</text>
+<rect x="165.0" y="1433.0" width="38.0" height="38.0" rx="3" fill="#6fa8dc" stroke="#111" opacity="0.92"/>
+<text x="183.0" y="1383.0" fill="#cfe" font-size="7.5" text-anchor="middle">Pan Spr</text>
+<rect x="229.0" y="1433.0" width="38.0" height="38.0" rx="3" fill="#6fa8dc" stroke="#111" opacity="0.92"/>
+<text x="247.0" y="1383.0" fill="#cfe" font-size="7.5" text-anchor="middle">Low Cut</text>
+<rect x="303.0" y="1443.0" width="18.0" height="18.0" rx="3" fill="#e69138" stroke="#111" opacity="0.92"/>
+<text x="311.0" y="1383.0" fill="#cfe" font-size="7.5" text-anchor="middle">Mute</text>
+<text x="14" y="1573" fill="#fff" font-size="13" font-weight="bold">7. DELAY</text>
+<rect x="14" y="1575" width="596" height="169" fill="#3c3c3c" stroke="#666"/>
+<rect x="24.0" y="1580" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="48.0" y="1591" fill="#ddd" font-size="7" text-anchor="middle">LFO</text>
+<rect x="72.0" y="1580" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="96.0" y="1591" fill="#ddd" font-size="7" text-anchor="middle">MOD</text>
+<rect x="120.0" y="1580" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="144.0" y="1591" fill="#ddd" font-size="7" text-anchor="middle">OSC</text>
+<rect x="168.0" y="1580" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="192.0" y="1591" fill="#ddd" font-size="7" text-anchor="middle">MIX</text>
+<rect x="216.0" y="1580" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="240.0" y="1591" fill="#ddd" font-size="7" text-anchor="middle">FILTER</text>
+<rect x="264.0" y="1580" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="288.0" y="1591" fill="#ddd" font-size="7" text-anchor="middle">ENV</text>
+<rect x="312.0" y="1580" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="336.0" y="1591" fill="#ddd" font-size="7" text-anchor="middle">VCA</text>
+<rect x="360.0" y="1580" width="47.0" height="16" fill="#5b9bd5" stroke="#222"/>
+<text x="384.0" y="1591" fill="#ddd" font-size="7" text-anchor="middle">DELAY</text>
+<rect x="408.0" y="1580" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="432.0" y="1591" fill="#ddd" font-size="7" text-anchor="middle">ARP</text>
+<rect x="456.0" y="1580" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="480.0" y="1591" fill="#ddd" font-size="7" text-anchor="middle">VOICE</text>
+<rect x="504.0" y="1580" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="528.0" y="1591" fill="#ddd" font-size="7" text-anchor="middle">BANK</text>
+<rect x="552.0" y="1580" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="576.0" y="1591" fill="#ddd" font-size="7" text-anchor="middle">MISC</text>
+<rect x="37.0" y="1620.0" width="38.0" height="38.0" rx="3" fill="#6fa8dc" stroke="#111" opacity="0.92"/>
+<text x="55.0" y="1606.0" fill="#cfe" font-size="7.5" text-anchor="middle">Time Left</text>
+<rect x="101.0" y="1620.0" width="38.0" height="38.0" rx="3" fill="#6fa8dc" stroke="#111" opacity="0.92"/>
+<text x="119.0" y="1606.0" fill="#cfe" font-size="7.5" text-anchor="middle">Time Right</text>
+<rect x="175.0" y="1630.0" width="18.0" height="18.0" rx="3" fill="#e69138" stroke="#111" opacity="0.92"/>
+<text x="183.0" y="1606.0" fill="#cfe" font-size="7.5" text-anchor="middle">Link Delays</text>
+<rect x="229.0" y="1620.0" width="38.0" height="38.0" rx="3" fill="#6fa8dc" stroke="#111" opacity="0.92"/>
+<text x="247.0" y="1606.0" fill="#cfe" font-size="7.5" text-anchor="middle">Fbk</text>
+<rect x="293.0" y="1620.0" width="38.0" height="38.0" rx="3" fill="#6fa8dc" stroke="#111" opacity="0.92"/>
+<text x="311.0" y="1606.0" fill="#cfe" font-size="7.5" text-anchor="middle">Char</text>
+<rect x="37.0" y="1692.0" width="38.0" height="38.0" rx="3" fill="#6fa8dc" stroke="#111" opacity="0.92"/>
+<text x="55.0" y="1678.0" fill="#cfe" font-size="7.5" text-anchor="middle">Mix</text>
+<rect x="111.0" y="1702.0" width="18.0" height="18.0" rx="3" fill="#e69138" stroke="#111" opacity="0.92"/>
+<text x="119.0" y="1678.0" fill="#cfe" font-size="7.5" text-anchor="middle">Clock Sync</text>
+<rect x="175.0" y="1702.0" width="18.0" height="18.0" rx="3" fill="#e69138" stroke="#111" opacity="0.92"/>
+<text x="183.0" y="1678.0" fill="#cfe" font-size="7.5" text-anchor="middle">→Timbre A</text>
+<rect x="239.0" y="1702.0" width="18.0" height="18.0" rx="3" fill="#e69138" stroke="#111" opacity="0.92"/>
+<text x="247.0" y="1678.0" fill="#cfe" font-size="7.5" text-anchor="middle">→Timbre B</text>
+<text x="14" y="1796" fill="#fff" font-size="13" font-weight="bold">8. ARP</text>
+<rect x="14" y="1798" width="596" height="169" fill="#3c3c3c" stroke="#666"/>
+<rect x="24.0" y="1803" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="48.0" y="1814" fill="#ddd" font-size="7" text-anchor="middle">LFO</text>
+<rect x="72.0" y="1803" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="96.0" y="1814" fill="#ddd" font-size="7" text-anchor="middle">MOD</text>
+<rect x="120.0" y="1803" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="144.0" y="1814" fill="#ddd" font-size="7" text-anchor="middle">OSC</text>
+<rect x="168.0" y="1803" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="192.0" y="1814" fill="#ddd" font-size="7" text-anchor="middle">MIX</text>
+<rect x="216.0" y="1803" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="240.0" y="1814" fill="#ddd" font-size="7" text-anchor="middle">FILTER</text>
+<rect x="264.0" y="1803" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="288.0" y="1814" fill="#ddd" font-size="7" text-anchor="middle">ENV</text>
+<rect x="312.0" y="1803" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="336.0" y="1814" fill="#ddd" font-size="7" text-anchor="middle">VCA</text>
+<rect x="360.0" y="1803" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="384.0" y="1814" fill="#ddd" font-size="7" text-anchor="middle">DELAY</text>
+<rect x="408.0" y="1803" width="47.0" height="16" fill="#5b9bd5" stroke="#222"/>
+<text x="432.0" y="1814" fill="#ddd" font-size="7" text-anchor="middle">ARP</text>
+<rect x="456.0" y="1803" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="480.0" y="1814" fill="#ddd" font-size="7" text-anchor="middle">VOICE</text>
+<rect x="504.0" y="1803" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="528.0" y="1814" fill="#ddd" font-size="7" text-anchor="middle">BANK</text>
+<rect x="552.0" y="1803" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="576.0" y="1814" fill="#ddd" font-size="7" text-anchor="middle">MISC</text>
+<rect x="47.0" y="1853.0" width="18.0" height="18.0" rx="3" fill="#e69138" stroke="#111" opacity="0.92"/>
+<text x="55.0" y="1829.0" fill="#cfe" font-size="7.5" text-anchor="middle">On/Off</text>
+<rect x="111.0" y="1853.0" width="18.0" height="18.0" rx="3" fill="#e69138" stroke="#111" opacity="0.92"/>
+<text x="119.0" y="1829.0" fill="#cfe" font-size="7.5" text-anchor="middle">FW/BK</text>
+<rect x="155.0" y="1853.0" width="58.0" height="18.0" rx="3" fill="#8e7cc3" stroke="#111" opacity="0.92"/>
+<text x="183.0" y="1829.0" fill="#cfe" font-size="7.5" text-anchor="middle">Dir</text>
+<rect x="219.0" y="1853.0" width="58.0" height="18.0" rx="3" fill="#8e7cc3" stroke="#111" opacity="0.92"/>
+<text x="247.0" y="1829.0" fill="#cfe" font-size="7.5" text-anchor="middle">Oct Rng</text>
+<rect x="37.0" y="1915.0" width="38.0" height="38.0" rx="3" fill="#6fa8dc" stroke="#111" opacity="0.92"/>
+<text x="55.0" y="1901.0" fill="#cfe" font-size="7.5" text-anchor="middle">Clock Div</text>
+<rect x="101.0" y="1915.0" width="38.0" height="38.0" rx="3" fill="#6fa8dc" stroke="#111" opacity="0.92"/>
+<text x="119.0" y="1901.0" fill="#cfe" font-size="7.5" text-anchor="middle">Seq Div</text>
+<rect x="165.0" y="1915.0" width="38.0" height="38.0" rx="3" fill="#6fa8dc" stroke="#111" opacity="0.92"/>
+<text x="183.0" y="1901.0" fill="#cfe" font-size="7.5" text-anchor="middle">Clock Tempo</text>
+<text x="14" y="2019" fill="#fff" font-size="13" font-weight="bold">9. VOICE</text>
+<rect x="14" y="2021" width="596" height="169" fill="#3c3c3c" stroke="#666"/>
+<rect x="24.0" y="2026" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="48.0" y="2037" fill="#ddd" font-size="7" text-anchor="middle">LFO</text>
+<rect x="72.0" y="2026" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="96.0" y="2037" fill="#ddd" font-size="7" text-anchor="middle">MOD</text>
+<rect x="120.0" y="2026" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="144.0" y="2037" fill="#ddd" font-size="7" text-anchor="middle">OSC</text>
+<rect x="168.0" y="2026" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="192.0" y="2037" fill="#ddd" font-size="7" text-anchor="middle">MIX</text>
+<rect x="216.0" y="2026" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="240.0" y="2037" fill="#ddd" font-size="7" text-anchor="middle">FILTER</text>
+<rect x="264.0" y="2026" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="288.0" y="2037" fill="#ddd" font-size="7" text-anchor="middle">ENV</text>
+<rect x="312.0" y="2026" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="336.0" y="2037" fill="#ddd" font-size="7" text-anchor="middle">VCA</text>
+<rect x="360.0" y="2026" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="384.0" y="2037" fill="#ddd" font-size="7" text-anchor="middle">DELAY</text>
+<rect x="408.0" y="2026" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="432.0" y="2037" fill="#ddd" font-size="7" text-anchor="middle">ARP</text>
+<rect x="456.0" y="2026" width="47.0" height="16" fill="#5b9bd5" stroke="#222"/>
+<text x="480.0" y="2037" fill="#ddd" font-size="7" text-anchor="middle">VOICE</text>
+<rect x="504.0" y="2026" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="528.0" y="2037" fill="#ddd" font-size="7" text-anchor="middle">BANK</text>
+<rect x="552.0" y="2026" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="576.0" y="2037" fill="#ddd" font-size="7" text-anchor="middle">MISC</text>
+<rect x="37.0" y="2066.0" width="38.0" height="38.0" rx="3" fill="#6fa8dc" stroke="#111" opacity="0.92"/>
+<text x="55.0" y="2052.0" fill="#cfe" font-size="7.5" text-anchor="middle">Detune</text>
+<rect x="111.0" y="2076.0" width="18.0" height="18.0" rx="3" fill="#e69138" stroke="#111" opacity="0.92"/>
+<text x="119.0" y="2052.0" fill="#cfe" font-size="7.5" text-anchor="middle">Uni</text>
+<rect x="175.0" y="2076.0" width="18.0" height="18.0" rx="3" fill="#e69138" stroke="#111" opacity="0.92"/>
+<text x="183.0" y="2052.0" fill="#cfe" font-size="7.5" text-anchor="middle">Mono</text>
+<rect x="229.0" y="2066.0" width="38.0" height="38.0" rx="3" fill="#6fa8dc" stroke="#111" opacity="0.92"/>
+<text x="247.0" y="2052.0" fill="#cfe" font-size="7.5" text-anchor="middle">Glide Time</text>
+<rect x="37.0" y="2138.0" width="38.0" height="38.0" rx="3" fill="#6fa8dc" stroke="#111" opacity="0.92"/>
+<text x="55.0" y="2124.0" fill="#cfe" font-size="7.5" text-anchor="middle">Mod Whl</text>
+<rect x="101.0" y="2138.0" width="38.0" height="38.0" rx="3" fill="#6fa8dc" stroke="#111" opacity="0.92"/>
+<text x="119.0" y="2124.0" fill="#cfe" font-size="7.5" text-anchor="middle">Expr</text>
+<rect x="175.0" y="2148.0" width="18.0" height="18.0" rx="3" fill="#e69138" stroke="#111" opacity="0.92"/>
+<text x="183.0" y="2124.0" fill="#cfe" font-size="7.5" text-anchor="middle">Hold</text>
+<rect x="239.0" y="2148.0" width="18.0" height="18.0" rx="3" fill="#e69138" stroke="#111" opacity="0.92"/>
+<text x="247.0" y="2124.0" fill="#cfe" font-size="7.5" text-anchor="middle">Sus Ped</text>
+<text x="14" y="2242" fill="#fff" font-size="13" font-weight="bold">10. BANK</text>
+<rect x="14" y="2244" width="596" height="169" fill="#3c3c3c" stroke="#666"/>
+<rect x="24.0" y="2249" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="48.0" y="2260" fill="#ddd" font-size="7" text-anchor="middle">LFO</text>
+<rect x="72.0" y="2249" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="96.0" y="2260" fill="#ddd" font-size="7" text-anchor="middle">MOD</text>
+<rect x="120.0" y="2249" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="144.0" y="2260" fill="#ddd" font-size="7" text-anchor="middle">OSC</text>
+<rect x="168.0" y="2249" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="192.0" y="2260" fill="#ddd" font-size="7" text-anchor="middle">MIX</text>
+<rect x="216.0" y="2249" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="240.0" y="2260" fill="#ddd" font-size="7" text-anchor="middle">FILTER</text>
+<rect x="264.0" y="2249" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="288.0" y="2260" fill="#ddd" font-size="7" text-anchor="middle">ENV</text>
+<rect x="312.0" y="2249" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="336.0" y="2260" fill="#ddd" font-size="7" text-anchor="middle">VCA</text>
+<rect x="360.0" y="2249" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="384.0" y="2260" fill="#ddd" font-size="7" text-anchor="middle">DELAY</text>
+<rect x="408.0" y="2249" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="432.0" y="2260" fill="#ddd" font-size="7" text-anchor="middle">ARP</text>
+<rect x="456.0" y="2249" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="480.0" y="2260" fill="#ddd" font-size="7" text-anchor="middle">VOICE</text>
+<rect x="504.0" y="2249" width="47.0" height="16" fill="#5b9bd5" stroke="#222"/>
+<text x="528.0" y="2260" fill="#ddd" font-size="7" text-anchor="middle">BANK</text>
+<rect x="552.0" y="2249" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="576.0" y="2260" fill="#ddd" font-size="7" text-anchor="middle">MISC</text>
+<text x="25.0" y="2283.0" fill="#cfe" font-size="7.5" text-anchor="start">PROGRAM CHANGE</text>
+<text x="25.0" y="2305.0" fill="#cfe" font-size="7.5" text-anchor="start">Bank</text>
+<rect x="58.0" y="2294.0" width="38.0" height="18.0" rx="3" fill="#d5a6bd" stroke="#111" opacity="0.92"/>
+<text x="105.0" y="2305.0" fill="#cfe" font-size="7.5" text-anchor="start">Patch</text>
+<rect x="140.0" y="2294.0" width="38.0" height="18.0" rx="3" fill="#d5a6bd" stroke="#111" opacity="0.92"/>
+<rect x="186.0" y="2294.0" width="18.0" height="18.0" rx="3" fill="#cc4125" stroke="#111" opacity="0.92"/>
+<text x="209.0" y="2305.0" fill="#cfe" font-size="7.5" text-anchor="start">SEND</text>
+<text x="25.0" y="2349.0" fill="#cfe" font-size="7.5" text-anchor="start">Recalls one of the Muse&#x27;s stored patches (16 banks x 16 patches).</text>
+<text x="25.0" y="2367.0" fill="#cfe" font-size="7.5" text-anchor="start">Requires MENU &gt; MIDI &gt; RECEIVE PGM CHNG: ON on the Muse.</text>
+<text x="14" y="2465" fill="#fff" font-size="13" font-weight="bold">11. MISC</text>
+<rect x="14" y="2467" width="596" height="169" fill="#3c3c3c" stroke="#666"/>
+<rect x="24.0" y="2472" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="48.0" y="2483" fill="#ddd" font-size="7" text-anchor="middle">LFO</text>
+<rect x="72.0" y="2472" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="96.0" y="2483" fill="#ddd" font-size="7" text-anchor="middle">MOD</text>
+<rect x="120.0" y="2472" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="144.0" y="2483" fill="#ddd" font-size="7" text-anchor="middle">OSC</text>
+<rect x="168.0" y="2472" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="192.0" y="2483" fill="#ddd" font-size="7" text-anchor="middle">MIX</text>
+<rect x="216.0" y="2472" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="240.0" y="2483" fill="#ddd" font-size="7" text-anchor="middle">FILTER</text>
+<rect x="264.0" y="2472" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="288.0" y="2483" fill="#ddd" font-size="7" text-anchor="middle">ENV</text>
+<rect x="312.0" y="2472" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="336.0" y="2483" fill="#ddd" font-size="7" text-anchor="middle">VCA</text>
+<rect x="360.0" y="2472" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="384.0" y="2483" fill="#ddd" font-size="7" text-anchor="middle">DELAY</text>
+<rect x="408.0" y="2472" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="432.0" y="2483" fill="#ddd" font-size="7" text-anchor="middle">ARP</text>
+<rect x="456.0" y="2472" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="480.0" y="2483" fill="#ddd" font-size="7" text-anchor="middle">VOICE</text>
+<rect x="504.0" y="2472" width="47.0" height="16" fill="#4a4a4a" stroke="#222"/>
+<text x="528.0" y="2483" fill="#ddd" font-size="7" text-anchor="middle">BANK</text>
+<rect x="552.0" y="2472" width="47.0" height="16" fill="#5b9bd5" stroke="#222"/>
+<text x="576.0" y="2483" fill="#ddd" font-size="7" text-anchor="middle">MISC</text>
+<rect x="24.0" y="2499.0" width="18.0" height="18.0" rx="3" fill="#cc4125" stroke="#111" opacity="0.92"/>
+<text x="47.0" y="2510.0" fill="#cfe" font-size="7.5" text-anchor="start">PANIC (All Notes Off)</text>
+<text x="275.0" y="2510.0" fill="#cfe" font-size="7.5" text-anchor="start">Pitch Bend</text>
+<rect x="274.0" y="2517.0" width="38.0" height="38.0" rx="3" fill="#6fa8dc" stroke="#111" opacity="0.92"/>
+<text x="25.0" y="2572.0" fill="#cfe" font-size="7.5" text-anchor="start">Mod Wheel (CC1), Hold (CC71), Expression &amp; Sustain are on the VOICE tab.</text>
+<text x="25.0" y="2590.0" fill="#cfe" font-size="7.5" text-anchor="start">Pitch Bend is bidirectional; the Muse&#x27;s other knobs sync per-CC on every tab.</text>
+<text x="25.0" y="2608.0" fill="#cfe" font-size="7.5" text-anchor="start">No one-click &#x27;pull&#x27;: the Muse can&#x27;t transmit its whole state. Turn a knob and the plugin follows.</text>
+</svg>

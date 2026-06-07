@@ -134,13 +134,13 @@
 							],
 							"parameter_invisible": 0,
 							"parameter_enum": [
+								"LFO",
+								"MOD",
 								"OSC",
 								"MIX",
 								"FILTER",
 								"ENV",
 								"VCA",
-								"MOD",
-								"LFO",
 								"DELAY",
 								"ARP",
 								"VOICE",
@@ -148,13 +148,13 @@
 								"MISC"
 							],
 							"parameter_range": [
+								"LFO",
+								"MOD",
 								"OSC",
 								"MIX",
 								"FILTER",
 								"ENV",
 								"VCA",
-								"MOD",
-								"LFO",
 								"DELAY",
 								"ARP",
 								"VOICE",
@@ -168,1978 +168,14 @@
 			{
 				"box": {
 					"id": "obj-5",
-					"maxclass": "live.menu",
-					"numinlets": 1,
-					"numoutlets": 1,
-					"patching_rect": [
-						12.0,
-						37.0,
-						42.0,
-						18.0
-					],
-					"outlettype": [
-						""
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						12.0,
-						37.0,
-						42.0,
-						18.0
-					],
-					"parameter_enable": 1,
-					"varname": "OSC_1_Octave",
-					"saved_attribute_attributes": {
-						"valueof": {
-							"parameter_longname": "OSC 1 Octave",
-							"parameter_shortname": "1 Oct",
-							"parameter_type": 2,
-							"parameter_mmin": 0,
-							"parameter_mmax": 3,
-							"parameter_initial_enable": 1,
-							"parameter_initial": [
-								1
-							],
-							"parameter_invisible": 0,
-							"parameter_enum": [
-								"16'",
-								"8'",
-								"4'",
-								"2'"
-							],
-							"parameter_range": [
-								"16'",
-								"8'",
-								"4'",
-								"2'"
-							]
-						}
-					},
-					"annotation": "OSC 1 Octave  \u00b7  CC 44  \u2014  Selects the octave for OSC 1  (0-31: 16'; 32-63: 8'; 64-95: 4'; 96-127: 2')",
-					"hint": "OSC 1 Octave  \u00b7  CC 44  \u2014  Selects the octave for OSC 1  (0-31: 16'; 32-63: 8'; 64-95: 4'; 96-127: 2')"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-6",
-					"maxclass": "comment",
-					"numinlets": 1,
-					"numoutlets": 0,
-					"patching_rect": [
-						10.0,
-						24.0,
-						46.0,
-						11.0
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						10.0,
-						24.0,
-						46.0,
-						11.0
-					],
-					"text": "1 Oct",
-					"fontsize": 8.0,
-					"fontface": 0,
-					"textjustification": 1,
-					"varname": "OSC_1_Octave_L"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-7",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 1,
-					"patching_rect": [
-						1276.0,
-						552.0,
-						110.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "expr $i1 * 32 + 16"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-8",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1416.0,
-						552.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend 44"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-9",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 3,
-					"patching_rect": [
-						1656.0,
-						592.0,
-						70.0,
-						22.0
-					],
-					"outlettype": [
-						"",
-						"",
-						""
-					],
-					"text": "ctlin 44"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-10",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 1,
-					"patching_rect": [
-						1736.0,
-						592.0,
-						150.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "expr ($i1 > 31) + ($i1 > 63) + ($i1 > 95)"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-11",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1896.0,
-						592.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend set"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-12",
 					"maxclass": "live.dial",
-					"numinlets": 1,
-					"numoutlets": 1,
-					"patching_rect": [
-						63.0,
-						37.0,
-						38.0,
-						38.0
-					],
-					"outlettype": [
-						""
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						63.0,
-						37.0,
-						38.0,
-						38.0
-					],
-					"parameter_enable": 1,
-					"varname": "OSC_1_Frequency",
-					"saved_attribute_attributes": {
-						"valueof": {
-							"parameter_longname": "OSC 1 Frequency",
-							"parameter_shortname": "1 Freq",
-							"parameter_type": 1,
-							"parameter_mmin": 0,
-							"parameter_mmax": 127,
-							"parameter_initial_enable": 0,
-							"parameter_initial": [
-								0
-							],
-							"parameter_invisible": 0
-						}
-					},
-					"annotation": "OSC 1 Frequency  \u00b7  CC 45  \u2014  Detunes OSC 1 from the pitch associated with a keyboard note",
-					"hint": "OSC 1 Frequency  \u00b7  CC 45  \u2014  Detunes OSC 1 from the pitch associated with a keyboard note"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-13",
-					"maxclass": "comment",
-					"numinlets": 1,
-					"numoutlets": 0,
-					"patching_rect": [
-						58.0,
-						24.0,
-						46.0,
-						11.0
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						58.0,
-						24.0,
-						46.0,
-						11.0
-					],
-					"text": "1 Freq",
-					"fontsize": 8.0,
-					"fontface": 0,
-					"textjustification": 1,
-					"varname": "OSC_1_Frequency_L"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-14",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1416.0,
-						560.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend 45"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-15",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 3,
-					"patching_rect": [
-						1656.0,
-						600.0,
-						70.0,
-						22.0
-					],
-					"outlettype": [
-						"",
-						"",
-						""
-					],
-					"text": "ctlin 45"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-16",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1896.0,
-						600.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend set"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-17",
-					"maxclass": "live.slider",
-					"numinlets": 1,
-					"numoutlets": 1,
-					"patching_rect": [
-						108.0,
-						47.0,
-						42.0,
-						14.0
-					],
-					"outlettype": [
-						""
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						108.0,
-						47.0,
-						42.0,
-						14.0
-					],
-					"parameter_enable": 1,
-					"varname": "OSC_1_Tri_Saw_Mix",
-					"saved_attribute_attributes": {
-						"valueof": {
-							"parameter_longname": "OSC 1 Tri/Saw Mix",
-							"parameter_shortname": "1 Tri/Saw Mix",
-							"parameter_type": 1,
-							"parameter_mmin": 0,
-							"parameter_mmax": 127,
-							"parameter_initial_enable": 1,
-							"parameter_initial": [
-								64
-							],
-							"parameter_invisible": 0
-						}
-					},
-					"annotation": "OSC 1 Tri/Saw Mix  \u00b7  CC 46  \u2014  Blends Oscillator 1 between triangle (down) and sawtooth (up).",
-					"hint": "OSC 1 Tri/Saw Mix  \u00b7  CC 46  \u2014  Blends Oscillator 1 between triangle (down) and sawtooth (up)."
-				}
-			},
-			{
-				"box": {
-					"id": "obj-18",
-					"maxclass": "comment",
-					"numinlets": 1,
-					"numoutlets": 0,
-					"patching_rect": [
-						106.0,
-						24.0,
-						46.0,
-						11.0
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						106.0,
-						24.0,
-						46.0,
-						11.0
-					],
-					"text": "1 Tri/Saw Mix",
-					"fontsize": 8.0,
-					"fontface": 0,
-					"textjustification": 1,
-					"varname": "OSC_1_Tri_Saw_Mix_L"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-19",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1416.0,
-						568.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend 46"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-20",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 3,
-					"patching_rect": [
-						1656.0,
-						608.0,
-						70.0,
-						22.0
-					],
-					"outlettype": [
-						"",
-						"",
-						""
-					],
-					"text": "ctlin 46"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-21",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1896.0,
-						608.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend set"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-22",
-					"maxclass": "live.slider",
-					"numinlets": 1,
-					"numoutlets": 1,
-					"patching_rect": [
-						156.0,
-						47.0,
-						42.0,
-						14.0
-					],
-					"outlettype": [
-						""
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						156.0,
-						47.0,
-						42.0,
-						14.0
-					],
-					"parameter_enable": 1,
-					"varname": "OSC_1_Wave_Mix",
-					"saved_attribute_attributes": {
-						"valueof": {
-							"parameter_longname": "OSC 1 Wave Mix",
-							"parameter_shortname": "1 Wave Mix",
-							"parameter_type": 1,
-							"parameter_mmin": 0,
-							"parameter_mmax": 127,
-							"parameter_initial_enable": 0,
-							"parameter_initial": [
-								0
-							],
-							"parameter_invisible": 0
-						}
-					},
-					"annotation": "OSC 1 Wave Mix  \u00b7  CC 48  \u2014  Crossfades Oscillator 1 between its tri/saw mix and its pulse wave.",
-					"hint": "OSC 1 Wave Mix  \u00b7  CC 48  \u2014  Crossfades Oscillator 1 between its tri/saw mix and its pulse wave."
-				}
-			},
-			{
-				"box": {
-					"id": "obj-23",
-					"maxclass": "comment",
-					"numinlets": 1,
-					"numoutlets": 0,
-					"patching_rect": [
-						154.0,
-						24.0,
-						46.0,
-						11.0
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						154.0,
-						24.0,
-						46.0,
-						11.0
-					],
-					"text": "1 Wave Mix",
-					"fontsize": 8.0,
-					"fontface": 0,
-					"textjustification": 1,
-					"varname": "OSC_1_Wave_Mix_L"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-24",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1416.0,
-						584.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend 48"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-25",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 3,
-					"patching_rect": [
-						1656.0,
-						624.0,
-						70.0,
-						22.0
-					],
-					"outlettype": [
-						"",
-						"",
-						""
-					],
-					"text": "ctlin 48"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-26",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1896.0,
-						624.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend set"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-27",
-					"maxclass": "live.dial",
-					"numinlets": 1,
-					"numoutlets": 1,
-					"patching_rect": [
-						207.0,
-						37.0,
-						38.0,
-						38.0
-					],
-					"outlettype": [
-						""
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						207.0,
-						37.0,
-						38.0,
-						38.0
-					],
-					"parameter_enable": 1,
-					"varname": "OSC_1_PW",
-					"saved_attribute_attributes": {
-						"valueof": {
-							"parameter_longname": "OSC 1 PW",
-							"parameter_shortname": "1 PW",
-							"parameter_type": 1,
-							"parameter_mmin": 0,
-							"parameter_mmax": 127,
-							"parameter_initial_enable": 0,
-							"parameter_initial": [
-								0
-							],
-							"parameter_invisible": 0
-						}
-					},
-					"annotation": "OSC 1 PW  \u00b7  CC 47  \u2014  Pulse width / duty cycle of Oscillator 1's pulse wave.",
-					"hint": "OSC 1 PW  \u00b7  CC 47  \u2014  Pulse width / duty cycle of Oscillator 1's pulse wave."
-				}
-			},
-			{
-				"box": {
-					"id": "obj-28",
-					"maxclass": "comment",
-					"numinlets": 1,
-					"numoutlets": 0,
-					"patching_rect": [
-						202.0,
-						24.0,
-						46.0,
-						11.0
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						202.0,
-						24.0,
-						46.0,
-						11.0
-					],
-					"text": "1 PW",
-					"fontsize": 8.0,
-					"fontface": 0,
-					"textjustification": 1,
-					"varname": "OSC_1_PW_L"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-29",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1416.0,
-						576.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend 47"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-30",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 3,
-					"patching_rect": [
-						1656.0,
-						616.0,
-						70.0,
-						22.0
-					],
-					"outlettype": [
-						"",
-						"",
-						""
-					],
-					"text": "ctlin 47"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-31",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1896.0,
-						616.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend set"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-32",
-					"maxclass": "live.toggle",
-					"numinlets": 1,
-					"numoutlets": 1,
-					"patching_rect": [
-						265.0,
-						37.0,
-						18.0,
-						18.0
-					],
-					"outlettype": [
-						""
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						265.0,
-						37.0,
-						18.0,
-						18.0
-					],
-					"parameter_enable": 1,
-					"varname": "OSC_2_1_Sync",
-					"saved_attribute_attributes": {
-						"valueof": {
-							"parameter_longname": "OSC 2>1 Sync",
-							"parameter_shortname": "2>1 Sync",
-							"parameter_type": 2,
-							"parameter_mmin": 0,
-							"parameter_mmax": 1,
-							"parameter_initial_enable": 0,
-							"parameter_initial": [
-								0
-							],
-							"parameter_invisible": 0,
-							"parameter_enum": [
-								"off",
-								"on"
-							],
-							"parameter_range": [
-								"off",
-								"on"
-							]
-						}
-					},
-					"annotation": "OSC 2>1 Sync  \u00b7  CC 54  \u2014  Hard-syncs OSC 1 to OSC 2 (resets OSC 1's phase) for sync timbres.  (0-63: Off; 64-127: On)",
-					"hint": "OSC 2>1 Sync  \u00b7  CC 54  \u2014  Hard-syncs OSC 1 to OSC 2 (resets OSC 1's phase) for sync timbres.  (0-63: Off; 64-127: On)"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-33",
-					"maxclass": "comment",
-					"numinlets": 1,
-					"numoutlets": 0,
-					"patching_rect": [
-						250.0,
-						24.0,
-						46.0,
-						11.0
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						250.0,
-						24.0,
-						46.0,
-						11.0
-					],
-					"text": "2>1 Sync",
-					"fontsize": 8.0,
-					"fontface": 0,
-					"textjustification": 1,
-					"varname": "OSC_2_1_Sync_L"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-34",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1276.0,
-						632.0,
-						50.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "* 127"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-35",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1416.0,
-						632.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend 54"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-36",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 3,
-					"patching_rect": [
-						1656.0,
-						672.0,
-						70.0,
-						22.0
-					],
-					"outlettype": [
-						"",
-						"",
-						""
-					],
-					"text": "ctlin 54"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-37",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1736.0,
-						672.0,
-						50.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": ">= 64"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-38",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1896.0,
-						672.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend set"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-39",
-					"maxclass": "live.dial",
-					"numinlets": 1,
-					"numoutlets": 1,
-					"patching_rect": [
-						303.0,
-						37.0,
-						38.0,
-						38.0
-					],
-					"outlettype": [
-						""
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						303.0,
-						37.0,
-						38.0,
-						38.0
-					],
-					"parameter_enable": 1,
-					"varname": "FM_Amount",
-					"saved_attribute_attributes": {
-						"valueof": {
-							"parameter_longname": "FM Amount",
-							"parameter_shortname": "FM Amt",
-							"parameter_type": 1,
-							"parameter_mmin": 0,
-							"parameter_mmax": 127,
-							"parameter_initial_enable": 0,
-							"parameter_initial": [
-								0
-							],
-							"parameter_invisible": 0
-						}
-					},
-					"annotation": "FM Amount  \u00b7  CC 57  \u2014  Depth of oscillator-to-oscillator linear FM (2>1 / 1>2 switches).",
-					"hint": "FM Amount  \u00b7  CC 57  \u2014  Depth of oscillator-to-oscillator linear FM (2>1 / 1>2 switches)."
-				}
-			},
-			{
-				"box": {
-					"id": "obj-40",
-					"maxclass": "comment",
-					"numinlets": 1,
-					"numoutlets": 0,
-					"patching_rect": [
-						298.0,
-						24.0,
-						46.0,
-						11.0
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						298.0,
-						24.0,
-						46.0,
-						11.0
-					],
-					"text": "FM Amt",
-					"fontsize": 8.0,
-					"fontface": 0,
-					"textjustification": 1,
-					"varname": "FM_Amount_L"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-41",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1416.0,
-						656.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend 57"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-42",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 3,
-					"patching_rect": [
-						1656.0,
-						696.0,
-						70.0,
-						22.0
-					],
-					"outlettype": [
-						"",
-						"",
-						""
-					],
-					"text": "ctlin 57"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-43",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1896.0,
-						696.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend set"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-44",
-					"maxclass": "live.menu",
-					"numinlets": 1,
-					"numoutlets": 1,
-					"patching_rect": [
-						12.0,
-						99.0,
-						42.0,
-						18.0
-					],
-					"outlettype": [
-						""
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						12.0,
-						99.0,
-						42.0,
-						18.0
-					],
-					"parameter_enable": 1,
-					"varname": "OSC_2_Octave",
-					"saved_attribute_attributes": {
-						"valueof": {
-							"parameter_longname": "OSC 2 Octave",
-							"parameter_shortname": "2 Oct",
-							"parameter_type": 2,
-							"parameter_mmin": 0,
-							"parameter_mmax": 3,
-							"parameter_initial_enable": 0,
-							"parameter_initial": [
-								0
-							],
-							"parameter_invisible": 0,
-							"parameter_enum": [
-								"16'",
-								"8'",
-								"4'",
-								"2'"
-							],
-							"parameter_range": [
-								"16'",
-								"8'",
-								"4'",
-								"2'"
-							]
-						}
-					},
-					"annotation": "OSC 2 Octave  \u00b7  CC 49  \u2014  Selects the octave for OSC 2  (0-31: 16'; 32-63: 8'; 64-95: 4'; 96-127: 2')",
-					"hint": "OSC 2 Octave  \u00b7  CC 49  \u2014  Selects the octave for OSC 2  (0-31: 16'; 32-63: 8'; 64-95: 4'; 96-127: 2')"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-45",
-					"maxclass": "comment",
-					"numinlets": 1,
-					"numoutlets": 0,
-					"patching_rect": [
-						10.0,
-						86.0,
-						46.0,
-						11.0
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						10.0,
-						86.0,
-						46.0,
-						11.0
-					],
-					"text": "2 Oct",
-					"fontsize": 8.0,
-					"fontface": 0,
-					"textjustification": 1,
-					"varname": "OSC_2_Octave_L"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-46",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 1,
-					"patching_rect": [
-						1276.0,
-						592.0,
-						110.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "expr $i1 * 32 + 16"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-47",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1416.0,
-						592.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend 49"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-48",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 3,
-					"patching_rect": [
-						1656.0,
-						632.0,
-						70.0,
-						22.0
-					],
-					"outlettype": [
-						"",
-						"",
-						""
-					],
-					"text": "ctlin 49"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-49",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 1,
-					"patching_rect": [
-						1736.0,
-						632.0,
-						150.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "expr ($i1 > 31) + ($i1 > 63) + ($i1 > 95)"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-50",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1896.0,
-						632.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend set"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-51",
-					"maxclass": "live.dial",
-					"numinlets": 1,
-					"numoutlets": 1,
-					"patching_rect": [
-						63.0,
-						99.0,
-						38.0,
-						38.0
-					],
-					"outlettype": [
-						""
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						63.0,
-						99.0,
-						38.0,
-						38.0
-					],
-					"parameter_enable": 1,
-					"varname": "OSC_2_Frequency",
-					"saved_attribute_attributes": {
-						"valueof": {
-							"parameter_longname": "OSC 2 Frequency",
-							"parameter_shortname": "2 Freq",
-							"parameter_type": 1,
-							"parameter_mmin": 0,
-							"parameter_mmax": 127,
-							"parameter_initial_enable": 0,
-							"parameter_initial": [
-								0
-							],
-							"parameter_invisible": 0
-						}
-					},
-					"annotation": "OSC 2 Frequency  \u00b7  CC 50  \u2014  Detunes OSC 2 from the pitch associated with a keyboard note",
-					"hint": "OSC 2 Frequency  \u00b7  CC 50  \u2014  Detunes OSC 2 from the pitch associated with a keyboard note"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-52",
-					"maxclass": "comment",
-					"numinlets": 1,
-					"numoutlets": 0,
-					"patching_rect": [
-						58.0,
-						86.0,
-						46.0,
-						11.0
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						58.0,
-						86.0,
-						46.0,
-						11.0
-					],
-					"text": "2 Freq",
-					"fontsize": 8.0,
-					"fontface": 0,
-					"textjustification": 1,
-					"varname": "OSC_2_Frequency_L"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-53",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1416.0,
-						600.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend 50"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-54",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 3,
-					"patching_rect": [
-						1656.0,
-						640.0,
-						70.0,
-						22.0
-					],
-					"outlettype": [
-						"",
-						"",
-						""
-					],
-					"text": "ctlin 50"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-55",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1896.0,
-						640.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend set"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-56",
-					"maxclass": "live.slider",
-					"numinlets": 1,
-					"numoutlets": 1,
-					"patching_rect": [
-						108.0,
-						109.0,
-						42.0,
-						14.0
-					],
-					"outlettype": [
-						""
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						108.0,
-						109.0,
-						42.0,
-						14.0
-					],
-					"parameter_enable": 1,
-					"varname": "OSC_2_Tri_Saw_Mix",
-					"saved_attribute_attributes": {
-						"valueof": {
-							"parameter_longname": "OSC 2 Tri/Saw Mix",
-							"parameter_shortname": "2 Tri/Saw Mix",
-							"parameter_type": 1,
-							"parameter_mmin": 0,
-							"parameter_mmax": 127,
-							"parameter_initial_enable": 0,
-							"parameter_initial": [
-								0
-							],
-							"parameter_invisible": 0
-						}
-					},
-					"annotation": "OSC 2 Tri/Saw Mix  \u00b7  CC 51  \u2014  Blends Oscillator 2 between triangle (down) and sawtooth (up).",
-					"hint": "OSC 2 Tri/Saw Mix  \u00b7  CC 51  \u2014  Blends Oscillator 2 between triangle (down) and sawtooth (up)."
-				}
-			},
-			{
-				"box": {
-					"id": "obj-57",
-					"maxclass": "comment",
-					"numinlets": 1,
-					"numoutlets": 0,
-					"patching_rect": [
-						106.0,
-						86.0,
-						46.0,
-						11.0
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						106.0,
-						86.0,
-						46.0,
-						11.0
-					],
-					"text": "2 Tri/Saw Mix",
-					"fontsize": 8.0,
-					"fontface": 0,
-					"textjustification": 1,
-					"varname": "OSC_2_Tri_Saw_Mix_L"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-58",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1416.0,
-						608.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend 51"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-59",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 3,
-					"patching_rect": [
-						1656.0,
-						648.0,
-						70.0,
-						22.0
-					],
-					"outlettype": [
-						"",
-						"",
-						""
-					],
-					"text": "ctlin 51"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-60",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1896.0,
-						648.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend set"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-61",
-					"maxclass": "live.slider",
-					"numinlets": 1,
-					"numoutlets": 1,
-					"patching_rect": [
-						156.0,
-						109.0,
-						42.0,
-						14.0
-					],
-					"outlettype": [
-						""
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						156.0,
-						109.0,
-						42.0,
-						14.0
-					],
-					"parameter_enable": 1,
-					"varname": "OSC_2_Wave_Mix",
-					"saved_attribute_attributes": {
-						"valueof": {
-							"parameter_longname": "OSC 2 Wave Mix",
-							"parameter_shortname": "2 Wave Mix",
-							"parameter_type": 1,
-							"parameter_mmin": 0,
-							"parameter_mmax": 127,
-							"parameter_initial_enable": 0,
-							"parameter_initial": [
-								0
-							],
-							"parameter_invisible": 0
-						}
-					},
-					"annotation": "OSC 2 Wave Mix  \u00b7  CC 53  \u2014  Crossfades Oscillator 2 between its tri/saw mix and its pulse wave.",
-					"hint": "OSC 2 Wave Mix  \u00b7  CC 53  \u2014  Crossfades Oscillator 2 between its tri/saw mix and its pulse wave."
-				}
-			},
-			{
-				"box": {
-					"id": "obj-62",
-					"maxclass": "comment",
-					"numinlets": 1,
-					"numoutlets": 0,
-					"patching_rect": [
-						154.0,
-						86.0,
-						46.0,
-						11.0
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						154.0,
-						86.0,
-						46.0,
-						11.0
-					],
-					"text": "2 Wave Mix",
-					"fontsize": 8.0,
-					"fontface": 0,
-					"textjustification": 1,
-					"varname": "OSC_2_Wave_Mix_L"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-63",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1416.0,
-						624.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend 53"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-64",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 3,
-					"patching_rect": [
-						1656.0,
-						664.0,
-						70.0,
-						22.0
-					],
-					"outlettype": [
-						"",
-						"",
-						""
-					],
-					"text": "ctlin 53"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-65",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1896.0,
-						664.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend set"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-66",
-					"maxclass": "live.dial",
-					"numinlets": 1,
-					"numoutlets": 1,
-					"patching_rect": [
-						207.0,
-						99.0,
-						38.0,
-						38.0
-					],
-					"outlettype": [
-						""
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						207.0,
-						99.0,
-						38.0,
-						38.0
-					],
-					"parameter_enable": 1,
-					"varname": "OSC_2_PW",
-					"saved_attribute_attributes": {
-						"valueof": {
-							"parameter_longname": "OSC 2 PW",
-							"parameter_shortname": "2 PW",
-							"parameter_type": 1,
-							"parameter_mmin": 0,
-							"parameter_mmax": 127,
-							"parameter_initial_enable": 0,
-							"parameter_initial": [
-								0
-							],
-							"parameter_invisible": 0
-						}
-					},
-					"annotation": "OSC 2 PW  \u00b7  CC 52  \u2014  Pulse width / duty cycle of Oscillator 2's pulse wave.",
-					"hint": "OSC 2 PW  \u00b7  CC 52  \u2014  Pulse width / duty cycle of Oscillator 2's pulse wave."
-				}
-			},
-			{
-				"box": {
-					"id": "obj-67",
-					"maxclass": "comment",
-					"numinlets": 1,
-					"numoutlets": 0,
-					"patching_rect": [
-						202.0,
-						86.0,
-						46.0,
-						11.0
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						202.0,
-						86.0,
-						46.0,
-						11.0
-					],
-					"text": "2 PW",
-					"fontsize": 8.0,
-					"fontface": 0,
-					"textjustification": 1,
-					"varname": "OSC_2_PW_L"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-68",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1416.0,
-						616.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend 52"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-69",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 3,
-					"patching_rect": [
-						1656.0,
-						656.0,
-						70.0,
-						22.0
-					],
-					"outlettype": [
-						"",
-						"",
-						""
-					],
-					"text": "ctlin 52"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-70",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1896.0,
-						656.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend set"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-71",
-					"maxclass": "live.toggle",
-					"numinlets": 1,
-					"numoutlets": 1,
-					"patching_rect": [
-						265.0,
-						99.0,
-						18.0,
-						18.0
-					],
-					"outlettype": [
-						""
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						265.0,
-						99.0,
-						18.0,
-						18.0
-					],
-					"parameter_enable": 1,
-					"varname": "OSC_2_1_FM",
-					"saved_attribute_attributes": {
-						"valueof": {
-							"parameter_longname": "OSC 2>1 FM",
-							"parameter_shortname": "2>1 FM",
-							"parameter_type": 2,
-							"parameter_mmin": 0,
-							"parameter_mmax": 1,
-							"parameter_initial_enable": 0,
-							"parameter_initial": [
-								0
-							],
-							"parameter_invisible": 0,
-							"parameter_enum": [
-								"off",
-								"on"
-							],
-							"parameter_range": [
-								"off",
-								"on"
-							]
-						}
-					},
-					"annotation": "OSC 2>1 FM  \u00b7  CC 55  \u2014  Linear FM of OSC 1 by OSC 2 (depth set by FM Amount).  (0-63: Off; 64-127: On)",
-					"hint": "OSC 2>1 FM  \u00b7  CC 55  \u2014  Linear FM of OSC 1 by OSC 2 (depth set by FM Amount).  (0-63: Off; 64-127: On)"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-72",
-					"maxclass": "comment",
-					"numinlets": 1,
-					"numoutlets": 0,
-					"patching_rect": [
-						250.0,
-						86.0,
-						46.0,
-						11.0
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						250.0,
-						86.0,
-						46.0,
-						11.0
-					],
-					"text": "2>1 FM",
-					"fontsize": 8.0,
-					"fontface": 0,
-					"textjustification": 1,
-					"varname": "OSC_2_1_FM_L"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-73",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1276.0,
-						640.0,
-						50.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "* 127"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-74",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1416.0,
-						640.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend 55"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-75",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 3,
-					"patching_rect": [
-						1656.0,
-						680.0,
-						70.0,
-						22.0
-					],
-					"outlettype": [
-						"",
-						"",
-						""
-					],
-					"text": "ctlin 55"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-76",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1736.0,
-						680.0,
-						50.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": ">= 64"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-77",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1896.0,
-						680.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend set"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-78",
-					"maxclass": "live.toggle",
-					"numinlets": 1,
-					"numoutlets": 1,
-					"patching_rect": [
-						313.0,
-						99.0,
-						18.0,
-						18.0
-					],
-					"outlettype": [
-						""
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						313.0,
-						99.0,
-						18.0,
-						18.0
-					],
-					"parameter_enable": 1,
-					"varname": "OSC_1_2_FM",
-					"saved_attribute_attributes": {
-						"valueof": {
-							"parameter_longname": "OSC 1>2 FM",
-							"parameter_shortname": "1>2 FM",
-							"parameter_type": 2,
-							"parameter_mmin": 0,
-							"parameter_mmax": 1,
-							"parameter_initial_enable": 0,
-							"parameter_initial": [
-								0
-							],
-							"parameter_invisible": 0,
-							"parameter_enum": [
-								"off",
-								"on"
-							],
-							"parameter_range": [
-								"off",
-								"on"
-							]
-						}
-					},
-					"annotation": "OSC 1>2 FM  \u00b7  CC 56  \u2014  Linear FM of OSC 2 by OSC 1 (depth set by FM Amount).  (0-63: Off; 64-127: On)",
-					"hint": "OSC 1>2 FM  \u00b7  CC 56  \u2014  Linear FM of OSC 2 by OSC 1 (depth set by FM Amount).  (0-63: Off; 64-127: On)"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-79",
-					"maxclass": "comment",
-					"numinlets": 1,
-					"numoutlets": 0,
-					"patching_rect": [
-						298.0,
-						86.0,
-						46.0,
-						11.0
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						298.0,
-						86.0,
-						46.0,
-						11.0
-					],
-					"text": "1>2 FM",
-					"fontsize": 8.0,
-					"fontface": 0,
-					"textjustification": 1,
-					"varname": "OSC_1_2_FM_L"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-80",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1276.0,
-						648.0,
-						50.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "* 127"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-81",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1416.0,
-						648.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend 56"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-82",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 3,
-					"patching_rect": [
-						1656.0,
-						688.0,
-						70.0,
-						22.0
-					],
-					"outlettype": [
-						"",
-						"",
-						""
-					],
-					"text": "ctlin 56"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-83",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1736.0,
-						688.0,
-						50.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": ">= 64"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-84",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1896.0,
-						688.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend set"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-85",
-					"maxclass": "live.slider",
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
 						23.0,
-						37.0,
-						22.0,
-						104.0
+						45.0,
+						38.0,
+						38.0
 					],
 					"outlettype": [
 						""
@@ -2147,6959 +183,7 @@
 					"presentation": 1,
 					"presentation_rect": [
 						23.0,
-						37.0,
-						22.0,
-						104.0
-					],
-					"parameter_enable": 1,
-					"varname": "OSC_1_Level",
-					"saved_attribute_attributes": {
-						"valueof": {
-							"parameter_longname": "OSC 1 Level",
-							"parameter_shortname": "OSC 1",
-							"parameter_type": 1,
-							"parameter_mmin": 0,
-							"parameter_mmax": 127,
-							"parameter_initial_enable": 1,
-							"parameter_initial": [
-								127
-							],
-							"parameter_invisible": 0
-						}
-					},
-					"annotation": "OSC 1 Level  \u00b7  CC 58  \u2014  Level of Oscillator 1 into the mixer.",
-					"hint": "OSC 1 Level  \u00b7  CC 58  \u2014  Level of Oscillator 1 into the mixer."
-				}
-			},
-			{
-				"box": {
-					"id": "obj-86",
-					"maxclass": "comment",
-					"numinlets": 1,
-					"numoutlets": 0,
-					"patching_rect": [
-						10.0,
-						24.0,
-						46.0,
-						11.0
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						10.0,
-						24.0,
-						46.0,
-						11.0
-					],
-					"text": "OSC 1",
-					"fontsize": 8.0,
-					"fontface": 0,
-					"textjustification": 1,
-					"varname": "OSC_1_Level_L"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-87",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1416.0,
-						664.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend 58"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-88",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 3,
-					"patching_rect": [
-						1656.0,
-						704.0,
-						70.0,
-						22.0
-					],
-					"outlettype": [
-						"",
-						"",
-						""
-					],
-					"text": "ctlin 58"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-89",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1896.0,
-						704.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend set"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-90",
-					"maxclass": "live.slider",
-					"numinlets": 1,
-					"numoutlets": 1,
-					"patching_rect": [
-						71.0,
-						37.0,
-						22.0,
-						104.0
-					],
-					"outlettype": [
-						""
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						71.0,
-						37.0,
-						22.0,
-						104.0
-					],
-					"parameter_enable": 1,
-					"varname": "Ring_Mod_Level",
-					"saved_attribute_attributes": {
-						"valueof": {
-							"parameter_longname": "Ring Mod Level",
-							"parameter_shortname": "Ring",
-							"parameter_type": 1,
-							"parameter_mmin": 0,
-							"parameter_mmax": 127,
-							"parameter_initial_enable": 0,
-							"parameter_initial": [
-								0
-							],
-							"parameter_invisible": 0
-						}
-					},
-					"annotation": "Ring Mod Level  \u00b7  CC 60  \u2014  Level of the ring modulator (OSC 1 x OSC 2) into the mixer.",
-					"hint": "Ring Mod Level  \u00b7  CC 60  \u2014  Level of the ring modulator (OSC 1 x OSC 2) into the mixer."
-				}
-			},
-			{
-				"box": {
-					"id": "obj-91",
-					"maxclass": "comment",
-					"numinlets": 1,
-					"numoutlets": 0,
-					"patching_rect": [
-						58.0,
-						24.0,
-						46.0,
-						11.0
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						58.0,
-						24.0,
-						46.0,
-						11.0
-					],
-					"text": "Ring",
-					"fontsize": 8.0,
-					"fontface": 0,
-					"textjustification": 1,
-					"varname": "Ring_Mod_Level_L"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-92",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1416.0,
-						680.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend 60"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-93",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 3,
-					"patching_rect": [
-						1656.0,
-						720.0,
-						70.0,
-						22.0
-					],
-					"outlettype": [
-						"",
-						"",
-						""
-					],
-					"text": "ctlin 60"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-94",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1896.0,
-						720.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend set"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-95",
-					"maxclass": "live.slider",
-					"numinlets": 1,
-					"numoutlets": 1,
-					"patching_rect": [
-						119.0,
-						37.0,
-						22.0,
-						104.0
-					],
-					"outlettype": [
-						""
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						119.0,
-						37.0,
-						22.0,
-						104.0
-					],
-					"parameter_enable": 1,
-					"varname": "OSC_2_Level",
-					"saved_attribute_attributes": {
-						"valueof": {
-							"parameter_longname": "OSC 2 Level",
-							"parameter_shortname": "OSC 2",
-							"parameter_type": 1,
-							"parameter_mmin": 0,
-							"parameter_mmax": 127,
-							"parameter_initial_enable": 0,
-							"parameter_initial": [
-								0
-							],
-							"parameter_invisible": 0
-						}
-					},
-					"annotation": "OSC 2 Level  \u00b7  CC 59  \u2014  Level of Oscillator 2 into the mixer.",
-					"hint": "OSC 2 Level  \u00b7  CC 59  \u2014  Level of Oscillator 2 into the mixer."
-				}
-			},
-			{
-				"box": {
-					"id": "obj-96",
-					"maxclass": "comment",
-					"numinlets": 1,
-					"numoutlets": 0,
-					"patching_rect": [
-						106.0,
-						24.0,
-						46.0,
-						11.0
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						106.0,
-						24.0,
-						46.0,
-						11.0
-					],
-					"text": "OSC 2",
-					"fontsize": 8.0,
-					"fontface": 0,
-					"textjustification": 1,
-					"varname": "OSC_2_Level_L"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-97",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1416.0,
-						672.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend 59"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-98",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 3,
-					"patching_rect": [
-						1656.0,
-						712.0,
-						70.0,
-						22.0
-					],
-					"outlettype": [
-						"",
-						"",
-						""
-					],
-					"text": "ctlin 59"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-99",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1896.0,
-						712.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend set"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-100",
-					"maxclass": "live.slider",
-					"numinlets": 1,
-					"numoutlets": 1,
-					"patching_rect": [
-						167.0,
-						37.0,
-						22.0,
-						104.0
-					],
-					"outlettype": [
-						""
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						167.0,
-						37.0,
-						22.0,
-						104.0
-					],
-					"parameter_enable": 1,
-					"varname": "Mod_Osc_Level",
-					"saved_attribute_attributes": {
-						"valueof": {
-							"parameter_longname": "Mod Osc Level",
-							"parameter_shortname": "Mod Osc",
-							"parameter_type": 1,
-							"parameter_mmin": 0,
-							"parameter_mmax": 127,
-							"parameter_initial_enable": 0,
-							"parameter_initial": [
-								0
-							],
-							"parameter_invisible": 0
-						}
-					},
-					"annotation": "Mod Osc Level  \u00b7  CC 61  \u2014  Level of the Modulation Oscillator into the mixer (audible at audio rate).",
-					"hint": "Mod Osc Level  \u00b7  CC 61  \u2014  Level of the Modulation Oscillator into the mixer (audible at audio rate)."
-				}
-			},
-			{
-				"box": {
-					"id": "obj-101",
-					"maxclass": "comment",
-					"numinlets": 1,
-					"numoutlets": 0,
-					"patching_rect": [
-						154.0,
-						24.0,
-						46.0,
-						11.0
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						154.0,
-						24.0,
-						46.0,
-						11.0
-					],
-					"text": "Mod Osc",
-					"fontsize": 8.0,
-					"fontface": 0,
-					"textjustification": 1,
-					"varname": "Mod_Osc_Level_L"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-102",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1416.0,
-						688.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend 61"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-103",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 3,
-					"patching_rect": [
-						1656.0,
-						728.0,
-						70.0,
-						22.0
-					],
-					"outlettype": [
-						"",
-						"",
-						""
-					],
-					"text": "ctlin 61"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-104",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1896.0,
-						728.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend set"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-105",
-					"maxclass": "live.slider",
-					"numinlets": 1,
-					"numoutlets": 1,
-					"patching_rect": [
-						215.0,
-						37.0,
-						22.0,
-						104.0
-					],
-					"outlettype": [
-						""
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						215.0,
-						37.0,
-						22.0,
-						104.0
-					],
-					"parameter_enable": 1,
-					"varname": "Noise_Level",
-					"saved_attribute_attributes": {
-						"valueof": {
-							"parameter_longname": "Noise Level",
-							"parameter_shortname": "Noise",
-							"parameter_type": 1,
-							"parameter_mmin": 0,
-							"parameter_mmax": 127,
-							"parameter_initial_enable": 0,
-							"parameter_initial": [
-								0
-							],
-							"parameter_invisible": 0
-						}
-					},
-					"annotation": "Noise Level  \u00b7  CC 62  \u2014  Level of the noise generator into the mixer.",
-					"hint": "Noise Level  \u00b7  CC 62  \u2014  Level of the noise generator into the mixer."
-				}
-			},
-			{
-				"box": {
-					"id": "obj-106",
-					"maxclass": "comment",
-					"numinlets": 1,
-					"numoutlets": 0,
-					"patching_rect": [
-						202.0,
-						24.0,
-						46.0,
-						11.0
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						202.0,
-						24.0,
-						46.0,
-						11.0
-					],
-					"text": "Noise",
-					"fontsize": 8.0,
-					"fontface": 0,
-					"textjustification": 1,
-					"varname": "Noise_Level_L"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-107",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1416.0,
-						696.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend 62"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-108",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 3,
-					"patching_rect": [
-						1656.0,
-						736.0,
-						70.0,
-						22.0
-					],
-					"outlettype": [
-						"",
-						"",
-						""
-					],
-					"text": "ctlin 62"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-109",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1896.0,
-						736.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend set"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-110",
-					"maxclass": "live.dial",
-					"numinlets": 1,
-					"numoutlets": 1,
-					"patching_rect": [
-						255.0,
-						70.0,
-						38.0,
-						38.0
-					],
-					"outlettype": [
-						""
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						255.0,
-						70.0,
-						38.0,
-						38.0
-					],
-					"parameter_enable": 1,
-					"varname": "Clipping_Level",
-					"saved_attribute_attributes": {
-						"valueof": {
-							"parameter_longname": "Clipping Level",
-							"parameter_shortname": "Drive",
-							"parameter_type": 1,
-							"parameter_mmin": 0,
-							"parameter_mmax": 127,
-							"parameter_initial_enable": 0,
-							"parameter_initial": [
-								0
-							],
-							"parameter_invisible": 0
-						}
-					},
-					"annotation": "Clipping Level  \u00b7  CC 65  \u2014  OVERLOAD - overdrives the mixer sum for overtones, CP3-mixer style.",
-					"hint": "Clipping Level  \u00b7  CC 65  \u2014  OVERLOAD - overdrives the mixer sum for overtones, CP3-mixer style."
-				}
-			},
-			{
-				"box": {
-					"id": "obj-111",
-					"maxclass": "comment",
-					"numinlets": 1,
-					"numoutlets": 0,
-					"patching_rect": [
-						250.0,
-						24.0,
-						46.0,
-						11.0
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						250.0,
-						24.0,
-						46.0,
-						11.0
-					],
-					"text": "Drive",
-					"fontsize": 8.0,
-					"fontface": 0,
-					"textjustification": 1,
-					"varname": "Clipping_Level_L"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-112",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1416.0,
-						720.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend 65"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-113",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 3,
-					"patching_rect": [
-						1656.0,
-						760.0,
-						70.0,
-						22.0
-					],
-					"outlettype": [
-						"",
-						"",
-						""
-					],
-					"text": "ctlin 65"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-114",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1896.0,
-						760.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend set"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-115",
-					"maxclass": "live.dial",
-					"numinlets": 1,
-					"numoutlets": 1,
-					"patching_rect": [
-						15.0,
-						37.0,
-						38.0,
-						38.0
-					],
-					"outlettype": [
-						""
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						15.0,
-						37.0,
-						38.0,
-						38.0
-					],
-					"parameter_enable": 1,
-					"varname": "Filter_1_Cutoff",
-					"saved_attribute_attributes": {
-						"valueof": {
-							"parameter_longname": "Filter 1 Cutoff",
-							"parameter_shortname": "F1 Cutoff",
-							"parameter_type": 1,
-							"parameter_mmin": 0,
-							"parameter_mmax": 127,
-							"parameter_initial_enable": 1,
-							"parameter_initial": [
-								127
-							],
-							"parameter_invisible": 0
-						}
-					},
-					"annotation": "Filter 1 Cutoff  \u00b7  CC 67  \u2014  Cutoff of Filter 1, a discrete Moog transistor-ladder filter (904a-style).",
-					"hint": "Filter 1 Cutoff  \u00b7  CC 67  \u2014  Cutoff of Filter 1, a discrete Moog transistor-ladder filter (904a-style)."
-				}
-			},
-			{
-				"box": {
-					"id": "obj-116",
-					"maxclass": "comment",
-					"numinlets": 1,
-					"numoutlets": 0,
-					"patching_rect": [
-						10.0,
-						24.0,
-						46.0,
-						11.0
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						10.0,
-						24.0,
-						46.0,
-						11.0
-					],
-					"text": "F1 Cutoff",
-					"fontsize": 8.0,
-					"fontface": 0,
-					"textjustification": 1,
-					"varname": "Filter_1_Cutoff_L"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-117",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1416.0,
-						736.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend 67"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-118",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 3,
-					"patching_rect": [
-						1656.0,
-						776.0,
-						70.0,
-						22.0
-					],
-					"outlettype": [
-						"",
-						"",
-						""
-					],
-					"text": "ctlin 67"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-119",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1896.0,
-						776.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend set"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-120",
-					"maxclass": "live.dial",
-					"numinlets": 1,
-					"numoutlets": 1,
-					"patching_rect": [
-						63.0,
-						37.0,
-						38.0,
-						38.0
-					],
-					"outlettype": [
-						""
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						63.0,
-						37.0,
-						38.0,
-						38.0
-					],
-					"parameter_enable": 1,
-					"varname": "Filter_1_High_Pass",
-					"saved_attribute_attributes": {
-						"valueof": {
-							"parameter_longname": "Filter 1 High Pass",
-							"parameter_shortname": "F1 High Pass",
-							"parameter_type": 1,
-							"parameter_mmin": 0,
-							"parameter_mmax": 127,
-							"parameter_initial_enable": 0,
-							"parameter_initial": [
-								0
-							],
-							"parameter_invisible": 0
-						}
-					},
-					"annotation": "Filter 1 High Pass  \u00b7  CC 66  \u2014  Filter 1 high-pass amount (0-127), continuously blending in high-pass.",
-					"hint": "Filter 1 High Pass  \u00b7  CC 66  \u2014  Filter 1 high-pass amount (0-127), continuously blending in high-pass."
-				}
-			},
-			{
-				"box": {
-					"id": "obj-121",
-					"maxclass": "comment",
-					"numinlets": 1,
-					"numoutlets": 0,
-					"patching_rect": [
-						58.0,
-						24.0,
-						46.0,
-						11.0
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						58.0,
-						24.0,
-						46.0,
-						11.0
-					],
-					"text": "F1 High Pass",
-					"fontsize": 8.0,
-					"fontface": 0,
-					"textjustification": 1,
-					"varname": "Filter_1_High_Pass_L"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-122",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1416.0,
-						728.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend 66"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-123",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 3,
-					"patching_rect": [
-						1656.0,
-						768.0,
-						70.0,
-						22.0
-					],
-					"outlettype": [
-						"",
-						"",
-						""
-					],
-					"text": "ctlin 66"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-124",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1896.0,
-						768.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend set"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-125",
-					"maxclass": "live.dial",
-					"numinlets": 1,
-					"numoutlets": 1,
-					"patching_rect": [
-						111.0,
-						37.0,
-						38.0,
-						38.0
-					],
-					"outlettype": [
-						""
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						111.0,
-						37.0,
-						38.0,
-						38.0
-					],
-					"parameter_enable": 1,
-					"varname": "Filter_1_Resonance",
-					"saved_attribute_attributes": {
-						"valueof": {
-							"parameter_longname": "Filter 1 Resonance",
-							"parameter_shortname": "F1 Reso",
-							"parameter_type": 1,
-							"parameter_mmin": 0,
-							"parameter_mmax": 127,
-							"parameter_initial_enable": 0,
-							"parameter_initial": [
-								0
-							],
-							"parameter_invisible": 0
-						}
-					},
-					"annotation": "Filter 1 Resonance  \u00b7  CC 68  \u2014  Resonance/emphasis at Filter 1's cutoff; self-oscillates when high.",
-					"hint": "Filter 1 Resonance  \u00b7  CC 68  \u2014  Resonance/emphasis at Filter 1's cutoff; self-oscillates when high."
-				}
-			},
-			{
-				"box": {
-					"id": "obj-126",
-					"maxclass": "comment",
-					"numinlets": 1,
-					"numoutlets": 0,
-					"patching_rect": [
-						106.0,
-						24.0,
-						46.0,
-						11.0
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						106.0,
-						24.0,
-						46.0,
-						11.0
-					],
-					"text": "F1 Reso",
-					"fontsize": 8.0,
-					"fontface": 0,
-					"textjustification": 1,
-					"varname": "Filter_1_Resonance_L"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-127",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1416.0,
-						744.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend 68"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-128",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 3,
-					"patching_rect": [
-						1656.0,
-						784.0,
-						70.0,
-						22.0
-					],
-					"outlettype": [
-						"",
-						"",
-						""
-					],
-					"text": "ctlin 68"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-129",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1896.0,
-						784.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend set"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-130",
-					"maxclass": "live.dial",
-					"numinlets": 1,
-					"numoutlets": 1,
-					"patching_rect": [
-						159.0,
-						37.0,
-						38.0,
-						38.0
-					],
-					"outlettype": [
-						""
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						159.0,
-						37.0,
-						38.0,
-						38.0
-					],
-					"parameter_enable": 1,
-					"varname": "Filter_1_Env_Amount",
-					"saved_attribute_attributes": {
-						"valueof": {
-							"parameter_longname": "Filter 1 Env Amount",
-							"parameter_shortname": "F1 Env Amt",
-							"parameter_type": 1,
-							"parameter_mmin": 0,
-							"parameter_mmax": 127,
-							"parameter_initial_enable": 0,
-							"parameter_initial": [
-								0
-							],
-							"parameter_invisible": 0
-						}
-					},
-					"annotation": "Filter 1 Env Amount  \u00b7  CC 69  \u2014  Amount of the Filter envelope applied to Filter 1 cutoff.",
-					"hint": "Filter 1 Env Amount  \u00b7  CC 69  \u2014  Amount of the Filter envelope applied to Filter 1 cutoff."
-				}
-			},
-			{
-				"box": {
-					"id": "obj-131",
-					"maxclass": "comment",
-					"numinlets": 1,
-					"numoutlets": 0,
-					"patching_rect": [
-						154.0,
-						24.0,
-						46.0,
-						11.0
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						154.0,
-						24.0,
-						46.0,
-						11.0
-					],
-					"text": "F1 Env Amt",
-					"fontsize": 8.0,
-					"fontface": 0,
-					"textjustification": 1,
-					"varname": "Filter_1_Env_Amount_L"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-132",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1416.0,
-						752.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend 69"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-133",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 3,
-					"patching_rect": [
-						1656.0,
-						792.0,
-						70.0,
-						22.0
-					],
-					"outlettype": [
-						"",
-						"",
-						""
-					],
-					"text": "ctlin 69"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-134",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1896.0,
-						792.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend set"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-135",
-					"maxclass": "live.menu",
-					"numinlets": 1,
-					"numoutlets": 1,
-					"patching_rect": [
-						204.0,
-						37.0,
-						42.0,
-						18.0
-					],
-					"outlettype": [
-						""
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						204.0,
-						37.0,
-						42.0,
-						18.0
-					],
-					"parameter_enable": 1,
-					"varname": "Filter_1_KB_Track",
-					"saved_attribute_attributes": {
-						"valueof": {
-							"parameter_longname": "Filter 1 KB Track",
-							"parameter_shortname": "F1 KB Track",
-							"parameter_type": 2,
-							"parameter_mmin": 0,
-							"parameter_mmax": 2,
-							"parameter_initial_enable": 0,
-							"parameter_initial": [
-								0
-							],
-							"parameter_invisible": 0,
-							"parameter_enum": [
-								"Off",
-								"Half",
-								"Full"
-							],
-							"parameter_range": [
-								"Off",
-								"Half",
-								"Full"
-							]
-						}
-					},
-					"annotation": "Filter 1 KB Track  \u00b7  CC 70  \u2014  How much Filter 1 cutoff tracks keyboard pitch (Off / Half / Full).  (0-42: Off; 43-84: Half; 85-127: Full)",
-					"hint": "Filter 1 KB Track  \u00b7  CC 70  \u2014  How much Filter 1 cutoff tracks keyboard pitch (Off / Half / Full).  (0-42: Off; 43-84: Half; 85-127: Full)"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-136",
-					"maxclass": "comment",
-					"numinlets": 1,
-					"numoutlets": 0,
-					"patching_rect": [
-						202.0,
-						24.0,
-						46.0,
-						11.0
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						202.0,
-						24.0,
-						46.0,
-						11.0
-					],
-					"text": "F1 KB Track",
-					"fontsize": 8.0,
-					"fontface": 0,
-					"textjustification": 1,
-					"varname": "Filter_1_KB_Track_L"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-137",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 1,
-					"patching_rect": [
-						1276.0,
-						760.0,
-						110.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "expr $i1 * 43 + 21"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-138",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1416.0,
-						760.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend 70"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-139",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 3,
-					"patching_rect": [
-						1656.0,
-						800.0,
-						70.0,
-						22.0
-					],
-					"outlettype": [
-						"",
-						"",
-						""
-					],
-					"text": "ctlin 70"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-140",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 1,
-					"patching_rect": [
-						1736.0,
-						800.0,
-						150.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "expr ($i1 > 42) + ($i1 > 84)"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-141",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1896.0,
-						800.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend set"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-142",
-					"maxclass": "live.toggle",
-					"numinlets": 1,
-					"numoutlets": 1,
-					"patching_rect": [
-						265.0,
-						37.0,
-						18.0,
-						18.0
-					],
-					"outlettype": [
-						""
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						265.0,
-						37.0,
-						18.0,
-						18.0
-					],
-					"parameter_enable": 1,
-					"varname": "Link_Filters",
-					"saved_attribute_attributes": {
-						"valueof": {
-							"parameter_longname": "Link Filters",
-							"parameter_shortname": "Link Filters",
-							"parameter_type": 2,
-							"parameter_mmin": 0,
-							"parameter_mmax": 1,
-							"parameter_initial_enable": 0,
-							"parameter_initial": [
-								0
-							],
-							"parameter_invisible": 0,
-							"parameter_enum": [
-								"off",
-								"on"
-							],
-							"parameter_range": [
-								"off",
-								"on"
-							]
-						}
-					},
-					"annotation": "Link Filters  \u00b7  CC 77  \u2014  Links Filter 1 & 2 so one cutoff control sweeps both.  (0-63: Off; 64-127: On)",
-					"hint": "Link Filters  \u00b7  CC 77  \u2014  Links Filter 1 & 2 so one cutoff control sweeps both.  (0-63: Off; 64-127: On)"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-143",
-					"maxclass": "comment",
-					"numinlets": 1,
-					"numoutlets": 0,
-					"patching_rect": [
-						250.0,
-						24.0,
-						46.0,
-						11.0
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						250.0,
-						24.0,
-						46.0,
-						11.0
-					],
-					"text": "Link Filters",
-					"fontsize": 8.0,
-					"fontface": 0,
-					"textjustification": 1,
-					"varname": "Link_Filters_L"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-144",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1276.0,
-						816.0,
-						50.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "* 127"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-145",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1416.0,
-						816.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend 77"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-146",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 3,
-					"patching_rect": [
-						1656.0,
-						856.0,
-						70.0,
-						22.0
-					],
-					"outlettype": [
-						"",
-						"",
-						""
-					],
-					"text": "ctlin 77"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-147",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1736.0,
-						856.0,
-						50.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": ">= 64"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-148",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1896.0,
-						856.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend set"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-149",
-					"maxclass": "live.dial",
-					"numinlets": 1,
-					"numoutlets": 1,
-					"patching_rect": [
-						15.0,
-						99.0,
-						38.0,
-						38.0
-					],
-					"outlettype": [
-						""
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						15.0,
-						99.0,
-						38.0,
-						38.0
-					],
-					"parameter_enable": 1,
-					"varname": "Filter_2_Frequency",
-					"saved_attribute_attributes": {
-						"valueof": {
-							"parameter_longname": "Filter 2 Frequency",
-							"parameter_shortname": "F2 Freq",
-							"parameter_type": 1,
-							"parameter_mmin": 0,
-							"parameter_mmax": 127,
-							"parameter_initial_enable": 0,
-							"parameter_initial": [
-								0
-							],
-							"parameter_invisible": 0
-						}
-					},
-					"annotation": "Filter 2 Frequency  \u00b7  CC 72  \u2014  Cutoff of Filter 2, a dedicated low-pass Moog ladder filter.",
-					"hint": "Filter 2 Frequency  \u00b7  CC 72  \u2014  Cutoff of Filter 2, a dedicated low-pass Moog ladder filter."
-				}
-			},
-			{
-				"box": {
-					"id": "obj-150",
-					"maxclass": "comment",
-					"numinlets": 1,
-					"numoutlets": 0,
-					"patching_rect": [
-						10.0,
-						86.0,
-						46.0,
-						11.0
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						10.0,
-						86.0,
-						46.0,
-						11.0
-					],
-					"text": "F2 Freq",
-					"fontsize": 8.0,
-					"fontface": 0,
-					"textjustification": 1,
-					"varname": "Filter_2_Frequency_L"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-151",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1416.0,
-						776.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend 72"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-152",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 3,
-					"patching_rect": [
-						1656.0,
-						816.0,
-						70.0,
-						22.0
-					],
-					"outlettype": [
-						"",
-						"",
-						""
-					],
-					"text": "ctlin 72"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-153",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1896.0,
-						816.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend set"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-154",
-					"maxclass": "live.dial",
-					"numinlets": 1,
-					"numoutlets": 1,
-					"patching_rect": [
-						63.0,
-						99.0,
-						38.0,
-						38.0
-					],
-					"outlettype": [
-						""
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						63.0,
-						99.0,
-						38.0,
-						38.0
-					],
-					"parameter_enable": 1,
-					"varname": "Filter_2_Resonance",
-					"saved_attribute_attributes": {
-						"valueof": {
-							"parameter_longname": "Filter 2 Resonance",
-							"parameter_shortname": "F2 Reso",
-							"parameter_type": 1,
-							"parameter_mmin": 0,
-							"parameter_mmax": 127,
-							"parameter_initial_enable": 0,
-							"parameter_initial": [
-								0
-							],
-							"parameter_invisible": 0
-						}
-					},
-					"annotation": "Filter 2 Resonance  \u00b7  CC 73  \u2014  Resonance/emphasis at Filter 2's cutoff; self-oscillates when high.",
-					"hint": "Filter 2 Resonance  \u00b7  CC 73  \u2014  Resonance/emphasis at Filter 2's cutoff; self-oscillates when high."
-				}
-			},
-			{
-				"box": {
-					"id": "obj-155",
-					"maxclass": "comment",
-					"numinlets": 1,
-					"numoutlets": 0,
-					"patching_rect": [
-						58.0,
-						86.0,
-						46.0,
-						11.0
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						58.0,
-						86.0,
-						46.0,
-						11.0
-					],
-					"text": "F2 Reso",
-					"fontsize": 8.0,
-					"fontface": 0,
-					"textjustification": 1,
-					"varname": "Filter_2_Resonance_L"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-156",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1416.0,
-						784.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend 73"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-157",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 3,
-					"patching_rect": [
-						1656.0,
-						824.0,
-						70.0,
-						22.0
-					],
-					"outlettype": [
-						"",
-						"",
-						""
-					],
-					"text": "ctlin 73"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-158",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1896.0,
-						824.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend set"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-159",
-					"maxclass": "live.dial",
-					"numinlets": 1,
-					"numoutlets": 1,
-					"patching_rect": [
-						111.0,
-						99.0,
-						38.0,
-						38.0
-					],
-					"outlettype": [
-						""
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						111.0,
-						99.0,
-						38.0,
-						38.0
-					],
-					"parameter_enable": 1,
-					"varname": "Filter_2_Env_Amount",
-					"saved_attribute_attributes": {
-						"valueof": {
-							"parameter_longname": "Filter 2 Env Amount",
-							"parameter_shortname": "F2 Env Amt",
-							"parameter_type": 1,
-							"parameter_mmin": 0,
-							"parameter_mmax": 127,
-							"parameter_initial_enable": 0,
-							"parameter_initial": [
-								0
-							],
-							"parameter_invisible": 0
-						}
-					},
-					"annotation": "Filter 2 Env Amount  \u00b7  CC 75  \u2014  Amount of the Filter envelope applied to Filter 2 cutoff.",
-					"hint": "Filter 2 Env Amount  \u00b7  CC 75  \u2014  Amount of the Filter envelope applied to Filter 2 cutoff."
-				}
-			},
-			{
-				"box": {
-					"id": "obj-160",
-					"maxclass": "comment",
-					"numinlets": 1,
-					"numoutlets": 0,
-					"patching_rect": [
-						106.0,
-						86.0,
-						46.0,
-						11.0
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						106.0,
-						86.0,
-						46.0,
-						11.0
-					],
-					"text": "F2 Env Amt",
-					"fontsize": 8.0,
-					"fontface": 0,
-					"textjustification": 1,
-					"varname": "Filter_2_Env_Amount_L"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-161",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1416.0,
-						800.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend 75"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-162",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 3,
-					"patching_rect": [
-						1656.0,
-						840.0,
-						70.0,
-						22.0
-					],
-					"outlettype": [
-						"",
-						"",
-						""
-					],
-					"text": "ctlin 75"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-163",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1896.0,
-						840.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend set"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-164",
-					"maxclass": "live.menu",
-					"numinlets": 1,
-					"numoutlets": 1,
-					"patching_rect": [
-						156.0,
-						99.0,
-						42.0,
-						18.0
-					],
-					"outlettype": [
-						""
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						156.0,
-						99.0,
-						42.0,
-						18.0
-					],
-					"parameter_enable": 1,
-					"varname": "Filter_2_KB_Track",
-					"saved_attribute_attributes": {
-						"valueof": {
-							"parameter_longname": "Filter 2 KB Track",
-							"parameter_shortname": "F2 KB Track",
-							"parameter_type": 2,
-							"parameter_mmin": 0,
-							"parameter_mmax": 2,
-							"parameter_initial_enable": 0,
-							"parameter_initial": [
-								0
-							],
-							"parameter_invisible": 0,
-							"parameter_enum": [
-								"Off",
-								"Half",
-								"Full"
-							],
-							"parameter_range": [
-								"Off",
-								"Half",
-								"Full"
-							]
-						}
-					},
-					"annotation": "Filter 2 KB Track  \u00b7  CC 76  \u2014  How much Filter 2 cutoff tracks keyboard pitch (Off / Half / Full).  (0-42: Off; 43-84: Half; 85-127: Full)",
-					"hint": "Filter 2 KB Track  \u00b7  CC 76  \u2014  How much Filter 2 cutoff tracks keyboard pitch (Off / Half / Full).  (0-42: Off; 43-84: Half; 85-127: Full)"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-165",
-					"maxclass": "comment",
-					"numinlets": 1,
-					"numoutlets": 0,
-					"patching_rect": [
-						154.0,
-						86.0,
-						46.0,
-						11.0
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						154.0,
-						86.0,
-						46.0,
-						11.0
-					],
-					"text": "F2 KB Track",
-					"fontsize": 8.0,
-					"fontface": 0,
-					"textjustification": 1,
-					"varname": "Filter_2_KB_Track_L"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-166",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 1,
-					"patching_rect": [
-						1276.0,
-						808.0,
-						110.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "expr $i1 * 43 + 21"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-167",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1416.0,
-						808.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend 76"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-168",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 3,
-					"patching_rect": [
-						1656.0,
-						848.0,
-						70.0,
-						22.0
-					],
-					"outlettype": [
-						"",
-						"",
-						""
-					],
-					"text": "ctlin 76"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-169",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 1,
-					"patching_rect": [
-						1736.0,
-						848.0,
-						150.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "expr ($i1 > 42) + ($i1 > 84)"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-170",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1896.0,
-						848.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend set"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-171",
-					"maxclass": "live.menu",
-					"numinlets": 1,
-					"numoutlets": 1,
-					"patching_rect": [
-						204.0,
-						99.0,
-						42.0,
-						18.0
-					],
-					"outlettype": [
-						""
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						204.0,
-						99.0,
-						42.0,
-						18.0
-					],
-					"parameter_enable": 1,
-					"varname": "Filter_Order",
-					"saved_attribute_attributes": {
-						"valueof": {
-							"parameter_longname": "Filter Order",
-							"parameter_shortname": "Order",
-							"parameter_type": 2,
-							"parameter_mmin": 0,
-							"parameter_mmax": 2,
-							"parameter_initial_enable": 0,
-							"parameter_initial": [
-								0
-							],
-							"parameter_invisible": 0,
-							"parameter_enum": [
-								"Serial",
-								"Stereo",
-								"Parallel"
-							],
-							"parameter_range": [
-								"Serial",
-								"Stereo",
-								"Parallel"
-							]
-						}
-					},
-					"annotation": "Filter Order  \u00b7  CC 78  \u2014  Filter routing: Serial (1>2), Stereo (1 left / 2 right), or Parallel.  (0-42: Serial; 43-84: Stereo; 85-127: Parallel)",
-					"hint": "Filter Order  \u00b7  CC 78  \u2014  Filter routing: Serial (1>2), Stereo (1 left / 2 right), or Parallel.  (0-42: Serial; 43-84: Stereo; 85-127: Parallel)"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-172",
-					"maxclass": "comment",
-					"numinlets": 1,
-					"numoutlets": 0,
-					"patching_rect": [
-						202.0,
-						86.0,
-						46.0,
-						11.0
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						202.0,
-						86.0,
-						46.0,
-						11.0
-					],
-					"text": "Order",
-					"fontsize": 8.0,
-					"fontface": 0,
-					"textjustification": 1,
-					"varname": "Filter_Order_L"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-173",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 1,
-					"patching_rect": [
-						1276.0,
-						824.0,
-						110.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "expr $i1 * 43 + 21"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-174",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1416.0,
-						824.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend 78"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-175",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 3,
-					"patching_rect": [
-						1656.0,
-						864.0,
-						70.0,
-						22.0
-					],
-					"outlettype": [
-						"",
-						"",
-						""
-					],
-					"text": "ctlin 78"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-176",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 1,
-					"patching_rect": [
-						1736.0,
-						864.0,
-						150.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "expr ($i1 > 42) + ($i1 > 84)"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-177",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1896.0,
-						864.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend set"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-178",
-					"maxclass": "live.slider",
-					"numinlets": 1,
-					"numoutlets": 1,
-					"patching_rect": [
-						23.0,
-						37.0,
-						22.0,
-						104.0
-					],
-					"outlettype": [
-						""
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						23.0,
-						37.0,
-						22.0,
-						104.0
-					],
-					"parameter_enable": 1,
-					"varname": "Filter_Env_Attack",
-					"saved_attribute_attributes": {
-						"valueof": {
-							"parameter_longname": "Filter Env Attack",
-							"parameter_shortname": "F Atk",
-							"parameter_type": 1,
-							"parameter_mmin": 0,
-							"parameter_mmax": 127,
-							"parameter_initial_enable": 0,
-							"parameter_initial": [
-								0
-							],
-							"parameter_invisible": 0
-						}
-					},
-					"annotation": "Filter Env Attack  \u00b7  CC 79  \u2014  Attack time of the Filter envelope.",
-					"hint": "Filter Env Attack  \u00b7  CC 79  \u2014  Attack time of the Filter envelope."
-				}
-			},
-			{
-				"box": {
-					"id": "obj-179",
-					"maxclass": "comment",
-					"numinlets": 1,
-					"numoutlets": 0,
-					"patching_rect": [
-						10.0,
-						24.0,
-						46.0,
-						11.0
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						10.0,
-						24.0,
-						46.0,
-						11.0
-					],
-					"text": "F Atk",
-					"fontsize": 8.0,
-					"fontface": 0,
-					"textjustification": 1,
-					"varname": "Filter_Env_Attack_L"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-180",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1416.0,
-						832.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend 79"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-181",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 3,
-					"patching_rect": [
-						1656.0,
-						872.0,
-						70.0,
-						22.0
-					],
-					"outlettype": [
-						"",
-						"",
-						""
-					],
-					"text": "ctlin 79"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-182",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1896.0,
-						872.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend set"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-183",
-					"maxclass": "live.slider",
-					"numinlets": 1,
-					"numoutlets": 1,
-					"patching_rect": [
-						71.0,
-						37.0,
-						22.0,
-						104.0
-					],
-					"outlettype": [
-						""
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						71.0,
-						37.0,
-						22.0,
-						104.0
-					],
-					"parameter_enable": 1,
-					"varname": "Filter_Env_Decay",
-					"saved_attribute_attributes": {
-						"valueof": {
-							"parameter_longname": "Filter Env Decay",
-							"parameter_shortname": "F Dec",
-							"parameter_type": 1,
-							"parameter_mmin": 0,
-							"parameter_mmax": 127,
-							"parameter_initial_enable": 0,
-							"parameter_initial": [
-								0
-							],
-							"parameter_invisible": 0
-						}
-					},
-					"annotation": "Filter Env Decay  \u00b7  CC 80  \u2014  Decay time of the Filter envelope (fall to the sustain level).",
-					"hint": "Filter Env Decay  \u00b7  CC 80  \u2014  Decay time of the Filter envelope (fall to the sustain level)."
-				}
-			},
-			{
-				"box": {
-					"id": "obj-184",
-					"maxclass": "comment",
-					"numinlets": 1,
-					"numoutlets": 0,
-					"patching_rect": [
-						58.0,
-						24.0,
-						46.0,
-						11.0
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						58.0,
-						24.0,
-						46.0,
-						11.0
-					],
-					"text": "F Dec",
-					"fontsize": 8.0,
-					"fontface": 0,
-					"textjustification": 1,
-					"varname": "Filter_Env_Decay_L"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-185",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1416.0,
-						840.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend 80"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-186",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 3,
-					"patching_rect": [
-						1656.0,
-						880.0,
-						70.0,
-						22.0
-					],
-					"outlettype": [
-						"",
-						"",
-						""
-					],
-					"text": "ctlin 80"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-187",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1896.0,
-						880.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend set"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-188",
-					"maxclass": "live.slider",
-					"numinlets": 1,
-					"numoutlets": 1,
-					"patching_rect": [
-						119.0,
-						37.0,
-						22.0,
-						104.0
-					],
-					"outlettype": [
-						""
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						119.0,
-						37.0,
-						22.0,
-						104.0
-					],
-					"parameter_enable": 1,
-					"varname": "Filter_Env_Sustain",
-					"saved_attribute_attributes": {
-						"valueof": {
-							"parameter_longname": "Filter Env Sustain",
-							"parameter_shortname": "F Sus",
-							"parameter_type": 1,
-							"parameter_mmin": 0,
-							"parameter_mmax": 127,
-							"parameter_initial_enable": 1,
-							"parameter_initial": [
-								127
-							],
-							"parameter_invisible": 0
-						}
-					},
-					"annotation": "Filter Env Sustain  \u00b7  CC 81  \u2014  Sustain level held by the Filter envelope while a key is down.",
-					"hint": "Filter Env Sustain  \u00b7  CC 81  \u2014  Sustain level held by the Filter envelope while a key is down."
-				}
-			},
-			{
-				"box": {
-					"id": "obj-189",
-					"maxclass": "comment",
-					"numinlets": 1,
-					"numoutlets": 0,
-					"patching_rect": [
-						106.0,
-						24.0,
-						46.0,
-						11.0
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						106.0,
-						24.0,
-						46.0,
-						11.0
-					],
-					"text": "F Sus",
-					"fontsize": 8.0,
-					"fontface": 0,
-					"textjustification": 1,
-					"varname": "Filter_Env_Sustain_L"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-190",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1416.0,
-						848.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend 81"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-191",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 3,
-					"patching_rect": [
-						1656.0,
-						888.0,
-						70.0,
-						22.0
-					],
-					"outlettype": [
-						"",
-						"",
-						""
-					],
-					"text": "ctlin 81"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-192",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1896.0,
-						888.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend set"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-193",
-					"maxclass": "live.slider",
-					"numinlets": 1,
-					"numoutlets": 1,
-					"patching_rect": [
-						167.0,
-						37.0,
-						22.0,
-						104.0
-					],
-					"outlettype": [
-						""
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						167.0,
-						37.0,
-						22.0,
-						104.0
-					],
-					"parameter_enable": 1,
-					"varname": "Filter_Env_Release",
-					"saved_attribute_attributes": {
-						"valueof": {
-							"parameter_longname": "Filter Env Release",
-							"parameter_shortname": "F Rel",
-							"parameter_type": 1,
-							"parameter_mmin": 0,
-							"parameter_mmax": 127,
-							"parameter_initial_enable": 0,
-							"parameter_initial": [
-								0
-							],
-							"parameter_invisible": 0
-						}
-					},
-					"annotation": "Filter Env Release  \u00b7  CC 82  \u2014  Release time of the Filter envelope after key release.",
-					"hint": "Filter Env Release  \u00b7  CC 82  \u2014  Release time of the Filter envelope after key release."
-				}
-			},
-			{
-				"box": {
-					"id": "obj-194",
-					"maxclass": "comment",
-					"numinlets": 1,
-					"numoutlets": 0,
-					"patching_rect": [
-						154.0,
-						24.0,
-						46.0,
-						11.0
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						154.0,
-						24.0,
-						46.0,
-						11.0
-					],
-					"text": "F Rel",
-					"fontsize": 8.0,
-					"fontface": 0,
-					"textjustification": 1,
-					"varname": "Filter_Env_Release_L"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-195",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1416.0,
-						856.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend 82"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-196",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 3,
-					"patching_rect": [
-						1656.0,
-						896.0,
-						70.0,
-						22.0
-					],
-					"outlettype": [
-						"",
-						"",
-						""
-					],
-					"text": "ctlin 82"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-197",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1896.0,
-						896.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend set"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-198",
-					"maxclass": "live.toggle",
-					"numinlets": 1,
-					"numoutlets": 1,
-					"patching_rect": [
-						217.0,
-						80.0,
-						18.0,
-						18.0
-					],
-					"outlettype": [
-						""
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						217.0,
-						80.0,
-						18.0,
-						18.0
-					],
-					"parameter_enable": 1,
-					"varname": "Filter_Env_Loop",
-					"saved_attribute_attributes": {
-						"valueof": {
-							"parameter_longname": "Filter Env Loop",
-							"parameter_shortname": "F Loop",
-							"parameter_type": 2,
-							"parameter_mmin": 0,
-							"parameter_mmax": 1,
-							"parameter_initial_enable": 0,
-							"parameter_initial": [
-								0
-							],
-							"parameter_invisible": 0,
-							"parameter_enum": [
-								"off",
-								"on"
-							],
-							"parameter_range": [
-								"off",
-								"on"
-							]
-						}
-					},
-					"annotation": "Filter Env Loop  \u00b7  CC 83  \u2014  Loops the Filter envelope for cycling, LFO-like modulation.  (0-63: Off; 64-127: On)",
-					"hint": "Filter Env Loop  \u00b7  CC 83  \u2014  Loops the Filter envelope for cycling, LFO-like modulation.  (0-63: Off; 64-127: On)"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-199",
-					"maxclass": "comment",
-					"numinlets": 1,
-					"numoutlets": 0,
-					"patching_rect": [
-						202.0,
-						24.0,
-						46.0,
-						11.0
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						202.0,
-						24.0,
-						46.0,
-						11.0
-					],
-					"text": "F Loop",
-					"fontsize": 8.0,
-					"fontface": 0,
-					"textjustification": 1,
-					"varname": "Filter_Env_Loop_L"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-200",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1276.0,
-						864.0,
-						50.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "* 127"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-201",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1416.0,
-						864.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend 83"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-202",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 3,
-					"patching_rect": [
-						1656.0,
-						904.0,
-						70.0,
-						22.0
-					],
-					"outlettype": [
-						"",
-						"",
-						""
-					],
-					"text": "ctlin 83"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-203",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1736.0,
-						904.0,
-						50.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": ">= 64"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-204",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1896.0,
-						904.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend set"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-205",
-					"maxclass": "live.toggle",
-					"numinlets": 1,
-					"numoutlets": 1,
-					"patching_rect": [
-						265.0,
-						80.0,
-						18.0,
-						18.0
-					],
-					"outlettype": [
-						""
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						265.0,
-						80.0,
-						18.0,
-						18.0
-					],
-					"parameter_enable": 1,
-					"varname": "Filter_Env_Velocity",
-					"saved_attribute_attributes": {
-						"valueof": {
-							"parameter_longname": "Filter Env Velocity",
-							"parameter_shortname": "F Vel",
-							"parameter_type": 2,
-							"parameter_mmin": 0,
-							"parameter_mmax": 1,
-							"parameter_initial_enable": 0,
-							"parameter_initial": [
-								0
-							],
-							"parameter_invisible": 0,
-							"parameter_enum": [
-								"off",
-								"on"
-							],
-							"parameter_range": [
-								"off",
-								"on"
-							]
-						}
-					},
-					"annotation": "Filter Env Velocity  \u00b7  CC 85  \u2014  Makes the Filter envelope depth respond to key velocity.  (0-63: Off; 64-127: On)",
-					"hint": "Filter Env Velocity  \u00b7  CC 85  \u2014  Makes the Filter envelope depth respond to key velocity.  (0-63: Off; 64-127: On)"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-206",
-					"maxclass": "comment",
-					"numinlets": 1,
-					"numoutlets": 0,
-					"patching_rect": [
-						250.0,
-						24.0,
-						46.0,
-						11.0
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						250.0,
-						24.0,
-						46.0,
-						11.0
-					],
-					"text": "F Vel",
-					"fontsize": 8.0,
-					"fontface": 0,
-					"textjustification": 1,
-					"varname": "Filter_Env_Velocity_L"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-207",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1276.0,
-						880.0,
-						50.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "* 127"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-208",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1416.0,
-						880.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend 85"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-209",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 3,
-					"patching_rect": [
-						1656.0,
-						920.0,
-						70.0,
-						22.0
-					],
-					"outlettype": [
-						"",
-						"",
-						""
-					],
-					"text": "ctlin 85"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-210",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1736.0,
-						920.0,
-						50.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": ">= 64"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-211",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1896.0,
-						920.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend set"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-212",
-					"maxclass": "live.slider",
-					"numinlets": 1,
-					"numoutlets": 1,
-					"patching_rect": [
-						311.0,
-						37.0,
-						22.0,
-						104.0
-					],
-					"outlettype": [
-						""
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						311.0,
-						37.0,
-						22.0,
-						104.0
-					],
-					"parameter_enable": 1,
-					"varname": "VCA_Env_Attack",
-					"saved_attribute_attributes": {
-						"valueof": {
-							"parameter_longname": "VCA Env Attack",
-							"parameter_shortname": "A Atk",
-							"parameter_type": 1,
-							"parameter_mmin": 0,
-							"parameter_mmax": 127,
-							"parameter_initial_enable": 1,
-							"parameter_initial": [
-								0
-							],
-							"parameter_invisible": 0
-						}
-					},
-					"annotation": "VCA Env Attack  \u00b7  CC 86  \u2014  Attack time of the Amplifier (VCA) envelope.",
-					"hint": "VCA Env Attack  \u00b7  CC 86  \u2014  Attack time of the Amplifier (VCA) envelope."
-				}
-			},
-			{
-				"box": {
-					"id": "obj-213",
-					"maxclass": "comment",
-					"numinlets": 1,
-					"numoutlets": 0,
-					"patching_rect": [
-						298.0,
-						24.0,
-						46.0,
-						11.0
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						298.0,
-						24.0,
-						46.0,
-						11.0
-					],
-					"text": "A Atk",
-					"fontsize": 8.0,
-					"fontface": 0,
-					"textjustification": 1,
-					"varname": "VCA_Env_Attack_L"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-214",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1416.0,
-						888.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend 86"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-215",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 3,
-					"patching_rect": [
-						1656.0,
-						928.0,
-						70.0,
-						22.0
-					],
-					"outlettype": [
-						"",
-						"",
-						""
-					],
-					"text": "ctlin 86"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-216",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1896.0,
-						928.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend set"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-217",
-					"maxclass": "live.slider",
-					"numinlets": 1,
-					"numoutlets": 1,
-					"patching_rect": [
-						359.0,
-						37.0,
-						22.0,
-						104.0
-					],
-					"outlettype": [
-						""
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						359.0,
-						37.0,
-						22.0,
-						104.0
-					],
-					"parameter_enable": 1,
-					"varname": "VCA_Env_Decay",
-					"saved_attribute_attributes": {
-						"valueof": {
-							"parameter_longname": "VCA Env Decay",
-							"parameter_shortname": "A Dec",
-							"parameter_type": 1,
-							"parameter_mmin": 0,
-							"parameter_mmax": 127,
-							"parameter_initial_enable": 0,
-							"parameter_initial": [
-								0
-							],
-							"parameter_invisible": 0
-						}
-					},
-					"annotation": "VCA Env Decay  \u00b7  CC 87  \u2014  Decay time of the Amplifier (VCA) envelope (fall to the sustain level).",
-					"hint": "VCA Env Decay  \u00b7  CC 87  \u2014  Decay time of the Amplifier (VCA) envelope (fall to the sustain level)."
-				}
-			},
-			{
-				"box": {
-					"id": "obj-218",
-					"maxclass": "comment",
-					"numinlets": 1,
-					"numoutlets": 0,
-					"patching_rect": [
-						346.0,
-						24.0,
-						46.0,
-						11.0
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						346.0,
-						24.0,
-						46.0,
-						11.0
-					],
-					"text": "A Dec",
-					"fontsize": 8.0,
-					"fontface": 0,
-					"textjustification": 1,
-					"varname": "VCA_Env_Decay_L"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-219",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1416.0,
-						896.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend 87"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-220",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 3,
-					"patching_rect": [
-						1656.0,
-						936.0,
-						70.0,
-						22.0
-					],
-					"outlettype": [
-						"",
-						"",
-						""
-					],
-					"text": "ctlin 87"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-221",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1896.0,
-						936.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend set"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-222",
-					"maxclass": "live.slider",
-					"numinlets": 1,
-					"numoutlets": 1,
-					"patching_rect": [
-						407.0,
-						37.0,
-						22.0,
-						104.0
-					],
-					"outlettype": [
-						""
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						407.0,
-						37.0,
-						22.0,
-						104.0
-					],
-					"parameter_enable": 1,
-					"varname": "VCA_Env_Sustain",
-					"saved_attribute_attributes": {
-						"valueof": {
-							"parameter_longname": "VCA Env Sustain",
-							"parameter_shortname": "A Sus",
-							"parameter_type": 1,
-							"parameter_mmin": 0,
-							"parameter_mmax": 127,
-							"parameter_initial_enable": 1,
-							"parameter_initial": [
-								127
-							],
-							"parameter_invisible": 0
-						}
-					},
-					"annotation": "VCA Env Sustain  \u00b7  CC 88  \u2014  Sustain level held by the Amplifier (VCA) envelope while a key is down.",
-					"hint": "VCA Env Sustain  \u00b7  CC 88  \u2014  Sustain level held by the Amplifier (VCA) envelope while a key is down."
-				}
-			},
-			{
-				"box": {
-					"id": "obj-223",
-					"maxclass": "comment",
-					"numinlets": 1,
-					"numoutlets": 0,
-					"patching_rect": [
-						394.0,
-						24.0,
-						46.0,
-						11.0
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						394.0,
-						24.0,
-						46.0,
-						11.0
-					],
-					"text": "A Sus",
-					"fontsize": 8.0,
-					"fontface": 0,
-					"textjustification": 1,
-					"varname": "VCA_Env_Sustain_L"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-224",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1416.0,
-						904.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend 88"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-225",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 3,
-					"patching_rect": [
-						1656.0,
-						944.0,
-						70.0,
-						22.0
-					],
-					"outlettype": [
-						"",
-						"",
-						""
-					],
-					"text": "ctlin 88"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-226",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1896.0,
-						944.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend set"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-227",
-					"maxclass": "live.slider",
-					"numinlets": 1,
-					"numoutlets": 1,
-					"patching_rect": [
-						455.0,
-						37.0,
-						22.0,
-						104.0
-					],
-					"outlettype": [
-						""
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						455.0,
-						37.0,
-						22.0,
-						104.0
-					],
-					"parameter_enable": 1,
-					"varname": "VCA_Env_Release",
-					"saved_attribute_attributes": {
-						"valueof": {
-							"parameter_longname": "VCA Env Release",
-							"parameter_shortname": "A Rel",
-							"parameter_type": 1,
-							"parameter_mmin": 0,
-							"parameter_mmax": 127,
-							"parameter_initial_enable": 1,
-							"parameter_initial": [
-								20
-							],
-							"parameter_invisible": 0
-						}
-					},
-					"annotation": "VCA Env Release  \u00b7  CC 89  \u2014  Release time of the Amplifier envelope after key release.",
-					"hint": "VCA Env Release  \u00b7  CC 89  \u2014  Release time of the Amplifier envelope after key release."
-				}
-			},
-			{
-				"box": {
-					"id": "obj-228",
-					"maxclass": "comment",
-					"numinlets": 1,
-					"numoutlets": 0,
-					"patching_rect": [
-						442.0,
-						24.0,
-						46.0,
-						11.0
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						442.0,
-						24.0,
-						46.0,
-						11.0
-					],
-					"text": "A Rel",
-					"fontsize": 8.0,
-					"fontface": 0,
-					"textjustification": 1,
-					"varname": "VCA_Env_Release_L"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-229",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1416.0,
-						912.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend 89"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-230",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 3,
-					"patching_rect": [
-						1656.0,
-						952.0,
-						70.0,
-						22.0
-					],
-					"outlettype": [
-						"",
-						"",
-						""
-					],
-					"text": "ctlin 89"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-231",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1896.0,
-						952.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend set"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-232",
-					"maxclass": "live.toggle",
-					"numinlets": 1,
-					"numoutlets": 1,
-					"patching_rect": [
-						505.0,
-						80.0,
-						18.0,
-						18.0
-					],
-					"outlettype": [
-						""
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						505.0,
-						80.0,
-						18.0,
-						18.0
-					],
-					"parameter_enable": 1,
-					"varname": "VCA_Env_Loop",
-					"saved_attribute_attributes": {
-						"valueof": {
-							"parameter_longname": "VCA Env Loop",
-							"parameter_shortname": "A Loop",
-							"parameter_type": 2,
-							"parameter_mmin": 0,
-							"parameter_mmax": 1,
-							"parameter_initial_enable": 0,
-							"parameter_initial": [
-								0
-							],
-							"parameter_invisible": 0,
-							"parameter_enum": [
-								"off",
-								"on"
-							],
-							"parameter_range": [
-								"off",
-								"on"
-							]
-						}
-					},
-					"annotation": "VCA Env Loop  \u00b7  CC 90  \u2014  Loops the Amplifier envelope for cycling, tremolo-like modulation.  (0-63: Off; 64-127: On)",
-					"hint": "VCA Env Loop  \u00b7  CC 90  \u2014  Loops the Amplifier envelope for cycling, tremolo-like modulation.  (0-63: Off; 64-127: On)"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-233",
-					"maxclass": "comment",
-					"numinlets": 1,
-					"numoutlets": 0,
-					"patching_rect": [
-						490.0,
-						24.0,
-						46.0,
-						11.0
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						490.0,
-						24.0,
-						46.0,
-						11.0
-					],
-					"text": "A Loop",
-					"fontsize": 8.0,
-					"fontface": 0,
-					"textjustification": 1,
-					"varname": "VCA_Env_Loop_L"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-234",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1276.0,
-						920.0,
-						50.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "* 127"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-235",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1416.0,
-						920.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend 90"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-236",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 3,
-					"patching_rect": [
-						1656.0,
-						960.0,
-						70.0,
-						22.0
-					],
-					"outlettype": [
-						"",
-						"",
-						""
-					],
-					"text": "ctlin 90"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-237",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1736.0,
-						960.0,
-						50.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": ">= 64"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-238",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1896.0,
-						960.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend set"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-239",
-					"maxclass": "live.toggle",
-					"numinlets": 1,
-					"numoutlets": 1,
-					"patching_rect": [
-						553.0,
-						80.0,
-						18.0,
-						18.0
-					],
-					"outlettype": [
-						""
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						553.0,
-						80.0,
-						18.0,
-						18.0
-					],
-					"parameter_enable": 1,
-					"varname": "VCA_Env_Velocity",
-					"saved_attribute_attributes": {
-						"valueof": {
-							"parameter_longname": "VCA Env Velocity",
-							"parameter_shortname": "A Vel",
-							"parameter_type": 2,
-							"parameter_mmin": 0,
-							"parameter_mmax": 1,
-							"parameter_initial_enable": 0,
-							"parameter_initial": [
-								0
-							],
-							"parameter_invisible": 0,
-							"parameter_enum": [
-								"off",
-								"on"
-							],
-							"parameter_range": [
-								"off",
-								"on"
-							]
-						}
-					},
-					"annotation": "VCA Env Velocity  \u00b7  CC 91  \u2014  Makes loudness respond to key velocity via the Amplifier envelope.  (0-63: Off; 64-127: On)",
-					"hint": "VCA Env Velocity  \u00b7  CC 91  \u2014  Makes loudness respond to key velocity via the Amplifier envelope.  (0-63: Off; 64-127: On)"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-240",
-					"maxclass": "comment",
-					"numinlets": 1,
-					"numoutlets": 0,
-					"patching_rect": [
-						538.0,
-						24.0,
-						46.0,
-						11.0
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						538.0,
-						24.0,
-						46.0,
-						11.0
-					],
-					"text": "A Vel",
-					"fontsize": 8.0,
-					"fontface": 0,
-					"textjustification": 1,
-					"varname": "VCA_Env_Velocity_L"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-241",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1276.0,
-						928.0,
-						50.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "* 127"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-242",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1416.0,
-						928.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend 91"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-243",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 3,
-					"patching_rect": [
-						1656.0,
-						968.0,
-						70.0,
-						22.0
-					],
-					"outlettype": [
-						"",
-						"",
-						""
-					],
-					"text": "ctlin 91"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-244",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1736.0,
-						968.0,
-						50.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": ">= 64"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-245",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1896.0,
-						968.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend set"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-246",
-					"maxclass": "live.dial",
-					"numinlets": 1,
-					"numoutlets": 1,
-					"patching_rect": [
-						15.0,
-						37.0,
-						38.0,
-						38.0
-					],
-					"outlettype": [
-						""
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						15.0,
-						37.0,
-						38.0,
-						38.0
-					],
-					"parameter_enable": 1,
-					"varname": "Timbre_Volume",
-					"saved_attribute_attributes": {
-						"valueof": {
-							"parameter_longname": "Timbre Volume",
-							"parameter_shortname": "Timbre Volume",
-							"parameter_type": 1,
-							"parameter_mmin": 0,
-							"parameter_mmax": 127,
-							"parameter_initial_enable": 1,
-							"parameter_initial": [
-								127
-							],
-							"parameter_invisible": 0
-						}
-					},
-					"annotation": "Timbre Volume  \u00b7  CC 7  \u2014  Volume control for the currently active timbre (A/B) before it reaches the voice summing busses",
-					"hint": "Timbre Volume  \u00b7  CC 7  \u2014  Volume control for the currently active timbre (A/B) before it reaches the voice summing busses"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-247",
-					"maxclass": "comment",
-					"numinlets": 1,
-					"numoutlets": 0,
-					"patching_rect": [
-						10.0,
-						24.0,
-						46.0,
-						11.0
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						10.0,
-						24.0,
-						46.0,
-						11.0
-					],
-					"text": "Timbre Volume",
-					"fontsize": 8.0,
-					"fontface": 0,
-					"textjustification": 1,
-					"varname": "Timbre_Volume_L"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-248",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1416.0,
-						256.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend 7"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-249",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 3,
-					"patching_rect": [
-						1656.0,
-						296.0,
-						70.0,
-						22.0
-					],
-					"outlettype": [
-						"",
-						"",
-						""
-					],
-					"text": "ctlin 7"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-250",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1896.0,
-						296.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend set"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-251",
-					"maxclass": "live.dial",
-					"numinlets": 1,
-					"numoutlets": 1,
-					"patching_rect": [
-						63.0,
-						37.0,
-						38.0,
-						38.0
-					],
-					"outlettype": [
-						""
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						63.0,
-						37.0,
-						38.0,
-						38.0
-					],
-					"parameter_enable": 1,
-					"varname": "Pan",
-					"saved_attribute_attributes": {
-						"valueof": {
-							"parameter_longname": "Pan",
-							"parameter_shortname": "Pan",
-							"parameter_type": 1,
-							"parameter_mmin": 0,
-							"parameter_mmax": 127,
-							"parameter_initial_enable": 0,
-							"parameter_initial": [
-								0
-							],
-							"parameter_invisible": 0
-						}
-					},
-					"annotation": "Pan  \u00b7  CC 10  \u2014  Bipolar control for manual adjustment of the pan-position of the currently active timbre (A/B) in the stereo field",
-					"hint": "Pan  \u00b7  CC 10  \u2014  Bipolar control for manual adjustment of the pan-position of the currently active timbre (A/B) in the stereo field"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-252",
-					"maxclass": "comment",
-					"numinlets": 1,
-					"numoutlets": 0,
-					"patching_rect": [
-						58.0,
-						24.0,
-						46.0,
-						11.0
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						58.0,
-						24.0,
-						46.0,
-						11.0
-					],
-					"text": "Pan",
-					"fontsize": 8.0,
-					"fontface": 0,
-					"textjustification": 1,
-					"varname": "Pan_L"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-253",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1416.0,
-						280.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend 10"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-254",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 3,
-					"patching_rect": [
-						1656.0,
-						320.0,
-						70.0,
-						22.0
-					],
-					"outlettype": [
-						"",
-						"",
-						""
-					],
-					"text": "ctlin 10"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-255",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1896.0,
-						320.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend set"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-256",
-					"maxclass": "live.dial",
-					"numinlets": 1,
-					"numoutlets": 1,
-					"patching_rect": [
-						111.0,
-						37.0,
-						38.0,
-						38.0
-					],
-					"outlettype": [
-						""
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						111.0,
-						37.0,
-						38.0,
-						38.0
-					],
-					"parameter_enable": 1,
-					"varname": "Pan_Spread",
-					"saved_attribute_attributes": {
-						"valueof": {
-							"parameter_longname": "Pan Spread",
-							"parameter_shortname": "Pan Spr",
-							"parameter_type": 1,
-							"parameter_mmin": 0,
-							"parameter_mmax": 127,
-							"parameter_initial_enable": 0,
-							"parameter_initial": [
-								0
-							],
-							"parameter_invisible": 0
-						}
-					},
-					"annotation": "Pan Spread  \u00b7  CC 9  \u2014  Spreads allocated voices apart giving a wider feel to the stereo image",
-					"hint": "Pan Spread  \u00b7  CC 9  \u2014  Spreads allocated voices apart giving a wider feel to the stereo image"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-257",
-					"maxclass": "comment",
-					"numinlets": 1,
-					"numoutlets": 0,
-					"patching_rect": [
-						106.0,
-						24.0,
-						46.0,
-						11.0
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						106.0,
-						24.0,
-						46.0,
-						11.0
-					],
-					"text": "Pan Spr",
-					"fontsize": 8.0,
-					"fontface": 0,
-					"textjustification": 1,
-					"varname": "Pan_Spread_L"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-258",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1416.0,
-						272.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend 9"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-259",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 3,
-					"patching_rect": [
-						1656.0,
-						312.0,
-						70.0,
-						22.0
-					],
-					"outlettype": [
-						"",
-						"",
-						""
-					],
-					"text": "ctlin 9"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-260",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1896.0,
-						312.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend set"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-261",
-					"maxclass": "live.dial",
-					"numinlets": 1,
-					"numoutlets": 1,
-					"patching_rect": [
-						159.0,
-						37.0,
-						38.0,
-						38.0
-					],
-					"outlettype": [
-						""
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						159.0,
-						37.0,
-						38.0,
-						38.0
-					],
-					"parameter_enable": 1,
-					"varname": "Low_Cut",
-					"saved_attribute_attributes": {
-						"valueof": {
-							"parameter_longname": "Low Cut",
-							"parameter_shortname": "Low Cut",
-							"parameter_type": 1,
-							"parameter_mmin": 0,
-							"parameter_mmax": 127,
-							"parameter_initial_enable": 0,
-							"parameter_initial": [
-								0
-							],
-							"parameter_invisible": 0
-						}
-					},
-					"annotation": "Low Cut  \u00b7  CC 8  \u2014  High-pass 'low cut' on the timbre output; raise to thin out lows.",
-					"hint": "Low Cut  \u00b7  CC 8  \u2014  High-pass 'low cut' on the timbre output; raise to thin out lows."
-				}
-			},
-			{
-				"box": {
-					"id": "obj-262",
-					"maxclass": "comment",
-					"numinlets": 1,
-					"numoutlets": 0,
-					"patching_rect": [
-						154.0,
-						24.0,
-						46.0,
-						11.0
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						154.0,
-						24.0,
-						46.0,
-						11.0
-					],
-					"text": "Low Cut",
-					"fontsize": 8.0,
-					"fontface": 0,
-					"textjustification": 1,
-					"varname": "Low_Cut_L"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-263",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1416.0,
-						264.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend 8"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-264",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 3,
-					"patching_rect": [
-						1656.0,
-						304.0,
-						70.0,
-						22.0
-					],
-					"outlettype": [
-						"",
-						"",
-						""
-					],
-					"text": "ctlin 8"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-265",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1896.0,
-						304.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend set"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-266",
-					"maxclass": "live.toggle",
-					"numinlets": 1,
-					"numoutlets": 1,
-					"patching_rect": [
-						217.0,
-						37.0,
-						18.0,
-						18.0
-					],
-					"outlettype": [
-						""
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						217.0,
-						37.0,
-						18.0,
-						18.0
-					],
-					"parameter_enable": 1,
-					"varname": "Mute",
-					"saved_attribute_attributes": {
-						"valueof": {
-							"parameter_longname": "Mute",
-							"parameter_shortname": "Mute",
-							"parameter_type": 2,
-							"parameter_mmin": 0,
-							"parameter_mmax": 1,
-							"parameter_initial_enable": 0,
-							"parameter_initial": [
-								0
-							],
-							"parameter_invisible": 0,
-							"parameter_enum": [
-								"off",
-								"on"
-							],
-							"parameter_range": [
-								"off",
-								"on"
-							]
-						}
-					},
-					"annotation": "Mute  \u00b7  CC 3  \u2014  Clickless muting of Muse's MAIN OUT signal  (0-63: Off; 64-127: On)",
-					"hint": "Mute  \u00b7  CC 3  \u2014  Clickless muting of Muse's MAIN OUT signal  (0-63: Off; 64-127: On)"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-267",
-					"maxclass": "comment",
-					"numinlets": 1,
-					"numoutlets": 0,
-					"patching_rect": [
-						202.0,
-						24.0,
-						46.0,
-						11.0
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						202.0,
-						24.0,
-						46.0,
-						11.0
-					],
-					"text": "Mute",
-					"fontsize": 8.0,
-					"fontface": 0,
-					"textjustification": 1,
-					"varname": "Mute_L"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-268",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1276.0,
-						224.0,
-						50.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "* 127"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-269",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1416.0,
-						224.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend 3"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-270",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 3,
-					"patching_rect": [
-						1656.0,
-						264.0,
-						70.0,
-						22.0
-					],
-					"outlettype": [
-						"",
-						"",
-						""
-					],
-					"text": "ctlin 3"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-271",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1736.0,
-						264.0,
-						50.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": ">= 64"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-272",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1896.0,
-						264.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend set"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-273",
-					"maxclass": "live.dial",
-					"numinlets": 1,
-					"numoutlets": 1,
-					"patching_rect": [
-						15.0,
-						37.0,
-						38.0,
-						38.0
-					],
-					"outlettype": [
-						""
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						15.0,
-						37.0,
-						38.0,
-						38.0
-					],
-					"parameter_enable": 1,
-					"varname": "Mod_Osc_Frequency",
-					"saved_attribute_attributes": {
-						"valueof": {
-							"parameter_longname": "Mod Osc Frequency",
-							"parameter_shortname": "Freq",
-							"parameter_type": 1,
-							"parameter_mmin": 0,
-							"parameter_mmax": 127,
-							"parameter_initial_enable": 0,
-							"parameter_initial": [
-								0
-							],
-							"parameter_invisible": 0
-						}
-					},
-					"annotation": "Mod Osc Frequency  \u00b7  CC 25  \u2014  Controls the frequency of the modulation oscillator",
-					"hint": "Mod Osc Frequency  \u00b7  CC 25  \u2014  Controls the frequency of the modulation oscillator"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-274",
-					"maxclass": "comment",
-					"numinlets": 1,
-					"numoutlets": 0,
-					"patching_rect": [
-						10.0,
-						24.0,
-						46.0,
-						11.0
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						10.0,
-						24.0,
-						46.0,
-						11.0
-					],
-					"text": "Freq",
-					"fontsize": 8.0,
-					"fontface": 0,
-					"textjustification": 1,
-					"varname": "Mod_Osc_Frequency_L"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-275",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1416.0,
-						400.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend 25"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-276",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 3,
-					"patching_rect": [
-						1656.0,
-						440.0,
-						70.0,
-						22.0
-					],
-					"outlettype": [
-						"",
-						"",
-						""
-					],
-					"text": "ctlin 25"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-277",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1896.0,
-						440.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend set"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-278",
-					"maxclass": "live.menu",
-					"numinlets": 1,
-					"numoutlets": 1,
-					"patching_rect": [
-						60.0,
-						37.0,
-						42.0,
-						18.0
-					],
-					"outlettype": [
-						""
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						60.0,
-						37.0,
-						42.0,
-						18.0
-					],
-					"parameter_enable": 1,
-					"varname": "Mod_Osc_Waveform",
-					"saved_attribute_attributes": {
-						"valueof": {
-							"parameter_longname": "Mod Osc Waveform",
-							"parameter_shortname": "Wave",
-							"parameter_type": 2,
-							"parameter_mmin": 0,
-							"parameter_mmax": 4,
-							"parameter_initial_enable": 0,
-							"parameter_initial": [
-								0
-							],
-							"parameter_invisible": 0,
-							"parameter_enum": [
-								"Sine",
-								"Saw",
-								"Ramp",
-								"Square",
-								"Noise"
-							],
-							"parameter_range": [
-								"Sine",
-								"Saw",
-								"Ramp",
-								"Square",
-								"Noise"
-							]
-						}
-					},
-					"annotation": "Mod Osc Waveform  \u00b7  CC 28  \u2014  Selects the waveform of the modulation oscillator  (0-24: Sine; 25-49: Sawtooth; 50-74: Ramp; 75-99: Square; 100-127: Noise)",
-					"hint": "Mod Osc Waveform  \u00b7  CC 28  \u2014  Selects the waveform of the modulation oscillator  (0-24: Sine; 25-49: Sawtooth; 50-74: Ramp; 75-99: Square; 100-127: Noise)"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-279",
-					"maxclass": "comment",
-					"numinlets": 1,
-					"numoutlets": 0,
-					"patching_rect": [
-						58.0,
-						24.0,
-						46.0,
-						11.0
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						58.0,
-						24.0,
-						46.0,
-						11.0
-					],
-					"text": "Wave",
-					"fontsize": 8.0,
-					"fontface": 0,
-					"textjustification": 1,
-					"varname": "Mod_Osc_Waveform_L"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-280",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 1,
-					"patching_rect": [
-						1276.0,
-						424.0,
-						110.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "expr $i1 * 26 + 13"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-281",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1416.0,
-						424.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend 28"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-282",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 3,
-					"patching_rect": [
-						1656.0,
-						464.0,
-						70.0,
-						22.0
-					],
-					"outlettype": [
-						"",
-						"",
-						""
-					],
-					"text": "ctlin 28"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-283",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 1,
-					"patching_rect": [
-						1736.0,
-						464.0,
-						150.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "expr ($i1 > 24) + ($i1 > 49) + ($i1 > 74) + ($i1 > 99)"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-284",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1896.0,
-						464.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend set"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-285",
-					"maxclass": "live.toggle",
-					"numinlets": 1,
-					"numoutlets": 1,
-					"patching_rect": [
-						121.0,
-						37.0,
-						18.0,
-						18.0
-					],
-					"outlettype": [
-						""
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						121.0,
-						37.0,
-						18.0,
-						18.0
-					],
-					"parameter_enable": 1,
-					"varname": "Mod_Osc_Audio_Rate",
-					"saved_attribute_attributes": {
-						"valueof": {
-							"parameter_longname": "Mod Osc Audio Rate",
-							"parameter_shortname": "Audio Rate",
-							"parameter_type": 2,
-							"parameter_mmin": 0,
-							"parameter_mmax": 1,
-							"parameter_initial_enable": 0,
-							"parameter_initial": [
-								0
-							],
-							"parameter_invisible": 0,
-							"parameter_enum": [
-								"off",
-								"on"
-							],
-							"parameter_range": [
-								"off",
-								"on"
-							]
-						}
-					},
-					"annotation": "Mod Osc Audio Rate  \u00b7  CC 26  \u2014  Sets the modulation oscillator to operate at audio-rate frequencies  (0-63: Off; 64-127: On)",
-					"hint": "Mod Osc Audio Rate  \u00b7  CC 26  \u2014  Sets the modulation oscillator to operate at audio-rate frequencies  (0-63: Off; 64-127: On)"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-286",
-					"maxclass": "comment",
-					"numinlets": 1,
-					"numoutlets": 0,
-					"patching_rect": [
-						106.0,
-						24.0,
-						46.0,
-						11.0
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						106.0,
-						24.0,
-						46.0,
-						11.0
-					],
-					"text": "Audio Rate",
-					"fontsize": 8.0,
-					"fontface": 0,
-					"textjustification": 1,
-					"varname": "Mod_Osc_Audio_Rate_L"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-287",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1276.0,
-						408.0,
-						50.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "* 127"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-288",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1416.0,
-						408.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend 26"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-289",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 3,
-					"patching_rect": [
-						1656.0,
-						448.0,
-						70.0,
-						22.0
-					],
-					"outlettype": [
-						"",
-						"",
-						""
-					],
-					"text": "ctlin 26"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-290",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1736.0,
-						448.0,
-						50.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": ">= 64"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-291",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1896.0,
-						448.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend set"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-292",
-					"maxclass": "live.toggle",
-					"numinlets": 1,
-					"numoutlets": 1,
-					"patching_rect": [
-						169.0,
-						37.0,
-						18.0,
-						18.0
-					],
-					"outlettype": [
-						""
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						169.0,
-						37.0,
-						18.0,
-						18.0
-					],
-					"parameter_enable": 1,
-					"varname": "Mod_Osc_KB_Track",
-					"saved_attribute_attributes": {
-						"valueof": {
-							"parameter_longname": "Mod Osc KB Track",
-							"parameter_shortname": "KB Track",
-							"parameter_type": 2,
-							"parameter_mmin": 0,
-							"parameter_mmax": 1,
-							"parameter_initial_enable": 0,
-							"parameter_initial": [
-								0
-							],
-							"parameter_invisible": 0,
-							"parameter_enum": [
-								"off",
-								"on"
-							],
-							"parameter_range": [
-								"off",
-								"on"
-							]
-						}
-					},
-					"annotation": "Mod Osc KB Track  \u00b7  CC 27  \u2014  Enables keyboard control of the frequency of the modulation oscillator  (0-63: Off; 64-127: On)",
-					"hint": "Mod Osc KB Track  \u00b7  CC 27  \u2014  Enables keyboard control of the frequency of the modulation oscillator  (0-63: Off; 64-127: On)"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-293",
-					"maxclass": "comment",
-					"numinlets": 1,
-					"numoutlets": 0,
-					"patching_rect": [
-						154.0,
-						24.0,
-						46.0,
-						11.0
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						154.0,
-						24.0,
-						46.0,
-						11.0
-					],
-					"text": "KB Track",
-					"fontsize": 8.0,
-					"fontface": 0,
-					"textjustification": 1,
-					"varname": "Mod_Osc_KB_Track_L"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-294",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1276.0,
-						416.0,
-						50.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "* 127"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-295",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1416.0,
-						416.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend 27"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-296",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 3,
-					"patching_rect": [
-						1656.0,
-						456.0,
-						70.0,
-						22.0
-					],
-					"outlettype": [
-						"",
-						"",
-						""
-					],
-					"text": "ctlin 27"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-297",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1736.0,
-						456.0,
-						50.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": ">= 64"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-298",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1896.0,
-						456.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend set"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-299",
-					"maxclass": "live.toggle",
-					"numinlets": 1,
-					"numoutlets": 1,
-					"patching_rect": [
-						217.0,
-						37.0,
-						18.0,
-						18.0
-					],
-					"outlettype": [
-						""
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						217.0,
-						37.0,
-						18.0,
-						18.0
-					],
-					"parameter_enable": 1,
-					"varname": "Mod_Osc_KB_Reset",
-					"saved_attribute_attributes": {
-						"valueof": {
-							"parameter_longname": "Mod Osc KB Reset",
-							"parameter_shortname": "KB Rst",
-							"parameter_type": 2,
-							"parameter_mmin": 0,
-							"parameter_mmax": 1,
-							"parameter_initial_enable": 0,
-							"parameter_initial": [
-								0
-							],
-							"parameter_invisible": 0,
-							"parameter_enum": [
-								"off",
-								"on"
-							],
-							"parameter_range": [
-								"off",
-								"on"
-							]
-						}
-					},
-					"annotation": "Mod Osc KB Reset  \u00b7  CC 29  \u2014  Resets the LFO to its starting point in its wave cycle every time a key is pressed  (0-63: Off; 64-127: On)",
-					"hint": "Mod Osc KB Reset  \u00b7  CC 29  \u2014  Resets the LFO to its starting point in its wave cycle every time a key is pressed  (0-63: Off; 64-127: On)"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-300",
-					"maxclass": "comment",
-					"numinlets": 1,
-					"numoutlets": 0,
-					"patching_rect": [
-						202.0,
-						24.0,
-						46.0,
-						11.0
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						202.0,
-						24.0,
-						46.0,
-						11.0
-					],
-					"text": "KB Rst",
-					"fontsize": 8.0,
-					"fontface": 0,
-					"textjustification": 1,
-					"varname": "Mod_Osc_KB_Reset_L"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-301",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1276.0,
-						432.0,
-						50.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "* 127"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-302",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1416.0,
-						432.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend 29"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-303",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 3,
-					"patching_rect": [
-						1656.0,
-						472.0,
-						70.0,
-						22.0
-					],
-					"outlettype": [
-						"",
-						"",
-						""
-					],
-					"text": "ctlin 29"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-304",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1736.0,
-						472.0,
-						50.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": ">= 64"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-305",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1896.0,
-						472.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend set"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-306",
-					"maxclass": "live.toggle",
-					"numinlets": 1,
-					"numoutlets": 1,
-					"patching_rect": [
-						265.0,
-						37.0,
-						18.0,
-						18.0
-					],
-					"outlettype": [
-						""
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						265.0,
-						37.0,
-						18.0,
-						18.0
-					],
-					"parameter_enable": 1,
-					"varname": "Mod_Osc_Unipolar",
-					"saved_attribute_attributes": {
-						"valueof": {
-							"parameter_longname": "Mod Osc Unipolar",
-							"parameter_shortname": "Uni",
-							"parameter_type": 2,
-							"parameter_mmin": 0,
-							"parameter_mmax": 1,
-							"parameter_initial_enable": 0,
-							"parameter_initial": [
-								0
-							],
-							"parameter_invisible": 0,
-							"parameter_enum": [
-								"off",
-								"on"
-							],
-							"parameter_range": [
-								"off",
-								"on"
-							]
-						}
-					},
-					"annotation": "Mod Osc Unipolar  \u00b7  CC 30  \u2014  Enabled unipolar mode for the modulation oscillator  (0-63: Off; 64-127: On)",
-					"hint": "Mod Osc Unipolar  \u00b7  CC 30  \u2014  Enabled unipolar mode for the modulation oscillator  (0-63: Off; 64-127: On)"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-307",
-					"maxclass": "comment",
-					"numinlets": 1,
-					"numoutlets": 0,
-					"patching_rect": [
-						250.0,
-						24.0,
-						46.0,
-						11.0
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						250.0,
-						24.0,
-						46.0,
-						11.0
-					],
-					"text": "Uni",
-					"fontsize": 8.0,
-					"fontface": 0,
-					"textjustification": 1,
-					"varname": "Mod_Osc_Unipolar_L"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-308",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1276.0,
-						440.0,
-						50.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "* 127"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-309",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1416.0,
-						440.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend 30"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-310",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 3,
-					"patching_rect": [
-						1656.0,
-						480.0,
-						70.0,
-						22.0
-					],
-					"outlettype": [
-						"",
-						"",
-						""
-					],
-					"text": "ctlin 30"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-311",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1736.0,
-						480.0,
-						50.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": ">= 64"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-312",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1896.0,
-						480.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend set"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-313",
-					"maxclass": "live.dial",
-					"numinlets": 1,
-					"numoutlets": 1,
-					"patching_rect": [
-						303.0,
-						37.0,
-						38.0,
-						38.0
-					],
-					"outlettype": [
-						""
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						303.0,
-						37.0,
-						38.0,
-						38.0
-					],
-					"parameter_enable": 1,
-					"varname": "Mod_Osc_Pitch_Amount",
-					"saved_attribute_attributes": {
-						"valueof": {
-							"parameter_longname": "Mod Osc Pitch Amount",
-							"parameter_shortname": "Pitch Amt",
-							"parameter_type": 1,
-							"parameter_mmin": 0,
-							"parameter_mmax": 127,
-							"parameter_initial_enable": 0,
-							"parameter_initial": [
-								0
-							],
-							"parameter_invisible": 0
-						}
-					},
-					"annotation": "Mod Osc Pitch Amount  \u00b7  CC 31  \u2014  Determines the depth at which frequency modulation of the oscillator section occurs based on the OSC 1 and OSC 2 routing buttons",
-					"hint": "Mod Osc Pitch Amount  \u00b7  CC 31  \u2014  Determines the depth at which frequency modulation of the oscillator section occurs based on the OSC 1 and OSC 2 routing buttons"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-314",
-					"maxclass": "comment",
-					"numinlets": 1,
-					"numoutlets": 0,
-					"patching_rect": [
-						298.0,
-						24.0,
-						46.0,
-						11.0
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						298.0,
-						24.0,
-						46.0,
-						11.0
-					],
-					"text": "Pitch Amt",
-					"fontsize": 8.0,
-					"fontface": 0,
-					"textjustification": 1,
-					"varname": "Mod_Osc_Pitch_Amount_L"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-315",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1416.0,
-						448.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend 31"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-316",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 3,
-					"patching_rect": [
-						1656.0,
-						488.0,
-						70.0,
-						22.0
-					],
-					"outlettype": [
-						"",
-						"",
-						""
-					],
-					"text": "ctlin 31"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-317",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1896.0,
-						488.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend set"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-318",
-					"maxclass": "live.dial",
-					"numinlets": 1,
-					"numoutlets": 1,
-					"patching_rect": [
-						351.0,
-						37.0,
-						38.0,
-						38.0
-					],
-					"outlettype": [
-						""
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						351.0,
-						37.0,
-						38.0,
-						38.0
-					],
-					"parameter_enable": 1,
-					"varname": "Mod_Osc_Pitch_OSC_1",
-					"saved_attribute_attributes": {
-						"valueof": {
-							"parameter_longname": "Mod Osc Pitch>OSC 1",
-							"parameter_shortname": "Pitch>OSC 1",
-							"parameter_type": 1,
-							"parameter_mmin": 0,
-							"parameter_mmax": 127,
-							"parameter_initial_enable": 0,
-							"parameter_initial": [
-								0
-							],
-							"parameter_invisible": 0
-						}
-					},
-					"annotation": "Mod Osc Pitch>OSC 1  \u00b7  CC 33  \u2014  Enables frequency modulation of OSC 1 via the modulation oscillator",
-					"hint": "Mod Osc Pitch>OSC 1  \u00b7  CC 33  \u2014  Enables frequency modulation of OSC 1 via the modulation oscillator"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-319",
-					"maxclass": "comment",
-					"numinlets": 1,
-					"numoutlets": 0,
-					"patching_rect": [
-						346.0,
-						24.0,
-						46.0,
-						11.0
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						346.0,
-						24.0,
-						46.0,
-						11.0
-					],
-					"text": "Pitch>OSC 1",
-					"fontsize": 8.0,
-					"fontface": 0,
-					"textjustification": 1,
-					"varname": "Mod_Osc_Pitch_OSC_1_L"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-320",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1416.0,
-						464.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend 33"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-321",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 3,
-					"patching_rect": [
-						1656.0,
-						504.0,
-						70.0,
-						22.0
-					],
-					"outlettype": [
-						"",
-						"",
-						""
-					],
-					"text": "ctlin 33"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-322",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1896.0,
-						504.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend set"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-323",
-					"maxclass": "live.dial",
-					"numinlets": 1,
-					"numoutlets": 1,
-					"patching_rect": [
-						399.0,
-						37.0,
-						38.0,
-						38.0
-					],
-					"outlettype": [
-						""
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						399.0,
-						37.0,
-						38.0,
-						38.0
-					],
-					"parameter_enable": 1,
-					"varname": "Mod_Osc_Pitch_OSC_2",
-					"saved_attribute_attributes": {
-						"valueof": {
-							"parameter_longname": "Mod Osc Pitch>OSC 2",
-							"parameter_shortname": "Pitch>OSC 2",
-							"parameter_type": 1,
-							"parameter_mmin": 0,
-							"parameter_mmax": 127,
-							"parameter_initial_enable": 0,
-							"parameter_initial": [
-								0
-							],
-							"parameter_invisible": 0
-						}
-					},
-					"annotation": "Mod Osc Pitch>OSC 2  \u00b7  CC 34  \u2014  Enables frequency modulation of OSC 2 via the modulation oscillator",
-					"hint": "Mod Osc Pitch>OSC 2  \u00b7  CC 34  \u2014  Enables frequency modulation of OSC 2 via the modulation oscillator"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-324",
-					"maxclass": "comment",
-					"numinlets": 1,
-					"numoutlets": 0,
-					"patching_rect": [
-						394.0,
-						24.0,
-						46.0,
-						11.0
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						394.0,
-						24.0,
-						46.0,
-						11.0
-					],
-					"text": "Pitch>OSC 2",
-					"fontsize": 8.0,
-					"fontface": 0,
-					"textjustification": 1,
-					"varname": "Mod_Osc_Pitch_OSC_2_L"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-325",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1416.0,
-						472.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend 34"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-326",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 3,
-					"patching_rect": [
-						1656.0,
-						512.0,
-						70.0,
-						22.0
-					],
-					"outlettype": [
-						"",
-						"",
-						""
-					],
-					"text": "ctlin 34"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-327",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1896.0,
-						512.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend set"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-328",
-					"maxclass": "live.dial",
-					"numinlets": 1,
-					"numoutlets": 1,
-					"patching_rect": [
-						15.0,
-						99.0,
-						38.0,
-						38.0
-					],
-					"outlettype": [
-						""
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						15.0,
-						99.0,
-						38.0,
-						38.0
-					],
-					"parameter_enable": 1,
-					"varname": "Mod_Osc_PWM_Amount",
-					"saved_attribute_attributes": {
-						"valueof": {
-							"parameter_longname": "Mod Osc PWM Amount",
-							"parameter_shortname": "PWM Amt",
-							"parameter_type": 1,
-							"parameter_mmin": 0,
-							"parameter_mmax": 127,
-							"parameter_initial_enable": 0,
-							"parameter_initial": [
-								0
-							],
-							"parameter_invisible": 0
-						}
-					},
-					"annotation": "Mod Osc PWM Amount  \u00b7  CC 35  \u2014  Determines the depth at which pulse width modulation of the oscillator section occurs based on the OSC 1 and OSC 2 routing buttons",
-					"hint": "Mod Osc PWM Amount  \u00b7  CC 35  \u2014  Determines the depth at which pulse width modulation of the oscillator section occurs based on the OSC 1 and OSC 2 routing buttons"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-329",
-					"maxclass": "comment",
-					"numinlets": 1,
-					"numoutlets": 0,
-					"patching_rect": [
-						10.0,
-						86.0,
-						46.0,
-						11.0
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						10.0,
-						86.0,
-						46.0,
-						11.0
-					],
-					"text": "PWM Amt",
-					"fontsize": 8.0,
-					"fontface": 0,
-					"textjustification": 1,
-					"varname": "Mod_Osc_PWM_Amount_L"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-330",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1416.0,
-						480.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend 35"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-331",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 3,
-					"patching_rect": [
-						1656.0,
-						520.0,
-						70.0,
-						22.0
-					],
-					"outlettype": [
-						"",
-						"",
-						""
-					],
-					"text": "ctlin 35"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-332",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1896.0,
-						520.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend set"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-333",
-					"maxclass": "live.dial",
-					"numinlets": 1,
-					"numoutlets": 1,
-					"patching_rect": [
-						63.0,
-						99.0,
-						38.0,
-						38.0
-					],
-					"outlettype": [
-						""
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						63.0,
-						99.0,
-						38.0,
-						38.0
-					],
-					"parameter_enable": 1,
-					"varname": "Mod_Osc_PWM_OSC_1",
-					"saved_attribute_attributes": {
-						"valueof": {
-							"parameter_longname": "Mod Osc PWM>OSC 1",
-							"parameter_shortname": "PWM>OSC 1",
-							"parameter_type": 1,
-							"parameter_mmin": 0,
-							"parameter_mmax": 127,
-							"parameter_initial_enable": 0,
-							"parameter_initial": [
-								0
-							],
-							"parameter_invisible": 0
-						}
-					},
-					"annotation": "Mod Osc PWM>OSC 1  \u00b7  CC 36  \u2014  Enables modulation of the duty cycle of the OSC 1 pulse/square waveshape via the modulation oscillator",
-					"hint": "Mod Osc PWM>OSC 1  \u00b7  CC 36  \u2014  Enables modulation of the duty cycle of the OSC 1 pulse/square waveshape via the modulation oscillator"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-334",
-					"maxclass": "comment",
-					"numinlets": 1,
-					"numoutlets": 0,
-					"patching_rect": [
-						58.0,
-						86.0,
-						46.0,
-						11.0
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						58.0,
-						86.0,
-						46.0,
-						11.0
-					],
-					"text": "PWM>OSC 1",
-					"fontsize": 8.0,
-					"fontface": 0,
-					"textjustification": 1,
-					"varname": "Mod_Osc_PWM_OSC_1_L"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-335",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1416.0,
-						488.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend 36"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-336",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 3,
-					"patching_rect": [
-						1656.0,
-						528.0,
-						70.0,
-						22.0
-					],
-					"outlettype": [
-						"",
-						"",
-						""
-					],
-					"text": "ctlin 36"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-337",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1896.0,
-						528.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend set"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-338",
-					"maxclass": "live.dial",
-					"numinlets": 1,
-					"numoutlets": 1,
-					"patching_rect": [
-						111.0,
-						99.0,
-						38.0,
-						38.0
-					],
-					"outlettype": [
-						""
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						111.0,
-						99.0,
-						38.0,
-						38.0
-					],
-					"parameter_enable": 1,
-					"varname": "Mod_Osc_PWM_OSC_2",
-					"saved_attribute_attributes": {
-						"valueof": {
-							"parameter_longname": "Mod Osc PWM>OSC 2",
-							"parameter_shortname": "PWM>OSC 2",
-							"parameter_type": 1,
-							"parameter_mmin": 0,
-							"parameter_mmax": 127,
-							"parameter_initial_enable": 0,
-							"parameter_initial": [
-								0
-							],
-							"parameter_invisible": 0
-						}
-					},
-					"annotation": "Mod Osc PWM>OSC 2  \u00b7  CC 37  \u2014  Enables modulation of the duty cycle of the OSC 2 pulse/square waveshape via the modulation oscillator",
-					"hint": "Mod Osc PWM>OSC 2  \u00b7  CC 37  \u2014  Enables modulation of the duty cycle of the OSC 2 pulse/square waveshape via the modulation oscillator"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-339",
-					"maxclass": "comment",
-					"numinlets": 1,
-					"numoutlets": 0,
-					"patching_rect": [
-						106.0,
-						86.0,
-						46.0,
-						11.0
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						106.0,
-						86.0,
-						46.0,
-						11.0
-					],
-					"text": "PWM>OSC 2",
-					"fontsize": 8.0,
-					"fontface": 0,
-					"textjustification": 1,
-					"varname": "Mod_Osc_PWM_OSC_2_L"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-340",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1416.0,
-						496.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend 37"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-341",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 3,
-					"patching_rect": [
-						1656.0,
-						536.0,
-						70.0,
-						22.0
-					],
-					"outlettype": [
-						"",
-						"",
-						""
-					],
-					"text": "ctlin 37"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-342",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1896.0,
-						536.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend set"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-343",
-					"maxclass": "live.dial",
-					"numinlets": 1,
-					"numoutlets": 1,
-					"patching_rect": [
-						159.0,
-						99.0,
-						38.0,
-						38.0
-					],
-					"outlettype": [
-						""
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						159.0,
-						99.0,
-						38.0,
-						38.0
-					],
-					"parameter_enable": 1,
-					"varname": "Mod_Osc_Filter_Amount",
-					"saved_attribute_attributes": {
-						"valueof": {
-							"parameter_longname": "Mod Osc Filter Amount",
-							"parameter_shortname": "Filter Amt",
-							"parameter_type": 1,
-							"parameter_mmin": 0,
-							"parameter_mmax": 127,
-							"parameter_initial_enable": 0,
-							"parameter_initial": [
-								0
-							],
-							"parameter_invisible": 0
-						}
-					},
-					"annotation": "Mod Osc Filter Amount  \u00b7  CC 39  \u2014  Determines the depth at which cutoff frequency modulation of the filter section occurs based on the FILTER 1 and FILTER 2 routing buttons",
-					"hint": "Mod Osc Filter Amount  \u00b7  CC 39  \u2014  Determines the depth at which cutoff frequency modulation of the filter section occurs based on the FILTER 1 and FILTER 2 routing buttons"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-344",
-					"maxclass": "comment",
-					"numinlets": 1,
-					"numoutlets": 0,
-					"patching_rect": [
-						154.0,
-						86.0,
-						46.0,
-						11.0
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						154.0,
-						86.0,
-						46.0,
-						11.0
-					],
-					"text": "Filter Amt",
-					"fontsize": 8.0,
-					"fontface": 0,
-					"textjustification": 1,
-					"varname": "Mod_Osc_Filter_Amount_L"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-345",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1416.0,
-						512.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend 39"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-346",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 3,
-					"patching_rect": [
-						1656.0,
-						552.0,
-						70.0,
-						22.0
-					],
-					"outlettype": [
-						"",
-						"",
-						""
-					],
-					"text": "ctlin 39"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-347",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1896.0,
-						552.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend set"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-348",
-					"maxclass": "live.dial",
-					"numinlets": 1,
-					"numoutlets": 1,
-					"patching_rect": [
-						207.0,
-						99.0,
-						38.0,
-						38.0
-					],
-					"outlettype": [
-						""
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						207.0,
-						99.0,
-						38.0,
-						38.0
-					],
-					"parameter_enable": 1,
-					"varname": "Mod_Osc_Filter_F1",
-					"saved_attribute_attributes": {
-						"valueof": {
-							"parameter_longname": "Mod Osc Filter>F1",
-							"parameter_shortname": "Filter>F1",
-							"parameter_type": 1,
-							"parameter_mmin": 0,
-							"parameter_mmax": 127,
-							"parameter_initial_enable": 0,
-							"parameter_initial": [
-								0
-							],
-							"parameter_invisible": 0
-						}
-					},
-					"annotation": "Mod Osc Filter>F1  \u00b7  CC 40  \u2014  Enables cutoff frequency modulation of FILTER 1 via the modulation oscillator",
-					"hint": "Mod Osc Filter>F1  \u00b7  CC 40  \u2014  Enables cutoff frequency modulation of FILTER 1 via the modulation oscillator"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-349",
-					"maxclass": "comment",
-					"numinlets": 1,
-					"numoutlets": 0,
-					"patching_rect": [
-						202.0,
-						86.0,
-						46.0,
-						11.0
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						202.0,
-						86.0,
-						46.0,
-						11.0
-					],
-					"text": "Filter>F1",
-					"fontsize": 8.0,
-					"fontface": 0,
-					"textjustification": 1,
-					"varname": "Mod_Osc_Filter_F1_L"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-350",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1416.0,
-						520.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend 40"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-351",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 3,
-					"patching_rect": [
-						1656.0,
-						560.0,
-						70.0,
-						22.0
-					],
-					"outlettype": [
-						"",
-						"",
-						""
-					],
-					"text": "ctlin 40"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-352",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1896.0,
-						560.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend set"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-353",
-					"maxclass": "live.dial",
-					"numinlets": 1,
-					"numoutlets": 1,
-					"patching_rect": [
-						255.0,
-						99.0,
-						38.0,
-						38.0
-					],
-					"outlettype": [
-						""
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						255.0,
-						99.0,
-						38.0,
-						38.0
-					],
-					"parameter_enable": 1,
-					"varname": "Mod_Osc_Filter_F2",
-					"saved_attribute_attributes": {
-						"valueof": {
-							"parameter_longname": "Mod Osc Filter>F2",
-							"parameter_shortname": "Filter>F2",
-							"parameter_type": 1,
-							"parameter_mmin": 0,
-							"parameter_mmax": 127,
-							"parameter_initial_enable": 0,
-							"parameter_initial": [
-								0
-							],
-							"parameter_invisible": 0
-						}
-					},
-					"annotation": "Mod Osc Filter>F2  \u00b7  CC 41  \u2014  Enables cutoff frequency modulation of FILTER 2 via the modulation oscillator",
-					"hint": "Mod Osc Filter>F2  \u00b7  CC 41  \u2014  Enables cutoff frequency modulation of FILTER 2 via the modulation oscillator"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-354",
-					"maxclass": "comment",
-					"numinlets": 1,
-					"numoutlets": 0,
-					"patching_rect": [
-						250.0,
-						86.0,
-						46.0,
-						11.0
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						250.0,
-						86.0,
-						46.0,
-						11.0
-					],
-					"text": "Filter>F2",
-					"fontsize": 8.0,
-					"fontface": 0,
-					"textjustification": 1,
-					"varname": "Mod_Osc_Filter_F2_L"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-355",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1416.0,
-						528.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend 41"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-356",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 3,
-					"patching_rect": [
-						1656.0,
-						568.0,
-						70.0,
-						22.0
-					],
-					"outlettype": [
-						"",
-						"",
-						""
-					],
-					"text": "ctlin 41"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-357",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1896.0,
-						568.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend set"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-358",
-					"maxclass": "live.dial",
-					"numinlets": 1,
-					"numoutlets": 1,
-					"patching_rect": [
-						303.0,
-						99.0,
-						38.0,
-						38.0
-					],
-					"outlettype": [
-						""
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						303.0,
-						99.0,
-						38.0,
-						38.0
-					],
-					"parameter_enable": 1,
-					"varname": "Mod_Osc_VCA_Amount",
-					"saved_attribute_attributes": {
-						"valueof": {
-							"parameter_longname": "Mod Osc VCA Amount",
-							"parameter_shortname": "VCA Amt",
-							"parameter_type": 1,
-							"parameter_mmin": 0,
-							"parameter_mmax": 127,
-							"parameter_initial_enable": 0,
-							"parameter_initial": [
-								0
-							],
-							"parameter_invisible": 0
-						}
-					},
-					"annotation": "Mod Osc VCA Amount  \u00b7  CC 42  \u2014  Determines the depth at which the MODULATION OSCILLATOR will modulate the amplitude of the VCA, providing a tremolo effect",
-					"hint": "Mod Osc VCA Amount  \u00b7  CC 42  \u2014  Determines the depth at which the MODULATION OSCILLATOR will modulate the amplitude of the VCA, providing a tremolo effect"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-359",
-					"maxclass": "comment",
-					"numinlets": 1,
-					"numoutlets": 0,
-					"patching_rect": [
-						298.0,
-						86.0,
-						46.0,
-						11.0
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						298.0,
-						86.0,
-						46.0,
-						11.0
-					],
-					"text": "VCA Amt",
-					"fontsize": 8.0,
-					"fontface": 0,
-					"textjustification": 1,
-					"varname": "Mod_Osc_VCA_Amount_L"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-360",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1416.0,
-						536.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend 42"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-361",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 3,
-					"patching_rect": [
-						1656.0,
-						576.0,
-						70.0,
-						22.0
-					],
-					"outlettype": [
-						"",
-						"",
-						""
-					],
-					"text": "ctlin 42"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-362",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1896.0,
-						576.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend set"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-363",
-					"maxclass": "live.dial",
-					"numinlets": 1,
-					"numoutlets": 1,
-					"patching_rect": [
-						351.0,
-						99.0,
-						38.0,
-						38.0
-					],
-					"outlettype": [
-						""
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						351.0,
-						99.0,
-						38.0,
-						38.0
-					],
-					"parameter_enable": 1,
-					"varname": "Mod_Osc_VCA_Pan",
-					"saved_attribute_attributes": {
-						"valueof": {
-							"parameter_longname": "Mod Osc VCA Pan",
-							"parameter_shortname": "VCA Pan",
-							"parameter_type": 1,
-							"parameter_mmin": 0,
-							"parameter_mmax": 127,
-							"parameter_initial_enable": 0,
-							"parameter_initial": [
-								0
-							],
-							"parameter_invisible": 0
-						}
-					},
-					"annotation": "Mod Osc VCA Pan  \u00b7  CC 43  \u2014  Enables pan-position modulation of a voice in the stereo field by inverting the phase of the modulation oscillator sent to the right VCA",
-					"hint": "Mod Osc VCA Pan  \u00b7  CC 43  \u2014  Enables pan-position modulation of a voice in the stereo field by inverting the phase of the modulation oscillator sent to the right VCA"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-364",
-					"maxclass": "comment",
-					"numinlets": 1,
-					"numoutlets": 0,
-					"patching_rect": [
-						346.0,
-						86.0,
-						46.0,
-						11.0
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						346.0,
-						86.0,
-						46.0,
-						11.0
-					],
-					"text": "VCA Pan",
-					"fontsize": 8.0,
-					"fontface": 0,
-					"textjustification": 1,
-					"varname": "Mod_Osc_VCA_Pan_L"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-365",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1416.0,
-						544.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend 43"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-366",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 3,
-					"patching_rect": [
-						1656.0,
-						584.0,
-						70.0,
-						22.0
-					],
-					"outlettype": [
-						"",
-						"",
-						""
-					],
-					"text": "ctlin 43"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-367",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"patching_rect": [
-						1896.0,
-						584.0,
-						80.0,
-						22.0
-					],
-					"outlettype": [
-						""
-					],
-					"text": "prepend set"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-368",
-					"maxclass": "live.dial",
-					"numinlets": 1,
-					"numoutlets": 1,
-					"patching_rect": [
-						15.0,
-						37.0,
-						38.0,
-						38.0
-					],
-					"outlettype": [
-						""
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						15.0,
-						37.0,
+						45.0,
 						38.0,
 						38.0
 					],
@@ -9125,22 +209,22 @@
 			},
 			{
 				"box": {
-					"id": "obj-369",
+					"id": "obj-6",
 					"maxclass": "comment",
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
 						10.0,
-						24.0,
-						46.0,
-						11.0
+						22.0,
+						62.0,
+						12.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
 						10.0,
-						24.0,
-						46.0,
-						11.0
+						22.0,
+						62.0,
+						12.0
 					],
 					"text": "L1 Rate",
 					"fontsize": 8.0,
@@ -9151,7 +235,7 @@
 			},
 			{
 				"box": {
-					"id": "obj-370",
+					"id": "obj-7",
 					"maxclass": "newobj",
 					"numinlets": 2,
 					"numoutlets": 1,
@@ -9169,7 +253,7 @@
 			},
 			{
 				"box": {
-					"id": "obj-371",
+					"id": "obj-8",
 					"maxclass": "newobj",
 					"numinlets": 1,
 					"numoutlets": 3,
@@ -9189,7 +273,7 @@
 			},
 			{
 				"box": {
-					"id": "obj-372",
+					"id": "obj-9",
 					"maxclass": "newobj",
 					"numinlets": 2,
 					"numoutlets": 1,
@@ -9207,13 +291,13 @@
 			},
 			{
 				"box": {
-					"id": "obj-373",
+					"id": "obj-10",
 					"maxclass": "live.dial",
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						63.0,
-						37.0,
+						87.0,
+						45.0,
 						38.0,
 						38.0
 					],
@@ -9222,8 +306,8 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						63.0,
-						37.0,
+						87.0,
+						45.0,
 						38.0,
 						38.0
 					],
@@ -9249,22 +333,22 @@
 			},
 			{
 				"box": {
-					"id": "obj-374",
+					"id": "obj-11",
 					"maxclass": "comment",
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						58.0,
-						24.0,
-						46.0,
-						11.0
+						74.0,
+						22.0,
+						62.0,
+						12.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						58.0,
-						24.0,
-						46.0,
-						11.0
+						74.0,
+						22.0,
+						62.0,
+						12.0
 					],
 					"text": "L1 Amt",
 					"fontsize": 8.0,
@@ -9275,7 +359,7 @@
 			},
 			{
 				"box": {
-					"id": "obj-375",
+					"id": "obj-12",
 					"maxclass": "newobj",
 					"numinlets": 2,
 					"numoutlets": 1,
@@ -9293,7 +377,7 @@
 			},
 			{
 				"box": {
-					"id": "obj-376",
+					"id": "obj-13",
 					"maxclass": "newobj",
 					"numinlets": 1,
 					"numoutlets": 3,
@@ -9313,7 +397,7 @@
 			},
 			{
 				"box": {
-					"id": "obj-377",
+					"id": "obj-14",
 					"maxclass": "newobj",
 					"numinlets": 2,
 					"numoutlets": 1,
@@ -9331,14 +415,14 @@
 			},
 			{
 				"box": {
-					"id": "obj-378",
+					"id": "obj-15",
 					"maxclass": "live.menu",
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						108.0,
-						37.0,
-						42.0,
+						141.0,
+						55.0,
+						58.0,
 						18.0
 					],
 					"outlettype": [
@@ -9346,9 +430,9 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						108.0,
-						37.0,
-						42.0,
+						141.0,
+						55.0,
+						58.0,
 						18.0
 					],
 					"parameter_enable": 1,
@@ -9387,22 +471,22 @@
 			},
 			{
 				"box": {
-					"id": "obj-379",
+					"id": "obj-16",
 					"maxclass": "comment",
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						106.0,
-						24.0,
-						46.0,
-						11.0
+						138.0,
+						22.0,
+						62.0,
+						12.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						106.0,
-						24.0,
-						46.0,
-						11.0
+						138.0,
+						22.0,
+						62.0,
+						12.0
 					],
 					"text": "L1 Wave",
 					"fontsize": 8.0,
@@ -9413,7 +497,7 @@
 			},
 			{
 				"box": {
-					"id": "obj-380",
+					"id": "obj-17",
 					"maxclass": "newobj",
 					"numinlets": 1,
 					"numoutlets": 1,
@@ -9431,7 +515,7 @@
 			},
 			{
 				"box": {
-					"id": "obj-381",
+					"id": "obj-18",
 					"maxclass": "newobj",
 					"numinlets": 2,
 					"numoutlets": 1,
@@ -9449,7 +533,7 @@
 			},
 			{
 				"box": {
-					"id": "obj-382",
+					"id": "obj-19",
 					"maxclass": "newobj",
 					"numinlets": 1,
 					"numoutlets": 3,
@@ -9469,7 +553,7 @@
 			},
 			{
 				"box": {
-					"id": "obj-383",
+					"id": "obj-20",
 					"maxclass": "newobj",
 					"numinlets": 1,
 					"numoutlets": 1,
@@ -9487,7 +571,7 @@
 			},
 			{
 				"box": {
-					"id": "obj-384",
+					"id": "obj-21",
 					"maxclass": "newobj",
 					"numinlets": 2,
 					"numoutlets": 1,
@@ -9505,13 +589,13 @@
 			},
 			{
 				"box": {
-					"id": "obj-385",
+					"id": "obj-22",
 					"maxclass": "live.dial",
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						159.0,
-						37.0,
+						215.0,
+						45.0,
 						38.0,
 						38.0
 					],
@@ -9520,8 +604,8 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						159.0,
-						37.0,
+						215.0,
+						45.0,
 						38.0,
 						38.0
 					],
@@ -9547,22 +631,22 @@
 			},
 			{
 				"box": {
-					"id": "obj-386",
+					"id": "obj-23",
 					"maxclass": "comment",
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						154.0,
-						24.0,
-						46.0,
-						11.0
+						202.0,
+						22.0,
+						62.0,
+						12.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						154.0,
-						24.0,
-						46.0,
-						11.0
+						202.0,
+						22.0,
+						62.0,
+						12.0
 					],
 					"text": "L2 Rate",
 					"fontsize": 8.0,
@@ -9573,7 +657,7 @@
 			},
 			{
 				"box": {
-					"id": "obj-387",
+					"id": "obj-24",
 					"maxclass": "newobj",
 					"numinlets": 2,
 					"numoutlets": 1,
@@ -9591,7 +675,7 @@
 			},
 			{
 				"box": {
-					"id": "obj-388",
+					"id": "obj-25",
 					"maxclass": "newobj",
 					"numinlets": 1,
 					"numoutlets": 3,
@@ -9611,7 +695,7 @@
 			},
 			{
 				"box": {
-					"id": "obj-389",
+					"id": "obj-26",
 					"maxclass": "newobj",
 					"numinlets": 2,
 					"numoutlets": 1,
@@ -9629,13 +713,13 @@
 			},
 			{
 				"box": {
-					"id": "obj-390",
+					"id": "obj-27",
 					"maxclass": "live.dial",
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						207.0,
-						37.0,
+						279.0,
+						45.0,
 						38.0,
 						38.0
 					],
@@ -9644,8 +728,8 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						207.0,
-						37.0,
+						279.0,
+						45.0,
 						38.0,
 						38.0
 					],
@@ -9671,22 +755,22 @@
 			},
 			{
 				"box": {
-					"id": "obj-391",
+					"id": "obj-28",
 					"maxclass": "comment",
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						202.0,
-						24.0,
-						46.0,
-						11.0
+						266.0,
+						22.0,
+						62.0,
+						12.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						202.0,
-						24.0,
-						46.0,
-						11.0
+						266.0,
+						22.0,
+						62.0,
+						12.0
 					],
 					"text": "L2 Amt",
 					"fontsize": 8.0,
@@ -9697,7 +781,7 @@
 			},
 			{
 				"box": {
-					"id": "obj-392",
+					"id": "obj-29",
 					"maxclass": "newobj",
 					"numinlets": 2,
 					"numoutlets": 1,
@@ -9715,7 +799,7 @@
 			},
 			{
 				"box": {
-					"id": "obj-393",
+					"id": "obj-30",
 					"maxclass": "newobj",
 					"numinlets": 1,
 					"numoutlets": 3,
@@ -9735,7 +819,7 @@
 			},
 			{
 				"box": {
-					"id": "obj-394",
+					"id": "obj-31",
 					"maxclass": "newobj",
 					"numinlets": 2,
 					"numoutlets": 1,
@@ -9753,14 +837,14 @@
 			},
 			{
 				"box": {
-					"id": "obj-395",
+					"id": "obj-32",
 					"maxclass": "live.menu",
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						252.0,
-						37.0,
-						42.0,
+						333.0,
+						55.0,
+						58.0,
 						18.0
 					],
 					"outlettype": [
@@ -9768,9 +852,9 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						252.0,
-						37.0,
-						42.0,
+						333.0,
+						55.0,
+						58.0,
 						18.0
 					],
 					"parameter_enable": 1,
@@ -9809,22 +893,22 @@
 			},
 			{
 				"box": {
-					"id": "obj-396",
+					"id": "obj-33",
 					"maxclass": "comment",
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						250.0,
-						24.0,
-						46.0,
-						11.0
+						330.0,
+						22.0,
+						62.0,
+						12.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						250.0,
-						24.0,
-						46.0,
-						11.0
+						330.0,
+						22.0,
+						62.0,
+						12.0
 					],
 					"text": "L2 Wave",
 					"fontsize": 8.0,
@@ -9835,7 +919,7 @@
 			},
 			{
 				"box": {
-					"id": "obj-397",
+					"id": "obj-34",
 					"maxclass": "newobj",
 					"numinlets": 1,
 					"numoutlets": 1,
@@ -9853,7 +937,7 @@
 			},
 			{
 				"box": {
-					"id": "obj-398",
+					"id": "obj-35",
 					"maxclass": "newobj",
 					"numinlets": 2,
 					"numoutlets": 1,
@@ -9871,7 +955,7 @@
 			},
 			{
 				"box": {
-					"id": "obj-399",
+					"id": "obj-36",
 					"maxclass": "newobj",
 					"numinlets": 1,
 					"numoutlets": 3,
@@ -9891,7 +975,7 @@
 			},
 			{
 				"box": {
-					"id": "obj-400",
+					"id": "obj-37",
 					"maxclass": "newobj",
 					"numinlets": 1,
 					"numoutlets": 1,
@@ -9909,7 +993,7 @@
 			},
 			{
 				"box": {
-					"id": "obj-401",
+					"id": "obj-38",
 					"maxclass": "newobj",
 					"numinlets": 2,
 					"numoutlets": 1,
@@ -9927,13 +1011,13 @@
 			},
 			{
 				"box": {
-					"id": "obj-402",
+					"id": "obj-39",
 					"maxclass": "live.dial",
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						15.0,
-						99.0,
+						23.0,
+						117.0,
 						38.0,
 						38.0
 					],
@@ -9942,8 +1026,8 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						15.0,
-						99.0,
+						23.0,
+						117.0,
 						38.0,
 						38.0
 					],
@@ -9969,22 +1053,22 @@
 			},
 			{
 				"box": {
-					"id": "obj-403",
+					"id": "obj-40",
 					"maxclass": "comment",
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
 						10.0,
-						86.0,
-						46.0,
-						11.0
+						94.0,
+						62.0,
+						12.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
 						10.0,
-						86.0,
-						46.0,
-						11.0
+						94.0,
+						62.0,
+						12.0
 					],
 					"text": "P.LFO Rate",
 					"fontsize": 8.0,
@@ -9995,7 +1079,7 @@
 			},
 			{
 				"box": {
-					"id": "obj-404",
+					"id": "obj-41",
 					"maxclass": "newobj",
 					"numinlets": 2,
 					"numoutlets": 1,
@@ -10013,7 +1097,7 @@
 			},
 			{
 				"box": {
-					"id": "obj-405",
+					"id": "obj-42",
 					"maxclass": "newobj",
 					"numinlets": 1,
 					"numoutlets": 3,
@@ -10033,7 +1117,7 @@
 			},
 			{
 				"box": {
-					"id": "obj-406",
+					"id": "obj-43",
 					"maxclass": "newobj",
 					"numinlets": 2,
 					"numoutlets": 1,
@@ -10051,13 +1135,13 @@
 			},
 			{
 				"box": {
-					"id": "obj-407",
+					"id": "obj-44",
 					"maxclass": "live.dial",
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						63.0,
-						99.0,
+						87.0,
+						117.0,
 						38.0,
 						38.0
 					],
@@ -10066,8 +1150,8 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						63.0,
-						99.0,
+						87.0,
+						117.0,
 						38.0,
 						38.0
 					],
@@ -10093,22 +1177,22 @@
 			},
 			{
 				"box": {
-					"id": "obj-408",
+					"id": "obj-45",
 					"maxclass": "comment",
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						58.0,
-						86.0,
-						46.0,
-						11.0
+						74.0,
+						94.0,
+						62.0,
+						12.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						58.0,
-						86.0,
-						46.0,
-						11.0
+						74.0,
+						94.0,
+						62.0,
+						12.0
 					],
 					"text": "P.LFO Shape",
 					"fontsize": 8.0,
@@ -10119,7 +1203,7 @@
 			},
 			{
 				"box": {
-					"id": "obj-409",
+					"id": "obj-46",
 					"maxclass": "newobj",
 					"numinlets": 2,
 					"numoutlets": 1,
@@ -10137,7 +1221,7 @@
 			},
 			{
 				"box": {
-					"id": "obj-410",
+					"id": "obj-47",
 					"maxclass": "newobj",
 					"numinlets": 1,
 					"numoutlets": 3,
@@ -10157,7 +1241,7 @@
 			},
 			{
 				"box": {
-					"id": "obj-411",
+					"id": "obj-48",
 					"maxclass": "newobj",
 					"numinlets": 2,
 					"numoutlets": 1,
@@ -10175,13 +1259,13 @@
 			},
 			{
 				"box": {
-					"id": "obj-412",
+					"id": "obj-49",
 					"maxclass": "live.dial",
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						111.0,
-						99.0,
+						151.0,
+						117.0,
 						38.0,
 						38.0
 					],
@@ -10190,8 +1274,8 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						111.0,
-						99.0,
+						151.0,
+						117.0,
 						38.0,
 						38.0
 					],
@@ -10217,22 +1301,22 @@
 			},
 			{
 				"box": {
-					"id": "obj-413",
+					"id": "obj-50",
 					"maxclass": "comment",
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						106.0,
-						86.0,
-						46.0,
-						11.0
+						138.0,
+						94.0,
+						62.0,
+						12.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						106.0,
-						86.0,
-						46.0,
-						11.0
+						138.0,
+						94.0,
+						62.0,
+						12.0
 					],
 					"text": "P.LFO Amt",
 					"fontsize": 8.0,
@@ -10243,7 +1327,7 @@
 			},
 			{
 				"box": {
-					"id": "obj-414",
+					"id": "obj-51",
 					"maxclass": "newobj",
 					"numinlets": 2,
 					"numoutlets": 1,
@@ -10261,7 +1345,7 @@
 			},
 			{
 				"box": {
-					"id": "obj-415",
+					"id": "obj-52",
 					"maxclass": "newobj",
 					"numinlets": 1,
 					"numoutlets": 3,
@@ -10281,7 +1365,7 @@
 			},
 			{
 				"box": {
-					"id": "obj-416",
+					"id": "obj-53",
 					"maxclass": "newobj",
 					"numinlets": 2,
 					"numoutlets": 1,
@@ -10299,13 +1383,13 @@
 			},
 			{
 				"box": {
-					"id": "obj-417",
+					"id": "obj-54",
 					"maxclass": "live.toggle",
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						169.0,
-						99.0,
+						225.0,
+						127.0,
 						18.0,
 						18.0
 					],
@@ -10314,8 +1398,8 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						169.0,
-						99.0,
+						225.0,
+						127.0,
 						18.0,
 						18.0
 					],
@@ -10349,22 +1433,22 @@
 			},
 			{
 				"box": {
-					"id": "obj-418",
+					"id": "obj-55",
 					"maxclass": "comment",
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						154.0,
-						86.0,
-						46.0,
-						11.0
+						202.0,
+						94.0,
+						62.0,
+						12.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						154.0,
-						86.0,
-						46.0,
-						11.0
+						202.0,
+						94.0,
+						62.0,
+						12.0
 					],
 					"text": "P.LFO>OSC 1",
 					"fontsize": 8.0,
@@ -10375,7 +1459,7 @@
 			},
 			{
 				"box": {
-					"id": "obj-419",
+					"id": "obj-56",
 					"maxclass": "newobj",
 					"numinlets": 2,
 					"numoutlets": 1,
@@ -10393,7 +1477,7 @@
 			},
 			{
 				"box": {
-					"id": "obj-420",
+					"id": "obj-57",
 					"maxclass": "newobj",
 					"numinlets": 2,
 					"numoutlets": 1,
@@ -10411,7 +1495,7 @@
 			},
 			{
 				"box": {
-					"id": "obj-421",
+					"id": "obj-58",
 					"maxclass": "newobj",
 					"numinlets": 1,
 					"numoutlets": 3,
@@ -10431,7 +1515,7 @@
 			},
 			{
 				"box": {
-					"id": "obj-422",
+					"id": "obj-59",
 					"maxclass": "newobj",
 					"numinlets": 2,
 					"numoutlets": 1,
@@ -10449,7 +1533,7 @@
 			},
 			{
 				"box": {
-					"id": "obj-423",
+					"id": "obj-60",
 					"maxclass": "newobj",
 					"numinlets": 2,
 					"numoutlets": 1,
@@ -10467,13 +1551,13 @@
 			},
 			{
 				"box": {
-					"id": "obj-424",
+					"id": "obj-61",
 					"maxclass": "live.toggle",
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						217.0,
-						99.0,
+						289.0,
+						127.0,
 						18.0,
 						18.0
 					],
@@ -10482,8 +1566,8 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						217.0,
-						99.0,
+						289.0,
+						127.0,
 						18.0,
 						18.0
 					],
@@ -10517,22 +1601,22 @@
 			},
 			{
 				"box": {
-					"id": "obj-425",
+					"id": "obj-62",
 					"maxclass": "comment",
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						202.0,
-						86.0,
-						46.0,
-						11.0
+						266.0,
+						94.0,
+						62.0,
+						12.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						202.0,
-						86.0,
-						46.0,
-						11.0
+						266.0,
+						94.0,
+						62.0,
+						12.0
 					],
 					"text": "P.LFO>OSC 2",
 					"fontsize": 8.0,
@@ -10543,7 +1627,7 @@
 			},
 			{
 				"box": {
-					"id": "obj-426",
+					"id": "obj-63",
 					"maxclass": "newobj",
 					"numinlets": 2,
 					"numoutlets": 1,
@@ -10561,7 +1645,7 @@
 			},
 			{
 				"box": {
-					"id": "obj-427",
+					"id": "obj-64",
 					"maxclass": "newobj",
 					"numinlets": 2,
 					"numoutlets": 1,
@@ -10579,7 +1663,7 @@
 			},
 			{
 				"box": {
-					"id": "obj-428",
+					"id": "obj-65",
 					"maxclass": "newobj",
 					"numinlets": 1,
 					"numoutlets": 3,
@@ -10599,7 +1683,7 @@
 			},
 			{
 				"box": {
-					"id": "obj-429",
+					"id": "obj-66",
 					"maxclass": "newobj",
 					"numinlets": 2,
 					"numoutlets": 1,
@@ -10617,7 +1701,7 @@
 			},
 			{
 				"box": {
-					"id": "obj-430",
+					"id": "obj-67",
 					"maxclass": "newobj",
 					"numinlets": 2,
 					"numoutlets": 1,
@@ -10635,13 +1719,13 @@
 			},
 			{
 				"box": {
-					"id": "obj-431",
+					"id": "obj-68",
 					"maxclass": "live.toggle",
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						265.0,
-						99.0,
+						353.0,
+						127.0,
 						18.0,
 						18.0
 					],
@@ -10650,8 +1734,8 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						265.0,
-						99.0,
+						353.0,
+						127.0,
 						18.0,
 						18.0
 					],
@@ -10660,7 +1744,7 @@
 					"saved_attribute_attributes": {
 						"valueof": {
 							"parameter_longname": "Pitch LFO>Mod Osc",
-							"parameter_shortname": "P.LFO>Mod Osc",
+							"parameter_shortname": "P.LFO>Mod",
 							"parameter_type": 2,
 							"parameter_mmin": 0,
 							"parameter_mmax": 1,
@@ -10685,24 +1769,24 @@
 			},
 			{
 				"box": {
-					"id": "obj-432",
+					"id": "obj-69",
 					"maxclass": "comment",
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						250.0,
-						86.0,
-						46.0,
-						11.0
+						330.0,
+						94.0,
+						62.0,
+						12.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						250.0,
-						86.0,
-						46.0,
-						11.0
+						330.0,
+						94.0,
+						62.0,
+						12.0
 					],
-					"text": "P.LFO>Mod Osc",
+					"text": "P.LFO>Mod",
 					"fontsize": 8.0,
 					"fontface": 0,
 					"textjustification": 1,
@@ -10711,7 +1795,7 @@
 			},
 			{
 				"box": {
-					"id": "obj-433",
+					"id": "obj-70",
 					"maxclass": "newobj",
 					"numinlets": 2,
 					"numoutlets": 1,
@@ -10729,7 +1813,7 @@
 			},
 			{
 				"box": {
-					"id": "obj-434",
+					"id": "obj-71",
 					"maxclass": "newobj",
 					"numinlets": 2,
 					"numoutlets": 1,
@@ -10747,7 +1831,7 @@
 			},
 			{
 				"box": {
-					"id": "obj-435",
+					"id": "obj-72",
 					"maxclass": "newobj",
 					"numinlets": 1,
 					"numoutlets": 3,
@@ -10767,7 +1851,7 @@
 			},
 			{
 				"box": {
-					"id": "obj-436",
+					"id": "obj-73",
 					"maxclass": "newobj",
 					"numinlets": 2,
 					"numoutlets": 1,
@@ -10785,7 +1869,7 @@
 			},
 			{
 				"box": {
-					"id": "obj-437",
+					"id": "obj-74",
 					"maxclass": "newobj",
 					"numinlets": 2,
 					"numoutlets": 1,
@@ -10803,13 +1887,13 @@
 			},
 			{
 				"box": {
-					"id": "obj-438",
+					"id": "obj-75",
 					"maxclass": "live.toggle",
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						313.0,
-						99.0,
+						417.0,
+						127.0,
 						18.0,
 						18.0
 					],
@@ -10818,8 +1902,8 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						313.0,
-						99.0,
+						417.0,
+						127.0,
 						18.0,
 						18.0
 					],
@@ -10853,22 +1937,22 @@
 			},
 			{
 				"box": {
-					"id": "obj-439",
+					"id": "obj-76",
 					"maxclass": "comment",
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						298.0,
-						86.0,
-						46.0,
-						11.0
+						394.0,
+						94.0,
+						62.0,
+						12.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						298.0,
-						86.0,
-						46.0,
-						11.0
+						394.0,
+						94.0,
+						62.0,
+						12.0
 					],
 					"text": "P.LFO>Detune",
 					"fontsize": 8.0,
@@ -10879,7 +1963,7 @@
 			},
 			{
 				"box": {
-					"id": "obj-440",
+					"id": "obj-77",
 					"maxclass": "newobj",
 					"numinlets": 2,
 					"numoutlets": 1,
@@ -10897,7 +1981,7 @@
 			},
 			{
 				"box": {
-					"id": "obj-441",
+					"id": "obj-78",
 					"maxclass": "newobj",
 					"numinlets": 2,
 					"numoutlets": 1,
@@ -10915,7 +1999,7 @@
 			},
 			{
 				"box": {
-					"id": "obj-442",
+					"id": "obj-79",
 					"maxclass": "newobj",
 					"numinlets": 1,
 					"numoutlets": 3,
@@ -10935,7 +2019,7 @@
 			},
 			{
 				"box": {
-					"id": "obj-443",
+					"id": "obj-80",
 					"maxclass": "newobj",
 					"numinlets": 2,
 					"numoutlets": 1,
@@ -10953,7 +2037,7 @@
 			},
 			{
 				"box": {
-					"id": "obj-444",
+					"id": "obj-81",
 					"maxclass": "newobj",
 					"numinlets": 2,
 					"numoutlets": 1,
@@ -10971,13 +2055,13 @@
 			},
 			{
 				"box": {
-					"id": "obj-445",
+					"id": "obj-82",
 					"maxclass": "live.dial",
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						15.0,
-						37.0,
+						23.0,
+						45.0,
 						38.0,
 						38.0
 					],
@@ -10986,8 +2070,8924 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						15.0,
-						37.0,
+						23.0,
+						45.0,
+						38.0,
+						38.0
+					],
+					"parameter_enable": 1,
+					"varname": "Mod_Osc_Frequency",
+					"saved_attribute_attributes": {
+						"valueof": {
+							"parameter_longname": "Mod Osc Frequency",
+							"parameter_shortname": "Freq",
+							"parameter_type": 1,
+							"parameter_mmin": 0,
+							"parameter_mmax": 127,
+							"parameter_initial_enable": 0,
+							"parameter_initial": [
+								0
+							],
+							"parameter_invisible": 0
+						}
+					},
+					"annotation": "Mod Osc Frequency  \u00b7  CC 25  \u2014  Controls the frequency of the modulation oscillator",
+					"hint": "Mod Osc Frequency  \u00b7  CC 25  \u2014  Controls the frequency of the modulation oscillator"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-83",
+					"maxclass": "comment",
+					"numinlets": 1,
+					"numoutlets": 0,
+					"patching_rect": [
+						10.0,
+						22.0,
+						62.0,
+						12.0
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						10.0,
+						22.0,
+						62.0,
+						12.0
+					],
+					"text": "Freq",
+					"fontsize": 8.0,
+					"fontface": 0,
+					"textjustification": 1,
+					"varname": "Mod_Osc_Frequency_L"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-84",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1416.0,
+						400.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend 25"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-85",
+					"maxclass": "newobj",
+					"numinlets": 1,
+					"numoutlets": 3,
+					"patching_rect": [
+						1656.0,
+						440.0,
+						70.0,
+						22.0
+					],
+					"outlettype": [
+						"",
+						"",
+						""
+					],
+					"text": "ctlin 25"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-86",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1896.0,
+						440.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend set"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-87",
+					"maxclass": "live.menu",
+					"numinlets": 1,
+					"numoutlets": 1,
+					"patching_rect": [
+						77.0,
+						55.0,
+						58.0,
+						18.0
+					],
+					"outlettype": [
+						""
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						77.0,
+						55.0,
+						58.0,
+						18.0
+					],
+					"parameter_enable": 1,
+					"varname": "Mod_Osc_Waveform",
+					"saved_attribute_attributes": {
+						"valueof": {
+							"parameter_longname": "Mod Osc Waveform",
+							"parameter_shortname": "Wave",
+							"parameter_type": 2,
+							"parameter_mmin": 0,
+							"parameter_mmax": 4,
+							"parameter_initial_enable": 0,
+							"parameter_initial": [
+								0
+							],
+							"parameter_invisible": 0,
+							"parameter_enum": [
+								"Sine",
+								"Saw",
+								"Ramp",
+								"Square",
+								"Noise"
+							],
+							"parameter_range": [
+								"Sine",
+								"Saw",
+								"Ramp",
+								"Square",
+								"Noise"
+							]
+						}
+					},
+					"annotation": "Mod Osc Waveform  \u00b7  CC 28  \u2014  Selects the waveform of the modulation oscillator  (0-24: Sine; 25-49: Sawtooth; 50-74: Ramp; 75-99: Square; 100-127: Noise)",
+					"hint": "Mod Osc Waveform  \u00b7  CC 28  \u2014  Selects the waveform of the modulation oscillator  (0-24: Sine; 25-49: Sawtooth; 50-74: Ramp; 75-99: Square; 100-127: Noise)"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-88",
+					"maxclass": "comment",
+					"numinlets": 1,
+					"numoutlets": 0,
+					"patching_rect": [
+						74.0,
+						22.0,
+						62.0,
+						12.0
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						74.0,
+						22.0,
+						62.0,
+						12.0
+					],
+					"text": "Wave",
+					"fontsize": 8.0,
+					"fontface": 0,
+					"textjustification": 1,
+					"varname": "Mod_Osc_Waveform_L"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-89",
+					"maxclass": "newobj",
+					"numinlets": 1,
+					"numoutlets": 1,
+					"patching_rect": [
+						1276.0,
+						424.0,
+						110.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "expr $i1 * 26 + 13"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-90",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1416.0,
+						424.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend 28"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-91",
+					"maxclass": "newobj",
+					"numinlets": 1,
+					"numoutlets": 3,
+					"patching_rect": [
+						1656.0,
+						464.0,
+						70.0,
+						22.0
+					],
+					"outlettype": [
+						"",
+						"",
+						""
+					],
+					"text": "ctlin 28"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-92",
+					"maxclass": "newobj",
+					"numinlets": 1,
+					"numoutlets": 1,
+					"patching_rect": [
+						1736.0,
+						464.0,
+						150.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "expr ($i1 > 24) + ($i1 > 49) + ($i1 > 74) + ($i1 > 99)"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-93",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1896.0,
+						464.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend set"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-94",
+					"maxclass": "live.toggle",
+					"numinlets": 1,
+					"numoutlets": 1,
+					"patching_rect": [
+						161.0,
+						55.0,
+						18.0,
+						18.0
+					],
+					"outlettype": [
+						""
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						161.0,
+						55.0,
+						18.0,
+						18.0
+					],
+					"parameter_enable": 1,
+					"varname": "Mod_Osc_Audio_Rate",
+					"saved_attribute_attributes": {
+						"valueof": {
+							"parameter_longname": "Mod Osc Audio Rate",
+							"parameter_shortname": "Audio Rate",
+							"parameter_type": 2,
+							"parameter_mmin": 0,
+							"parameter_mmax": 1,
+							"parameter_initial_enable": 0,
+							"parameter_initial": [
+								0
+							],
+							"parameter_invisible": 0,
+							"parameter_enum": [
+								"off",
+								"on"
+							],
+							"parameter_range": [
+								"off",
+								"on"
+							]
+						}
+					},
+					"annotation": "Mod Osc Audio Rate  \u00b7  CC 26  \u2014  Sets the modulation oscillator to operate at audio-rate frequencies  (0-63: Off; 64-127: On)",
+					"hint": "Mod Osc Audio Rate  \u00b7  CC 26  \u2014  Sets the modulation oscillator to operate at audio-rate frequencies  (0-63: Off; 64-127: On)"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-95",
+					"maxclass": "comment",
+					"numinlets": 1,
+					"numoutlets": 0,
+					"patching_rect": [
+						138.0,
+						22.0,
+						62.0,
+						12.0
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						138.0,
+						22.0,
+						62.0,
+						12.0
+					],
+					"text": "Audio Rate",
+					"fontsize": 8.0,
+					"fontface": 0,
+					"textjustification": 1,
+					"varname": "Mod_Osc_Audio_Rate_L"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-96",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1276.0,
+						408.0,
+						50.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "* 127"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-97",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1416.0,
+						408.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend 26"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-98",
+					"maxclass": "newobj",
+					"numinlets": 1,
+					"numoutlets": 3,
+					"patching_rect": [
+						1656.0,
+						448.0,
+						70.0,
+						22.0
+					],
+					"outlettype": [
+						"",
+						"",
+						""
+					],
+					"text": "ctlin 26"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-99",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1736.0,
+						448.0,
+						50.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": ">= 64"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-100",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1896.0,
+						448.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend set"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-101",
+					"maxclass": "live.toggle",
+					"numinlets": 1,
+					"numoutlets": 1,
+					"patching_rect": [
+						225.0,
+						55.0,
+						18.0,
+						18.0
+					],
+					"outlettype": [
+						""
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						225.0,
+						55.0,
+						18.0,
+						18.0
+					],
+					"parameter_enable": 1,
+					"varname": "Mod_Osc_KB_Track",
+					"saved_attribute_attributes": {
+						"valueof": {
+							"parameter_longname": "Mod Osc KB Track",
+							"parameter_shortname": "KB Track",
+							"parameter_type": 2,
+							"parameter_mmin": 0,
+							"parameter_mmax": 1,
+							"parameter_initial_enable": 0,
+							"parameter_initial": [
+								0
+							],
+							"parameter_invisible": 0,
+							"parameter_enum": [
+								"off",
+								"on"
+							],
+							"parameter_range": [
+								"off",
+								"on"
+							]
+						}
+					},
+					"annotation": "Mod Osc KB Track  \u00b7  CC 27  \u2014  Enables keyboard control of the frequency of the modulation oscillator  (0-63: Off; 64-127: On)",
+					"hint": "Mod Osc KB Track  \u00b7  CC 27  \u2014  Enables keyboard control of the frequency of the modulation oscillator  (0-63: Off; 64-127: On)"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-102",
+					"maxclass": "comment",
+					"numinlets": 1,
+					"numoutlets": 0,
+					"patching_rect": [
+						202.0,
+						22.0,
+						62.0,
+						12.0
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						202.0,
+						22.0,
+						62.0,
+						12.0
+					],
+					"text": "KB Track",
+					"fontsize": 8.0,
+					"fontface": 0,
+					"textjustification": 1,
+					"varname": "Mod_Osc_KB_Track_L"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-103",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1276.0,
+						416.0,
+						50.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "* 127"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-104",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1416.0,
+						416.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend 27"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-105",
+					"maxclass": "newobj",
+					"numinlets": 1,
+					"numoutlets": 3,
+					"patching_rect": [
+						1656.0,
+						456.0,
+						70.0,
+						22.0
+					],
+					"outlettype": [
+						"",
+						"",
+						""
+					],
+					"text": "ctlin 27"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-106",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1736.0,
+						456.0,
+						50.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": ">= 64"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-107",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1896.0,
+						456.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend set"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-108",
+					"maxclass": "live.toggle",
+					"numinlets": 1,
+					"numoutlets": 1,
+					"patching_rect": [
+						289.0,
+						55.0,
+						18.0,
+						18.0
+					],
+					"outlettype": [
+						""
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						289.0,
+						55.0,
+						18.0,
+						18.0
+					],
+					"parameter_enable": 1,
+					"varname": "Mod_Osc_KB_Reset",
+					"saved_attribute_attributes": {
+						"valueof": {
+							"parameter_longname": "Mod Osc KB Reset",
+							"parameter_shortname": "KB Rst",
+							"parameter_type": 2,
+							"parameter_mmin": 0,
+							"parameter_mmax": 1,
+							"parameter_initial_enable": 0,
+							"parameter_initial": [
+								0
+							],
+							"parameter_invisible": 0,
+							"parameter_enum": [
+								"off",
+								"on"
+							],
+							"parameter_range": [
+								"off",
+								"on"
+							]
+						}
+					},
+					"annotation": "Mod Osc KB Reset  \u00b7  CC 29  \u2014  Resets the LFO to its starting point in its wave cycle every time a key is pressed  (0-63: Off; 64-127: On)",
+					"hint": "Mod Osc KB Reset  \u00b7  CC 29  \u2014  Resets the LFO to its starting point in its wave cycle every time a key is pressed  (0-63: Off; 64-127: On)"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-109",
+					"maxclass": "comment",
+					"numinlets": 1,
+					"numoutlets": 0,
+					"patching_rect": [
+						266.0,
+						22.0,
+						62.0,
+						12.0
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						266.0,
+						22.0,
+						62.0,
+						12.0
+					],
+					"text": "KB Rst",
+					"fontsize": 8.0,
+					"fontface": 0,
+					"textjustification": 1,
+					"varname": "Mod_Osc_KB_Reset_L"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-110",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1276.0,
+						432.0,
+						50.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "* 127"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-111",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1416.0,
+						432.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend 29"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-112",
+					"maxclass": "newobj",
+					"numinlets": 1,
+					"numoutlets": 3,
+					"patching_rect": [
+						1656.0,
+						472.0,
+						70.0,
+						22.0
+					],
+					"outlettype": [
+						"",
+						"",
+						""
+					],
+					"text": "ctlin 29"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-113",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1736.0,
+						472.0,
+						50.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": ">= 64"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-114",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1896.0,
+						472.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend set"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-115",
+					"maxclass": "live.toggle",
+					"numinlets": 1,
+					"numoutlets": 1,
+					"patching_rect": [
+						353.0,
+						55.0,
+						18.0,
+						18.0
+					],
+					"outlettype": [
+						""
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						353.0,
+						55.0,
+						18.0,
+						18.0
+					],
+					"parameter_enable": 1,
+					"varname": "Mod_Osc_Unipolar",
+					"saved_attribute_attributes": {
+						"valueof": {
+							"parameter_longname": "Mod Osc Unipolar",
+							"parameter_shortname": "Uni",
+							"parameter_type": 2,
+							"parameter_mmin": 0,
+							"parameter_mmax": 1,
+							"parameter_initial_enable": 0,
+							"parameter_initial": [
+								0
+							],
+							"parameter_invisible": 0,
+							"parameter_enum": [
+								"off",
+								"on"
+							],
+							"parameter_range": [
+								"off",
+								"on"
+							]
+						}
+					},
+					"annotation": "Mod Osc Unipolar  \u00b7  CC 30  \u2014  Enabled unipolar mode for the modulation oscillator  (0-63: Off; 64-127: On)",
+					"hint": "Mod Osc Unipolar  \u00b7  CC 30  \u2014  Enabled unipolar mode for the modulation oscillator  (0-63: Off; 64-127: On)"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-116",
+					"maxclass": "comment",
+					"numinlets": 1,
+					"numoutlets": 0,
+					"patching_rect": [
+						330.0,
+						22.0,
+						62.0,
+						12.0
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						330.0,
+						22.0,
+						62.0,
+						12.0
+					],
+					"text": "Uni",
+					"fontsize": 8.0,
+					"fontface": 0,
+					"textjustification": 1,
+					"varname": "Mod_Osc_Unipolar_L"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-117",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1276.0,
+						440.0,
+						50.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "* 127"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-118",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1416.0,
+						440.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend 30"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-119",
+					"maxclass": "newobj",
+					"numinlets": 1,
+					"numoutlets": 3,
+					"patching_rect": [
+						1656.0,
+						480.0,
+						70.0,
+						22.0
+					],
+					"outlettype": [
+						"",
+						"",
+						""
+					],
+					"text": "ctlin 30"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-120",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1736.0,
+						480.0,
+						50.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": ">= 64"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-121",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1896.0,
+						480.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend set"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-122",
+					"maxclass": "live.dial",
+					"numinlets": 1,
+					"numoutlets": 1,
+					"patching_rect": [
+						407.0,
+						45.0,
+						38.0,
+						38.0
+					],
+					"outlettype": [
+						""
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						407.0,
+						45.0,
+						38.0,
+						38.0
+					],
+					"parameter_enable": 1,
+					"varname": "Mod_Osc_Pitch_Amount",
+					"saved_attribute_attributes": {
+						"valueof": {
+							"parameter_longname": "Mod Osc Pitch Amount",
+							"parameter_shortname": "Pitch Amt",
+							"parameter_type": 1,
+							"parameter_mmin": 0,
+							"parameter_mmax": 127,
+							"parameter_initial_enable": 0,
+							"parameter_initial": [
+								0
+							],
+							"parameter_invisible": 0
+						}
+					},
+					"annotation": "Mod Osc Pitch Amount  \u00b7  CC 31  \u2014  Determines the depth at which frequency modulation of the oscillator section occurs based on the OSC 1 and OSC 2 routing buttons",
+					"hint": "Mod Osc Pitch Amount  \u00b7  CC 31  \u2014  Determines the depth at which frequency modulation of the oscillator section occurs based on the OSC 1 and OSC 2 routing buttons"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-123",
+					"maxclass": "comment",
+					"numinlets": 1,
+					"numoutlets": 0,
+					"patching_rect": [
+						394.0,
+						22.0,
+						62.0,
+						12.0
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						394.0,
+						22.0,
+						62.0,
+						12.0
+					],
+					"text": "Pitch Amt",
+					"fontsize": 8.0,
+					"fontface": 0,
+					"textjustification": 1,
+					"varname": "Mod_Osc_Pitch_Amount_L"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-124",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1416.0,
+						448.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend 31"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-125",
+					"maxclass": "newobj",
+					"numinlets": 1,
+					"numoutlets": 3,
+					"patching_rect": [
+						1656.0,
+						488.0,
+						70.0,
+						22.0
+					],
+					"outlettype": [
+						"",
+						"",
+						""
+					],
+					"text": "ctlin 31"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-126",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1896.0,
+						488.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend set"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-127",
+					"maxclass": "live.dial",
+					"numinlets": 1,
+					"numoutlets": 1,
+					"patching_rect": [
+						471.0,
+						45.0,
+						38.0,
+						38.0
+					],
+					"outlettype": [
+						""
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						471.0,
+						45.0,
+						38.0,
+						38.0
+					],
+					"parameter_enable": 1,
+					"varname": "Mod_Osc_Pitch_OSC_1",
+					"saved_attribute_attributes": {
+						"valueof": {
+							"parameter_longname": "Mod Osc Pitch>OSC 1",
+							"parameter_shortname": "Pitch>OSC 1",
+							"parameter_type": 1,
+							"parameter_mmin": 0,
+							"parameter_mmax": 127,
+							"parameter_initial_enable": 0,
+							"parameter_initial": [
+								0
+							],
+							"parameter_invisible": 0
+						}
+					},
+					"annotation": "Mod Osc Pitch>OSC 1  \u00b7  CC 33  \u2014  Enables frequency modulation of OSC 1 via the modulation oscillator",
+					"hint": "Mod Osc Pitch>OSC 1  \u00b7  CC 33  \u2014  Enables frequency modulation of OSC 1 via the modulation oscillator"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-128",
+					"maxclass": "comment",
+					"numinlets": 1,
+					"numoutlets": 0,
+					"patching_rect": [
+						458.0,
+						22.0,
+						62.0,
+						12.0
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						458.0,
+						22.0,
+						62.0,
+						12.0
+					],
+					"text": "Pitch>OSC 1",
+					"fontsize": 8.0,
+					"fontface": 0,
+					"textjustification": 1,
+					"varname": "Mod_Osc_Pitch_OSC_1_L"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-129",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1416.0,
+						464.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend 33"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-130",
+					"maxclass": "newobj",
+					"numinlets": 1,
+					"numoutlets": 3,
+					"patching_rect": [
+						1656.0,
+						504.0,
+						70.0,
+						22.0
+					],
+					"outlettype": [
+						"",
+						"",
+						""
+					],
+					"text": "ctlin 33"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-131",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1896.0,
+						504.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend set"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-132",
+					"maxclass": "live.dial",
+					"numinlets": 1,
+					"numoutlets": 1,
+					"patching_rect": [
+						535.0,
+						45.0,
+						38.0,
+						38.0
+					],
+					"outlettype": [
+						""
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						535.0,
+						45.0,
+						38.0,
+						38.0
+					],
+					"parameter_enable": 1,
+					"varname": "Mod_Osc_Pitch_OSC_2",
+					"saved_attribute_attributes": {
+						"valueof": {
+							"parameter_longname": "Mod Osc Pitch>OSC 2",
+							"parameter_shortname": "Pitch>OSC 2",
+							"parameter_type": 1,
+							"parameter_mmin": 0,
+							"parameter_mmax": 127,
+							"parameter_initial_enable": 0,
+							"parameter_initial": [
+								0
+							],
+							"parameter_invisible": 0
+						}
+					},
+					"annotation": "Mod Osc Pitch>OSC 2  \u00b7  CC 34  \u2014  Enables frequency modulation of OSC 2 via the modulation oscillator",
+					"hint": "Mod Osc Pitch>OSC 2  \u00b7  CC 34  \u2014  Enables frequency modulation of OSC 2 via the modulation oscillator"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-133",
+					"maxclass": "comment",
+					"numinlets": 1,
+					"numoutlets": 0,
+					"patching_rect": [
+						522.0,
+						22.0,
+						62.0,
+						12.0
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						522.0,
+						22.0,
+						62.0,
+						12.0
+					],
+					"text": "Pitch>OSC 2",
+					"fontsize": 8.0,
+					"fontface": 0,
+					"textjustification": 1,
+					"varname": "Mod_Osc_Pitch_OSC_2_L"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-134",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1416.0,
+						472.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend 34"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-135",
+					"maxclass": "newobj",
+					"numinlets": 1,
+					"numoutlets": 3,
+					"patching_rect": [
+						1656.0,
+						512.0,
+						70.0,
+						22.0
+					],
+					"outlettype": [
+						"",
+						"",
+						""
+					],
+					"text": "ctlin 34"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-136",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1896.0,
+						512.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend set"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-137",
+					"maxclass": "live.dial",
+					"numinlets": 1,
+					"numoutlets": 1,
+					"patching_rect": [
+						23.0,
+						117.0,
+						38.0,
+						38.0
+					],
+					"outlettype": [
+						""
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						23.0,
+						117.0,
+						38.0,
+						38.0
+					],
+					"parameter_enable": 1,
+					"varname": "Mod_Osc_PWM_Amount",
+					"saved_attribute_attributes": {
+						"valueof": {
+							"parameter_longname": "Mod Osc PWM Amount",
+							"parameter_shortname": "PWM Amt",
+							"parameter_type": 1,
+							"parameter_mmin": 0,
+							"parameter_mmax": 127,
+							"parameter_initial_enable": 0,
+							"parameter_initial": [
+								0
+							],
+							"parameter_invisible": 0
+						}
+					},
+					"annotation": "Mod Osc PWM Amount  \u00b7  CC 35  \u2014  Determines the depth at which pulse width modulation of the oscillator section occurs based on the OSC 1 and OSC 2 routing buttons",
+					"hint": "Mod Osc PWM Amount  \u00b7  CC 35  \u2014  Determines the depth at which pulse width modulation of the oscillator section occurs based on the OSC 1 and OSC 2 routing buttons"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-138",
+					"maxclass": "comment",
+					"numinlets": 1,
+					"numoutlets": 0,
+					"patching_rect": [
+						10.0,
+						94.0,
+						62.0,
+						12.0
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						10.0,
+						94.0,
+						62.0,
+						12.0
+					],
+					"text": "PWM Amt",
+					"fontsize": 8.0,
+					"fontface": 0,
+					"textjustification": 1,
+					"varname": "Mod_Osc_PWM_Amount_L"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-139",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1416.0,
+						480.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend 35"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-140",
+					"maxclass": "newobj",
+					"numinlets": 1,
+					"numoutlets": 3,
+					"patching_rect": [
+						1656.0,
+						520.0,
+						70.0,
+						22.0
+					],
+					"outlettype": [
+						"",
+						"",
+						""
+					],
+					"text": "ctlin 35"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-141",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1896.0,
+						520.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend set"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-142",
+					"maxclass": "live.dial",
+					"numinlets": 1,
+					"numoutlets": 1,
+					"patching_rect": [
+						87.0,
+						117.0,
+						38.0,
+						38.0
+					],
+					"outlettype": [
+						""
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						87.0,
+						117.0,
+						38.0,
+						38.0
+					],
+					"parameter_enable": 1,
+					"varname": "Mod_Osc_PWM_OSC_1",
+					"saved_attribute_attributes": {
+						"valueof": {
+							"parameter_longname": "Mod Osc PWM>OSC 1",
+							"parameter_shortname": "PWM>OSC 1",
+							"parameter_type": 1,
+							"parameter_mmin": 0,
+							"parameter_mmax": 127,
+							"parameter_initial_enable": 0,
+							"parameter_initial": [
+								0
+							],
+							"parameter_invisible": 0
+						}
+					},
+					"annotation": "Mod Osc PWM>OSC 1  \u00b7  CC 36  \u2014  Enables modulation of the duty cycle of the OSC 1 pulse/square waveshape via the modulation oscillator",
+					"hint": "Mod Osc PWM>OSC 1  \u00b7  CC 36  \u2014  Enables modulation of the duty cycle of the OSC 1 pulse/square waveshape via the modulation oscillator"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-143",
+					"maxclass": "comment",
+					"numinlets": 1,
+					"numoutlets": 0,
+					"patching_rect": [
+						74.0,
+						94.0,
+						62.0,
+						12.0
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						74.0,
+						94.0,
+						62.0,
+						12.0
+					],
+					"text": "PWM>OSC 1",
+					"fontsize": 8.0,
+					"fontface": 0,
+					"textjustification": 1,
+					"varname": "Mod_Osc_PWM_OSC_1_L"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-144",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1416.0,
+						488.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend 36"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-145",
+					"maxclass": "newobj",
+					"numinlets": 1,
+					"numoutlets": 3,
+					"patching_rect": [
+						1656.0,
+						528.0,
+						70.0,
+						22.0
+					],
+					"outlettype": [
+						"",
+						"",
+						""
+					],
+					"text": "ctlin 36"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-146",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1896.0,
+						528.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend set"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-147",
+					"maxclass": "live.dial",
+					"numinlets": 1,
+					"numoutlets": 1,
+					"patching_rect": [
+						151.0,
+						117.0,
+						38.0,
+						38.0
+					],
+					"outlettype": [
+						""
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						151.0,
+						117.0,
+						38.0,
+						38.0
+					],
+					"parameter_enable": 1,
+					"varname": "Mod_Osc_PWM_OSC_2",
+					"saved_attribute_attributes": {
+						"valueof": {
+							"parameter_longname": "Mod Osc PWM>OSC 2",
+							"parameter_shortname": "PWM>OSC 2",
+							"parameter_type": 1,
+							"parameter_mmin": 0,
+							"parameter_mmax": 127,
+							"parameter_initial_enable": 0,
+							"parameter_initial": [
+								0
+							],
+							"parameter_invisible": 0
+						}
+					},
+					"annotation": "Mod Osc PWM>OSC 2  \u00b7  CC 37  \u2014  Enables modulation of the duty cycle of the OSC 2 pulse/square waveshape via the modulation oscillator",
+					"hint": "Mod Osc PWM>OSC 2  \u00b7  CC 37  \u2014  Enables modulation of the duty cycle of the OSC 2 pulse/square waveshape via the modulation oscillator"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-148",
+					"maxclass": "comment",
+					"numinlets": 1,
+					"numoutlets": 0,
+					"patching_rect": [
+						138.0,
+						94.0,
+						62.0,
+						12.0
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						138.0,
+						94.0,
+						62.0,
+						12.0
+					],
+					"text": "PWM>OSC 2",
+					"fontsize": 8.0,
+					"fontface": 0,
+					"textjustification": 1,
+					"varname": "Mod_Osc_PWM_OSC_2_L"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-149",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1416.0,
+						496.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend 37"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-150",
+					"maxclass": "newobj",
+					"numinlets": 1,
+					"numoutlets": 3,
+					"patching_rect": [
+						1656.0,
+						536.0,
+						70.0,
+						22.0
+					],
+					"outlettype": [
+						"",
+						"",
+						""
+					],
+					"text": "ctlin 37"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-151",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1896.0,
+						536.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend set"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-152",
+					"maxclass": "live.dial",
+					"numinlets": 1,
+					"numoutlets": 1,
+					"patching_rect": [
+						215.0,
+						117.0,
+						38.0,
+						38.0
+					],
+					"outlettype": [
+						""
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						215.0,
+						117.0,
+						38.0,
+						38.0
+					],
+					"parameter_enable": 1,
+					"varname": "Mod_Osc_Filter_Amount",
+					"saved_attribute_attributes": {
+						"valueof": {
+							"parameter_longname": "Mod Osc Filter Amount",
+							"parameter_shortname": "Filter Amt",
+							"parameter_type": 1,
+							"parameter_mmin": 0,
+							"parameter_mmax": 127,
+							"parameter_initial_enable": 0,
+							"parameter_initial": [
+								0
+							],
+							"parameter_invisible": 0
+						}
+					},
+					"annotation": "Mod Osc Filter Amount  \u00b7  CC 39  \u2014  Determines the depth at which cutoff frequency modulation of the filter section occurs based on the FILTER 1 and FILTER 2 routing buttons",
+					"hint": "Mod Osc Filter Amount  \u00b7  CC 39  \u2014  Determines the depth at which cutoff frequency modulation of the filter section occurs based on the FILTER 1 and FILTER 2 routing buttons"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-153",
+					"maxclass": "comment",
+					"numinlets": 1,
+					"numoutlets": 0,
+					"patching_rect": [
+						202.0,
+						94.0,
+						62.0,
+						12.0
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						202.0,
+						94.0,
+						62.0,
+						12.0
+					],
+					"text": "Filter Amt",
+					"fontsize": 8.0,
+					"fontface": 0,
+					"textjustification": 1,
+					"varname": "Mod_Osc_Filter_Amount_L"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-154",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1416.0,
+						512.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend 39"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-155",
+					"maxclass": "newobj",
+					"numinlets": 1,
+					"numoutlets": 3,
+					"patching_rect": [
+						1656.0,
+						552.0,
+						70.0,
+						22.0
+					],
+					"outlettype": [
+						"",
+						"",
+						""
+					],
+					"text": "ctlin 39"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-156",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1896.0,
+						552.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend set"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-157",
+					"maxclass": "live.dial",
+					"numinlets": 1,
+					"numoutlets": 1,
+					"patching_rect": [
+						279.0,
+						117.0,
+						38.0,
+						38.0
+					],
+					"outlettype": [
+						""
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						279.0,
+						117.0,
+						38.0,
+						38.0
+					],
+					"parameter_enable": 1,
+					"varname": "Mod_Osc_Filter_F1",
+					"saved_attribute_attributes": {
+						"valueof": {
+							"parameter_longname": "Mod Osc Filter>F1",
+							"parameter_shortname": "Filter>F1",
+							"parameter_type": 1,
+							"parameter_mmin": 0,
+							"parameter_mmax": 127,
+							"parameter_initial_enable": 0,
+							"parameter_initial": [
+								0
+							],
+							"parameter_invisible": 0
+						}
+					},
+					"annotation": "Mod Osc Filter>F1  \u00b7  CC 40  \u2014  Enables cutoff frequency modulation of FILTER 1 via the modulation oscillator",
+					"hint": "Mod Osc Filter>F1  \u00b7  CC 40  \u2014  Enables cutoff frequency modulation of FILTER 1 via the modulation oscillator"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-158",
+					"maxclass": "comment",
+					"numinlets": 1,
+					"numoutlets": 0,
+					"patching_rect": [
+						266.0,
+						94.0,
+						62.0,
+						12.0
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						266.0,
+						94.0,
+						62.0,
+						12.0
+					],
+					"text": "Filter>F1",
+					"fontsize": 8.0,
+					"fontface": 0,
+					"textjustification": 1,
+					"varname": "Mod_Osc_Filter_F1_L"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-159",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1416.0,
+						520.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend 40"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-160",
+					"maxclass": "newobj",
+					"numinlets": 1,
+					"numoutlets": 3,
+					"patching_rect": [
+						1656.0,
+						560.0,
+						70.0,
+						22.0
+					],
+					"outlettype": [
+						"",
+						"",
+						""
+					],
+					"text": "ctlin 40"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-161",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1896.0,
+						560.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend set"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-162",
+					"maxclass": "live.dial",
+					"numinlets": 1,
+					"numoutlets": 1,
+					"patching_rect": [
+						343.0,
+						117.0,
+						38.0,
+						38.0
+					],
+					"outlettype": [
+						""
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						343.0,
+						117.0,
+						38.0,
+						38.0
+					],
+					"parameter_enable": 1,
+					"varname": "Mod_Osc_Filter_F2",
+					"saved_attribute_attributes": {
+						"valueof": {
+							"parameter_longname": "Mod Osc Filter>F2",
+							"parameter_shortname": "Filter>F2",
+							"parameter_type": 1,
+							"parameter_mmin": 0,
+							"parameter_mmax": 127,
+							"parameter_initial_enable": 0,
+							"parameter_initial": [
+								0
+							],
+							"parameter_invisible": 0
+						}
+					},
+					"annotation": "Mod Osc Filter>F2  \u00b7  CC 41  \u2014  Enables cutoff frequency modulation of FILTER 2 via the modulation oscillator",
+					"hint": "Mod Osc Filter>F2  \u00b7  CC 41  \u2014  Enables cutoff frequency modulation of FILTER 2 via the modulation oscillator"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-163",
+					"maxclass": "comment",
+					"numinlets": 1,
+					"numoutlets": 0,
+					"patching_rect": [
+						330.0,
+						94.0,
+						62.0,
+						12.0
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						330.0,
+						94.0,
+						62.0,
+						12.0
+					],
+					"text": "Filter>F2",
+					"fontsize": 8.0,
+					"fontface": 0,
+					"textjustification": 1,
+					"varname": "Mod_Osc_Filter_F2_L"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-164",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1416.0,
+						528.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend 41"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-165",
+					"maxclass": "newobj",
+					"numinlets": 1,
+					"numoutlets": 3,
+					"patching_rect": [
+						1656.0,
+						568.0,
+						70.0,
+						22.0
+					],
+					"outlettype": [
+						"",
+						"",
+						""
+					],
+					"text": "ctlin 41"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-166",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1896.0,
+						568.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend set"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-167",
+					"maxclass": "live.dial",
+					"numinlets": 1,
+					"numoutlets": 1,
+					"patching_rect": [
+						407.0,
+						117.0,
+						38.0,
+						38.0
+					],
+					"outlettype": [
+						""
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						407.0,
+						117.0,
+						38.0,
+						38.0
+					],
+					"parameter_enable": 1,
+					"varname": "Mod_Osc_VCA_Amount",
+					"saved_attribute_attributes": {
+						"valueof": {
+							"parameter_longname": "Mod Osc VCA Amount",
+							"parameter_shortname": "VCA Amt",
+							"parameter_type": 1,
+							"parameter_mmin": 0,
+							"parameter_mmax": 127,
+							"parameter_initial_enable": 0,
+							"parameter_initial": [
+								0
+							],
+							"parameter_invisible": 0
+						}
+					},
+					"annotation": "Mod Osc VCA Amount  \u00b7  CC 42  \u2014  Determines the depth at which the MODULATION OSCILLATOR will modulate the amplitude of the VCA, providing a tremolo effect",
+					"hint": "Mod Osc VCA Amount  \u00b7  CC 42  \u2014  Determines the depth at which the MODULATION OSCILLATOR will modulate the amplitude of the VCA, providing a tremolo effect"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-168",
+					"maxclass": "comment",
+					"numinlets": 1,
+					"numoutlets": 0,
+					"patching_rect": [
+						394.0,
+						94.0,
+						62.0,
+						12.0
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						394.0,
+						94.0,
+						62.0,
+						12.0
+					],
+					"text": "VCA Amt",
+					"fontsize": 8.0,
+					"fontface": 0,
+					"textjustification": 1,
+					"varname": "Mod_Osc_VCA_Amount_L"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-169",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1416.0,
+						536.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend 42"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-170",
+					"maxclass": "newobj",
+					"numinlets": 1,
+					"numoutlets": 3,
+					"patching_rect": [
+						1656.0,
+						576.0,
+						70.0,
+						22.0
+					],
+					"outlettype": [
+						"",
+						"",
+						""
+					],
+					"text": "ctlin 42"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-171",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1896.0,
+						576.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend set"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-172",
+					"maxclass": "live.dial",
+					"numinlets": 1,
+					"numoutlets": 1,
+					"patching_rect": [
+						471.0,
+						117.0,
+						38.0,
+						38.0
+					],
+					"outlettype": [
+						""
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						471.0,
+						117.0,
+						38.0,
+						38.0
+					],
+					"parameter_enable": 1,
+					"varname": "Mod_Osc_VCA_Pan",
+					"saved_attribute_attributes": {
+						"valueof": {
+							"parameter_longname": "Mod Osc VCA Pan",
+							"parameter_shortname": "VCA Pan",
+							"parameter_type": 1,
+							"parameter_mmin": 0,
+							"parameter_mmax": 127,
+							"parameter_initial_enable": 0,
+							"parameter_initial": [
+								0
+							],
+							"parameter_invisible": 0
+						}
+					},
+					"annotation": "Mod Osc VCA Pan  \u00b7  CC 43  \u2014  Enables pan-position modulation of a voice in the stereo field by inverting the phase of the modulation oscillator sent to the right VCA",
+					"hint": "Mod Osc VCA Pan  \u00b7  CC 43  \u2014  Enables pan-position modulation of a voice in the stereo field by inverting the phase of the modulation oscillator sent to the right VCA"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-173",
+					"maxclass": "comment",
+					"numinlets": 1,
+					"numoutlets": 0,
+					"patching_rect": [
+						458.0,
+						94.0,
+						62.0,
+						12.0
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						458.0,
+						94.0,
+						62.0,
+						12.0
+					],
+					"text": "VCA Pan",
+					"fontsize": 8.0,
+					"fontface": 0,
+					"textjustification": 1,
+					"varname": "Mod_Osc_VCA_Pan_L"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-174",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1416.0,
+						544.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend 43"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-175",
+					"maxclass": "newobj",
+					"numinlets": 1,
+					"numoutlets": 3,
+					"patching_rect": [
+						1656.0,
+						584.0,
+						70.0,
+						22.0
+					],
+					"outlettype": [
+						"",
+						"",
+						""
+					],
+					"text": "ctlin 43"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-176",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1896.0,
+						584.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend set"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-177",
+					"maxclass": "live.menu",
+					"numinlets": 1,
+					"numoutlets": 1,
+					"patching_rect": [
+						13.0,
+						55.0,
+						58.0,
+						18.0
+					],
+					"outlettype": [
+						""
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						13.0,
+						55.0,
+						58.0,
+						18.0
+					],
+					"parameter_enable": 1,
+					"varname": "OSC_1_Octave",
+					"saved_attribute_attributes": {
+						"valueof": {
+							"parameter_longname": "OSC 1 Octave",
+							"parameter_shortname": "1 Oct",
+							"parameter_type": 2,
+							"parameter_mmin": 0,
+							"parameter_mmax": 3,
+							"parameter_initial_enable": 1,
+							"parameter_initial": [
+								1
+							],
+							"parameter_invisible": 0,
+							"parameter_enum": [
+								"16'",
+								"8'",
+								"4'",
+								"2'"
+							],
+							"parameter_range": [
+								"16'",
+								"8'",
+								"4'",
+								"2'"
+							]
+						}
+					},
+					"annotation": "OSC 1 Octave  \u00b7  CC 44  \u2014  Selects the octave for OSC 1  (0-31: 16'; 32-63: 8'; 64-95: 4'; 96-127: 2')",
+					"hint": "OSC 1 Octave  \u00b7  CC 44  \u2014  Selects the octave for OSC 1  (0-31: 16'; 32-63: 8'; 64-95: 4'; 96-127: 2')"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-178",
+					"maxclass": "comment",
+					"numinlets": 1,
+					"numoutlets": 0,
+					"patching_rect": [
+						10.0,
+						22.0,
+						62.0,
+						12.0
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						10.0,
+						22.0,
+						62.0,
+						12.0
+					],
+					"text": "1 Oct",
+					"fontsize": 8.0,
+					"fontface": 0,
+					"textjustification": 1,
+					"varname": "OSC_1_Octave_L"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-179",
+					"maxclass": "newobj",
+					"numinlets": 1,
+					"numoutlets": 1,
+					"patching_rect": [
+						1276.0,
+						552.0,
+						110.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "expr $i1 * 32 + 16"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-180",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1416.0,
+						552.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend 44"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-181",
+					"maxclass": "newobj",
+					"numinlets": 1,
+					"numoutlets": 3,
+					"patching_rect": [
+						1656.0,
+						592.0,
+						70.0,
+						22.0
+					],
+					"outlettype": [
+						"",
+						"",
+						""
+					],
+					"text": "ctlin 44"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-182",
+					"maxclass": "newobj",
+					"numinlets": 1,
+					"numoutlets": 1,
+					"patching_rect": [
+						1736.0,
+						592.0,
+						150.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "expr ($i1 > 31) + ($i1 > 63) + ($i1 > 95)"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-183",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1896.0,
+						592.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend set"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-184",
+					"maxclass": "live.dial",
+					"numinlets": 1,
+					"numoutlets": 1,
+					"patching_rect": [
+						87.0,
+						45.0,
+						38.0,
+						38.0
+					],
+					"outlettype": [
+						""
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						87.0,
+						45.0,
+						38.0,
+						38.0
+					],
+					"parameter_enable": 1,
+					"varname": "OSC_1_Frequency",
+					"saved_attribute_attributes": {
+						"valueof": {
+							"parameter_longname": "OSC 1 Frequency",
+							"parameter_shortname": "1 Freq",
+							"parameter_type": 1,
+							"parameter_mmin": 0,
+							"parameter_mmax": 127,
+							"parameter_initial_enable": 0,
+							"parameter_initial": [
+								0
+							],
+							"parameter_invisible": 0
+						}
+					},
+					"annotation": "OSC 1 Frequency  \u00b7  CC 45  \u2014  Detunes OSC 1 from the pitch associated with a keyboard note",
+					"hint": "OSC 1 Frequency  \u00b7  CC 45  \u2014  Detunes OSC 1 from the pitch associated with a keyboard note"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-185",
+					"maxclass": "comment",
+					"numinlets": 1,
+					"numoutlets": 0,
+					"patching_rect": [
+						74.0,
+						22.0,
+						62.0,
+						12.0
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						74.0,
+						22.0,
+						62.0,
+						12.0
+					],
+					"text": "1 Freq",
+					"fontsize": 8.0,
+					"fontface": 0,
+					"textjustification": 1,
+					"varname": "OSC_1_Frequency_L"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-186",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1416.0,
+						560.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend 45"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-187",
+					"maxclass": "newobj",
+					"numinlets": 1,
+					"numoutlets": 3,
+					"patching_rect": [
+						1656.0,
+						600.0,
+						70.0,
+						22.0
+					],
+					"outlettype": [
+						"",
+						"",
+						""
+					],
+					"text": "ctlin 45"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-188",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1896.0,
+						600.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend set"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-189",
+					"maxclass": "live.slider",
+					"numinlets": 1,
+					"numoutlets": 1,
+					"patching_rect": [
+						143.0,
+						57.0,
+						54.0,
+						14.0
+					],
+					"outlettype": [
+						""
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						143.0,
+						57.0,
+						54.0,
+						14.0
+					],
+					"parameter_enable": 1,
+					"varname": "OSC_1_Tri_Saw_Mix",
+					"saved_attribute_attributes": {
+						"valueof": {
+							"parameter_longname": "OSC 1 Tri/Saw Mix",
+							"parameter_shortname": "Tri/Saw 1",
+							"parameter_type": 1,
+							"parameter_mmin": 0,
+							"parameter_mmax": 127,
+							"parameter_initial_enable": 1,
+							"parameter_initial": [
+								64
+							],
+							"parameter_invisible": 0
+						}
+					},
+					"annotation": "OSC 1 Tri/Saw Mix  \u00b7  CC 46  \u2014  Blends Oscillator 1 between triangle (down) and sawtooth (up).",
+					"hint": "OSC 1 Tri/Saw Mix  \u00b7  CC 46  \u2014  Blends Oscillator 1 between triangle (down) and sawtooth (up)."
+				}
+			},
+			{
+				"box": {
+					"id": "obj-190",
+					"maxclass": "comment",
+					"numinlets": 1,
+					"numoutlets": 0,
+					"patching_rect": [
+						138.0,
+						22.0,
+						62.0,
+						12.0
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						138.0,
+						22.0,
+						62.0,
+						12.0
+					],
+					"text": "Tri/Saw 1",
+					"fontsize": 8.0,
+					"fontface": 0,
+					"textjustification": 1,
+					"varname": "OSC_1_Tri_Saw_Mix_L"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-191",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1416.0,
+						568.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend 46"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-192",
+					"maxclass": "newobj",
+					"numinlets": 1,
+					"numoutlets": 3,
+					"patching_rect": [
+						1656.0,
+						608.0,
+						70.0,
+						22.0
+					],
+					"outlettype": [
+						"",
+						"",
+						""
+					],
+					"text": "ctlin 46"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-193",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1896.0,
+						608.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend set"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-194",
+					"maxclass": "live.slider",
+					"numinlets": 1,
+					"numoutlets": 1,
+					"patching_rect": [
+						207.0,
+						57.0,
+						54.0,
+						14.0
+					],
+					"outlettype": [
+						""
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						207.0,
+						57.0,
+						54.0,
+						14.0
+					],
+					"parameter_enable": 1,
+					"varname": "OSC_1_Wave_Mix",
+					"saved_attribute_attributes": {
+						"valueof": {
+							"parameter_longname": "OSC 1 Wave Mix",
+							"parameter_shortname": "1 Wave Mix",
+							"parameter_type": 1,
+							"parameter_mmin": 0,
+							"parameter_mmax": 127,
+							"parameter_initial_enable": 0,
+							"parameter_initial": [
+								0
+							],
+							"parameter_invisible": 0
+						}
+					},
+					"annotation": "OSC 1 Wave Mix  \u00b7  CC 48  \u2014  Crossfades Oscillator 1 between its tri/saw mix and its pulse wave.",
+					"hint": "OSC 1 Wave Mix  \u00b7  CC 48  \u2014  Crossfades Oscillator 1 between its tri/saw mix and its pulse wave."
+				}
+			},
+			{
+				"box": {
+					"id": "obj-195",
+					"maxclass": "comment",
+					"numinlets": 1,
+					"numoutlets": 0,
+					"patching_rect": [
+						202.0,
+						22.0,
+						62.0,
+						12.0
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						202.0,
+						22.0,
+						62.0,
+						12.0
+					],
+					"text": "1 Wave Mix",
+					"fontsize": 8.0,
+					"fontface": 0,
+					"textjustification": 1,
+					"varname": "OSC_1_Wave_Mix_L"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-196",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1416.0,
+						584.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend 48"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-197",
+					"maxclass": "newobj",
+					"numinlets": 1,
+					"numoutlets": 3,
+					"patching_rect": [
+						1656.0,
+						624.0,
+						70.0,
+						22.0
+					],
+					"outlettype": [
+						"",
+						"",
+						""
+					],
+					"text": "ctlin 48"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-198",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1896.0,
+						624.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend set"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-199",
+					"maxclass": "live.dial",
+					"numinlets": 1,
+					"numoutlets": 1,
+					"patching_rect": [
+						279.0,
+						45.0,
+						38.0,
+						38.0
+					],
+					"outlettype": [
+						""
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						279.0,
+						45.0,
+						38.0,
+						38.0
+					],
+					"parameter_enable": 1,
+					"varname": "OSC_1_PW",
+					"saved_attribute_attributes": {
+						"valueof": {
+							"parameter_longname": "OSC 1 PW",
+							"parameter_shortname": "1 PW",
+							"parameter_type": 1,
+							"parameter_mmin": 0,
+							"parameter_mmax": 127,
+							"parameter_initial_enable": 0,
+							"parameter_initial": [
+								0
+							],
+							"parameter_invisible": 0
+						}
+					},
+					"annotation": "OSC 1 PW  \u00b7  CC 47  \u2014  Pulse width / duty cycle of Oscillator 1's pulse wave.",
+					"hint": "OSC 1 PW  \u00b7  CC 47  \u2014  Pulse width / duty cycle of Oscillator 1's pulse wave."
+				}
+			},
+			{
+				"box": {
+					"id": "obj-200",
+					"maxclass": "comment",
+					"numinlets": 1,
+					"numoutlets": 0,
+					"patching_rect": [
+						266.0,
+						22.0,
+						62.0,
+						12.0
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						266.0,
+						22.0,
+						62.0,
+						12.0
+					],
+					"text": "1 PW",
+					"fontsize": 8.0,
+					"fontface": 0,
+					"textjustification": 1,
+					"varname": "OSC_1_PW_L"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-201",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1416.0,
+						576.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend 47"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-202",
+					"maxclass": "newobj",
+					"numinlets": 1,
+					"numoutlets": 3,
+					"patching_rect": [
+						1656.0,
+						616.0,
+						70.0,
+						22.0
+					],
+					"outlettype": [
+						"",
+						"",
+						""
+					],
+					"text": "ctlin 47"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-203",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1896.0,
+						616.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend set"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-204",
+					"maxclass": "live.toggle",
+					"numinlets": 1,
+					"numoutlets": 1,
+					"patching_rect": [
+						353.0,
+						55.0,
+						18.0,
+						18.0
+					],
+					"outlettype": [
+						""
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						353.0,
+						55.0,
+						18.0,
+						18.0
+					],
+					"parameter_enable": 1,
+					"varname": "OSC_2_1_Sync",
+					"saved_attribute_attributes": {
+						"valueof": {
+							"parameter_longname": "OSC 2>1 Sync",
+							"parameter_shortname": "2>1 Sync",
+							"parameter_type": 2,
+							"parameter_mmin": 0,
+							"parameter_mmax": 1,
+							"parameter_initial_enable": 0,
+							"parameter_initial": [
+								0
+							],
+							"parameter_invisible": 0,
+							"parameter_enum": [
+								"off",
+								"on"
+							],
+							"parameter_range": [
+								"off",
+								"on"
+							]
+						}
+					},
+					"annotation": "OSC 2>1 Sync  \u00b7  CC 54  \u2014  Hard-syncs OSC 1 to OSC 2 (resets OSC 1's phase) for sync timbres.  (0-63: Off; 64-127: On)",
+					"hint": "OSC 2>1 Sync  \u00b7  CC 54  \u2014  Hard-syncs OSC 1 to OSC 2 (resets OSC 1's phase) for sync timbres.  (0-63: Off; 64-127: On)"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-205",
+					"maxclass": "comment",
+					"numinlets": 1,
+					"numoutlets": 0,
+					"patching_rect": [
+						330.0,
+						22.0,
+						62.0,
+						12.0
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						330.0,
+						22.0,
+						62.0,
+						12.0
+					],
+					"text": "2>1 Sync",
+					"fontsize": 8.0,
+					"fontface": 0,
+					"textjustification": 1,
+					"varname": "OSC_2_1_Sync_L"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-206",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1276.0,
+						632.0,
+						50.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "* 127"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-207",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1416.0,
+						632.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend 54"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-208",
+					"maxclass": "newobj",
+					"numinlets": 1,
+					"numoutlets": 3,
+					"patching_rect": [
+						1656.0,
+						672.0,
+						70.0,
+						22.0
+					],
+					"outlettype": [
+						"",
+						"",
+						""
+					],
+					"text": "ctlin 54"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-209",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1736.0,
+						672.0,
+						50.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": ">= 64"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-210",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1896.0,
+						672.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend set"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-211",
+					"maxclass": "live.dial",
+					"numinlets": 1,
+					"numoutlets": 1,
+					"patching_rect": [
+						407.0,
+						45.0,
+						38.0,
+						38.0
+					],
+					"outlettype": [
+						""
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						407.0,
+						45.0,
+						38.0,
+						38.0
+					],
+					"parameter_enable": 1,
+					"varname": "FM_Amount",
+					"saved_attribute_attributes": {
+						"valueof": {
+							"parameter_longname": "FM Amount",
+							"parameter_shortname": "FM Amt",
+							"parameter_type": 1,
+							"parameter_mmin": 0,
+							"parameter_mmax": 127,
+							"parameter_initial_enable": 0,
+							"parameter_initial": [
+								0
+							],
+							"parameter_invisible": 0
+						}
+					},
+					"annotation": "FM Amount  \u00b7  CC 57  \u2014  Depth of oscillator-to-oscillator linear FM (2>1 / 1>2 switches).",
+					"hint": "FM Amount  \u00b7  CC 57  \u2014  Depth of oscillator-to-oscillator linear FM (2>1 / 1>2 switches)."
+				}
+			},
+			{
+				"box": {
+					"id": "obj-212",
+					"maxclass": "comment",
+					"numinlets": 1,
+					"numoutlets": 0,
+					"patching_rect": [
+						394.0,
+						22.0,
+						62.0,
+						12.0
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						394.0,
+						22.0,
+						62.0,
+						12.0
+					],
+					"text": "FM Amt",
+					"fontsize": 8.0,
+					"fontface": 0,
+					"textjustification": 1,
+					"varname": "FM_Amount_L"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-213",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1416.0,
+						656.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend 57"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-214",
+					"maxclass": "newobj",
+					"numinlets": 1,
+					"numoutlets": 3,
+					"patching_rect": [
+						1656.0,
+						696.0,
+						70.0,
+						22.0
+					],
+					"outlettype": [
+						"",
+						"",
+						""
+					],
+					"text": "ctlin 57"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-215",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1896.0,
+						696.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend set"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-216",
+					"maxclass": "live.menu",
+					"numinlets": 1,
+					"numoutlets": 1,
+					"patching_rect": [
+						13.0,
+						127.0,
+						58.0,
+						18.0
+					],
+					"outlettype": [
+						""
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						13.0,
+						127.0,
+						58.0,
+						18.0
+					],
+					"parameter_enable": 1,
+					"varname": "OSC_2_Octave",
+					"saved_attribute_attributes": {
+						"valueof": {
+							"parameter_longname": "OSC 2 Octave",
+							"parameter_shortname": "2 Oct",
+							"parameter_type": 2,
+							"parameter_mmin": 0,
+							"parameter_mmax": 3,
+							"parameter_initial_enable": 0,
+							"parameter_initial": [
+								0
+							],
+							"parameter_invisible": 0,
+							"parameter_enum": [
+								"16'",
+								"8'",
+								"4'",
+								"2'"
+							],
+							"parameter_range": [
+								"16'",
+								"8'",
+								"4'",
+								"2'"
+							]
+						}
+					},
+					"annotation": "OSC 2 Octave  \u00b7  CC 49  \u2014  Selects the octave for OSC 2  (0-31: 16'; 32-63: 8'; 64-95: 4'; 96-127: 2')",
+					"hint": "OSC 2 Octave  \u00b7  CC 49  \u2014  Selects the octave for OSC 2  (0-31: 16'; 32-63: 8'; 64-95: 4'; 96-127: 2')"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-217",
+					"maxclass": "comment",
+					"numinlets": 1,
+					"numoutlets": 0,
+					"patching_rect": [
+						10.0,
+						94.0,
+						62.0,
+						12.0
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						10.0,
+						94.0,
+						62.0,
+						12.0
+					],
+					"text": "2 Oct",
+					"fontsize": 8.0,
+					"fontface": 0,
+					"textjustification": 1,
+					"varname": "OSC_2_Octave_L"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-218",
+					"maxclass": "newobj",
+					"numinlets": 1,
+					"numoutlets": 1,
+					"patching_rect": [
+						1276.0,
+						592.0,
+						110.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "expr $i1 * 32 + 16"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-219",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1416.0,
+						592.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend 49"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-220",
+					"maxclass": "newobj",
+					"numinlets": 1,
+					"numoutlets": 3,
+					"patching_rect": [
+						1656.0,
+						632.0,
+						70.0,
+						22.0
+					],
+					"outlettype": [
+						"",
+						"",
+						""
+					],
+					"text": "ctlin 49"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-221",
+					"maxclass": "newobj",
+					"numinlets": 1,
+					"numoutlets": 1,
+					"patching_rect": [
+						1736.0,
+						632.0,
+						150.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "expr ($i1 > 31) + ($i1 > 63) + ($i1 > 95)"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-222",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1896.0,
+						632.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend set"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-223",
+					"maxclass": "live.dial",
+					"numinlets": 1,
+					"numoutlets": 1,
+					"patching_rect": [
+						87.0,
+						117.0,
+						38.0,
+						38.0
+					],
+					"outlettype": [
+						""
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						87.0,
+						117.0,
+						38.0,
+						38.0
+					],
+					"parameter_enable": 1,
+					"varname": "OSC_2_Frequency",
+					"saved_attribute_attributes": {
+						"valueof": {
+							"parameter_longname": "OSC 2 Frequency",
+							"parameter_shortname": "2 Freq",
+							"parameter_type": 1,
+							"parameter_mmin": 0,
+							"parameter_mmax": 127,
+							"parameter_initial_enable": 0,
+							"parameter_initial": [
+								0
+							],
+							"parameter_invisible": 0
+						}
+					},
+					"annotation": "OSC 2 Frequency  \u00b7  CC 50  \u2014  Detunes OSC 2 from the pitch associated with a keyboard note",
+					"hint": "OSC 2 Frequency  \u00b7  CC 50  \u2014  Detunes OSC 2 from the pitch associated with a keyboard note"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-224",
+					"maxclass": "comment",
+					"numinlets": 1,
+					"numoutlets": 0,
+					"patching_rect": [
+						74.0,
+						94.0,
+						62.0,
+						12.0
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						74.0,
+						94.0,
+						62.0,
+						12.0
+					],
+					"text": "2 Freq",
+					"fontsize": 8.0,
+					"fontface": 0,
+					"textjustification": 1,
+					"varname": "OSC_2_Frequency_L"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-225",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1416.0,
+						600.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend 50"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-226",
+					"maxclass": "newobj",
+					"numinlets": 1,
+					"numoutlets": 3,
+					"patching_rect": [
+						1656.0,
+						640.0,
+						70.0,
+						22.0
+					],
+					"outlettype": [
+						"",
+						"",
+						""
+					],
+					"text": "ctlin 50"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-227",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1896.0,
+						640.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend set"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-228",
+					"maxclass": "live.slider",
+					"numinlets": 1,
+					"numoutlets": 1,
+					"patching_rect": [
+						143.0,
+						129.0,
+						54.0,
+						14.0
+					],
+					"outlettype": [
+						""
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						143.0,
+						129.0,
+						54.0,
+						14.0
+					],
+					"parameter_enable": 1,
+					"varname": "OSC_2_Tri_Saw_Mix",
+					"saved_attribute_attributes": {
+						"valueof": {
+							"parameter_longname": "OSC 2 Tri/Saw Mix",
+							"parameter_shortname": "Tri/Saw 2",
+							"parameter_type": 1,
+							"parameter_mmin": 0,
+							"parameter_mmax": 127,
+							"parameter_initial_enable": 0,
+							"parameter_initial": [
+								0
+							],
+							"parameter_invisible": 0
+						}
+					},
+					"annotation": "OSC 2 Tri/Saw Mix  \u00b7  CC 51  \u2014  Blends Oscillator 2 between triangle (down) and sawtooth (up).",
+					"hint": "OSC 2 Tri/Saw Mix  \u00b7  CC 51  \u2014  Blends Oscillator 2 between triangle (down) and sawtooth (up)."
+				}
+			},
+			{
+				"box": {
+					"id": "obj-229",
+					"maxclass": "comment",
+					"numinlets": 1,
+					"numoutlets": 0,
+					"patching_rect": [
+						138.0,
+						94.0,
+						62.0,
+						12.0
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						138.0,
+						94.0,
+						62.0,
+						12.0
+					],
+					"text": "Tri/Saw 2",
+					"fontsize": 8.0,
+					"fontface": 0,
+					"textjustification": 1,
+					"varname": "OSC_2_Tri_Saw_Mix_L"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-230",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1416.0,
+						608.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend 51"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-231",
+					"maxclass": "newobj",
+					"numinlets": 1,
+					"numoutlets": 3,
+					"patching_rect": [
+						1656.0,
+						648.0,
+						70.0,
+						22.0
+					],
+					"outlettype": [
+						"",
+						"",
+						""
+					],
+					"text": "ctlin 51"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-232",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1896.0,
+						648.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend set"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-233",
+					"maxclass": "live.slider",
+					"numinlets": 1,
+					"numoutlets": 1,
+					"patching_rect": [
+						207.0,
+						129.0,
+						54.0,
+						14.0
+					],
+					"outlettype": [
+						""
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						207.0,
+						129.0,
+						54.0,
+						14.0
+					],
+					"parameter_enable": 1,
+					"varname": "OSC_2_Wave_Mix",
+					"saved_attribute_attributes": {
+						"valueof": {
+							"parameter_longname": "OSC 2 Wave Mix",
+							"parameter_shortname": "2 Wave Mix",
+							"parameter_type": 1,
+							"parameter_mmin": 0,
+							"parameter_mmax": 127,
+							"parameter_initial_enable": 0,
+							"parameter_initial": [
+								0
+							],
+							"parameter_invisible": 0
+						}
+					},
+					"annotation": "OSC 2 Wave Mix  \u00b7  CC 53  \u2014  Crossfades Oscillator 2 between its tri/saw mix and its pulse wave.",
+					"hint": "OSC 2 Wave Mix  \u00b7  CC 53  \u2014  Crossfades Oscillator 2 between its tri/saw mix and its pulse wave."
+				}
+			},
+			{
+				"box": {
+					"id": "obj-234",
+					"maxclass": "comment",
+					"numinlets": 1,
+					"numoutlets": 0,
+					"patching_rect": [
+						202.0,
+						94.0,
+						62.0,
+						12.0
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						202.0,
+						94.0,
+						62.0,
+						12.0
+					],
+					"text": "2 Wave Mix",
+					"fontsize": 8.0,
+					"fontface": 0,
+					"textjustification": 1,
+					"varname": "OSC_2_Wave_Mix_L"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-235",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1416.0,
+						624.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend 53"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-236",
+					"maxclass": "newobj",
+					"numinlets": 1,
+					"numoutlets": 3,
+					"patching_rect": [
+						1656.0,
+						664.0,
+						70.0,
+						22.0
+					],
+					"outlettype": [
+						"",
+						"",
+						""
+					],
+					"text": "ctlin 53"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-237",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1896.0,
+						664.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend set"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-238",
+					"maxclass": "live.dial",
+					"numinlets": 1,
+					"numoutlets": 1,
+					"patching_rect": [
+						279.0,
+						117.0,
+						38.0,
+						38.0
+					],
+					"outlettype": [
+						""
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						279.0,
+						117.0,
+						38.0,
+						38.0
+					],
+					"parameter_enable": 1,
+					"varname": "OSC_2_PW",
+					"saved_attribute_attributes": {
+						"valueof": {
+							"parameter_longname": "OSC 2 PW",
+							"parameter_shortname": "2 PW",
+							"parameter_type": 1,
+							"parameter_mmin": 0,
+							"parameter_mmax": 127,
+							"parameter_initial_enable": 0,
+							"parameter_initial": [
+								0
+							],
+							"parameter_invisible": 0
+						}
+					},
+					"annotation": "OSC 2 PW  \u00b7  CC 52  \u2014  Pulse width / duty cycle of Oscillator 2's pulse wave.",
+					"hint": "OSC 2 PW  \u00b7  CC 52  \u2014  Pulse width / duty cycle of Oscillator 2's pulse wave."
+				}
+			},
+			{
+				"box": {
+					"id": "obj-239",
+					"maxclass": "comment",
+					"numinlets": 1,
+					"numoutlets": 0,
+					"patching_rect": [
+						266.0,
+						94.0,
+						62.0,
+						12.0
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						266.0,
+						94.0,
+						62.0,
+						12.0
+					],
+					"text": "2 PW",
+					"fontsize": 8.0,
+					"fontface": 0,
+					"textjustification": 1,
+					"varname": "OSC_2_PW_L"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-240",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1416.0,
+						616.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend 52"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-241",
+					"maxclass": "newobj",
+					"numinlets": 1,
+					"numoutlets": 3,
+					"patching_rect": [
+						1656.0,
+						656.0,
+						70.0,
+						22.0
+					],
+					"outlettype": [
+						"",
+						"",
+						""
+					],
+					"text": "ctlin 52"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-242",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1896.0,
+						656.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend set"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-243",
+					"maxclass": "live.toggle",
+					"numinlets": 1,
+					"numoutlets": 1,
+					"patching_rect": [
+						353.0,
+						127.0,
+						18.0,
+						18.0
+					],
+					"outlettype": [
+						""
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						353.0,
+						127.0,
+						18.0,
+						18.0
+					],
+					"parameter_enable": 1,
+					"varname": "OSC_2_1_FM",
+					"saved_attribute_attributes": {
+						"valueof": {
+							"parameter_longname": "OSC 2>1 FM",
+							"parameter_shortname": "2>1 FM",
+							"parameter_type": 2,
+							"parameter_mmin": 0,
+							"parameter_mmax": 1,
+							"parameter_initial_enable": 0,
+							"parameter_initial": [
+								0
+							],
+							"parameter_invisible": 0,
+							"parameter_enum": [
+								"off",
+								"on"
+							],
+							"parameter_range": [
+								"off",
+								"on"
+							]
+						}
+					},
+					"annotation": "OSC 2>1 FM  \u00b7  CC 55  \u2014  Linear FM of OSC 1 by OSC 2 (depth set by FM Amount).  (0-63: Off; 64-127: On)",
+					"hint": "OSC 2>1 FM  \u00b7  CC 55  \u2014  Linear FM of OSC 1 by OSC 2 (depth set by FM Amount).  (0-63: Off; 64-127: On)"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-244",
+					"maxclass": "comment",
+					"numinlets": 1,
+					"numoutlets": 0,
+					"patching_rect": [
+						330.0,
+						94.0,
+						62.0,
+						12.0
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						330.0,
+						94.0,
+						62.0,
+						12.0
+					],
+					"text": "2>1 FM",
+					"fontsize": 8.0,
+					"fontface": 0,
+					"textjustification": 1,
+					"varname": "OSC_2_1_FM_L"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-245",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1276.0,
+						640.0,
+						50.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "* 127"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-246",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1416.0,
+						640.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend 55"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-247",
+					"maxclass": "newobj",
+					"numinlets": 1,
+					"numoutlets": 3,
+					"patching_rect": [
+						1656.0,
+						680.0,
+						70.0,
+						22.0
+					],
+					"outlettype": [
+						"",
+						"",
+						""
+					],
+					"text": "ctlin 55"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-248",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1736.0,
+						680.0,
+						50.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": ">= 64"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-249",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1896.0,
+						680.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend set"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-250",
+					"maxclass": "live.toggle",
+					"numinlets": 1,
+					"numoutlets": 1,
+					"patching_rect": [
+						417.0,
+						127.0,
+						18.0,
+						18.0
+					],
+					"outlettype": [
+						""
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						417.0,
+						127.0,
+						18.0,
+						18.0
+					],
+					"parameter_enable": 1,
+					"varname": "OSC_1_2_FM",
+					"saved_attribute_attributes": {
+						"valueof": {
+							"parameter_longname": "OSC 1>2 FM",
+							"parameter_shortname": "1>2 FM",
+							"parameter_type": 2,
+							"parameter_mmin": 0,
+							"parameter_mmax": 1,
+							"parameter_initial_enable": 0,
+							"parameter_initial": [
+								0
+							],
+							"parameter_invisible": 0,
+							"parameter_enum": [
+								"off",
+								"on"
+							],
+							"parameter_range": [
+								"off",
+								"on"
+							]
+						}
+					},
+					"annotation": "OSC 1>2 FM  \u00b7  CC 56  \u2014  Linear FM of OSC 2 by OSC 1 (depth set by FM Amount).  (0-63: Off; 64-127: On)",
+					"hint": "OSC 1>2 FM  \u00b7  CC 56  \u2014  Linear FM of OSC 2 by OSC 1 (depth set by FM Amount).  (0-63: Off; 64-127: On)"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-251",
+					"maxclass": "comment",
+					"numinlets": 1,
+					"numoutlets": 0,
+					"patching_rect": [
+						394.0,
+						94.0,
+						62.0,
+						12.0
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						394.0,
+						94.0,
+						62.0,
+						12.0
+					],
+					"text": "1>2 FM",
+					"fontsize": 8.0,
+					"fontface": 0,
+					"textjustification": 1,
+					"varname": "OSC_1_2_FM_L"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-252",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1276.0,
+						648.0,
+						50.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "* 127"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-253",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1416.0,
+						648.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend 56"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-254",
+					"maxclass": "newobj",
+					"numinlets": 1,
+					"numoutlets": 3,
+					"patching_rect": [
+						1656.0,
+						688.0,
+						70.0,
+						22.0
+					],
+					"outlettype": [
+						"",
+						"",
+						""
+					],
+					"text": "ctlin 56"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-255",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1736.0,
+						688.0,
+						50.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": ">= 64"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-256",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1896.0,
+						688.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend set"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-257",
+					"maxclass": "live.slider",
+					"numinlets": 1,
+					"numoutlets": 1,
+					"patching_rect": [
+						32.0,
+						48.0,
+						20.0,
+						104.0
+					],
+					"outlettype": [
+						""
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						32.0,
+						48.0,
+						20.0,
+						104.0
+					],
+					"parameter_enable": 1,
+					"varname": "OSC_1_Level",
+					"saved_attribute_attributes": {
+						"valueof": {
+							"parameter_longname": "OSC 1 Level",
+							"parameter_shortname": "OSC 1",
+							"parameter_type": 1,
+							"parameter_mmin": 0,
+							"parameter_mmax": 127,
+							"parameter_initial_enable": 1,
+							"parameter_initial": [
+								127
+							],
+							"parameter_invisible": 0
+						}
+					},
+					"annotation": "OSC 1 Level  \u00b7  CC 58  \u2014  Level of Oscillator 1 into the mixer.",
+					"hint": "OSC 1 Level  \u00b7  CC 58  \u2014  Level of Oscillator 1 into the mixer."
+				}
+			},
+			{
+				"box": {
+					"id": "obj-258",
+					"maxclass": "comment",
+					"numinlets": 1,
+					"numoutlets": 0,
+					"patching_rect": [
+						10.0,
+						22.0,
+						62.0,
+						12.0
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						10.0,
+						22.0,
+						62.0,
+						12.0
+					],
+					"text": "OSC 1",
+					"fontsize": 8.0,
+					"fontface": 0,
+					"textjustification": 1,
+					"varname": "OSC_1_Level_L"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-259",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1416.0,
+						664.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend 58"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-260",
+					"maxclass": "newobj",
+					"numinlets": 1,
+					"numoutlets": 3,
+					"patching_rect": [
+						1656.0,
+						704.0,
+						70.0,
+						22.0
+					],
+					"outlettype": [
+						"",
+						"",
+						""
+					],
+					"text": "ctlin 58"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-261",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1896.0,
+						704.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend set"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-262",
+					"maxclass": "live.slider",
+					"numinlets": 1,
+					"numoutlets": 1,
+					"patching_rect": [
+						96.0,
+						48.0,
+						20.0,
+						104.0
+					],
+					"outlettype": [
+						""
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						96.0,
+						48.0,
+						20.0,
+						104.0
+					],
+					"parameter_enable": 1,
+					"varname": "Ring_Mod_Level",
+					"saved_attribute_attributes": {
+						"valueof": {
+							"parameter_longname": "Ring Mod Level",
+							"parameter_shortname": "Ring",
+							"parameter_type": 1,
+							"parameter_mmin": 0,
+							"parameter_mmax": 127,
+							"parameter_initial_enable": 0,
+							"parameter_initial": [
+								0
+							],
+							"parameter_invisible": 0
+						}
+					},
+					"annotation": "Ring Mod Level  \u00b7  CC 60  \u2014  Level of the ring modulator (OSC 1 x OSC 2) into the mixer.",
+					"hint": "Ring Mod Level  \u00b7  CC 60  \u2014  Level of the ring modulator (OSC 1 x OSC 2) into the mixer."
+				}
+			},
+			{
+				"box": {
+					"id": "obj-263",
+					"maxclass": "comment",
+					"numinlets": 1,
+					"numoutlets": 0,
+					"patching_rect": [
+						74.0,
+						22.0,
+						62.0,
+						12.0
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						74.0,
+						22.0,
+						62.0,
+						12.0
+					],
+					"text": "Ring",
+					"fontsize": 8.0,
+					"fontface": 0,
+					"textjustification": 1,
+					"varname": "Ring_Mod_Level_L"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-264",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1416.0,
+						680.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend 60"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-265",
+					"maxclass": "newobj",
+					"numinlets": 1,
+					"numoutlets": 3,
+					"patching_rect": [
+						1656.0,
+						720.0,
+						70.0,
+						22.0
+					],
+					"outlettype": [
+						"",
+						"",
+						""
+					],
+					"text": "ctlin 60"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-266",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1896.0,
+						720.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend set"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-267",
+					"maxclass": "live.slider",
+					"numinlets": 1,
+					"numoutlets": 1,
+					"patching_rect": [
+						160.0,
+						48.0,
+						20.0,
+						104.0
+					],
+					"outlettype": [
+						""
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						160.0,
+						48.0,
+						20.0,
+						104.0
+					],
+					"parameter_enable": 1,
+					"varname": "OSC_2_Level",
+					"saved_attribute_attributes": {
+						"valueof": {
+							"parameter_longname": "OSC 2 Level",
+							"parameter_shortname": "OSC 2",
+							"parameter_type": 1,
+							"parameter_mmin": 0,
+							"parameter_mmax": 127,
+							"parameter_initial_enable": 0,
+							"parameter_initial": [
+								0
+							],
+							"parameter_invisible": 0
+						}
+					},
+					"annotation": "OSC 2 Level  \u00b7  CC 59  \u2014  Level of Oscillator 2 into the mixer.",
+					"hint": "OSC 2 Level  \u00b7  CC 59  \u2014  Level of Oscillator 2 into the mixer."
+				}
+			},
+			{
+				"box": {
+					"id": "obj-268",
+					"maxclass": "comment",
+					"numinlets": 1,
+					"numoutlets": 0,
+					"patching_rect": [
+						138.0,
+						22.0,
+						62.0,
+						12.0
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						138.0,
+						22.0,
+						62.0,
+						12.0
+					],
+					"text": "OSC 2",
+					"fontsize": 8.0,
+					"fontface": 0,
+					"textjustification": 1,
+					"varname": "OSC_2_Level_L"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-269",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1416.0,
+						672.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend 59"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-270",
+					"maxclass": "newobj",
+					"numinlets": 1,
+					"numoutlets": 3,
+					"patching_rect": [
+						1656.0,
+						712.0,
+						70.0,
+						22.0
+					],
+					"outlettype": [
+						"",
+						"",
+						""
+					],
+					"text": "ctlin 59"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-271",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1896.0,
+						712.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend set"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-272",
+					"maxclass": "live.slider",
+					"numinlets": 1,
+					"numoutlets": 1,
+					"patching_rect": [
+						224.0,
+						48.0,
+						20.0,
+						104.0
+					],
+					"outlettype": [
+						""
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						224.0,
+						48.0,
+						20.0,
+						104.0
+					],
+					"parameter_enable": 1,
+					"varname": "Mod_Osc_Level",
+					"saved_attribute_attributes": {
+						"valueof": {
+							"parameter_longname": "Mod Osc Level",
+							"parameter_shortname": "Mod Osc",
+							"parameter_type": 1,
+							"parameter_mmin": 0,
+							"parameter_mmax": 127,
+							"parameter_initial_enable": 0,
+							"parameter_initial": [
+								0
+							],
+							"parameter_invisible": 0
+						}
+					},
+					"annotation": "Mod Osc Level  \u00b7  CC 61  \u2014  Level of the Modulation Oscillator into the mixer (audible at audio rate).",
+					"hint": "Mod Osc Level  \u00b7  CC 61  \u2014  Level of the Modulation Oscillator into the mixer (audible at audio rate)."
+				}
+			},
+			{
+				"box": {
+					"id": "obj-273",
+					"maxclass": "comment",
+					"numinlets": 1,
+					"numoutlets": 0,
+					"patching_rect": [
+						202.0,
+						22.0,
+						62.0,
+						12.0
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						202.0,
+						22.0,
+						62.0,
+						12.0
+					],
+					"text": "Mod Osc",
+					"fontsize": 8.0,
+					"fontface": 0,
+					"textjustification": 1,
+					"varname": "Mod_Osc_Level_L"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-274",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1416.0,
+						688.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend 61"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-275",
+					"maxclass": "newobj",
+					"numinlets": 1,
+					"numoutlets": 3,
+					"patching_rect": [
+						1656.0,
+						728.0,
+						70.0,
+						22.0
+					],
+					"outlettype": [
+						"",
+						"",
+						""
+					],
+					"text": "ctlin 61"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-276",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1896.0,
+						728.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend set"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-277",
+					"maxclass": "live.slider",
+					"numinlets": 1,
+					"numoutlets": 1,
+					"patching_rect": [
+						288.0,
+						48.0,
+						20.0,
+						104.0
+					],
+					"outlettype": [
+						""
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						288.0,
+						48.0,
+						20.0,
+						104.0
+					],
+					"parameter_enable": 1,
+					"varname": "Noise_Level",
+					"saved_attribute_attributes": {
+						"valueof": {
+							"parameter_longname": "Noise Level",
+							"parameter_shortname": "Noise",
+							"parameter_type": 1,
+							"parameter_mmin": 0,
+							"parameter_mmax": 127,
+							"parameter_initial_enable": 0,
+							"parameter_initial": [
+								0
+							],
+							"parameter_invisible": 0
+						}
+					},
+					"annotation": "Noise Level  \u00b7  CC 62  \u2014  Level of the noise generator into the mixer.",
+					"hint": "Noise Level  \u00b7  CC 62  \u2014  Level of the noise generator into the mixer."
+				}
+			},
+			{
+				"box": {
+					"id": "obj-278",
+					"maxclass": "comment",
+					"numinlets": 1,
+					"numoutlets": 0,
+					"patching_rect": [
+						266.0,
+						22.0,
+						62.0,
+						12.0
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						266.0,
+						22.0,
+						62.0,
+						12.0
+					],
+					"text": "Noise",
+					"fontsize": 8.0,
+					"fontface": 0,
+					"textjustification": 1,
+					"varname": "Noise_Level_L"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-279",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1416.0,
+						696.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend 62"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-280",
+					"maxclass": "newobj",
+					"numinlets": 1,
+					"numoutlets": 3,
+					"patching_rect": [
+						1656.0,
+						736.0,
+						70.0,
+						22.0
+					],
+					"outlettype": [
+						"",
+						"",
+						""
+					],
+					"text": "ctlin 62"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-281",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1896.0,
+						736.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend set"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-282",
+					"maxclass": "live.dial",
+					"numinlets": 1,
+					"numoutlets": 1,
+					"patching_rect": [
+						343.0,
+						81.0,
+						38.0,
+						38.0
+					],
+					"outlettype": [
+						""
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						343.0,
+						81.0,
+						38.0,
+						38.0
+					],
+					"parameter_enable": 1,
+					"varname": "Clipping_Level",
+					"saved_attribute_attributes": {
+						"valueof": {
+							"parameter_longname": "Clipping Level",
+							"parameter_shortname": "Drive",
+							"parameter_type": 1,
+							"parameter_mmin": 0,
+							"parameter_mmax": 127,
+							"parameter_initial_enable": 0,
+							"parameter_initial": [
+								0
+							],
+							"parameter_invisible": 0
+						}
+					},
+					"annotation": "Clipping Level  \u00b7  CC 65  \u2014  OVERLOAD - overdrives the mixer sum for overtones, CP3-mixer style.",
+					"hint": "Clipping Level  \u00b7  CC 65  \u2014  OVERLOAD - overdrives the mixer sum for overtones, CP3-mixer style."
+				}
+			},
+			{
+				"box": {
+					"id": "obj-283",
+					"maxclass": "comment",
+					"numinlets": 1,
+					"numoutlets": 0,
+					"patching_rect": [
+						330.0,
+						22.0,
+						62.0,
+						12.0
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						330.0,
+						22.0,
+						62.0,
+						12.0
+					],
+					"text": "Drive",
+					"fontsize": 8.0,
+					"fontface": 0,
+					"textjustification": 1,
+					"varname": "Clipping_Level_L"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-284",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1416.0,
+						720.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend 65"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-285",
+					"maxclass": "newobj",
+					"numinlets": 1,
+					"numoutlets": 3,
+					"patching_rect": [
+						1656.0,
+						760.0,
+						70.0,
+						22.0
+					],
+					"outlettype": [
+						"",
+						"",
+						""
+					],
+					"text": "ctlin 65"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-286",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1896.0,
+						760.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend set"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-287",
+					"maxclass": "live.dial",
+					"numinlets": 1,
+					"numoutlets": 1,
+					"patching_rect": [
+						23.0,
+						45.0,
+						38.0,
+						38.0
+					],
+					"outlettype": [
+						""
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						23.0,
+						45.0,
+						38.0,
+						38.0
+					],
+					"parameter_enable": 1,
+					"varname": "Filter_1_Cutoff",
+					"saved_attribute_attributes": {
+						"valueof": {
+							"parameter_longname": "Filter 1 Cutoff",
+							"parameter_shortname": "F1 Cutoff",
+							"parameter_type": 1,
+							"parameter_mmin": 0,
+							"parameter_mmax": 127,
+							"parameter_initial_enable": 1,
+							"parameter_initial": [
+								127
+							],
+							"parameter_invisible": 0
+						}
+					},
+					"annotation": "Filter 1 Cutoff  \u00b7  CC 67  \u2014  Cutoff of Filter 1, a discrete Moog transistor-ladder filter (904a-style).",
+					"hint": "Filter 1 Cutoff  \u00b7  CC 67  \u2014  Cutoff of Filter 1, a discrete Moog transistor-ladder filter (904a-style)."
+				}
+			},
+			{
+				"box": {
+					"id": "obj-288",
+					"maxclass": "comment",
+					"numinlets": 1,
+					"numoutlets": 0,
+					"patching_rect": [
+						10.0,
+						22.0,
+						62.0,
+						12.0
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						10.0,
+						22.0,
+						62.0,
+						12.0
+					],
+					"text": "F1 Cutoff",
+					"fontsize": 8.0,
+					"fontface": 0,
+					"textjustification": 1,
+					"varname": "Filter_1_Cutoff_L"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-289",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1416.0,
+						736.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend 67"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-290",
+					"maxclass": "newobj",
+					"numinlets": 1,
+					"numoutlets": 3,
+					"patching_rect": [
+						1656.0,
+						776.0,
+						70.0,
+						22.0
+					],
+					"outlettype": [
+						"",
+						"",
+						""
+					],
+					"text": "ctlin 67"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-291",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1896.0,
+						776.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend set"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-292",
+					"maxclass": "live.dial",
+					"numinlets": 1,
+					"numoutlets": 1,
+					"patching_rect": [
+						87.0,
+						45.0,
+						38.0,
+						38.0
+					],
+					"outlettype": [
+						""
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						87.0,
+						45.0,
+						38.0,
+						38.0
+					],
+					"parameter_enable": 1,
+					"varname": "Filter_1_High_Pass",
+					"saved_attribute_attributes": {
+						"valueof": {
+							"parameter_longname": "Filter 1 High Pass",
+							"parameter_shortname": "F1 High Pass",
+							"parameter_type": 1,
+							"parameter_mmin": 0,
+							"parameter_mmax": 127,
+							"parameter_initial_enable": 0,
+							"parameter_initial": [
+								0
+							],
+							"parameter_invisible": 0
+						}
+					},
+					"annotation": "Filter 1 High Pass  \u00b7  CC 66  \u2014  Filter 1 high-pass amount (0-127), continuously blending in high-pass.",
+					"hint": "Filter 1 High Pass  \u00b7  CC 66  \u2014  Filter 1 high-pass amount (0-127), continuously blending in high-pass."
+				}
+			},
+			{
+				"box": {
+					"id": "obj-293",
+					"maxclass": "comment",
+					"numinlets": 1,
+					"numoutlets": 0,
+					"patching_rect": [
+						74.0,
+						22.0,
+						62.0,
+						12.0
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						74.0,
+						22.0,
+						62.0,
+						12.0
+					],
+					"text": "F1 High Pass",
+					"fontsize": 8.0,
+					"fontface": 0,
+					"textjustification": 1,
+					"varname": "Filter_1_High_Pass_L"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-294",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1416.0,
+						728.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend 66"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-295",
+					"maxclass": "newobj",
+					"numinlets": 1,
+					"numoutlets": 3,
+					"patching_rect": [
+						1656.0,
+						768.0,
+						70.0,
+						22.0
+					],
+					"outlettype": [
+						"",
+						"",
+						""
+					],
+					"text": "ctlin 66"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-296",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1896.0,
+						768.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend set"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-297",
+					"maxclass": "live.dial",
+					"numinlets": 1,
+					"numoutlets": 1,
+					"patching_rect": [
+						151.0,
+						45.0,
+						38.0,
+						38.0
+					],
+					"outlettype": [
+						""
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						151.0,
+						45.0,
+						38.0,
+						38.0
+					],
+					"parameter_enable": 1,
+					"varname": "Filter_1_Resonance",
+					"saved_attribute_attributes": {
+						"valueof": {
+							"parameter_longname": "Filter 1 Resonance",
+							"parameter_shortname": "F1 Reso",
+							"parameter_type": 1,
+							"parameter_mmin": 0,
+							"parameter_mmax": 127,
+							"parameter_initial_enable": 0,
+							"parameter_initial": [
+								0
+							],
+							"parameter_invisible": 0
+						}
+					},
+					"annotation": "Filter 1 Resonance  \u00b7  CC 68  \u2014  Resonance/emphasis at Filter 1's cutoff; self-oscillates when high.",
+					"hint": "Filter 1 Resonance  \u00b7  CC 68  \u2014  Resonance/emphasis at Filter 1's cutoff; self-oscillates when high."
+				}
+			},
+			{
+				"box": {
+					"id": "obj-298",
+					"maxclass": "comment",
+					"numinlets": 1,
+					"numoutlets": 0,
+					"patching_rect": [
+						138.0,
+						22.0,
+						62.0,
+						12.0
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						138.0,
+						22.0,
+						62.0,
+						12.0
+					],
+					"text": "F1 Reso",
+					"fontsize": 8.0,
+					"fontface": 0,
+					"textjustification": 1,
+					"varname": "Filter_1_Resonance_L"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-299",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1416.0,
+						744.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend 68"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-300",
+					"maxclass": "newobj",
+					"numinlets": 1,
+					"numoutlets": 3,
+					"patching_rect": [
+						1656.0,
+						784.0,
+						70.0,
+						22.0
+					],
+					"outlettype": [
+						"",
+						"",
+						""
+					],
+					"text": "ctlin 68"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-301",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1896.0,
+						784.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend set"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-302",
+					"maxclass": "live.dial",
+					"numinlets": 1,
+					"numoutlets": 1,
+					"patching_rect": [
+						215.0,
+						45.0,
+						38.0,
+						38.0
+					],
+					"outlettype": [
+						""
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						215.0,
+						45.0,
+						38.0,
+						38.0
+					],
+					"parameter_enable": 1,
+					"varname": "Filter_1_Env_Amount",
+					"saved_attribute_attributes": {
+						"valueof": {
+							"parameter_longname": "Filter 1 Env Amount",
+							"parameter_shortname": "F1 Env Amt",
+							"parameter_type": 1,
+							"parameter_mmin": 0,
+							"parameter_mmax": 127,
+							"parameter_initial_enable": 0,
+							"parameter_initial": [
+								0
+							],
+							"parameter_invisible": 0
+						}
+					},
+					"annotation": "Filter 1 Env Amount  \u00b7  CC 69  \u2014  Amount of the Filter envelope applied to Filter 1 cutoff.",
+					"hint": "Filter 1 Env Amount  \u00b7  CC 69  \u2014  Amount of the Filter envelope applied to Filter 1 cutoff."
+				}
+			},
+			{
+				"box": {
+					"id": "obj-303",
+					"maxclass": "comment",
+					"numinlets": 1,
+					"numoutlets": 0,
+					"patching_rect": [
+						202.0,
+						22.0,
+						62.0,
+						12.0
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						202.0,
+						22.0,
+						62.0,
+						12.0
+					],
+					"text": "F1 Env Amt",
+					"fontsize": 8.0,
+					"fontface": 0,
+					"textjustification": 1,
+					"varname": "Filter_1_Env_Amount_L"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-304",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1416.0,
+						752.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend 69"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-305",
+					"maxclass": "newobj",
+					"numinlets": 1,
+					"numoutlets": 3,
+					"patching_rect": [
+						1656.0,
+						792.0,
+						70.0,
+						22.0
+					],
+					"outlettype": [
+						"",
+						"",
+						""
+					],
+					"text": "ctlin 69"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-306",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1896.0,
+						792.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend set"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-307",
+					"maxclass": "live.menu",
+					"numinlets": 1,
+					"numoutlets": 1,
+					"patching_rect": [
+						269.0,
+						55.0,
+						58.0,
+						18.0
+					],
+					"outlettype": [
+						""
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						269.0,
+						55.0,
+						58.0,
+						18.0
+					],
+					"parameter_enable": 1,
+					"varname": "Filter_1_KB_Track",
+					"saved_attribute_attributes": {
+						"valueof": {
+							"parameter_longname": "Filter 1 KB Track",
+							"parameter_shortname": "F1 KB Track",
+							"parameter_type": 2,
+							"parameter_mmin": 0,
+							"parameter_mmax": 2,
+							"parameter_initial_enable": 0,
+							"parameter_initial": [
+								0
+							],
+							"parameter_invisible": 0,
+							"parameter_enum": [
+								"Off",
+								"Half",
+								"Full"
+							],
+							"parameter_range": [
+								"Off",
+								"Half",
+								"Full"
+							]
+						}
+					},
+					"annotation": "Filter 1 KB Track  \u00b7  CC 70  \u2014  How much Filter 1 cutoff tracks keyboard pitch (Off / Half / Full).  (0-42: Off; 43-84: Half; 85-127: Full)",
+					"hint": "Filter 1 KB Track  \u00b7  CC 70  \u2014  How much Filter 1 cutoff tracks keyboard pitch (Off / Half / Full).  (0-42: Off; 43-84: Half; 85-127: Full)"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-308",
+					"maxclass": "comment",
+					"numinlets": 1,
+					"numoutlets": 0,
+					"patching_rect": [
+						266.0,
+						22.0,
+						62.0,
+						12.0
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						266.0,
+						22.0,
+						62.0,
+						12.0
+					],
+					"text": "F1 KB Track",
+					"fontsize": 8.0,
+					"fontface": 0,
+					"textjustification": 1,
+					"varname": "Filter_1_KB_Track_L"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-309",
+					"maxclass": "newobj",
+					"numinlets": 1,
+					"numoutlets": 1,
+					"patching_rect": [
+						1276.0,
+						760.0,
+						110.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "expr $i1 * 43 + 21"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-310",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1416.0,
+						760.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend 70"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-311",
+					"maxclass": "newobj",
+					"numinlets": 1,
+					"numoutlets": 3,
+					"patching_rect": [
+						1656.0,
+						800.0,
+						70.0,
+						22.0
+					],
+					"outlettype": [
+						"",
+						"",
+						""
+					],
+					"text": "ctlin 70"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-312",
+					"maxclass": "newobj",
+					"numinlets": 1,
+					"numoutlets": 1,
+					"patching_rect": [
+						1736.0,
+						800.0,
+						150.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "expr ($i1 > 42) + ($i1 > 84)"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-313",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1896.0,
+						800.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend set"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-314",
+					"maxclass": "live.toggle",
+					"numinlets": 1,
+					"numoutlets": 1,
+					"patching_rect": [
+						353.0,
+						55.0,
+						18.0,
+						18.0
+					],
+					"outlettype": [
+						""
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						353.0,
+						55.0,
+						18.0,
+						18.0
+					],
+					"parameter_enable": 1,
+					"varname": "Link_Filters",
+					"saved_attribute_attributes": {
+						"valueof": {
+							"parameter_longname": "Link Filters",
+							"parameter_shortname": "Link Filters",
+							"parameter_type": 2,
+							"parameter_mmin": 0,
+							"parameter_mmax": 1,
+							"parameter_initial_enable": 0,
+							"parameter_initial": [
+								0
+							],
+							"parameter_invisible": 0,
+							"parameter_enum": [
+								"off",
+								"on"
+							],
+							"parameter_range": [
+								"off",
+								"on"
+							]
+						}
+					},
+					"annotation": "Link Filters  \u00b7  CC 77  \u2014  Links Filter 1 & 2 so one cutoff control sweeps both.  (0-63: Off; 64-127: On)",
+					"hint": "Link Filters  \u00b7  CC 77  \u2014  Links Filter 1 & 2 so one cutoff control sweeps both.  (0-63: Off; 64-127: On)"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-315",
+					"maxclass": "comment",
+					"numinlets": 1,
+					"numoutlets": 0,
+					"patching_rect": [
+						330.0,
+						22.0,
+						62.0,
+						12.0
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						330.0,
+						22.0,
+						62.0,
+						12.0
+					],
+					"text": "Link Filters",
+					"fontsize": 8.0,
+					"fontface": 0,
+					"textjustification": 1,
+					"varname": "Link_Filters_L"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-316",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1276.0,
+						816.0,
+						50.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "* 127"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-317",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1416.0,
+						816.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend 77"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-318",
+					"maxclass": "newobj",
+					"numinlets": 1,
+					"numoutlets": 3,
+					"patching_rect": [
+						1656.0,
+						856.0,
+						70.0,
+						22.0
+					],
+					"outlettype": [
+						"",
+						"",
+						""
+					],
+					"text": "ctlin 77"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-319",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1736.0,
+						856.0,
+						50.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": ">= 64"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-320",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1896.0,
+						856.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend set"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-321",
+					"maxclass": "live.dial",
+					"numinlets": 1,
+					"numoutlets": 1,
+					"patching_rect": [
+						23.0,
+						117.0,
+						38.0,
+						38.0
+					],
+					"outlettype": [
+						""
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						23.0,
+						117.0,
+						38.0,
+						38.0
+					],
+					"parameter_enable": 1,
+					"varname": "Filter_2_Frequency",
+					"saved_attribute_attributes": {
+						"valueof": {
+							"parameter_longname": "Filter 2 Frequency",
+							"parameter_shortname": "F2 Freq",
+							"parameter_type": 1,
+							"parameter_mmin": 0,
+							"parameter_mmax": 127,
+							"parameter_initial_enable": 0,
+							"parameter_initial": [
+								0
+							],
+							"parameter_invisible": 0
+						}
+					},
+					"annotation": "Filter 2 Frequency  \u00b7  CC 72  \u2014  Cutoff of Filter 2, a dedicated low-pass Moog ladder filter.",
+					"hint": "Filter 2 Frequency  \u00b7  CC 72  \u2014  Cutoff of Filter 2, a dedicated low-pass Moog ladder filter."
+				}
+			},
+			{
+				"box": {
+					"id": "obj-322",
+					"maxclass": "comment",
+					"numinlets": 1,
+					"numoutlets": 0,
+					"patching_rect": [
+						10.0,
+						94.0,
+						62.0,
+						12.0
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						10.0,
+						94.0,
+						62.0,
+						12.0
+					],
+					"text": "F2 Freq",
+					"fontsize": 8.0,
+					"fontface": 0,
+					"textjustification": 1,
+					"varname": "Filter_2_Frequency_L"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-323",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1416.0,
+						776.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend 72"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-324",
+					"maxclass": "newobj",
+					"numinlets": 1,
+					"numoutlets": 3,
+					"patching_rect": [
+						1656.0,
+						816.0,
+						70.0,
+						22.0
+					],
+					"outlettype": [
+						"",
+						"",
+						""
+					],
+					"text": "ctlin 72"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-325",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1896.0,
+						816.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend set"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-326",
+					"maxclass": "live.dial",
+					"numinlets": 1,
+					"numoutlets": 1,
+					"patching_rect": [
+						87.0,
+						117.0,
+						38.0,
+						38.0
+					],
+					"outlettype": [
+						""
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						87.0,
+						117.0,
+						38.0,
+						38.0
+					],
+					"parameter_enable": 1,
+					"varname": "Filter_2_Resonance",
+					"saved_attribute_attributes": {
+						"valueof": {
+							"parameter_longname": "Filter 2 Resonance",
+							"parameter_shortname": "F2 Reso",
+							"parameter_type": 1,
+							"parameter_mmin": 0,
+							"parameter_mmax": 127,
+							"parameter_initial_enable": 0,
+							"parameter_initial": [
+								0
+							],
+							"parameter_invisible": 0
+						}
+					},
+					"annotation": "Filter 2 Resonance  \u00b7  CC 73  \u2014  Resonance/emphasis at Filter 2's cutoff; self-oscillates when high.",
+					"hint": "Filter 2 Resonance  \u00b7  CC 73  \u2014  Resonance/emphasis at Filter 2's cutoff; self-oscillates when high."
+				}
+			},
+			{
+				"box": {
+					"id": "obj-327",
+					"maxclass": "comment",
+					"numinlets": 1,
+					"numoutlets": 0,
+					"patching_rect": [
+						74.0,
+						94.0,
+						62.0,
+						12.0
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						74.0,
+						94.0,
+						62.0,
+						12.0
+					],
+					"text": "F2 Reso",
+					"fontsize": 8.0,
+					"fontface": 0,
+					"textjustification": 1,
+					"varname": "Filter_2_Resonance_L"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-328",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1416.0,
+						784.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend 73"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-329",
+					"maxclass": "newobj",
+					"numinlets": 1,
+					"numoutlets": 3,
+					"patching_rect": [
+						1656.0,
+						824.0,
+						70.0,
+						22.0
+					],
+					"outlettype": [
+						"",
+						"",
+						""
+					],
+					"text": "ctlin 73"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-330",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1896.0,
+						824.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend set"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-331",
+					"maxclass": "live.dial",
+					"numinlets": 1,
+					"numoutlets": 1,
+					"patching_rect": [
+						151.0,
+						117.0,
+						38.0,
+						38.0
+					],
+					"outlettype": [
+						""
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						151.0,
+						117.0,
+						38.0,
+						38.0
+					],
+					"parameter_enable": 1,
+					"varname": "Filter_2_Env_Amount",
+					"saved_attribute_attributes": {
+						"valueof": {
+							"parameter_longname": "Filter 2 Env Amount",
+							"parameter_shortname": "F2 Env Amt",
+							"parameter_type": 1,
+							"parameter_mmin": 0,
+							"parameter_mmax": 127,
+							"parameter_initial_enable": 0,
+							"parameter_initial": [
+								0
+							],
+							"parameter_invisible": 0
+						}
+					},
+					"annotation": "Filter 2 Env Amount  \u00b7  CC 75  \u2014  Amount of the Filter envelope applied to Filter 2 cutoff.",
+					"hint": "Filter 2 Env Amount  \u00b7  CC 75  \u2014  Amount of the Filter envelope applied to Filter 2 cutoff."
+				}
+			},
+			{
+				"box": {
+					"id": "obj-332",
+					"maxclass": "comment",
+					"numinlets": 1,
+					"numoutlets": 0,
+					"patching_rect": [
+						138.0,
+						94.0,
+						62.0,
+						12.0
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						138.0,
+						94.0,
+						62.0,
+						12.0
+					],
+					"text": "F2 Env Amt",
+					"fontsize": 8.0,
+					"fontface": 0,
+					"textjustification": 1,
+					"varname": "Filter_2_Env_Amount_L"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-333",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1416.0,
+						800.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend 75"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-334",
+					"maxclass": "newobj",
+					"numinlets": 1,
+					"numoutlets": 3,
+					"patching_rect": [
+						1656.0,
+						840.0,
+						70.0,
+						22.0
+					],
+					"outlettype": [
+						"",
+						"",
+						""
+					],
+					"text": "ctlin 75"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-335",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1896.0,
+						840.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend set"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-336",
+					"maxclass": "live.menu",
+					"numinlets": 1,
+					"numoutlets": 1,
+					"patching_rect": [
+						205.0,
+						127.0,
+						58.0,
+						18.0
+					],
+					"outlettype": [
+						""
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						205.0,
+						127.0,
+						58.0,
+						18.0
+					],
+					"parameter_enable": 1,
+					"varname": "Filter_2_KB_Track",
+					"saved_attribute_attributes": {
+						"valueof": {
+							"parameter_longname": "Filter 2 KB Track",
+							"parameter_shortname": "F2 KB Track",
+							"parameter_type": 2,
+							"parameter_mmin": 0,
+							"parameter_mmax": 2,
+							"parameter_initial_enable": 0,
+							"parameter_initial": [
+								0
+							],
+							"parameter_invisible": 0,
+							"parameter_enum": [
+								"Off",
+								"Half",
+								"Full"
+							],
+							"parameter_range": [
+								"Off",
+								"Half",
+								"Full"
+							]
+						}
+					},
+					"annotation": "Filter 2 KB Track  \u00b7  CC 76  \u2014  How much Filter 2 cutoff tracks keyboard pitch (Off / Half / Full).  (0-42: Off; 43-84: Half; 85-127: Full)",
+					"hint": "Filter 2 KB Track  \u00b7  CC 76  \u2014  How much Filter 2 cutoff tracks keyboard pitch (Off / Half / Full).  (0-42: Off; 43-84: Half; 85-127: Full)"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-337",
+					"maxclass": "comment",
+					"numinlets": 1,
+					"numoutlets": 0,
+					"patching_rect": [
+						202.0,
+						94.0,
+						62.0,
+						12.0
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						202.0,
+						94.0,
+						62.0,
+						12.0
+					],
+					"text": "F2 KB Track",
+					"fontsize": 8.0,
+					"fontface": 0,
+					"textjustification": 1,
+					"varname": "Filter_2_KB_Track_L"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-338",
+					"maxclass": "newobj",
+					"numinlets": 1,
+					"numoutlets": 1,
+					"patching_rect": [
+						1276.0,
+						808.0,
+						110.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "expr $i1 * 43 + 21"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-339",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1416.0,
+						808.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend 76"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-340",
+					"maxclass": "newobj",
+					"numinlets": 1,
+					"numoutlets": 3,
+					"patching_rect": [
+						1656.0,
+						848.0,
+						70.0,
+						22.0
+					],
+					"outlettype": [
+						"",
+						"",
+						""
+					],
+					"text": "ctlin 76"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-341",
+					"maxclass": "newobj",
+					"numinlets": 1,
+					"numoutlets": 1,
+					"patching_rect": [
+						1736.0,
+						848.0,
+						150.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "expr ($i1 > 42) + ($i1 > 84)"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-342",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1896.0,
+						848.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend set"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-343",
+					"maxclass": "live.menu",
+					"numinlets": 1,
+					"numoutlets": 1,
+					"patching_rect": [
+						269.0,
+						127.0,
+						58.0,
+						18.0
+					],
+					"outlettype": [
+						""
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						269.0,
+						127.0,
+						58.0,
+						18.0
+					],
+					"parameter_enable": 1,
+					"varname": "Filter_Order",
+					"saved_attribute_attributes": {
+						"valueof": {
+							"parameter_longname": "Filter Order",
+							"parameter_shortname": "Order",
+							"parameter_type": 2,
+							"parameter_mmin": 0,
+							"parameter_mmax": 2,
+							"parameter_initial_enable": 0,
+							"parameter_initial": [
+								0
+							],
+							"parameter_invisible": 0,
+							"parameter_enum": [
+								"Serial",
+								"Stereo",
+								"Parallel"
+							],
+							"parameter_range": [
+								"Serial",
+								"Stereo",
+								"Parallel"
+							]
+						}
+					},
+					"annotation": "Filter Order  \u00b7  CC 78  \u2014  Filter routing: Serial (1>2), Stereo (1 left / 2 right), or Parallel.  (0-42: Serial; 43-84: Stereo; 85-127: Parallel)",
+					"hint": "Filter Order  \u00b7  CC 78  \u2014  Filter routing: Serial (1>2), Stereo (1 left / 2 right), or Parallel.  (0-42: Serial; 43-84: Stereo; 85-127: Parallel)"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-344",
+					"maxclass": "comment",
+					"numinlets": 1,
+					"numoutlets": 0,
+					"patching_rect": [
+						266.0,
+						94.0,
+						62.0,
+						12.0
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						266.0,
+						94.0,
+						62.0,
+						12.0
+					],
+					"text": "Order",
+					"fontsize": 8.0,
+					"fontface": 0,
+					"textjustification": 1,
+					"varname": "Filter_Order_L"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-345",
+					"maxclass": "newobj",
+					"numinlets": 1,
+					"numoutlets": 1,
+					"patching_rect": [
+						1276.0,
+						824.0,
+						110.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "expr $i1 * 43 + 21"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-346",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1416.0,
+						824.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend 78"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-347",
+					"maxclass": "newobj",
+					"numinlets": 1,
+					"numoutlets": 3,
+					"patching_rect": [
+						1656.0,
+						864.0,
+						70.0,
+						22.0
+					],
+					"outlettype": [
+						"",
+						"",
+						""
+					],
+					"text": "ctlin 78"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-348",
+					"maxclass": "newobj",
+					"numinlets": 1,
+					"numoutlets": 1,
+					"patching_rect": [
+						1736.0,
+						864.0,
+						150.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "expr ($i1 > 42) + ($i1 > 84)"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-349",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1896.0,
+						864.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend set"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-350",
+					"maxclass": "live.slider",
+					"numinlets": 1,
+					"numoutlets": 1,
+					"patching_rect": [
+						32.0,
+						36.0,
+						20.0,
+						56.0
+					],
+					"outlettype": [
+						""
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						32.0,
+						36.0,
+						20.0,
+						56.0
+					],
+					"parameter_enable": 1,
+					"varname": "Filter_Env_Attack",
+					"saved_attribute_attributes": {
+						"valueof": {
+							"parameter_longname": "Filter Env Attack",
+							"parameter_shortname": "F Atk",
+							"parameter_type": 1,
+							"parameter_mmin": 0,
+							"parameter_mmax": 127,
+							"parameter_initial_enable": 0,
+							"parameter_initial": [
+								0
+							],
+							"parameter_invisible": 0
+						}
+					},
+					"annotation": "Filter Env Attack  \u00b7  CC 79  \u2014  Attack time of the Filter envelope.",
+					"hint": "Filter Env Attack  \u00b7  CC 79  \u2014  Attack time of the Filter envelope."
+				}
+			},
+			{
+				"box": {
+					"id": "obj-351",
+					"maxclass": "comment",
+					"numinlets": 1,
+					"numoutlets": 0,
+					"patching_rect": [
+						10.0,
+						22.0,
+						62.0,
+						12.0
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						10.0,
+						22.0,
+						62.0,
+						12.0
+					],
+					"text": "F Atk",
+					"fontsize": 8.0,
+					"fontface": 0,
+					"textjustification": 1,
+					"varname": "Filter_Env_Attack_L"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-352",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1416.0,
+						832.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend 79"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-353",
+					"maxclass": "newobj",
+					"numinlets": 1,
+					"numoutlets": 3,
+					"patching_rect": [
+						1656.0,
+						872.0,
+						70.0,
+						22.0
+					],
+					"outlettype": [
+						"",
+						"",
+						""
+					],
+					"text": "ctlin 79"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-354",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1896.0,
+						872.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend set"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-355",
+					"maxclass": "live.slider",
+					"numinlets": 1,
+					"numoutlets": 1,
+					"patching_rect": [
+						96.0,
+						36.0,
+						20.0,
+						56.0
+					],
+					"outlettype": [
+						""
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						96.0,
+						36.0,
+						20.0,
+						56.0
+					],
+					"parameter_enable": 1,
+					"varname": "Filter_Env_Decay",
+					"saved_attribute_attributes": {
+						"valueof": {
+							"parameter_longname": "Filter Env Decay",
+							"parameter_shortname": "F Dec",
+							"parameter_type": 1,
+							"parameter_mmin": 0,
+							"parameter_mmax": 127,
+							"parameter_initial_enable": 0,
+							"parameter_initial": [
+								0
+							],
+							"parameter_invisible": 0
+						}
+					},
+					"annotation": "Filter Env Decay  \u00b7  CC 80  \u2014  Decay time of the Filter envelope (fall to the sustain level).",
+					"hint": "Filter Env Decay  \u00b7  CC 80  \u2014  Decay time of the Filter envelope (fall to the sustain level)."
+				}
+			},
+			{
+				"box": {
+					"id": "obj-356",
+					"maxclass": "comment",
+					"numinlets": 1,
+					"numoutlets": 0,
+					"patching_rect": [
+						74.0,
+						22.0,
+						62.0,
+						12.0
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						74.0,
+						22.0,
+						62.0,
+						12.0
+					],
+					"text": "F Dec",
+					"fontsize": 8.0,
+					"fontface": 0,
+					"textjustification": 1,
+					"varname": "Filter_Env_Decay_L"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-357",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1416.0,
+						840.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend 80"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-358",
+					"maxclass": "newobj",
+					"numinlets": 1,
+					"numoutlets": 3,
+					"patching_rect": [
+						1656.0,
+						880.0,
+						70.0,
+						22.0
+					],
+					"outlettype": [
+						"",
+						"",
+						""
+					],
+					"text": "ctlin 80"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-359",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1896.0,
+						880.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend set"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-360",
+					"maxclass": "live.slider",
+					"numinlets": 1,
+					"numoutlets": 1,
+					"patching_rect": [
+						160.0,
+						36.0,
+						20.0,
+						56.0
+					],
+					"outlettype": [
+						""
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						160.0,
+						36.0,
+						20.0,
+						56.0
+					],
+					"parameter_enable": 1,
+					"varname": "Filter_Env_Sustain",
+					"saved_attribute_attributes": {
+						"valueof": {
+							"parameter_longname": "Filter Env Sustain",
+							"parameter_shortname": "F Sus",
+							"parameter_type": 1,
+							"parameter_mmin": 0,
+							"parameter_mmax": 127,
+							"parameter_initial_enable": 1,
+							"parameter_initial": [
+								127
+							],
+							"parameter_invisible": 0
+						}
+					},
+					"annotation": "Filter Env Sustain  \u00b7  CC 81  \u2014  Sustain level held by the Filter envelope while a key is down.",
+					"hint": "Filter Env Sustain  \u00b7  CC 81  \u2014  Sustain level held by the Filter envelope while a key is down."
+				}
+			},
+			{
+				"box": {
+					"id": "obj-361",
+					"maxclass": "comment",
+					"numinlets": 1,
+					"numoutlets": 0,
+					"patching_rect": [
+						138.0,
+						22.0,
+						62.0,
+						12.0
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						138.0,
+						22.0,
+						62.0,
+						12.0
+					],
+					"text": "F Sus",
+					"fontsize": 8.0,
+					"fontface": 0,
+					"textjustification": 1,
+					"varname": "Filter_Env_Sustain_L"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-362",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1416.0,
+						848.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend 81"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-363",
+					"maxclass": "newobj",
+					"numinlets": 1,
+					"numoutlets": 3,
+					"patching_rect": [
+						1656.0,
+						888.0,
+						70.0,
+						22.0
+					],
+					"outlettype": [
+						"",
+						"",
+						""
+					],
+					"text": "ctlin 81"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-364",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1896.0,
+						888.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend set"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-365",
+					"maxclass": "live.slider",
+					"numinlets": 1,
+					"numoutlets": 1,
+					"patching_rect": [
+						224.0,
+						36.0,
+						20.0,
+						56.0
+					],
+					"outlettype": [
+						""
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						224.0,
+						36.0,
+						20.0,
+						56.0
+					],
+					"parameter_enable": 1,
+					"varname": "Filter_Env_Release",
+					"saved_attribute_attributes": {
+						"valueof": {
+							"parameter_longname": "Filter Env Release",
+							"parameter_shortname": "F Rel",
+							"parameter_type": 1,
+							"parameter_mmin": 0,
+							"parameter_mmax": 127,
+							"parameter_initial_enable": 0,
+							"parameter_initial": [
+								0
+							],
+							"parameter_invisible": 0
+						}
+					},
+					"annotation": "Filter Env Release  \u00b7  CC 82  \u2014  Release time of the Filter envelope after key release.",
+					"hint": "Filter Env Release  \u00b7  CC 82  \u2014  Release time of the Filter envelope after key release."
+				}
+			},
+			{
+				"box": {
+					"id": "obj-366",
+					"maxclass": "comment",
+					"numinlets": 1,
+					"numoutlets": 0,
+					"patching_rect": [
+						202.0,
+						22.0,
+						62.0,
+						12.0
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						202.0,
+						22.0,
+						62.0,
+						12.0
+					],
+					"text": "F Rel",
+					"fontsize": 8.0,
+					"fontface": 0,
+					"textjustification": 1,
+					"varname": "Filter_Env_Release_L"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-367",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1416.0,
+						856.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend 82"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-368",
+					"maxclass": "newobj",
+					"numinlets": 1,
+					"numoutlets": 3,
+					"patching_rect": [
+						1656.0,
+						896.0,
+						70.0,
+						22.0
+					],
+					"outlettype": [
+						"",
+						"",
+						""
+					],
+					"text": "ctlin 82"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-369",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1896.0,
+						896.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend set"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-370",
+					"maxclass": "live.toggle",
+					"numinlets": 1,
+					"numoutlets": 1,
+					"patching_rect": [
+						289.0,
+						55.0,
+						18.0,
+						18.0
+					],
+					"outlettype": [
+						""
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						289.0,
+						55.0,
+						18.0,
+						18.0
+					],
+					"parameter_enable": 1,
+					"varname": "Filter_Env_Loop",
+					"saved_attribute_attributes": {
+						"valueof": {
+							"parameter_longname": "Filter Env Loop",
+							"parameter_shortname": "F Loop",
+							"parameter_type": 2,
+							"parameter_mmin": 0,
+							"parameter_mmax": 1,
+							"parameter_initial_enable": 0,
+							"parameter_initial": [
+								0
+							],
+							"parameter_invisible": 0,
+							"parameter_enum": [
+								"off",
+								"on"
+							],
+							"parameter_range": [
+								"off",
+								"on"
+							]
+						}
+					},
+					"annotation": "Filter Env Loop  \u00b7  CC 83  \u2014  Loops the Filter envelope for cycling, LFO-like modulation.  (0-63: Off; 64-127: On)",
+					"hint": "Filter Env Loop  \u00b7  CC 83  \u2014  Loops the Filter envelope for cycling, LFO-like modulation.  (0-63: Off; 64-127: On)"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-371",
+					"maxclass": "comment",
+					"numinlets": 1,
+					"numoutlets": 0,
+					"patching_rect": [
+						266.0,
+						22.0,
+						62.0,
+						12.0
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						266.0,
+						22.0,
+						62.0,
+						12.0
+					],
+					"text": "F Loop",
+					"fontsize": 8.0,
+					"fontface": 0,
+					"textjustification": 1,
+					"varname": "Filter_Env_Loop_L"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-372",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1276.0,
+						864.0,
+						50.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "* 127"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-373",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1416.0,
+						864.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend 83"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-374",
+					"maxclass": "newobj",
+					"numinlets": 1,
+					"numoutlets": 3,
+					"patching_rect": [
+						1656.0,
+						904.0,
+						70.0,
+						22.0
+					],
+					"outlettype": [
+						"",
+						"",
+						""
+					],
+					"text": "ctlin 83"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-375",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1736.0,
+						904.0,
+						50.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": ">= 64"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-376",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1896.0,
+						904.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend set"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-377",
+					"maxclass": "live.toggle",
+					"numinlets": 1,
+					"numoutlets": 1,
+					"patching_rect": [
+						353.0,
+						55.0,
+						18.0,
+						18.0
+					],
+					"outlettype": [
+						""
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						353.0,
+						55.0,
+						18.0,
+						18.0
+					],
+					"parameter_enable": 1,
+					"varname": "Filter_Env_Velocity",
+					"saved_attribute_attributes": {
+						"valueof": {
+							"parameter_longname": "Filter Env Velocity",
+							"parameter_shortname": "F Vel",
+							"parameter_type": 2,
+							"parameter_mmin": 0,
+							"parameter_mmax": 1,
+							"parameter_initial_enable": 0,
+							"parameter_initial": [
+								0
+							],
+							"parameter_invisible": 0,
+							"parameter_enum": [
+								"off",
+								"on"
+							],
+							"parameter_range": [
+								"off",
+								"on"
+							]
+						}
+					},
+					"annotation": "Filter Env Velocity  \u00b7  CC 85  \u2014  Makes the Filter envelope depth respond to key velocity.  (0-63: Off; 64-127: On)",
+					"hint": "Filter Env Velocity  \u00b7  CC 85  \u2014  Makes the Filter envelope depth respond to key velocity.  (0-63: Off; 64-127: On)"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-378",
+					"maxclass": "comment",
+					"numinlets": 1,
+					"numoutlets": 0,
+					"patching_rect": [
+						330.0,
+						22.0,
+						62.0,
+						12.0
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						330.0,
+						22.0,
+						62.0,
+						12.0
+					],
+					"text": "F Vel",
+					"fontsize": 8.0,
+					"fontface": 0,
+					"textjustification": 1,
+					"varname": "Filter_Env_Velocity_L"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-379",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1276.0,
+						880.0,
+						50.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "* 127"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-380",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1416.0,
+						880.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend 85"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-381",
+					"maxclass": "newobj",
+					"numinlets": 1,
+					"numoutlets": 3,
+					"patching_rect": [
+						1656.0,
+						920.0,
+						70.0,
+						22.0
+					],
+					"outlettype": [
+						"",
+						"",
+						""
+					],
+					"text": "ctlin 85"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-382",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1736.0,
+						920.0,
+						50.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": ">= 64"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-383",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1896.0,
+						920.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend set"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-384",
+					"maxclass": "live.slider",
+					"numinlets": 1,
+					"numoutlets": 1,
+					"patching_rect": [
+						32.0,
+						108.0,
+						20.0,
+						56.0
+					],
+					"outlettype": [
+						""
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						32.0,
+						108.0,
+						20.0,
+						56.0
+					],
+					"parameter_enable": 1,
+					"varname": "VCA_Env_Attack",
+					"saved_attribute_attributes": {
+						"valueof": {
+							"parameter_longname": "VCA Env Attack",
+							"parameter_shortname": "A Atk",
+							"parameter_type": 1,
+							"parameter_mmin": 0,
+							"parameter_mmax": 127,
+							"parameter_initial_enable": 1,
+							"parameter_initial": [
+								0
+							],
+							"parameter_invisible": 0
+						}
+					},
+					"annotation": "VCA Env Attack  \u00b7  CC 86  \u2014  Attack time of the Amplifier (VCA) envelope.",
+					"hint": "VCA Env Attack  \u00b7  CC 86  \u2014  Attack time of the Amplifier (VCA) envelope."
+				}
+			},
+			{
+				"box": {
+					"id": "obj-385",
+					"maxclass": "comment",
+					"numinlets": 1,
+					"numoutlets": 0,
+					"patching_rect": [
+						10.0,
+						94.0,
+						62.0,
+						12.0
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						10.0,
+						94.0,
+						62.0,
+						12.0
+					],
+					"text": "A Atk",
+					"fontsize": 8.0,
+					"fontface": 0,
+					"textjustification": 1,
+					"varname": "VCA_Env_Attack_L"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-386",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1416.0,
+						888.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend 86"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-387",
+					"maxclass": "newobj",
+					"numinlets": 1,
+					"numoutlets": 3,
+					"patching_rect": [
+						1656.0,
+						928.0,
+						70.0,
+						22.0
+					],
+					"outlettype": [
+						"",
+						"",
+						""
+					],
+					"text": "ctlin 86"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-388",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1896.0,
+						928.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend set"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-389",
+					"maxclass": "live.slider",
+					"numinlets": 1,
+					"numoutlets": 1,
+					"patching_rect": [
+						96.0,
+						108.0,
+						20.0,
+						56.0
+					],
+					"outlettype": [
+						""
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						96.0,
+						108.0,
+						20.0,
+						56.0
+					],
+					"parameter_enable": 1,
+					"varname": "VCA_Env_Decay",
+					"saved_attribute_attributes": {
+						"valueof": {
+							"parameter_longname": "VCA Env Decay",
+							"parameter_shortname": "A Dec",
+							"parameter_type": 1,
+							"parameter_mmin": 0,
+							"parameter_mmax": 127,
+							"parameter_initial_enable": 0,
+							"parameter_initial": [
+								0
+							],
+							"parameter_invisible": 0
+						}
+					},
+					"annotation": "VCA Env Decay  \u00b7  CC 87  \u2014  Decay time of the Amplifier (VCA) envelope (fall to the sustain level).",
+					"hint": "VCA Env Decay  \u00b7  CC 87  \u2014  Decay time of the Amplifier (VCA) envelope (fall to the sustain level)."
+				}
+			},
+			{
+				"box": {
+					"id": "obj-390",
+					"maxclass": "comment",
+					"numinlets": 1,
+					"numoutlets": 0,
+					"patching_rect": [
+						74.0,
+						94.0,
+						62.0,
+						12.0
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						74.0,
+						94.0,
+						62.0,
+						12.0
+					],
+					"text": "A Dec",
+					"fontsize": 8.0,
+					"fontface": 0,
+					"textjustification": 1,
+					"varname": "VCA_Env_Decay_L"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-391",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1416.0,
+						896.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend 87"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-392",
+					"maxclass": "newobj",
+					"numinlets": 1,
+					"numoutlets": 3,
+					"patching_rect": [
+						1656.0,
+						936.0,
+						70.0,
+						22.0
+					],
+					"outlettype": [
+						"",
+						"",
+						""
+					],
+					"text": "ctlin 87"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-393",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1896.0,
+						936.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend set"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-394",
+					"maxclass": "live.slider",
+					"numinlets": 1,
+					"numoutlets": 1,
+					"patching_rect": [
+						160.0,
+						108.0,
+						20.0,
+						56.0
+					],
+					"outlettype": [
+						""
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						160.0,
+						108.0,
+						20.0,
+						56.0
+					],
+					"parameter_enable": 1,
+					"varname": "VCA_Env_Sustain",
+					"saved_attribute_attributes": {
+						"valueof": {
+							"parameter_longname": "VCA Env Sustain",
+							"parameter_shortname": "A Sus",
+							"parameter_type": 1,
+							"parameter_mmin": 0,
+							"parameter_mmax": 127,
+							"parameter_initial_enable": 1,
+							"parameter_initial": [
+								127
+							],
+							"parameter_invisible": 0
+						}
+					},
+					"annotation": "VCA Env Sustain  \u00b7  CC 88  \u2014  Sustain level held by the Amplifier (VCA) envelope while a key is down.",
+					"hint": "VCA Env Sustain  \u00b7  CC 88  \u2014  Sustain level held by the Amplifier (VCA) envelope while a key is down."
+				}
+			},
+			{
+				"box": {
+					"id": "obj-395",
+					"maxclass": "comment",
+					"numinlets": 1,
+					"numoutlets": 0,
+					"patching_rect": [
+						138.0,
+						94.0,
+						62.0,
+						12.0
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						138.0,
+						94.0,
+						62.0,
+						12.0
+					],
+					"text": "A Sus",
+					"fontsize": 8.0,
+					"fontface": 0,
+					"textjustification": 1,
+					"varname": "VCA_Env_Sustain_L"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-396",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1416.0,
+						904.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend 88"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-397",
+					"maxclass": "newobj",
+					"numinlets": 1,
+					"numoutlets": 3,
+					"patching_rect": [
+						1656.0,
+						944.0,
+						70.0,
+						22.0
+					],
+					"outlettype": [
+						"",
+						"",
+						""
+					],
+					"text": "ctlin 88"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-398",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1896.0,
+						944.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend set"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-399",
+					"maxclass": "live.slider",
+					"numinlets": 1,
+					"numoutlets": 1,
+					"patching_rect": [
+						224.0,
+						108.0,
+						20.0,
+						56.0
+					],
+					"outlettype": [
+						""
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						224.0,
+						108.0,
+						20.0,
+						56.0
+					],
+					"parameter_enable": 1,
+					"varname": "VCA_Env_Release",
+					"saved_attribute_attributes": {
+						"valueof": {
+							"parameter_longname": "VCA Env Release",
+							"parameter_shortname": "A Rel",
+							"parameter_type": 1,
+							"parameter_mmin": 0,
+							"parameter_mmax": 127,
+							"parameter_initial_enable": 1,
+							"parameter_initial": [
+								20
+							],
+							"parameter_invisible": 0
+						}
+					},
+					"annotation": "VCA Env Release  \u00b7  CC 89  \u2014  Release time of the Amplifier envelope after key release.",
+					"hint": "VCA Env Release  \u00b7  CC 89  \u2014  Release time of the Amplifier envelope after key release."
+				}
+			},
+			{
+				"box": {
+					"id": "obj-400",
+					"maxclass": "comment",
+					"numinlets": 1,
+					"numoutlets": 0,
+					"patching_rect": [
+						202.0,
+						94.0,
+						62.0,
+						12.0
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						202.0,
+						94.0,
+						62.0,
+						12.0
+					],
+					"text": "A Rel",
+					"fontsize": 8.0,
+					"fontface": 0,
+					"textjustification": 1,
+					"varname": "VCA_Env_Release_L"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-401",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1416.0,
+						912.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend 89"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-402",
+					"maxclass": "newobj",
+					"numinlets": 1,
+					"numoutlets": 3,
+					"patching_rect": [
+						1656.0,
+						952.0,
+						70.0,
+						22.0
+					],
+					"outlettype": [
+						"",
+						"",
+						""
+					],
+					"text": "ctlin 89"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-403",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1896.0,
+						952.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend set"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-404",
+					"maxclass": "live.toggle",
+					"numinlets": 1,
+					"numoutlets": 1,
+					"patching_rect": [
+						289.0,
+						127.0,
+						18.0,
+						18.0
+					],
+					"outlettype": [
+						""
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						289.0,
+						127.0,
+						18.0,
+						18.0
+					],
+					"parameter_enable": 1,
+					"varname": "VCA_Env_Loop",
+					"saved_attribute_attributes": {
+						"valueof": {
+							"parameter_longname": "VCA Env Loop",
+							"parameter_shortname": "A Loop",
+							"parameter_type": 2,
+							"parameter_mmin": 0,
+							"parameter_mmax": 1,
+							"parameter_initial_enable": 0,
+							"parameter_initial": [
+								0
+							],
+							"parameter_invisible": 0,
+							"parameter_enum": [
+								"off",
+								"on"
+							],
+							"parameter_range": [
+								"off",
+								"on"
+							]
+						}
+					},
+					"annotation": "VCA Env Loop  \u00b7  CC 90  \u2014  Loops the Amplifier envelope for cycling, tremolo-like modulation.  (0-63: Off; 64-127: On)",
+					"hint": "VCA Env Loop  \u00b7  CC 90  \u2014  Loops the Amplifier envelope for cycling, tremolo-like modulation.  (0-63: Off; 64-127: On)"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-405",
+					"maxclass": "comment",
+					"numinlets": 1,
+					"numoutlets": 0,
+					"patching_rect": [
+						266.0,
+						94.0,
+						62.0,
+						12.0
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						266.0,
+						94.0,
+						62.0,
+						12.0
+					],
+					"text": "A Loop",
+					"fontsize": 8.0,
+					"fontface": 0,
+					"textjustification": 1,
+					"varname": "VCA_Env_Loop_L"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-406",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1276.0,
+						920.0,
+						50.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "* 127"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-407",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1416.0,
+						920.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend 90"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-408",
+					"maxclass": "newobj",
+					"numinlets": 1,
+					"numoutlets": 3,
+					"patching_rect": [
+						1656.0,
+						960.0,
+						70.0,
+						22.0
+					],
+					"outlettype": [
+						"",
+						"",
+						""
+					],
+					"text": "ctlin 90"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-409",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1736.0,
+						960.0,
+						50.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": ">= 64"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-410",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1896.0,
+						960.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend set"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-411",
+					"maxclass": "live.toggle",
+					"numinlets": 1,
+					"numoutlets": 1,
+					"patching_rect": [
+						353.0,
+						127.0,
+						18.0,
+						18.0
+					],
+					"outlettype": [
+						""
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						353.0,
+						127.0,
+						18.0,
+						18.0
+					],
+					"parameter_enable": 1,
+					"varname": "VCA_Env_Velocity",
+					"saved_attribute_attributes": {
+						"valueof": {
+							"parameter_longname": "VCA Env Velocity",
+							"parameter_shortname": "A Vel",
+							"parameter_type": 2,
+							"parameter_mmin": 0,
+							"parameter_mmax": 1,
+							"parameter_initial_enable": 0,
+							"parameter_initial": [
+								0
+							],
+							"parameter_invisible": 0,
+							"parameter_enum": [
+								"off",
+								"on"
+							],
+							"parameter_range": [
+								"off",
+								"on"
+							]
+						}
+					},
+					"annotation": "VCA Env Velocity  \u00b7  CC 91  \u2014  Makes loudness respond to key velocity via the Amplifier envelope.  (0-63: Off; 64-127: On)",
+					"hint": "VCA Env Velocity  \u00b7  CC 91  \u2014  Makes loudness respond to key velocity via the Amplifier envelope.  (0-63: Off; 64-127: On)"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-412",
+					"maxclass": "comment",
+					"numinlets": 1,
+					"numoutlets": 0,
+					"patching_rect": [
+						330.0,
+						94.0,
+						62.0,
+						12.0
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						330.0,
+						94.0,
+						62.0,
+						12.0
+					],
+					"text": "A Vel",
+					"fontsize": 8.0,
+					"fontface": 0,
+					"textjustification": 1,
+					"varname": "VCA_Env_Velocity_L"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-413",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1276.0,
+						928.0,
+						50.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "* 127"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-414",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1416.0,
+						928.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend 91"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-415",
+					"maxclass": "newobj",
+					"numinlets": 1,
+					"numoutlets": 3,
+					"patching_rect": [
+						1656.0,
+						968.0,
+						70.0,
+						22.0
+					],
+					"outlettype": [
+						"",
+						"",
+						""
+					],
+					"text": "ctlin 91"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-416",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1736.0,
+						968.0,
+						50.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": ">= 64"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-417",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1896.0,
+						968.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend set"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-418",
+					"maxclass": "live.dial",
+					"numinlets": 1,
+					"numoutlets": 1,
+					"patching_rect": [
+						23.0,
+						81.0,
+						38.0,
+						38.0
+					],
+					"outlettype": [
+						""
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						23.0,
+						81.0,
+						38.0,
+						38.0
+					],
+					"parameter_enable": 1,
+					"varname": "Timbre_Volume",
+					"saved_attribute_attributes": {
+						"valueof": {
+							"parameter_longname": "Timbre Volume",
+							"parameter_shortname": "Volume",
+							"parameter_type": 1,
+							"parameter_mmin": 0,
+							"parameter_mmax": 127,
+							"parameter_initial_enable": 1,
+							"parameter_initial": [
+								127
+							],
+							"parameter_invisible": 0
+						}
+					},
+					"annotation": "Timbre Volume  \u00b7  CC 7  \u2014  Volume control for the currently active timbre (A/B) before it reaches the voice summing busses",
+					"hint": "Timbre Volume  \u00b7  CC 7  \u2014  Volume control for the currently active timbre (A/B) before it reaches the voice summing busses"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-419",
+					"maxclass": "comment",
+					"numinlets": 1,
+					"numoutlets": 0,
+					"patching_rect": [
+						10.0,
+						22.0,
+						62.0,
+						12.0
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						10.0,
+						22.0,
+						62.0,
+						12.0
+					],
+					"text": "Volume",
+					"fontsize": 8.0,
+					"fontface": 0,
+					"textjustification": 1,
+					"varname": "Timbre_Volume_L"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-420",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1416.0,
+						256.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend 7"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-421",
+					"maxclass": "newobj",
+					"numinlets": 1,
+					"numoutlets": 3,
+					"patching_rect": [
+						1656.0,
+						296.0,
+						70.0,
+						22.0
+					],
+					"outlettype": [
+						"",
+						"",
+						""
+					],
+					"text": "ctlin 7"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-422",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1896.0,
+						296.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend set"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-423",
+					"maxclass": "live.dial",
+					"numinlets": 1,
+					"numoutlets": 1,
+					"patching_rect": [
+						87.0,
+						81.0,
+						38.0,
+						38.0
+					],
+					"outlettype": [
+						""
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						87.0,
+						81.0,
+						38.0,
+						38.0
+					],
+					"parameter_enable": 1,
+					"varname": "Pan",
+					"saved_attribute_attributes": {
+						"valueof": {
+							"parameter_longname": "Pan",
+							"parameter_shortname": "Pan",
+							"parameter_type": 1,
+							"parameter_mmin": 0,
+							"parameter_mmax": 127,
+							"parameter_initial_enable": 0,
+							"parameter_initial": [
+								0
+							],
+							"parameter_invisible": 0
+						}
+					},
+					"annotation": "Pan  \u00b7  CC 10  \u2014  Bipolar control for manual adjustment of the pan-position of the currently active timbre (A/B) in the stereo field",
+					"hint": "Pan  \u00b7  CC 10  \u2014  Bipolar control for manual adjustment of the pan-position of the currently active timbre (A/B) in the stereo field"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-424",
+					"maxclass": "comment",
+					"numinlets": 1,
+					"numoutlets": 0,
+					"patching_rect": [
+						74.0,
+						22.0,
+						62.0,
+						12.0
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						74.0,
+						22.0,
+						62.0,
+						12.0
+					],
+					"text": "Pan",
+					"fontsize": 8.0,
+					"fontface": 0,
+					"textjustification": 1,
+					"varname": "Pan_L"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-425",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1416.0,
+						280.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend 10"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-426",
+					"maxclass": "newobj",
+					"numinlets": 1,
+					"numoutlets": 3,
+					"patching_rect": [
+						1656.0,
+						320.0,
+						70.0,
+						22.0
+					],
+					"outlettype": [
+						"",
+						"",
+						""
+					],
+					"text": "ctlin 10"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-427",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1896.0,
+						320.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend set"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-428",
+					"maxclass": "live.dial",
+					"numinlets": 1,
+					"numoutlets": 1,
+					"patching_rect": [
+						151.0,
+						81.0,
+						38.0,
+						38.0
+					],
+					"outlettype": [
+						""
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						151.0,
+						81.0,
+						38.0,
+						38.0
+					],
+					"parameter_enable": 1,
+					"varname": "Pan_Spread",
+					"saved_attribute_attributes": {
+						"valueof": {
+							"parameter_longname": "Pan Spread",
+							"parameter_shortname": "Pan Spr",
+							"parameter_type": 1,
+							"parameter_mmin": 0,
+							"parameter_mmax": 127,
+							"parameter_initial_enable": 0,
+							"parameter_initial": [
+								0
+							],
+							"parameter_invisible": 0
+						}
+					},
+					"annotation": "Pan Spread  \u00b7  CC 9  \u2014  Spreads allocated voices apart giving a wider feel to the stereo image",
+					"hint": "Pan Spread  \u00b7  CC 9  \u2014  Spreads allocated voices apart giving a wider feel to the stereo image"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-429",
+					"maxclass": "comment",
+					"numinlets": 1,
+					"numoutlets": 0,
+					"patching_rect": [
+						138.0,
+						22.0,
+						62.0,
+						12.0
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						138.0,
+						22.0,
+						62.0,
+						12.0
+					],
+					"text": "Pan Spr",
+					"fontsize": 8.0,
+					"fontface": 0,
+					"textjustification": 1,
+					"varname": "Pan_Spread_L"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-430",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1416.0,
+						272.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend 9"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-431",
+					"maxclass": "newobj",
+					"numinlets": 1,
+					"numoutlets": 3,
+					"patching_rect": [
+						1656.0,
+						312.0,
+						70.0,
+						22.0
+					],
+					"outlettype": [
+						"",
+						"",
+						""
+					],
+					"text": "ctlin 9"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-432",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1896.0,
+						312.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend set"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-433",
+					"maxclass": "live.dial",
+					"numinlets": 1,
+					"numoutlets": 1,
+					"patching_rect": [
+						215.0,
+						81.0,
+						38.0,
+						38.0
+					],
+					"outlettype": [
+						""
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						215.0,
+						81.0,
+						38.0,
+						38.0
+					],
+					"parameter_enable": 1,
+					"varname": "Low_Cut",
+					"saved_attribute_attributes": {
+						"valueof": {
+							"parameter_longname": "Low Cut",
+							"parameter_shortname": "Low Cut",
+							"parameter_type": 1,
+							"parameter_mmin": 0,
+							"parameter_mmax": 127,
+							"parameter_initial_enable": 0,
+							"parameter_initial": [
+								0
+							],
+							"parameter_invisible": 0
+						}
+					},
+					"annotation": "Low Cut  \u00b7  CC 8  \u2014  High-pass 'low cut' on the timbre output; raise to thin out lows.",
+					"hint": "Low Cut  \u00b7  CC 8  \u2014  High-pass 'low cut' on the timbre output; raise to thin out lows."
+				}
+			},
+			{
+				"box": {
+					"id": "obj-434",
+					"maxclass": "comment",
+					"numinlets": 1,
+					"numoutlets": 0,
+					"patching_rect": [
+						202.0,
+						22.0,
+						62.0,
+						12.0
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						202.0,
+						22.0,
+						62.0,
+						12.0
+					],
+					"text": "Low Cut",
+					"fontsize": 8.0,
+					"fontface": 0,
+					"textjustification": 1,
+					"varname": "Low_Cut_L"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-435",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1416.0,
+						264.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend 8"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-436",
+					"maxclass": "newobj",
+					"numinlets": 1,
+					"numoutlets": 3,
+					"patching_rect": [
+						1656.0,
+						304.0,
+						70.0,
+						22.0
+					],
+					"outlettype": [
+						"",
+						"",
+						""
+					],
+					"text": "ctlin 8"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-437",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1896.0,
+						304.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend set"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-438",
+					"maxclass": "live.toggle",
+					"numinlets": 1,
+					"numoutlets": 1,
+					"patching_rect": [
+						289.0,
+						91.0,
+						18.0,
+						18.0
+					],
+					"outlettype": [
+						""
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						289.0,
+						91.0,
+						18.0,
+						18.0
+					],
+					"parameter_enable": 1,
+					"varname": "Mute",
+					"saved_attribute_attributes": {
+						"valueof": {
+							"parameter_longname": "Mute",
+							"parameter_shortname": "Mute",
+							"parameter_type": 2,
+							"parameter_mmin": 0,
+							"parameter_mmax": 1,
+							"parameter_initial_enable": 0,
+							"parameter_initial": [
+								0
+							],
+							"parameter_invisible": 0,
+							"parameter_enum": [
+								"off",
+								"on"
+							],
+							"parameter_range": [
+								"off",
+								"on"
+							]
+						}
+					},
+					"annotation": "Mute  \u00b7  CC 3  \u2014  Clickless muting of Muse's MAIN OUT signal  (0-63: Off; 64-127: On)",
+					"hint": "Mute  \u00b7  CC 3  \u2014  Clickless muting of Muse's MAIN OUT signal  (0-63: Off; 64-127: On)"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-439",
+					"maxclass": "comment",
+					"numinlets": 1,
+					"numoutlets": 0,
+					"patching_rect": [
+						266.0,
+						22.0,
+						62.0,
+						12.0
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						266.0,
+						22.0,
+						62.0,
+						12.0
+					],
+					"text": "Mute",
+					"fontsize": 8.0,
+					"fontface": 0,
+					"textjustification": 1,
+					"varname": "Mute_L"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-440",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1276.0,
+						224.0,
+						50.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "* 127"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-441",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1416.0,
+						224.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend 3"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-442",
+					"maxclass": "newobj",
+					"numinlets": 1,
+					"numoutlets": 3,
+					"patching_rect": [
+						1656.0,
+						264.0,
+						70.0,
+						22.0
+					],
+					"outlettype": [
+						"",
+						"",
+						""
+					],
+					"text": "ctlin 3"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-443",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1736.0,
+						264.0,
+						50.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": ">= 64"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-444",
+					"maxclass": "newobj",
+					"numinlets": 2,
+					"numoutlets": 1,
+					"patching_rect": [
+						1896.0,
+						264.0,
+						80.0,
+						22.0
+					],
+					"outlettype": [
+						""
+					],
+					"text": "prepend set"
+				}
+			},
+			{
+				"box": {
+					"id": "obj-445",
+					"maxclass": "live.dial",
+					"numinlets": 1,
+					"numoutlets": 1,
+					"patching_rect": [
+						23.0,
+						45.0,
+						38.0,
+						38.0
+					],
+					"outlettype": [
+						""
+					],
+					"presentation": 1,
+					"presentation_rect": [
+						23.0,
+						45.0,
 						38.0,
 						38.0
 					],
@@ -11019,16 +11019,16 @@
 					"numoutlets": 0,
 					"patching_rect": [
 						10.0,
-						24.0,
-						46.0,
-						11.0
+						22.0,
+						62.0,
+						12.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
 						10.0,
-						24.0,
-						46.0,
-						11.0
+						22.0,
+						62.0,
+						12.0
 					],
 					"text": "Time Left",
 					"fontsize": 8.0,
@@ -11100,8 +11100,8 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						63.0,
-						37.0,
+						87.0,
+						45.0,
 						38.0,
 						38.0
 					],
@@ -11110,8 +11110,8 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						63.0,
-						37.0,
+						87.0,
+						45.0,
 						38.0,
 						38.0
 					],
@@ -11142,17 +11142,17 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						58.0,
-						24.0,
-						46.0,
-						11.0
+						74.0,
+						22.0,
+						62.0,
+						12.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						58.0,
-						24.0,
-						46.0,
-						11.0
+						74.0,
+						22.0,
+						62.0,
+						12.0
 					],
 					"text": "Time Right",
 					"fontsize": 8.0,
@@ -11224,8 +11224,8 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						121.0,
-						37.0,
+						161.0,
+						55.0,
 						18.0,
 						18.0
 					],
@@ -11234,8 +11234,8 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						121.0,
-						37.0,
+						161.0,
+						55.0,
 						18.0,
 						18.0
 					],
@@ -11274,17 +11274,17 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						106.0,
-						24.0,
-						46.0,
-						11.0
+						138.0,
+						22.0,
+						62.0,
+						12.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						106.0,
-						24.0,
-						46.0,
-						11.0
+						138.0,
+						22.0,
+						62.0,
+						12.0
 					],
 					"text": "Link Delays",
 					"fontsize": 8.0,
@@ -11392,8 +11392,8 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						159.0,
-						37.0,
+						215.0,
+						45.0,
 						38.0,
 						38.0
 					],
@@ -11402,8 +11402,8 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						159.0,
-						37.0,
+						215.0,
+						45.0,
 						38.0,
 						38.0
 					],
@@ -11434,17 +11434,17 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						154.0,
-						24.0,
-						46.0,
-						11.0
+						202.0,
+						22.0,
+						62.0,
+						12.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						154.0,
-						24.0,
-						46.0,
-						11.0
+						202.0,
+						22.0,
+						62.0,
+						12.0
 					],
 					"text": "Fbk",
 					"fontsize": 8.0,
@@ -11516,8 +11516,8 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						207.0,
-						37.0,
+						279.0,
+						45.0,
 						38.0,
 						38.0
 					],
@@ -11526,8 +11526,8 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						207.0,
-						37.0,
+						279.0,
+						45.0,
 						38.0,
 						38.0
 					],
@@ -11558,17 +11558,17 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						202.0,
-						24.0,
-						46.0,
-						11.0
+						266.0,
+						22.0,
+						62.0,
+						12.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						202.0,
-						24.0,
-						46.0,
-						11.0
+						266.0,
+						22.0,
+						62.0,
+						12.0
 					],
 					"text": "Char",
 					"fontsize": 8.0,
@@ -11640,8 +11640,8 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						15.0,
-						99.0,
+						23.0,
+						117.0,
 						38.0,
 						38.0
 					],
@@ -11650,8 +11650,8 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						15.0,
-						99.0,
+						23.0,
+						117.0,
 						38.0,
 						38.0
 					],
@@ -11683,16 +11683,16 @@
 					"numoutlets": 0,
 					"patching_rect": [
 						10.0,
-						86.0,
-						46.0,
-						11.0
+						94.0,
+						62.0,
+						12.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
 						10.0,
-						86.0,
-						46.0,
-						11.0
+						94.0,
+						62.0,
+						12.0
 					],
 					"text": "Mix",
 					"fontsize": 8.0,
@@ -11764,8 +11764,8 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						73.0,
-						99.0,
+						97.0,
+						127.0,
 						18.0,
 						18.0
 					],
@@ -11774,8 +11774,8 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						73.0,
-						99.0,
+						97.0,
+						127.0,
 						18.0,
 						18.0
 					],
@@ -11814,17 +11814,17 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						58.0,
-						86.0,
-						46.0,
-						11.0
+						74.0,
+						94.0,
+						62.0,
+						12.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						58.0,
-						86.0,
-						46.0,
-						11.0
+						74.0,
+						94.0,
+						62.0,
+						12.0
 					],
 					"text": "Clock Sync",
 					"fontsize": 8.0,
@@ -11932,8 +11932,8 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						121.0,
-						99.0,
+						161.0,
+						127.0,
 						18.0,
 						18.0
 					],
@@ -11942,8 +11942,8 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						121.0,
-						99.0,
+						161.0,
+						127.0,
 						18.0,
 						18.0
 					],
@@ -11982,17 +11982,17 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						106.0,
-						86.0,
-						46.0,
-						11.0
+						138.0,
+						94.0,
+						62.0,
+						12.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						106.0,
-						86.0,
-						46.0,
-						11.0
+						138.0,
+						94.0,
+						62.0,
+						12.0
 					],
 					"text": "\u2192Timbre A",
 					"fontsize": 8.0,
@@ -12100,8 +12100,8 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						169.0,
-						99.0,
+						225.0,
+						127.0,
 						18.0,
 						18.0
 					],
@@ -12110,8 +12110,8 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						169.0,
-						99.0,
+						225.0,
+						127.0,
 						18.0,
 						18.0
 					],
@@ -12150,17 +12150,17 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						154.0,
-						86.0,
-						46.0,
-						11.0
+						202.0,
+						94.0,
+						62.0,
+						12.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						154.0,
-						86.0,
-						46.0,
-						11.0
+						202.0,
+						94.0,
+						62.0,
+						12.0
 					],
 					"text": "\u2192Timbre B",
 					"fontsize": 8.0,
@@ -12268,8 +12268,8 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						25.0,
-						37.0,
+						33.0,
+						55.0,
 						18.0,
 						18.0
 					],
@@ -12278,8 +12278,8 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						25.0,
-						37.0,
+						33.0,
+						55.0,
 						18.0,
 						18.0
 					],
@@ -12319,16 +12319,16 @@
 					"numoutlets": 0,
 					"patching_rect": [
 						10.0,
-						24.0,
-						46.0,
-						11.0
+						22.0,
+						62.0,
+						12.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
 						10.0,
-						24.0,
-						46.0,
-						11.0
+						22.0,
+						62.0,
+						12.0
 					],
 					"text": "On/Off",
 					"fontsize": 8.0,
@@ -12436,8 +12436,8 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						73.0,
-						37.0,
+						97.0,
+						55.0,
 						18.0,
 						18.0
 					],
@@ -12446,8 +12446,8 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						73.0,
-						37.0,
+						97.0,
+						55.0,
 						18.0,
 						18.0
 					],
@@ -12486,17 +12486,17 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						58.0,
-						24.0,
-						46.0,
-						11.0
+						74.0,
+						22.0,
+						62.0,
+						12.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						58.0,
-						24.0,
-						46.0,
-						11.0
+						74.0,
+						22.0,
+						62.0,
+						12.0
 					],
 					"text": "FW/BK",
 					"fontsize": 8.0,
@@ -12604,9 +12604,9 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						108.0,
-						37.0,
-						42.0,
+						141.0,
+						55.0,
+						58.0,
 						18.0
 					],
 					"outlettype": [
@@ -12614,9 +12614,9 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						108.0,
-						37.0,
-						42.0,
+						141.0,
+						55.0,
+						58.0,
 						18.0
 					],
 					"parameter_enable": 1,
@@ -12656,17 +12656,17 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						106.0,
-						24.0,
-						46.0,
-						11.0
+						138.0,
+						22.0,
+						62.0,
+						12.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						106.0,
-						24.0,
-						46.0,
-						11.0
+						138.0,
+						22.0,
+						62.0,
+						12.0
 					],
 					"text": "Dir",
 					"fontsize": 8.0,
@@ -12774,9 +12774,9 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						156.0,
-						37.0,
-						42.0,
+						205.0,
+						55.0,
+						58.0,
 						18.0
 					],
 					"outlettype": [
@@ -12784,9 +12784,9 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						156.0,
-						37.0,
-						42.0,
+						205.0,
+						55.0,
+						58.0,
 						18.0
 					],
 					"parameter_enable": 1,
@@ -12828,17 +12828,17 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						154.0,
-						24.0,
-						46.0,
-						11.0
+						202.0,
+						22.0,
+						62.0,
+						12.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						154.0,
-						24.0,
-						46.0,
-						11.0
+						202.0,
+						22.0,
+						62.0,
+						12.0
 					],
 					"text": "Oct Rng",
 					"fontsize": 8.0,
@@ -12946,8 +12946,8 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						15.0,
-						99.0,
+						23.0,
+						117.0,
 						38.0,
 						38.0
 					],
@@ -12956,8 +12956,8 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						15.0,
-						99.0,
+						23.0,
+						117.0,
 						38.0,
 						38.0
 					],
@@ -12989,16 +12989,16 @@
 					"numoutlets": 0,
 					"patching_rect": [
 						10.0,
-						86.0,
-						46.0,
-						11.0
+						94.0,
+						62.0,
+						12.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
 						10.0,
-						86.0,
-						46.0,
-						11.0
+						94.0,
+						62.0,
+						12.0
 					],
 					"text": "Clock Div",
 					"fontsize": 8.0,
@@ -13070,8 +13070,8 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						63.0,
-						99.0,
+						87.0,
+						117.0,
 						38.0,
 						38.0
 					],
@@ -13080,8 +13080,8 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						63.0,
-						99.0,
+						87.0,
+						117.0,
 						38.0,
 						38.0
 					],
@@ -13090,7 +13090,7 @@
 					"saved_attribute_attributes": {
 						"valueof": {
 							"parameter_longname": "Seq Clock Div",
-							"parameter_shortname": "Seq Clock Div",
+							"parameter_shortname": "Seq Div",
 							"parameter_type": 1,
 							"parameter_mmin": 0,
 							"parameter_mmax": 127,
@@ -13112,19 +13112,19 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						58.0,
-						86.0,
-						46.0,
-						11.0
+						74.0,
+						94.0,
+						62.0,
+						12.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						58.0,
-						86.0,
-						46.0,
-						11.0
+						74.0,
+						94.0,
+						62.0,
+						12.0
 					],
-					"text": "Seq Clock Div",
+					"text": "Seq Div",
 					"fontsize": 8.0,
 					"fontface": 0,
 					"textjustification": 1,
@@ -13194,8 +13194,8 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						111.0,
-						99.0,
+						151.0,
+						117.0,
 						38.0,
 						38.0
 					],
@@ -13204,8 +13204,8 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						111.0,
-						99.0,
+						151.0,
+						117.0,
 						38.0,
 						38.0
 					],
@@ -13236,17 +13236,17 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						106.0,
-						86.0,
-						46.0,
-						11.0
+						138.0,
+						94.0,
+						62.0,
+						12.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						106.0,
-						86.0,
-						46.0,
-						11.0
+						138.0,
+						94.0,
+						62.0,
+						12.0
 					],
 					"text": "Clock Tempo",
 					"fontsize": 8.0,
@@ -13318,8 +13318,8 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						15.0,
-						37.0,
+						23.0,
+						45.0,
 						38.0,
 						38.0
 					],
@@ -13328,8 +13328,8 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						15.0,
-						37.0,
+						23.0,
+						45.0,
 						38.0,
 						38.0
 					],
@@ -13361,16 +13361,16 @@
 					"numoutlets": 0,
 					"patching_rect": [
 						10.0,
-						24.0,
-						46.0,
-						11.0
+						22.0,
+						62.0,
+						12.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
 						10.0,
-						24.0,
-						46.0,
-						11.0
+						22.0,
+						62.0,
+						12.0
 					],
 					"text": "Detune",
 					"fontsize": 8.0,
@@ -13442,8 +13442,8 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						73.0,
-						37.0,
+						97.0,
+						55.0,
 						18.0,
 						18.0
 					],
@@ -13452,8 +13452,8 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						73.0,
-						37.0,
+						97.0,
+						55.0,
 						18.0,
 						18.0
 					],
@@ -13492,17 +13492,17 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						58.0,
-						24.0,
-						46.0,
-						11.0
+						74.0,
+						22.0,
+						62.0,
+						12.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						58.0,
-						24.0,
-						46.0,
-						11.0
+						74.0,
+						22.0,
+						62.0,
+						12.0
 					],
 					"text": "Uni",
 					"fontsize": 8.0,
@@ -13610,8 +13610,8 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						121.0,
-						37.0,
+						161.0,
+						55.0,
 						18.0,
 						18.0
 					],
@@ -13620,8 +13620,8 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						121.0,
-						37.0,
+						161.0,
+						55.0,
 						18.0,
 						18.0
 					],
@@ -13660,17 +13660,17 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						106.0,
-						24.0,
-						46.0,
-						11.0
+						138.0,
+						22.0,
+						62.0,
+						12.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						106.0,
-						24.0,
-						46.0,
-						11.0
+						138.0,
+						22.0,
+						62.0,
+						12.0
 					],
 					"text": "Mono",
 					"fontsize": 8.0,
@@ -13778,8 +13778,8 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						159.0,
-						37.0,
+						215.0,
+						45.0,
 						38.0,
 						38.0
 					],
@@ -13788,8 +13788,8 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						159.0,
-						37.0,
+						215.0,
+						45.0,
 						38.0,
 						38.0
 					],
@@ -13820,17 +13820,17 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						154.0,
-						24.0,
-						46.0,
-						11.0
+						202.0,
+						22.0,
+						62.0,
+						12.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						154.0,
-						24.0,
-						46.0,
-						11.0
+						202.0,
+						22.0,
+						62.0,
+						12.0
 					],
 					"text": "Glide Time",
 					"fontsize": 8.0,
@@ -13902,8 +13902,8 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						15.0,
-						99.0,
+						23.0,
+						117.0,
 						38.0,
 						38.0
 					],
@@ -13912,8 +13912,8 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						15.0,
-						99.0,
+						23.0,
+						117.0,
 						38.0,
 						38.0
 					],
@@ -13945,16 +13945,16 @@
 					"numoutlets": 0,
 					"patching_rect": [
 						10.0,
-						86.0,
-						46.0,
-						11.0
+						94.0,
+						62.0,
+						12.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
 						10.0,
-						86.0,
-						46.0,
-						11.0
+						94.0,
+						62.0,
+						12.0
 					],
 					"text": "Mod Whl",
 					"fontsize": 8.0,
@@ -14026,8 +14026,8 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						63.0,
-						99.0,
+						87.0,
+						117.0,
 						38.0,
 						38.0
 					],
@@ -14036,8 +14036,8 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						63.0,
-						99.0,
+						87.0,
+						117.0,
 						38.0,
 						38.0
 					],
@@ -14068,17 +14068,17 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						58.0,
-						86.0,
-						46.0,
-						11.0
+						74.0,
+						94.0,
+						62.0,
+						12.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						58.0,
-						86.0,
-						46.0,
-						11.0
+						74.0,
+						94.0,
+						62.0,
+						12.0
 					],
 					"text": "Expr",
 					"fontsize": 8.0,
@@ -14150,8 +14150,8 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						121.0,
-						99.0,
+						161.0,
+						127.0,
 						18.0,
 						18.0
 					],
@@ -14160,8 +14160,8 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						121.0,
-						99.0,
+						161.0,
+						127.0,
 						18.0,
 						18.0
 					],
@@ -14200,17 +14200,17 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						106.0,
-						86.0,
-						46.0,
-						11.0
+						138.0,
+						94.0,
+						62.0,
+						12.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						106.0,
-						86.0,
-						46.0,
-						11.0
+						138.0,
+						94.0,
+						62.0,
+						12.0
 					],
 					"text": "Hold",
 					"fontsize": 8.0,
@@ -14318,8 +14318,8 @@
 					"numinlets": 1,
 					"numoutlets": 1,
 					"patching_rect": [
-						169.0,
-						99.0,
+						225.0,
+						127.0,
 						18.0,
 						18.0
 					],
@@ -14328,8 +14328,8 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						169.0,
-						99.0,
+						225.0,
+						127.0,
 						18.0,
 						18.0
 					],
@@ -14368,17 +14368,17 @@
 					"numinlets": 1,
 					"numoutlets": 0,
 					"patching_rect": [
-						154.0,
-						86.0,
-						46.0,
-						11.0
+						202.0,
+						94.0,
+						62.0,
+						12.0
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						154.0,
-						86.0,
-						46.0,
-						11.0
+						202.0,
+						94.0,
+						62.0,
+						12.0
 					],
 					"text": "Sus Ped",
 					"fontsize": 8.0,
@@ -15158,7 +15158,7 @@
 					"outlettype": [
 						""
 					],
-					"text": "script hide OSC_1_Octave, script hide OSC_1_Octave_L, script hide OSC_1_Frequency, script hide OSC_1_Frequency_L, script hide OSC_1_Tri_Saw_Mix, script hide OSC_1_Tri_Saw_Mix_L, script hide OSC_1_Wave_Mix, script hide OSC_1_Wave_Mix_L, script hide OSC_1_PW, script hide OSC_1_PW_L, script hide OSC_2_1_Sync, script hide OSC_2_1_Sync_L, script hide FM_Amount, script hide FM_Amount_L, script hide OSC_2_Octave, script hide OSC_2_Octave_L, script hide OSC_2_Frequency, script hide OSC_2_Frequency_L, script hide OSC_2_Tri_Saw_Mix, script hide OSC_2_Tri_Saw_Mix_L, script hide OSC_2_Wave_Mix, script hide OSC_2_Wave_Mix_L, script hide OSC_2_PW, script hide OSC_2_PW_L, script hide OSC_2_1_FM, script hide OSC_2_1_FM_L, script hide OSC_1_2_FM, script hide OSC_1_2_FM_L, script hide OSC_1_Level, script hide OSC_1_Level_L, script hide Ring_Mod_Level, script hide Ring_Mod_Level_L, script hide OSC_2_Level, script hide OSC_2_Level_L, script hide Mod_Osc_Level, script hide Mod_Osc_Level_L, script hide Noise_Level, script hide Noise_Level_L, script hide Clipping_Level, script hide Clipping_Level_L, script hide Filter_1_Cutoff, script hide Filter_1_Cutoff_L, script hide Filter_1_High_Pass, script hide Filter_1_High_Pass_L, script hide Filter_1_Resonance, script hide Filter_1_Resonance_L, script hide Filter_1_Env_Amount, script hide Filter_1_Env_Amount_L, script hide Filter_1_KB_Track, script hide Filter_1_KB_Track_L, script hide Link_Filters, script hide Link_Filters_L, script hide Filter_2_Frequency, script hide Filter_2_Frequency_L, script hide Filter_2_Resonance, script hide Filter_2_Resonance_L, script hide Filter_2_Env_Amount, script hide Filter_2_Env_Amount_L, script hide Filter_2_KB_Track, script hide Filter_2_KB_Track_L, script hide Filter_Order, script hide Filter_Order_L, script hide Filter_Env_Attack, script hide Filter_Env_Attack_L, script hide Filter_Env_Decay, script hide Filter_Env_Decay_L, script hide Filter_Env_Sustain, script hide Filter_Env_Sustain_L, script hide Filter_Env_Release, script hide Filter_Env_Release_L, script hide Filter_Env_Loop, script hide Filter_Env_Loop_L, script hide Filter_Env_Velocity, script hide Filter_Env_Velocity_L, script hide VCA_Env_Attack, script hide VCA_Env_Attack_L, script hide VCA_Env_Decay, script hide VCA_Env_Decay_L, script hide VCA_Env_Sustain, script hide VCA_Env_Sustain_L, script hide VCA_Env_Release, script hide VCA_Env_Release_L, script hide VCA_Env_Loop, script hide VCA_Env_Loop_L, script hide VCA_Env_Velocity, script hide VCA_Env_Velocity_L, script hide Timbre_Volume, script hide Timbre_Volume_L, script hide Pan, script hide Pan_L, script hide Pan_Spread, script hide Pan_Spread_L, script hide Low_Cut, script hide Low_Cut_L, script hide Mute, script hide Mute_L, script hide Mod_Osc_Frequency, script hide Mod_Osc_Frequency_L, script hide Mod_Osc_Waveform, script hide Mod_Osc_Waveform_L, script hide Mod_Osc_Audio_Rate, script hide Mod_Osc_Audio_Rate_L, script hide Mod_Osc_KB_Track, script hide Mod_Osc_KB_Track_L, script hide Mod_Osc_KB_Reset, script hide Mod_Osc_KB_Reset_L, script hide Mod_Osc_Unipolar, script hide Mod_Osc_Unipolar_L, script hide Mod_Osc_Pitch_Amount, script hide Mod_Osc_Pitch_Amount_L, script hide Mod_Osc_Pitch_OSC_1, script hide Mod_Osc_Pitch_OSC_1_L, script hide Mod_Osc_Pitch_OSC_2, script hide Mod_Osc_Pitch_OSC_2_L, script hide Mod_Osc_PWM_Amount, script hide Mod_Osc_PWM_Amount_L, script hide Mod_Osc_PWM_OSC_1, script hide Mod_Osc_PWM_OSC_1_L, script hide Mod_Osc_PWM_OSC_2, script hide Mod_Osc_PWM_OSC_2_L, script hide Mod_Osc_Filter_Amount, script hide Mod_Osc_Filter_Amount_L, script hide Mod_Osc_Filter_F1, script hide Mod_Osc_Filter_F1_L, script hide Mod_Osc_Filter_F2, script hide Mod_Osc_Filter_F2_L, script hide Mod_Osc_VCA_Amount, script hide Mod_Osc_VCA_Amount_L, script hide Mod_Osc_VCA_Pan, script hide Mod_Osc_VCA_Pan_L, script hide LFO_1_Rate, script hide LFO_1_Rate_L, script hide LFO_1_Amount, script hide LFO_1_Amount_L, script hide LFO_1_Waveform, script hide LFO_1_Waveform_L, script hide LFO_2_Rate, script hide LFO_2_Rate_L, script hide LFO_2_Amount, script hide LFO_2_Amount_L, script hide LFO_2_Waveform, script hide LFO_2_Waveform_L, script hide Pitch_LFO_Rate, script hide Pitch_LFO_Rate_L, script hide Pitch_LFO_Shape, script hide Pitch_LFO_Shape_L, script hide Pitch_LFO_Amount, script hide Pitch_LFO_Amount_L, script hide Pitch_LFO_OSC_1, script hide Pitch_LFO_OSC_1_L, script hide Pitch_LFO_OSC_2, script hide Pitch_LFO_OSC_2_L, script hide Pitch_LFO_Mod_Osc, script hide Pitch_LFO_Mod_Osc_L, script hide Pitch_LFO_Detune, script hide Pitch_LFO_Detune_L, script hide Delay_Time_Left, script hide Delay_Time_Left_L, script hide Delay_Time_Right, script hide Delay_Time_Right_L, script hide Link_Delays, script hide Link_Delays_L, script hide Delay_Feedback, script hide Delay_Feedback_L, script hide Delay_Character, script hide Delay_Character_L, script hide Delay_Mix, script hide Delay_Mix_L, script hide Delay_Clock_Sync, script hide Delay_Clock_Sync_L, script hide Delay_Timbre_A, script hide Delay_Timbre_A_L, script hide Delay_Timbre_B, script hide Delay_Timbre_B_L, script hide Arp_On_Off, script hide Arp_On_Off_L, script hide Arp_FW_BK, script hide Arp_FW_BK_L, script hide Arp_Direction, script hide Arp_Direction_L, script hide Arp_Octave_Range, script hide Arp_Octave_Range_L, script hide Arp_Clock_Div, script hide Arp_Clock_Div_L, script hide Seq_Clock_Div, script hide Seq_Clock_Div_L, script hide Clock_Tempo, script hide Clock_Tempo_L, script hide Voice_Detune, script hide Voice_Detune_L, script hide Voice_Unison, script hide Voice_Unison_L, script hide Voice_Mono, script hide Voice_Mono_L, script hide Glide_Time, script hide Glide_Time_L, script hide Mod_Wheel, script hide Mod_Wheel_L, script hide Expression, script hide Expression_L, script hide Hold, script hide Hold_L, script hide Sustain_Pedal, script hide Sustain_Pedal_L, script hide pc_t0, script hide pc_l1, script hide PCBank, script hide pc_l2, script hide PCPatch, script hide PCSend, script hide pc_l3, script hide pc_h1, script hide pc_h2, script hide Panic, script hide ms_l1, script hide ms_l2, script hide PitchBend, script hide ms_h1, script hide ms_h2, script hide ms_h3"
+					"text": "script hide LFO_1_Rate, script hide LFO_1_Rate_L, script hide LFO_1_Amount, script hide LFO_1_Amount_L, script hide LFO_1_Waveform, script hide LFO_1_Waveform_L, script hide LFO_2_Rate, script hide LFO_2_Rate_L, script hide LFO_2_Amount, script hide LFO_2_Amount_L, script hide LFO_2_Waveform, script hide LFO_2_Waveform_L, script hide Pitch_LFO_Rate, script hide Pitch_LFO_Rate_L, script hide Pitch_LFO_Shape, script hide Pitch_LFO_Shape_L, script hide Pitch_LFO_Amount, script hide Pitch_LFO_Amount_L, script hide Pitch_LFO_OSC_1, script hide Pitch_LFO_OSC_1_L, script hide Pitch_LFO_OSC_2, script hide Pitch_LFO_OSC_2_L, script hide Pitch_LFO_Mod_Osc, script hide Pitch_LFO_Mod_Osc_L, script hide Pitch_LFO_Detune, script hide Pitch_LFO_Detune_L, script hide Mod_Osc_Frequency, script hide Mod_Osc_Frequency_L, script hide Mod_Osc_Waveform, script hide Mod_Osc_Waveform_L, script hide Mod_Osc_Audio_Rate, script hide Mod_Osc_Audio_Rate_L, script hide Mod_Osc_KB_Track, script hide Mod_Osc_KB_Track_L, script hide Mod_Osc_KB_Reset, script hide Mod_Osc_KB_Reset_L, script hide Mod_Osc_Unipolar, script hide Mod_Osc_Unipolar_L, script hide Mod_Osc_Pitch_Amount, script hide Mod_Osc_Pitch_Amount_L, script hide Mod_Osc_Pitch_OSC_1, script hide Mod_Osc_Pitch_OSC_1_L, script hide Mod_Osc_Pitch_OSC_2, script hide Mod_Osc_Pitch_OSC_2_L, script hide Mod_Osc_PWM_Amount, script hide Mod_Osc_PWM_Amount_L, script hide Mod_Osc_PWM_OSC_1, script hide Mod_Osc_PWM_OSC_1_L, script hide Mod_Osc_PWM_OSC_2, script hide Mod_Osc_PWM_OSC_2_L, script hide Mod_Osc_Filter_Amount, script hide Mod_Osc_Filter_Amount_L, script hide Mod_Osc_Filter_F1, script hide Mod_Osc_Filter_F1_L, script hide Mod_Osc_Filter_F2, script hide Mod_Osc_Filter_F2_L, script hide Mod_Osc_VCA_Amount, script hide Mod_Osc_VCA_Amount_L, script hide Mod_Osc_VCA_Pan, script hide Mod_Osc_VCA_Pan_L, script hide OSC_1_Octave, script hide OSC_1_Octave_L, script hide OSC_1_Frequency, script hide OSC_1_Frequency_L, script hide OSC_1_Tri_Saw_Mix, script hide OSC_1_Tri_Saw_Mix_L, script hide OSC_1_Wave_Mix, script hide OSC_1_Wave_Mix_L, script hide OSC_1_PW, script hide OSC_1_PW_L, script hide OSC_2_1_Sync, script hide OSC_2_1_Sync_L, script hide FM_Amount, script hide FM_Amount_L, script hide OSC_2_Octave, script hide OSC_2_Octave_L, script hide OSC_2_Frequency, script hide OSC_2_Frequency_L, script hide OSC_2_Tri_Saw_Mix, script hide OSC_2_Tri_Saw_Mix_L, script hide OSC_2_Wave_Mix, script hide OSC_2_Wave_Mix_L, script hide OSC_2_PW, script hide OSC_2_PW_L, script hide OSC_2_1_FM, script hide OSC_2_1_FM_L, script hide OSC_1_2_FM, script hide OSC_1_2_FM_L, script hide OSC_1_Level, script hide OSC_1_Level_L, script hide Ring_Mod_Level, script hide Ring_Mod_Level_L, script hide OSC_2_Level, script hide OSC_2_Level_L, script hide Mod_Osc_Level, script hide Mod_Osc_Level_L, script hide Noise_Level, script hide Noise_Level_L, script hide Clipping_Level, script hide Clipping_Level_L, script hide Filter_1_Cutoff, script hide Filter_1_Cutoff_L, script hide Filter_1_High_Pass, script hide Filter_1_High_Pass_L, script hide Filter_1_Resonance, script hide Filter_1_Resonance_L, script hide Filter_1_Env_Amount, script hide Filter_1_Env_Amount_L, script hide Filter_1_KB_Track, script hide Filter_1_KB_Track_L, script hide Link_Filters, script hide Link_Filters_L, script hide Filter_2_Frequency, script hide Filter_2_Frequency_L, script hide Filter_2_Resonance, script hide Filter_2_Resonance_L, script hide Filter_2_Env_Amount, script hide Filter_2_Env_Amount_L, script hide Filter_2_KB_Track, script hide Filter_2_KB_Track_L, script hide Filter_Order, script hide Filter_Order_L, script hide Filter_Env_Attack, script hide Filter_Env_Attack_L, script hide Filter_Env_Decay, script hide Filter_Env_Decay_L, script hide Filter_Env_Sustain, script hide Filter_Env_Sustain_L, script hide Filter_Env_Release, script hide Filter_Env_Release_L, script hide Filter_Env_Loop, script hide Filter_Env_Loop_L, script hide Filter_Env_Velocity, script hide Filter_Env_Velocity_L, script hide VCA_Env_Attack, script hide VCA_Env_Attack_L, script hide VCA_Env_Decay, script hide VCA_Env_Decay_L, script hide VCA_Env_Sustain, script hide VCA_Env_Sustain_L, script hide VCA_Env_Release, script hide VCA_Env_Release_L, script hide VCA_Env_Loop, script hide VCA_Env_Loop_L, script hide VCA_Env_Velocity, script hide VCA_Env_Velocity_L, script hide Timbre_Volume, script hide Timbre_Volume_L, script hide Pan, script hide Pan_L, script hide Pan_Spread, script hide Pan_Spread_L, script hide Low_Cut, script hide Low_Cut_L, script hide Mute, script hide Mute_L, script hide Delay_Time_Left, script hide Delay_Time_Left_L, script hide Delay_Time_Right, script hide Delay_Time_Right_L, script hide Link_Delays, script hide Link_Delays_L, script hide Delay_Feedback, script hide Delay_Feedback_L, script hide Delay_Character, script hide Delay_Character_L, script hide Delay_Mix, script hide Delay_Mix_L, script hide Delay_Clock_Sync, script hide Delay_Clock_Sync_L, script hide Delay_Timbre_A, script hide Delay_Timbre_A_L, script hide Delay_Timbre_B, script hide Delay_Timbre_B_L, script hide Arp_On_Off, script hide Arp_On_Off_L, script hide Arp_FW_BK, script hide Arp_FW_BK_L, script hide Arp_Direction, script hide Arp_Direction_L, script hide Arp_Octave_Range, script hide Arp_Octave_Range_L, script hide Arp_Clock_Div, script hide Arp_Clock_Div_L, script hide Seq_Clock_Div, script hide Seq_Clock_Div_L, script hide Clock_Tempo, script hide Clock_Tempo_L, script hide Voice_Detune, script hide Voice_Detune_L, script hide Voice_Unison, script hide Voice_Unison_L, script hide Voice_Mono, script hide Voice_Mono_L, script hide Glide_Time, script hide Glide_Time_L, script hide Mod_Wheel, script hide Mod_Wheel_L, script hide Expression, script hide Expression_L, script hide Hold, script hide Hold_L, script hide Sustain_Pedal, script hide Sustain_Pedal_L, script hide pc_t0, script hide pc_l1, script hide PCBank, script hide pc_l2, script hide PCPatch, script hide PCSend, script hide pc_l3, script hide pc_h1, script hide pc_h2, script hide Panic, script hide ms_l1, script hide ms_l2, script hide PitchBend, script hide ms_h1, script hide ms_h2, script hide ms_h3"
 				}
 			},
 			{
@@ -15225,7 +15225,7 @@
 					"outlettype": [
 						""
 					],
-					"text": "script show OSC_1_Octave, script show OSC_1_Octave_L, script show OSC_1_Frequency, script show OSC_1_Frequency_L, script show OSC_1_Tri_Saw_Mix, script show OSC_1_Tri_Saw_Mix_L, script show OSC_1_Wave_Mix, script show OSC_1_Wave_Mix_L, script show OSC_1_PW, script show OSC_1_PW_L, script show OSC_2_1_Sync, script show OSC_2_1_Sync_L, script show FM_Amount, script show FM_Amount_L, script show OSC_2_Octave, script show OSC_2_Octave_L, script show OSC_2_Frequency, script show OSC_2_Frequency_L, script show OSC_2_Tri_Saw_Mix, script show OSC_2_Tri_Saw_Mix_L, script show OSC_2_Wave_Mix, script show OSC_2_Wave_Mix_L, script show OSC_2_PW, script show OSC_2_PW_L, script show OSC_2_1_FM, script show OSC_2_1_FM_L, script show OSC_1_2_FM, script show OSC_1_2_FM_L"
+					"text": "script show LFO_1_Rate, script show LFO_1_Rate_L, script show LFO_1_Amount, script show LFO_1_Amount_L, script show LFO_1_Waveform, script show LFO_1_Waveform_L, script show LFO_2_Rate, script show LFO_2_Rate_L, script show LFO_2_Amount, script show LFO_2_Amount_L, script show LFO_2_Waveform, script show LFO_2_Waveform_L, script show Pitch_LFO_Rate, script show Pitch_LFO_Rate_L, script show Pitch_LFO_Shape, script show Pitch_LFO_Shape_L, script show Pitch_LFO_Amount, script show Pitch_LFO_Amount_L, script show Pitch_LFO_OSC_1, script show Pitch_LFO_OSC_1_L, script show Pitch_LFO_OSC_2, script show Pitch_LFO_OSC_2_L, script show Pitch_LFO_Mod_Osc, script show Pitch_LFO_Mod_Osc_L, script show Pitch_LFO_Detune, script show Pitch_LFO_Detune_L"
 				}
 			},
 			{
@@ -15243,7 +15243,7 @@
 					"outlettype": [
 						""
 					],
-					"text": "script show OSC_1_Level, script show OSC_1_Level_L, script show Ring_Mod_Level, script show Ring_Mod_Level_L, script show OSC_2_Level, script show OSC_2_Level_L, script show Mod_Osc_Level, script show Mod_Osc_Level_L, script show Noise_Level, script show Noise_Level_L, script show Clipping_Level, script show Clipping_Level_L"
+					"text": "script show Mod_Osc_Frequency, script show Mod_Osc_Frequency_L, script show Mod_Osc_Waveform, script show Mod_Osc_Waveform_L, script show Mod_Osc_Audio_Rate, script show Mod_Osc_Audio_Rate_L, script show Mod_Osc_KB_Track, script show Mod_Osc_KB_Track_L, script show Mod_Osc_KB_Reset, script show Mod_Osc_KB_Reset_L, script show Mod_Osc_Unipolar, script show Mod_Osc_Unipolar_L, script show Mod_Osc_Pitch_Amount, script show Mod_Osc_Pitch_Amount_L, script show Mod_Osc_Pitch_OSC_1, script show Mod_Osc_Pitch_OSC_1_L, script show Mod_Osc_Pitch_OSC_2, script show Mod_Osc_Pitch_OSC_2_L, script show Mod_Osc_PWM_Amount, script show Mod_Osc_PWM_Amount_L, script show Mod_Osc_PWM_OSC_1, script show Mod_Osc_PWM_OSC_1_L, script show Mod_Osc_PWM_OSC_2, script show Mod_Osc_PWM_OSC_2_L, script show Mod_Osc_Filter_Amount, script show Mod_Osc_Filter_Amount_L, script show Mod_Osc_Filter_F1, script show Mod_Osc_Filter_F1_L, script show Mod_Osc_Filter_F2, script show Mod_Osc_Filter_F2_L, script show Mod_Osc_VCA_Amount, script show Mod_Osc_VCA_Amount_L, script show Mod_Osc_VCA_Pan, script show Mod_Osc_VCA_Pan_L"
 				}
 			},
 			{
@@ -15261,7 +15261,7 @@
 					"outlettype": [
 						""
 					],
-					"text": "script show Filter_1_Cutoff, script show Filter_1_Cutoff_L, script show Filter_1_High_Pass, script show Filter_1_High_Pass_L, script show Filter_1_Resonance, script show Filter_1_Resonance_L, script show Filter_1_Env_Amount, script show Filter_1_Env_Amount_L, script show Filter_1_KB_Track, script show Filter_1_KB_Track_L, script show Link_Filters, script show Link_Filters_L, script show Filter_2_Frequency, script show Filter_2_Frequency_L, script show Filter_2_Resonance, script show Filter_2_Resonance_L, script show Filter_2_Env_Amount, script show Filter_2_Env_Amount_L, script show Filter_2_KB_Track, script show Filter_2_KB_Track_L, script show Filter_Order, script show Filter_Order_L"
+					"text": "script show OSC_1_Octave, script show OSC_1_Octave_L, script show OSC_1_Frequency, script show OSC_1_Frequency_L, script show OSC_1_Tri_Saw_Mix, script show OSC_1_Tri_Saw_Mix_L, script show OSC_1_Wave_Mix, script show OSC_1_Wave_Mix_L, script show OSC_1_PW, script show OSC_1_PW_L, script show OSC_2_1_Sync, script show OSC_2_1_Sync_L, script show FM_Amount, script show FM_Amount_L, script show OSC_2_Octave, script show OSC_2_Octave_L, script show OSC_2_Frequency, script show OSC_2_Frequency_L, script show OSC_2_Tri_Saw_Mix, script show OSC_2_Tri_Saw_Mix_L, script show OSC_2_Wave_Mix, script show OSC_2_Wave_Mix_L, script show OSC_2_PW, script show OSC_2_PW_L, script show OSC_2_1_FM, script show OSC_2_1_FM_L, script show OSC_1_2_FM, script show OSC_1_2_FM_L"
 				}
 			},
 			{
@@ -15279,7 +15279,7 @@
 					"outlettype": [
 						""
 					],
-					"text": "script show Filter_Env_Attack, script show Filter_Env_Attack_L, script show Filter_Env_Decay, script show Filter_Env_Decay_L, script show Filter_Env_Sustain, script show Filter_Env_Sustain_L, script show Filter_Env_Release, script show Filter_Env_Release_L, script show Filter_Env_Loop, script show Filter_Env_Loop_L, script show Filter_Env_Velocity, script show Filter_Env_Velocity_L, script show VCA_Env_Attack, script show VCA_Env_Attack_L, script show VCA_Env_Decay, script show VCA_Env_Decay_L, script show VCA_Env_Sustain, script show VCA_Env_Sustain_L, script show VCA_Env_Release, script show VCA_Env_Release_L, script show VCA_Env_Loop, script show VCA_Env_Loop_L, script show VCA_Env_Velocity, script show VCA_Env_Velocity_L"
+					"text": "script show OSC_1_Level, script show OSC_1_Level_L, script show Ring_Mod_Level, script show Ring_Mod_Level_L, script show OSC_2_Level, script show OSC_2_Level_L, script show Mod_Osc_Level, script show Mod_Osc_Level_L, script show Noise_Level, script show Noise_Level_L, script show Clipping_Level, script show Clipping_Level_L"
 				}
 			},
 			{
@@ -15297,7 +15297,7 @@
 					"outlettype": [
 						""
 					],
-					"text": "script show Timbre_Volume, script show Timbre_Volume_L, script show Pan, script show Pan_L, script show Pan_Spread, script show Pan_Spread_L, script show Low_Cut, script show Low_Cut_L, script show Mute, script show Mute_L"
+					"text": "script show Filter_1_Cutoff, script show Filter_1_Cutoff_L, script show Filter_1_High_Pass, script show Filter_1_High_Pass_L, script show Filter_1_Resonance, script show Filter_1_Resonance_L, script show Filter_1_Env_Amount, script show Filter_1_Env_Amount_L, script show Filter_1_KB_Track, script show Filter_1_KB_Track_L, script show Link_Filters, script show Link_Filters_L, script show Filter_2_Frequency, script show Filter_2_Frequency_L, script show Filter_2_Resonance, script show Filter_2_Resonance_L, script show Filter_2_Env_Amount, script show Filter_2_Env_Amount_L, script show Filter_2_KB_Track, script show Filter_2_KB_Track_L, script show Filter_Order, script show Filter_Order_L"
 				}
 			},
 			{
@@ -15315,7 +15315,7 @@
 					"outlettype": [
 						""
 					],
-					"text": "script show Mod_Osc_Frequency, script show Mod_Osc_Frequency_L, script show Mod_Osc_Waveform, script show Mod_Osc_Waveform_L, script show Mod_Osc_Audio_Rate, script show Mod_Osc_Audio_Rate_L, script show Mod_Osc_KB_Track, script show Mod_Osc_KB_Track_L, script show Mod_Osc_KB_Reset, script show Mod_Osc_KB_Reset_L, script show Mod_Osc_Unipolar, script show Mod_Osc_Unipolar_L, script show Mod_Osc_Pitch_Amount, script show Mod_Osc_Pitch_Amount_L, script show Mod_Osc_Pitch_OSC_1, script show Mod_Osc_Pitch_OSC_1_L, script show Mod_Osc_Pitch_OSC_2, script show Mod_Osc_Pitch_OSC_2_L, script show Mod_Osc_PWM_Amount, script show Mod_Osc_PWM_Amount_L, script show Mod_Osc_PWM_OSC_1, script show Mod_Osc_PWM_OSC_1_L, script show Mod_Osc_PWM_OSC_2, script show Mod_Osc_PWM_OSC_2_L, script show Mod_Osc_Filter_Amount, script show Mod_Osc_Filter_Amount_L, script show Mod_Osc_Filter_F1, script show Mod_Osc_Filter_F1_L, script show Mod_Osc_Filter_F2, script show Mod_Osc_Filter_F2_L, script show Mod_Osc_VCA_Amount, script show Mod_Osc_VCA_Amount_L, script show Mod_Osc_VCA_Pan, script show Mod_Osc_VCA_Pan_L"
+					"text": "script show Filter_Env_Attack, script show Filter_Env_Attack_L, script show Filter_Env_Decay, script show Filter_Env_Decay_L, script show Filter_Env_Sustain, script show Filter_Env_Sustain_L, script show Filter_Env_Release, script show Filter_Env_Release_L, script show Filter_Env_Loop, script show Filter_Env_Loop_L, script show Filter_Env_Velocity, script show Filter_Env_Velocity_L, script show VCA_Env_Attack, script show VCA_Env_Attack_L, script show VCA_Env_Decay, script show VCA_Env_Decay_L, script show VCA_Env_Sustain, script show VCA_Env_Sustain_L, script show VCA_Env_Release, script show VCA_Env_Release_L, script show VCA_Env_Loop, script show VCA_Env_Loop_L, script show VCA_Env_Velocity, script show VCA_Env_Velocity_L"
 				}
 			},
 			{
@@ -15333,7 +15333,7 @@
 					"outlettype": [
 						""
 					],
-					"text": "script show LFO_1_Rate, script show LFO_1_Rate_L, script show LFO_1_Amount, script show LFO_1_Amount_L, script show LFO_1_Waveform, script show LFO_1_Waveform_L, script show LFO_2_Rate, script show LFO_2_Rate_L, script show LFO_2_Amount, script show LFO_2_Amount_L, script show LFO_2_Waveform, script show LFO_2_Waveform_L, script show Pitch_LFO_Rate, script show Pitch_LFO_Rate_L, script show Pitch_LFO_Shape, script show Pitch_LFO_Shape_L, script show Pitch_LFO_Amount, script show Pitch_LFO_Amount_L, script show Pitch_LFO_OSC_1, script show Pitch_LFO_OSC_1_L, script show Pitch_LFO_OSC_2, script show Pitch_LFO_OSC_2_L, script show Pitch_LFO_Mod_Osc, script show Pitch_LFO_Mod_Osc_L, script show Pitch_LFO_Detune, script show Pitch_LFO_Detune_L"
+					"text": "script show Timbre_Volume, script show Timbre_Volume_L, script show Pan, script show Pan_L, script show Pan_Spread, script show Pan_Spread_L, script show Low_Cut, script show Low_Cut_L, script show Mute, script show Mute_L"
 				}
 			},
 			{
@@ -15542,18 +15542,6 @@
 						0
 					],
 					"destination": [
-						"obj-8",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-8",
-						0
-					],
-					"destination": [
 						"obj-2",
 						2
 					]
@@ -15562,31 +15550,19 @@
 			{
 				"patchline": {
 					"source": [
+						"obj-8",
+						0
+					],
+					"destination": [
 						"obj-9",
 						0
-					],
-					"destination": [
-						"obj-10",
-						0
 					]
 				}
 			},
 			{
 				"patchline": {
 					"source": [
-						"obj-10",
-						0
-					],
-					"destination": [
-						"obj-11",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-11",
+						"obj-9",
 						0
 					],
 					"destination": [
@@ -15598,11 +15574,11 @@
 			{
 				"patchline": {
 					"source": [
-						"obj-12",
+						"obj-10",
 						0
 					],
 					"destination": [
-						"obj-14",
+						"obj-12",
 						0
 					]
 				}
@@ -15610,7 +15586,7 @@
 			{
 				"patchline": {
 					"source": [
-						"obj-14",
+						"obj-12",
 						0
 					],
 					"destination": [
@@ -15622,11 +15598,11 @@
 			{
 				"patchline": {
 					"source": [
-						"obj-15",
+						"obj-13",
 						0
 					],
 					"destination": [
-						"obj-16",
+						"obj-14",
 						0
 					]
 				}
@@ -15634,11 +15610,23 @@
 			{
 				"patchline": {
 					"source": [
-						"obj-16",
+						"obj-14",
 						0
 					],
 					"destination": [
-						"obj-12",
+						"obj-10",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-15",
+						0
+					],
+					"destination": [
+						"obj-17",
 						0
 					]
 				}
@@ -15650,8 +15638,20 @@
 						0
 					],
 					"destination": [
-						"obj-19",
+						"obj-18",
 						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-18",
+						0
+					],
+					"destination": [
+						"obj-2",
+						2
 					]
 				}
 			},
@@ -15662,8 +15662,8 @@
 						0
 					],
 					"destination": [
-						"obj-2",
-						2
+						"obj-20",
+						0
 					]
 				}
 			},
@@ -15686,7 +15686,7 @@
 						0
 					],
 					"destination": [
-						"obj-17",
+						"obj-15",
 						0
 					]
 				}
@@ -15926,18 +15926,6 @@
 						0
 					],
 					"destination": [
-						"obj-47",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-47",
-						0
-					],
-					"destination": [
 						"obj-2",
 						2
 					]
@@ -15946,31 +15934,19 @@
 			{
 				"patchline": {
 					"source": [
+						"obj-47",
+						0
+					],
+					"destination": [
 						"obj-48",
 						0
-					],
-					"destination": [
-						"obj-49",
-						0
 					]
 				}
 			},
 			{
 				"patchline": {
 					"source": [
-						"obj-49",
-						0
-					],
-					"destination": [
-						"obj-50",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-50",
+						"obj-48",
 						0
 					],
 					"destination": [
@@ -15982,11 +15958,11 @@
 			{
 				"patchline": {
 					"source": [
-						"obj-51",
+						"obj-49",
 						0
 					],
 					"destination": [
-						"obj-53",
+						"obj-51",
 						0
 					]
 				}
@@ -15994,7 +15970,7 @@
 			{
 				"patchline": {
 					"source": [
-						"obj-53",
+						"obj-51",
 						0
 					],
 					"destination": [
@@ -16006,11 +15982,11 @@
 			{
 				"patchline": {
 					"source": [
-						"obj-54",
+						"obj-52",
 						0
 					],
 					"destination": [
-						"obj-55",
+						"obj-53",
 						0
 					]
 				}
@@ -16018,11 +15994,23 @@
 			{
 				"patchline": {
 					"source": [
-						"obj-55",
+						"obj-53",
 						0
 					],
 					"destination": [
-						"obj-51",
+						"obj-49",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-54",
+						0
+					],
+					"destination": [
+						"obj-56",
 						0
 					]
 				}
@@ -16034,8 +16022,20 @@
 						0
 					],
 					"destination": [
-						"obj-58",
+						"obj-57",
 						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-57",
+						0
+					],
+					"destination": [
+						"obj-2",
+						2
 					]
 				}
 			},
@@ -16046,8 +16046,8 @@
 						0
 					],
 					"destination": [
-						"obj-2",
-						2
+						"obj-59",
+						0
 					]
 				}
 			},
@@ -16070,7 +16070,7 @@
 						0
 					],
 					"destination": [
-						"obj-56",
+						"obj-54",
 						0
 					]
 				}
@@ -16094,8 +16094,8 @@
 						0
 					],
 					"destination": [
-						"obj-2",
-						2
+						"obj-64",
+						0
 					]
 				}
 			},
@@ -16106,8 +16106,8 @@
 						0
 					],
 					"destination": [
-						"obj-65",
-						0
+						"obj-2",
+						2
 					]
 				}
 			},
@@ -16115,6 +16115,30 @@
 				"patchline": {
 					"source": [
 						"obj-65",
+						0
+					],
+					"destination": [
+						"obj-66",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-66",
+						0
+					],
+					"destination": [
+						"obj-67",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-67",
 						0
 					],
 					"destination": [
@@ -16126,31 +16150,7 @@
 			{
 				"patchline": {
 					"source": [
-						"obj-66",
-						0
-					],
-					"destination": [
 						"obj-68",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-68",
-						0
-					],
-					"destination": [
-						"obj-2",
-						2
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-69",
 						0
 					],
 					"destination": [
@@ -16166,7 +16166,7 @@
 						0
 					],
 					"destination": [
-						"obj-66",
+						"obj-71",
 						0
 					]
 				}
@@ -16178,32 +16178,44 @@
 						0
 					],
 					"destination": [
-						"obj-73",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-73",
-						0
-					],
-					"destination": [
-						"obj-74",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-74",
-						0
-					],
-					"destination": [
 						"obj-2",
 						2
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-72",
+						0
+					],
+					"destination": [
+						"obj-73",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-73",
+						0
+					],
+					"destination": [
+						"obj-74",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-74",
+						0
+					],
+					"destination": [
+						"obj-68",
+						0
 					]
 				}
 			},
@@ -16214,18 +16226,6 @@
 						0
 					],
 					"destination": [
-						"obj-76",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-76",
-						0
-					],
-					"destination": [
 						"obj-77",
 						0
 					]
@@ -16238,7 +16238,7 @@
 						0
 					],
 					"destination": [
-						"obj-71",
+						"obj-78",
 						0
 					]
 				}
@@ -16250,32 +16250,44 @@
 						0
 					],
 					"destination": [
-						"obj-80",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-80",
-						0
-					],
-					"destination": [
-						"obj-81",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-81",
-						0
-					],
-					"destination": [
 						"obj-2",
 						2
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-79",
+						0
+					],
+					"destination": [
+						"obj-80",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-80",
+						0
+					],
+					"destination": [
+						"obj-81",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-81",
+						0
+					],
+					"destination": [
+						"obj-75",
+						0
 					]
 				}
 			},
@@ -16286,18 +16298,6 @@
 						0
 					],
 					"destination": [
-						"obj-83",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-83",
-						0
-					],
-					"destination": [
 						"obj-84",
 						0
 					]
@@ -16307,30 +16307,6 @@
 				"patchline": {
 					"source": [
 						"obj-84",
-						0
-					],
-					"destination": [
-						"obj-78",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-85",
-						0
-					],
-					"destination": [
-						"obj-87",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-87",
 						0
 					],
 					"destination": [
@@ -16342,7 +16318,31 @@
 			{
 				"patchline": {
 					"source": [
-						"obj-88",
+						"obj-85",
+						0
+					],
+					"destination": [
+						"obj-86",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-86",
+						0
+					],
+					"destination": [
+						"obj-82",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-87",
 						0
 					],
 					"destination": [
@@ -16358,7 +16358,7 @@
 						0
 					],
 					"destination": [
-						"obj-85",
+						"obj-90",
 						0
 					]
 				}
@@ -16370,6 +16370,18 @@
 						0
 					],
 					"destination": [
+						"obj-2",
+						2
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-91",
+						0
+					],
+					"destination": [
 						"obj-92",
 						0
 					]
@@ -16382,8 +16394,8 @@
 						0
 					],
 					"destination": [
-						"obj-2",
-						2
+						"obj-93",
+						0
 					]
 				}
 			},
@@ -16394,7 +16406,7 @@
 						0
 					],
 					"destination": [
-						"obj-94",
+						"obj-87",
 						0
 					]
 				}
@@ -16406,7 +16418,7 @@
 						0
 					],
 					"destination": [
-						"obj-90",
+						"obj-96",
 						0
 					]
 				}
@@ -16414,7 +16426,7 @@
 			{
 				"patchline": {
 					"source": [
-						"obj-95",
+						"obj-96",
 						0
 					],
 					"destination": [
@@ -16454,7 +16466,7 @@
 						0
 					],
 					"destination": [
-						"obj-95",
+						"obj-100",
 						0
 					]
 				}
@@ -16466,7 +16478,7 @@
 						0
 					],
 					"destination": [
-						"obj-102",
+						"obj-94",
 						0
 					]
 				}
@@ -16474,12 +16486,12 @@
 			{
 				"patchline": {
 					"source": [
-						"obj-102",
+						"obj-101",
 						0
 					],
 					"destination": [
-						"obj-2",
-						2
+						"obj-103",
+						0
 					]
 				}
 			},
@@ -16502,8 +16514,8 @@
 						0
 					],
 					"destination": [
-						"obj-100",
-						0
+						"obj-2",
+						2
 					]
 				}
 			},
@@ -16514,6 +16526,18 @@
 						0
 					],
 					"destination": [
+						"obj-106",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-106",
+						0
+					],
+					"destination": [
 						"obj-107",
 						0
 					]
@@ -16526,8 +16550,8 @@
 						0
 					],
 					"destination": [
-						"obj-2",
-						2
+						"obj-101",
+						0
 					]
 				}
 			},
@@ -16538,19 +16562,7 @@
 						0
 					],
 					"destination": [
-						"obj-109",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-109",
-						0
-					],
-					"destination": [
-						"obj-105",
+						"obj-110",
 						0
 					]
 				}
@@ -16562,8 +16574,20 @@
 						0
 					],
 					"destination": [
-						"obj-112",
+						"obj-111",
 						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-111",
+						0
+					],
+					"destination": [
+						"obj-2",
+						2
 					]
 				}
 			},
@@ -16574,8 +16598,8 @@
 						0
 					],
 					"destination": [
-						"obj-2",
-						2
+						"obj-113",
+						0
 					]
 				}
 			},
@@ -16598,7 +16622,7 @@
 						0
 					],
 					"destination": [
-						"obj-110",
+						"obj-108",
 						0
 					]
 				}
@@ -16622,8 +16646,8 @@
 						0
 					],
 					"destination": [
-						"obj-2",
-						2
+						"obj-118",
+						0
 					]
 				}
 			},
@@ -16634,8 +16658,8 @@
 						0
 					],
 					"destination": [
-						"obj-119",
-						0
+						"obj-2",
+						2
 					]
 				}
 			},
@@ -16643,6 +16667,30 @@
 				"patchline": {
 					"source": [
 						"obj-119",
+						0
+					],
+					"destination": [
+						"obj-120",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-120",
+						0
+					],
+					"destination": [
+						"obj-121",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-121",
 						0
 					],
 					"destination": [
@@ -16654,31 +16702,7 @@
 			{
 				"patchline": {
 					"source": [
-						"obj-120",
-						0
-					],
-					"destination": [
 						"obj-122",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-122",
-						0
-					],
-					"destination": [
-						"obj-2",
-						2
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-123",
 						0
 					],
 					"destination": [
@@ -16694,8 +16718,8 @@
 						0
 					],
 					"destination": [
-						"obj-120",
-						0
+						"obj-2",
+						2
 					]
 				}
 			},
@@ -16706,7 +16730,7 @@
 						0
 					],
 					"destination": [
-						"obj-127",
+						"obj-126",
 						0
 					]
 				}
@@ -16714,19 +16738,19 @@
 			{
 				"patchline": {
 					"source": [
-						"obj-127",
+						"obj-126",
 						0
 					],
 					"destination": [
-						"obj-2",
-						2
+						"obj-122",
+						0
 					]
 				}
 			},
 			{
 				"patchline": {
 					"source": [
-						"obj-128",
+						"obj-127",
 						0
 					],
 					"destination": [
@@ -16742,30 +16766,6 @@
 						0
 					],
 					"destination": [
-						"obj-125",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-130",
-						0
-					],
-					"destination": [
-						"obj-132",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-132",
-						0
-					],
-					"destination": [
 						"obj-2",
 						2
 					]
@@ -16774,7 +16774,31 @@
 			{
 				"patchline": {
 					"source": [
-						"obj-133",
+						"obj-130",
+						0
+					],
+					"destination": [
+						"obj-131",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-131",
+						0
+					],
+					"destination": [
+						"obj-127",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-132",
 						0
 					],
 					"destination": [
@@ -16790,8 +16814,8 @@
 						0
 					],
 					"destination": [
-						"obj-130",
-						0
+						"obj-2",
+						2
 					]
 				}
 			},
@@ -16802,7 +16826,19 @@
 						0
 					],
 					"destination": [
-						"obj-137",
+						"obj-136",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-136",
+						0
+					],
+					"destination": [
+						"obj-132",
 						0
 					]
 				}
@@ -16814,20 +16850,8 @@
 						0
 					],
 					"destination": [
-						"obj-138",
+						"obj-139",
 						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-138",
-						0
-					],
-					"destination": [
-						"obj-2",
-						2
 					]
 				}
 			},
@@ -16838,8 +16862,8 @@
 						0
 					],
 					"destination": [
-						"obj-140",
-						0
+						"obj-2",
+						2
 					]
 				}
 			},
@@ -16862,7 +16886,7 @@
 						0
 					],
 					"destination": [
-						"obj-135",
+						"obj-137",
 						0
 					]
 				}
@@ -16886,8 +16910,8 @@
 						0
 					],
 					"destination": [
-						"obj-145",
-						0
+						"obj-2",
+						2
 					]
 				}
 			},
@@ -16898,8 +16922,8 @@
 						0
 					],
 					"destination": [
-						"obj-2",
-						2
+						"obj-146",
+						0
 					]
 				}
 			},
@@ -16910,31 +16934,19 @@
 						0
 					],
 					"destination": [
-						"obj-147",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-147",
-						0
-					],
-					"destination": [
-						"obj-148",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-148",
-						0
-					],
-					"destination": [
 						"obj-142",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-147",
+						0
+					],
+					"destination": [
+						"obj-149",
 						0
 					]
 				}
@@ -16946,6 +16958,18 @@
 						0
 					],
 					"destination": [
+						"obj-2",
+						2
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-150",
+						0
+					],
+					"destination": [
 						"obj-151",
 						0
 					]
@@ -16958,8 +16982,8 @@
 						0
 					],
 					"destination": [
-						"obj-2",
-						2
+						"obj-147",
+						0
 					]
 				}
 			},
@@ -16970,19 +16994,7 @@
 						0
 					],
 					"destination": [
-						"obj-153",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-153",
-						0
-					],
-					"destination": [
-						"obj-149",
+						"obj-154",
 						0
 					]
 				}
@@ -16994,6 +17006,18 @@
 						0
 					],
 					"destination": [
+						"obj-2",
+						2
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-155",
+						0
+					],
+					"destination": [
 						"obj-156",
 						0
 					]
@@ -17006,8 +17030,8 @@
 						0
 					],
 					"destination": [
-						"obj-2",
-						2
+						"obj-152",
+						0
 					]
 				}
 			},
@@ -17018,19 +17042,7 @@
 						0
 					],
 					"destination": [
-						"obj-158",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-158",
-						0
-					],
-					"destination": [
-						"obj-154",
+						"obj-159",
 						0
 					]
 				}
@@ -17042,6 +17054,18 @@
 						0
 					],
 					"destination": [
+						"obj-2",
+						2
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-160",
+						0
+					],
+					"destination": [
 						"obj-161",
 						0
 					]
@@ -17054,8 +17078,8 @@
 						0
 					],
 					"destination": [
-						"obj-2",
-						2
+						"obj-157",
+						0
 					]
 				}
 			},
@@ -17066,19 +17090,7 @@
 						0
 					],
 					"destination": [
-						"obj-163",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-163",
-						0
-					],
-					"destination": [
-						"obj-159",
+						"obj-164",
 						0
 					]
 				}
@@ -17087,30 +17099,6 @@
 				"patchline": {
 					"source": [
 						"obj-164",
-						0
-					],
-					"destination": [
-						"obj-166",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-166",
-						0
-					],
-					"destination": [
-						"obj-167",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-167",
 						0
 					],
 					"destination": [
@@ -17122,7 +17110,31 @@
 			{
 				"patchline": {
 					"source": [
-						"obj-168",
+						"obj-165",
+						0
+					],
+					"destination": [
+						"obj-166",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-166",
+						0
+					],
+					"destination": [
+						"obj-162",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-167",
 						0
 					],
 					"destination": [
@@ -17138,8 +17150,8 @@
 						0
 					],
 					"destination": [
-						"obj-170",
-						0
+						"obj-2",
+						2
 					]
 				}
 			},
@@ -17150,7 +17162,7 @@
 						0
 					],
 					"destination": [
-						"obj-164",
+						"obj-171",
 						0
 					]
 				}
@@ -17162,7 +17174,7 @@
 						0
 					],
 					"destination": [
-						"obj-173",
+						"obj-167",
 						0
 					]
 				}
@@ -17170,7 +17182,7 @@
 			{
 				"patchline": {
 					"source": [
-						"obj-173",
+						"obj-172",
 						0
 					],
 					"destination": [
@@ -17210,7 +17222,7 @@
 						0
 					],
 					"destination": [
-						"obj-177",
+						"obj-172",
 						0
 					]
 				}
@@ -17222,7 +17234,7 @@
 						0
 					],
 					"destination": [
-						"obj-171",
+						"obj-179",
 						0
 					]
 				}
@@ -17230,7 +17242,7 @@
 			{
 				"patchline": {
 					"source": [
-						"obj-178",
+						"obj-179",
 						0
 					],
 					"destination": [
@@ -17270,7 +17282,7 @@
 						0
 					],
 					"destination": [
-						"obj-178",
+						"obj-183",
 						0
 					]
 				}
@@ -17282,7 +17294,7 @@
 						0
 					],
 					"destination": [
-						"obj-185",
+						"obj-177",
 						0
 					]
 				}
@@ -17290,12 +17302,12 @@
 			{
 				"patchline": {
 					"source": [
-						"obj-185",
+						"obj-184",
 						0
 					],
 					"destination": [
-						"obj-2",
-						2
+						"obj-186",
+						0
 					]
 				}
 			},
@@ -17306,8 +17318,8 @@
 						0
 					],
 					"destination": [
-						"obj-187",
-						0
+						"obj-2",
+						2
 					]
 				}
 			},
@@ -17318,7 +17330,7 @@
 						0
 					],
 					"destination": [
-						"obj-183",
+						"obj-188",
 						0
 					]
 				}
@@ -17330,7 +17342,7 @@
 						0
 					],
 					"destination": [
-						"obj-190",
+						"obj-184",
 						0
 					]
 				}
@@ -17338,12 +17350,12 @@
 			{
 				"patchline": {
 					"source": [
-						"obj-190",
+						"obj-189",
 						0
 					],
 					"destination": [
-						"obj-2",
-						2
+						"obj-191",
+						0
 					]
 				}
 			},
@@ -17354,8 +17366,8 @@
 						0
 					],
 					"destination": [
-						"obj-192",
-						0
+						"obj-2",
+						2
 					]
 				}
 			},
@@ -17366,7 +17378,7 @@
 						0
 					],
 					"destination": [
-						"obj-188",
+						"obj-193",
 						0
 					]
 				}
@@ -17378,7 +17390,7 @@
 						0
 					],
 					"destination": [
-						"obj-195",
+						"obj-189",
 						0
 					]
 				}
@@ -17386,7 +17398,19 @@
 			{
 				"patchline": {
 					"source": [
-						"obj-195",
+						"obj-194",
+						0
+					],
+					"destination": [
+						"obj-196",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-196",
 						0
 					],
 					"destination": [
@@ -17398,23 +17422,11 @@
 			{
 				"patchline": {
 					"source": [
-						"obj-196",
-						0
-					],
-					"destination": [
-						"obj-197",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
 						"obj-197",
 						0
 					],
 					"destination": [
-						"obj-193",
+						"obj-198",
 						0
 					]
 				}
@@ -17426,7 +17438,7 @@
 						0
 					],
 					"destination": [
-						"obj-200",
+						"obj-194",
 						0
 					]
 				}
@@ -17434,7 +17446,7 @@
 			{
 				"patchline": {
 					"source": [
-						"obj-200",
+						"obj-199",
 						0
 					],
 					"destination": [
@@ -17474,7 +17486,7 @@
 						0
 					],
 					"destination": [
-						"obj-204",
+						"obj-199",
 						0
 					]
 				}
@@ -17486,7 +17498,7 @@
 						0
 					],
 					"destination": [
-						"obj-198",
+						"obj-206",
 						0
 					]
 				}
@@ -17494,7 +17506,7 @@
 			{
 				"patchline": {
 					"source": [
-						"obj-205",
+						"obj-206",
 						0
 					],
 					"destination": [
@@ -17507,23 +17519,23 @@
 				"patchline": {
 					"source": [
 						"obj-207",
-						0
-					],
-					"destination": [
-						"obj-208",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-208",
 						0
 					],
 					"destination": [
 						"obj-2",
 						2
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-208",
+						0
+					],
+					"destination": [
+						"obj-209",
+						0
 					]
 				}
 			},
@@ -17546,7 +17558,7 @@
 						0
 					],
 					"destination": [
-						"obj-211",
+						"obj-204",
 						0
 					]
 				}
@@ -17558,7 +17570,7 @@
 						0
 					],
 					"destination": [
-						"obj-205",
+						"obj-213",
 						0
 					]
 				}
@@ -17566,19 +17578,7 @@
 			{
 				"patchline": {
 					"source": [
-						"obj-212",
-						0
-					],
-					"destination": [
-						"obj-214",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-214",
+						"obj-213",
 						0
 					],
 					"destination": [
@@ -17590,11 +17590,23 @@
 			{
 				"patchline": {
 					"source": [
+						"obj-214",
+						0
+					],
+					"destination": [
+						"obj-215",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
 						"obj-215",
 						0
 					],
 					"destination": [
-						"obj-216",
+						"obj-211",
 						0
 					]
 				}
@@ -17606,7 +17618,7 @@
 						0
 					],
 					"destination": [
-						"obj-212",
+						"obj-218",
 						0
 					]
 				}
@@ -17614,7 +17626,7 @@
 			{
 				"patchline": {
 					"source": [
-						"obj-217",
+						"obj-218",
 						0
 					],
 					"destination": [
@@ -17654,7 +17666,7 @@
 						0
 					],
 					"destination": [
-						"obj-217",
+						"obj-222",
 						0
 					]
 				}
@@ -17666,7 +17678,7 @@
 						0
 					],
 					"destination": [
-						"obj-224",
+						"obj-216",
 						0
 					]
 				}
@@ -17674,12 +17686,12 @@
 			{
 				"patchline": {
 					"source": [
-						"obj-224",
+						"obj-223",
 						0
 					],
 					"destination": [
-						"obj-2",
-						2
+						"obj-225",
+						0
 					]
 				}
 			},
@@ -17690,8 +17702,8 @@
 						0
 					],
 					"destination": [
-						"obj-226",
-						0
+						"obj-2",
+						2
 					]
 				}
 			},
@@ -17702,7 +17714,7 @@
 						0
 					],
 					"destination": [
-						"obj-222",
+						"obj-227",
 						0
 					]
 				}
@@ -17714,7 +17726,7 @@
 						0
 					],
 					"destination": [
-						"obj-229",
+						"obj-223",
 						0
 					]
 				}
@@ -17722,7 +17734,19 @@
 			{
 				"patchline": {
 					"source": [
-						"obj-229",
+						"obj-228",
+						0
+					],
+					"destination": [
+						"obj-230",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-230",
 						0
 					],
 					"destination": [
@@ -17734,23 +17758,11 @@
 			{
 				"patchline": {
 					"source": [
-						"obj-230",
-						0
-					],
-					"destination": [
-						"obj-231",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
 						"obj-231",
 						0
 					],
 					"destination": [
-						"obj-227",
+						"obj-232",
 						0
 					]
 				}
@@ -17762,7 +17774,7 @@
 						0
 					],
 					"destination": [
-						"obj-234",
+						"obj-228",
 						0
 					]
 				}
@@ -17770,7 +17782,7 @@
 			{
 				"patchline": {
 					"source": [
-						"obj-234",
+						"obj-233",
 						0
 					],
 					"destination": [
@@ -17810,7 +17822,7 @@
 						0
 					],
 					"destination": [
-						"obj-238",
+						"obj-233",
 						0
 					]
 				}
@@ -17822,7 +17834,7 @@
 						0
 					],
 					"destination": [
-						"obj-232",
+						"obj-240",
 						0
 					]
 				}
@@ -17830,36 +17842,36 @@
 			{
 				"patchline": {
 					"source": [
-						"obj-239",
-						0
-					],
-					"destination": [
-						"obj-241",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-241",
-						0
-					],
-					"destination": [
-						"obj-242",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-242",
+						"obj-240",
 						0
 					],
 					"destination": [
 						"obj-2",
 						2
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-241",
+						0
+					],
+					"destination": [
+						"obj-242",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-242",
+						0
+					],
+					"destination": [
+						"obj-238",
+						0
 					]
 				}
 			},
@@ -17870,18 +17882,6 @@
 						0
 					],
 					"destination": [
-						"obj-244",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-244",
-						0
-					],
-					"destination": [
 						"obj-245",
 						0
 					]
@@ -17894,7 +17894,7 @@
 						0
 					],
 					"destination": [
-						"obj-239",
+						"obj-246",
 						0
 					]
 				}
@@ -17903,18 +17903,6 @@
 				"patchline": {
 					"source": [
 						"obj-246",
-						0
-					],
-					"destination": [
-						"obj-248",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-248",
 						0
 					],
 					"destination": [
@@ -17926,11 +17914,35 @@
 			{
 				"patchline": {
 					"source": [
+						"obj-247",
+						0
+					],
+					"destination": [
+						"obj-248",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-248",
+						0
+					],
+					"destination": [
+						"obj-249",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
 						"obj-249",
 						0
 					],
 					"destination": [
-						"obj-250",
+						"obj-243",
 						0
 					]
 				}
@@ -17942,7 +17954,7 @@
 						0
 					],
 					"destination": [
-						"obj-246",
+						"obj-252",
 						0
 					]
 				}
@@ -17950,7 +17962,7 @@
 			{
 				"patchline": {
 					"source": [
-						"obj-251",
+						"obj-252",
 						0
 					],
 					"destination": [
@@ -17990,7 +18002,7 @@
 						0
 					],
 					"destination": [
-						"obj-251",
+						"obj-256",
 						0
 					]
 				}
@@ -18002,7 +18014,7 @@
 						0
 					],
 					"destination": [
-						"obj-258",
+						"obj-250",
 						0
 					]
 				}
@@ -18010,12 +18022,12 @@
 			{
 				"patchline": {
 					"source": [
-						"obj-258",
+						"obj-257",
 						0
 					],
 					"destination": [
-						"obj-2",
-						2
+						"obj-259",
+						0
 					]
 				}
 			},
@@ -18026,8 +18038,8 @@
 						0
 					],
 					"destination": [
-						"obj-260",
-						0
+						"obj-2",
+						2
 					]
 				}
 			},
@@ -18038,7 +18050,7 @@
 						0
 					],
 					"destination": [
-						"obj-256",
+						"obj-261",
 						0
 					]
 				}
@@ -18050,7 +18062,7 @@
 						0
 					],
 					"destination": [
-						"obj-263",
+						"obj-257",
 						0
 					]
 				}
@@ -18058,7 +18070,19 @@
 			{
 				"patchline": {
 					"source": [
-						"obj-263",
+						"obj-262",
+						0
+					],
+					"destination": [
+						"obj-264",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-264",
 						0
 					],
 					"destination": [
@@ -18070,23 +18094,11 @@
 			{
 				"patchline": {
 					"source": [
-						"obj-264",
-						0
-					],
-					"destination": [
-						"obj-265",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
 						"obj-265",
 						0
 					],
 					"destination": [
-						"obj-261",
+						"obj-266",
 						0
 					]
 				}
@@ -18098,7 +18110,7 @@
 						0
 					],
 					"destination": [
-						"obj-268",
+						"obj-262",
 						0
 					]
 				}
@@ -18106,7 +18118,7 @@
 			{
 				"patchline": {
 					"source": [
-						"obj-268",
+						"obj-267",
 						0
 					],
 					"destination": [
@@ -18146,7 +18158,7 @@
 						0
 					],
 					"destination": [
-						"obj-272",
+						"obj-267",
 						0
 					]
 				}
@@ -18158,7 +18170,7 @@
 						0
 					],
 					"destination": [
-						"obj-266",
+						"obj-274",
 						0
 					]
 				}
@@ -18166,24 +18178,24 @@
 			{
 				"patchline": {
 					"source": [
-						"obj-273",
-						0
-					],
-					"destination": [
-						"obj-275",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-275",
+						"obj-274",
 						0
 					],
 					"destination": [
 						"obj-2",
 						2
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-275",
+						0
+					],
+					"destination": [
+						"obj-276",
+						0
 					]
 				}
 			},
@@ -18194,7 +18206,7 @@
 						0
 					],
 					"destination": [
-						"obj-277",
+						"obj-272",
 						0
 					]
 				}
@@ -18206,7 +18218,7 @@
 						0
 					],
 					"destination": [
-						"obj-273",
+						"obj-279",
 						0
 					]
 				}
@@ -18214,36 +18226,36 @@
 			{
 				"patchline": {
 					"source": [
-						"obj-278",
-						0
-					],
-					"destination": [
-						"obj-280",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-280",
-						0
-					],
-					"destination": [
-						"obj-281",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-281",
+						"obj-279",
 						0
 					],
 					"destination": [
 						"obj-2",
 						2
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-280",
+						0
+					],
+					"destination": [
+						"obj-281",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-281",
+						0
+					],
+					"destination": [
+						"obj-277",
+						0
 					]
 				}
 			},
@@ -18254,18 +18266,6 @@
 						0
 					],
 					"destination": [
-						"obj-283",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-283",
-						0
-					],
-					"destination": [
 						"obj-284",
 						0
 					]
@@ -18278,8 +18278,8 @@
 						0
 					],
 					"destination": [
-						"obj-278",
-						0
+						"obj-2",
+						2
 					]
 				}
 			},
@@ -18290,7 +18290,19 @@
 						0
 					],
 					"destination": [
-						"obj-287",
+						"obj-286",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-286",
+						0
+					],
+					"destination": [
+						"obj-282",
 						0
 					]
 				}
@@ -18302,20 +18314,8 @@
 						0
 					],
 					"destination": [
-						"obj-288",
+						"obj-289",
 						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-288",
-						0
-					],
-					"destination": [
-						"obj-2",
-						2
 					]
 				}
 			},
@@ -18326,8 +18326,8 @@
 						0
 					],
 					"destination": [
-						"obj-290",
-						0
+						"obj-2",
+						2
 					]
 				}
 			},
@@ -18350,7 +18350,7 @@
 						0
 					],
 					"destination": [
-						"obj-285",
+						"obj-287",
 						0
 					]
 				}
@@ -18374,8 +18374,8 @@
 						0
 					],
 					"destination": [
-						"obj-295",
-						0
+						"obj-2",
+						2
 					]
 				}
 			},
@@ -18386,8 +18386,8 @@
 						0
 					],
 					"destination": [
-						"obj-2",
-						2
+						"obj-296",
+						0
 					]
 				}
 			},
@@ -18398,30 +18398,6 @@
 						0
 					],
 					"destination": [
-						"obj-297",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-297",
-						0
-					],
-					"destination": [
-						"obj-298",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-298",
-						0
-					],
-					"destination": [
 						"obj-292",
 						0
 					]
@@ -18430,31 +18406,19 @@
 			{
 				"patchline": {
 					"source": [
+						"obj-297",
+						0
+					],
+					"destination": [
 						"obj-299",
 						0
-					],
-					"destination": [
-						"obj-301",
-						0
 					]
 				}
 			},
 			{
 				"patchline": {
 					"source": [
-						"obj-301",
-						0
-					],
-					"destination": [
-						"obj-302",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-302",
+						"obj-299",
 						0
 					],
 					"destination": [
@@ -18466,7 +18430,31 @@
 			{
 				"patchline": {
 					"source": [
-						"obj-303",
+						"obj-300",
+						0
+					],
+					"destination": [
+						"obj-301",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-301",
+						0
+					],
+					"destination": [
+						"obj-297",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-302",
 						0
 					],
 					"destination": [
@@ -18482,8 +18470,8 @@
 						0
 					],
 					"destination": [
-						"obj-305",
-						0
+						"obj-2",
+						2
 					]
 				}
 			},
@@ -18494,7 +18482,7 @@
 						0
 					],
 					"destination": [
-						"obj-299",
+						"obj-306",
 						0
 					]
 				}
@@ -18506,7 +18494,7 @@
 						0
 					],
 					"destination": [
-						"obj-308",
+						"obj-302",
 						0
 					]
 				}
@@ -18514,7 +18502,7 @@
 			{
 				"patchline": {
 					"source": [
-						"obj-308",
+						"obj-307",
 						0
 					],
 					"destination": [
@@ -18530,8 +18518,8 @@
 						0
 					],
 					"destination": [
-						"obj-2",
-						2
+						"obj-310",
+						0
 					]
 				}
 			},
@@ -18542,8 +18530,8 @@
 						0
 					],
 					"destination": [
-						"obj-311",
-						0
+						"obj-2",
+						2
 					]
 				}
 			},
@@ -18566,7 +18554,7 @@
 						0
 					],
 					"destination": [
-						"obj-306",
+						"obj-313",
 						0
 					]
 				}
@@ -18578,7 +18566,7 @@
 						0
 					],
 					"destination": [
-						"obj-315",
+						"obj-307",
 						0
 					]
 				}
@@ -18586,12 +18574,12 @@
 			{
 				"patchline": {
 					"source": [
-						"obj-315",
+						"obj-314",
 						0
 					],
 					"destination": [
-						"obj-2",
-						2
+						"obj-316",
+						0
 					]
 				}
 			},
@@ -18614,8 +18602,8 @@
 						0
 					],
 					"destination": [
-						"obj-313",
-						0
+						"obj-2",
+						2
 					]
 				}
 			},
@@ -18626,6 +18614,18 @@
 						0
 					],
 					"destination": [
+						"obj-319",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-319",
+						0
+					],
+					"destination": [
 						"obj-320",
 						0
 					]
@@ -18638,8 +18638,8 @@
 						0
 					],
 					"destination": [
-						"obj-2",
-						2
+						"obj-314",
+						0
 					]
 				}
 			},
@@ -18650,19 +18650,7 @@
 						0
 					],
 					"destination": [
-						"obj-322",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-322",
-						0
-					],
-					"destination": [
-						"obj-318",
+						"obj-323",
 						0
 					]
 				}
@@ -18674,6 +18662,18 @@
 						0
 					],
 					"destination": [
+						"obj-2",
+						2
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-324",
+						0
+					],
+					"destination": [
 						"obj-325",
 						0
 					]
@@ -18686,8 +18686,8 @@
 						0
 					],
 					"destination": [
-						"obj-2",
-						2
+						"obj-321",
+						0
 					]
 				}
 			},
@@ -18698,19 +18698,7 @@
 						0
 					],
 					"destination": [
-						"obj-327",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-327",
-						0
-					],
-					"destination": [
-						"obj-323",
+						"obj-328",
 						0
 					]
 				}
@@ -18722,6 +18710,18 @@
 						0
 					],
 					"destination": [
+						"obj-2",
+						2
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-329",
+						0
+					],
+					"destination": [
 						"obj-330",
 						0
 					]
@@ -18734,8 +18734,8 @@
 						0
 					],
 					"destination": [
-						"obj-2",
-						2
+						"obj-326",
+						0
 					]
 				}
 			},
@@ -18746,19 +18746,7 @@
 						0
 					],
 					"destination": [
-						"obj-332",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-332",
-						0
-					],
-					"destination": [
-						"obj-328",
+						"obj-333",
 						0
 					]
 				}
@@ -18767,18 +18755,6 @@
 				"patchline": {
 					"source": [
 						"obj-333",
-						0
-					],
-					"destination": [
-						"obj-335",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-335",
 						0
 					],
 					"destination": [
@@ -18790,11 +18766,11 @@
 			{
 				"patchline": {
 					"source": [
-						"obj-336",
+						"obj-334",
 						0
 					],
 					"destination": [
-						"obj-337",
+						"obj-335",
 						0
 					]
 				}
@@ -18802,11 +18778,23 @@
 			{
 				"patchline": {
 					"source": [
-						"obj-337",
+						"obj-335",
 						0
 					],
 					"destination": [
-						"obj-333",
+						"obj-331",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-336",
+						0
+					],
+					"destination": [
+						"obj-338",
 						0
 					]
 				}
@@ -18818,8 +18806,20 @@
 						0
 					],
 					"destination": [
-						"obj-340",
+						"obj-339",
 						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-339",
+						0
+					],
+					"destination": [
+						"obj-2",
+						2
 					]
 				}
 			},
@@ -18830,8 +18830,8 @@
 						0
 					],
 					"destination": [
-						"obj-2",
-						2
+						"obj-341",
+						0
 					]
 				}
 			},
@@ -18854,7 +18854,7 @@
 						0
 					],
 					"destination": [
-						"obj-338",
+						"obj-336",
 						0
 					]
 				}
@@ -18878,8 +18878,8 @@
 						0
 					],
 					"destination": [
-						"obj-2",
-						2
+						"obj-346",
+						0
 					]
 				}
 			},
@@ -18890,8 +18890,8 @@
 						0
 					],
 					"destination": [
-						"obj-347",
-						0
+						"obj-2",
+						2
 					]
 				}
 			},
@@ -18899,6 +18899,30 @@
 				"patchline": {
 					"source": [
 						"obj-347",
+						0
+					],
+					"destination": [
+						"obj-348",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-348",
+						0
+					],
+					"destination": [
+						"obj-349",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-349",
 						0
 					],
 					"destination": [
@@ -18910,31 +18934,7 @@
 			{
 				"patchline": {
 					"source": [
-						"obj-348",
-						0
-					],
-					"destination": [
 						"obj-350",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-350",
-						0
-					],
-					"destination": [
-						"obj-2",
-						2
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-351",
 						0
 					],
 					"destination": [
@@ -18950,8 +18950,8 @@
 						0
 					],
 					"destination": [
-						"obj-348",
-						0
+						"obj-2",
+						2
 					]
 				}
 			},
@@ -18962,7 +18962,7 @@
 						0
 					],
 					"destination": [
-						"obj-355",
+						"obj-354",
 						0
 					]
 				}
@@ -18970,19 +18970,19 @@
 			{
 				"patchline": {
 					"source": [
-						"obj-355",
+						"obj-354",
 						0
 					],
 					"destination": [
-						"obj-2",
-						2
+						"obj-350",
+						0
 					]
 				}
 			},
 			{
 				"patchline": {
 					"source": [
-						"obj-356",
+						"obj-355",
 						0
 					],
 					"destination": [
@@ -18998,8 +18998,8 @@
 						0
 					],
 					"destination": [
-						"obj-353",
-						0
+						"obj-2",
+						2
 					]
 				}
 			},
@@ -19010,7 +19010,7 @@
 						0
 					],
 					"destination": [
-						"obj-360",
+						"obj-359",
 						0
 					]
 				}
@@ -19018,19 +19018,19 @@
 			{
 				"patchline": {
 					"source": [
-						"obj-360",
+						"obj-359",
 						0
 					],
 					"destination": [
-						"obj-2",
-						2
+						"obj-355",
+						0
 					]
 				}
 			},
 			{
 				"patchline": {
 					"source": [
-						"obj-361",
+						"obj-360",
 						0
 					],
 					"destination": [
@@ -19046,8 +19046,8 @@
 						0
 					],
 					"destination": [
-						"obj-358",
-						0
+						"obj-2",
+						2
 					]
 				}
 			},
@@ -19058,7 +19058,7 @@
 						0
 					],
 					"destination": [
-						"obj-365",
+						"obj-364",
 						0
 					]
 				}
@@ -19066,19 +19066,19 @@
 			{
 				"patchline": {
 					"source": [
-						"obj-365",
+						"obj-364",
 						0
 					],
 					"destination": [
-						"obj-2",
-						2
+						"obj-360",
+						0
 					]
 				}
 			},
 			{
 				"patchline": {
 					"source": [
-						"obj-366",
+						"obj-365",
 						0
 					],
 					"destination": [
@@ -19094,30 +19094,6 @@
 						0
 					],
 					"destination": [
-						"obj-363",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-368",
-						0
-					],
-					"destination": [
-						"obj-370",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-370",
-						0
-					],
-					"destination": [
 						"obj-2",
 						2
 					]
@@ -19126,7 +19102,31 @@
 			{
 				"patchline": {
 					"source": [
-						"obj-371",
+						"obj-368",
+						0
+					],
+					"destination": [
+						"obj-369",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-369",
+						0
+					],
+					"destination": [
+						"obj-365",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-370",
 						0
 					],
 					"destination": [
@@ -19142,7 +19142,7 @@
 						0
 					],
 					"destination": [
-						"obj-368",
+						"obj-373",
 						0
 					]
 				}
@@ -19154,6 +19154,18 @@
 						0
 					],
 					"destination": [
+						"obj-2",
+						2
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-374",
+						0
+					],
+					"destination": [
 						"obj-375",
 						0
 					]
@@ -19166,8 +19178,8 @@
 						0
 					],
 					"destination": [
-						"obj-2",
-						2
+						"obj-376",
+						0
 					]
 				}
 			},
@@ -19178,7 +19190,7 @@
 						0
 					],
 					"destination": [
-						"obj-377",
+						"obj-370",
 						0
 					]
 				}
@@ -19190,7 +19202,7 @@
 						0
 					],
 					"destination": [
-						"obj-373",
+						"obj-379",
 						0
 					]
 				}
@@ -19198,7 +19210,7 @@
 			{
 				"patchline": {
 					"source": [
-						"obj-378",
+						"obj-379",
 						0
 					],
 					"destination": [
@@ -19211,23 +19223,23 @@
 				"patchline": {
 					"source": [
 						"obj-380",
-						0
-					],
-					"destination": [
-						"obj-381",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-381",
 						0
 					],
 					"destination": [
 						"obj-2",
 						2
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-381",
+						0
+					],
+					"destination": [
+						"obj-382",
+						0
 					]
 				}
 			},
@@ -19250,7 +19262,7 @@
 						0
 					],
 					"destination": [
-						"obj-384",
+						"obj-377",
 						0
 					]
 				}
@@ -19262,7 +19274,7 @@
 						0
 					],
 					"destination": [
-						"obj-378",
+						"obj-386",
 						0
 					]
 				}
@@ -19270,24 +19282,24 @@
 			{
 				"patchline": {
 					"source": [
-						"obj-385",
-						0
-					],
-					"destination": [
-						"obj-387",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-387",
+						"obj-386",
 						0
 					],
 					"destination": [
 						"obj-2",
 						2
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-387",
+						0
+					],
+					"destination": [
+						"obj-388",
+						0
 					]
 				}
 			},
@@ -19298,7 +19310,7 @@
 						0
 					],
 					"destination": [
-						"obj-389",
+						"obj-384",
 						0
 					]
 				}
@@ -19310,7 +19322,7 @@
 						0
 					],
 					"destination": [
-						"obj-385",
+						"obj-391",
 						0
 					]
 				}
@@ -19318,24 +19330,24 @@
 			{
 				"patchline": {
 					"source": [
-						"obj-390",
-						0
-					],
-					"destination": [
-						"obj-392",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-392",
+						"obj-391",
 						0
 					],
 					"destination": [
 						"obj-2",
 						2
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-392",
+						0
+					],
+					"destination": [
+						"obj-393",
+						0
 					]
 				}
 			},
@@ -19346,7 +19358,7 @@
 						0
 					],
 					"destination": [
-						"obj-394",
+						"obj-389",
 						0
 					]
 				}
@@ -19358,7 +19370,7 @@
 						0
 					],
 					"destination": [
-						"obj-390",
+						"obj-396",
 						0
 					]
 				}
@@ -19366,36 +19378,36 @@
 			{
 				"patchline": {
 					"source": [
-						"obj-395",
-						0
-					],
-					"destination": [
-						"obj-397",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-397",
-						0
-					],
-					"destination": [
-						"obj-398",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-398",
+						"obj-396",
 						0
 					],
 					"destination": [
 						"obj-2",
 						2
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-397",
+						0
+					],
+					"destination": [
+						"obj-398",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-398",
+						0
+					],
+					"destination": [
+						"obj-394",
+						0
 					]
 				}
 			},
@@ -19406,18 +19418,6 @@
 						0
 					],
 					"destination": [
-						"obj-400",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-400",
-						0
-					],
-					"destination": [
 						"obj-401",
 						0
 					]
@@ -19427,30 +19427,6 @@
 				"patchline": {
 					"source": [
 						"obj-401",
-						0
-					],
-					"destination": [
-						"obj-395",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-402",
-						0
-					],
-					"destination": [
-						"obj-404",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-404",
 						0
 					],
 					"destination": [
@@ -19462,7 +19438,31 @@
 			{
 				"patchline": {
 					"source": [
-						"obj-405",
+						"obj-402",
+						0
+					],
+					"destination": [
+						"obj-403",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-403",
+						0
+					],
+					"destination": [
+						"obj-399",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-404",
 						0
 					],
 					"destination": [
@@ -19478,7 +19478,7 @@
 						0
 					],
 					"destination": [
-						"obj-402",
+						"obj-407",
 						0
 					]
 				}
@@ -19490,6 +19490,18 @@
 						0
 					],
 					"destination": [
+						"obj-2",
+						2
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-408",
+						0
+					],
+					"destination": [
 						"obj-409",
 						0
 					]
@@ -19502,8 +19514,8 @@
 						0
 					],
 					"destination": [
-						"obj-2",
-						2
+						"obj-410",
+						0
 					]
 				}
 			},
@@ -19514,7 +19526,7 @@
 						0
 					],
 					"destination": [
-						"obj-411",
+						"obj-404",
 						0
 					]
 				}
@@ -19526,7 +19538,7 @@
 						0
 					],
 					"destination": [
-						"obj-407",
+						"obj-413",
 						0
 					]
 				}
@@ -19534,7 +19546,7 @@
 			{
 				"patchline": {
 					"source": [
-						"obj-412",
+						"obj-413",
 						0
 					],
 					"destination": [
@@ -19574,7 +19586,7 @@
 						0
 					],
 					"destination": [
-						"obj-412",
+						"obj-417",
 						0
 					]
 				}
@@ -19586,7 +19598,7 @@
 						0
 					],
 					"destination": [
-						"obj-419",
+						"obj-411",
 						0
 					]
 				}
@@ -19594,7 +19606,7 @@
 			{
 				"patchline": {
 					"source": [
-						"obj-419",
+						"obj-418",
 						0
 					],
 					"destination": [
@@ -19634,7 +19646,7 @@
 						0
 					],
 					"destination": [
-						"obj-423",
+						"obj-418",
 						0
 					]
 				}
@@ -19646,7 +19658,7 @@
 						0
 					],
 					"destination": [
-						"obj-417",
+						"obj-425",
 						0
 					]
 				}
@@ -19654,36 +19666,36 @@
 			{
 				"patchline": {
 					"source": [
-						"obj-424",
-						0
-					],
-					"destination": [
-						"obj-426",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-426",
-						0
-					],
-					"destination": [
-						"obj-427",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-427",
+						"obj-425",
 						0
 					],
 					"destination": [
 						"obj-2",
 						2
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-426",
+						0
+					],
+					"destination": [
+						"obj-427",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-427",
+						0
+					],
+					"destination": [
+						"obj-423",
+						0
 					]
 				}
 			},
@@ -19694,18 +19706,6 @@
 						0
 					],
 					"destination": [
-						"obj-429",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-429",
-						0
-					],
-					"destination": [
 						"obj-430",
 						0
 					]
@@ -19715,42 +19715,6 @@
 				"patchline": {
 					"source": [
 						"obj-430",
-						0
-					],
-					"destination": [
-						"obj-424",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-431",
-						0
-					],
-					"destination": [
-						"obj-433",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-433",
-						0
-					],
-					"destination": [
-						"obj-434",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"source": [
-						"obj-434",
 						0
 					],
 					"destination": [
@@ -19762,12 +19726,48 @@
 			{
 				"patchline": {
 					"source": [
+						"obj-431",
+						0
+					],
+					"destination": [
+						"obj-432",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-432",
+						0
+					],
+					"destination": [
+						"obj-428",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
+						"obj-433",
+						0
+					],
+					"destination": [
+						"obj-435",
+						0
+					]
+				}
+			},
+			{
+				"patchline": {
+					"source": [
 						"obj-435",
 						0
 					],
 					"destination": [
-						"obj-436",
-						0
+						"obj-2",
+						2
 					]
 				}
 			},
@@ -19790,7 +19790,7 @@
 						0
 					],
 					"destination": [
-						"obj-431",
+						"obj-433",
 						0
 					]
 				}

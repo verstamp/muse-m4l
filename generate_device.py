@@ -245,14 +245,15 @@ TABS = [
          (78, "Filter Order", M, ["Serial", "Stereo", "Parallel"])],
     ]),
     ("ENV", "rack", [
-        # Filter Envelope ADSR faders + loop/vel, then VCA Envelope, like panel.
+        # Filter Envelope (top) directly over the VCA Envelope (bottom), as on
+        # the panel: four ADSR faders then the loop / velocity toggles.
         [(79, "Filter Env Attack", S, None),
          (80, "Filter Env Decay", S, None),
          (81, "Filter Env Sustain", S, None),
          (82, "Filter Env Release", S, None),
          (83, "Filter Env Loop", T, None),
-         (85, "Filter Env Velocity", T, None),
-         (86, "VCA Env Attack", S, None),
+         (85, "Filter Env Velocity", T, None)],
+        [(86, "VCA Env Attack", S, None),
          (87, "VCA Env Decay", S, None),
          (88, "VCA Env Sustain", S, None),
          (89, "VCA Env Release", S, None),
@@ -342,6 +343,14 @@ TABS = [
 ]
 
 
+# Present the tabs in the Muse's physical front-panel order (scanning the panel
+# left to right): modulation sources, oscillators, mixer, filters, envelopes,
+# amp/output, then delay and the performance sections.
+PANEL_ORDER = ["LFO", "MOD", "OSC", "MIX", "FILTER", "ENV", "VCA", "DELAY",
+               "ARP", "VOICE"]
+TABS = sorted(TABS, key=lambda t: PANEL_ORDER.index(t[0]))
+
+
 def iter_controls():
     """Yield every (cc, longname, kind, enum) control across all tabs."""
     for _name, _mode, rows in TABS:
@@ -380,6 +389,9 @@ CAPTION_OVERRIDE = {
     "OSC 1 Level": "OSC 1", "OSC 2 Level": "OSC 2",
     "Ring Mod Level": "Ring", "Mod Osc Level": "Mod Osc",
     "Noise Level": "Noise", "Clipping Level": "Drive",
+    "Timbre Volume": "Volume", "Seq Clock Div": "Seq Div",
+    "Pitch LFO>Mod Osc": "P.LFO>Mod",
+    "OSC 1 Tri/Saw Mix": "Tri/Saw 1", "OSC 2 Tri/Saw Mix": "Tri/Saw 2",
     "Filter Env Attack": "F Atk", "Filter Env Decay": "F Dec",
     "Filter Env Sustain": "F Sus", "Filter Env Release": "F Rel",
     "Filter Env Loop": "F Loop", "Filter Env Velocity": "F Vel",
@@ -533,19 +545,21 @@ class Patch:
 # --------------------------------------------------------------------------
 # Layout - everything must fit inside Live's fixed 169px device height.
 #
-# Every control lives in a fixed-width cell with its label on top.  "grid" tabs
-# stack up to two rows of short (knob/toggle/menu) cells; "rack" tabs use one
-# row of tall cells so the faders read like the panel's sliders.
+# Every control sits in a fixed-width cell with its label pinned to the top of
+# the cell's row band; the control is centred in the space below.  A tab's rows
+# share the height evenly, so a one-row tab gets tall faders and a two-row tab
+# (e.g. the stacked Filter/VCA envelopes) gets shorter ones - just like the
+# panel.  Columns are wide enough that the longest label fits on one line.
 # --------------------------------------------------------------------------
 MARGIN = 10
-COL_W = 48
+COL_W = 64
 DIAL = 38
-LABEL_H = 11
-TOP = 24                       # first cell's label top (below the tab strip)
-CELL_DY = 13                   # control top, measured down from the cell label
-GRID_ROW_DY = 62               # vertical pitch between the two grid rows
-SLIDER_W = 22                  # vertical fader width
-SLIDER_H = 104                 # vertical fader height (fits under 169px)
+LABEL_H = 12
+LABEL_GAP = 2                  # gap between a label and its control
+TOP = 22                       # top of the first row band (below the tab strip)
+BOTTOM = 166                   # controls must stay above this (device is 169px)
+SLIDER_W = 20                  # vertical fader width
+SLIDER_MAXH = 104              # vertical fader height cap
 
 
 def _cols_in(tab):
@@ -581,17 +595,18 @@ def build():
 
     # ---- per-tab controls (only the active tab is shown) -----------------
     tab_members = []
-    for _name, mode, rows in TABS:
+    for _name, _mode, rows in TABS:
         members = []
+        band = (BOTTOM - TOP) / len(rows)        # each row gets an equal band
         for ri, row in enumerate(rows):
-            cell_y = TOP + ri * GRID_ROW_DY
+            row_top = TOP + ri * band
             for ci, (cc, longname, kind, enum) in enumerate(row):
                 x = cell_x(ci)
                 sn = slug(longname)
                 members += [sn, sn + "_L"]
-                ctrl = make_control(p, kind, longname, enum, x, cell_y, mode,
+                ctrl = make_control(p, kind, longname, enum, x, row_top, band,
                                     annotation_for(cc, longname), INIT.get(cc))
-                place_label(p, caption(longname), x, cell_y, sn)
+                place_label(p, caption(longname), x, row_top, sn)
                 route_out(p, kind, enum, cc, ctrl, midiformat, wx)  # UI -> Muse
                 route_in(p, kind, enum, cc, ctrl, wx)               # Muse -> UI
         tab_members.append(members)
@@ -740,38 +755,42 @@ def build_misc_tab(p, midiin, midiformat, wx):
 
 
 
-def make_control(p, kind, longname, enum, x, cell_y, mode, annotation,
+def make_control(p, kind, longname, enum, x, row_top, band, annotation,
                  initial=None):
-    """Draw one control inside its cell (label sits above at ``cell_y``)."""
-    cy = cell_y + CELL_DY                       # control top
-    # In a rack (fader) tab, drop short controls to the faders' midline.
-    short_y = cy + (SLIDER_H - 18) // 2 if mode == "rack" else cy
+    """Draw one control, centred in the space under its label."""
+    top = row_top + LABEL_H + LABEL_GAP         # control region top
+    avail = band - LABEL_H - LABEL_GAP - 2      # control region height
+
+    def cx(w):                                  # horizontally centre width w
+        return x + (COL_W - w) / 2.0
+
+    def cy(h):                                  # vertically centre height h
+        return top + max(0.0, (avail - h) / 2.0)
+
     if kind == T:
-        return p.live("live.toggle", [x + (COL_W - 18) // 2, short_y, 18, 18],
+        return p.live("live.toggle", [cx(18), cy(18), 18, 18],
                       longname, 2, 0, 1, enum=["off", "on"],
                       annotation=annotation, initial=initial)
     if kind == M:
-        return p.live("live.menu", [x + 2, short_y, COL_W - 6, 18],
+        return p.live("live.menu", [x + 3, cy(18), COL_W - 6, 18],
                       longname, 2, 0, len(enum) - 1, enum=enum,
                       annotation=annotation, initial=initial)
-    if kind == S:                               # tall vertical fader (rack tab)
-        return p.live("live.slider",
-                      [x + (COL_W - SLIDER_W) // 2, cy, SLIDER_W, SLIDER_H],
+    if kind == S:                               # vertical fader (mixer / ADSR)
+        h = min(SLIDER_MAXH, avail)
+        return p.live("live.slider", [cx(SLIDER_W), cy(h), SLIDER_W, h],
                       longname, 1, 0, 127,
                       annotation=annotation, initial=initial)
-    if kind == H:                               # short horizontal wave-mix fader
-        return p.live("live.slider", [x + 2, cy + 10, COL_W - 6, 14],
+    if kind == H:                               # horizontal wave-mix fader
+        return p.live("live.slider", [x + 5, cy(14), COL_W - 10, 14],
                       longname, 1, 0, 127,
                       annotation=annotation, initial=initial)
-    # K / B: rotary dial.  Centre vertically in a rack cell so it lines up with
-    # the tall faders beside it (e.g. the Overload knob on the mixer).
-    dy = cy + (SLIDER_H - DIAL) // 2 if mode == "rack" else cy
-    return p.live("live.dial", [x + (COL_W - DIAL) // 2, dy, DIAL, DIAL],
+    # K / B: rotary dial.
+    return p.live("live.dial", [cx(DIAL), cy(DIAL), DIAL, DIAL],
                   longname, 1, 0, 127, annotation=annotation, initial=initial)
 
 
-def place_label(p, cap, x, cell_y, sn):
-    p.comment(cap, [x, cell_y, COL_W - 2, LABEL_H],
+def place_label(p, cap, x, row_top, sn):
+    p.comment(cap, [x, row_top, COL_W - 2, LABEL_H],
               varname=sn + "_L", fontsize=8.0, justify=1)
 
 
