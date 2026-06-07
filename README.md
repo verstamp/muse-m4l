@@ -78,8 +78,11 @@ works without it.
 
 **Tabs** — click the strip at the top to switch between sections:
 
-The tabs run in the Muse's signal-flow order and each tab is grouped like the
-matching panel section (e.g. OSC 1 on the top row, OSC 2 below):
+The tabs run in the Muse's panel order (left to right). Within each tab the
+controls sit in **titled, bordered boxes** that mirror the panel's own sections
+(e.g. the LFO tab has separate LFO 1, LFO 2 and Pitch LFO boxes; the OSC tab has
+Oscillator 1 / Oscillator 2 / Sync-FM boxes), so the layout reads like the
+hardware:
 
 | Tab | Contents |
 |-----|----------|
@@ -99,7 +102,10 @@ matching panel section (e.g. OSC 1 on the top row, OSC 2 below):
 **Control types** — each control is drawn to echo the matching panel control:
 rotary parameters are dials; the **mixer levels and the ADSR envelopes are
 vertical faders**, and the oscillator **tri-saw / wave-mix blends are horizontal
-faders**, just like the hardware (all of these are continuous 0–127). On/off
+faders**, just like the hardware (all of these are continuous 0–127). Each
+control has a short label printed directly above it (the box title supplies the
+context); the objects' own built-in name text is turned off so nothing is
+duplicated. On/off
 parameters are toggles (send 0 / 127); multi-option parameters (octave,
 waveform, KB tracking, filter order, arp direction/range) are menus that send a
 value centred in the matching CC band, so the Muse always lands on the chosen
@@ -183,9 +189,9 @@ alongside the objects so they can't drift out of sync.
 ## Known limitations
 
 - **Compact, fixed-height UI.** Live devices are locked to 169 px tall with no
-  vertical scrolling, so knob tabs pack their controls into two dense rows (the
-  fader tabs use one tall row) and the device is wide rather than tall (you may
-  need to scroll the device chain horizontally to see all of a tab).
+  vertical scrolling, so each section box packs its controls into one or two
+  dense rows and the device is wide rather than tall (you may need to scroll the
+  device chain horizontally to see all of a tab).
 - **Bidirectional sync covers CC parameters only.** Hardware → UI tracking works
   for the 102 CCs; it can't reflect changes the Muse makes that aren't sent as
   CC (e.g. Mod Map edits, preset loads from the synth's own menus).

@@ -190,170 +190,201 @@ INIT = {
 }
 
 # --------------------------------------------------------------------------
-# Authoritative parameter map.  Each tab is (name, mode, rows):
-#   mode "grid" -> rotary/toggle/menu controls in up to two stacked rows; each
-#                  row is laid out as one panel sub-section (OSC 1 over OSC 2,
-#                  Filter 1 over Filter 2, ...).
-#   mode "rack" -> a single row of tall faders (the mixer + the ADSR envelopes,
-#                  which are sliders on the Muse).
-# Each control is (cc, long-name, kind, [enum states]).  Long-names are unique
-# across the whole device (Live requires that).  Tab order follows the Muse's
-# signal flow: sources -> mixer -> filters -> envelopes -> amp/output, then the
-# modulation and performance sections.
+# Authoritative parameter map, grouped like the Muse's front panel.
+#
+#   TABS    = [(tab-name, [section, ...]), ...]
+#   section = (title, [row, ...])           # a bordered, titled box
+#   row     = [control, ...]                # controls sit in a small grid
+#   control = (cc, long-name, kind, enum, short-label)
+#
+# Sections are drawn as titled boxes (like the panel's LFO 1 / LFO 2 / Pitch
+# LFO etc.) and laid out left to right within a tab; rows stack inside a box.
+# The long-name is the unique Live automation/MIDI-map name; the short-label is
+# what's printed under the control (the section title supplies the context).
+# Tab order follows the panel scanned left to right.
 # --------------------------------------------------------------------------
+LFO_WAVES = ["Triangle", "Saw", "Square", "Random", "User"]
+MOD_WAVES = ["Sine", "Saw", "Ramp", "Square", "Noise"]
+
 TABS = [
-    ("OSC", "grid", [
-        # OSC 1 (top) and OSC 2 (bottom), each: octave, frequency, the two
-        # wave-mix faders + pulse width; plus sync / FM between them.
-        [(44, "OSC 1 Octave", M, OCT),
-         (45, "OSC 1 Frequency", B, None),
-         (46, "OSC 1 Tri/Saw Mix", H, None),
-         (48, "OSC 1 Wave Mix", H, None),
-         (47, "OSC 1 PW", K, None),
-         (54, "OSC 2>1 Sync", T, None),
-         (57, "FM Amount", K, None)],
-        [(49, "OSC 2 Octave", M, OCT),
-         (50, "OSC 2 Frequency", B, None),
-         (51, "OSC 2 Tri/Saw Mix", H, None),
-         (53, "OSC 2 Wave Mix", H, None),
-         (52, "OSC 2 PW", K, None),
-         (55, "OSC 2>1 FM", T, None),
-         (56, "OSC 1>2 FM", T, None)],
+    ("LFO", [
+        ("LFO 1", [
+            [(12, "LFO 1 Rate", K, None, "Rate"),
+             (13, "LFO 1 Amount", K, None, "Amt"),
+             (14, "LFO 1 Waveform", M, LFO_WAVES, "Wave")],
+        ]),
+        ("LFO 2", [
+            [(15, "LFO 2 Rate", K, None, "Rate"),
+             (16, "LFO 2 Amount", K, None, "Amt"),
+             (17, "LFO 2 Waveform", M, LFO_WAVES, "Wave")],
+        ]),
+        ("Pitch LFO", [
+            [(18, "Pitch LFO Rate", K, None, "Rate"),
+             (19, "Pitch LFO Shape", B, None, "Shape"),
+             (20, "Pitch LFO Amount", B, None, "Amt")],
+            [(21, "Pitch LFO>OSC 1", T, None, "OSC 1"),
+             (22, "Pitch LFO>OSC 2", T, None, "OSC 2"),
+             (23, "Pitch LFO>Mod Osc", T, None, "Mod"),
+             (24, "Pitch LFO>Detune", T, None, "Detune")],
+        ]),
     ]),
-    ("MIX", "rack", [
-        # The mixer faders, in panel order: OSC 1, Ring Mod, OSC 2, Mod Osc,
-        # Noise, then the Overload/clipping drive.
-        [(58, "OSC 1 Level", S, None),
-         (60, "Ring Mod Level", S, None),
-         (59, "OSC 2 Level", S, None),
-         (61, "Mod Osc Level", S, None),
-         (62, "Noise Level", S, None),
-         (65, "Clipping Level", K, None)],
+    ("MOD", [
+        ("Mod Oscillator", [
+            [(25, "Mod Osc Frequency", K, None, "Freq"),
+             (28, "Mod Osc Waveform", M, MOD_WAVES, "Wave"),
+             (26, "Mod Osc Audio Rate", T, None, "Audio")],
+            [(27, "Mod Osc KB Track", T, None, "KB Trk"),
+             (29, "Mod Osc KB Reset", T, None, "KB Rst"),
+             (30, "Mod Osc Unipolar", T, None, "Uni")],
+        ]),
+        ("Pitch", [
+            [(31, "Mod Osc Pitch Amount", K, None, "Amt")],
+            [(33, "Mod Osc Pitch>OSC 1", K, None, "OSC 1"),
+             (34, "Mod Osc Pitch>OSC 2", K, None, "OSC 2")],
+        ]),
+        ("PWM", [
+            [(35, "Mod Osc PWM Amount", K, None, "Amt")],
+            [(36, "Mod Osc PWM>OSC 1", K, None, "OSC 1"),
+             (37, "Mod Osc PWM>OSC 2", K, None, "OSC 2")],
+        ]),
+        ("Filter", [
+            [(39, "Mod Osc Filter Amount", K, None, "Amt")],
+            [(40, "Mod Osc Filter>F1", K, None, "F1"),
+             (41, "Mod Osc Filter>F2", K, None, "F2")],
+        ]),
+        ("VCA", [
+            [(42, "Mod Osc VCA Amount", K, None, "Amt")],
+            [(43, "Mod Osc VCA Pan", K, None, "Pan")],
+        ]),
     ]),
-    ("FILTER", "grid", [
-        # Filter 1 (top, with its high-pass) and Filter 2 (bottom).
-        [(67, "Filter 1 Cutoff", K, None),
-         (66, "Filter 1 High Pass", K, None),
-         (68, "Filter 1 Resonance", K, None),
-         (69, "Filter 1 Env Amount", K, None),
-         (70, "Filter 1 KB Track", M, KBT),
-         (77, "Link Filters", T, None)],
-        [(72, "Filter 2 Frequency", K, None),
-         (73, "Filter 2 Resonance", K, None),
-         (75, "Filter 2 Env Amount", K, None),
-         (76, "Filter 2 KB Track", M, KBT),
-         (78, "Filter Order", M, ["Serial", "Stereo", "Parallel"])],
+    ("OSC", [
+        ("Oscillator 1", [
+            [(44, "OSC 1 Octave", M, OCT, "Oct"),
+             (45, "OSC 1 Frequency", B, None, "Freq"),
+             (47, "OSC 1 PW", K, None, "PW")],
+            [(46, "OSC 1 Tri/Saw Mix", H, None, "Tri/Saw"),
+             (48, "OSC 1 Wave Mix", H, None, "Wave Mix")],
+        ]),
+        ("Oscillator 2", [
+            [(49, "OSC 2 Octave", M, OCT, "Oct"),
+             (50, "OSC 2 Frequency", B, None, "Freq"),
+             (52, "OSC 2 PW", K, None, "PW")],
+            [(51, "OSC 2 Tri/Saw Mix", H, None, "Tri/Saw"),
+             (53, "OSC 2 Wave Mix", H, None, "Wave Mix")],
+        ]),
+        ("Sync / FM", [
+            [(54, "OSC 2>1 Sync", T, None, "Sync"),
+             (57, "FM Amount", K, None, "FM Amt")],
+            [(55, "OSC 2>1 FM", T, None, "2>1 FM"),
+             (56, "OSC 1>2 FM", T, None, "1>2 FM")],
+        ]),
     ]),
-    ("ENV", "rack", [
-        # Filter Envelope (top) directly over the VCA Envelope (bottom), as on
-        # the panel: four ADSR faders then the loop / velocity toggles.
-        [(79, "Filter Env Attack", S, None),
-         (80, "Filter Env Decay", S, None),
-         (81, "Filter Env Sustain", S, None),
-         (82, "Filter Env Release", S, None),
-         (83, "Filter Env Loop", T, None),
-         (85, "Filter Env Velocity", T, None)],
-        [(86, "VCA Env Attack", S, None),
-         (87, "VCA Env Decay", S, None),
-         (88, "VCA Env Sustain", S, None),
-         (89, "VCA Env Release", S, None),
-         (90, "VCA Env Loop", T, None),
-         (91, "VCA Env Velocity", T, None)],
+    ("MIX", [
+        # The mixer faders, in panel order, then the Overload/clipping drive.
+        ("Mixer", [
+            [(58, "OSC 1 Level", S, None, "OSC 1"),
+             (60, "Ring Mod Level", S, None, "Ring"),
+             (59, "OSC 2 Level", S, None, "OSC 2"),
+             (61, "Mod Osc Level", S, None, "Mod Osc"),
+             (62, "Noise Level", S, None, "Noise"),
+             (65, "Clipping Level", K, None, "Drive")],
+        ]),
     ]),
-    ("VCA", "grid", [
-        # The VCA / output section: level, pan, spread, low-cut, mute.
-        [(7, "Timbre Volume", K, None),
-         (10, "Pan", B, None),
-         (9, "Pan Spread", K, None),
-         (8, "Low Cut", K, None),
-         (3, "Mute", T, None)],
+    ("FILTER", [
+        ("Filter 1", [
+            [(67, "Filter 1 Cutoff", K, None, "Cutoff"),
+             (66, "Filter 1 High Pass", K, None, "Hi Pass"),
+             (68, "Filter 1 Resonance", K, None, "Reso")],
+            [(69, "Filter 1 Env Amount", K, None, "Env"),
+             (70, "Filter 1 KB Track", M, KBT, "KB Trk"),
+             (77, "Link Filters", T, None, "Link")],
+        ]),
+        ("Filter 2", [
+            [(72, "Filter 2 Frequency", K, None, "Cutoff"),
+             (73, "Filter 2 Resonance", K, None, "Reso"),
+             (78, "Filter Order", M, ["Serial", "Stereo", "Parallel"], "Order")],
+            [(75, "Filter 2 Env Amount", K, None, "Env"),
+             (76, "Filter 2 KB Track", M, KBT, "KB Trk")],
+        ]),
     ]),
-    ("MOD", "grid", [
-        # Modulation Oscillator: core (top) + its destination amounts (bottom).
-        [(25, "Mod Osc Frequency", K, None),
-         (28, "Mod Osc Waveform", M,
-          ["Sine", "Saw", "Ramp", "Square", "Noise"]),
-         (26, "Mod Osc Audio Rate", T, None),
-         (27, "Mod Osc KB Track", T, None),
-         (29, "Mod Osc KB Reset", T, None),
-         (30, "Mod Osc Unipolar", T, None),
-         (31, "Mod Osc Pitch Amount", K, None),
-         (33, "Mod Osc Pitch>OSC 1", K, None),
-         (34, "Mod Osc Pitch>OSC 2", K, None)],
-        [(35, "Mod Osc PWM Amount", K, None),
-         (36, "Mod Osc PWM>OSC 1", K, None),
-         (37, "Mod Osc PWM>OSC 2", K, None),
-         (39, "Mod Osc Filter Amount", K, None),
-         (40, "Mod Osc Filter>F1", K, None),
-         (41, "Mod Osc Filter>F2", K, None),
-         (42, "Mod Osc VCA Amount", K, None),
-         (43, "Mod Osc VCA Pan", K, None)],
+    ("ENV", [
+        # Filter Envelope (top row) directly over the VCA Envelope (bottom),
+        # as on the panel: four ADSR faders then loop / velocity.
+        ("Filter Envelope / VCA Envelope", [
+            [(79, "Filter Env Attack", S, None, "F Atk"),
+             (80, "Filter Env Decay", S, None, "F Dec"),
+             (81, "Filter Env Sustain", S, None, "F Sus"),
+             (82, "Filter Env Release", S, None, "F Rel"),
+             (83, "Filter Env Loop", T, None, "F Loop"),
+             (85, "Filter Env Velocity", T, None, "F Vel")],
+            [(86, "VCA Env Attack", S, None, "A Atk"),
+             (87, "VCA Env Decay", S, None, "A Dec"),
+             (88, "VCA Env Sustain", S, None, "A Sus"),
+             (89, "VCA Env Release", S, None, "A Rel"),
+             (90, "VCA Env Loop", T, None, "A Loop"),
+             (91, "VCA Env Velocity", T, None, "A Vel")],
+        ]),
     ]),
-    ("LFO", "grid", [
-        # LFO 1 & 2 (top), Pitch LFO + its destinations (bottom).
-        [(12, "LFO 1 Rate", K, None),
-         (13, "LFO 1 Amount", K, None),
-         (14, "LFO 1 Waveform", M,
-          ["Triangle", "Saw", "Square", "Random", "User"]),
-         (15, "LFO 2 Rate", K, None),
-         (16, "LFO 2 Amount", K, None),
-         (17, "LFO 2 Waveform", M,
-          ["Triangle", "Saw", "Square", "Random", "User"])],
-        [(18, "Pitch LFO Rate", K, None),
-         (19, "Pitch LFO Shape", B, None),
-         (20, "Pitch LFO Amount", B, None),
-         (21, "Pitch LFO>OSC 1", T, None),
-         (22, "Pitch LFO>OSC 2", T, None),
-         (23, "Pitch LFO>Mod Osc", T, None),
-         (24, "Pitch LFO>Detune", T, None)],
+    ("VCA", [
+        ("VCA / Output", [
+            [(7, "Timbre Volume", K, None, "Volume"),
+             (10, "Pan", B, None, "Pan"),
+             (9, "Pan Spread", K, None, "Spread")],
+            [(8, "Low Cut", K, None, "Low Cut"),
+             (3, "Mute", T, None, "Mute")],
+        ]),
     ]),
-    ("DELAY", "grid", [
-        # Diffusion Delay: times/feedback/character (top), mix/sync/sends (bot).
-        [(93, "Delay Time Left", K, None),
-         (94, "Delay Time Right", K, None),
-         (95, "Link Delays", T, None),
-         (103, "Delay Feedback", K, None),
-         (104, "Delay Character", K, None)],
-        [(105, "Delay Mix", K, None),
-         (102, "Delay Clock Sync", T, None),
-         (106, "Delay>Timbre A", T, None),
-         (107, "Delay>Timbre B", T, None)],
+    ("DELAY", [
+        ("Diffusion Delay", [
+            [(93, "Delay Time Left", K, None, "Time L"),
+             (94, "Delay Time Right", K, None, "Time R"),
+             (95, "Link Delays", T, None, "Link"),
+             (102, "Delay Clock Sync", T, None, "Sync")],
+            [(103, "Delay Feedback", K, None, "Fbk"),
+             (104, "Delay Character", K, None, "Char"),
+             (105, "Delay Mix", K, None, "Mix")],
+        ]),
+        ("Sends", [
+            [(106, "Delay>Timbre A", T, None, "Timbre A")],
+            [(107, "Delay>Timbre B", T, None, "Timbre B")],
+        ]),
     ]),
-    ("ARP", "grid", [
-        # Arpeggiator (top) + arp/seq clock divisions and tempo (bottom).
-        [(112, "Arp On/Off", T, None),
-         (113, "Arp FW/BK", T, None),
-         (114, "Arp Direction", M, ["Order", "Pattern", "Random"]),
-         (115, "Arp Octave Range", M, ["1", "2", "3", "4"])],
-        [(111, "Arp Clock Div", K, None),
-         (110, "Seq Clock Div", K, None),
-         (116, "Clock Tempo", K, None)],
+    ("ARP", [
+        ("Arpeggiator", [
+            [(112, "Arp On/Off", T, None, "On"),
+             (113, "Arp FW/BK", T, None, "Fw/Bk"),
+             (114, "Arp Direction", M, ["Order", "Pattern", "Random"], "Mode"),
+             (115, "Arp Octave Range", M, ["1", "2", "3", "4"], "Oct")],
+            [(111, "Arp Clock Div", K, None, "Arp Div"),
+             (110, "Seq Clock Div", K, None, "Seq Div"),
+             (116, "Clock Tempo", K, None, "Tempo")],
+        ]),
     ]),
-    ("VOICE", "grid", [
-        # Voice Control + the performance / pedal controls.
-        [(92, "Voice Detune", K, None),
-         (108, "Voice Unison", T, None),
-         (109, "Voice Mono", T, None),
-         (5, "Glide Time", K, None)],
-        [(1, "Mod Wheel", K, None),
-         (11, "Expression", K, None),
-         (71, "Hold", T, None),
-         (64, "Sustain Pedal", T, None)],
+    ("VOICE", [
+        ("Voice Control", [
+            [(92, "Voice Detune", K, None, "Detune"),
+             (108, "Voice Unison", T, None, "Uni"),
+             (109, "Voice Mono", T, None, "Mono"),
+             (5, "Glide Time", K, None, "Glide")],
+            [(1, "Mod Wheel", K, None, "Mod Whl"),
+             (11, "Expression", K, None, "Expr"),
+             (71, "Hold", T, None, "Hold"),
+             (64, "Sustain Pedal", T, None, "Sus Ped")],
+        ]),
     ]),
 ]
 
 
-# Present the tabs in the Muse's physical front-panel order (scanning the panel
-# left to right): modulation sources, oscillators, mixer, filters, envelopes,
-# amp/output, then delay and the performance sections.
-PANEL_ORDER = ["LFO", "MOD", "OSC", "MIX", "FILTER", "ENV", "VCA", "DELAY",
-               "ARP", "VOICE"]
-TABS = sorted(TABS, key=lambda t: PANEL_ORDER.index(t[0]))
+def iter_sections():
+    """Yield (tab-name, title, rows) for every section."""
+    for tabname, sections in TABS:
+        for title, rows in sections:
+            yield tabname, title, rows
 
 
 def iter_controls():
-    """Yield every (cc, longname, kind, enum) control across all tabs."""
-    for _name, _mode, rows in TABS:
+    """Yield every (cc, longname, kind, enum, short) control across all tabs."""
+    for _tab, _title, rows in iter_sections():
         for row in rows:
             for ctrl in row:
                 yield ctrl
@@ -468,15 +499,28 @@ class Patch:
             attrs["varname"] = varname
         return self.box("comment", rect, present=present, **attrs)
 
+    def section_box(self, rect, varname):
+        """A rounded background panel that groups a section (drawn behind the
+        controls; ignoreclick so it never blocks them)."""
+        return self.box(
+            "panel", rect, present=True, varname=varname,
+            mode=0, rounded=8, border=1,
+            bgfillcolor_type="color",
+            bgcolor=[0.27, 0.29, 0.33, 1.0],
+            bordercolor=[0.50, 0.54, 0.60, 1.0],
+            ignoreclick=1,
+        )
+
     def connect(self, src, sout, dst, din):
         self.lines.append({"patchline": {"source": [src, sout],
                                           "destination": [dst, din]}})
 
     def live(self, maxclass, rect, longname, ptype, mmin, mmax,
-             enum=None, varname=None, annotation=None, initial=None):
+             enum=None, varname=None, annotation=None, initial=None,
+             shortname=None, showname=None):
         v = {
             "parameter_longname": longname,
-            "parameter_shortname": caption(longname)[:14],
+            "parameter_shortname": (shortname or caption(longname))[:14],
             "parameter_type": ptype,
             "parameter_mmin": mmin,
             "parameter_mmax": mmax,
@@ -492,6 +536,10 @@ class Patch:
             # shows in Ableton's Info View (bottom-left) and as a hover hint
             extra["annotation"] = annotation
             extra["hint"] = annotation
+        if showname is not None:
+            # hide the object's own name text so it doesn't duplicate the
+            # printed label beneath the control (live.dial / live.slider)
+            extra["showname"] = showname
         return self.box(
             maxclass, rect, present=True,
             numinlets=1, numoutlets=1, outlettype=[""],
@@ -545,34 +593,39 @@ class Patch:
 # --------------------------------------------------------------------------
 # Layout - everything must fit inside Live's fixed 169px device height.
 #
-# Every control sits in a fixed-width cell with its label pinned to the top of
-# the cell's row band; the control is centred in the space below.  A tab's rows
-# share the height evenly, so a one-row tab gets tall faders and a two-row tab
-# (e.g. the stacked Filter/VCA envelopes) gets shorter ones - just like the
-# panel.  Columns are wide enough that the longest label fits on one line.
+# Each tab is a left-to-right run of titled section boxes (like the panel's
+# bordered LFO 1 / LFO 2 / Pitch LFO groups).  Inside a box the controls sit in
+# a small grid; each control has a short label printed directly above it (the
+# box title carries the context, so labels stay short and never overlap).
 # --------------------------------------------------------------------------
 MARGIN = 10
-COL_W = 64
-DIAL = 38
-LABEL_H = 12
+COL_W = 56                     # width of one control cell inside a section
+DIAL = 34
+LABEL_H = 11
 LABEL_GAP = 2                  # gap between a label and its control
-TOP = 22                       # top of the first row band (below the tab strip)
-BOTTOM = 166                   # controls must stay above this (device is 169px)
-SLIDER_W = 20                  # vertical fader width
-SLIDER_MAXH = 104              # vertical fader height cap
+SEC_TOP = 23                   # top of every section box (below the tab strip)
+SEC_H = 141                    # section box height (23 + 141 = 164 <= 169)
+SEC_TITLE_H = 14               # title strip at the top of a section box
+SEC_PAD_X = 7                  # left/right padding inside a section box
+SEC_GAP = 8                    # gap between section boxes
+SLIDER_W = 18                  # vertical fader width
 
 
-def _cols_in(tab):
-    """Widest row of a tab = how many columns it occupies."""
-    return max(len(row) for row in tab[2])
+def _cols_in_section(rows):
+    return max(len(row) for row in rows)
 
 
-MAX_COLS = max(_cols_in(t) for t in TABS)
-DEVICE_WIDTH = 2 * MARGIN + MAX_COLS * COL_W
+def section_width(rows):
+    return _cols_in_section(rows) * COL_W + 2 * SEC_PAD_X
 
 
-def cell_x(col):
-    return MARGIN + col * COL_W
+def tab_width(sections):
+    inner = sum(section_width(rows) for _t, rows in sections)
+    inner += SEC_GAP * (len(sections) - 1)
+    return inner
+
+
+DEVICE_WIDTH = 2 * MARGIN + max(tab_width(secs) for _n, secs in TABS)
 
 
 def build():
@@ -593,22 +646,38 @@ def build():
                  "Tab", 2, 0, len(tab_labels) - 1, enum=tab_labels,
                  varname="TabSel")
 
-    # ---- per-tab controls (only the active tab is shown) -----------------
+    # ---- per-tab sections + controls (only the active tab is shown) ------
     tab_members = []
-    for _name, _mode, rows in TABS:
+    for _name, sections in TABS:
         members = []
-        band = (BOTTOM - TOP) / len(rows)        # each row gets an equal band
-        for ri, row in enumerate(rows):
-            row_top = TOP + ri * band
-            for ci, (cc, longname, kind, enum) in enumerate(row):
-                x = cell_x(ci)
-                sn = slug(longname)
-                members += [sn, sn + "_L"]
-                ctrl = make_control(p, kind, longname, enum, x, row_top, band,
-                                    annotation_for(cc, longname), INIT.get(cc))
-                place_label(p, caption(longname), x, row_top, sn)
-                route_out(p, kind, enum, cc, ctrl, midiformat, wx)  # UI -> Muse
-                route_in(p, kind, enum, cc, ctrl, wx)               # Muse -> UI
+        x = MARGIN
+        for si, (title, rows) in enumerate(sections):
+            sec_w = section_width(rows)
+            # background box first (so it sits behind the controls), then title
+            box_vn = "sec_%d_%d" % (len(tab_members), si)
+            p.section_box([x, SEC_TOP, sec_w, SEC_H], box_vn)
+            members.append(box_vn)
+            p.comment(title, [x + SEC_PAD_X, SEC_TOP + 2, sec_w - 2 * SEC_PAD_X,
+                              11], varname=box_vn + "_t", fontsize=8.0,
+                      fontface=1, justify=1)
+            members.append(box_vn + "_t")
+
+            body_top = SEC_TOP + SEC_TITLE_H
+            band = (SEC_H - SEC_TITLE_H - 4) / len(rows)
+            for ri, row in enumerate(rows):
+                row_top = body_top + ri * band
+                for ci, (cc, longname, kind, enum, short) in enumerate(row):
+                    cx = x + SEC_PAD_X + ci * COL_W
+                    sn = slug(longname)
+                    members += [sn, sn + "_L"]
+                    ctrl = make_control(p, kind, longname, enum, short, cx,
+                                        row_top, band,
+                                        annotation_for(cc, longname),
+                                        INIT.get(cc))
+                    place_label(p, short, cx, row_top, sn)
+                    route_out(p, kind, enum, cc, ctrl, midiformat, wx)  # ->Muse
+                    route_in(p, kind, enum, cc, ctrl, wx)               # Muse->
+            x += sec_w + SEC_GAP
         tab_members.append(members)
 
     # ---- Bank tab (Program Change) and Misc tab (panic / bend) -----------
@@ -729,7 +798,7 @@ def build_misc_tab(p, midiin, midiformat, wx):
     # (set updates the dial without re-transmitting, so no feedback loop).
     lbl("Pitch Bend", [MARGIN + 250, 34, 70, 14], "ms_l2")
     pb = p.live("live.dial", [MARGIN + 250, 50, DIAL, DIAL], "Pitch Bend", 1,
-                0, 127, varname="PitchBend", initial=64,
+                0, 127, varname="PitchBend", initial=64, showname=0,
                 annotation="Pitch Bend wheel (0-127, 64 = centre). Sends to and "
                 "follows the Muse's pitch wheel.")
     members.append("PitchBend")
@@ -755,42 +824,45 @@ def build_misc_tab(p, midiin, midiformat, wx):
 
 
 
-def make_control(p, kind, longname, enum, x, row_top, band, annotation,
+def make_control(p, kind, longname, enum, short, x, row_top, band, annotation,
                  initial=None):
-    """Draw one control, centred in the space under its label."""
-    top = row_top + LABEL_H + LABEL_GAP         # control region top
-    avail = band - LABEL_H - LABEL_GAP - 2      # control region height
+    """Draw one control just below its label, in the cell at (x, row_top).
+
+    The label is printed by ``place_label``; ``showname=0`` keeps live.dial /
+    live.slider from drawing their own (duplicate) name text.
+    """
+    top = row_top + LABEL_H + LABEL_GAP         # control top (right under label)
+    avail = band - LABEL_H - LABEL_GAP - 2      # vertical room for the control
 
     def cx(w):                                  # horizontally centre width w
         return x + (COL_W - w) / 2.0
 
-    def cy(h):                                  # vertically centre height h
-        return top + max(0.0, (avail - h) / 2.0)
-
     if kind == T:
-        return p.live("live.toggle", [cx(18), cy(18), 18, 18],
+        return p.live("live.toggle", [cx(18), top, 18, 18],
                       longname, 2, 0, 1, enum=["off", "on"],
-                      annotation=annotation, initial=initial)
+                      shortname=short, annotation=annotation, initial=initial)
     if kind == M:
-        return p.live("live.menu", [x + 3, cy(18), COL_W - 6, 18],
+        return p.live("live.menu", [cx(COL_W - 8), top, COL_W - 8, 18],
                       longname, 2, 0, len(enum) - 1, enum=enum,
+                      shortname=short, showname=0,
                       annotation=annotation, initial=initial)
     if kind == S:                               # vertical fader (mixer / ADSR)
-        h = min(SLIDER_MAXH, avail)
-        return p.live("live.slider", [cx(SLIDER_W), cy(h), SLIDER_W, h],
-                      longname, 1, 0, 127,
+        h = max(24.0, avail)
+        return p.live("live.slider", [cx(SLIDER_W), top, SLIDER_W, h],
+                      longname, 1, 0, 127, shortname=short, showname=0,
                       annotation=annotation, initial=initial)
     if kind == H:                               # horizontal wave-mix fader
-        return p.live("live.slider", [x + 5, cy(14), COL_W - 10, 14],
-                      longname, 1, 0, 127,
+        return p.live("live.slider", [cx(COL_W - 12), top + 6, COL_W - 12, 13],
+                      longname, 1, 0, 127, shortname=short, showname=0,
                       annotation=annotation, initial=initial)
     # K / B: rotary dial.
-    return p.live("live.dial", [cx(DIAL), cy(DIAL), DIAL, DIAL],
-                  longname, 1, 0, 127, annotation=annotation, initial=initial)
+    return p.live("live.dial", [cx(DIAL), top, DIAL, DIAL],
+                  longname, 1, 0, 127, shortname=short, showname=0,
+                  annotation=annotation, initial=initial)
 
 
 def place_label(p, cap, x, row_top, sn):
-    p.comment(cap, [x, row_top, COL_W - 2, LABEL_H],
+    p.comment(cap, [x, row_top, COL_W, LABEL_H],
               varname=sn + "_L", fontsize=8.0, justify=1)
 
 
